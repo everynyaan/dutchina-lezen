@@ -17,8 +17,11 @@ Match, boss, listening, and random SRS are hidden.
 
 ```sh
 npm install
+cp -n .env.example .env
 npm run dev -- --host --port 43123
 ```
+
+`PUBLIC_SUPABASE_*` can stay empty. The reading fork does not need a backend. If those names are missing from `.env`, Vite’s client bundle fails to hydrate.
 
 Production Kuromi functions need `npm run build` and Netlify; `vite dev` will not serve `/.netlify/functions/*`.
 
