@@ -178,7 +178,7 @@
 						Reset All Progress
 					</button>
 					<p class="field-hint">
-						Wipes everything: LP, rank, cards, missions, achievements. This cannot be undone.
+						Wipes this device’s eval, trap cards, mock history, and local progress. Cannot be undone.
 					</p>
 				</section>
 

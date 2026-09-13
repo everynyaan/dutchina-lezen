@@ -49,8 +49,11 @@ sw.addEventListener('install', (event) => {
 		(async () => {
 			const cache = await caches.open(CACHE_NAME);
 			await cache.addAll(ASSETS);
-			// Activate immediately without waiting for old tabs to close.
-			await sw.skipWaiting();
+			try {
+				await sw.skipWaiting();
+			} catch {
+				/* already waiting / inactive in dev */
+			}
 		})()
 	);
 });
@@ -71,8 +74,11 @@ sw.addEventListener('activate', (event) => {
 					})
 					.map((name) => caches.delete(name))
 			);
-			// Take control of all open tabs immediately.
-			await sw.clients.claim();
+			try {
+				await sw.clients.claim();
+			} catch {
+				// Dev HMR / unregister: claiming from a non-active worker throws InvalidStateError.
+			}
 		})()
 	);
 });

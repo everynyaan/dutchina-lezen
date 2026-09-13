@@ -2,7 +2,7 @@
 	import { resolve } from '$app/paths';
 	import '../app.css';
 	import { page } from '$app/stores';
-	import { onNavigate, goto } from '$app/navigation';
+	import { onNavigate } from '$app/navigation';
 	import { onMount, onDestroy } from 'svelte';
 	import { loadState, saveState, debounce } from '$lib/state/store';
 	import { createDefaultState } from '$lib/state/defaults';
@@ -22,12 +22,11 @@
 	import { GATE_IDENTITY } from '$lib/gates/home';
 	import Toast from '$lib/components/Toast.svelte';
 	import ParticleOverlay from '$lib/components/ParticleOverlay.svelte';
-	import DailyBonusModal from '$lib/components/DailyBonusModal.svelte';
 	import { addToast } from '$lib/components/toastStore';
 	import { triggerEffect, startLoop } from '$lib/effects/effectStore';
 	import { checkAchievements, applyAchievementUnlocks } from '$lib/achievements/engine';
 	import { ACHIEVEMENT_MAP } from '$lib/achievements/ACHIEVEMENTS';
-	import { updateMissionProgress, ensureWeeklyMissions } from '$lib/missions/engine';
+	import { updateMissionProgress } from '$lib/missions/engine';
 	import { MISSION_MAP } from '$lib/missions/MISSIONS';
 	import type { MissionProgressSource } from '$lib/missions/MISSIONS';
 	import { getISOWeekKey, weeksBetween } from '$lib/time/week';
@@ -250,37 +249,29 @@
 			gameState.lastSessionDate = today;
 		}
 
-		// Weekly bonus check: show modal if not yet claimed this ISO week.
-		if (!gameState.lastDailyBonusDate || getISOWeekKey(gameState.lastDailyBonusDate) !== thisWeek) {
-			showDailyBonus = true;
-		}
-
-		// Reset lpEarnedToday if it's a new day (Home "Today" card only).
 		if (gameState.lastLpDate !== today) {
 			gameState.lpEarnedToday = 0;
 			gameState.lastLpDate = today;
 		}
 
-		// Ensure weekly missions are current (resets on ISO-week rollover)
-		const missionCheck = ensureWeeklyMissions(
-			gameState.missions.daily,
-			gameState.missions.lastMissionDate
-		);
-		if (missionCheck.wasReset) {
-			gameState.missions.daily = missionCheck.missions;
-			gameState.missions.lastMissionDate = missionCheck.date;
-		}
-
-		// Compute initial cards due count for tab badge
 		await refreshCardsDue();
 
 		// Production only. Dev Vite on :5173 must not be pinned to a cache-first
 		// shell (old `/` with “You’re here.” and no mastery bars).
 		if ('serviceWorker' in navigator) {
 			if (import.meta.env.DEV) {
-				void navigator.serviceWorker.getRegistrations().then((regs) => {
-					for (const reg of regs) void reg.unregister();
-				});
+				void navigator.serviceWorker.getRegistrations().then(
+					(regs) => {
+						for (const reg of regs) {
+							void reg.unregister().catch(() => {
+								/* inactive worker during HMR */
+							});
+						}
+					},
+					() => {
+						/* no controller */
+					}
+				);
 			} else {
 				navigator.serviceWorker.register('/service-worker.js').catch((err) => {
 					console.warn('[dutchina] Service worker registration failed:', err);
@@ -331,7 +322,6 @@
 	// checks achievements.
 	// ============================================================
 	let _insideLpEvent = false; // re-entry guard for mission_complete chains
-	let showDailyBonus = $state(false);
 	let cardsDue = $state(0);
 
 	async function refreshCardsDue(): Promise<void> {
@@ -475,26 +465,6 @@
 	function toggleMute(): void {
 		gameState.audio.sfxMuted = !gameState.audio.sfxMuted;
 		setSfxMuted(gameState.audio.sfxMuted);
-	}
-
-	// ============================================================
-	// DAILY BONUS CLAIM
-	// Called when Domi taps the claim button in the modal.
-	// ============================================================
-	function claimDailyBonus(): void {
-		const today = getTodayISO();
-		gameState.lastDailyBonusDate = today;
-		handleLpEvent({ type: 'daily_first_session' });
-		triggerEffect('confetti');
-
-		// Immediate save: don't rely on the 500ms debounce for this critical write.
-		// This prevents the sync pull from overwriting with stale state.
-		saveState(gameState, activeProfile);
-
-		// Dismiss the modal after the animation plays
-		setTimeout(() => {
-			showDailyBonus = false;
-		}, 600);
 	}
 
 	// ============================================================
@@ -652,27 +622,6 @@
 		return pathname.startsWith(href);
 	}
 
-	const RETIRED_PREFIXES = [
-		'/match',
-		'/boss',
-		'/luisteren',
-		'/vocab',
-		'/daily',
-		'/quiz',
-		'/stories',
-		'/gate',
-		'/reviews',
-		'/read',
-		'/conversation'
-	];
-
-	$effect(() => {
-		const p = $page.url.pathname;
-		if (RETIRED_PREFIXES.some((r) => p === r || p.startsWith(r + '/'))) {
-			void goto('/');
-		}
-	});
-
 	const GATE_PILL: Record<(typeof GATE_IDENTITY)[1], string> = {
 		rose: '--color-rose-deep',
 		lavender: '--color-lavender-deep',
@@ -686,10 +635,6 @@
 
 <Toast />
 <ParticleOverlay />
-
-{#if showDailyBonus}
-	<DailyBonusModal practiceDays={gameState.practiceDays} onclaim={claimDailyBonus} />
-{/if}
 
 <div class="app-shell">
 	<div class="frame grain">

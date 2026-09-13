@@ -5,13 +5,136 @@
 [functions]
   directory = "netlify/functions"
 
+# Retired original-Dutchina loops → home (before the SPA fallback).
+[[redirects]]
+  from = "/match/*"
+  to = "/"
+  status = 308
+  force = true
+[[redirects]]
+  from = "/match"
+  to = "/"
+  status = 308
+  force = true
+[[redirects]]
+  from = "/boss/*"
+  to = "/"
+  status = 308
+  force = true
+[[redirects]]
+  from = "/boss"
+  to = "/"
+  status = 308
+  force = true
+[[redirects]]
+  from = "/luisteren/*"
+  to = "/"
+  status = 308
+  force = true
+[[redirects]]
+  from = "/luisteren"
+  to = "/"
+  status = 308
+  force = true
+[[redirects]]
+  from = "/vocab/*"
+  to = "/"
+  status = 308
+  force = true
+[[redirects]]
+  from = "/vocab"
+  to = "/"
+  status = 308
+  force = true
+[[redirects]]
+  from = "/daily/*"
+  to = "/"
+  status = 308
+  force = true
+[[redirects]]
+  from = "/daily"
+  to = "/"
+  status = 308
+  force = true
+[[redirects]]
+  from = "/quiz/*"
+  to = "/"
+  status = 308
+  force = true
+[[redirects]]
+  from = "/quiz"
+  to = "/"
+  status = 308
+  force = true
+[[redirects]]
+  from = "/stories/*"
+  to = "/"
+  status = 308
+  force = true
+[[redirects]]
+  from = "/stories"
+  to = "/"
+  status = 308
+  force = true
+[[redirects]]
+  from = "/gate/*"
+  to = "/"
+  status = 308
+  force = true
+[[redirects]]
+  from = "/gate"
+  to = "/"
+  status = 308
+  force = true
+[[redirects]]
+  from = "/reviews/*"
+  to = "/"
+  status = 308
+  force = true
+[[redirects]]
+  from = "/reviews"
+  to = "/"
+  status = 308
+  force = true
+[[redirects]]
+  from = "/read/*"
+  to = "/"
+  status = 308
+  force = true
+[[redirects]]
+  from = "/read"
+  to = "/"
+  status = 308
+  force = true
+[[redirects]]
+  from = "/conversation/*"
+  to = "/"
+  status = 308
+  force = true
+[[redirects]]
+  from = "/conversation"
+  to = "/"
+  status = 308
+  force = true
+
 # SPA fallback: serve index.html for any route not matching a
 # static file or Netlify function. Without this, direct navigation
-# to /match, /cards, etc. (or PWA relaunch) returns a 404.
+# to /cards, etc. (or PWA relaunch) returns a 404.
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+
+[[headers]]
+  for = "/service-worker.js"
+  [headers.values]
+    Cache-Control = "no-cache"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
 
 [[headers]]
   for = "/service-worker.js"
