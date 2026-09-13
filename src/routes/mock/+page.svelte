@@ -74,8 +74,8 @@
 			{/if}
 			<p>{exam.year} paper · {exam.passages.length} texts · {allQuestions.length} questions (real booklet, not padded to 36).</p>
 			<p class="tiny">Kuromi: 22 of 36. Skip hard. Flag. Don’t hunt one word.</p>
-			<button type="button" class="btn" onclick={start}>Start 110:00</button>
-			<a class="ghost" href={resolve('/')}>Not today</a>
+			<button type="button" class="btn start" onclick={start}>Start 110:00</button>
+			<a class="ghost" href={resolve('/')}>Back home</a>
 		</Card>
 	{:else if done}
 		<Card variant="soft-lavender">
@@ -95,6 +95,7 @@
 			{/key}
 		</div>
 
+		<p class="tiny">Skip hard. Flag. Don’t hunt one word. ~{MINUTES_PER_TEXT} min a text.</p>
 		<nav class="texts" aria-label="Texts">
 			{#each exam.passages as p, i (p.slug)}
 				<button
@@ -239,6 +240,14 @@
 		font-weight: 700;
 		text-decoration: none;
 		color: var(--color-ink);
+		cursor: pointer;
+		border: 3px solid var(--color-ink);
+	}
+	.btn.start {
+		display: flex;
+		width: 100%;
+		justify-content: center;
+		margin-top: 12px;
 	}
 	.ghost {
 		margin-left: 8px;

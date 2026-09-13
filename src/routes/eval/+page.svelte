@@ -21,11 +21,16 @@
 	const ctx = getGameContext();
 	const today = getTodayDate();
 
-	$effect(() => {
+	function primeEval() {
 		const next = ensureTodayEval(ctx.state.readingFork.eval, today);
 		if (next !== ctx.state.readingFork.eval) {
 			ctx.state.readingFork.eval = next;
 		}
+	}
+	primeEval();
+
+	$effect.pre(() => {
+		primeEval();
 	});
 
 	let evalState = $derived(ctx.state.readingFork.eval);

@@ -19,16 +19,12 @@
 	import Sticker from '$lib/components/ui/Sticker.svelte';
 	import { resolve } from '$app/paths';
 	import ExamPaperBanner from '$lib/components/ExamPaperBanner.svelte';
-	import GateBrowseFilter from '$lib/components/GateBrowseFilter.svelte';
 	import TimeBox from '$lib/components/reading/TimeBox.svelte';
-	import { currentGateFromState } from '$lib/gates/gates';
-	import { examYearsForBrowse, initialBrowseGate } from '$lib/gates/browse';
 	import { MINUTES_PER_TEXT } from '$lib/reading/mock';
+	import { EXAM_YEARS } from '$lib/gates/browse';
 
 	const ctx = getGameContext();
-	let engineGate = $derived(currentGateFromState(ctx.state));
-	let browseGate = $state(initialBrowseGate(currentGateFromState(ctx.state)));
-	let roomYears = $derived(examYearsForBrowse(browseGate));
+	const roomYears = [...EXAM_YEARS];
 
 	/** Paragraphs shown per reading page. Tuned for typical NT2 passages (≈3–6 pages). */
 	const PARAGRAPHS_PER_PAGE = 4;
@@ -308,18 +304,6 @@
 
 		<ExamPaperBanner />
 
-		<GateBrowseFilter
-			current={engineGate}
-			selected={browseGate}
-			noun="exam papers"
-			onSelect={(g) => (browseGate = g)}
-		/>
-
-		{#if roomYears.length === 0}
-			<p class="page-subtitle">
-				Exam papers live in Gate 4. Looking them up is browsing — homework stays on Gate {engineGate}.
-			</p>
-		{:else}
 		<div class="year-tabs r-chip offset-pill edge-hair">
 			{#each roomYears as year (year)}
 				{@const prog = getExamProgress(LEZEN_EXAMS.find((e) => e.year === year)!)}
@@ -377,7 +361,6 @@
 				<span class="stat-hint">Pass: {exam.passingScore}+ correct</span>
 			{/if}
 		</div>
-		{/if}
 	</div>
 {:else if view === 'reading' && activePassage && activeExam}
 	<div class="reading">
