@@ -38,10 +38,10 @@
 </script>
 
 {#if drill}
-	<section class="drills" id="drills" aria-label="Gate 1 grammar drills">
+	<section class="drills" id="drills" aria-label="Pattern warm-up drills">
 		<header class="head">
-			<h2 class="title">first drills</h2>
-			<p class="sub">de/het, verb second, ik/jij/hij. Nothing else yet.</p>
+			<h2 class="title">Warm-up drills</h2>
+			<p class="sub">de/het, verb second, ik/jij/hij — the moves that show up in texts.</p>
 		</header>
 
 		<div class="filters" role="tablist" aria-label="Drill pattern">

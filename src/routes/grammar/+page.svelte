@@ -1,22 +1,16 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
-	import { getGameContext } from '$lib/state/context';
-	import { currentGateFromState } from '$lib/gates/gates';
-	import { grammarChaptersForBrowse, initialBrowseGate } from '$lib/gates/browse';
-	import { drillsForGate } from '$lib/grammar/drills';
-	import GateBrowseFilter from '$lib/components/GateBrowseFilter.svelte';
+	import { GRAMMAR_CONTENT } from '$lib/grammar/GRAMMAR_CONTENT';
+	import { GATE1_DRILLS } from '$lib/grammar/drills';
 	import type { GrammarChapter } from '$lib/grammar/types';
 	import GrammarCardView from '$lib/components/grammar/GrammarCardView.svelte';
 	import GrammarDrills from '$lib/components/grammar/GrammarDrills.svelte';
 	import Icon from '$lib/icons/Icon.svelte';
 	import Doodle from '$lib/components/art/Doodle.svelte';
 
-	const ctx = getGameContext();
-	let engineGate = $derived(currentGateFromState(ctx.state));
-	let browseGate = $state(initialBrowseGate(currentGateFromState(ctx.state)));
-	let chapters = $derived(grammarChaptersForBrowse(browseGate));
-	let totalCards = $derived(chapters.reduce((sum, ch) => sum + ch.cards.length, 0));
-	let showDrills = $derived(drillsForGate(browseGate).length > 0);
+	const chapters = GRAMMAR_CONTENT;
+	const totalCards = chapters.reduce((sum, ch) => sum + ch.cards.length, 0);
+	const showDrills = GATE1_DRILLS.length > 0;
 
 	// GRAMMAR_CONTENT (content, not editable this phase) still speaks the old
 	// four-name tone palette (pink/lilac/mint/butter). Map each to its §2.1
@@ -60,13 +54,7 @@
 	// Single-open accordion (was a multi-open SvelteSet). One expanded chapter
 	// at a time keeps exactly one 2px family-bordered unit on screen ever —
 	// see the outlined-surface budget note in the PR description.
-	let openId = $state<string>('');
-
-	$effect(() => {
-		if (!openId || !chapters.some((ch) => ch.id === openId)) {
-			openId = chapters[0]?.id ?? '';
-		}
-	});
+	let openId = $state<string>(chapters[0]?.id ?? '');
 
 	function isOpen(id: string): boolean {
 		return openId === id;
@@ -84,21 +72,16 @@
 			<span>Home</span>
 		</a>
 		<div class="title-row">
-			<h1 class="grammar-title">Grammar</h1>
+			<h1 class="grammar-title">Patterns</h1>
 			<span class="title-squiggle">
 				<Doodle name="shape-swirl-loops-4" size={96} color="var(--color-rose-deep)" tilt={-2} />
 			</span>
 		</div>
-		<GateBrowseFilter
-			current={engineGate}
-			selected={browseGate}
-			noun="chapters"
-			onSelect={(g) => (browseGate = g)}
-		/>
 		<p class="grammar-subtitle">
-			{chapters.length} chapters &middot; {totalCards} reference cards
+			Word-order and traps that show up in B1 texts — not a vocab grind, not a gate ladder.
+			{chapters.length} chapters &middot; {totalCards} cards
 			{#if showDrills}
-				&middot; {drillsForGate(browseGate).length} first drills
+				&middot; warm-up drills
 			{/if}
 		</p>
 		<span class="header-sparkle">
