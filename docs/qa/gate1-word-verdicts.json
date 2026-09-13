@@ -1,0 +1,146 @@
+{
+  "method": "Hand-read all 220 rank-0 lemmas and all 220 rank-1 lemmas in WORD_POOL.json. Verdict is on the lemma for a complete beginner (Domi, A1 / first-words). Example sentences are a separate leak: match and recall show sentence_nl, and most keepers still have A2–B1 frames.",
+  "date": "2026-08-29",
+  "head": "fb5756b",
+  "implemented": {
+    "date": "2026-08-29",
+    "allowlistModule": "src/lib/gates/gate1Allowlist.ts",
+    "size": 162,
+    "note": "Allowlist is the G1 source of truth. keepAsIs + rewritten keepers + late pulls (hond, vis, keuken, politie, avond, present stems). Days/months/shop/train stay out (G2). Drop-list and past-tense ids are excluded."
+  },
+  "conclusion": "Phase 1a: Gate 1 is the curated allowlist, not rank <= 1. Rewrite or hide sentence_nl for keepers whose frame is not first-year (overlays in gate1Allowlist.ts).",
+  "coverageGaps": {
+    "missingFromEntirePool": [
+      "hallo", "hoi", "dag", "goedemorgen", "alsjeblieft", "dankjewel",
+      "ik", "hij", "zij", "wij",
+      "huis", "zus", "oma", "opa",
+      "brood", "melk", "thee", "appel", "kaas", "kat", "fiets",
+      "bed", "stoel", "raam", "leraar", "vriendin",
+      "drinken", "komen", "gaan", "hebben", "zijn", "kunnen", "willen", "moeten"
+    ],
+    "easyStuckLate": [
+      { "id": "w0903", "dutch": "hond", "rank": 2, "action": "pull into Gate 1 allowlist" },
+      { "id": "w1999", "dutch": "vis", "rank": 3, "action": "pull into Gate 1 or 2" },
+      { "id": "w0853", "dutch": "keuken", "rank": 6, "action": "pull into Gate 1 or 2 — not B1" },
+      { "id": "w0983", "dutch": "politie", "rank": 7, "note": "present at rank 7; everyday word, not exam-only" }
+    ]
+  },
+  "rank0": {
+    "dropFromHomework": [
+      { "id": "w0284", "dutch": "der", "reason": "archaic genitive; set-phrase only" },
+      { "id": "w1032", "dutch": "des", "reason": "archaic; vrouw des huizes" },
+      { "id": "w0203", "dutch": "ten", "reason": "archaic ten huize van" },
+      { "id": "w0255", "dutch": "ter", "reason": "archaic ter plekke" },
+      { "id": "w0262", "dutch": "the", "reason": "English article in a Dutch pool" },
+      { "id": "w0932", "dutch": "ene", "reason": "idiom het ene oor in" }
+    ],
+    "moveLater": [
+      { "id": "w1968", "dutch": "Belg", "to": 2, "reason": "nationality cluster, not first-words" },
+      { "id": "w1261", "dutch": "Belgen", "to": 2 },
+      { "id": "w0868", "dutch": "België", "to": 2 },
+      { "id": "w1298", "dutch": "Belgisch", "to": 2 },
+      { "id": "w1572", "dutch": "Vlamingen", "to": 3, "reason": "dialect/region register" },
+      { "id": "w0355", "dutch": "doel", "to": 3, "reason": "abstract; sentence is Rode Kruis noodhulp" },
+      { "id": "w0724", "dutch": "feit", "to": 3, "reason": "abstract fact vs opinion" },
+      { "id": "w0445", "dutch": "rol", "to": 3, "reason": "abstract ‘plays a role’" },
+      { "id": "w1363", "dutch": "taak", "to": 2, "reason": "duty/chore as the point" },
+      { "id": "w0617", "dutch": "Europese", "to": 3, "reason": "EU founding 1958" },
+      { "id": "w1083", "dutch": "Europees", "to": 3 },
+      { "id": "w0707", "dutch": "Europa", "to": 2 },
+      { "id": "w0222", "dutch": "tweede", "to": 3, "reason": "example is Eerste/Tweede Kamer" },
+      { "id": "w0378", "dutch": "moest", "to": 3, "reason": "past + minister/beleid" },
+      { "id": "w1070", "dutch": "moesten", "to": 3, "reason": "past + Middeleeuwen" },
+      { "id": "w1162", "dutch": "morgen", "to": 2, "reason": "lemma OK later; frame is advocaat/hoorzitting — rewrite if kept G1" },
+      { "id": "w1320", "dutch": "brief", "to": 2, "reason": "lemma OK; frame accountant" },
+      { "id": "w1181", "dutch": "dochter", "to": 1, "reason": "lemma OK; frame cardioloog — rewrite if kept G1" }
+    ],
+    "pastInflectionsMoveToGate2plus": [
+      "w1493", "w0746", "w0257", "w0838", "w0228", "w0664",
+      "w0300", "w0378", "w1070", "w0235", "w0621", "w1034",
+      "w1858", "w0701", "w0591"
+    ],
+    "keepLemmaRewriteSentence": [
+      { "id": "w1045", "dutch": "acht", "badFrame": "Een achthoek heeft acht zijden." },
+      { "id": "w0295", "dutch": "auto", "badFrame": "elektrische auto / milieu" },
+      { "id": "w0581", "dutch": "beginnen", "badFrame": "bouwvakkers" },
+      { "id": "w0597", "dutch": "betalen", "badFrame": "contant geld trend" },
+      { "id": "w0747", "dutch": "blij", "badFrame": "geslaagd" },
+      { "id": "w0286", "dutch": "boek", "badFrame": "bibliotheek geleend" },
+      { "id": "w0238", "dutch": "dagen", "badFrame": "verpleegkundigen; POS also ‘summon in court’" },
+      { "id": "w0530", "dutch": "heen", "badFrame": "vogeltrek / meeuwen" },
+      { "id": "w0568", "dutch": "hart", "badFrame": "belangrijkste organen" },
+      { "id": "w1327", "dutch": "harde", "badFrame": "kritiek van de journalist" },
+      { "id": "w0321", "dutch": "hand", "badFrame": "uit de hand / oudejaarsfeestjes" },
+      { "id": "w1166", "dutch": "lijken", "badFrame": "POS lists ‘corpses’" },
+      { "id": "w0402", "dutch": "lopen", "badFrame": "POS lists ‘gun barrels’" },
+      { "id": "w0534", "dutch": "vijf", "badFrame": "voldoende gehaald voor het examen" },
+      { "id": "w0436", "dutch": "vrouw", "badFrame": "Mount Everest" },
+      { "id": "w0349", "dutch": "ziet", "badFrame": "vogelaar / adelaars" },
+      { "id": "w0361", "dutch": "zegt", "badFrame": "zuinig / parsimonious" },
+      { "id": "w0591", "dutch": "zei", "badFrame": "stewardess / landen" },
+      { "id": "w1105", "dutch": "gisteren", "badFrame": "tsunami in Japan" },
+      { "id": "w0385", "dutch": "dingen", "badFrame": "eksters / glimmende dingen" }
+    ],
+    "keepAsIsOrNear": [
+      "w0353", "w0757", "w0244", "w0392", "w0324", "w0231",
+      "w0613", "w0679", "w1978", "w1000", "w0311", "w0436",
+      "w0319", "w1564", "w1843", "w0570", "w1587",
+      "w0344", "w0847", "w0218", "w1116", "w1506",
+      "w1279", "w0643", "w1104", "w0390", "w0677",
+      "w0266", "w0256", "w0428", "w0629", "w0308",
+      "w0297", "w0877", "w1046", "w1305", "w0778", "w1201"
+    ]
+  },
+  "rank1": {
+    "dropFromHomework": [
+      { "id": "w0860", "dutch": "a.", "reason": "abbreviation dump" },
+      { "id": "w0931", "dutch": "d.", "reason": "abbreviation dump" },
+      { "id": "w0714", "dutch": "etc", "reason": "latin abbreviation" },
+      { "id": "w1887", "dutch": "as", "reason": "axis/axle, not ‘als’" },
+      { "id": "w0787", "dutch": "name", "reason": "archaic naam in met name" }
+    ],
+    "moveLater": [
+      { "id": "w1260", "dutch": "alsof", "to": 3, "reason": "subordinator" },
+      { "id": "w1289", "dutch": "alvast", "to": 3 },
+      { "id": "w1801", "dutch": "dikwijls", "to": 4, "reason": "formal register for ‘vaak’" },
+      { "id": "w1343", "dutch": "bod", "to": 4, "reason": "bid/offer, exam-adjacent" },
+      { "id": "w1301", "dutch": "fax", "to": 4, "reason": "dead technology, not first-year" },
+      { "id": "w1607", "dutch": "hof", "to": 4, "reason": "royal court / courtyard" },
+      { "id": "w1230", "dutch": "mate", "to": 4, "reason": "met mate" },
+      { "id": "w1085", "dutch": "minstens", "to": 3, "reason": "frame is 1000-word opstel" },
+      { "id": "w1571", "dutch": "olie", "to": 4, "reason": "industriële sector" },
+      { "id": "w0557", "dutch": "opleiding", "to": 3 },
+      { "id": "w1845", "dutch": "qua", "to": 4, "reason": "formal in terms of" },
+      { "id": "w0449", "dutch": "leden", "to": 3, "reason": "stichting members" },
+      { "id": "w1353", "dutch": "leek", "to": 3 },
+      { "id": "w1330", "dutch": "volk", "to": 4, "reason": "democracy / politicians" },
+      { "id": "w0729", "dutch": "wet", "to": 4 },
+      { "id": "w0866", "dutch": "zaak", "to": 3 },
+      { "id": "w1257", "dutch": "ware", "to": 4, "reason": "frame is psychopaten" },
+      { "id": "w1149", "dutch": "stijl", "to": 4, "reason": "De Stijl 1917" },
+      { "id": "w0360", "dutch": "site", "to": 3, "reason": "Rijksoverheid" },
+      { "id": "w0495", "dutch": "toekomst", "to": 3, "reason": "waarzegger" },
+      { "id": "w0596", "dutch": "totaal", "to": 3, "reason": "winst 2019 teleurstellend" },
+      { "id": "w1299", "dutch": "Waalse", "to": 3 },
+      { "id": "w0328", "dutch": "terwijl", "to": 3, "reason": "subclause conjunction as the point" },
+      { "id": "w0684", "dutch": "voordat", "to": 3 },
+      { "id": "w0695", "dutch": "nadat", "to": 3 },
+      { "id": "w0781", "dutch": "ondanks", "to": 3 },
+      { "id": "w0760", "dutch": "dankzij", "to": 3 },
+      { "id": "w0432", "dutch": "soort", "to": 3, "reason": "gabber techno jaren negentig" },
+      { "id": "w1836", "dutch": "stof", "to": 3, "reason": "exam subject matter" }
+    ],
+    "participlesMoveToGate2plus": [
+      "w1650", "w0716", "w0329", "w0928", "w0578", "w0906", "w0382"
+    ],
+    "keepForGate1IfSentenceRewritten": [
+      "trein", "bus", "winkel", "telefoon", "televisie", "hotel", "park",
+      "maandag", "dinsdag", "woensdag", "donderdag", "vrijdag", "zaterdag",
+      "januari", "februari", "maart", "april", "mei", "juni", "juli",
+      "augustus", "september", "oktober", "november", "december",
+      "euro", "prijs", "goedkoop", "markt", "kleding", "kleren",
+      "makkelijk", "moeilijk", "klaar", "fijn", "prima", "probleem",
+      "vraag", "antwoord", "verhaal", "reis", "vakantie", "tuin", "muur"
+    ]
+  }
+}

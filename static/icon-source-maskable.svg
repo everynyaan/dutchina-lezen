@@ -1,0 +1,38 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+	<!-- Flat navy fill — maskable icons must fill the full canvas; the OS crops -->
+	<rect width="512" height="512" fill="#131330"/>
+
+	<!--
+		Same tulip artwork as icon-source.svg, wrapped in a transform that:
+		1. Centers the tulip's visual bounding box (y_center ≈ 289) on the
+		   canvas center (256, 256).
+		2. Scales to 70%, leaving generous safe-zone padding so the bloom
+		   isn't clipped by Android adaptive icon masks (circle, squircle,
+		   teardrop, etc.).
+	-->
+	<g transform="translate(256 256) scale(0.7) translate(-256 -289)">
+		<!-- Stem -->
+		<rect x="244" y="350" width="24" height="112" rx="12" fill="#4ADE80"/>
+
+		<!-- Leaves -->
+		<path transform="translate(252 412) rotate(-135)"
+			d="M 0 0 C 16 -20, 52 -20, 68 0 C 52 20, 16 20, 0 0 Z"
+			fill="#4ADE80"/>
+		<path transform="translate(260 412) rotate(-45)"
+			d="M 0 0 C 16 -20, 52 -20, 68 0 C 52 20, 16 20, 0 0 Z"
+			fill="#4ADE80"/>
+
+		<!-- Petals -->
+		<g transform="translate(256 360)">
+			<path transform="rotate(-24)"
+				d="M -10 -5 C -56 -42, -62 -152, 0 -212 C 62 -152, 56 -42, 10 -5 C 6 2, -6 2, -10 -5 Z"
+				fill="#22D3EE"/>
+			<path transform="rotate(24)"
+				d="M -10 -5 C -56 -42, -62 -152, 0 -212 C 62 -152, 56 -42, 10 -5 C 6 2, -6 2, -10 -5 Z"
+				fill="#FBBF24"/>
+			<path
+				d="M -10 -5 C -52 -42, -58 -178, 0 -244 C 58 -178, 52 -42, 10 -5 C 6 2, -6 2, -10 -5 Z"
+				fill="#F472B6"/>
+		</g>
+	</g>
+</svg>

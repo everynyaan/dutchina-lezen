@@ -1,0 +1,2202 @@
+[
+  {
+    "id": "w1045",
+    "dutch": "acht",
+    "english": "eight",
+    "pos": "num",
+    "rank": 0,
+    "category": "time-numbers",
+    "sentence_nl": "Een achthoek heeft acht zijden.",
+    "sentence_en": "An octagon has eight sides."
+  },
+  {
+    "id": "w0465",
+    "dutch": "andere",
+    "english": "(an)other; different",
+    "pos": "n, adj",
+    "rank": 0,
+    "category": "describing",
+    "sentence_nl": "Geef jij deze kaarten aan de andere spelers?",
+    "sentence_en": "Will you give these playing cards to the other players?"
+  },
+  {
+    "id": "w0295",
+    "dutch": "auto",
+    "english": "car",
+    "pos": "n",
+    "rank": 0,
+    "category": "travel-transport",
+    "sentence_nl": "Een elektrische auto is beter voor het milieu dan een normale auto.",
+    "sentence_en": "An electric car is better for the environment than a normal car."
+  },
+  {
+    "id": "w0357",
+    "dutch": "beetje",
+    "english": "(a) little (bit)",
+    "pos": "n",
+    "rank": 0,
+    "category": "misc",
+    "sentence_nl": "Wilt u nog een beetje meer water?",
+    "sentence_en": "Would you like a little bit more water?"
+  },
+  {
+    "id": "w0581",
+    "dutch": "beginnen",
+    "english": "to start",
+    "pos": "v",
+    "rank": 0,
+    "category": "actions",
+    "sentence_nl": "De bouwvakkers beginnen hun werk om zeven uur ’s ochtends.",
+    "sentence_en": "The laborers start their jobs at seven in the morning."
+  },
+  {
+    "id": "w0397",
+    "dutch": "beide",
+    "english": "both",
+    "pos": "n, adj",
+    "rank": 0,
+    "category": "describing",
+    "sentence_nl": "Beide huizen zijn heel mooi, ik zou niet kunnen kiezen.",
+    "sentence_en": "Both houses are very pretty; I wouldn’t be able to choose."
+  },
+  {
+    "id": "w1968",
+    "dutch": "Belg",
+    "english": "Belgian person",
+    "pos": "n",
+    "rank": 0,
+    "category": "society",
+    "sentence_nl": "Een Belg kan vaak twee talen spreken.",
+    "sentence_en": "A Belgian person often speaks two languages."
+  },
+  {
+    "id": "w1261",
+    "dutch": "Belgen",
+    "english": "Belgians",
+    "pos": "n",
+    "rank": 0,
+    "category": "society",
+    "sentence_nl": "Ongeveer zestig procent van de Belgen spreekt Nederlands.",
+    "sentence_en": "About sixty percent of Belgians speak Dutch."
+  },
+  {
+    "id": "w0868",
+    "dutch": "België",
+    "english": "Belgium",
+    "pos": "n",
+    "rank": 0,
+    "category": "society",
+    "sentence_nl": "België staat bekend om zijn lekkere chocolade en bier.",
+    "sentence_en": "Belgium is known for its delicious chocolate and beer."
+  },
+  {
+    "id": "w1298",
+    "dutch": "Belgisch",
+    "english": "Belgian",
+    "pos": "adj",
+    "rank": 0,
+    "category": "society",
+    "sentence_nl": "Belgisch bier is wereldwijd bekend.",
+    "sentence_en": "Belgian beer is famous worldwide."
+  },
+  {
+    "id": "w0220",
+    "dutch": "beste",
+    "english": "best; dear",
+    "pos": "n, adj, adv",
+    "rank": 0,
+    "category": "describing",
+    "sentence_nl": "Marjolein en Joris zijn beste vrienden sinds de basisschool!",
+    "sentence_en": "Marjolein and Joris have been best friends since elementary school!"
+  },
+  {
+    "id": "w0597",
+    "dutch": "betalen",
+    "english": "to pay",
+    "pos": "v",
+    "rank": 0,
+    "category": "shopping-money",
+    "sentence_nl": "We betalen steeds minder met contant geld.",
+    "sentence_en": "We’re paying with cash less and less."
+  },
+  {
+    "id": "w0747",
+    "dutch": "blij",
+    "english": "happy",
+    "pos": "adj, adv",
+    "rank": 0,
+    "category": "feelings",
+    "sentence_nl": "Zijn ze blij dat ze geslaagd zijn?",
+    "sentence_en": "Are they happy they’ve graduated?"
+  },
+  {
+    "id": "w0286",
+    "dutch": "boek",
+    "english": "book; to book",
+    "pos": "n, v",
+    "rank": 0,
+    "category": "work-study",
+    "sentence_nl": "Dit boek heb ik bij de bibliotheek geleend.",
+    "sentence_en": "I borrowed this book at the library."
+  },
+  {
+    "id": "w0377",
+    "dutch": "boven",
+    "english": "above; upstairs",
+    "pos": "n",
+    "rank": 0,
+    "category": "home",
+    "sentence_nl": "De slaapkamers zijn boven op de tweede verdieping.",
+    "sentence_en": "The bedrooms are upstairs on the second floor."
+  },
+  {
+    "id": "w0307",
+    "dutch": "brengen",
+    "english": "to bring",
+    "pos": "v",
+    "rank": 0,
+    "category": "actions",
+    "sentence_nl": "Hoeveel koffers brengen jullie meestal op vakantie mee?",
+    "sentence_en": "How many suitcases do you usually bring on holidays?"
+  },
+  {
+    "id": "w1320",
+    "dutch": "brief",
+    "english": "letter",
+    "pos": "n",
+    "rank": 0,
+    "category": "communication",
+    "sentence_nl": "De accountant moet een belangrijke brief sturen.",
+    "sentence_en": "The accountant has to send an important letter ."
+  },
+  {
+    "id": "w1978",
+    "dutch": "broer",
+    "english": "brother",
+    "pos": "n",
+    "rank": 0,
+    "category": "people-family",
+    "sentence_nl": "Theo is jouw broer , toch?",
+    "sentence_en": "Theo is your brother , right?"
+  },
+  {
+    "id": "w0305",
+    "dutch": "buiten",
+    "english": "outside; except",
+    "pos": "prep, adv",
+    "rank": 0,
+    "category": "nature-weather",
+    "sentence_nl": "Het is voor kinderen gezond om veel buiten te spelen.",
+    "sentence_en": "It’s healthy for children to play outside a lot."
+  },
+  {
+    "id": "w0238",
+    "dutch": "dagen",
+    "english": "days; to dawn; to summon in court",
+    "pos": "n, v",
+    "rank": 0,
+    "category": "time-numbers",
+    "sentence_nl": "Hoeveel dagen per week werken de verpleegkundigen?",
+    "sentence_en": "How many days a week do the nurses work?"
+  },
+  {
+    "id": "w1493",
+    "dutch": "deden",
+    "english": "to do",
+    "pos": "v",
+    "rank": 0,
+    "category": "actions",
+    "sentence_nl": "De gasten deden de afwas.",
+    "sentence_en": "The guests did the dishes."
+  },
+  {
+    "id": "w0746",
+    "dutch": "deed",
+    "english": "to do",
+    "pos": "v",
+    "rank": 0,
+    "category": "actions",
+    "sentence_nl": "Wat deed Reinout Oerlemans voordat hij filmregisseur werd?",
+    "sentence_en": "What did Reinout Oerlemans do before he became a movie director?"
+  },
+  {
+    "id": "w0202",
+    "dutch": "deel",
+    "english": "part; to divide, to share",
+    "pos": "n, v",
+    "rank": 0,
+    "category": "actions",
+    "sentence_nl": "Ik deel altijd mijn favoriete bonbons met mijn collega’s.",
+    "sentence_en": "I always share my favorite chocolates with my coworkers."
+  },
+  {
+    "id": "w0342",
+    "dutch": "denken",
+    "english": "mind; to think; to believe",
+    "pos": "n, v",
+    "rank": 0,
+    "category": "actions",
+    "sentence_nl": "Wat denken je vrienden van je nieuwe partner?",
+    "sentence_en": "What do your friends think about your new partner?"
+  },
+  {
+    "id": "w0284",
+    "dutch": "der",
+    "english": "the; of the (roughly translates to “of the” or “at the” but sounds old-fashioned and is mainly used in set expressions, slightly archaic)",
+    "pos": "art",
+    "rank": 0,
+    "category": "connectors",
+    "sentence_nl": "Veel Nederlandse achternamen beginnen met “van der ”.",
+    "sentence_en": "Many Dutch last names start with “van der” (meaning: “of the ”)."
+  },
+  {
+    "id": "w0579",
+    "dutch": "derde",
+    "english": "third; third person",
+    "pos": "n, adj",
+    "rank": 0,
+    "category": "time-numbers",
+    "sentence_nl": "De WC is in de gang, de derde deur aan de linkerkant.",
+    "sentence_en": "The bathroom is in the hallway; the third door on the left."
+  },
+  {
+    "id": "w1123",
+    "dutch": "dertig",
+    "english": "thirty",
+    "pos": "num",
+    "rank": 0,
+    "category": "time-numbers",
+    "sentence_nl": "Veertig is de nieuwe dertig , toch?",
+    "sentence_en": "Forty is the new thirty , right?"
+  },
+  {
+    "id": "w1032",
+    "dutch": "des",
+    "english": "archaic way of saying “of the”, mostly used in set expressions",
+    "pos": "art",
+    "rank": 0,
+    "category": "connectors",
+    "sentence_nl": "De vrouw des huizes.",
+    "sentence_en": "The woman of the house."
+  },
+  {
+    "id": "w1279",
+    "dutch": "deur",
+    "english": "door",
+    "pos": "n",
+    "rank": 0,
+    "category": "home",
+    "sentence_nl": "Die deur is van hout gemaakt.",
+    "sentence_en": "That door is made of wood."
+  },
+  {
+    "id": "w0458",
+    "dutch": "dezelfde",
+    "english": "the same",
+    "pos": "n, adj",
+    "rank": 0,
+    "category": "describing",
+    "sentence_nl": "Je hebt dezelfde sportschoenen aan als ik!",
+    "sentence_en": "You’re wearing the same sneakers as me!"
+  },
+  {
+    "id": "w0385",
+    "dutch": "dingen",
+    "english": "things",
+    "pos": "n",
+    "rank": 0,
+    "category": "misc",
+    "sentence_nl": "Blijkbaar is het niet waar dat eksters van glimmende dingen houden!",
+    "sentence_en": "Apparently, it’s not true that magpies like shiny things !"
+  },
+  {
+    "id": "w1181",
+    "dutch": "dochter",
+    "english": "daughter",
+    "pos": "n",
+    "rank": 0,
+    "category": "people-family",
+    "sentence_nl": "Onze dochter is cardioloog.",
+    "sentence_en": "Our daughter is a cardiologist."
+  },
+  {
+    "id": "w0438",
+    "dutch": "doe",
+    "english": "to do; to function",
+    "pos": "v",
+    "rank": 0,
+    "category": "actions",
+    "sentence_nl": "Ik doe drie keer per week aan karate.",
+    "sentence_en": "I do karate three times a week."
+  },
+  {
+    "id": "w0355",
+    "dutch": "doel",
+    "english": "goal; to aim at",
+    "pos": "n, v",
+    "rank": 0,
+    "category": "society",
+    "sentence_nl": "Het doel van het Rode Kruis is om noodhulp te bieden.",
+    "sentence_en": "The goal of the Red Cross is to offer emergency aid."
+  },
+  {
+    "id": "w0243",
+    "dutch": "doet",
+    "english": "to do; to function",
+    "pos": "v",
+    "rank": 0,
+    "category": "actions",
+    "sentence_nl": "Doet die afstandsbediening het nog wel?",
+    "sentence_en": "Is that remote control still functioning ?"
+  },
+  {
+    "id": "w0965",
+    "dutch": "dood",
+    "english": "death, dead; to kill",
+    "pos": "n, adj, v",
+    "rank": 0,
+    "category": "health-body",
+    "sentence_nl": "Deze plant is dood .",
+    "sentence_en": "This plant is dead ."
+  },
+  {
+    "id": "w1581",
+    "dutch": "duizend",
+    "english": "a thousand",
+    "pos": "num",
+    "rank": 0,
+    "category": "time-numbers",
+    "sentence_nl": "De man gaat duizend euro van de bank lenen.",
+    "sentence_en": "The man is going to borrow a thousand euros from the bank."
+  },
+  {
+    "id": "w1060",
+    "dutch": "duur",
+    "english": "duration; expensive",
+    "pos": "n, adj",
+    "rank": 0,
+    "category": "shopping-money",
+    "sentence_nl": "In Nederland is yoghurt niet duur .",
+    "sentence_en": "In the Netherlands, yogurt isn’t expensive ."
+  },
+  {
+    "id": "w0562",
+    "dutch": "eind",
+    "english": "end; length",
+    "pos": "n",
+    "rank": 0,
+    "category": "time-numbers",
+    "sentence_nl": "Eind december ga ik een paard kopen!",
+    "sentence_en": "At the end of December, I’m going to buy a horse!"
+  },
+  {
+    "id": "w1832",
+    "dutch": "elf",
+    "english": "eleven",
+    "pos": "num",
+    "rank": 0,
+    "category": "time-numbers",
+    "sentence_nl": "Iedere ploeg heeft elf voetbalspelers op het veld.",
+    "sentence_en": "Each team has eleven soccer players on the field."
+  },
+  {
+    "id": "w0336",
+    "dutch": "elk",
+    "english": "every, each",
+    "pos": "pron",
+    "rank": 0,
+    "category": "connectors",
+    "sentence_nl": "Elk mens is uniek en speciaal!",
+    "sentence_en": "Every person is unique and special!"
+  },
+  {
+    "id": "w0932",
+    "dutch": "ene",
+    "english": "one; a certain",
+    "pos": "n, adj, art",
+    "rank": 0,
+    "category": "connectors",
+    "sentence_nl": "Soms gaan instructies het ene oor in en gelijk het andere oor weer uit.",
+    "sentence_en": "Sometimes instructions go in one ear and immediately go out the other."
+  },
+  {
+    "id": "w1531",
+    "dutch": "Engels",
+    "english": "English (language)",
+    "pos": "n, adj",
+    "rank": 0,
+    "category": "communication",
+    "sentence_nl": "Vinden jullie Engels makkelijker dan Nederlands?",
+    "sentence_en": "Do you think English is easier than Dutch?"
+  },
+  {
+    "id": "w0344",
+    "dutch": "eten",
+    "english": "food; to eat",
+    "pos": "n, v",
+    "rank": 0,
+    "category": "food-drink",
+    "sentence_nl": "Mensen in Nederland houden erg van pannenkoeken eten !",
+    "sentence_en": "People in the Netherlands love eating pancakes."
+  },
+  {
+    "id": "w0707",
+    "dutch": "Europa",
+    "english": "Europe",
+    "pos": "n",
+    "rank": 0,
+    "category": "society",
+    "sentence_nl": "Europa ligt ten noorden van Afrika.",
+    "sentence_en": "Europe lies north of Africa."
+  },
+  {
+    "id": "w1083",
+    "dutch": "Europees",
+    "english": "European",
+    "pos": "n, adj",
+    "rank": 0,
+    "category": "society",
+    "sentence_nl": "Welk Europees land ontvangt de meeste toeristen?",
+    "sentence_en": "Which European country receives the most tourists?"
+  },
+  {
+    "id": "w0617",
+    "dutch": "Europese",
+    "english": "European",
+    "pos": "adj",
+    "rank": 0,
+    "category": "society",
+    "sentence_nl": "De Europese Unie werd in 1958 gevormd.",
+    "sentence_en": "The European Union was founded in 1958."
+  },
+  {
+    "id": "w0570",
+    "dutch": "familie",
+    "english": "family",
+    "pos": "n",
+    "rank": 0,
+    "category": "people-family",
+    "sentence_nl": "Voor de vader stond zijn familie voorop.",
+    "sentence_en": "For the father his family came first."
+  },
+  {
+    "id": "w0724",
+    "dutch": "feit",
+    "english": "fact",
+    "pos": "n",
+    "rank": 0,
+    "category": "communication",
+    "sentence_nl": "Dat is geen feit , het is een mening.",
+    "sentence_en": "That’s not a fact , it’s an opinion."
+  },
+  {
+    "id": "w0708",
+    "dutch": "film",
+    "english": "film; movie; to film",
+    "pos": "n, v",
+    "rank": 0,
+    "category": "communication",
+    "sentence_nl": "De Nederlandse film Ciske de Rat had heel veel succes.",
+    "sentence_en": "The Dutch movie Ciske de Rat was very successful."
+  },
+  {
+    "id": "w0268",
+    "dutch": "ga",
+    "english": "to go; to be possible",
+    "pos": "v",
+    "rank": 0,
+    "category": "travel-transport",
+    "sentence_nl": "Ik ga over twee maanden naar Madrid om Spaans te studeren.",
+    "sentence_en": "I’m going to Madrid in two months to study Spanish."
+  },
+  {
+    "id": "w1092",
+    "dutch": "gang",
+    "english": "course; hallway",
+    "pos": "n",
+    "rank": 0,
+    "category": "home",
+    "sentence_nl": "De kapstok staat in de gang.",
+    "sentence_en": "The coat rack is in the hallway ."
+  },
+  {
+    "id": "w0267",
+    "dutch": "geld",
+    "english": "money",
+    "pos": "n",
+    "rank": 0,
+    "category": "shopping-money",
+    "sentence_nl": "“Tijd is geld ” is het motto van de moderne tijd.",
+    "sentence_en": "“Time is money ” is the motto of the modern era."
+  },
+  {
+    "id": "w0257",
+    "dutch": "ging",
+    "english": "to go; to be possible",
+    "pos": "v",
+    "rank": 0,
+    "category": "travel-transport",
+    "sentence_nl": "De vrouw ging met haar man naar de sauna.",
+    "sentence_en": "The woman went to the sauna with her husband."
+  },
+  {
+    "id": "w0838",
+    "dutch": "gingen",
+    "english": "to go",
+    "pos": "v",
+    "rank": 0,
+    "category": "travel-transport",
+    "sentence_nl": "De schapen gingen samen naar de wei.",
+    "sentence_en": "The sheep went to the meadow together."
+  },
+  {
+    "id": "w1105",
+    "dutch": "gisteren",
+    "english": "yesterday",
+    "pos": "adv",
+    "rank": 0,
+    "category": "time-numbers",
+    "sentence_nl": "Er was gisteren er een tsunami in Japan!",
+    "sentence_en": "There was a tsunami in Japan yesterday !"
+  },
+  {
+    "id": "w1506",
+    "dutch": "glas",
+    "english": "glass",
+    "pos": "n",
+    "rank": 0,
+    "category": "food-drink",
+    "sentence_nl": "Is het glas halfvol of half leeg?",
+    "sentence_en": "Is the glass half full or half empty?"
+  },
+  {
+    "id": "w1312",
+    "dutch": "groeien",
+    "english": "to grow",
+    "pos": "v",
+    "rank": 0,
+    "category": "nature-weather",
+    "sentence_nl": "Mijn aardbeien groeien goed!",
+    "sentence_en": "My strawberries are growing well!"
+  },
+  {
+    "id": "w1821",
+    "dutch": "groen",
+    "english": "green",
+    "pos": "n, adj, adv",
+    "rank": 0,
+    "category": "describing",
+    "sentence_nl": "Groen vond ze een rustgevende kleur.",
+    "sentence_en": "She thought green was a calming color."
+  },
+  {
+    "id": "w0300",
+    "dutch": "hadden",
+    "english": "to have",
+    "pos": "v",
+    "rank": 0,
+    "category": "actions",
+    "sentence_nl": "Tien jaar geleden hadden mensen simpelere mobiele telefoons.",
+    "sentence_en": "Ten years ago, people had simpler cell phones."
+  },
+  {
+    "id": "w0744",
+    "dutch": "half",
+    "english": "half",
+    "pos": "n, adj, adv",
+    "rank": 0,
+    "category": "describing",
+    "sentence_nl": "De student had de uitleg maar half begrepen.",
+    "sentence_en": "The student had only half understood the explanation."
+  },
+  {
+    "id": "w0321",
+    "dutch": "hand",
+    "english": "hand",
+    "pos": "n",
+    "rank": 0,
+    "category": "health-body",
+    "sentence_nl": "Soms lopen de oudejaarsfeestjes een beetje uit de hand !",
+    "sentence_en": "Sometimes New Year’s Eve celebrations get a little out of hand !"
+  },
+  {
+    "id": "w0542",
+    "dutch": "handen",
+    "english": "hands",
+    "pos": "n",
+    "rank": 0,
+    "category": "health-body",
+    "sentence_nl": "Niet vergeten je handen te wassen voor het eten.",
+    "sentence_en": "Don’t forget to wash your hands before eating."
+  },
+  {
+    "id": "w0678",
+    "dutch": "hard",
+    "english": "hard; tough; harsh; fast",
+    "pos": "adj, adv",
+    "rank": 0,
+    "category": "describing",
+    "sentence_nl": "De sprinter rende heel hard .",
+    "sentence_en": "The sprinter ran very fast ."
+  },
+  {
+    "id": "w1327",
+    "dutch": "harde",
+    "english": "hard; tough; harsh; fast",
+    "pos": "adj",
+    "rank": 0,
+    "category": "describing",
+    "sentence_nl": "De band kreeg harde kritiek van de journalist.",
+    "sentence_en": "The band got a harsh critique from the journalist."
+  },
+  {
+    "id": "w0568",
+    "dutch": "hart",
+    "english": "heart",
+    "pos": "n",
+    "rank": 0,
+    "category": "health-body",
+    "sentence_nl": "Je hart is één van je belangrijkste organen.",
+    "sentence_en": "Your heart is one of your most important organs."
+  },
+  {
+    "id": "w0530",
+    "dutch": "heen",
+    "english": "to, towards",
+    "pos": "adv",
+    "rank": 0,
+    "category": "connectors",
+    "sentence_nl": "Waar vliegen die meeuwen tijdens de vogeltrek heen ?",
+    "sentence_en": "Where do those seagulls fly to during their migration?"
+  },
+  {
+    "id": "w0359",
+    "dutch": "helpen",
+    "english": "to help",
+    "pos": "v",
+    "rank": 0,
+    "category": "actions",
+    "sentence_nl": "De verpleegkundigen helpen de patiënten.",
+    "sentence_en": "The nurses help the patients."
+  },
+  {
+    "id": "w1140",
+    "dutch": "honderd",
+    "english": "one hundred",
+    "pos": "num",
+    "rank": 0,
+    "category": "time-numbers",
+    "sentence_nl": "Vijftig plus vijftig is honderd .",
+    "sentence_en": "Fifty plus fifty is one hundred ."
+  },
+  {
+    "id": "w0639",
+    "dutch": "hoofd",
+    "english": "head",
+    "pos": "n",
+    "rank": 0,
+    "category": "health-body",
+    "sentence_nl": "Laten we “hoofd , shouders, knie en teen” zingen.",
+    "sentence_en": "Let’s sing “head , shoulders, knees and toes”."
+  },
+  {
+    "id": "w0588",
+    "dutch": "horen",
+    "english": "to hear; to belong",
+    "pos": "v",
+    "rank": 0,
+    "category": "actions",
+    "sentence_nl": "Bij de vijver kun je veel kikkers horen .",
+    "sentence_en": "By the pond, you can hear a lot of frogs."
+  },
+  {
+    "id": "w1846",
+    "dutch": "hout",
+    "english": "wood",
+    "pos": "n",
+    "rank": 0,
+    "category": "nature-weather",
+    "sentence_nl": "Hun tuinbank is gemaakt van mooi hout .",
+    "sentence_en": "Their garden bench is made of beautiful wood ."
+  },
+  {
+    "id": "w0713",
+    "dutch": "huid",
+    "english": "skin; hide",
+    "pos": "n",
+    "rank": 0,
+    "category": "health-body",
+    "sentence_nl": "Babyhuid is veel gevoeliger.",
+    "sentence_en": "Baby skin is much more sensitive."
+  },
+  {
+    "id": "w1425",
+    "dutch": "huizen",
+    "english": "houses; to house",
+    "pos": "n, v",
+    "rank": 0,
+    "category": "home",
+    "sentence_nl": "De huizen in deze buurt hebben prachtige tuinen.",
+    "sentence_en": "The houses in this neighborhood have beautiful gardens."
+  },
+  {
+    "id": "w0315",
+    "dutch": "iemand",
+    "english": "someone",
+    "pos": "pron",
+    "rank": 0,
+    "category": "connectors",
+    "sentence_nl": "Volgens mij is er iemand aan de deur.",
+    "sentence_en": "I think there’s someone at the door."
+  },
+  {
+    "id": "w0353",
+    "dutch": "ja",
+    "english": "yes",
+    "pos": "adv",
+    "rank": 0,
+    "category": "connectors",
+    "sentence_nl": "Ja , kom maar binnen!",
+    "sentence_en": "Yes , come on in!"
+  },
+  {
+    "id": "w0244",
+    "dutch": "jij",
+    "english": "you (s)",
+    "pos": "pron",
+    "rank": 0,
+    "category": "connectors",
+    "sentence_nl": "Heb jij één of twee voornamen?",
+    "sentence_en": "Do you have one or two first names?"
+  },
+  {
+    "id": "w0571",
+    "dutch": "jong",
+    "english": "young",
+    "pos": "n, adj",
+    "rank": 0,
+    "category": "describing",
+    "sentence_nl": "Midgetgolf is leuk voor iedereen, jong en oud.",
+    "sentence_en": "Mini golf is fun for everyone, young and old."
+  },
+  {
+    "id": "w0894",
+    "dutch": "jong",
+    "english": "young ; boy",
+    "pos": "n, adj",
+    "rank": 0,
+    "category": "describing",
+    "sentence_nl": "Mijn moeder was erg jong toen ze trouwde.",
+    "sentence_en": "My mother was quite young when she got married."
+  },
+  {
+    "id": "w1843",
+    "dutch": "jongen",
+    "english": "boy; young animals; to bear young",
+    "pos": "n",
+    "rank": 0,
+    "category": "people-family",
+    "sentence_nl": "Er is een nieuwe jongen in onze klas.",
+    "sentence_en": "There’s a new boy in our class."
+  },
+  {
+    "id": "w0392",
+    "dutch": "jou",
+    "english": "you (less common than the other way to say you, which is “je”, implies a slight emphasis)",
+    "pos": "pron",
+    "rank": 0,
+    "category": "connectors",
+    "sentence_nl": "Ik hou heel veel van jou .",
+    "sentence_en": "I love you very much."
+  },
+  {
+    "id": "w0324",
+    "dutch": "jouw",
+    "english": "your",
+    "pos": "poss",
+    "rank": 0,
+    "category": "connectors",
+    "sentence_nl": "Zijn dit jouw sleutels?",
+    "sentence_en": "Are these your keys?"
+  },
+  {
+    "id": "w0231",
+    "dutch": "jullie",
+    "english": "you (p); your (p)",
+    "pos": "pron, poss",
+    "rank": 0,
+    "category": "connectors",
+    "sentence_nl": "Hebben jullie genoeg gegeten of willen jullie nog wat meer?",
+    "sentence_en": "Have you eaten enough, or would you like some more?"
+  },
+  {
+    "id": "w0643",
+    "dutch": "kamer",
+    "english": "room; chamber",
+    "pos": "n",
+    "rank": 0,
+    "category": "home",
+    "sentence_nl": "In de kamer stonden een bed, een kast en een bureau.",
+    "sentence_en": "In the room there were a bed, a closet, and a desk."
+  },
+  {
+    "id": "w0433",
+    "dutch": "kiezen",
+    "english": "molar teeth; to choose",
+    "pos": "n, v",
+    "rank": 0,
+    "category": "actions",
+    "sentence_nl": "De klanten konden niet kiezen welke van de twee kasten ze wilden kopen.",
+    "sentence_en": "The customers couldn’t choose which of the two closets they wanted to buy."
+  },
+  {
+    "id": "w0282",
+    "dutch": "kijken",
+    "english": "to look; to watch",
+    "pos": "v",
+    "rank": 0,
+    "category": "communication",
+    "sentence_nl": "Veel kinderen kijken tegenwoordig teveel TV.",
+    "sentence_en": "Many children watch too much TV nowadays."
+  },
+  {
+    "id": "w0319",
+    "dutch": "kind",
+    "english": "child; son or daughter",
+    "pos": "n",
+    "rank": 0,
+    "category": "people-family",
+    "sentence_nl": "Dat arme kind speelde iedere dag urenlang computerspelletjes.",
+    "sentence_en": "The poor child played video games for hours on end every day."
+  },
+  {
+    "id": "w0428",
+    "dutch": "klein",
+    "english": "small",
+    "pos": "adj",
+    "rank": 0,
+    "category": "describing",
+    "sentence_nl": "Deze peren zijn te klein voor het recept.",
+    "sentence_en": "These pears are too small for the recipe."
+  },
+  {
+    "id": "w0211",
+    "dutch": "kleine",
+    "english": "small one; small, little",
+    "pos": "n, adj",
+    "rank": 0,
+    "category": "describing",
+    "sentence_nl": "Mijn ouders houden alleen van kleine hondjes.",
+    "sentence_en": "My parents only like small dogs."
+  },
+  {
+    "id": "w0603",
+    "dutch": "kleur",
+    "english": "color; to color",
+    "pos": "n, v",
+    "rank": 0,
+    "category": "describing",
+    "sentence_nl": "De zee heeft vandaag een hele mooie kleur .",
+    "sentence_en": "The sea has a very beautiful color today."
+  },
+  {
+    "id": "w0737",
+    "dutch": "kleuren",
+    "english": "colors; to color",
+    "pos": "n, v",
+    "rank": 0,
+    "category": "describing",
+    "sentence_nl": "Die twee kleuren staan mooi bij elkaar.",
+    "sentence_en": "Those two colors look good together."
+  },
+  {
+    "id": "w0847",
+    "dutch": "koffie",
+    "english": "coffee",
+    "pos": "n",
+    "rank": 0,
+    "category": "food-drink",
+    "sentence_nl": "Koffie is recentelijk ongelofelijk populair geworden.",
+    "sentence_en": "Coffee has recently become incredibly popular."
+  },
+  {
+    "id": "w0235",
+    "dutch": "kon",
+    "english": "can, to be able to",
+    "pos": "v",
+    "rank": 0,
+    "category": "actions",
+    "sentence_nl": "De dokter kon de patiënt niet goed verstaan.",
+    "sentence_en": "The physician couldn’t understand the patient very well."
+  },
+  {
+    "id": "w0621",
+    "dutch": "konden",
+    "english": "can; to be able to",
+    "pos": "v",
+    "rank": 0,
+    "category": "actions",
+    "sentence_nl": "De toeristen konden hun gids niet goed verstaan.",
+    "sentence_en": "The tourists could not understand their guide very well."
+  },
+  {
+    "id": "w0620",
+    "dutch": "kopen",
+    "english": "to buy",
+    "pos": "v",
+    "rank": 0,
+    "category": "shopping-money",
+    "sentence_nl": "Waar kan ik een Nederlands woordenboek kopen ?",
+    "sentence_en": "Where can I buy a Dutch dictionary?"
+  },
+  {
+    "id": "w0563",
+    "dutch": "kort",
+    "english": "short",
+    "pos": "adj, adv",
+    "rank": 0,
+    "category": "describing",
+    "sentence_nl": "Sorry, maar jouw favoriete t-shirt is nu te kort .",
+    "sentence_en": "Sorry, but your favorite t-shirt is now too short ."
+  },
+  {
+    "id": "w1340",
+    "dutch": "krant",
+    "english": "newspaper",
+    "pos": "n",
+    "rank": 0,
+    "category": "communication",
+    "sentence_nl": "Mijn neef werkt voor de lokale krant .",
+    "sentence_en": "My cousin works for the local newspaper ."
+  },
+  {
+    "id": "w0204",
+    "dutch": "kun",
+    "english": "can",
+    "pos": "v",
+    "rank": 0,
+    "category": "actions",
+    "sentence_nl": "Kun jij mij op je brommer naar de stad brengen?",
+    "sentence_en": "Can you take me into town on your motorbike?"
+  },
+  {
+    "id": "w0228",
+    "dutch": "kwam",
+    "english": "to come",
+    "pos": "v",
+    "rank": 0,
+    "category": "travel-transport",
+    "sentence_nl": "Onze opa kwam ook weleens op bezoek bij ons in Engeland.",
+    "sentence_en": "Our granddad also came to visit us in England at times."
+  },
+  {
+    "id": "w0664",
+    "dutch": "kwamen",
+    "english": "to come",
+    "pos": "v",
+    "rank": 0,
+    "category": "travel-transport",
+    "sentence_nl": "Wanneer kwamen er voor het eerst Indonesiërs naar Nederland?",
+    "sentence_en": "When did Indonesians first come to the Netherlands?"
+  },
+  {
+    "id": "w0334",
+    "dutch": "land",
+    "english": "land; country, to land",
+    "pos": "n, v",
+    "rank": 0,
+    "category": "society",
+    "sentence_nl": "Veel mensen vinden Italië een heel mooi land .",
+    "sentence_en": "Many people think Italy is a very beautiful country ."
+  },
+  {
+    "id": "w0240",
+    "dutch": "lang",
+    "english": "long, tall",
+    "pos": "adj",
+    "rank": 0,
+    "category": "describing",
+    "sentence_nl": "De meeste Nederlandse mannen zijn heel lang .",
+    "sentence_en": "The majority of Dutch men are very tall ."
+  },
+  {
+    "id": "w0719",
+    "dutch": "leggen",
+    "english": "to lay, to put",
+    "pos": "v",
+    "rank": 0,
+    "category": "actions",
+    "sentence_nl": "Vergeet niet de schone was in de kast te leggen !",
+    "sentence_en": "Don’t forget to put the clean laundry in the closet!"
+  },
+  {
+    "id": "w0287",
+    "dutch": "lekker",
+    "english": "tasty, delicious; deliciously; pleasant",
+    "pos": "adj, adv",
+    "rank": 0,
+    "category": "food-drink",
+    "sentence_nl": "Traditionele Limburgse vlaaien zijn heel lekker !",
+    "sentence_en": "Traditional pies from Limburg are very tasty !"
+  },
+  {
+    "id": "w0339",
+    "dutch": "leren",
+    "english": "leather; to learn",
+    "pos": "adj, v",
+    "rank": 0,
+    "category": "work-study",
+    "sentence_nl": "Nederlands leren is niet makkelijk, maar ook niet onmogelijk!",
+    "sentence_en": "Learning Dutch isn’t easy, but it’s not impossible either!"
+  },
+  {
+    "id": "w1118",
+    "dutch": "les",
+    "english": "lesson, class; to take driver’s lessons",
+    "pos": "n",
+    "rank": 0,
+    "category": "work-study",
+    "sentence_nl": "Morgen hebben we een hele interessante les !",
+    "sentence_en": "Tomorrow we’ll have a very interesting lesson !"
+  },
+  {
+    "id": "w0266",
+    "dutch": "leuk",
+    "english": "nice; fun; pleasant; funny",
+    "pos": "adj",
+    "rank": 0,
+    "category": "describing",
+    "sentence_nl": "Het personeelsfeestje van gisteravond was heel leuk .",
+    "sentence_en": "Last night’s staff party was a lot of fun ."
+  },
+  {
+    "id": "w0419",
+    "dutch": "lezen",
+    "english": "to read",
+    "pos": "v",
+    "rank": 0,
+    "category": "work-study",
+    "sentence_nl": "Leerlingen, kunnen jullie nu alsjeblieft paragraaf acht lezen ?",
+    "sentence_en": "Students, can you now please read paragraph eight?"
+  },
+  {
+    "id": "w1034",
+    "dutch": "liet",
+    "english": "to let, to allow",
+    "pos": "v",
+    "rank": 0,
+    "category": "actions",
+    "sentence_nl": "De vader liet zijn dochter niet alleen naar het feestje gaan.",
+    "sentence_en": "The father didn’t let his daughter go to the party alone."
+  },
+  {
+    "id": "w1858",
+    "dutch": "lieten",
+    "english": "to let",
+    "pos": "v",
+    "rank": 0,
+    "category": "actions",
+    "sentence_nl": "De pinguïns lieten hun vissen niet los.",
+    "sentence_en": "The penguins didn’t let go of their fish."
+  },
+  {
+    "id": "w0437",
+    "dutch": "liggen",
+    "english": "to lie; to be situated",
+    "pos": "v",
+    "rank": 0,
+    "category": "actions",
+    "sentence_nl": "De herten liggen uit te rusten in het veld.",
+    "sentence_en": "The deer are lying in the field to rest."
+  },
+  {
+    "id": "w1166",
+    "dutch": "lijken",
+    "english": "corpses; to seem; to look alike",
+    "pos": "n, v",
+    "rank": 0,
+    "category": "actions",
+    "sentence_nl": "Mijn nieuwe collega’s lijken heel aardig te zijn.",
+    "sentence_en": "My new coworkers seem to be very nice."
+  },
+  {
+    "id": "w0402",
+    "dutch": "lopen",
+    "english": "gun barrels; to walk; to progress; to flow",
+    "pos": "n, v",
+    "rank": 0,
+    "category": "travel-transport",
+    "sentence_nl": "Langs de kanalen lopen in Amsterdam is heel ontspannend.",
+    "sentence_en": "Walking along the canals in Amsterdam is very relaxing."
+  },
+  {
+    "id": "w0802",
+    "dutch": "los",
+    "english": "loose; independent; to unload; to shoot",
+    "pos": "adj, adv, v",
+    "rank": 0,
+    "category": "describing",
+    "sentence_nl": "Dit touw zit te los .",
+    "sentence_en": "This rope is too loose ."
+  },
+  {
+    "id": "w0206",
+    "dutch": "mag",
+    "english": "may; to be allowed to; to like someone",
+    "pos": "v",
+    "rank": 0,
+    "category": "actions",
+    "sentence_nl": "Mag ik deze doos in de recycling bak doen?",
+    "sentence_en": "Am I allowed to put this box in the recycling bin?"
+  },
+  {
+    "id": "w0311",
+    "dutch": "man",
+    "english": "male; man; husband",
+    "pos": "n",
+    "rank": 0,
+    "category": "people-family",
+    "sentence_nl": "Sara ontmoette haar man tijdens een vakantie in Griekenland.",
+    "sentence_en": "Sara met her husband during a holiday in Greece."
+  },
+  {
+    "id": "w1564",
+    "dutch": "meisje",
+    "english": "(little) girl",
+    "pos": "n",
+    "rank": 0,
+    "category": "people-family",
+    "sentence_nl": "Het meisje had twee vlechtjes in.",
+    "sentence_en": "The girl was wearing two braids."
+  },
+  {
+    "id": "w0835",
+    "dutch": "midden",
+    "english": "(the) middle",
+    "pos": "n, adv",
+    "rank": 0,
+    "category": "describing",
+    "sentence_nl": "De markt is in het midden van de stad.",
+    "sentence_en": "The market is in the middle of the city."
+  },
+  {
+    "id": "w0613",
+    "dutch": "moeder",
+    "english": "mother",
+    "pos": "n",
+    "rank": 0,
+    "category": "people-family",
+    "sentence_nl": "Mijn moeder heet Agatha en mijn vader Piet.",
+    "sentence_en": "My mother ’s name is Agatha and my father’s is Piet."
+  },
+  {
+    "id": "w0378",
+    "dutch": "moest",
+    "english": "must, to have to",
+    "pos": "v",
+    "rank": 0,
+    "category": "actions",
+    "sentence_nl": "De minister moest zijn beleid aan de burgers uitleggen.",
+    "sentence_en": "The minister had to explain his policy to the citizens."
+  },
+  {
+    "id": "w1070",
+    "dutch": "moesten",
+    "english": "to have to",
+    "pos": "v",
+    "rank": 0,
+    "category": "actions",
+    "sentence_nl": "In de Middeleeuwen moesten de mensen veel meer lopen.",
+    "sentence_en": "In the Middle Ages, people had to walk much more."
+  },
+  {
+    "id": "w0410",
+    "dutch": "mogen",
+    "english": "may, to be allowed to; to like someone",
+    "pos": "v",
+    "rank": 0,
+    "category": "actions",
+    "sentence_nl": "Mogen we met onze hond hier naar binnen?",
+    "sentence_en": "Are we allowed to enter with our dog here?"
+  },
+  {
+    "id": "w1909",
+    "dutch": "mond",
+    "english": "mouth",
+    "pos": "n",
+    "rank": 0,
+    "category": "health-body",
+    "sentence_nl": "Niet met je mond vol praten, zei de moeder.",
+    "sentence_en": "Don’t talk with your mouth full, said the mother."
+  },
+  {
+    "id": "w0256",
+    "dutch": "mooi",
+    "english": "pretty, beautiful; pleasant (for the weather)",
+    "pos": "adj",
+    "rank": 0,
+    "category": "describing",
+    "sentence_nl": "Wat is het mooi weer vandaag!",
+    "sentence_en": "How pleasant the weather is today!"
+  },
+  {
+    "id": "w0207",
+    "dutch": "mooie",
+    "english": "pretty, beautiful",
+    "pos": "adj",
+    "rank": 0,
+    "category": "describing",
+    "sentence_nl": "Er zijn vijf hele mooie nieuwe schilderijen in het stadsmuseum.",
+    "sentence_en": "There are five very pretty new paintings at the city museum."
+  },
+  {
+    "id": "w1162",
+    "dutch": "morgen",
+    "english": "morning; tomorrow",
+    "pos": "n, adv",
+    "rank": 0,
+    "category": "time-numbers",
+    "sentence_nl": "De advocaat heeft morgen een belangrijke hoorzitting.",
+    "sentence_en": "The lawyer has an important hearing tomorrow ."
+  },
+  {
+    "id": "w0264",
+    "dutch": "naam",
+    "english": "name, reputation",
+    "pos": "n",
+    "rank": 0,
+    "category": "communication",
+    "sentence_nl": "Welke naam vind jij mooier, Amelie of Sophie?",
+    "sentence_en": "Which name do you think is prettier, Amelie or Sophie?"
+  },
+  {
+    "id": "w1498",
+    "dutch": "Nederlanders",
+    "english": "Dutch people",
+    "pos": "n",
+    "rank": 0,
+    "category": "society",
+    "sentence_nl": "Waarom spreken zoveel Nederlanders zo goed Engels?",
+    "sentence_en": "Why do so many Dutch people speak English so well?"
+  },
+  {
+    "id": "w0826",
+    "dutch": "Nederlands",
+    "english": "Dutch, used to refer to the Dutch language, nationality, and its citizens",
+    "pos": "n, adj",
+    "rank": 0,
+    "category": "society",
+    "sentence_nl": "Een biertje drinken op een caféterras is typisch Nederlands .",
+    "sentence_en": "Drinking a beer on a café terrace is typically Dutch ."
+  },
+  {
+    "id": "w0290",
+    "dutch": "Nederlandse",
+    "english": "Dutch, used to refer to the Dutch language, nationality, and its citizens",
+    "pos": "adj",
+    "rank": 0,
+    "category": "society",
+    "sentence_nl": "Nederlandse tulpen zijn over de hele wereld bekend.",
+    "sentence_en": "Dutch tulips are famous all around the world."
+  },
+  {
+    "id": "w0757",
+    "dutch": "nee",
+    "english": "no",
+    "pos": "n, interj",
+    "rank": 0,
+    "category": "connectors",
+    "sentence_nl": "Nee , we willen geen spruitjes.",
+    "sentence_en": "No , we don’t want any sprouts."
+  },
+  {
+    "id": "w1262",
+    "dutch": "neer",
+    "english": "down",
+    "pos": "adv",
+    "rank": 0,
+    "category": "connectors",
+    "sentence_nl": "Laten we op en neer springen!",
+    "sentence_en": "Let’s jump up and down !"
+  },
+  {
+    "id": "w1305",
+    "dutch": "negen",
+    "english": "nine",
+    "pos": "num",
+    "rank": 0,
+    "category": "time-numbers",
+    "sentence_nl": "Een zwangerschap duurt meestal negen maanden.",
+    "sentence_en": "A pregnancy usually lasts nine months."
+  },
+  {
+    "id": "w1482",
+    "dutch": "neus",
+    "english": "nose; to nose around",
+    "pos": "n, v",
+    "rank": 0,
+    "category": "health-body",
+    "sentence_nl": "De bokser kreeg een klap op zijn neus .",
+    "sentence_en": "The boxer took a blow to the nose."
+  },
+  {
+    "id": "w0850",
+    "dutch": "niemand",
+    "english": "nobody",
+    "pos": "pron",
+    "rank": 0,
+    "category": "connectors",
+    "sentence_nl": "Niemand is perfect.",
+    "sentence_en": "Nobody is perfect."
+  },
+  {
+    "id": "w0271",
+    "dutch": "niets",
+    "english": "nothing",
+    "pos": "pron",
+    "rank": 0,
+    "category": "connectors",
+    "sentence_nl": "Er zat niets meer in de koektrommel, jammer!",
+    "sentence_en": "There was nothing left in the cookie jar, too bad!"
+  },
+  {
+    "id": "w0308",
+    "dutch": "nieuw",
+    "english": "new; fresh",
+    "pos": "adj, adv",
+    "rank": 0,
+    "category": "describing",
+    "sentence_nl": "Heb je die jas nieuw of tweedehands gekocht?",
+    "sentence_en": "Did you buy that coat new or secondhand?"
+  },
+  {
+    "id": "w1294",
+    "dutch": "niks",
+    "english": "nothing (informal); to do nothing",
+    "pos": "n, v",
+    "rank": 0,
+    "category": "connectors",
+    "sentence_nl": "De zwerver had niks te eten.",
+    "sentence_en": "The homeless man had nothing to eat."
+  },
+  {
+    "id": "w1124",
+    "dutch": "noemen",
+    "english": "to call; to mention; to name",
+    "pos": "v",
+    "rank": 0,
+    "category": "communication",
+    "sentence_nl": "Hoe noemen ze deze bloem in jouw regio?",
+    "sentence_en": "What do they call this flower in your region?"
+  },
+  {
+    "id": "w0251",
+    "dutch": "nooit",
+    "english": "never",
+    "pos": "adv",
+    "rank": 0,
+    "category": "time-numbers",
+    "sentence_nl": "Ben je echt nog nooit in de Efteling geweest?",
+    "sentence_en": "Have you really never been to the Efteling ? (Dutch amusement park)"
+  },
+  {
+    "id": "w0624",
+    "dutch": "nou",
+    "english": "now (less formal than “nu”); well",
+    "pos": "adv, interj",
+    "rank": 0,
+    "category": "connectors",
+    "sentence_nl": "Nou , een heel pak koekjes is teveel voor één person.",
+    "sentence_en": "Well , a whole box of cookies is too much for one person."
+  },
+  {
+    "id": "w0766",
+    "dutch": "nummer",
+    "english": "number; issue, song",
+    "pos": "n",
+    "rank": 0,
+    "category": "communication",
+    "sentence_nl": "Veel liedjes van de band Doe Maar werden nummer één.",
+    "sentence_en": "Many songs by the band Doe Maar reached number one."
+  },
+  {
+    "id": "w0576",
+    "dutch": "ogen",
+    "english": "eyes; to look",
+    "pos": "n, v",
+    "rank": 0,
+    "category": "health-body",
+    "sentence_nl": "Groene ogen komen het minste voor.",
+    "sentence_en": "Green eyes are the least common."
+  },
+  {
+    "id": "w0917",
+    "dutch": "oog",
+    "english": "eye; to look",
+    "pos": "n, v",
+    "rank": 0,
+    "category": "health-body",
+    "sentence_nl": "Er kwam een vlieg in zijn oog .",
+    "sentence_en": "A fly got into his eye ."
+  },
+  {
+    "id": "w1981",
+    "dutch": "openen",
+    "english": "to open",
+    "pos": "v",
+    "rank": 0,
+    "category": "actions",
+    "sentence_nl": "We moeten de winkel binnen vijf minuten openen .",
+    "sentence_en": "We have to open the shop within five minutes."
+  },
+  {
+    "id": "w0629",
+    "dutch": "oud",
+    "english": "old; previous",
+    "pos": "adj",
+    "rank": 0,
+    "category": "describing",
+    "sentence_nl": "Dat brood is oud , gooi het maar weg.",
+    "sentence_en": "That bread is old , go ahead and throw it out."
+  },
+  {
+    "id": "w0291",
+    "dutch": "oude",
+    "english": "old one; old",
+    "pos": "n, adj, adv",
+    "rank": 0,
+    "category": "describing",
+    "sentence_nl": "Hebben zij misschien oude kranten over?",
+    "sentence_en": "Do they perhaps have some spare old newspapers?"
+  },
+  {
+    "id": "w0294",
+    "dutch": "paar",
+    "english": "a couple; two; a set; to mate with someone",
+    "pos": "n, adj, v",
+    "rank": 0,
+    "category": "describing",
+    "sentence_nl": "Het is fijn om een paar dagen vrij te hebben.",
+    "sentence_en": "It’s nice to have a couple of days off."
+  },
+  {
+    "id": "w1523",
+    "dutch": "pakken",
+    "english": "boxes; suits; to catch; to get; to pack; to dupe",
+    "pos": "n, v",
+    "rank": 0,
+    "category": "actions",
+    "sentence_nl": "Wie gaat de borden pakken ?",
+    "sentence_en": "Who’s going to get the plates?"
+  },
+  {
+    "id": "w0363",
+    "dutch": "pas",
+    "english": "step; recently; not until; unless; to fit; to try on",
+    "pos": "n, adv, v",
+    "rank": 0,
+    "category": "time-numbers",
+    "sentence_nl": "De kaaswinkel gaat pas om elf uur open.",
+    "sentence_en": "The cheese store doesn’t open until eleven o’clock."
+  },
+  {
+    "id": "w1094",
+    "dutch": "praten",
+    "english": "to talk",
+    "pos": "v",
+    "rank": 0,
+    "category": "communication",
+    "sentence_nl": "De baas wilde met zijn team praten .",
+    "sentence_en": "The boss wanted to talk to his team."
+  },
+  {
+    "id": "w0739",
+    "dutch": "proberen",
+    "english": "to try",
+    "pos": "v",
+    "rank": 0,
+    "category": "actions",
+    "sentence_nl": "Willen jullie deze pindakaas proberen ?",
+    "sentence_en": "Do you want to try this peanut butter?"
+  },
+  {
+    "id": "w0633",
+    "dutch": "rijden",
+    "english": "to ride; to drive",
+    "pos": "v",
+    "rank": 0,
+    "category": "travel-transport",
+    "sentence_nl": "We rijden hier aan de rechterkant.",
+    "sentence_en": "We drive on the right here."
+  },
+  {
+    "id": "w0832",
+    "dutch": "rode",
+    "english": "red",
+    "pos": "n, adj",
+    "rank": 0,
+    "category": "describing",
+    "sentence_nl": "Jouw vriendin Roxanne heeft een rode jurk aan.",
+    "sentence_en": "Your friend Roxanne is wearing a red dress."
+  },
+  {
+    "id": "w0445",
+    "dutch": "rol",
+    "english": "role; to roll",
+    "pos": "n",
+    "rank": 0,
+    "category": "misc",
+    "sentence_nl": "Voeding speelt een grote rol bij het gezond blijven.",
+    "sentence_en": "Diet plays a big role in staying healthy."
+  },
+  {
+    "id": "w0316",
+    "dutch": "school",
+    "english": "school; school of fish; to school",
+    "pos": "n, v",
+    "rank": 0,
+    "category": "work-study",
+    "sentence_nl": "In Nederland moeten kinderen van vijf tot zestien jaar naar school .",
+    "sentence_en": "In the Netherlands children aged five to sixteen have to attend school ."
+  },
+  {
+    "id": "w0654",
+    "dutch": "schrijven",
+    "english": "letter, to write",
+    "pos": "n, v",
+    "rank": 0,
+    "category": "communication",
+    "sentence_nl": "Schrijven jullie allemaal iets leuks op de kaart?",
+    "sentence_en": "Will you all write something nice on the postcard?"
+  },
+  {
+    "id": "w1079",
+    "dutch": "slecht",
+    "english": "bad",
+    "pos": "adj, adv",
+    "rank": 0,
+    "category": "describing",
+    "sentence_nl": "Waarom is de wolf meestal slecht in kinderverhalen?",
+    "sentence_en": "Why is the wolf usually bad in children’s stories?"
+  },
+  {
+    "id": "w1281",
+    "dutch": "slechte",
+    "english": "bad; mean",
+    "pos": "adj",
+    "rank": 0,
+    "category": "describing",
+    "sentence_nl": "Veel boeren kampten met een slechte oogst dit jaar.",
+    "sentence_en": "Many farmers struggled with a bad harvest this year."
+  },
+  {
+    "id": "w1236",
+    "dutch": "sluiten",
+    "english": "to close",
+    "pos": "v",
+    "rank": 0,
+    "category": "shopping-money",
+    "sentence_nl": "Hoe laat sluiten de winkels op zaterdag?",
+    "sentence_en": "What time do the stores close on Saturday?"
+  },
+  {
+    "id": "w0254",
+    "dutch": "soms",
+    "english": "sometimes; perhaps",
+    "pos": "adv",
+    "rank": 0,
+    "category": "time-numbers",
+    "sentence_nl": "Soms zie je konijnen en eekhoorns in dit park.",
+    "sentence_en": "You sometimes see rabbits and squirrels in this park."
+  },
+  {
+    "id": "w0289",
+    "dutch": "spelen",
+    "english": "games; to play (an instrument)",
+    "pos": "n, v",
+    "rank": 0,
+    "category": "actions",
+    "sentence_nl": "Natuurlijk is met auto’s spelen niet alleen voor jongens!",
+    "sentence_en": "Of course, playing with cars isn’t just for boys!"
+  },
+  {
+    "id": "w0895",
+    "dutch": "spreken",
+    "english": "to speak",
+    "pos": "v",
+    "rank": 0,
+    "category": "communication",
+    "sentence_nl": "Kunnen wij de directeur spreken ?",
+    "sentence_en": "Can we speak to the director?"
+  },
+  {
+    "id": "w0327",
+    "dutch": "stad",
+    "english": "city",
+    "pos": "n",
+    "rank": 0,
+    "category": "society",
+    "sentence_nl": "Veel jongeren uit kleine dorpen verhuizen naar een grote stad om te studeren.",
+    "sentence_en": "Many young people from small villages move to a big city to study."
+  },
+  {
+    "id": "w0575",
+    "dutch": "stap",
+    "english": "step; to step",
+    "pos": "n, v",
+    "rank": 0,
+    "category": "people-family",
+    "sentence_nl": "Trouwen is een grote stap .",
+    "sentence_en": "Getting married is a big step ."
+  },
+  {
+    "id": "w1216",
+    "dutch": "straat",
+    "english": "street",
+    "pos": "n",
+    "rank": 0,
+    "category": "travel-transport",
+    "sentence_nl": "Er zitten veel leuke winkels in deze straat .",
+    "sentence_en": "There are a lot of nice stores on this street ."
+  },
+  {
+    "id": "w0463",
+    "dutch": "stuk",
+    "english": "piece; item; documents; handsome man; broken",
+    "pos": "n, adj",
+    "rank": 0,
+    "category": "describing",
+    "sentence_nl": "Onze wasmachine is op het moment stuk .",
+    "sentence_en": "Our washing machine is broken at the moment."
+  },
+  {
+    "id": "w1956",
+    "dutch": "stukje",
+    "english": "bit; little piece",
+    "pos": "n",
+    "rank": 0,
+    "category": "misc",
+    "sentence_nl": "Het is een nog een kleine stukje verder.",
+    "sentence_en": "It’s just a little bit further."
+  },
+  {
+    "id": "w1363",
+    "dutch": "taak",
+    "english": "task; duty; chore",
+    "pos": "n",
+    "rank": 0,
+    "category": "work-study",
+    "sentence_nl": "De kaartjes controleren is jouw taak .",
+    "sentence_en": "Checking the tickets is your duty ."
+  },
+  {
+    "id": "w0978",
+    "dutch": "taal",
+    "english": "language",
+    "pos": "n",
+    "rank": 0,
+    "category": "communication",
+    "sentence_nl": "Een buitenlandse taal kunnen spreken heeft veel voordelen.",
+    "sentence_en": "Being able to speak a foreign language has a lot of advantages."
+  },
+  {
+    "id": "w1104",
+    "dutch": "tafel",
+    "english": "table",
+    "pos": "n",
+    "rank": 0,
+    "category": "home",
+    "sentence_nl": "De tafel staat in de hoek, met vier stoelen eromheen.",
+    "sentence_en": "The table is in a corner with four chairs around it."
+  },
+  {
+    "id": "w1930",
+    "dutch": "tekenen",
+    "english": "signs; to draw",
+    "pos": "n, v",
+    "rank": 0,
+    "category": "actions",
+    "sentence_nl": "Zullen we het landschap tekenen ?",
+    "sentence_en": "Shall we draw the landscape?"
+  },
+  {
+    "id": "w0203",
+    "dutch": "ten",
+    "english": "at the, of the (roughly translates to “of the” or “at the” but sounds old-fashioned and is mainly used in set expressions)",
+    "pos": "prep",
+    "rank": 0,
+    "category": "connectors",
+    "sentence_nl": "Ten huize van de van Veen familie werd altijd veel gezongen.",
+    "sentence_en": "At the home of the van Veen’s there was always a lot of singing."
+  },
+  {
+    "id": "w0255",
+    "dutch": "ter",
+    "english": "at the, of the (roughly translates to “of the” or “at the” but sounds old-fashioned and is mainly used in set expressions)",
+    "pos": "prep",
+    "rank": 0,
+    "category": "connectors",
+    "sentence_nl": "Kleine wonden in het bouwproject worden ter plekke behandeld.",
+    "sentence_en": "Small wounds at the building site are treated on site."
+  },
+  {
+    "id": "w0262",
+    "dutch": "the",
+    "english": "the (this is basically “the” in English, appearing here because English is used a lot by Dutch speakers in music, film etc)",
+    "pos": "art",
+    "rank": 0,
+    "category": "connectors",
+    "sentence_nl": "“Let the beat control your body” was één van de hits van pop-duo 2 Unlimited.",
+    "sentence_en": "“Let the beat control your body” was one of the hits by pop-duo 2 Unlimited."
+  },
+  {
+    "id": "w0390",
+    "dutch": "thuis",
+    "english": "(at) home, household",
+    "pos": "n",
+    "rank": 0,
+    "category": "home",
+    "sentence_nl": "Thuis koken en eten is zeker goedkoper.",
+    "sentence_en": "Cooking and eating at home is definitely cheaper."
+  },
+  {
+    "id": "w0778",
+    "dutch": "tien",
+    "english": "ten",
+    "pos": "num",
+    "rank": 0,
+    "category": "time-numbers",
+    "sentence_nl": "De peuter kan al tot tien tellen.",
+    "sentence_en": "The toddler can already count to ten ."
+  },
+  {
+    "id": "w1201",
+    "dutch": "twaalf",
+    "english": "twelve",
+    "pos": "num",
+    "rank": 0,
+    "category": "time-numbers",
+    "sentence_nl": "Er zitten twaalf maanden in een jaar.",
+    "sentence_en": "There are twelve months in a year."
+  },
+  {
+    "id": "w0222",
+    "dutch": "tweede",
+    "english": "second (ordinal number)",
+    "pos": "n, adj",
+    "rank": 0,
+    "category": "time-numbers",
+    "sentence_nl": "Het Nederlandse parlement bestaat uit de Eerste Kamer en de Tweede Kamer.",
+    "sentence_en": "The Dutch Parliament consists of the First Chamber and the Second Chamber."
+  },
+  {
+    "id": "w1052",
+    "dutch": "twintig",
+    "english": "twenty",
+    "pos": "num",
+    "rank": 0,
+    "category": "time-numbers",
+    "sentence_nl": "Er zijn twintig medewerkers op mijn afdeling.",
+    "sentence_en": "There are twenty employees in my department."
+  },
+  {
+    "id": "w1525",
+    "dutch": "uren",
+    "english": "hours",
+    "pos": "n",
+    "rank": 0,
+    "category": "time-numbers",
+    "sentence_nl": "Mijn tatoeage laten zetten duurde uren !",
+    "sentence_en": "Getting my tattoo took hours !"
+  },
+  {
+    "id": "w0679",
+    "dutch": "vader",
+    "english": "father",
+    "pos": "n",
+    "rank": 0,
+    "category": "people-family",
+    "sentence_nl": "Haar vader werkt voor de regering.",
+    "sentence_en": "Her father is working for the government."
+  },
+  {
+    "id": "w0297",
+    "dutch": "vandaag",
+    "english": "today",
+    "pos": "adv",
+    "rank": 0,
+    "category": "time-numbers",
+    "sentence_nl": "De leerlingen hebben vandaag vrij: het is Koningsdag.",
+    "sentence_en": "The students have the day off school today : it’s King’s Day."
+  },
+  {
+    "id": "w0391",
+    "dutch": "vast",
+    "english": "steady; permanent; solid; stuck",
+    "pos": "adj, adv",
+    "rank": 0,
+    "category": "describing",
+    "sentence_nl": "Mijn schoenveter zit vast , ik krijg ‘m er niet uit.",
+    "sentence_en": "My shoelace is stuck , I can’t get it out."
+  },
+  {
+    "id": "w0770",
+    "dutch": "vaste",
+    "english": "steady; permanent; solid",
+    "pos": "adj",
+    "rank": 0,
+    "category": "describing",
+    "sentence_nl": "We hebben al tien jaar een vaste relatie.",
+    "sentence_en": "We’ve been in a steady relationship for ten years now."
+  },
+  {
+    "id": "w0796",
+    "dutch": "ver",
+    "english": "far",
+    "pos": "adj, adv",
+    "rank": 0,
+    "category": "describing",
+    "sentence_nl": "Het winkelcentrum is te ver om heen te lopen.",
+    "sentence_en": "The shopping mall is too far to walk to."
+  },
+  {
+    "id": "w0817",
+    "dutch": "vertellen",
+    "english": "to tell; to count incorrectly",
+    "pos": "v",
+    "rank": 0,
+    "category": "communication",
+    "sentence_nl": "De lerares gaat een verhaal over kaboutertjes vertellen .",
+    "sentence_en": "The teacher is going to tell a story about little gnomes."
+  },
+  {
+    "id": "w0380",
+    "dutch": "vier",
+    "english": "four; to celebrate",
+    "pos": "num, v",
+    "rank": 0,
+    "category": "actions",
+    "sentence_nl": "Ik vier mijn verjaardag meestal niet.",
+    "sentence_en": "I usually don’t celebrate my birthday."
+  },
+  {
+    "id": "w0534",
+    "dutch": "vijf",
+    "english": "five",
+    "pos": "num",
+    "rank": 0,
+    "category": "time-numbers",
+    "sentence_nl": "Slechts vijf leerlingen hebben een voldoende gehaald voor het examen!",
+    "sentence_en": "Only five students achieved the passing grade in the exam!"
+  },
+  {
+    "id": "w1572",
+    "dutch": "Vlamingen",
+    "english": "Flemish people",
+    "pos": "n",
+    "rank": 0,
+    "category": "society",
+    "sentence_nl": "De meeste Vlamingen spreken Vlaams, een Nederlands dialect.",
+    "sentence_en": "The majority of Flemish people speak Flemish, a Dutch dialect."
+  },
+  {
+    "id": "w1537",
+    "dutch": "voet",
+    "english": "foot; base",
+    "pos": "n",
+    "rank": 0,
+    "category": "health-body",
+    "sentence_nl": "Ze stootte haar voet .",
+    "sentence_en": "She bumped her foot ."
+  },
+  {
+    "id": "w1587",
+    "dutch": "vriend",
+    "english": "friend; boyfriend",
+    "pos": "n",
+    "rank": 0,
+    "category": "people-family",
+    "sentence_nl": "Is Anton haar beste vriend ?",
+    "sentence_en": "Is Anton her best friend ?"
+  },
+  {
+    "id": "w0436",
+    "dutch": "vrouw",
+    "english": "woman; wife",
+    "pos": "n",
+    "rank": 0,
+    "category": "people-family",
+    "sentence_nl": "Ingrid Baeyens was de eerste Belgische vrouw die de top van Mount Everest haalde.",
+    "sentence_en": "Ingrid Baeyens was the first Belgian woman to reach the top of the Mount Everest."
+  },
+  {
+    "id": "w1620",
+    "dutch": "vuur",
+    "english": "fire; to fire",
+    "pos": "n, v",
+    "rank": 0,
+    "category": "nature-weather",
+    "sentence_nl": "Naar vuur kijken is kalmerend.",
+    "sentence_en": "Watching fire is calming."
+  },
+  {
+    "id": "w0317",
+    "dutch": "waarom",
+    "english": "why; the reason why",
+    "pos": "adv",
+    "rank": 0,
+    "category": "connectors",
+    "sentence_nl": "Waarom zijn bananen niet recht?",
+    "sentence_en": "Why aren’t bananas straight?"
+  },
+  {
+    "id": "w0782",
+    "dutch": "wachten",
+    "english": "to wait",
+    "pos": "v",
+    "rank": 0,
+    "category": "actions",
+    "sentence_nl": "Jullie moeten hier even wachten .",
+    "sentence_en": "You have to wait here for a moment."
+  },
+  {
+    "id": "w1854",
+    "dutch": "warm",
+    "english": "warm(ly)",
+    "pos": "adj, adv",
+    "rank": 0,
+    "category": "nature-weather",
+    "sentence_nl": "Bij warm weer groeit deze plant sneller.",
+    "sentence_en": "In warm weather, this plant grows faster."
+  },
+  {
+    "id": "w0218",
+    "dutch": "water",
+    "english": "water, to water",
+    "pos": "n",
+    "rank": 0,
+    "category": "food-drink",
+    "sentence_nl": "Veel mensen drinken niet genoeg water en teveel koffie.",
+    "sentence_en": "Many people don’t drink enough water and too much coffee."
+  },
+  {
+    "id": "w0356",
+    "dutch": "weinig",
+    "english": "little; few",
+    "pos": "n, adj, adv",
+    "rank": 0,
+    "category": "describing",
+    "sentence_nl": "Er is nog maar weinig brood over voor morgen.",
+    "sentence_en": "There’s only little bread left for tomorrow."
+  },
+  {
+    "id": "w1760",
+    "dutch": "welk",
+    "english": "which",
+    "pos": "pron",
+    "rank": 0,
+    "category": "connectors",
+    "sentence_nl": "Welk boek heb je al gelezen?",
+    "sentence_en": "Which book have you already read?"
+  },
+  {
+    "id": "w1116",
+    "dutch": "wijn",
+    "english": "wine",
+    "pos": "n",
+    "rank": 0,
+    "category": "food-drink",
+    "sentence_nl": "De Russische man hield niet van wijn .",
+    "sentence_en": "The Russian man didn’t like wine ."
+  },
+  {
+    "id": "w0214",
+    "dutch": "wilt",
+    "english": "to want",
+    "pos": "v",
+    "rank": 0,
+    "category": "feelings",
+    "sentence_nl": "Wilt u met creditcard of contant betalen?",
+    "sentence_en": "Do you want to pay by credit card or cash?"
+  },
+  {
+    "id": "w1783",
+    "dutch": "wit",
+    "english": "white",
+    "pos": "n, adj, adv",
+    "rank": 0,
+    "category": "describing",
+    "sentence_nl": "Het uniform is een wit t-shirt met een zwarte broek.",
+    "sentence_en": "The uniform is a white t-shirt with black pants."
+  },
+  {
+    "id": "w0677",
+    "dutch": "wonen",
+    "english": "to live",
+    "pos": "v",
+    "rank": 0,
+    "category": "home",
+    "sentence_nl": "Veel families wonen in de nieuwe wijk.",
+    "sentence_en": "A lot of families are living in the new neighborhood."
+  },
+  {
+    "id": "w0605",
+    "dutch": "woord",
+    "english": "word",
+    "pos": "n",
+    "rank": 0,
+    "category": "communication",
+    "sentence_nl": "In deze zin mist (er) een woord .",
+    "sentence_en": "(A) word is missing in this sentence."
+  },
+  {
+    "id": "w0701",
+    "dutch": "zag",
+    "english": "to see",
+    "pos": "v",
+    "rank": 0,
+    "category": "actions",
+    "sentence_nl": "Zag jij die vallende ster ook?",
+    "sentence_en": "Did you see that shooting star too?"
+  },
+  {
+    "id": "w1431",
+    "dutch": "zeg",
+    "english": "to say; to mean",
+    "pos": "n",
+    "rank": 0,
+    "category": "communication",
+    "sentence_nl": "Zeg jij vaak genoeg nee?",
+    "sentence_en": "Do you say “no” often enough?"
+  },
+  {
+    "id": "w0323",
+    "dutch": "zeggen",
+    "english": "to say; to mean",
+    "pos": "v",
+    "rank": 0,
+    "category": "communication",
+    "sentence_nl": "Veel Nederlands zeggen precies wat ze denken.",
+    "sentence_en": "Many Dutch people say exactly what they are thinking."
+  },
+  {
+    "id": "w0361",
+    "dutch": "zegt",
+    "english": "to say",
+    "pos": "v",
+    "rank": 0,
+    "category": "communication",
+    "sentence_nl": "Men zegt vaak dat Nederlanders erg zuinig zijn.",
+    "sentence_en": "People often say Dutch people are very parsimonious."
+  },
+  {
+    "id": "w0591",
+    "dutch": "zei",
+    "english": "to say",
+    "pos": "v",
+    "rank": 0,
+    "category": "communication",
+    "sentence_nl": "De stewardess zei dat we bijna gingen landen.",
+    "sentence_en": "The stewardess said that we were about to land."
+  },
+  {
+    "id": "w0877",
+    "dutch": "zes",
+    "english": "six",
+    "pos": "num",
+    "rank": 0,
+    "category": "time-numbers",
+    "sentence_nl": "Een dobbelsteen heeft zes kanten.",
+    "sentence_en": "A die has six sides."
+  },
+  {
+    "id": "w0340",
+    "dutch": "zetten",
+    "english": "push; turn; to put, to place",
+    "pos": "n, v",
+    "rank": 0,
+    "category": "actions",
+    "sentence_nl": "Kom op, we moeten even de tafels en stoelen in de hoek zetten .",
+    "sentence_en": "Come on, we have to put the tables and chairs in the corner."
+  },
+  {
+    "id": "w1046",
+    "dutch": "zeven",
+    "english": "seven",
+    "pos": "num",
+    "rank": 0,
+    "category": "time-numbers",
+    "sentence_nl": "Waar zijn die zeven dwergen?",
+    "sentence_en": "Where are those seven dwarves?"
+  },
+  {
+    "id": "w0237",
+    "dutch": "zie",
+    "english": "to see",
+    "pos": "v",
+    "rank": 0,
+    "category": "actions",
+    "sentence_nl": "Zie je die bloemen daar? Het zijn allemaal tulpen!",
+    "sentence_en": "Do you see those flowers over there? They’re all tulips!"
+  },
+  {
+    "id": "w0349",
+    "dutch": "ziet",
+    "english": "to see",
+    "pos": "v",
+    "rank": 0,
+    "category": "actions",
+    "sentence_nl": "De vogelaar ziet de adelaars meteen.",
+    "sentence_en": "The birdwatcher immediately sees the eagles ."
+  },
+  {
+    "id": "w0279",
+    "dutch": "zitten",
+    "english": "to sit, to be in a certain place or situation",
+    "pos": "v",
+    "rank": 0,
+    "category": "actions",
+    "sentence_nl": "De vogeltjes zitten zich te wassen.",
+    "sentence_en": "The little birds are washing themselves."
+  },
+  {
+    "id": "w0450",
+    "dutch": "zoeken",
+    "english": "to search",
+    "pos": "v",
+    "rank": 0,
+    "category": "actions",
+    "sentence_nl": "Wat zoeken jullie precies?",
+    "sentence_en": "What are you looking for exactly?"
+  },
+  {
+    "id": "w1000",
+    "dutch": "zoon",
+    "english": "son",
+    "pos": "n",
+    "rank": 0,
+    "category": "people-family",
+    "sentence_nl": "Hoe oud is hun zoon ?",
+    "sentence_en": "How old is their son ?"
+  },
+  {
+    "id": "w1565",
+    "dutch": "zwart",
+    "english": "black",
+    "pos": "n, adj",
+    "rank": 0,
+    "category": "describing",
+    "sentence_nl": "Zijn haar is zwart .",
+    "sentence_en": "His hair is black ."
+  },
+  {
+    "id": "w1107",
+    "dutch": "zwarte",
+    "english": "black",
+    "pos": "n, adj",
+    "rank": 0,
+    "category": "describing",
+    "sentence_nl": "Door zwarte kleding lijk je vaak slanker.",
+    "sentence_en": "Black clothes tend to make you look slimmer."
+  }
+]

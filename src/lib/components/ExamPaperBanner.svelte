@@ -1,0 +1,25 @@
+<div class="exam-banner" role="note">
+	<strong>B1 paper</strong>
+	<span>Official NT2 exam. Optional until Gate 4.</span>
+</div>
+
+<style>
+	.exam-banner {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		gap: 8px 10px;
+		padding: 10px 14px;
+		border-radius: 14px;
+		background: color-mix(in srgb, var(--color-teal) 28%, white);
+		color: var(--color-teal-deep);
+		font-size: var(--text-small);
+		line-height: 1.35;
+	}
+
+	.exam-banner strong {
+		font-family: var(--font-display);
+		font-weight: 700;
+		letter-spacing: 0.02em;
+	}
+</style>

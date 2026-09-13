@@ -1,0 +1,364 @@
+[
+  {
+    "id": "cs_0",
+    "rank": 0,
+    "title": "De Gekke Loempia",
+    "chapters": 4,
+    "chapterTitles": [
+      "Voorbereidingen",
+      "Nederland",
+      "De snelweg",
+      "De terugkeer"
+    ],
+    "totalWords": 3750,
+    "avgWordsPerChapter": 938,
+    "maxChapterWords": 1258,
+    "questions": 20,
+    "chapterDetail": [
+      {
+        "id": "cc_0_1",
+        "storyIndex": 0,
+        "chapterNumber": 1,
+        "title": "Voorbereidingen",
+        "words": 722,
+        "chars": 4132,
+        "paragraphs": 43
+      },
+      {
+        "id": "cc_0_2",
+        "storyIndex": 0,
+        "chapterNumber": 2,
+        "title": "Nederland",
+        "words": 1258,
+        "chars": 6789,
+        "paragraphs": 71
+      },
+      {
+        "id": "cc_0_3",
+        "storyIndex": 0,
+        "chapterNumber": 3,
+        "title": "De snelweg",
+        "words": 967,
+        "chars": 5241,
+        "paragraphs": 68
+      },
+      {
+        "id": "cc_0_4",
+        "storyIndex": 0,
+        "chapterNumber": 4,
+        "title": "De terugkeer",
+        "words": 803,
+        "chars": 4308,
+        "paragraphs": 51
+      }
+    ]
+  },
+  {
+    "id": "cs_1",
+    "rank": 1,
+    "title": "Een heel bijzondere excursie",
+    "chapters": 3,
+    "chapterTitles": [
+      "Het wezen",
+      "De zoektocht",
+      "De verrassing"
+    ],
+    "totalWords": 3416,
+    "avgWordsPerChapter": 1139,
+    "maxChapterWords": 1150,
+    "questions": 15,
+    "chapterDetail": [
+      {
+        "id": "cc_1_1",
+        "storyIndex": 1,
+        "chapterNumber": 1,
+        "title": "Het wezen",
+        "words": 1126,
+        "chars": 6310,
+        "paragraphs": 97
+      },
+      {
+        "id": "cc_1_2",
+        "storyIndex": 1,
+        "chapterNumber": 2,
+        "title": "De zoektocht",
+        "words": 1140,
+        "chars": 6387,
+        "paragraphs": 59
+      },
+      {
+        "id": "cc_1_3",
+        "storyIndex": 1,
+        "chapterNumber": 3,
+        "title": "De verrassing",
+        "words": 1150,
+        "chars": 6342,
+        "paragraphs": 60
+      }
+    ]
+  },
+  {
+    "id": "cs_2",
+    "rank": 2,
+    "title": "De ridder",
+    "chapters": 3,
+    "chapterTitles": [
+      "Goud",
+      "De reis",
+      "Het geheim"
+    ],
+    "totalWords": 3420,
+    "avgWordsPerChapter": 1140,
+    "maxChapterWords": 1203,
+    "questions": 15,
+    "chapterDetail": [
+      {
+        "id": "cc_2_1",
+        "storyIndex": 2,
+        "chapterNumber": 1,
+        "title": "Goud",
+        "words": 1065,
+        "chars": 5880,
+        "paragraphs": 74
+      },
+      {
+        "id": "cc_2_2",
+        "storyIndex": 2,
+        "chapterNumber": 2,
+        "title": "De reis",
+        "words": 1203,
+        "chars": 6921,
+        "paragraphs": 99
+      },
+      {
+        "id": "cc_2_3",
+        "storyIndex": 2,
+        "chapterNumber": 3,
+        "title": "Het geheim",
+        "words": 1152,
+        "chars": 6750,
+        "paragraphs": 81
+      }
+    ]
+  },
+  {
+    "id": "cs_3",
+    "rank": 3,
+    "title": "Het horloge",
+    "chapters": 3,
+    "chapterTitles": [
+      "De legende",
+      "Het Caribisch gebied",
+      "Het gevecht"
+    ],
+    "totalWords": 3709,
+    "avgWordsPerChapter": 1236,
+    "maxChapterWords": 1293,
+    "questions": 15,
+    "chapterDetail": [
+      {
+        "id": "cc_3_1",
+        "storyIndex": 3,
+        "chapterNumber": 1,
+        "title": "De legende",
+        "words": 1135,
+        "chars": 6543,
+        "paragraphs": 75
+      },
+      {
+        "id": "cc_3_2",
+        "storyIndex": 3,
+        "chapterNumber": 2,
+        "title": "Het Caribisch gebied",
+        "words": 1293,
+        "chars": 7427,
+        "paragraphs": 89
+      },
+      {
+        "id": "cc_3_3",
+        "storyIndex": 3,
+        "chapterNumber": 3,
+        "title": "Het gevecht",
+        "words": 1281,
+        "chars": 7276,
+        "paragraphs": 83
+      }
+    ]
+  },
+  {
+    "id": "cs_4",
+    "rank": 4,
+    "title": "De kist",
+    "chapters": 3,
+    "chapterTitles": [
+      "Den Haag",
+      "Leeuwarden",
+      "Amsterdam"
+    ],
+    "totalWords": 3582,
+    "avgWordsPerChapter": 1194,
+    "maxChapterWords": 1321,
+    "questions": 15,
+    "chapterDetail": [
+      {
+        "id": "cc_4_1",
+        "storyIndex": 4,
+        "chapterNumber": 1,
+        "title": "Den Haag",
+        "words": 1109,
+        "chars": 6072,
+        "paragraphs": 73
+      },
+      {
+        "id": "cc_4_2",
+        "storyIndex": 4,
+        "chapterNumber": 2,
+        "title": "Leeuwarden",
+        "words": 1152,
+        "chars": 6464,
+        "paragraphs": 76
+      },
+      {
+        "id": "cc_4_3",
+        "storyIndex": 4,
+        "chapterNumber": 3,
+        "title": "Amsterdam",
+        "words": 1321,
+        "chars": 7574,
+        "paragraphs": 89
+      }
+    ]
+  },
+  {
+    "id": "cs_5",
+    "rank": 5,
+    "title": "Onbekend terrein",
+    "chapters": 3,
+    "chapterTitles": [
+      "Nieuw terrein",
+      "Naar het westen",
+      "Het besluit"
+    ],
+    "totalWords": 3294,
+    "avgWordsPerChapter": 1098,
+    "maxChapterWords": 1324,
+    "questions": 15,
+    "chapterDetail": [
+      {
+        "id": "cc_5_1",
+        "storyIndex": 5,
+        "chapterNumber": 1,
+        "title": "Nieuw terrein",
+        "words": 732,
+        "chars": 4264,
+        "paragraphs": 47
+      },
+      {
+        "id": "cc_5_2",
+        "storyIndex": 5,
+        "chapterNumber": 2,
+        "title": "Naar het westen",
+        "words": 1238,
+        "chars": 7115,
+        "paragraphs": 63
+      },
+      {
+        "id": "cc_5_3",
+        "storyIndex": 5,
+        "chapterNumber": 3,
+        "title": "Het besluit",
+        "words": 1324,
+        "chars": 7568,
+        "paragraphs": 71
+      }
+    ]
+  },
+  {
+    "id": "cs_6",
+    "rank": 6,
+    "title": "Laura, de onzichtbare vrouw",
+    "chapters": 3,
+    "chapterTitles": [
+      "Het incident",
+      "De leugen",
+      "Het voorwerp"
+    ],
+    "totalWords": 3641,
+    "avgWordsPerChapter": 1214,
+    "maxChapterWords": 1228,
+    "questions": 15,
+    "chapterDetail": [
+      {
+        "id": "cc_6_1",
+        "storyIndex": 6,
+        "chapterNumber": 1,
+        "title": "Het incident",
+        "words": 1188,
+        "chars": 6733,
+        "paragraphs": 64
+      },
+      {
+        "id": "cc_6_2",
+        "storyIndex": 6,
+        "chapterNumber": 2,
+        "title": "De leugen",
+        "words": 1225,
+        "chars": 7200,
+        "paragraphs": 53
+      },
+      {
+        "id": "cc_6_3",
+        "storyIndex": 6,
+        "chapterNumber": 3,
+        "title": "Het voorwerp",
+        "words": 1228,
+        "chars": 6751,
+        "paragraphs": 62
+      }
+    ]
+  },
+  {
+    "id": "cs_7",
+    "rank": 7,
+    "title": "De capsule",
+    "chapters": 3,
+    "chapterTitles": [
+      "De capsule",
+      "Het meisje",
+      "De waarheid"
+    ],
+    "totalWords": 3758,
+    "avgWordsPerChapter": 1253,
+    "maxChapterWords": 1479,
+    "questions": 15,
+    "chapterDetail": [
+      {
+        "id": "cc_7_1",
+        "storyIndex": 7,
+        "chapterNumber": 1,
+        "title": "De capsule",
+        "words": 1166,
+        "chars": 6804,
+        "paragraphs": 87
+      },
+      {
+        "id": "cc_7_2",
+        "storyIndex": 7,
+        "chapterNumber": 2,
+        "title": "Het meisje",
+        "words": 1113,
+        "chars": 6209,
+        "paragraphs": 96
+      },
+      {
+        "id": "cc_7_3",
+        "storyIndex": 7,
+        "chapterNumber": 3,
+        "title": "De waarheid",
+        "words": 1479,
+        "chars": 8552,
+        "paragraphs": 94
+      }
+    ]
+  }
+]

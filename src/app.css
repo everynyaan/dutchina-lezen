@@ -1,0 +1,585 @@
+@import 'tailwindcss';
+
+/* ============================================================
+   SELF-HOSTED FONTS
+   Variable-range latin subsets. Zero runtime Google Fonts dependency.
+   ============================================================ */
+
+@font-face {
+	font-family: 'Nunito';
+	font-style: normal;
+	font-weight: 400 800;
+	font-display: swap;
+	src:
+		url('/fonts/nunito-latin-var.woff2') format('woff2-variations'),
+		url('/fonts/nunito-latin-var.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Quicksand';
+	font-style: normal;
+	font-weight: 500 700;
+	font-display: swap;
+	src:
+		url('/fonts/quicksand-latin-var.woff2') format('woff2-variations'),
+		url('/fonts/quicksand-latin-var.woff2') format('woff2');
+}
+
+/* ============================================================
+   DUTCHINA - KUROMI x MY MELODY LIGHT-ONLY DESIGN TOKENS
+   Pastel light theme only. No dark theme / data-theme overrides.
+   ============================================================ */
+
+@theme {
+	/* ---- Daylight palette (V3_DESIGN §2.1 — the dusty family) ---- */
+	--color-cream: #ffeddd; /* page background */
+	--color-peach: #fec1b6; /* Daily Read identity; warm surfaces */
+	--color-rose: #f3a6ba; /* primary pink; Match identity; active nav */
+	--color-rose-deep: #d1678f; /* emphasis, CTAs, wrong-answer, doodle default tint */
+	/* --color-rose-deep is ~3.05:1 on cream — valid for large/display text, CTA fills
+	   and borders, but NOT for body text. */
+	--color-lavender: #939fbc; /* Stories/Cards identity; secondary surfaces */
+	--color-teal: #7abcc4; /* success, correct, Quiz identity */
+	--color-ink: #3d3550; /* borders, headings, dark featured card */
+	--color-text: #3a3040; /* body */
+	--color-muted-line: #9c8d93; /* hairlines + decorative ONLY — never text (2.79:1 on cream) */
+
+	/* ---- Derived text inks (deep cousins). Each verified ≥4.5:1 on cream / tint floors. ---- */
+	--color-teal-deep: #23555c; /* named in V3_DESIGN §2.1 */
+	--color-peach-deep: #9c4a37;
+	--color-lavender-deep: #414a63; /* darkened Phase 4.5 R1 for section 2.1 55%/26% tint floor - was 4.31:1, now ~5.4:1 */
+	--color-rose-ink: #9b2e56; /* text-on-rose-tint only, >=4.5:1 vs the section 2.1 55%/26% rose surface - derived Phase 4.5 R1 */
+	--color-muted-ink: #766771; /* ALL secondary TEXT (4.66:1 on cream, AA) */
+	/* --color-muted-line (#9c8d93) measures 2.79:1 on cream (#ffeddd) — decorative
+	   only (hairlines, icon glyphs, borders). Secondary TEXT uses --color-muted-ink.
+	   Bare --color-muted is a deprecated alias of --color-muted-line (see below). */
+
+	/* ---- The Realm (Boss flow ONLY — two-family rule: neutrals + orchid) ---- */
+	/* Apply only inside the boss flow; in daylight the Boss tile is their ambassador. */
+	--color-realm-bg: #363232;
+	--color-realm-panel: #565656;
+	--color-realm-line: #6b6b6b;
+	--color-orchid: #eea1e3;
+	--color-orchid-soft: #f4b5eb;
+
+	/* ---- DEPRECATED aliases — Step 2 rollout deletes these ----
+	   Retained so not-yet-recomposed screens stay coherent mid-phase.
+	   Do not introduce new usages. V3_DESIGN §2: mint and butter are dead. */
+	--color-muted: var(
+		--color-muted-line
+	); /* deprecated alias — prefer --color-muted-line (decorative) or --color-muted-ink (text) */
+	--color-blush: color-mix(in srgb, var(--color-rose) 30%, white);
+	--color-lilac: color-mix(in srgb, var(--color-lavender) 24%, white);
+	--color-kuromi: var(--color-ink);
+	--color-kuromi-mid: #5c4f78; /* keep — live 7:1 muted text ink */
+	--color-soft: var(--color-muted-ink);
+	--color-line: color-mix(in srgb, var(--color-rose) 34%, white);
+	--color-green: var(--color-teal-deep);
+	--color-orange: var(--color-rose-deep);
+	--color-purple: var(--color-lavender);
+	--color-accent: var(--color-rose-deep);
+
+	/* ---- Legacy semantic aliases (var refs into palette above) ---- */
+	--color-bg: var(--color-cream);
+	--color-s1: #ffffff;
+	--color-s2: var(--color-blush);
+	--color-s3: var(--color-lilac);
+	--color-border2: var(--color-line);
+
+	/* ---- Effects / shape ---- */
+	--card-shadow: 0 4px 0 rgba(209, 103, 143, 0.25), 0 8px 24px rgba(209, 103, 143, 0.12);
+	--sticker-shadow: 0 3px 0 rgba(61, 53, 80, 0.14);
+	--shadow-1: 0 2px 0 rgba(61, 53, 80, 0.06), 0 2px 8px rgba(209, 103, 143, 0.08);
+	--shadow-2: 0 3px 0 rgba(61, 53, 80, 0.08), 0 6px 18px rgba(209, 103, 143, 0.12);
+	--shadow-offset-card: 0 4px 0 rgba(209, 103, 143, 0.25);
+	--shadow-offset-pill: 0 2px 0 rgba(209, 103, 143, 0.25);
+	--shadow-offset-ink: 0 4px 0 rgba(61, 53, 80, 0.22);
+	--shadow-offset-frame: 0 10px 0 rgba(61, 53, 80, 0.18);
+	--shadow-offset-realm: 0 4px 0 rgba(238, 161, 227, 0.28);
+	--press-scale: 0.96;
+	--press-duration: 100ms;
+
+	/* Kept: referenced by home and boss routes via var() fallbacks */
+	--glow-multiplier: 0.3;
+	--text-glow-alpha: 0.15;
+
+	/* ---- Type scale ---- */
+	/* V3_DESIGN §3 sets a hard 14px floor for any rendered text. --text-micro and
+	   --text-small are now equal by design; micro is retained as the semantic
+	   "smallest permitted" name so its ~40 consumers need no edit. This single
+	   change closes V3_STATE's parked 13px finding at Pill.svelte:34
+	   ([data-size='sm']), SpeakerButton.svelte:104 (.slow-label), home's
+	   .resource-meta, and the nav tab labels. */
+	--text-micro: 14px; /* was 13px */
+	--text-small: 14px;
+	--text-base: 15px;
+	--text-lead: 17px;
+	--text-title: 20px;
+	--text-hero: 30px;
+
+	/* ---- Fonts ---- */
+	--font-display: 'Quicksand', sans-serif;
+	--font-sans: 'Nunito', sans-serif;
+}
+
+/* ============================================================
+   BASE STYLES
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	background: var(--color-bg);
+	color: var(--color-text);
+	font-family: var(--font-sans);
+	font-size: 17px;
+	min-height: 100vh;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+html {
+	scrollbar-gutter: stable;
+}
+
+/* ============================================================
+   PAGE BACKGROUND / POLKA SURFACE (V3_DESIGN §6.5)
+   Fixed polka-dot layer + three pastel radials, all painted as
+   background-image layers on body itself (dots topmost). Plain
+   CSS backgrounds always render behind an element's content, so
+   this needs no z-index/position trick to keep content on top.
+   .polka-surface is the reusable extract; body keeps working.
+   ============================================================ */
+
+body,
+.polka-surface {
+	background-image:
+		radial-gradient(color-mix(in srgb, var(--color-rose) 38%, transparent) 1px, transparent 1px),
+		radial-gradient(
+			circle at 12% 8%,
+			color-mix(in srgb, var(--color-rose) 35%, transparent) 0%,
+			transparent 42%
+		),
+		radial-gradient(
+			circle at 88% 6%,
+			color-mix(in srgb, var(--color-lavender) 32%, transparent) 0%,
+			transparent 42%
+		),
+		radial-gradient(
+			circle at 50% 105%,
+			color-mix(in srgb, var(--color-peach) 38%, transparent) 0%,
+			transparent 55%
+		);
+	background-size:
+		20px 20px,
+		auto,
+		auto,
+		auto;
+	background-color: var(--color-cream);
+	background-attachment: fixed;
+}
+
+/* Optional patterned card fill ≤6% opacity via currentColor (caller sets color). */
+.dot-fill {
+	background-image: radial-gradient(currentColor 1px, transparent 1px);
+	background-size: 14px 14px;
+}
+
+/* ============================================================
+   VIEW TRANSITIONS (page navigation)
+   Only the main content area transitions. The tab bar stays
+   static by having its own view-transition-name with no animation.
+   ============================================================ */
+
+::view-transition-old(main-content) {
+	animation: vt-fade-out 0.16s ease forwards;
+}
+
+::view-transition-new(main-content) {
+	animation: vt-fade-in 0.24s cubic-bezier(0.34, 1.2, 0.64, 1) forwards;
+}
+
+::view-transition-old(tab-bar),
+::view-transition-new(tab-bar) {
+	animation: none;
+}
+
+@keyframes vt-fade-out {
+	from {
+		opacity: 1;
+		transform: scale(1);
+	}
+	to {
+		opacity: 0;
+		transform: scale(0.99);
+	}
+}
+
+@keyframes vt-fade-in {
+	from {
+		opacity: 0;
+		transform: scale(0.97);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+/* ============================================================
+   GLOBAL REDUCED-MOTION FALLBACK
+   Respect users who prefer less motion. Animations still play
+   (some are load-bearing for feedback like LP floaters) but at
+   reduced intensity, and decorative loops are stopped.
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.001ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.05s !important;
+		scroll-behavior: auto !important;
+	}
+
+	::view-transition-old(main-content),
+	::view-transition-new(main-content) {
+		animation: none;
+	}
+
+	.pop-in,
+	.xfade,
+	.wobble,
+	.wobble:active {
+		animation: none !important;
+	}
+}
+
+/* ============================================================
+   GLOBAL FOCUS RING
+   Most interactive elements suppress :focus to avoid mobile
+   sticky outlines. We restore a visible ring for keyboard users
+   only via :focus-visible.
+   ============================================================ */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[role='button']:focus-visible {
+	outline: 2px solid var(--color-kuromi);
+	outline-offset: 2px;
+}
+
+/* ============================================================
+   STANDARD TACTILE PRESS
+   Opt-in via class="tappable" or by individual :active rules.
+   The token-driven values (--press-scale, --press-duration) keep
+   the feel consistent across the app.
+   ============================================================ */
+
+.tappable {
+	transition:
+		transform var(--press-duration) ease,
+		filter var(--press-duration) ease;
+	-webkit-tap-highlight-color: transparent;
+}
+
+.tappable:active {
+	transform: scale(var(--press-scale));
+	filter: brightness(0.96);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.tappable:active {
+		transform: none;
+	}
+}
+
+/* ============================================================
+   FLAVOR PRIMITIVES (V3_DESIGN §6) — opt-in utilities only
+   None of these change appearance unless a consumer applies them.
+   ============================================================ */
+
+/* ---- §6.1 Offset shadows ---- */
+.offset-card {
+	box-shadow: var(--shadow-offset-card);
+}
+.offset-pill {
+	box-shadow: var(--shadow-offset-pill);
+}
+.offset-ink {
+	box-shadow: var(--shadow-offset-ink);
+}
+.offset-frame {
+	box-shadow: var(--shadow-offset-frame);
+}
+.offset-realm {
+	box-shadow: var(--shadow-offset-realm);
+}
+/* Soft blur is only ever a second layer, never alone. */
+.offset-card--soft {
+	box-shadow:
+		0 4px 0 rgba(209, 103, 143, 0.25),
+		0 10px 22px rgba(209, 103, 143, 0.14);
+}
+
+/* ---- §6.2 Rotation jitter (deterministic, never random per render) ----
+   Consumers pick a class by a stable property (index, id) so the same
+   element always gets the same angle. Jitter is a static transform, not
+   motion — do NOT disable under prefers-reduced-motion. Never Math.random(). */
+.jit-1 {
+	transform: rotate(-3deg);
+}
+.jit-2 {
+	transform: rotate(-2deg);
+}
+.jit-3 {
+	transform: rotate(-1.25deg);
+}
+.jit-4 {
+	transform: rotate(1.25deg);
+}
+.jit-5 {
+	transform: rotate(2deg);
+}
+.jit-6 {
+	transform: rotate(2.5deg);
+}
+.jit-7 {
+	transform: rotate(3deg);
+}
+.jit-a {
+	transform: rotate(-1.5deg);
+}
+.jit-b {
+	transform: rotate(1.5deg);
+}
+.jit-c {
+	transform: rotate(-2.5deg);
+}
+
+/* ---- §6.6 Grain overlay ---- */
+.grain {
+	position: relative;
+}
+.grain::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+	mix-blend-mode: overlay;
+	opacity: 0.028;
+	background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+	background-repeat: repeat;
+	background-size: 256px 256px;
+}
+
+@media (prefers-reduced-transparency: reduce) {
+	.grain::after {
+		display: none;
+	}
+}
+
+/* ---- §6.4 Dashed border variants + mixed radii ---- */
+.edge-ink {
+	border: 3px solid var(--color-ink);
+}
+.edge-ink-2 {
+	border: 2px solid var(--color-ink);
+}
+.edge-dashed {
+	border: 2px dashed var(--color-ink);
+}
+.edge-dashed-3 {
+	border: 3px dashed var(--color-ink);
+}
+.edge-hair {
+	border: 1px solid var(--color-line);
+}
+.r-card {
+	border-radius: 22px;
+}
+.r-chip {
+	border-radius: 15px;
+}
+.r-pill {
+	border-radius: 999px;
+}
+
+/* ---- §6.7 Bubble language ---- */
+.bubble-k {
+	background: color-mix(in srgb, var(--color-lavender) 26%, white);
+	border: 2px solid var(--color-ink);
+	border-radius: 18px 18px 18px 5px;
+	box-shadow: var(--shadow-offset-pill);
+}
+.bubble-d {
+	background: color-mix(in srgb, var(--color-peach) 26%, white);
+	border: 2px solid var(--color-ink);
+	border-radius: 18px 18px 5px 18px;
+	box-shadow: var(--shadow-offset-pill);
+}
+
+/* ---- §7 Motion primitives (opt-in; nothing loops idle) ---- */
+@keyframes pop-in {
+	from {
+		opacity: 0;
+		transform: scale(0.9);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+@keyframes xfade {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+@keyframes wobble {
+	0% {
+		transform: rotate(0deg);
+	}
+	25% {
+		transform: rotate(-4deg);
+	}
+	75% {
+		transform: rotate(4deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}
+
+.pop-in {
+	animation: pop-in 180ms ease-out both;
+}
+.xfade {
+	animation: xfade 150ms ease-out both;
+}
+.wobble:active {
+	animation: wobble 200ms ease-out 1;
+}
+
+/* ============================================================
+   STAGGERED ENTRY
+   Apply class="stagger" to a flex/grid container; each direct
+   child fades + lifts in 60ms after the previous one. Up to 8
+   children supported; if you have more, you'll only stagger the
+   first 8 and the rest pop in with the last delay.
+   ============================================================ */
+
+@keyframes stagger-in {
+	from {
+		opacity: 0;
+		transform: translateY(6px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.stagger > * {
+	animation: stagger-in 0.36s cubic-bezier(0.34, 1.2, 0.64, 1) both;
+}
+
+.stagger > *:nth-child(1) {
+	animation-delay: 0ms;
+}
+.stagger > *:nth-child(2) {
+	animation-delay: 60ms;
+}
+.stagger > *:nth-child(3) {
+	animation-delay: 120ms;
+}
+.stagger > *:nth-child(4) {
+	animation-delay: 180ms;
+}
+.stagger > *:nth-child(5) {
+	animation-delay: 240ms;
+}
+.stagger > *:nth-child(6) {
+	animation-delay: 300ms;
+}
+.stagger > *:nth-child(7) {
+	animation-delay: 360ms;
+}
+.stagger > *:nth-child(n + 8) {
+	animation-delay: 420ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.stagger > * {
+		animation: none;
+	}
+}
+
+/* ============================================================
+   SHIMMER FILL
+   A CSS-only moving gradient overlay for animated progress fills.
+   Apply via class="shimmer" on the fill element. Decorative; the
+   underlying width transition still drives the actual progress.
+   ============================================================ */
+
+@keyframes shimmer {
+	0% {
+		background-position: -200% 0;
+	}
+	100% {
+		background-position: 200% 0;
+	}
+}
+
+.shimmer {
+	position: relative;
+	overflow: hidden;
+}
+
+.shimmer::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(
+		90deg,
+		transparent 0%,
+		rgba(255, 255, 255, 0.18) 50%,
+		transparent 100%
+	);
+	background-size: 200% 100%;
+	animation: shimmer 2.4s linear infinite;
+	pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.shimmer::after {
+		animation: none;
+		opacity: 0;
+	}
+}
+
+/* Canonical layout for question cards. Declared ONCE here because it is
+   consumed by the shared question/ components, the lezen and luisteren
+   routes, and the Kuromi drill runner. It previously existed as eight
+   duplicate :global() rules whose winner depended on chunk load order.
+   position: relative is load-bearing — the word-highlight popover anchors
+   to this element via span.closest('.question-card'). */
+.question-card {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	position: relative;
+}

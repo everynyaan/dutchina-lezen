@@ -1,0 +1,15 @@
+# Package Managers
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+bun.lock
+bun.lockb
+
+# Miscellaneous
+/static/
+
+# Canon documents — committed verbatim from Eyad's copies (V3_BRIEF_ADDENDUM
+# "the architect never retypes them"). Prettier would rewrap the source of truth.
+docs/V3_DESIGN.md
+docs/V3_BRIEF_ADDENDUM.md
+docs/KUROMI_PERSONA.md

@@ -1,0 +1,536 @@
+{
+  "kuromi": {
+    "hero": {
+      "file": "kuromi/hero.png",
+      "animated": false,
+      "contexts": [
+        "home hero resting",
+        "default host pose"
+      ]
+    },
+    "talk": {
+      "file": "kuromi/talk.png",
+      "animated": false,
+      "contexts": [
+        "chat replies",
+        "announcements"
+      ]
+    },
+    "coffee": {
+      "file": "kuromi/coffee.png",
+      "animated": false,
+      "contexts": [
+        "daily read header",
+        "morning greeting"
+      ]
+    },
+    "mischief": {
+      "file": "kuromi/mischief.png",
+      "animated": false,
+      "contexts": [
+        "drill offers",
+        "deals",
+        "steward actions"
+      ]
+    },
+    "hmph": {
+      "file": "kuromi/hmph.png",
+      "animated": false,
+      "contexts": [
+        "teasing",
+        "user skipped quiz"
+      ]
+    },
+    "grumpy": {
+      "file": "kuromi/grumpy.png",
+      "animated": false,
+      "contexts": [
+        "dutch-hating rants",
+        "config denied"
+      ]
+    },
+    "pout": {
+      "file": "kuromi/pout.png",
+      "animated": false,
+      "contexts": [
+        "walking off",
+        "dismissed"
+      ]
+    },
+    "wink": {
+      "file": "kuromi/wink.png",
+      "animated": false,
+      "contexts": [
+        "hints",
+        "tips"
+      ]
+    },
+    "blush": {
+      "file": "kuromi/blush.png",
+      "animated": false,
+      "contexts": [
+        "compliment received"
+      ]
+    },
+    "love": {
+      "file": "kuromi/love.png",
+      "animated": false,
+      "contexts": [
+        "streak milestones"
+      ]
+    },
+    "hearteyes": {
+      "file": "kuromi/hearteyes.png",
+      "animated": false,
+      "contexts": [
+        "perfect 5/5",
+        "big wins"
+      ]
+    },
+    "love-you": {
+      "file": "kuromi/love-you.png",
+      "animated": false,
+      "contexts": [
+        "rare warm moments"
+      ]
+    },
+    "sing": {
+      "file": "kuromi/sing.png",
+      "animated": false,
+      "contexts": [
+        "luisteren/audio contexts"
+      ]
+    },
+    "question": {
+      "file": "kuromi/question.png",
+      "animated": false,
+      "contexts": [
+        "empty input",
+        "clarifying"
+      ]
+    },
+    "shocked": {
+      "file": "kuromi/shocked.png",
+      "animated": false,
+      "contexts": [
+        "wrong answer",
+        "surprising stat"
+      ]
+    },
+    "eek": {
+      "file": "kuromi/eek.png",
+      "animated": false,
+      "contexts": [
+        "near-miss",
+        "close call"
+      ]
+    },
+    "scared": {
+      "file": "kuromi/scared.png",
+      "animated": false,
+      "contexts": [
+        "boss intro",
+        "hard content warning"
+      ]
+    },
+    "cry": {
+      "file": "kuromi/cry.png",
+      "animated": false,
+      "contexts": [
+        "streak lost",
+        "sad states"
+      ]
+    },
+    "cry-big": {
+      "file": "kuromi/cry-big.png",
+      "animated": false,
+      "contexts": [
+        "dramatic failure comedy"
+      ]
+    },
+    "lay": {
+      "file": "kuromi/lay.png",
+      "animated": false,
+      "contexts": [
+        "idle",
+        "nothing due today"
+      ]
+    },
+    "laugh": {
+      "file": "kuromi/laugh.png",
+      "animated": false,
+      "contexts": [
+        "jokes land",
+        "user error comedy"
+      ]
+    },
+    "sit": {
+      "file": "kuromi/sit.png",
+      "animated": false,
+      "contexts": [
+        "reading companion",
+        "calm surfaces"
+      ]
+    },
+    "sleep": {
+      "file": "kuromi/sleep.png",
+      "animated": false,
+      "contexts": [
+        "late night",
+        "empty shelf"
+      ]
+    },
+    "magic": {
+      "file": "kuromi/magic.png",
+      "animated": false,
+      "contexts": [
+        "rank up",
+        "achievement unlocked"
+      ]
+    },
+    "thanks": {
+      "file": "kuromi/thanks.gif",
+      "animated": true,
+      "contexts": [
+        "after undo kept",
+        "gratitude (grudging)"
+      ]
+    },
+    "hehe": {
+      "file": "kuromi/hehe.gif",
+      "animated": true,
+      "contexts": [
+        "mischief executed",
+        "deal accepted"
+      ]
+    },
+    "excited": {
+      "file": "kuromi/excited.gif",
+      "animated": true,
+      "contexts": [
+        "5/5 celebration",
+        "boss won"
+      ]
+    },
+    "defeated": {
+      "file": "kuromi/defeated.gif",
+      "animated": true,
+      "contexts": [
+        "quiz bombed",
+        "boss lost",
+        "comedy despair"
+      ]
+    },
+    "bounce": {
+      "file": "kuromi/bounce.gif",
+      "animated": true,
+      "contexts": [
+        "chat greeting pop-in"
+      ]
+    },
+    "pixel": {
+      "file": "kuromi/pixel.gif",
+      "static": "kuromi/pixel.png",
+      "animated": true,
+      "contexts": [
+        "boss fight retro accent ONLY"
+      ]
+    }
+  },
+  "_notes": {
+    "skipped": [
+      "1942-kuromi-2.gif (20px, too small)",
+      "1153-kuromilove.gif (50px, too small)"
+    ],
+    "melody_piano": "Export those packs into characters/melody/ and characters/piano/ with the same mood-name pattern; extend this manifest identically.",
+    "usage": "Animated variants fire on EVENTS only; resting/ambient placements use static. prefers-reduced-motion swaps all to static.",
+    "fonts": "Font Awesome Pro 6.5.1 web at repo path per design doc; duotone/light weights, per-icon SVGs only, no full webfont"
+  },
+  "melody": {
+    "worried": {
+      "file": "melody/worried.gif",
+      "static": "melody/worried.png",
+      "animated": true,
+      "contexts": [
+        "gentle concern after a gap"
+      ]
+    },
+    "wink": {
+      "file": "melody/wink.gif",
+      "static": "melody/wink.png",
+      "animated": true,
+      "contexts": [
+        "encouraging tips"
+      ]
+    },
+    "rose": {
+      "file": "melody/rose.gif",
+      "static": "melody/rose.png",
+      "animated": true,
+      "contexts": [
+        "milestone gifts"
+      ]
+    },
+    "dizzy": {
+      "file": "melody/dizzy.gif",
+      "static": "melody/dizzy.png",
+      "animated": true,
+      "contexts": [
+        "hard content sympathy"
+      ]
+    },
+    "smile": {
+      "file": "melody/smile.gif",
+      "static": "melody/smile.png",
+      "animated": true,
+      "contexts": [
+        "default gentle presence"
+      ]
+    },
+    "shy": {
+      "file": "melody/shy.gif",
+      "static": "melody/shy.png",
+      "animated": true,
+      "contexts": [
+        "soft compliments"
+      ]
+    },
+    "content": {
+      "file": "melody/content.gif",
+      "static": "melody/content.png",
+      "animated": true,
+      "contexts": [
+        "calm reading moments"
+      ]
+    },
+    "juice": {
+      "file": "melody/juice.gif",
+      "static": "melody/juice.png",
+      "animated": true,
+      "contexts": [
+        "break time",
+        "daily read companion"
+      ]
+    },
+    "serene": {
+      "file": "melody/serene.gif",
+      "static": "melody/serene.png",
+      "animated": true,
+      "contexts": [
+        "welcome back screens"
+      ]
+    },
+    "question": {
+      "file": "melody/question.gif",
+      "static": "melody/question.png",
+      "animated": true,
+      "contexts": [
+        "gentle clarifying"
+      ]
+    },
+    "reading": {
+      "file": "melody/reading.gif",
+      "static": "melody/reading.png",
+      "animated": true,
+      "contexts": [
+        "daily read companion"
+      ]
+    },
+    "love": {
+      "file": "melody/love.gif",
+      "static": "melody/love.png",
+      "animated": true,
+      "contexts": [
+        "streak saved celebrations"
+      ]
+    },
+    "giggle": {
+      "file": "melody/giggle.gif",
+      "static": "melody/giggle.png",
+      "animated": true,
+      "contexts": [
+        "light celebrations"
+      ]
+    },
+    "sorry": {
+      "file": "melody/sorry.gif",
+      "static": "melody/sorry.png",
+      "animated": true,
+      "contexts": [
+        "rare apologetic moments"
+      ]
+    },
+    "cheer": {
+      "file": "melody/cheer.gif",
+      "static": "melody/cheer.png",
+      "animated": true,
+      "contexts": [
+        "big wins",
+        "streak milestones"
+      ]
+    },
+    "glasses": {
+      "file": "melody/glasses.gif",
+      "static": "melody/glasses.png",
+      "animated": true,
+      "contexts": [
+        "study mode accents"
+      ]
+    },
+    "idea": {
+      "file": "melody/idea.gif",
+      "static": "melody/idea.png",
+      "animated": true,
+      "contexts": [
+        "hints",
+        "grammar tips"
+      ]
+    },
+    "hearteyes": {
+      "file": "melody/hearteyes.gif",
+      "static": "melody/hearteyes.png",
+      "animated": true,
+      "contexts": [
+        "perfect scores"
+      ]
+    },
+    "hood": {
+      "file": "melody/hood.gif",
+      "static": "melody/hood.png",
+      "animated": true,
+      "contexts": [
+        "cozy night accents"
+      ]
+    }
+  },
+  "piano": {
+    "dreamy": {
+      "file": "piano/dreamy.gif",
+      "static": "piano/dreamy.png",
+      "animated": true,
+      "contexts": [
+        "ambient corner cameo"
+      ]
+    },
+    "excited": {
+      "file": "piano/excited.gif",
+      "static": "piano/excited.png",
+      "animated": true,
+      "contexts": [
+        "rare celebration cameo"
+      ]
+    },
+    "notice": {
+      "file": "piano/notice.gif",
+      "static": "piano/notice.png",
+      "animated": true,
+      "contexts": [
+        "subtle attention nudge"
+      ]
+    },
+    "juice": {
+      "file": "piano/juice.gif",
+      "static": "piano/juice.png",
+      "animated": true,
+      "contexts": [
+        "break time cameo"
+      ]
+    },
+    "peek": {
+      "file": "piano/peek.gif",
+      "static": "piano/peek.png",
+      "animated": true,
+      "contexts": [
+        "edge-of-screen peeking"
+      ]
+    },
+    "hungry": {
+      "file": "piano/hungry.gif",
+      "static": "piano/hungry.png",
+      "animated": true,
+      "contexts": [
+        "food-category vocab cameo"
+      ]
+    },
+    "sleep": {
+      "file": "piano/sleep.gif",
+      "static": "piano/sleep.png",
+      "animated": true,
+      "contexts": [
+        "empty states",
+        "late night"
+      ]
+    }
+  },
+  "doodles": {
+    "count": 65,
+    "note": "all fill=currentColor — set CSS color to tint",
+    "files": [
+      "arrow-10",
+      "arrow-9",
+      "arrow-arrows-7",
+      "arrow-arrows-up-right-direction-path-fork-110",
+      "arrow-curve-wavy-curvy-direction-up-ahead-112",
+      "arrow-down-33",
+      "arrow-down-curvy-curly-down-right-71",
+      "arrow-down-curvy-curly-up-right-loop-swirl-73",
+      "arrow-heart-reload-refresh-loop-65",
+      "arrow-reload-replay-3",
+      "arrow-shaded-thick-arrows-reload-refresh-load-repeat-89",
+      "arrow-spiral-snail-roll-twist-whirl-120",
+      "arrow-swirl-curvy-wavy-28",
+      "arrow-swirl-reload-refresh-redo-36",
+      "arrow-thick-arrows-down-53",
+      "arrow-thick-arrows-inward-pinch-narrow-56",
+      "arrow-thick-down-left-48",
+      "arrow-thick-down-lightning-cautions-stress-55",
+      "arrow-thick-lightning-reload-return-refresh-rounded-arrows-63",
+      "arrow-thick-up-right-47",
+      "arrow-thick-up-right-52",
+      "arrow-thick-up-rounded-59",
+      "arrow-undo-return-15",
+      "arrow-up-45",
+      "arrow-up-down-two-ways-each-way-119",
+      "arrow-up-shaded-thick-81",
+      "arrow-zoom-out-zoom-in-expand-115",
+      "arrows-down-thick-pointing-downward-here-emphazise-point-filled",
+      "beach-wave-water-sea-ocean-2",
+      "braces-curly-braces-symbol-close-character-line",
+      "braces-curly-braces-symbol-closed-close-character-filled",
+      "braces-curly-braces-symbol-open-character-filled",
+      "braces-curly-braces-symbol-open-character-line",
+      "circle-round-mark-30",
+      "cloud-fluff-clouds-32",
+      "cloud-fluff-clouds-35",
+      "cloud-shape-abstract-36",
+      "curve-loop-curl-110",
+      "curve-loop-curl-114",
+      "eggplant-cucumber-vegetable-plant-fruit-food-groceries-zucchini",
+      "emoji-emoticon-smiley-confused-huh-grumpy-unhappy-mad-annoyed",
+      "emoji-emoticon-smiley-smile-grin-happy-face-emotion-2",
+      "letter-capital-x-letter-x-x",
+      "letter-capital-y-letter-y-y",
+      "letter-capital-z-letter-z-z",
+      "loop-outline-90",
+      "plant-leaves-leaf-branch-plants-nature-green-52",
+      "plant-leaves-leaf-plants-nature-green-58",
+      "pulse-heart-rate",
+      "restaurant-food-cutlery-fork-spoon-eat-meal-cross-1",
+      "semicolon-colon-symbol-filled",
+      "shape-abstract-blob-stars-spark-sparks-sparkle-shine-night-pattern-magic-dust-fairy",
+      "shape-swirl-loops-4",
+      "shape-swirl-spiral-snail-maze-lapyrinth",
+      "snow-rain-drops-weather-sparkle-pattern",
+      "spark-sparkle-26",
+      "spark-sparks-sparkle-stars-30",
+      "speech-bubble-chat-chat-bubble-talk-speak-message-2",
+      "speech-bubble-chat-chat-bubble-talk-speak-message-4",
+      "swirl-arrow-6",
+      "swirl-loops-97",
+      "swirl-spiral-117",
+      "swirl-spiral-twist-loops-s-23",
+      "thoughts-dreams-clouds-thought-bubble-11",
+      "triangle-outline-border-frame-47"
+    ]
+  }
+}

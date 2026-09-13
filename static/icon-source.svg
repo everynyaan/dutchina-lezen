@@ -1,0 +1,33 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+	<!-- Deep navy background, slightly rounded (OS will crop further if needed) -->
+	<rect width="512" height="512" rx="72" fill="#131330"/>
+
+	<!-- Stem (drawn first so it sits behind the petal bases) -->
+	<rect x="244" y="350" width="24" height="112" rx="12" fill="#4ADE80"/>
+
+	<!-- Leaves: angled ~45° up-and-out from mid-stem -->
+	<path transform="translate(252 412) rotate(-135)"
+		d="M 0 0 C 16 -20, 52 -20, 68 0 C 52 20, 16 20, 0 0 Z"
+		fill="#4ADE80"/>
+	<path transform="translate(260 412) rotate(-45)"
+		d="M 0 0 C 16 -20, 52 -20, 68 0 C 52 20, 16 20, 0 0 Z"
+		fill="#4ADE80"/>
+
+	<!-- Petals fan from the common base point (256, 360) -->
+	<g transform="translate(256 360)">
+		<!-- Left petal: cyan, rotated 24° counter-clockwise -->
+		<path transform="rotate(-24)"
+			d="M -10 -5 C -56 -42, -62 -152, 0 -212 C 62 -152, 56 -42, 10 -5 C 6 2, -6 2, -10 -5 Z"
+			fill="#22D3EE"/>
+
+		<!-- Right petal: amber, rotated 24° clockwise -->
+		<path transform="rotate(24)"
+			d="M -10 -5 C -56 -42, -62 -152, 0 -212 C 62 -152, 56 -42, 10 -5 C 6 2, -6 2, -10 -5 Z"
+			fill="#FBBF24"/>
+
+		<!-- Center petal: pink, taller, painted last (on top) -->
+		<path
+			d="M -10 -5 C -52 -42, -58 -178, 0 -244 C 58 -178, 52 -42, 10 -5 C 6 2, -6 2, -10 -5 Z"
+			fill="#F472B6"/>
+	</g>
+</svg>

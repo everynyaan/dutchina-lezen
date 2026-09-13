@@ -1,0 +1,490 @@
+{
+  "greetings": [
+    {
+      "id": "w0760",
+      "dutch": "dankzij",
+      "english": "thanks to",
+      "pos": "prep",
+      "rank": 1,
+      "category": "connectors",
+      "sentence_nl": "Dankzij de studiebeurs kon het meisje haar studie betalen.",
+      "sentence_en": "Thanks to the educational grant, the girl was able to pay for her studies."
+    },
+    {
+      "id": "w0781",
+      "dutch": "ondanks",
+      "english": "despite",
+      "pos": "prep",
+      "rank": 1,
+      "category": "connectors",
+      "sentence_nl": "Ondanks de regen zijn we toch gaan voetballen.",
+      "sentence_en": "Despite the rain, we went to play soccer anyway."
+    },
+    {
+      "id": "w0858",
+      "dutch": "plezier",
+      "english": "pleasure; fun; to please",
+      "pos": "n",
+      "rank": 2,
+      "category": "feelings",
+      "sentence_nl": "Veel plezier op het uitje!",
+      "sentence_en": "Have fun at your excursion!"
+    }
+  ],
+  "food": [
+    {
+      "id": "w0344",
+      "dutch": "eten",
+      "rank": 0,
+      "en": "food; to eat"
+    },
+    {
+      "id": "w1506",
+      "dutch": "glas",
+      "rank": 0,
+      "en": "glass"
+    },
+    {
+      "id": "w0847",
+      "dutch": "koffie",
+      "rank": 0,
+      "en": "coffee"
+    },
+    {
+      "id": "w0287",
+      "dutch": "lekker",
+      "rank": 0,
+      "en": "tasty, delicious; deliciously; pleasant"
+    },
+    {
+      "id": "w0218",
+      "dutch": "water",
+      "rank": 0,
+      "en": "water, to water"
+    },
+    {
+      "id": "w1116",
+      "dutch": "wijn",
+      "rank": 0,
+      "en": "wine"
+    },
+    {
+      "id": "w0564",
+      "dutch": "heerlijk",
+      "rank": 1,
+      "en": "delicious; wonderful"
+    },
+    {
+      "id": "w0606",
+      "dutch": "hoop",
+      "rank": 1,
+      "en": "hope; heap; heaps of (many); to hope"
+    },
+    {
+      "id": "w1322",
+      "dutch": "restaurant",
+      "rank": 1,
+      "en": "restaurant"
+    },
+    {
+      "id": "w1300",
+      "dutch": "draait",
+      "rank": 2,
+      "en": "to turn; to spin around"
+    },
+    {
+      "id": "w0480",
+      "dutch": "maak",
+      "rank": 2,
+      "en": "to make"
+    },
+    {
+      "id": "w1142",
+      "dutch": "smaak",
+      "rank": 3,
+      "en": "taste; flavor; to taste"
+    },
+    {
+      "id": "w1999",
+      "dutch": "vis",
+      "rank": 3,
+      "en": "fish; to fish"
+    },
+    {
+      "id": "w1429",
+      "dutch": "vlees",
+      "rank": 3,
+      "en": "meat"
+    },
+    {
+      "id": "w1872",
+      "dutch": "voedsel",
+      "rank": 3,
+      "en": "food"
+    },
+    {
+      "id": "w1426",
+      "dutch": "gerecht",
+      "rank": 3,
+      "en": "dish; court of justice"
+    },
+    {
+      "id": "w1476",
+      "dutch": "liter",
+      "rank": 4,
+      "en": "liter"
+    },
+    {
+      "id": "w1681",
+      "dutch": "wijnen",
+      "rank": 4,
+      "en": "wines"
+    },
+    {
+      "id": "w0752",
+      "dutch": "kaart",
+      "rank": 5,
+      "en": "map; menu; (post)card; to play cards"
+    },
+    {
+      "id": "w1916",
+      "dutch": "schaal",
+      "rank": 5,
+      "en": "scale; dish; shell"
+    },
+    {
+      "id": "w1951",
+      "dutch": "burger",
+      "rank": 6,
+      "en": "citizen; civilian; hamburger"
+    }
+  ],
+  "needles": [
+    {
+      "lemma": "hallo",
+      "hits": []
+    },
+    {
+      "lemma": "dag",
+      "hits": []
+    },
+    {
+      "lemma": "alsjeblieft",
+      "hits": []
+    },
+    {
+      "lemma": "dankjewel",
+      "hits": []
+    },
+    {
+      "lemma": "dank u",
+      "hits": []
+    },
+    {
+      "lemma": "alsjeblieft",
+      "hits": []
+    },
+    {
+      "lemma": "ik",
+      "hits": []
+    },
+    {
+      "lemma": "hij",
+      "hits": []
+    },
+    {
+      "lemma": "zij",
+      "hits": []
+    },
+    {
+      "lemma": "wij",
+      "hits": []
+    },
+    {
+      "lemma": "huis",
+      "hits": []
+    },
+    {
+      "lemma": "brood",
+      "hits": []
+    },
+    {
+      "lemma": "melk",
+      "hits": []
+    },
+    {
+      "lemma": "thee",
+      "hits": []
+    },
+    {
+      "lemma": "appel",
+      "hits": []
+    },
+    {
+      "lemma": "kat",
+      "hits": []
+    },
+    {
+      "lemma": "hond",
+      "hits": [
+        {
+          "id": "w0903",
+          "dutch": "hond",
+          "rank": 2,
+          "en": "dog"
+        }
+      ]
+    },
+    {
+      "lemma": "fiets",
+      "hits": []
+    },
+    {
+      "lemma": "water",
+      "hits": [
+        {
+          "id": "w0218",
+          "dutch": "water",
+          "rank": 0,
+          "en": "water, to water"
+        }
+      ]
+    },
+    {
+      "lemma": "koffie",
+      "hits": [
+        {
+          "id": "w0847",
+          "dutch": "koffie",
+          "rank": 0,
+          "en": "coffee"
+        }
+      ]
+    },
+    {
+      "lemma": "eten",
+      "hits": [
+        {
+          "id": "w0344",
+          "dutch": "eten",
+          "rank": 0,
+          "en": "food; to eat"
+        }
+      ]
+    },
+    {
+      "lemma": "drinken",
+      "hits": []
+    },
+    {
+      "lemma": "goedemorgen",
+      "hits": []
+    },
+    {
+      "lemma": "tot ziens",
+      "hits": []
+    },
+    {
+      "lemma": "alsjeblieft",
+      "hits": []
+    },
+    {
+      "lemma": "nee",
+      "hits": [
+        {
+          "id": "w0757",
+          "dutch": "nee",
+          "rank": 0,
+          "en": "no"
+        }
+      ]
+    },
+    {
+      "lemma": "ja",
+      "hits": [
+        {
+          "id": "w0353",
+          "dutch": "ja",
+          "rank": 0,
+          "en": "yes"
+        }
+      ]
+    },
+    {
+      "lemma": "moeder",
+      "hits": [
+        {
+          "id": "w0613",
+          "dutch": "moeder",
+          "rank": 0,
+          "en": "mother"
+        }
+      ]
+    },
+    {
+      "lemma": "vader",
+      "hits": [
+        {
+          "id": "w0679",
+          "dutch": "vader",
+          "rank": 0,
+          "en": "father"
+        }
+      ]
+    },
+    {
+      "lemma": "broer",
+      "hits": [
+        {
+          "id": "w1978",
+          "dutch": "broer",
+          "rank": 0,
+          "en": "brother"
+        }
+      ]
+    },
+    {
+      "lemma": "zus",
+      "hits": []
+    },
+    {
+      "lemma": "dochter",
+      "hits": [
+        {
+          "id": "w1181",
+          "dutch": "dochter",
+          "rank": 0,
+          "en": "daughter"
+        }
+      ]
+    },
+    {
+      "lemma": "zoon",
+      "hits": [
+        {
+          "id": "w1000",
+          "dutch": "zoon",
+          "rank": 0,
+          "en": "son"
+        }
+      ]
+    },
+    {
+      "lemma": "man",
+      "hits": [
+        {
+          "id": "w0311",
+          "dutch": "man",
+          "rank": 0,
+          "en": "male; man; husband"
+        }
+      ]
+    },
+    {
+      "lemma": "vrouw",
+      "hits": [
+        {
+          "id": "w0436",
+          "dutch": "vrouw",
+          "rank": 0,
+          "en": "woman; wife"
+        }
+      ]
+    },
+    {
+      "lemma": "kind",
+      "hits": [
+        {
+          "id": "w0319",
+          "dutch": "kind",
+          "rank": 0,
+          "en": "child; son or daughter"
+        }
+      ]
+    },
+    {
+      "lemma": "boek",
+      "hits": [
+        {
+          "id": "w0286",
+          "dutch": "boek",
+          "rank": 0,
+          "en": "book; to book"
+        }
+      ]
+    },
+    {
+      "lemma": "school",
+      "hits": [
+        {
+          "id": "w0316",
+          "dutch": "school",
+          "rank": 0,
+          "en": "school; school of fish; to school"
+        }
+      ]
+    },
+    {
+      "lemma": "naam",
+      "hits": [
+        {
+          "id": "w0264",
+          "dutch": "naam",
+          "rank": 0,
+          "en": "name, reputation"
+        }
+      ]
+    },
+    {
+      "lemma": "wonen",
+      "hits": [
+        {
+          "id": "w0677",
+          "dutch": "wonen",
+          "rank": 0,
+          "en": "to live"
+        }
+      ]
+    },
+    {
+      "lemma": "komen",
+      "hits": []
+    },
+    {
+      "lemma": "gaan",
+      "hits": []
+    },
+    {
+      "lemma": "hebben",
+      "hits": []
+    },
+    {
+      "lemma": "zijn",
+      "hits": []
+    },
+    {
+      "lemma": "kunnen",
+      "hits": []
+    },
+    {
+      "lemma": "willen",
+      "hits": []
+    },
+    {
+      "lemma": "moeten",
+      "hits": []
+    },
+    {
+      "lemma": "mogen",
+      "hits": [
+        {
+          "id": "w0410",
+          "dutch": "mogen",
+          "rank": 0,
+          "en": "may, to be allowed to; to like someone"
+        }
+      ]
+    }
+  ],
+  "lateEasySample": []
+}
