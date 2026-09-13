@@ -46,3 +46,8 @@ export function daysBetween(from: string, to: string): number {
 	if (a === null || b === null) return 999;
 	return Math.round((b - a) / 86400000);
 }
+
+export function addDays(ymd: string, days: number): string {
+	const t = Date.parse(ymd + 'T00:00:00Z') + days * 86400000;
+	return new Date(t).toISOString().slice(0, 10);
+}

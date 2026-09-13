@@ -4,24 +4,27 @@ import { TRAP_TYPES } from './types';
 export function classifyTrap(question: string): TrapType {
 	const q = question.toLowerCase();
 	if (
-		/verwijs|verwijst|waar slaat|wie of wat is ['‘]?(hij|zij|die|dat|deze|dit|het)\b/.test(q) ||
+		/verwijs|verwijst|waar slaat|bedoeld met/.test(q) ||
+		/wie of wat is ['‘]?(hij|zij|die|dat|deze|dit|het)\b/.test(q) ||
 		/\b(hij|zij|die|deze)\b.+\b(wie|wat)\b/.test(q)
 	) {
 		return 'verwijzing';
 	}
 	if (
-		/doel van deze tekst|waar gaat .+ over|hoofd(onderwerp|gedachte)|waarvoor is deze tekst bedoeld|voor wie is deze tekst/.test(
+		/doel van deze tekst|doel van |waar gaat .+ over|hoofd(onderwerp|gedachte)|waarvoor is deze tekst bedoeld|voor wie is deze tekst|bedoeling van/.test(
 			q
 		)
 	) {
 		return 'hoofdonderwerp';
 	}
-	if (/conclusie|wat kun je .+ afleiden|wat blijkt uit|wat is de strekking/.test(q)) {
+	if (
+		/conclusie|wat kun je .+ afleiden|wat blijkt uit|wat is de strekking|vat de mening|wat laat dit zien|verrassende uitkomst/.test(
+			q
+		)
+	) {
 		return 'conclusie';
 	}
-	if (
-		/tekst komt|deze tekst komt|wat voor (organisatie|tekst|website)|soort tekst|bron van/.test(q)
-	) {
+	if (/wat voor (organisatie|tekst|website)|soort tekst|bron van/.test(q)) {
 		return 'bron-doel';
 	}
 	return 'bijna-goed';

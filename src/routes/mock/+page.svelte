@@ -58,8 +58,9 @@
 	<p class="eyebrow">Exam-day replica · {MOCK_MINUTES} min · pass {PASS_SCORE}</p>
 	<h1>Mock exam</h1>
 	<p class="lede">
-		Six texts, computer questions. Flag and move. Van Dale NT2 pocket is allowed on the real day —
-		bring yours; we don’t fake one here. You need 22, not a perfect paper.
+		Dress rehearsal, not weekly. Six texts, computer questions. Flag and move. You need 22, not a
+		perfect paper. Don’t hunt one word. Van Dale NT2 pocket is allowed on the real day — bring
+		yours; we don’t fake one here.
 	</p>
 
 	{#if !started && !done}
@@ -71,7 +72,8 @@
 					habit; this is dress rehearsal — wait a couple of weeks or start anyway if you want.
 				</p>
 			{/if}
-			<p>{exam.year} paper · {exam.passages.length} texts · {allQuestions.length} questions.</p>
+			<p>{exam.year} paper · {exam.passages.length} texts · {allQuestions.length} questions (real booklet, not padded to 36).</p>
+			<p class="tiny">Kuromi: 22 of 36. Skip hard. Flag. Don’t hunt one word.</p>
 			<button type="button" class="btn" onclick={start}>Start 110:00</button>
 			<a class="ghost" href={resolve('/')}>Not today</a>
 		</Card>
@@ -83,12 +85,14 @@
 		</Card>
 	{:else}
 		<div class="toolbar">
-			<TimeBox totalSeconds={MOCK_MINUTES * 60} label="Paper" onExpire={onPaperExpire} />
-			<TimeBox
-				totalSeconds={MINUTES_PER_TEXT * 60}
-				warnSeconds={120}
-				label={`Text ${passageIndex + 1}`}
-			/>
+			<TimeBox totalSeconds={MOCK_MINUTES * 60} label="Paper 110" onExpire={onPaperExpire} />
+			{#key passageIndex}
+				<TimeBox
+					totalSeconds={MINUTES_PER_TEXT * 60}
+					warnSeconds={120}
+					label={`Text ${passageIndex + 1} · ~${MINUTES_PER_TEXT} min`}
+				/>
+			{/key}
 		</div>
 
 		<nav class="texts" aria-label="Texts">

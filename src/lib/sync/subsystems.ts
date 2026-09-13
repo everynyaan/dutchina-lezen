@@ -32,6 +32,7 @@ import { ADJUSTMENT_TOOL_NAMES, CURRENT_SCHEMA_VERSION, EMPTY_SWAPS, GLOW_RULES 
 import { createDefaultState } from '$lib/state/defaults';
 import type { ReadingForkState, TrapCard, TrapType } from '$lib/reading/types';
 import { EMPTY_READING_FORK } from '$lib/reading/types';
+import { coalesceTrapCards } from '$lib/reading/eval';
 
 // ---------------------------------------------------------------------------
 // Public types
@@ -1211,7 +1212,7 @@ function mergeReadingFork(
 		eval: evalState,
 		showUpStreak,
 		lastEvalDate,
-		trapCards: [...cardsById.values()],
+		trapCards: coalesceTrapCards([...cardsById.values()]),
 		trapStickers: stickers,
 		lastMockAt,
 		lastMockScore

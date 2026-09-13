@@ -23,6 +23,7 @@
 	import TimeBox from '$lib/components/reading/TimeBox.svelte';
 	import { currentGateFromState } from '$lib/gates/gates';
 	import { examYearsForBrowse, initialBrowseGate } from '$lib/gates/browse';
+	import { MINUTES_PER_TEXT } from '$lib/reading/mock';
 
 	const ctx = getGameContext();
 	let engineGate = $derived(currentGateFromState(ctx.state));
@@ -386,8 +387,10 @@
 		</button>
 		<h2 class="reading-title">{activePassage.name}</h2>
 		<p class="reading-intro">{activePassage.intro}</p>
-		<p class="time-hint">About 18 minutes for this text. Flag and move — you need 22 on the paper, not this page.</p>
-		<TimeBox totalSeconds={18 * 60} warnSeconds={120} label="This text" />
+		<p class="time-hint">About {MINUTES_PER_TEXT} minutes for this text. Flag and move — you need 22 on the paper, not this page.</p>
+		<div class="time-dock">
+			<TimeBox totalSeconds={MINUTES_PER_TEXT * 60} warnSeconds={120} label={`~${MINUTES_PER_TEXT} min`} />
+		</div>
 
 		<Card variant="white" class="passage-text-card">
 			<span class="passage-sparkle">
@@ -489,6 +492,7 @@
 				<Doodle name="spark-sparkle-26" size={16} color="var(--color-rose-deep)" tilt={10} />
 			</span>
 		</div>
+		<p class="time-hint">Flag and move. Cesuur 22 — you do not need every question.</p>
 
 		<div class="q-dots">
 			{#each activePassage.questions as q, i (q.id)}
@@ -783,6 +787,19 @@
 		color: var(--color-muted-ink);
 		margin: -0.25rem 0 0;
 		line-height: 1.4;
+	}
+	.time-hint {
+		font-size: var(--text-small);
+		color: var(--color-muted-ink);
+		margin: 0;
+		line-height: 1.4;
+	}
+	.time-dock {
+		position: sticky;
+		top: 0;
+		z-index: 5;
+		padding: 8px 0;
+		background: color-mix(in srgb, var(--color-cream, #fff8f4) 92%, white);
 	}
 
 	:global(.passage-text-card) {

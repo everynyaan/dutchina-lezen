@@ -129,29 +129,29 @@
 	<Card variant="soft-rose">
 		<p class="kicker">Kuromi says</p>
 		<p class="hero-copy">
-			You need <strong>{PASS_SCORE}</strong> on the real paper, not 36. Show up for five minutes.
-			Skip the scary ones.
+			You need <strong>{PASS_SCORE}</strong> on the real paper, not 36. Show up for five minutes
+			to feed the cards. Skip the scary ones. Flag. Don’t hunt one word.
 		</p>
-		<p class="streak">Show-up streak · {ctx.state.readingFork.showUpStreak}</p>
+		<p class="streak">Showed up · {ctx.state.readingFork.showUpStreak}</p>
 	</Card>
 
 	<a class="hub-card" href={resolve('/eval')} onclick={() => playSfx('button_tap')}>
 		<span class="hub-title">{evalDone ? 'Eval done' : '5-minute eval'}</span>
-		<span class="hub-sub">Same text, three jobs. Feeds cards. Not the exam.</span>
+		<span class="hub-sub">One passage. Feeds trap cards. Not exam prep.</span>
 	</a>
 	<a class="hub-card" href={resolve('/cards')} onclick={() => playSfx('button_tap')}>
-		<span class="hub-title">Trap cards {dueCount ? `· ${dueCount} due` : ''}</span>
+		<span class="hub-title">Trap drills {dueCount ? `· ${dueCount} due` : ''}</span>
 		<span class="hub-sub">
 			{#if ctx.state.readingFork.trapStickers.length}
 				{ctx.state.readingFork.trapStickers.map((t) => TRAP_LABEL[t]).join(' · ')}
 			{:else}
-				Misses from the eval land here as moves, not translations.
+				New snippets of the move you missed — not translations.
 			{/if}
 		</span>
 	</a>
 	<a class="hub-card" href={resolve('/mock')} onclick={() => playSfx('button_tap')}>
 		<span class="hub-title">{mockIsReady ? 'Mock exam' : 'Mock (recent)'}</span>
-		<span class="hub-sub">110 minutes · 6 texts · pass {PASS_SCORE}. Dress rehearsal, not daily.</span>
+		<span class="hub-sub">110 minutes · 6 texts · pass {PASS_SCORE}. Dress rehearsal, not weekly.</span>
 	</a>
 	<a class="hub-card quiet" href={resolve('/lezen')} onclick={() => playSfx('button_tap')}>
 		<span class="hub-title">Extra texts</span>

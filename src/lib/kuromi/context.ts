@@ -18,11 +18,11 @@ import type {
 
 /** Direct pathname-prefix → screen label (longest-prefix match, excluding '/'). */
 const SCREEN_PREFIXES: ReadonlyArray<readonly [string, string]> = [
-	['/eval', "today's 5-minute reading eval"],
+	['/eval', "today's 5-minute eval (feeds trap cards)"],
 	['/mock', 'a 110-minute mock exam'],
 	['/gate', 'the gate hub'],
 	['/match', 'the match game'],
-	['/cards', 'trap-sticker reading cards'],
+	['/cards', 'trap-sticker move drills'],
 	['/stories', 'the story shelf'],
 	['/grammar', 'the pattern handbook'],
 	['/vocab', 'the vocabulary lists'],

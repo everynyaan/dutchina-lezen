@@ -3,6 +3,7 @@
 	import { getTodayDate } from '$lib/match/engine';
 	import {
 		applyShowUpStreak,
+		cardFromGistMiss,
 		cardFromMiss,
 		ensureTodayEval,
 		stampStickers,
@@ -62,12 +63,26 @@
 		step = 'done';
 	}
 
+	function mintTrap(card: ReturnType<typeof cardFromMiss>) {
+		if (!card) return;
+		ctx.state.readingFork.trapCards = upsertCard(ctx.state.readingFork.trapCards, card);
+		ctx.state.readingFork.trapStickers = stampStickers(
+			ctx.state.readingFork.trapStickers,
+			card.trap
+		);
+	}
+
 	function submitGist() {
-		if (!gistPicked) return;
+		if (!gistPicked || !evalState.passageSlug) return;
 		const ok = gistPicked === evalState.gistAnswer;
 		ctx.state.readingFork.eval.gistPicked = gistPicked;
 		gistRevealed = true;
 		playSfx(ok ? 'correct' : 'wrong');
+		if (!ok) {
+			mintTrap(
+				cardFromGistMiss({ passageSlug: evalState.passageSlug, picked: gistPicked, today })
+			);
+		}
 	}
 
 	function afterGist() {
@@ -85,14 +100,7 @@
 		revealed = true;
 		playSfx(ok ? 'correct' : 'wrong');
 		if (!ok) {
-			const card = cardFromMiss({ questionId: id, picked, today });
-			if (card) {
-				ctx.state.readingFork.trapCards = upsertCard(ctx.state.readingFork.trapCards, card);
-				ctx.state.readingFork.trapStickers = stampStickers(
-					ctx.state.readingFork.trapStickers,
-					card.trap
-				);
-			}
+			mintTrap(cardFromMiss({ questionId: id, picked, today }));
 		}
 	}
 
@@ -108,39 +116,47 @@
 		step = 'q1';
 	}
 
+	let gistMissed = $derived(
+		evalState.gistPicked !== null && evalState.gistPicked !== evalState.gistAnswer
+	);
 	let earnedToday = $derived(
 		Object.entries(evalState.results)
 			.filter(([, v]) => v === false)
 			.map(([id]) => cardFromMiss({ questionId: id, picked: '?', today })?.trap)
 			.filter((t): t is TrapType => Boolean(t))
 	);
+	let mintedThisPulse = $derived(earnedToday.length > 0 || gistMissed);
 </script>
 
 <div class="eval-page stagger">
-	<p class="eyebrow">5-minute pulse · feeds cards, not the exam</p>
+	<p class="eyebrow">5 minutes · feeds trap cards · not exam prep</p>
 	<h1>Today’s eval</h1>
-	<p class="kuromi-line">Show up. You need 22 on the real paper, not 5/5 here.</p>
+	<p class="kuromi-line">
+		Show up. One passage, then we stop. You need 22 on the real paper — skip, flag, don’t hunt one
+		word.
+	</p>
 
 	{#if !passage}
 		<p>Loading…</p>
 	{:else if step === 'done'}
 		<Card variant="soft-lavender">
 			<Character who="kuromi" mood="wink" size={88} />
-			<h2>You’re here. That’s the streak.</h2>
+			<h2>You showed up. That’s the streak.</h2>
 			<p class="body">
-				Show-up streak: <strong>{ctx.state.readingFork.showUpStreak}</strong>
+				Show-up streak: <strong>{ctx.state.readingFork.showUpStreak}</strong> — finishing this
+				pulse counts. Not a 5/5.
 			</p>
-			{#if earnedToday.length}
-				<p class="body">Misses became trap cards — review them on Cards.</p>
+			{#if mintedThisPulse}
+				<p class="body">Misses became trap drills. The eval’s job is to feed those cards.</p>
 			{:else}
-				<p class="body">Clean pulse. Cards stay quiet unless a trap shows up.</p>
+				<p class="body">No new stickers. You still showed up — that’s what this timer is for.</p>
 			{/if}
-			<a class="btn" href={resolve('/cards')}>Review trap cards</a>
+			<a class="btn" href={resolve('/cards')}>Drill trap stickers</a>
 			<a class="btn ghost" href={resolve('/')}>Home</a>
 		</Card>
 	{:else if step === 'gist'}
 		<Card>
-			<p class="job">Job 1 · gist in about a minute</p>
+			<p class="job">Job 1 · gist · then we stop after 1–2 questions</p>
 			<h2>{passage.name}</h2>
 			<p class="passage">{previewText}</p>
 			<p class="prompt">Which intro matches this text?</p>
@@ -164,16 +180,16 @@
 				<button type="button" class="btn" disabled={!gistPicked} onclick={submitGist}>Check</button>
 			{:else}
 				<p class="body">
-					{gistPicked === evalState.gistAnswer
-						? 'That’s the gist. Next: two real questions on the same text.'
-						: 'Same text, new job next — don’t restart with a new passage.'}
+					{gistPicked === evalState.gistAnswer ? 'That’s the gist.' : 'Same text, new job next.'}
+					Then {evalState.questionIds.length === 1 ? 'one real question' : 'two real questions'}
+					on this passage. Then we stop — this pulse feeds cards, it is not exam prep.
 				</p>
 				<button type="button" class="btn" onclick={afterGist}>Job 2</button>
 			{/if}
 		</Card>
 	{:else if currentQ}
 		<Card>
-			<p class="job">Job {qIndex + 2} · same text</p>
+			<p class="job">Job {qIndex + 2} · same text · last jobs, then stop</p>
 			<p class="passage slim">{previewText}</p>
 			<p class="prompt">{currentQ.question.question}</p>
 			<div class="opts">
@@ -204,7 +220,7 @@
 				<button type="button" class="btn" disabled={!picked} onclick={submitQuestion}>Check</button>
 			{:else}
 				<button type="button" class="btn" onclick={nextAfterQuestion}>
-					{qIndex >= evalState.questionIds.length - 1 ? 'Done' : 'Next'}
+					{qIndex >= evalState.questionIds.length - 1 ? 'That’s the stop' : 'Next'}
 				</button>
 			{/if}
 		</Card>
