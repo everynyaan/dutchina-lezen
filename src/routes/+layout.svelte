@@ -2,7 +2,7 @@
 	import { resolve } from '$app/paths';
 	import '../app.css';
 	import { page } from '$app/stores';
-	import { onNavigate } from '$app/navigation';
+	import { onNavigate, goto } from '$app/navigation';
 	import { onMount, onDestroy } from 'svelte';
 	import { loadState, saveState, debounce } from '$lib/state/store';
 	import { createDefaultState } from '$lib/state/defaults';
@@ -42,8 +42,9 @@
 	} from '$lib/sync/engine.svelte';
 	import { initAuth } from '$lib/auth/session.svelte';
 	import { initDb, seedCardReviews, exportCardReviews } from '$lib/db/db';
-	import { getAvailableCardCount } from '$lib/cards/cardStore';
-	import { currentGateFromState, getWordsUpToGate } from '$lib/gates/gates';
+	import { currentGateFromState } from '$lib/gates/gates';
+	import { dueTrapCards } from '$lib/reading/eval';
+	import { getTodayDate } from '$lib/match/engine';
 
 	import Icon from '$lib/icons/Icon.svelte';
 	import SummonButton from '$lib/components/kuromi/SummonButton.svelte';
@@ -335,8 +336,7 @@
 
 	async function refreshCardsDue(): Promise<void> {
 		try {
-			const pool = getWordsUpToGate(currentGateFromState(gameState));
-			cardsDue = await getAvailableCardCount(pool, gameState.cards.newCardsPerDay);
+			cardsDue = dueTrapCards(gameState.readingFork, getTodayDate()).length;
 		} catch {
 			cardsDue = 0;
 		}
@@ -632,10 +632,10 @@
 	// ============================================================
 	const tabs = [
 		{ href: '/', label: 'Home', icon: 'house' },
-		{ href: '/match', label: 'Match', icon: 'shuffle' },
+		{ href: '/eval', label: 'Eval', icon: 'list-check' },
 		{ href: '/cards', label: 'Cards', icon: 'rectangle-history' },
-		{ href: '/stories', label: 'Story', icon: 'book-open-cover' },
-		{ href: '/grammar', label: 'Grammar', icon: 'book-sparkles' }
+		{ href: '/mock', label: 'Mock', icon: 'bullseye' },
+		{ href: '/grammar', label: 'Patterns', icon: 'book-sparkles' }
 	] as const;
 
 	const secondaryLinks: {
@@ -643,9 +643,7 @@
 		label: string;
 		character?: boolean;
 	}[] = [
-		{ href: '/vocab', label: 'Words' },
-		{ href: '/lezen', label: 'Reading' },
-		{ href: '/luisteren', label: 'Listening' },
+		{ href: '/lezen', label: 'Texts' },
 		{ href: '/kuromi/shelf', label: 'Kuromi', character: true }
 	];
 
@@ -653,6 +651,27 @@
 		if (href === '/') return pathname === '/';
 		return pathname.startsWith(href);
 	}
+
+	const RETIRED_PREFIXES = [
+		'/match',
+		'/boss',
+		'/luisteren',
+		'/vocab',
+		'/daily',
+		'/quiz',
+		'/stories',
+		'/gate',
+		'/reviews',
+		'/read',
+		'/conversation'
+	];
+
+	$effect(() => {
+		const p = $page.url.pathname;
+		if (RETIRED_PREFIXES.some((r) => p === r || p.startsWith(r + '/'))) {
+			void goto('/');
+		}
+	});
 
 	const GATE_PILL: Record<(typeof GATE_IDENTITY)[1], string> = {
 		rose: '--color-rose-deep',

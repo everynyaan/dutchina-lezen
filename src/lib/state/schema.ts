@@ -5,6 +5,8 @@
 // State union, bump CURRENT_SCHEMA_VERSION, write a migration.
 // ============================================================
 
+import type { ReadingForkState } from '$lib/reading/types';
+
 export interface StateV1 {
 	schemaVersion: 1;
 	rank: number; // 0 to 7
@@ -1212,6 +1214,11 @@ export interface StateV22 {
 	gates: GatesState;
 }
 
+export interface StateV23 extends Omit<StateV22, 'schemaVersion'> {
+	schemaVersion: 23;
+	readingFork: ReadingForkState;
+}
+
 // State is a union of all versions. Add new versions here as they ship.
 export type State =
 	| StateV1
@@ -1235,9 +1242,10 @@ export type State =
 	| StateV19
 	| StateV20
 	| StateV21
-	| StateV22;
+	| StateV22
+	| StateV23;
 
 // The latest version is the one the app runs on.
-export type CurrentState = StateV22;
+export type CurrentState = StateV23;
 
-export const CURRENT_SCHEMA_VERSION = 22;
+export const CURRENT_SCHEMA_VERSION = 23;

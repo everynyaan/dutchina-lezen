@@ -1,42 +1,27 @@
-# sv
+# Dutchina — reading fork
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+B1 Staatsexamen NT2 Programma I **Lezen** trainer for Domi. Context and pattern practice, not vocab memorization.
 
-## Creating a project
+## What this fork is
 
-If you're seeing this, you've probably already done this step. Congrats!
+- Daily **5-minute eval** (same text, gist then questions) that **feeds trap cards**
+- **Trap stickers** for the move she missed (referent, gist, almost-right, etc.)
+- **Kuromi** as cesuur coach: she needs **22 / 36**, not a perfect paper
+- Rare **110-minute mock** (6 texts, pass 22)
+- ~18 minute time boxes per text
+- Show-up streak (finished the eval), not 5/5
 
-```sh
-# create a new project
-npx sv create my-app
-```
+Match, boss, listening, and random SRS are hidden.
 
-To recreate this project with the same configuration:
-
-```sh
-# recreate this project
-npx sv@0.15.1 create --template minimal --types ts --add eslint prettier vitest="usages:component,unit" --install npm .
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Run
 
 ```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+npm install
+npm run dev -- --host --port 43123
 ```
 
-## Building
+Production Kuromi functions need `npm run build` and Netlify; `vite dev` will not serve `/.netlify/functions/*`.
 
-To create a production version of your app:
+## Exam bank
 
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+`src/lib/lezen/LEZEN_CONTENT.ts` — NT2 Programma I openbaar examen PDFs 2023–2025 (35 items/year in-file). Live exam shape is 36 questions / 110 minutes / pass 22.

@@ -11,6 +11,7 @@ import type {
 } from '$lib/state/schema';
 import { DEFAULT_GLOW_ORDER } from '$lib/state/schema';
 import { createDefaultState } from '$lib/state/defaults';
+import { EMPTY_READING_FORK } from '$lib/reading/types';
 import {
 	SUBSYSTEMS,
 	partition,
@@ -63,7 +64,7 @@ function randString(rng: () => number, prefix: string): string {
 	return `${prefix}_${randInt(rng, 0, 9999)}`;
 }
 
-function randomState(rng: () => number): StateV22 {
+function randomState(rng: () => number): CurrentState {
 	const nCards = randInt(rng, 0, 4);
 	const cardReviews: Record<string, SyncedCardReview> = {};
 	for (let i = 0; i < nCards; i++) {
@@ -248,8 +249,8 @@ function randomState(rng: () => number): StateV22 {
 		});
 	}
 
-	const state: StateV22 = {
-		schemaVersion: 22,
+	const state: CurrentState = {
+		schemaVersion: 23,
 		rank: randInt(rng, 0, 7),
 		tier: randInt(rng, 1, 4),
 		lp: randInt(rng, 0, 99),
@@ -338,7 +339,8 @@ function randomState(rng: () => number): StateV22 {
 			mastered: rng() < 0.5 ? [] : [1],
 			quizLog: [],
 			weekLog: []
-		}
+		},
+		readingFork: structuredClone(EMPTY_READING_FORK)
 	};
 	return state;
 }
@@ -397,7 +399,7 @@ describe('field partition coverage', () => {
 		'steward',
 		'gates'
 	];
-	const dailyLeaves = ['dailyHomework', 'dailyQuiz', 'dailyRead'];
+	const dailyLeaves = ['dailyHomework', 'dailyQuiz', 'dailyRead', 'readingFork'];
 	const configLeaves = ['tts', 'audio', 'cards.newCardsPerDay', 'appConfig'];
 	const adjustmentsLeaves = ['adjustments'];
 	const pagesLeaves = ['pages', 'conversations'];
@@ -411,7 +413,7 @@ describe('field partition coverage', () => {
 		pages: pagesLeaves
 	};
 
-	it('union of leaf paths equals the 35 expected StateV22 leaves', () => {
+	it('union of leaf paths equals the expected CurrentState leaves', () => {
 		const topKeys = Object.keys(createDefaultState()).filter((k) => k !== 'cards');
 		const expected = new Set([
 			...topKeys,
@@ -420,8 +422,7 @@ describe('field partition coverage', () => {
 			'cards.totalReviewed',
 			'cards.newCardsPerDay'
 		]);
-		// 32 top-level keys excluding cards + 4 dotted card fields = 35
-		expect(expected.size).toBe(35);
+		expect(expected.size).toBe(36);
 
 		const actual = new Set<string>();
 		for (const leaves of Object.values(bySubsystem)) {
@@ -441,10 +442,10 @@ describe('field partition coverage', () => {
 		}
 	});
 
-	it('progress has 24 leaves, srs 1, daily 3, config 4, adjustments 1, pages 2', () => {
+	it('progress has 24 leaves, srs 1, daily 4, config 4, adjustments 1, pages 2', () => {
 		expect(progressLeaves).toHaveLength(24);
 		expect(srsLeaves).toHaveLength(1);
-		expect(dailyLeaves).toHaveLength(3);
+		expect(dailyLeaves).toHaveLength(4);
 		expect(configLeaves).toHaveLength(4);
 		expect(adjustmentsLeaves).toHaveLength(1);
 		expect(pagesLeaves).toHaveLength(2);

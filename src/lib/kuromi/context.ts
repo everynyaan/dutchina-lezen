@@ -18,11 +18,13 @@ import type {
 
 /** Direct pathname-prefix → screen label (longest-prefix match, excluding '/'). */
 const SCREEN_PREFIXES: ReadonlyArray<readonly [string, string]> = [
+	['/eval', "today's 5-minute reading eval"],
+	['/mock', 'a 110-minute mock exam'],
 	['/gate', 'the gate hub'],
 	['/match', 'the match game'],
-	['/cards', 'a flashcard review session'],
+	['/cards', 'trap-sticker reading cards'],
 	['/stories', 'the story shelf'],
-	['/grammar', 'the grammar handbook'],
+	['/grammar', 'the pattern handbook'],
 	['/vocab', 'the vocabulary lists'],
 	['/quiz', "today's quiz"],
 	['/read', "today's reading"],
@@ -60,7 +62,7 @@ const SHELF_LABEL_CHARS_MAX = 24;
  * take priority over the generic /stories shelf label.
  */
 export function screenLabelForPath(pathname: string): string {
-	if (pathname === '/') return 'the four gates';
+	if (pathname === '/') return 'home';
 
 	// stories/<story>/<chapter>… → chapter takes priority over shelf
 	const segments = pathname.replace(/^\//, '').split('/').filter(Boolean);
@@ -101,7 +103,9 @@ function hasPracticeEvidence(state: CurrentState): boolean {
 		Object.keys(state.reviews.submissions).length > 0 ||
 		state.boss.attempts > 0 ||
 		state.dailyQuiz.completed ||
-		state.dailyRead.done
+		state.dailyRead.done ||
+		state.readingFork.eval.completed ||
+		state.readingFork.trapCards.length > 0
 	);
 }
 
@@ -109,6 +113,9 @@ function buildRecentActivity(state: CurrentState): string[] {
 	const activity: string[] = [];
 	if (state.practiceDays > 0 && hasPracticeEvidence(state)) {
 		activity.push(`${state.practiceDays}-week streak`);
+	}
+	if (state.readingFork.eval.completed) {
+		activity.push("showed up for today's eval");
 	}
 	if (state.dailyQuiz && state.dailyQuiz.completed) {
 		activity.push("finished today's quiz");
@@ -252,6 +259,14 @@ export async function buildKuromiContext(
 		config: state.appConfig,
 		streak: { weeks: state.practiceDays, mode: state.appConfig.streaks },
 		lastQuiz: buildLastQuiz(state),
+		readingFork: {
+			showUpStreak: state.readingFork.showUpStreak,
+			evalCompleted: state.readingFork.eval.completed,
+			trapStickers: state.readingFork.trapStickers,
+			dueCards: state.readingFork.trapCards.filter((c) => c.dueDate <= today).length,
+			lastMock: state.readingFork.lastMockScore,
+			cesuur: 22
+		},
 		recentAdjustments: buildRecentAdjustments(state.adjustments),
 		activityShape: buildActivityShape(state, today),
 		shelf: buildShelfSummary(state.pages)

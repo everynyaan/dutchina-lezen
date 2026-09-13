@@ -23,9 +23,11 @@ import {
 	type StateV20,
 	type StateV21,
 	type StateV22,
+	type StateV23,
 	DEFAULT_GLOW_ORDER,
 	EMPTY_SWAPS
 } from './schema';
+import { EMPTY_READING_FORK } from '$lib/reading/types';
 import { placementFromState } from '$lib/gates/gates';
 
 // ============================================================
@@ -338,6 +340,13 @@ export const migrations: Migration[] = [
 		schemaVersion: 22,
 		dailyHomework: { ...state.dailyHomework, swaps: EMPTY_SWAPS },
 		dailyQuiz: { ...state.dailyQuiz, swaps: EMPTY_SWAPS }
+	}),
+
+	// v22 -> v23: reading-fork eval / trap-sticker cards. Additive.
+	(state: StateV22): StateV23 => ({
+		...state,
+		schemaVersion: 23,
+		readingFork: structuredClone(EMPTY_READING_FORK)
 	})
 ];
 

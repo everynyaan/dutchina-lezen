@@ -1,4 +1,5 @@
-import { DEFAULT_GLOW_ORDER, EMPTY_SWAPS, type StateV22 } from './schema';
+import { EMPTY_READING_FORK } from '$lib/reading/types';
+import { DEFAULT_GLOW_ORDER, EMPTY_SWAPS, type StateV23 } from './schema';
 
 // ============================================================
 // STATE DEFAULTS
@@ -6,9 +7,9 @@ import { DEFAULT_GLOW_ORDER, EMPTY_SWAPS, type StateV22 } from './schema';
 // Safe values only. No nulls except where the type requires it.
 // ============================================================
 
-export function createDefaultState(): StateV22 {
+export function createDefaultState(): StateV23 {
 	return {
-		schemaVersion: 22,
+		schemaVersion: 23,
 		rank: 0,
 		tier: 1,
 		lp: 0,
@@ -96,6 +97,7 @@ export function createDefaultState(): StateV22 {
 		steward: { awards: [], lastForgivenWeek: null },
 		pages: [],
 		conversations: [],
-		gates: { current: 1, mastered: [], quizLog: [], weekLog: [] }
+		gates: { current: 1, mastered: [], quizLog: [], weekLog: [] },
+		readingFork: structuredClone(EMPTY_READING_FORK)
 	};
 }

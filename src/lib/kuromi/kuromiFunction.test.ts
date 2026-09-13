@@ -395,13 +395,12 @@ describe('kuromi handler', () => {
 		expect(names).not.toContain('show_stickers');
 	});
 
-	it('persona is filled in on four-gate homework and skip-as-UI', () => {
-		expect(KUROMI_CHAT_SYSTEM_PROMPT).toMatch(/four rooms/);
-		expect(KUROMI_CHAT_SYSTEM_PROMPT).toMatch(/no skip tool/);
-		expect(KUROMI_CHAT_SYSTEM_PROMPT).toMatch(/Gate 1 is first words/);
-		expect(KUROMI_CHAT_SYSTEM_PROMPT).toMatch(/A boss win does not/);
-		expect(KUROMI_CHAT_SYSTEM_PROMPT).toMatch(/Never put B1 or exam Dutch/);
-		expect(KUROMI_CHAT_SYSTEM_PROMPT).toMatch(/Never say those fantasy rank names/);
+	it('persona is filled in on cesuur-22 reading fork, not four-gate homework', () => {
+		expect(KUROMI_CHAT_SYSTEM_PROMPT).toMatch(/pass at 22/);
+		expect(KUROMI_CHAT_SYSTEM_PROMPT).toMatch(/CONTEXT and PATTERN/);
+		expect(KUROMI_CHAT_SYSTEM_PROMPT).toMatch(/Never send her to Match/);
+		expect(KUROMI_CHAT_SYSTEM_PROMPT).toMatch(/5-minute eval/);
+		expect(KUROMI_CHAT_SYSTEM_PROMPT).toMatch(/no set_gate/i);
 		const createPage = KUROMI_TOOLS.find((t) => t.function.name === 'create_page');
 		expect(createPage?.function.description).toMatch(/currentGate/);
 		expect(createPage?.function.description).toMatch(/Gate 1 pages are first words/);
@@ -858,6 +857,14 @@ describe('kuromi handler', () => {
 			},
 			streak: { weeks: 4, mode: 'strict' },
 			lastQuiz: { completed: true, score: { correct: 8, total: 10 } },
+			readingFork: {
+				showUpStreak: 3,
+				evalCompleted: true,
+				trapStickers: ['verwijzing', 'bijna-goed'],
+				dueCards: 2,
+				lastMock: { correct: 24, total: 35, passed: true },
+				cesuur: 22
+			},
 			recentAdjustments: [
 				{
 					tool: 'award_lp',

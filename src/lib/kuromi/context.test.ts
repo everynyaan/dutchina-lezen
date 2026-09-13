@@ -65,8 +65,8 @@ function makePage(overrides: Partial<KuromiPage> & Pick<KuromiPage, 'id'>): Kuro
 }
 
 describe('screenLabelForPath', () => {
-	it('maps / exactly to the four gates', () => {
-		expect(screenLabelForPath('/')).toBe('the four gates');
+	it('maps / exactly to home', () => {
+		expect(screenLabelForPath('/')).toBe('home');
 	});
 
 	it('does not treat /anything as the four gates', () => {
@@ -84,7 +84,7 @@ describe('screenLabelForPath', () => {
 	});
 
 	it('maps nested paths under a prefix', () => {
-		expect(screenLabelForPath('/cards/session')).toBe('a flashcard review session');
+		expect(screenLabelForPath('/cards/session')).toBe('trap-sticker reading cards');
 	});
 
 	it('maps story chapters (3+ segments) to a story chapter', () => {
@@ -162,7 +162,7 @@ describe('buildKuromiContext', () => {
 	it('omits activity strings that do not apply', async () => {
 		const state = makeState({ practiceDays: 0 });
 		const packet = await buildKuromiContext('/', state, '2026-08-15');
-		expect(packet.screen).toBe('the four gates');
+		expect(packet.screen).toBe('home');
 		expect(packet.recentActivity).toEqual([]);
 	});
 

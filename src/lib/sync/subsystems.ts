@@ -30,6 +30,8 @@ import type {
 } from '$lib/state/schema';
 import { ADJUSTMENT_TOOL_NAMES, CURRENT_SCHEMA_VERSION, EMPTY_SWAPS, GLOW_RULES } from '$lib/state/schema';
 import { createDefaultState } from '$lib/state/defaults';
+import type { ReadingForkState, TrapCard, TrapType } from '$lib/reading/types';
+import { EMPTY_READING_FORK } from '$lib/reading/types';
 
 // ---------------------------------------------------------------------------
 // Public types
@@ -113,6 +115,7 @@ interface DailySlice {
 	dailyHomework: DailyHomeworkState;
 	dailyQuiz: DailyQuizState;
 	dailyRead: DailyReadState;
+	readingFork: ReadingForkState;
 }
 
 interface ConfigSlice {
@@ -230,7 +233,8 @@ export function partition(state: CurrentState): Record<Subsystem, unknown> {
 		daily: {
 			dailyHomework: state.dailyHomework,
 			dailyQuiz: state.dailyQuiz,
-			dailyRead: state.dailyRead
+			dailyRead: state.dailyRead,
+			readingFork: state.readingFork
 		} satisfies DailySlice,
 		config: {
 			tts: { googleApiKey: state.tts.googleApiKey },
@@ -504,7 +508,10 @@ function readDaily(raw: unknown): DailySlice {
 		dailyQuiz: isRecord(raw.dailyQuiz)
 			? (raw.dailyQuiz as unknown as DailyQuizState)
 			: fb.dailyQuiz,
-		dailyRead: isRecord(raw.dailyRead) ? (raw.dailyRead as unknown as DailyReadState) : fb.dailyRead
+		dailyRead: isRecord(raw.dailyRead) ? (raw.dailyRead as unknown as DailyReadState) : fb.dailyRead,
+		readingFork: isRecord(raw.readingFork)
+			? (raw.readingFork as unknown as ReadingForkState)
+			: structuredClone(EMPTY_READING_FORK)
 	};
 }
 
@@ -575,6 +582,7 @@ export function assemble(parts: Partial<Record<Subsystem, unknown>>): CurrentSta
 		dailyHomework: daily.dailyHomework,
 		dailyQuiz: daily.dailyQuiz,
 		dailyRead: daily.dailyRead,
+		readingFork: daily.readingFork,
 		appConfig: config.appConfig,
 		adjustments,
 		steward: progress.steward,
@@ -1058,9 +1066,10 @@ function mergeDaily(
 	const dailyHomework = mergeDailyHomework(L.dailyHomework, R.dailyHomework, now, notes);
 	const dailyQuiz = mergeDailyQuiz(L.dailyQuiz, R.dailyQuiz, now, notes);
 	const dailyRead = mergeDailyRead(L.dailyRead, R.dailyRead, now, notes);
+	const readingFork = mergeReadingFork(L.readingFork, R.readingFork, now, notes);
 
 	return {
-		value: { dailyHomework, dailyQuiz, dailyRead } satisfies DailySlice,
+		value: { dailyHomework, dailyQuiz, dailyRead, readingFork } satisfies DailySlice,
 		notes
 	};
 }
@@ -1173,6 +1182,39 @@ function mergeDailyRead(
 	return {
 		date: local.date,
 		done: Boolean(local.done) || Boolean(remote.done)
+	};
+}
+
+function mergeReadingFork(
+	local: ReadingForkState,
+	remote: ReadingForkState,
+	now: string,
+	notes: AuditNote[]
+): ReadingForkState {
+	const evalState =
+		laterDate(local.eval.date, remote.eval.date) === local.eval.date ? local.eval : remote.eval;
+	if (local.eval.date !== remote.eval.date) {
+		notes.push(note(now, 'daily', 'readingFork.eval', local.eval, remote.eval, evalState));
+	}
+	const cardsById = new Map<string, TrapCard>();
+	for (const card of [...remote.trapCards, ...local.trapCards]) {
+		const prev = cardsById.get(card.id);
+		if (!prev || (card.dueDate ?? '') >= (prev.dueDate ?? '')) cardsById.set(card.id, card);
+	}
+	const stickers = Array.from(new Set([...local.trapStickers, ...remote.trapStickers])) as TrapType[];
+	const lastMockAt = laterDate(local.lastMockAt, remote.lastMockAt);
+	const lastMockScore =
+		lastMockAt === local.lastMockAt ? local.lastMockScore : remote.lastMockScore;
+	const lastEvalDate = laterDate(local.lastEvalDate, remote.lastEvalDate);
+	const showUpStreak = Math.max(local.showUpStreak, remote.showUpStreak);
+	return {
+		eval: evalState,
+		showUpStreak,
+		lastEvalDate,
+		trapCards: [...cardsById.values()],
+		trapStickers: stickers,
+		lastMockAt,
+		lastMockScore
 	};
 }
 

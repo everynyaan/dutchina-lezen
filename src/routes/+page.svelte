@@ -5,14 +5,16 @@
 	import { playSfx } from '$lib/sound/sfx';
 	import Icon from '$lib/icons/Icon.svelte';
 	import InstallSticker from '$lib/components/home/InstallSticker.svelte';
-	import GatePath from '$lib/components/home/GatePath.svelte';
-	import HomeShelf from '$lib/components/home/HomeShelf.svelte';
-	import { currentGateFromState } from '$lib/gates/gates';
-	import { homeGateCards } from '$lib/gates/home';
-	import { masteryInputFromState } from '$lib/gates/progress';
+	import Card from '$lib/components/ui/Card.svelte';
+	import { resolve } from '$app/paths';
+	import { getTodayDate } from '$lib/match/engine';
+	import { dueTrapCards } from '$lib/reading/eval';
+	import { mockReady, PASS_SCORE } from '$lib/reading/mock';
+	import { TRAP_LABEL } from '$lib/reading/types';
 
 	const ctx = getGameContext();
 	let settingsOpen = $state(false);
+	const today = getTodayDate();
 
 	function greetingForHour(hour: number): string {
 		if (hour < 6) return 'good night';
@@ -27,13 +29,10 @@
 
 	let greeting = $state(greetingForHour(new Date().getHours()));
 	let dateLabel = $state(formatDateLabel(new Date()));
-	let cards = $derived(
-		homeGateCards(
-			currentGateFromState(ctx.state),
-			masteryInputFromState(ctx.state),
-			ctx.state.gates.mastered
-		)
-	);
+
+	let evalDone = $derived(ctx.state.readingFork.eval.date === today && ctx.state.readingFork.eval.completed);
+	let dueCount = $derived(dueTrapCards(ctx.state.readingFork, today).length);
+	let mockIsReady = $derived(mockReady(ctx.state.readingFork.lastMockAt, today));
 
 	interface BeforeInstallPromptEvent extends Event {
 		prompt: () => Promise<void>;
@@ -127,9 +126,41 @@
 		</div>
 	</div>
 
-	<GatePath {cards} />
+	<Card variant="soft-rose">
+		<p class="kicker">Kuromi says</p>
+		<p class="hero-copy">
+			You need <strong>{PASS_SCORE}</strong> on the real paper, not 36. Show up for five minutes.
+			Skip the scary ones.
+		</p>
+		<p class="streak">Show-up streak · {ctx.state.readingFork.showUpStreak}</p>
+	</Card>
 
-	<HomeShelf />
+	<a class="hub-card" href={resolve('/eval')} onclick={() => playSfx('button_tap')}>
+		<span class="hub-title">{evalDone ? 'Eval done' : '5-minute eval'}</span>
+		<span class="hub-sub">Same text, three jobs. Feeds cards. Not the exam.</span>
+	</a>
+	<a class="hub-card" href={resolve('/cards')} onclick={() => playSfx('button_tap')}>
+		<span class="hub-title">Trap cards {dueCount ? `· ${dueCount} due` : ''}</span>
+		<span class="hub-sub">
+			{#if ctx.state.readingFork.trapStickers.length}
+				{ctx.state.readingFork.trapStickers.map((t) => TRAP_LABEL[t]).join(' · ')}
+			{:else}
+				Misses from the eval land here as moves, not translations.
+			{/if}
+		</span>
+	</a>
+	<a class="hub-card" href={resolve('/mock')} onclick={() => playSfx('button_tap')}>
+		<span class="hub-title">{mockIsReady ? 'Mock exam' : 'Mock (recent)'}</span>
+		<span class="hub-sub">110 minutes · 6 texts · pass {PASS_SCORE}. Dress rehearsal, not daily.</span>
+	</a>
+	<a class="hub-card quiet" href={resolve('/lezen')} onclick={() => playSfx('button_tap')}>
+		<span class="hub-title">Extra texts</span>
+		<span class="hub-sub">~18 minutes a passage. Flag and move.</span>
+	</a>
+	<a class="hub-card quiet" href={resolve('/grammar')} onclick={() => playSfx('button_tap')}>
+		<span class="hub-title">Pattern handbook</span>
+		<span class="hub-sub">Word-order and traps — not a vocab grind.</span>
+	</a>
 
 	{#if installVisible}
 		<InstallSticker onInstall={installApp} onDismiss={dismissInstall} />
@@ -143,7 +174,7 @@
 		padding: 0.35rem 0 calc(32px + env(safe-area-inset-bottom, 0px));
 		display: flex;
 		flex-direction: column;
-		gap: 1.15rem;
+		gap: 1rem;
 	}
 
 	.greeting-row {
@@ -195,19 +226,46 @@
 		padding: 8px;
 		cursor: pointer;
 		display: flex;
-		align-items: center;
-		justify-content: center;
-		transition:
-			background 0.15s,
-			transform var(--press-duration) ease;
-		-webkit-tap-highlight-color: transparent;
 	}
 
-	.icon-btn:hover {
-		background: color-mix(in srgb, var(--color-rose) 18%, transparent);
+	.kicker {
+		font-size: var(--text-micro);
+		text-transform: uppercase;
+		color: var(--color-muted-ink);
+		margin: 0 0 6px;
 	}
-
-	.icon-btn:active {
-		transform: scale(var(--press-scale));
+	.hero-copy {
+		font-size: var(--text-lead);
+		line-height: 1.45;
+		margin: 0;
+	}
+	.streak {
+		margin: 10px 0 0;
+		font-weight: 700;
+	}
+	.hub-card {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+		padding: 16px 18px;
+		border: 3px solid var(--color-ink);
+		border-radius: 22px;
+		box-shadow: var(--card-shadow);
+		background: #fff;
+		text-decoration: none;
+		color: var(--color-ink);
+	}
+	.hub-card.quiet {
+		background: var(--color-cream, #fff8f5);
+	}
+	.hub-title {
+		font-family: var(--font-display);
+		font-size: var(--text-title);
+		font-weight: 700;
+	}
+	.hub-sub {
+		font-size: var(--text-small);
+		color: var(--color-muted-ink);
+		line-height: 1.4;
 	}
 </style>

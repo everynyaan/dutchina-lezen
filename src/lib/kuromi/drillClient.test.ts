@@ -33,6 +33,14 @@ const SAMPLE_CONTEXT: KuromiContextPacket = {
 	},
 	streak: { weeks: 0, mode: 'strict' },
 	lastQuiz: { completed: false, score: null },
+	readingFork: {
+		showUpStreak: 0,
+		evalCompleted: false,
+		trapStickers: [],
+		dueCards: 0,
+		lastMock: null,
+		cesuur: 22
+	},
 	recentAdjustments: [],
 	activityShape: [
 		{ label: 'practice', daysAgo: null },

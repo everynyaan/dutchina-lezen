@@ -20,6 +20,7 @@
 	import { resolve } from '$app/paths';
 	import ExamPaperBanner from '$lib/components/ExamPaperBanner.svelte';
 	import GateBrowseFilter from '$lib/components/GateBrowseFilter.svelte';
+	import TimeBox from '$lib/components/reading/TimeBox.svelte';
 	import { currentGateFromState } from '$lib/gates/gates';
 	import { examYearsForBrowse, initialBrowseGate } from '$lib/gates/browse';
 
@@ -385,6 +386,8 @@
 		</button>
 		<h2 class="reading-title">{activePassage.name}</h2>
 		<p class="reading-intro">{activePassage.intro}</p>
+		<p class="time-hint">About 18 minutes for this text. Flag and move — you need 22 on the paper, not this page.</p>
+		<TimeBox totalSeconds={18 * 60} warnSeconds={120} label="This text" />
 
 		<Card variant="white" class="passage-text-card">
 			<span class="passage-sparkle">

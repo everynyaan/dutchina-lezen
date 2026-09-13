@@ -35,6 +35,14 @@ function makeContext(): KuromiContextPacket {
 		config: defaults.appConfig,
 		streak: { weeks: 0, mode: defaults.appConfig.streaks },
 		lastQuiz: { completed: false, score: null },
+		readingFork: {
+			showUpStreak: 0,
+			evalCompleted: false,
+			trapStickers: [],
+			dueCards: 0,
+			lastMock: null,
+			cesuur: 22
+		},
 		recentAdjustments: [],
 		activityShape: [],
 		shelf: { pages: [], archivedCount: 0 }

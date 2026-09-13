@@ -20,10 +20,12 @@ describe('home page — gates then collection', () => {
 		expect(homeGateCards(1)).toHaveLength(4);
 	});
 
-	it('mounts HomeShelf below gates and does not remount the goals rail', () => {
-		expect(pageSrc).toContain('<GatePath {cards} />');
-		expect(pageSrc).toContain('<HomeShelf />');
-		expect(pageSrc.indexOf('<GatePath {cards} />')).toBeLessThan(pageSrc.indexOf('<HomeShelf />'));
+	it('home is the reading-fork hub, not the four-gate path', () => {
+		expect(pageSrc).toContain("resolve('/eval')");
+		expect(pageSrc).toContain("resolve('/mock')");
+		expect(pageSrc).toContain('Show-up streak');
+		expect(pageSrc).not.toContain('<GatePath {cards} />');
+		expect(pageSrc).not.toContain('<HomeShelf />');
 		expect(pageSrc).not.toContain('HomeRail');
 		expect(pageSrc).not.toContain('DoelenSheet');
 		expect(pageSrc).not.toContain('StatBadges');

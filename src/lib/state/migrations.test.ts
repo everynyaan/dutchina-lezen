@@ -778,7 +778,7 @@ describe('migrate()', () => {
 		const migrated = migrate(makeV16(14, '2026-06-05'));
 
 		expect(migrated.schemaVersion).toBe(CURRENT_SCHEMA_VERSION);
-		expect(CURRENT_SCHEMA_VERSION).toBe(22);
+		expect(CURRENT_SCHEMA_VERSION).toBe(23);
 
 		// Grammar fully removed — no orphan left in persisted state.
 		expect(migrated).not.toHaveProperty('grammar');
@@ -1293,7 +1293,7 @@ describe('migrate()', () => {
 		const migrated = migrate(v19State) as CurrentState;
 
 		expect(migrated.schemaVersion).toBe(CURRENT_SCHEMA_VERSION);
-		expect(CURRENT_SCHEMA_VERSION).toBe(22);
+		expect(CURRENT_SCHEMA_VERSION).toBe(23);
 
 		expect(migrated.rank).toEqual(v19State.rank);
 		expect(migrated.tier).toEqual(v19State.tier);
@@ -1401,10 +1401,26 @@ describe('migrate()', () => {
 		delete (v21.dailyQuiz as { swaps?: unknown }).swaps;
 		delete (v21.dailyHomework as { swaps?: unknown }).swaps;
 		const migrated = migrate(v21) as CurrentState;
-		expect(migrated.schemaVersion).toBe(22);
+		expect(migrated.schemaVersion).toBe(CURRENT_SCHEMA_VERSION);
 		expect(migrated.dailyQuiz.swaps).toEqual({ date: null, used: 0, swappedOutIds: [] });
 		expect(migrated.dailyHomework.swaps).toEqual({ date: null, used: 0, swappedOutIds: [] });
 		expect(migrated.lp).toBe(12);
 		expect(migrated.gates.current).toBe(1);
+		expect(migrated.readingFork.trapCards).toEqual([]);
+	});
+
+	it('migrates v22 to v23: readingFork empty, LP untouched', () => {
+		const v22 = {
+			...createDefaultState(),
+			schemaVersion: 22 as const,
+			lp: 9,
+			totalLp: 40
+		};
+		delete (v22 as { readingFork?: unknown }).readingFork;
+		const migrated = migrate(v22) as CurrentState;
+		expect(migrated.schemaVersion).toBe(23);
+		expect(migrated.readingFork.eval.completed).toBe(false);
+		expect(migrated.readingFork.trapCards).toEqual([]);
+		expect(migrated.lp).toBe(9);
 	});
 });
