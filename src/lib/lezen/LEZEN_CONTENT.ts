@@ -1,6 +1,9 @@
 // ============================================================
 // LEZEN CONTENT - NT2 Programma I (2023-2025)
 // 105 questions, 18 passages. Text inline for sentence-level TTS.
+// Official source: CvTE Openbaar examen Lezen I beoordelingsmodellen
+// 2023–2025 (passage list + antwoordsleutel). Option stems belong in
+// the tekst-/opgavenboekje — most items here still only have A–C.
 // ============================================================
 
 import type { LezenExam, LezenQuestion, LezenAnswer } from './types';
@@ -881,7 +884,7 @@ export const LEZEN_2024: LezenExam = {
 export const LEZEN_2023: LezenExam = {
 	year: 2023,
 	totalQuestions: 35,
-	passingScore: 24,
+	passingScore: 23,
 	passages: [
 		{
 			name: 'Vijf fabels over mbo-opleidingen van Ameda',

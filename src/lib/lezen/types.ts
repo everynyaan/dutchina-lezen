@@ -2,7 +2,9 @@
 // LEZEN MODULE TYPES
 // Types for the NT2 Lezen (Reading) exam practice module.
 // Content sourced from official Staatsexamen NT2 Programma I
-// openbaar examen PDFs (2023, 2024, 2025).
+// Openbaar examen Lezen I (2023, 2024, 2025): beoordelingsmodel keys
+// plus tekst/opgaven. Live paper is 36 items / pass 22; these openbaar
+// papers are 35 items. Options are A–D on the official papers.
 // ============================================================
 
 export type LezenAnswer = 'A' | 'B' | 'C' | 'D';
