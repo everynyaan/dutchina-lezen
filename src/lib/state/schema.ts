@@ -1214,8 +1214,34 @@ export interface StateV22 {
 	gates: GatesState;
 }
 
+/** Persisted v23 fork, before misses replaced trap stickers. */
+export interface ReadingForkV23 {
+	eval: {
+		date: string | null;
+		passageSlug: string | null;
+		year: number | null;
+		gistOptions: string[];
+		gistAnswer: string;
+		gistPicked: string | null;
+		questionIds: string[];
+		results: Record<string, boolean>;
+		completed: boolean;
+	};
+	showUpStreak: number;
+	lastEvalDate: string | null;
+	trapCards: unknown[];
+	trapStickers: string[];
+	lastMockAt: string | null;
+	lastMockScore: { correct: number; total: number; passed: boolean } | null;
+}
+
 export interface StateV23 extends Omit<StateV22, 'schemaVersion'> {
 	schemaVersion: 23;
+	readingFork: ReadingForkV23;
+}
+
+export interface StateV24 extends Omit<StateV22, 'schemaVersion'> {
+	schemaVersion: 24;
 	readingFork: ReadingForkState;
 }
 
@@ -1243,9 +1269,10 @@ export type State =
 	| StateV20
 	| StateV21
 	| StateV22
-	| StateV23;
+	| StateV23
+	| StateV24;
 
 // The latest version is the one the app runs on.
-export type CurrentState = StateV23;
+export type CurrentState = StateV24;
 
-export const CURRENT_SCHEMA_VERSION = 23;
+export const CURRENT_SCHEMA_VERSION = 24;

@@ -1,6 +1,13 @@
+<script lang="ts">
+	interface Props {
+		note?: string;
+	}
+	let { note = 'Training paper, 2025. Not the dress rehearsal.' }: Props = $props();
+</script>
+
 <div class="exam-banner" role="note">
 	<strong>B1 paper</strong>
-	<span>Official NT2 exam. Optional until Gate 4.</span>
+	<span>{note}</span>
 </div>
 
 <style>

@@ -30,9 +30,8 @@ import type {
 } from '$lib/state/schema';
 import { ADJUSTMENT_TOOL_NAMES, CURRENT_SCHEMA_VERSION, EMPTY_SWAPS, GLOW_RULES } from '$lib/state/schema';
 import { createDefaultState } from '$lib/state/defaults';
-import type { ReadingForkState, TrapCard, TrapType } from '$lib/reading/types';
+import type { Miss, ReadingForkState } from '$lib/reading/types';
 import { EMPTY_READING_FORK } from '$lib/reading/types';
-import { coalesceTrapCards } from '$lib/reading/eval';
 
 // ---------------------------------------------------------------------------
 // Public types
@@ -1197,12 +1196,8 @@ function mergeReadingFork(
 	if (local.eval.date !== remote.eval.date) {
 		notes.push(note(now, 'daily', 'readingFork.eval', local.eval, remote.eval, evalState));
 	}
-	const cardsById = new Map<string, TrapCard>();
-	for (const card of [...remote.trapCards, ...local.trapCards]) {
-		const prev = cardsById.get(card.id);
-		if (!prev || (card.dueDate ?? '') >= (prev.dueDate ?? '')) cardsById.set(card.id, card);
-	}
-	const stickers = Array.from(new Set([...local.trapStickers, ...remote.trapStickers])) as TrapType[];
+	const misses = mergeMisses(local.misses ?? [], remote.misses ?? []);
+	const satMocks = Array.from(new Set([...(remote.satMocks ?? []), ...(local.satMocks ?? [])]));
 	const lastMockAt = laterDate(local.lastMockAt, remote.lastMockAt);
 	const lastMockScore =
 		lastMockAt === local.lastMockAt ? local.lastMockScore : remote.lastMockScore;
@@ -1212,11 +1207,20 @@ function mergeReadingFork(
 		eval: evalState,
 		showUpStreak,
 		lastEvalDate,
-		trapCards: coalesceTrapCards([...cardsById.values()]),
-		trapStickers: stickers,
+		misses,
+		satMocks,
 		lastMockAt,
 		lastMockScore
 	};
+}
+
+function mergeMisses(local: Miss[], remote: Miss[]): Miss[] {
+	const byId = new Map<string, Miss>();
+	for (const miss of [...remote, ...local]) {
+		const prev = byId.get(miss.questionId);
+		if (!prev || (!miss.seen && prev.seen)) byId.set(miss.questionId, miss);
+	}
+	return [...byId.values()];
 }
 
 function asBoolRecord(x: unknown): Record<string, boolean> {

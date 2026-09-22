@@ -24,6 +24,7 @@ import {
 	type StateV21,
 	type StateV22,
 	type StateV23,
+	type StateV24,
 	DEFAULT_GLOW_ORDER,
 	EMPTY_SWAPS
 } from './schema';
@@ -346,8 +347,51 @@ export const migrations: Migration[] = [
 	(state: StateV22): StateV23 => ({
 		...state,
 		schemaVersion: 23,
-		readingFork: structuredClone(EMPTY_READING_FORK)
-	})
+		readingFork: {
+			eval: {
+				date: null,
+				passageSlug: null,
+				year: null,
+				gistOptions: [],
+				gistAnswer: '',
+				gistPicked: null,
+				questionIds: [],
+				results: {},
+				completed: false
+			},
+			showUpStreak: 0,
+			lastEvalDate: null,
+			trapCards: [],
+			trapStickers: [],
+			lastMockAt: null,
+			lastMockScore: null
+		}
+	}),
+
+	// v23 -> v24: exam-trainer misses. Do not reclassify old stickers.
+	// Keep the show-up streak. Old mock scores are not a sat paper (year 0).
+	(state: StateV23): StateV24 => {
+		const prev = state.readingFork;
+		const oldScore = prev?.lastMockScore ?? null;
+		return {
+			...state,
+			schemaVersion: 24,
+			readingFork: {
+				...structuredClone(EMPTY_READING_FORK),
+				showUpStreak: prev?.showUpStreak ?? 0,
+				lastEvalDate: prev?.lastEvalDate ?? null,
+				lastMockAt: prev?.lastMockAt ?? null,
+				lastMockScore: oldScore
+					? {
+							correct: oldScore.correct,
+							total: oldScore.total,
+							passed: oldScore.passed,
+							year: 0
+						}
+					: null
+			}
+		};
+	}
 ];
 
 export function migrate(raw: unknown): State {

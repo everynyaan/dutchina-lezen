@@ -42,8 +42,7 @@
 	import { initAuth } from '$lib/auth/session.svelte';
 	import { initDb, seedCardReviews, exportCardReviews } from '$lib/db/db';
 	import { currentGateFromState } from '$lib/gates/gates';
-	import { dueTrapCards } from '$lib/reading/eval';
-	import { getTodayDate } from '$lib/match/engine';
+	import { unseenMisses } from '$lib/reading/eval';
 
 	import Icon from '$lib/icons/Icon.svelte';
 	import SummonButton from '$lib/components/kuromi/SummonButton.svelte';
@@ -326,7 +325,7 @@
 
 	async function refreshCardsDue(): Promise<void> {
 		try {
-			cardsDue = dueTrapCards(gameState.readingFork, getTodayDate()).length;
+			cardsDue = unseenMisses(gameState.readingFork.misses).length;
 		} catch {
 			cardsDue = 0;
 		}
@@ -602,10 +601,9 @@
 	// ============================================================
 	const tabs = [
 		{ href: '/', label: 'Home', icon: 'house' },
-		{ href: '/eval', label: 'Eval', icon: 'list-check' },
-		{ href: '/cards', label: 'Cards', icon: 'rectangle-history' },
-		{ href: '/mock', label: 'Mock', icon: 'bullseye' },
-		{ href: '/grammar', label: 'Patterns', icon: 'book-sparkles' }
+		{ href: '/eval', label: 'Today', icon: 'list-check' },
+		{ href: '/cards', label: 'Debrief', icon: 'rectangle-history' },
+		{ href: '/mock', label: 'Mock', icon: 'bullseye' }
 	] as const;
 
 	const secondaryLinks: {

@@ -778,7 +778,7 @@ describe('migrate()', () => {
 		const migrated = migrate(makeV16(14, '2026-06-05'));
 
 		expect(migrated.schemaVersion).toBe(CURRENT_SCHEMA_VERSION);
-		expect(CURRENT_SCHEMA_VERSION).toBe(23);
+		expect(CURRENT_SCHEMA_VERSION).toBe(24);
 
 		// Grammar fully removed — no orphan left in persisted state.
 		expect(migrated).not.toHaveProperty('grammar');
@@ -1293,7 +1293,7 @@ describe('migrate()', () => {
 		const migrated = migrate(v19State) as CurrentState;
 
 		expect(migrated.schemaVersion).toBe(CURRENT_SCHEMA_VERSION);
-		expect(CURRENT_SCHEMA_VERSION).toBe(23);
+		expect(CURRENT_SCHEMA_VERSION).toBe(24);
 
 		expect(migrated.rank).toEqual(v19State.rank);
 		expect(migrated.tier).toEqual(v19State.tier);
@@ -1406,7 +1406,8 @@ describe('migrate()', () => {
 		expect(migrated.dailyHomework.swaps).toEqual({ date: null, used: 0, swappedOutIds: [] });
 		expect(migrated.lp).toBe(12);
 		expect(migrated.gates.current).toBe(1);
-		expect(migrated.readingFork.trapCards).toEqual([]);
+		expect(migrated.readingFork.misses).toEqual([]);
+		expect(migrated.readingFork.satMocks).toEqual([]);
 	});
 
 	it('migrates v22 to v23: readingFork empty, LP untouched', () => {
@@ -1418,9 +1419,57 @@ describe('migrate()', () => {
 		};
 		delete (v22 as { readingFork?: unknown }).readingFork;
 		const migrated = migrate(v22) as CurrentState;
-		expect(migrated.schemaVersion).toBe(23);
+		expect(migrated.schemaVersion).toBe(CURRENT_SCHEMA_VERSION);
 		expect(migrated.readingFork.eval.completed).toBe(false);
-		expect(migrated.readingFork.trapCards).toEqual([]);
+		expect(migrated.readingFork.misses).toEqual([]);
+		expect(migrated.readingFork.satMocks).toEqual([]);
+		expect(migrated.lp).toBe(9);
+	});
+
+	it('migrates v23 to v24: drops stickers, keeps streak, old mock year 0', () => {
+		const v23 = {
+			...createDefaultState(),
+			schemaVersion: 23 as const,
+			lp: 9,
+			readingFork: {
+				eval: {
+					date: '2026-09-01',
+					passageSlug: 'ruud-rij-instructeur',
+					year: 2025,
+					gistOptions: ['a'],
+					gistAnswer: 'a',
+					gistPicked: 'b',
+					questionIds: ['lezen-2025-1'],
+					results: { 'lezen-2025-1': false },
+					completed: true
+				},
+				showUpStreak: 4,
+				lastEvalDate: '2026-09-01',
+				trapCards: [{ id: 'trap:verwijzing' }],
+				trapStickers: ['verwijzing'],
+				lastMockAt: '2026-08-01',
+				lastMockScore: { correct: 20, total: 35, passed: false }
+			}
+		};
+		const migrated = migrate(v23) as CurrentState;
+		expect(migrated.schemaVersion).toBe(24);
+		expect(migrated.readingFork.showUpStreak).toBe(4);
+		expect(migrated.readingFork.lastEvalDate).toBe('2026-09-01');
+		expect(migrated.readingFork.misses).toEqual([]);
+		expect(migrated.readingFork.satMocks).toEqual([]);
+		expect(migrated.readingFork.eval).toEqual({
+			date: null,
+			passageSlug: null,
+			results: {},
+			completed: false
+		});
+		expect(migrated.readingFork.lastMockScore).toEqual({
+			correct: 20,
+			total: 35,
+			passed: false,
+			year: 0
+		});
+		expect(migrated.readingFork).not.toHaveProperty('trapCards');
 		expect(migrated.lp).toBe(9);
 	});
 });

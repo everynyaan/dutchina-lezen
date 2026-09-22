@@ -23,8 +23,9 @@ describe('home page — gates then collection', () => {
 	it('home is the reading-fork hub, not the four-gate path', () => {
 		expect(pageSrc).toContain("resolve('/eval')");
 		expect(pageSrc).toContain("resolve('/mock')");
-		expect(pageSrc).toContain('Showed up');
-		expect(pageSrc).toContain('feed the cards');
+		expect(pageSrc).toContain('One full text. All its questions.');
+		expect(pageSrc).toContain('Live paper is 22 of 36.');
+		expect(pageSrc).toContain('Sealed paper. Once.');
 		expect(pageSrc).not.toContain('<GatePath {cards} />');
 		expect(pageSrc).not.toContain('<HomeShelf />');
 		expect(pageSrc).not.toContain('HomeRail');

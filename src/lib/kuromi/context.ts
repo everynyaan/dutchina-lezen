@@ -18,11 +18,11 @@ import type {
 
 /** Direct pathname-prefix → screen label (longest-prefix match, excluding '/'). */
 const SCREEN_PREFIXES: ReadonlyArray<readonly [string, string]> = [
-	['/eval', "today's 5-minute eval (feeds trap cards)"],
-	['/mock', 'a 110-minute mock exam'],
+	['/eval', "today's full training text"],
+	['/mock', 'a sealed 110-minute paper'],
 	['/gate', 'the gate hub'],
 	['/match', 'the match game'],
-	['/cards', 'trap-sticker move drills'],
+	['/cards', 'debrief of misses'],
 	['/stories', 'the story shelf'],
 	['/grammar', 'the pattern handbook'],
 	['/vocab', 'the vocabulary lists'],
@@ -105,7 +105,7 @@ function hasPracticeEvidence(state: CurrentState): boolean {
 		state.dailyQuiz.completed ||
 		state.dailyRead.done ||
 		state.readingFork.eval.completed ||
-		state.readingFork.trapCards.length > 0
+		state.readingFork.misses.length > 0
 	);
 }
 
@@ -262,10 +262,13 @@ export async function buildKuromiContext(
 		readingFork: {
 			showUpStreak: state.readingFork.showUpStreak,
 			evalCompleted: state.readingFork.eval.completed,
-			trapStickers: state.readingFork.trapStickers,
-			dueCards: state.readingFork.trapCards.filter((c) => c.dueDate <= today).length,
-			lastMock: state.readingFork.lastMockScore,
-			cesuur: 22
+			unseenMisses: state.readingFork.misses.filter((miss) => !miss.seen).length,
+			lastMock:
+				state.readingFork.lastMockScore && state.readingFork.lastMockScore.year !== 0
+					? state.readingFork.lastMockScore
+					: null,
+			cesuur: 22,
+			liveTotal: 36
 		},
 		recentAdjustments: buildRecentAdjustments(state.adjustments),
 		activityShape: buildActivityShape(state, today),

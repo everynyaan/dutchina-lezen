@@ -8,9 +8,7 @@
 	import Card from '$lib/components/ui/Card.svelte';
 	import { resolve } from '$app/paths';
 	import { getTodayDate } from '$lib/match/engine';
-	import { dueTrapCards } from '$lib/reading/eval';
-	import { mockReady, PASS_SCORE } from '$lib/reading/mock';
-	import { TRAP_LABEL } from '$lib/reading/types';
+	import { unseenMisses } from '$lib/reading/eval';
 
 	const ctx = getGameContext();
 	let settingsOpen = $state(false);
@@ -31,8 +29,10 @@
 	let dateLabel = $state(formatDateLabel(new Date()));
 
 	let evalDone = $derived(ctx.state.readingFork.eval.date === today && ctx.state.readingFork.eval.completed);
-	let dueCount = $derived(dueTrapCards(ctx.state.readingFork, today).length);
-	let mockIsReady = $derived(mockReady(ctx.state.readingFork.lastMockAt, today));
+	let unseen = $derived(unseenMisses(ctx.state.readingFork.misses).length);
+	let bothRehearsals = $derived(
+		ctx.state.readingFork.satMocks.includes(2024) && ctx.state.readingFork.satMocks.includes(2023)
+	);
 
 	interface BeforeInstallPromptEvent extends Event {
 		prompt: () => Promise<void>;
@@ -129,37 +129,23 @@
 	<Card variant="soft-rose">
 		<p class="kicker">Kuromi says</p>
 		<p class="hero-copy">
-			You need <strong>{PASS_SCORE}</strong> on the real paper, not 36. Show up for five minutes
-			to feed the cards. Skip the scary ones. Flag. Don’t hunt one word.
+			Live paper is 22 of 36. Skip, flag, don't hunt one word. The mock is a paper you have not
+			practiced.
 		</p>
-		<p class="streak">Showed up · {ctx.state.readingFork.showUpStreak}</p>
 	</Card>
 
 	<a class="hub-card" href={resolve('/eval')} onclick={() => playSfx('button_tap')}>
-		<span class="hub-title">{evalDone ? 'Eval done' : '5-minute eval'}</span>
-		<span class="hub-sub">One passage. Feeds trap cards. Not exam prep.</span>
+		<span class="hub-title">{evalDone ? 'Today done' : 'Today'}</span>
+		<span class="hub-sub">One full text. All its questions.</span>
 	</a>
 	<a class="hub-card" href={resolve('/cards')} onclick={() => playSfx('button_tap')}>
-		<span class="hub-title">Trap drills {dueCount ? `· ${dueCount} due` : ''}</span>
-		<span class="hub-sub">
-			{#if ctx.state.readingFork.trapStickers.length}
-				{ctx.state.readingFork.trapStickers.map((t) => TRAP_LABEL[t]).join(' · ')}
-			{:else}
-				New snippets of the move you missed — not translations.
-			{/if}
-		</span>
+		<span class="hub-title">Debrief</span>
+		<span class="hub-sub">{unseen ? `${unseen} unseen` : 'Clear.'}</span>
 	</a>
 	<a class="hub-card" href={resolve('/mock')} onclick={() => playSfx('button_tap')}>
-		<span class="hub-title">{mockIsReady ? 'Mock exam' : 'Mock (recent)'}</span>
-		<span class="hub-sub">110 minutes · 6 texts · pass {PASS_SCORE}. Dress rehearsal, not weekly.</span>
-	</a>
-	<a class="hub-card quiet" href={resolve('/lezen')} onclick={() => playSfx('button_tap')}>
-		<span class="hub-title">Extra texts</span>
-		<span class="hub-sub">~18 minutes a passage. Flag and move.</span>
-	</a>
-	<a class="hub-card quiet" href={resolve('/grammar')} onclick={() => playSfx('button_tap')}>
-		<span class="hub-title">Pattern handbook</span>
-		<span class="hub-sub">Word-order and traps — not a vocab grind.</span>
+		<span class="hub-title">Mock</span>
+		<span class="hub-sub">{bothRehearsals ? 'Both rehearsals done.' : 'Sealed paper. Once.'}</span>
+		<span class="hub-sub">Live paper is 22 of 36.</span>
 	</a>
 
 	{#if installVisible}
@@ -239,10 +225,6 @@
 		line-height: 1.45;
 		margin: 0;
 	}
-	.streak {
-		margin: 10px 0 0;
-		font-weight: 700;
-	}
 	.hub-card {
 		display: flex;
 		flex-direction: column;
@@ -254,9 +236,6 @@
 		background: #fff;
 		text-decoration: none;
 		color: var(--color-ink);
-	}
-	.hub-card.quiet {
-		background: var(--color-cream, #fff8f5);
 	}
 	.hub-title {
 		font-family: var(--font-display);

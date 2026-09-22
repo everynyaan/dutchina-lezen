@@ -84,7 +84,7 @@ describe('screenLabelForPath', () => {
 	});
 
 	it('maps nested paths under a prefix', () => {
-		expect(screenLabelForPath('/cards/session')).toBe('trap-sticker move drills');
+		expect(screenLabelForPath('/cards/session')).toBe('debrief of misses');
 	});
 
 	it('maps story chapters (3+ segments) to a story chapter', () => {

@@ -36,10 +36,10 @@ const SAMPLE_CONTEXT: KuromiContextPacket = {
 	readingFork: {
 		showUpStreak: 0,
 		evalCompleted: false,
-		trapStickers: [],
-		dueCards: 0,
+		unseenMisses: 0,
 		lastMock: null,
-		cesuur: 22
+		cesuur: 22,
+		liveTotal: 36
 	},
 	recentAdjustments: [],
 	activityShape: [

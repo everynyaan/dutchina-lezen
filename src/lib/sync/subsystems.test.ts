@@ -250,7 +250,7 @@ function randomState(rng: () => number): CurrentState {
 	}
 
 	const state: CurrentState = {
-		schemaVersion: 23,
+		schemaVersion: 24,
 		rank: randInt(rng, 0, 7),
 		tier: randInt(rng, 1, 4),
 		lp: randInt(rng, 0, 99),

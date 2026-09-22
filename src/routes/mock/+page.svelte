@@ -1,34 +1,61 @@
 <script lang="ts">
+	import type { LezenExam } from '$lib/lezen/types';
 	import { getGameContext } from '$lib/state/context';
 	import { getTodayDate } from '$lib/match/engine';
-	import { pickMockExam, mockReady, passedMock, MOCK_MINUTES, MINUTES_PER_TEXT, PASS_SCORE } from '$lib/reading/mock';
+	import {
+		BOOKLET_PASS_LABEL,
+		LIVE_PASS,
+		MOCK_MINUTES,
+		passedSitting,
+		pickMockExam
+	} from '$lib/reading/mock';
+	import { MOVES, moveOf } from '$lib/reading/moves';
 	import TimeBox from '$lib/components/reading/TimeBox.svelte';
+	import MissReview from '$lib/components/reading/MissReview.svelte';
 	import Card from '$lib/components/ui/Card.svelte';
 	import { playSfx } from '$lib/sound/sfx';
 	import { resolve } from '$app/paths';
 
 	const ctx = getGameContext();
 	const today = getTodayDate();
-	const exam = pickMockExam(today);
-	const allQuestions = exam.passages.flatMap((p) =>
-		p.questions.map((q) => ({ ...q, slug: p.slug, passageName: p.name }))
-	);
 
 	let started = $state(false);
+	let sitting = $state<LezenExam | null>(null);
+	let exam = $derived(pickMockExam(ctx.state.readingFork.satMocks));
+	let paper = $derived(sitting ?? exam);
+	let allQuestions = $derived(
+		paper
+			? paper.passages.flatMap((p) =>
+					p.questions.map((q) => ({ ...q, slug: p.slug, passageName: p.name }))
+				)
+			: []
+	);
 	let passageIndex = $state(0);
 	let answers = $state<Record<string, string>>({});
 	let flagged = $state<Record<string, boolean>>({});
 	let done = $state(false);
 
-	let passage = $derived(exam.passages[passageIndex]);
-	let ready = $derived(mockReady(ctx.state.readingFork.lastMockAt, today));
+	let passage = $derived(paper?.passages[passageIndex]);
+	let correctCount = $derived(allQuestions.filter((q) => answers[q.id] === q.answer).length);
+	let passed = $derived(passedSitting(correctCount));
+	let last = $derived(ctx.state.readingFork.lastMockScore);
+	let bothDone = $derived(exam === null);
 
-	let correctCount = $derived(
-		allQuestions.filter((q) => answers[q.id] === q.answer).length
+	let misses = $derived(
+		done
+			? allQuestions.filter((q) => answers[q.id] !== q.answer)
+			: []
 	);
-	let answered = $derived(Object.keys(answers).length);
+	let grouped = $derived(
+		MOVES.map((move) => ({
+			move,
+			items: misses.filter((q) => moveOf(q.id) === move)
+		})).filter((group) => group.items.length > 0)
+	);
 
 	function start() {
+		if (!exam) return;
+		sitting = exam;
 		started = true;
 		playSfx('session_start');
 	}
@@ -37,72 +64,87 @@
 		answers = { ...answers, [id]: letter };
 	}
 
+	function jumpTo(id: string) {
+		const paper = sitting ?? exam;
+		if (!paper) return;
+		const index = paper.passages.findIndex((p) => p.questions.some((q) => q.id === id));
+		if (index >= 0) passageIndex = index;
+	}
+
 	function finish() {
+		if (done || !sitting) return;
 		done = true;
-		const passed = passedMock(correctCount);
+		const year = sitting.year;
 		ctx.state.readingFork.lastMockAt = today;
 		ctx.state.readingFork.lastMockScore = {
 			correct: correctCount,
 			total: allQuestions.length,
-			passed
+			passed: passedSitting(correctCount),
+			year
 		};
-		playSfx(passed ? 'rank_up' : 'session_complete');
-	}
-
-	function onPaperExpire() {
-		finish();
+		if (!ctx.state.readingFork.satMocks.includes(year)) {
+			ctx.state.readingFork.satMocks = [...ctx.state.readingFork.satMocks, year];
+		}
+		playSfx(passedSitting(correctCount) ? 'rank_up' : 'session_complete');
 	}
 </script>
 
 <div class="mock-page stagger">
-	<p class="eyebrow">Exam-day replica · {MOCK_MINUTES} min · pass {PASS_SCORE}</p>
-	<h1>Mock exam</h1>
-	<p class="lede">
-		Dress rehearsal, not weekly. Six texts, computer questions. Flag and move. You need 22, not a
-		perfect paper. Don’t hunt one word. Van Dale NT2 pocket is allowed on the real day — bring
-		yours; we don’t fake one here.
-	</p>
+	<p class="eyebrow">Sealed paper · once · {MOCK_MINUTES} min</p>
+	<h1>Mock</h1>
 
-	{#if !started && !done}
+	{#if bothDone}
 		<Card variant="soft-teal">
-			{#if !ready && ctx.state.readingFork.lastMockScore}
-				<p>
-					Last mock: {ctx.state.readingFork.lastMockScore.correct}/{ctx.state.readingFork.lastMockScore.total}
-					({ctx.state.readingFork.lastMockScore.passed ? 'pass' : 'not yet'}). Daily eval is the
-					habit; this is dress rehearsal — wait a couple of weeks or start anyway if you want.
+			<p>Both rehearsals are done. Don't resit a paper you've already sat.</p>
+			{#if last && last.year !== 0}
+				<p class="tiny">
+					Last sitting: {last.correct}/{last.total}
+					({last.passed ? 'pass' : 'not yet'}).
 				</p>
 			{/if}
-			<p>{exam.year} paper · {exam.passages.length} texts · {allQuestions.length} questions (real booklet, not padded to 36).</p>
-			<p class="tiny">Kuromi: 22 of 36. Skip hard. Flag. Don’t hunt one word.</p>
-			<button type="button" class="btn start" onclick={start}>Start 110:00</button>
+			<a class="btn" href={resolve('/')}>Home</a>
+		</Card>
+	{:else if exam && !started && !done}
+		<Card variant="soft-teal">
+			<p>{exam.year} · {allQuestions.length} items</p>
+			<p>{BOOKLET_PASS_LABEL}</p>
+			<p>The live paper is 110 minutes and a bit longer.</p>
+			{#if last && last.year !== 0}
+				<p class="tiny">
+					Last sitting: {last.correct}/{last.total}
+					({last.passed ? 'pass' : 'not yet'}).
+				</p>
+			{/if}
+			<button type="button" class="btn start" onclick={start}>Start the clock</button>
 			<a class="ghost" href={resolve('/')}>Back home</a>
 		</Card>
-	{:else if done}
+	{:else if sitting && done}
 		<Card variant="soft-lavender">
-			<h2>{passedMock(correctCount) ? 'That’s a pass line.' : 'Under 22 — the pulse still counts.'}</h2>
-			<p>{correctCount} / {allQuestions.length} · cesuur {PASS_SCORE}</p>
-			<a class="btn" href={resolve('/eval')}>Back to the 5-minute eval</a>
+			<h2>{passed ? 'This sitting passes.' : 'Under 22.'}</h2>
+			<p>{correctCount} / {allQuestions.length}</p>
+			<p>{BOOKLET_PASS_LABEL}</p>
 		</Card>
-	{:else}
+		{#each grouped as group (group.move)}
+			<h2 class="move-head">{group.move}</h2>
+			{#each group.items as q (q.id)}
+				<Card>
+					<MissReview questionId={q.id} picked={answers[q.id] ?? ''} />
+				</Card>
+			{/each}
+		{/each}
+	{:else if sitting && passage}
 		<div class="toolbar">
-			<TimeBox totalSeconds={MOCK_MINUTES * 60} label="Paper 110" onExpire={onPaperExpire} />
-			{#key passageIndex}
-				<TimeBox
-					totalSeconds={MINUTES_PER_TEXT * 60}
-					warnSeconds={120}
-					label={`Text ${passageIndex + 1} · ~${MINUTES_PER_TEXT} min`}
-				/>
-			{/key}
+			<TimeBox totalSeconds={MOCK_MINUTES * 60} label="Paper 110" onExpire={finish} />
 		</div>
-
-		<p class="tiny">Skip hard. Flag. Don’t hunt one word. ~{MINUTES_PER_TEXT} min a text.</p>
-		<nav class="texts" aria-label="Texts">
-			{#each exam.passages as p, i (p.slug)}
+		<nav class="grid" aria-label="Questions">
+			{#each allQuestions as q, i (q.id)}
 				<button
 					type="button"
-					class="chip"
-					class:on={i === passageIndex}
-					onclick={() => (passageIndex = i)}
+					class="cell"
+					class:answered={Boolean(answers[q.id])}
+					class:flagged={flagged[q.id]}
+					class:blank={!answers[q.id]}
+					onclick={() => jumpTo(q.id)}
 				>
 					{i + 1}
 				</button>
@@ -143,7 +185,10 @@
 			</Card>
 		{/each}
 
-		<p class="tiny">{answered} answered · {Object.values(flagged).filter(Boolean).length} flagged</p>
+		<p class="tiny">
+			{Object.keys(answers).length} answered · {Object.values(flagged).filter(Boolean).length} flagged
+			· pass {LIVE_PASS}
+		</p>
 		<button type="button" class="btn" onclick={finish}>Hand in</button>
 	{/if}
 </div>
@@ -162,14 +207,18 @@
 		margin: 0;
 	}
 	h1,
-	h2 {
+	h2,
+	.move-head {
 		font-family: var(--font-display);
 		margin: 0;
 	}
 	h1 {
 		font-size: var(--text-hero);
 	}
-	.lede,
+	.move-head {
+		font-size: var(--text-title);
+		text-transform: capitalize;
+	}
 	.intro,
 	.q,
 	.text {
@@ -182,14 +231,18 @@
 	}
 	.toolbar {
 		display: flex;
-		flex-wrap: wrap;
-		gap: 8px;
 	}
-	.texts {
+	.grid {
+		position: sticky;
+		top: 0;
+		z-index: 2;
 		display: flex;
-		gap: 6px;
+		flex-wrap: wrap;
+		gap: 4px;
+		padding: 8px 0;
+		background: var(--color-paper, #fffaf6);
 	}
-	.chip,
+	.cell,
 	.flag,
 	.opt,
 	.btn {
@@ -197,15 +250,21 @@
 		background: #fff;
 		cursor: pointer;
 	}
-	.chip {
-		width: 36px;
-		height: 36px;
-		border-radius: 999px;
+	.cell {
+		width: 32px;
+		height: 32px;
+		border-radius: 8px;
 		font-weight: 700;
+		font-size: var(--text-small);
 	}
-	.chip.on,
-	.opt.picked {
+	.cell.blank {
+		background: #fff;
+	}
+	.cell.answered {
 		background: var(--color-lilac, #ede4ff);
+	}
+	.cell.flagged {
+		outline: 3px solid var(--color-rose-deep, #c43b6e);
 	}
 	.qhead {
 		display: flex;
@@ -231,6 +290,9 @@
 		text-align: left;
 		border-radius: 14px;
 		padding: 10px 12px;
+	}
+	.opt.picked {
+		background: var(--color-lilac, #ede4ff);
 	}
 	.btn {
 		display: inline-flex;

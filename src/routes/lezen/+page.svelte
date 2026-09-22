@@ -12,7 +12,7 @@
 	import Icon from '$lib/icons/Icon.svelte';
 	import Character from '$lib/components/art/Character.svelte';
 	import Doodle from '$lib/components/art/Doodle.svelte';
-	import SpeakerButton from '$lib/components/SpeakerButton.svelte';
+	import PassageText from '$lib/components/reading/PassageText.svelte';
 	import Card from '$lib/components/ui/Card.svelte';
 	import Pager from '$lib/components/ui/Pager.svelte';
 	import Pill from '$lib/components/ui/Pill.svelte';
@@ -20,11 +20,11 @@
 	import { resolve } from '$app/paths';
 	import ExamPaperBanner from '$lib/components/ExamPaperBanner.svelte';
 	import TimeBox from '$lib/components/reading/TimeBox.svelte';
-	import { MINUTES_PER_TEXT } from '$lib/reading/mock';
-	import { EXAM_YEARS } from '$lib/gates/browse';
+	import { BOOKLET_PASS_LABEL, LIVE_PASS, MINUTES_PER_TEXT } from '$lib/reading/mock';
+	import { evidenceOf } from '$lib/reading/evidence';
+	import { MOVE_LINE, moveOf } from '$lib/reading/moves';
 
 	const ctx = getGameContext();
-	const roomYears = [...EXAM_YEARS];
 
 	/** Paragraphs shown per reading page. Tuned for typical NT2 passages (≈3–6 pages). */
 	const PARAGRAPHS_PER_PAGE = 4;
@@ -197,10 +197,6 @@
 		return ctx.state.lezen.questionResults[qId]?.correct ?? false;
 	}
 
-	function selectYear(year: number) {
-		selectedYear = year;
-	}
-
 	function openPassage(ex: LezenExam, passage: LezenPassage) {
 		activeExam = ex;
 		activePassage = passage;
@@ -273,7 +269,6 @@
 	// 'hehe' has an animated variant and this is an answer EVENT, so it is
 	// allowed to animate (section 7); 'shocked'/'question' are static-only
 	// moods per the manifest and are never forced to animate.
-	let reactorMood = $derived(!showResult ? 'question' : wasCorrect ? 'hehe' : 'shocked');
 </script>
 
 {#if view === 'exams'}
@@ -304,19 +299,7 @@
 
 		<ExamPaperBanner />
 
-		<div class="year-tabs r-chip offset-pill edge-hair">
-			{#each roomYears as year (year)}
-				{@const prog = getExamProgress(LEZEN_EXAMS.find((e) => e.year === year)!)}
-				<button
-					class="year-tab"
-					class:active={selectedYear === year}
-					onclick={() => selectYear(year)}
-				>
-					<span class="year-label">{year}</span>
-					{#if prog.answered > 0}<span class="year-prog">{prog.correct}/{prog.total}</span>{/if}
-				</button>
-			{/each}
-		</div>
+		<p class="year-label">Training paper · 2025</p>
 
 		<div class="passages">
 			{#each exam.passages as passage (passage.slug)}
@@ -351,14 +334,12 @@
 				<Doodle name="spark-sparkle-26" size={24} color="var(--color-rose-deep)" tilt={6} />
 			</span>
 			<span class="stat-label">Score: {examProg.correct} / {examProg.total}</span>
+			<p class="stat-hint">{BOOKLET_PASS_LABEL}</p>
 			{#if examProg.answered === examProg.total && examProg.total > 0}
-				{#if examProg.correct >= exam.passingScore}<Pill variant="teal" size="sm"
-						><Icon name="check" size={12} />Passed</Pill
+				{#if examProg.correct >= LIVE_PASS}<Pill variant="teal" size="sm"
+						><Icon name="check" size={12} />Sitting passes</Pill
 					>
-				{:else}<Pill variant="rose" size="sm">Need {exam.passingScore - examProg.correct} more</Pill
-					>{/if}
-			{:else if examProg.total > 0}
-				<span class="stat-hint">Pass: {exam.passingScore}+ correct</span>
+				{:else}<Pill variant="rose" size="sm">Need {LIVE_PASS - examProg.correct} more</Pill>{/if}
 			{/if}
 		</div>
 	</div>
@@ -370,7 +351,7 @@
 		</button>
 		<h2 class="reading-title">{activePassage.name}</h2>
 		<p class="reading-intro">{activePassage.intro}</p>
-		<p class="time-hint">About {MINUTES_PER_TEXT} minutes for this text. Flag and move — you need 22 on the paper, not this page.</p>
+		<p class="time-hint">About {MINUTES_PER_TEXT} minutes for this text. {BOOKLET_PASS_LABEL}</p>
 		<div class="time-dock">
 			<TimeBox totalSeconds={MINUTES_PER_TEXT * 60} warnSeconds={120} label={`~${MINUTES_PER_TEXT} min`} />
 		</div>
@@ -427,13 +408,6 @@
 				</div>
 			{/key}
 
-			{#if selectedText && popoverPos}
-				<div class="tts-popover" style="top: {popoverPos.top}px; left: {popoverPos.left}px;">
-					<SpeakerButton text={selectedText} />
-					<SpeakerButton text={selectedText} slow />
-				</div>
-			{/if}
-
 			<div class="reading-cameo jit-c">
 				<Character who="melody" mood="reading" size={36} />
 			</div>
@@ -466,16 +440,13 @@
 		</button>
 
 		<div class="q-counter">
-			<span class="q-reactor">
-				<Character who="kuromi" mood={reactorMood} size={32} animated={reactorMood === 'hehe'} />
-			</span>
 			Question {questionIndex + 1} / {activePassage.questions.length}
 			<span class="q-opgave">Question {currentQuestion.vraag}</span>
 			<span class="q-sparkle">
 				<Doodle name="spark-sparkle-26" size={16} color="var(--color-rose-deep)" tilt={10} />
 			</span>
 		</div>
-		<p class="time-hint">Flag and move. Cesuur 22 — you do not need every question.</p>
+		<p class="time-hint">{BOOKLET_PASS_LABEL}</p>
 
 		<div class="q-dots">
 			{#each activePassage.questions as q, i (q.id)}
@@ -490,6 +461,11 @@
 				></div>
 			{/each}
 		</div>
+
+		<PassageText
+			text={activePassage.text}
+			needle={showResult && currentQuestion ? evidenceOf(currentQuestion.id) : null}
+		/>
 
 		<Card variant="white" class="question-card">
 			<span class="question-sparkle">
@@ -522,6 +498,7 @@
 			</div>
 
 			{#if showResult}
+				<p class="move-line">{MOVE_LINE[moveOf(currentQuestion.id)]}</p>
 				{#if wasCorrect}
 					<Sticker variant="tip">
 						<span class="result-copy"><Icon name="check" size={16} /> Correct!</span>
@@ -622,46 +599,12 @@
 		line-height: 0;
 	}
 
-	.year-tabs {
-		display: flex;
-		gap: 6px;
-		background: var(--color-s1);
-		padding: 4px;
-	}
-	.year-tab {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 2px;
-		padding: 8px 4px;
-		border: none;
-		background: none;
-		border-radius: 12px;
-		cursor: pointer;
-		transition: all 0.15s;
-		-webkit-tap-highlight-color: transparent;
-	}
-	.year-tab.active {
-		background: color-mix(in srgb, var(--color-lavender) 55%, white);
-	}
 	.year-label {
 		font-family: var(--font-display);
 		font-size: var(--text-lead);
 		font-weight: 700;
 		color: var(--color-text);
 	}
-	.year-tab.active .year-label {
-		color: var(--color-lavender-deep);
-	}
-	.year-prog {
-		font-size: var(--text-micro);
-		color: var(--color-muted-ink);
-	}
-	.year-tab.active .year-prog {
-		color: var(--color-lavender-deep);
-	}
-
 	.passages {
 		display: flex;
 		flex-direction: column;
