@@ -9,6 +9,7 @@
 	import { resolve } from '$app/paths';
 	import { getTodayDate } from '$lib/match/engine';
 	import { unseenMisses } from '$lib/reading/eval';
+	import { predictiveAvailable, yearStudied } from '$lib/reading/mock';
 
 	const ctx = getGameContext();
 	let settingsOpen = $state(false);
@@ -30,8 +31,16 @@
 
 	let evalDone = $derived(ctx.state.readingFork.eval.date === today && ctx.state.readingFork.eval.completed);
 	let unseen = $derived(unseenMisses(ctx.state.readingFork.misses).length);
-	let bothRehearsals = $derived(
-		ctx.state.readingFork.satMocks.includes(2024) && ctx.state.readingFork.satMocks.includes(2023)
+	let predictiveOpen = $derived(
+		predictiveAvailable(
+			ctx.state.readingFork.satMocks,
+			yearStudied(
+				2023,
+				ctx.state.lezen.questionResults,
+				ctx.state.readingFork.eval.results,
+				ctx.state.readingFork.misses.map((miss) => miss.questionId)
+			)
+		)
 	);
 
 	interface BeforeInstallPromptEvent extends Event {
@@ -129,8 +138,8 @@
 	<Card variant="soft-rose">
 		<p class="kicker">Kuromi says</p>
 		<p class="hero-copy">
-			Live paper is 22 of 36. Skip, flag, don't hunt one word. The mock is a paper you have not
-			practiced.
+			Live paper is 22 of 36. Skip, flag, don't hunt one word. Training is 2024 and 2025. 2023 stays
+			sealed for one predictive mock.
 		</p>
 	</Card>
 
@@ -144,7 +153,7 @@
 	</a>
 	<a class="hub-card" href={resolve('/mock')} onclick={() => playSfx('button_tap')}>
 		<span class="hub-title">Mock</span>
-		<span class="hub-sub">{bothRehearsals ? 'Both rehearsals done.' : 'Sealed paper. Once.'}</span>
+		<span class="hub-sub">{predictiveOpen ? 'Predictive mock. Once.' : 'Format rehearsal.'}</span>
 		<span class="hub-sub">Live paper is 22 of 36.</span>
 	</a>
 

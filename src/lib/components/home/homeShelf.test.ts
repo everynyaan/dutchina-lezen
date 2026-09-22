@@ -25,7 +25,8 @@ describe('home page — gates then collection', () => {
 		expect(pageSrc).toContain("resolve('/mock')");
 		expect(pageSrc).toContain('One full text. All its questions.');
 		expect(pageSrc).toContain('Live paper is 22 of 36.');
-		expect(pageSrc).toContain('Sealed paper. Once.');
+		expect(pageSrc).toContain('Predictive mock. Once.');
+		expect(pageSrc).toContain('Training is 2024 and 2025.');
 		expect(pageSrc).not.toContain('<GatePath {cards} />');
 		expect(pageSrc).not.toContain('<HomeShelf />');
 		expect(pageSrc).not.toContain('HomeRail');

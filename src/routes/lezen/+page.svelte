@@ -20,7 +20,7 @@
 	import { resolve } from '$app/paths';
 	import ExamPaperBanner from '$lib/components/ExamPaperBanner.svelte';
 	import TimeBox from '$lib/components/reading/TimeBox.svelte';
-	import { BOOKLET_PASS_LABEL, LIVE_PASS, MINUTES_PER_TEXT } from '$lib/reading/mock';
+	import { BOOKLET_PASS_LABEL, LIVE_PASS, MINUTES_PER_TEXT, practiceYears, yearStudied } from '$lib/reading/mock';
 	import { evidenceOf } from '$lib/reading/evidence';
 	import { MOVE_LINE, moveOf } from '$lib/reading/moves';
 
@@ -45,7 +45,23 @@
 	// Local reading pager state — never persisted
 	let readingPage = $state(1);
 
-	let exam = $derived(LEZEN_EXAMS.find((e) => e.year === selectedYear)!);
+	let studied2023 = $derived(
+		yearStudied(
+			2023,
+			ctx.state.lezen.questionResults,
+			ctx.state.readingFork.eval.results,
+			ctx.state.readingFork.misses.map((miss) => miss.questionId)
+		)
+	);
+	let years = $derived(practiceYears(ctx.state.readingFork.satMocks, studied2023));
+	let exam = $derived(
+		LEZEN_EXAMS.find((e) => e.year === selectedYear) ??
+			LEZEN_EXAMS.find((e) => e.year === 2025)!
+	);
+
+	$effect(() => {
+		if (!years.includes(selectedYear)) selectedYear = years[0] ?? 2025;
+	});
 	let examProg = $derived(getExamProgress(exam));
 
 	// Sentence splitting for TTS with paragraph type classification
@@ -297,9 +313,27 @@
 		</div>
 
 
-		<ExamPaperBanner />
+		<ExamPaperBanner
+			note={years.includes(2023)
+				? 'Practice papers, 2023–2025. A studied paper is not a November prediction.'
+				: 'Training papers, 2024 and 2025. Not the dress rehearsal.'}
+		/>
 
-		<p class="year-label">Training paper · 2025</p>
+		<div class="year-row">
+			{#each years as year (year)}
+				<button
+					type="button"
+					class="year-pick"
+					class:active={year === exam.year}
+					onclick={() => (selectedYear = year)}
+				>
+					{year}
+				</button>
+			{/each}
+		</div>
+		<p class="year-label">
+			{years.includes(2023) ? 'Practice papers' : 'Training papers · 2024 and 2025'}
+		</p>
 
 		<div class="passages">
 			{#each exam.passages as passage (passage.slug)}
@@ -599,6 +633,24 @@
 		line-height: 0;
 	}
 
+	.year-row {
+		display: flex;
+		gap: 8px;
+	}
+	.year-pick {
+		flex: 1;
+		border-radius: 14px;
+		padding: 8px 4px;
+		font-family: var(--font-display);
+		font-size: var(--text-lead);
+		font-weight: 700;
+		border: 3px solid var(--color-ink);
+		background: #fff;
+		cursor: pointer;
+	}
+	.year-pick.active {
+		background: color-mix(in srgb, var(--color-lavender) 55%, white);
+	}
 	.year-label {
 		font-family: var(--font-display);
 		font-size: var(--text-lead);

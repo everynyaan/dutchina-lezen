@@ -100,7 +100,7 @@
 		<Card variant="soft-lavender">
 			<h2>Finished today's text.</h2>
 			<a class="btn" href={resolve('/cards')}>Debrief</a>
-			<a class="btn ghost" href={resolve('/lezen')}>browse the training paper</a>
+			<a class="btn ghost" href={resolve('/lezen')}>browse the training papers</a>
 			<a class="btn ghost" href={resolve('/')}>Home</a>
 		</Card>
 	{:else if current}

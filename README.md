@@ -4,10 +4,10 @@ B1 Staatsexamen NT2 Programma I **Lezen** trainer for Domi. Context and pattern 
 
 ## What this fork is
 
-- Today is one full training text.
+- Today is one full training text from 2024 or 2025.
 - Debrief is the miss, on the sentence that answers it.
-- Mock is a sealed paper, sat once, pass 22 of 36. The booklet on screen has 35 items; 22 still passes.
-- 2023 and 2024 are sealed until that mock.
+- 2023 is the only sealed paper, sat once, and only as a November prediction. Pass 22 of 36. The booklet on screen has 35 items; 22 still passes.
+- Otherwise no paper is sealed. All three are practice. A format rehearsal is not a November prediction if that paper was already studied.
 - Patterns is not a tab.
 
 Match, boss, listening, and random SRS are hidden.

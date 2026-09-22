@@ -2,9 +2,9 @@ import type { BankPassage } from './bank';
 import { allPassages, dayIndex } from './bank';
 import type { Miss, ReadingEvalState, ReadingForkState } from './types';
 
-/** Training paper only. 2023 and 2024 stay sealed for the mock. */
+/** Training bank is 2024 and 2025. 2023 stays off Today while it can still be a predictive mock. */
 export function trainingPassages(): BankPassage[] {
-	return allPassages().filter((passage) => passage.year === 2025);
+	return allPassages().filter((passage) => passage.year === 2024 || passage.year === 2025);
 }
 
 export function buildDailyEval(date: string): ReadingEvalState {

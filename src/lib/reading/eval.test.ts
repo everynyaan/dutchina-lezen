@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { LEZEN_EXAMS } from '$lib/lezen/LEZEN_CONTENT';
 import { EVIDENCE_BY_ID, evidenceOf } from './evidence';
 import { enqueueMiss, trainingPassages } from './eval';
-import { LIVE_PASS, passedSitting, pickMockExam } from './mock';
+import { LIVE_PASS, passedSitting, pickMockExam, practiceYears, yearStudied } from './mock';
 import { MOVE_BY_ID, moveOf, MOVES } from './moves';
 import { looksLikeWordCopy } from './wordCopy';
 
@@ -31,25 +31,30 @@ describe('moves and evidence', () => {
 });
 
 describe('trainingPassages', () => {
-	it('has no 2023 or 2024 id', () => {
+	it('is 2024 and 2025, and hides 2023', () => {
+		const years = new Set(trainingPassages().map((passage) => passage.year));
+		expect(years).toEqual(new Set([2024, 2025]));
 		for (const passage of trainingPassages()) {
-			expect(passage.year).toBe(2025);
 			for (const question of passage.questions) {
-				expect(question.id.startsWith('lezen-2025-')).toBe(true);
+				expect(question.id.startsWith('lezen-2023-')).toBe(false);
 			}
 		}
-		expect(trainingPassages().length).toBeGreaterThan(0);
 	});
 });
 
 describe('pickMockExam', () => {
-	it('seals 2024 then 2023 and never returns 2025', () => {
-		expect(pickMockExam([])?.year).toBe(2024);
+	it('seals 2023 once for a prediction, and never hides 2024', () => {
+		expect(pickMockExam([])?.year).toBe(2023);
 		expect(pickMockExam([2024])?.year).toBe(2023);
-		expect(pickMockExam([2024, 2023])).toBeNull();
-		expect(pickMockExam([2023, 2024])).toBeNull();
+		expect(pickMockExam([2023])).toBeNull();
+		expect(pickMockExam([], true)).toBeNull();
+		expect(practiceYears([], false)).toEqual([2025, 2024]);
+		expect(practiceYears([2023], false)).toEqual([2025, 2024, 2023]);
 		expect(passedSitting(21)).toBe(false);
 		expect(passedSitting(LIVE_PASS)).toBe(true);
+		expect(yearStudied(2024, { 'lezen-2024-3': { correct: true } })).toBe(true);
+		expect(yearStudied(2023, {})).toBe(false);
+		expect(yearStudied(2025, {}, { 'lezen-2025-1': true })).toBe(true);
 	});
 });
 

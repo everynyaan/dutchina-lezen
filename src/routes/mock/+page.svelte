@@ -2,12 +2,16 @@
 	import type { LezenExam } from '$lib/lezen/types';
 	import { getGameContext } from '$lib/state/context';
 	import { getTodayDate } from '$lib/match/engine';
+	import { examByYear } from '$lib/reading/bank';
 	import {
 		BOOKLET_PASS_LABEL,
 		LIVE_PASS,
 		MOCK_MINUTES,
+		NOT_A_PREDICTION,
 		passedSitting,
-		pickMockExam
+		pickMockExam,
+		practiceYears,
+		yearStudied
 	} from '$lib/reading/mock';
 	import { MOVES, moveOf } from '$lib/reading/moves';
 	import TimeBox from '$lib/components/reading/TimeBox.svelte';
@@ -19,10 +23,21 @@
 	const ctx = getGameContext();
 	const today = getTodayDate();
 
-	let started = $state(false);
 	let sitting = $state<LezenExam | null>(null);
-	let exam = $derived(pickMockExam(ctx.state.readingFork.satMocks));
-	let paper = $derived(sitting ?? exam);
+	let scoreIsPrediction = $state(false);
+	let rehearsalWasStudied = $state(false);
+	let rehearsalPick = $state<number | null>(null);
+	let studied2023 = $derived(
+		yearStudied(
+			2023,
+			ctx.state.lezen.questionResults,
+			ctx.state.readingFork.eval.results,
+			ctx.state.readingFork.misses.map((miss) => miss.questionId)
+		)
+	);
+	let predictive = $derived(pickMockExam(ctx.state.readingFork.satMocks, studied2023));
+	let rehearsalYears = $derived(practiceYears(ctx.state.readingFork.satMocks, studied2023));
+	let paper = $derived(sitting);
 	let allQuestions = $derived(
 		paper
 			? paper.passages.flatMap((p) =>
@@ -39,7 +54,6 @@
 	let correctCount = $derived(allQuestions.filter((q) => answers[q.id] === q.answer).length);
 	let passed = $derived(passedSitting(correctCount));
 	let last = $derived(ctx.state.readingFork.lastMockScore);
-	let bothDone = $derived(exam === null);
 
 	let misses = $derived(
 		done
@@ -53,11 +67,32 @@
 		})).filter((group) => group.items.length > 0)
 	);
 
-	function start() {
-		if (!exam) return;
+	function begin(exam: LezenExam, prediction: boolean) {
 		sitting = exam;
-		started = true;
+		scoreIsPrediction = prediction;
+		rehearsalWasStudied =
+			!prediction &&
+			(ctx.state.readingFork.satMocks.includes(exam.year) ||
+				yearStudied(
+					exam.year,
+					ctx.state.lezen.questionResults,
+					ctx.state.readingFork.eval.results,
+					ctx.state.readingFork.misses.map((miss) => miss.questionId)
+				));
 		playSfx('session_start');
+	}
+
+	function startPredictive() {
+		if (!predictive) return;
+		begin(predictive, true);
+	}
+
+	function startRehearsal() {
+		if (rehearsalPick === null) return;
+		if (rehearsalPick === 2023 && predictive) return;
+		const exam = examByYear(rehearsalPick);
+		if (!exam || exam.year !== rehearsalPick) return;
+		begin(exam, false);
 	}
 
 	function select(id: string, letter: string) {
@@ -65,8 +100,8 @@
 	}
 
 	function jumpTo(id: string) {
-		const paper = sitting ?? exam;
-		if (!paper) return;
+		if (!sitting) return;
+		const paper = sitting;
 		const index = paper.passages.findIndex((p) => p.questions.some((q) => q.id === id));
 		if (index >= 0) passageIndex = index;
 	}
@@ -90,39 +125,21 @@
 </script>
 
 <div class="mock-page stagger">
-	<p class="eyebrow">Sealed paper · once · {MOCK_MINUTES} min</p>
+	<p class="eyebrow">{predictive ? 'Predictive mock · once' : 'Format rehearsal'} · {MOCK_MINUTES} min</p>
 	<h1>Mock</h1>
 
-	{#if bothDone}
-		<Card variant="soft-teal">
-			<p>Both rehearsals are done. Don't resit a paper you've already sat.</p>
-			{#if last && last.year !== 0}
-				<p class="tiny">
-					Last sitting: {last.correct}/{last.total}
-					({last.passed ? 'pass' : 'not yet'}).
-				</p>
-			{/if}
-			<a class="btn" href={resolve('/')}>Home</a>
-		</Card>
-	{:else if exam && !started && !done}
-		<Card variant="soft-teal">
-			<p>{exam.year} · {allQuestions.length} items</p>
-			<p>{BOOKLET_PASS_LABEL}</p>
-			<p>The live paper is 110 minutes and a bit longer.</p>
-			{#if last && last.year !== 0}
-				<p class="tiny">
-					Last sitting: {last.correct}/{last.total}
-					({last.passed ? 'pass' : 'not yet'}).
-				</p>
-			{/if}
-			<button type="button" class="btn start" onclick={start}>Start the clock</button>
-			<a class="ghost" href={resolve('/')}>Back home</a>
-		</Card>
-	{:else if sitting && done}
+	{#if sitting && done}
 		<Card variant="soft-lavender">
 			<h2>{passed ? 'This sitting passes.' : 'Under 22.'}</h2>
 			<p>{correctCount} / {allQuestions.length}</p>
 			<p>{BOOKLET_PASS_LABEL}</p>
+			{#if scoreIsPrediction}
+				<p>November prediction.</p>
+			{:else if rehearsalWasStudied}
+				<p>{NOT_A_PREDICTION}</p>
+			{:else}
+				<p>Format rehearsal.</p>
+			{/if}
 		</Card>
 		{#each grouped as group (group.move)}
 			<h2 class="move-head">{group.move}</h2>
@@ -190,6 +207,52 @@
 			· pass {LIVE_PASS}
 		</p>
 		<button type="button" class="btn" onclick={finish}>Hand in</button>
+	{:else}
+		{#if predictive}
+			<Card variant="soft-teal">
+				<p>2023 · 35 items. Sealed. Sat once.</p>
+				<p>{BOOKLET_PASS_LABEL}</p>
+				<p>This sitting is a November prediction.</p>
+				<p>The live paper is 110 minutes and a bit longer.</p>
+				<button type="button" class="btn start" onclick={startPredictive}>Start the clock</button>
+			</Card>
+		{/if}
+		<Card variant="soft-lavender">
+			{#if predictive}
+				<p>Format rehearsal of 2024 or 2025. Those papers stay in the training bank.</p>
+			{:else}
+				<p>No paper is sealed. All three are practice.</p>
+			{/if}
+			<p>{BOOKLET_PASS_LABEL}</p>
+			<p>The live paper is 110 minutes and a bit longer.</p>
+			<div class="years">
+				{#each rehearsalYears as year (year)}
+					{#if !(year === 2023 && predictive)}
+						<button
+							type="button"
+							class="year"
+							class:picked={rehearsalPick === year}
+							onclick={() => (rehearsalPick = year)}
+						>
+							{year}
+						</button>
+					{/if}
+				{/each}
+			</div>
+			{#if rehearsalPick !== null && (ctx.state.readingFork.satMocks.includes(rehearsalPick) || yearStudied(rehearsalPick, ctx.state.lezen.questionResults, ctx.state.readingFork.eval.results, ctx.state.readingFork.misses.map((miss) => miss.questionId)))}
+				<p>{NOT_A_PREDICTION}</p>
+			{/if}
+			{#if rehearsalPick !== null}
+				<button type="button" class="btn start" onclick={startRehearsal}>Start the clock</button>
+			{/if}
+			{#if last && last.year !== 0}
+				<p class="tiny">
+					Last sitting: {last.correct}/{last.total}
+					({last.passed ? 'pass' : 'not yet'}).
+				</p>
+			{/if}
+			<a class="ghost" href={resolve('/')}>Back home</a>
+		</Card>
 	{/if}
 </div>
 
@@ -292,6 +355,23 @@
 		padding: 10px 12px;
 	}
 	.opt.picked {
+		background: var(--color-lilac, #ede4ff);
+	}
+	.years {
+		display: flex;
+		gap: 8px;
+		margin-top: 8px;
+	}
+	.year {
+		flex: 1;
+		border-radius: 14px;
+		padding: 10px 8px;
+		font-weight: 700;
+		border: 3px solid var(--color-ink);
+		background: #fff;
+		cursor: pointer;
+	}
+	.year.picked {
 		background: var(--color-lilac, #ede4ff);
 	}
 	.btn {

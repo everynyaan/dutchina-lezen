@@ -2,7 +2,7 @@
 	interface Props {
 		note?: string;
 	}
-	let { note = 'Training paper, 2025. Not the dress rehearsal.' }: Props = $props();
+	let { note = 'Training papers, 2024 and 2025. Not the dress rehearsal.' }: Props = $props();
 </script>
 
 <div class="exam-banner" role="note">
