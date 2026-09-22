@@ -2,12 +2,15 @@
 	import { getGameContext } from '$lib/state/context';
 	import { markMissSeen, unseenMisses } from '$lib/reading/eval';
 	import MissReview from '$lib/components/reading/MissReview.svelte';
+	import PracticeBook from '$lib/components/reading/PracticeBook.svelte';
+	import { bookYearsFor } from '$lib/reading/practiceBook';
 	import Card from '$lib/components/ui/Card.svelte';
 	import { resolve } from '$app/paths';
 
 	const ctx = getGameContext();
 
 	let open = $derived(unseenMisses(ctx.state.readingFork.misses));
+	let bookYears = $derived(bookYearsFor(ctx.state.readingFork, ctx.state.lezen.questionResults));
 
 	function seen(questionId: string) {
 		ctx.state.readingFork.misses = markMissSeen(ctx.state.readingFork.misses, questionId);
@@ -24,6 +27,7 @@
 			<a class="btn" href={resolve('/eval')}>Today</a>
 		</Card>
 	{:else}
+		<PracticeBook years={bookYears} />
 		{#each open as miss (miss.questionId)}
 			<Card>
 				<MissReview questionId={miss.questionId} picked={miss.picked} />

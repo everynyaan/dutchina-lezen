@@ -16,6 +16,8 @@
 	import { MOVES, moveOf } from '$lib/reading/moves';
 	import TimeBox from '$lib/components/reading/TimeBox.svelte';
 	import MissReview from '$lib/components/reading/MissReview.svelte';
+	import PracticeBook from '$lib/components/reading/PracticeBook.svelte';
+	import { bookYearsFor } from '$lib/reading/practiceBook';
 	import Card from '$lib/components/ui/Card.svelte';
 	import { playSfx } from '$lib/sound/sfx';
 	import { resolve } from '$app/paths';
@@ -37,6 +39,7 @@
 	);
 	let predictive = $derived(pickMockExam(ctx.state.readingFork.satMocks, studied2023));
 	let rehearsalYears = $derived(practiceYears(ctx.state.readingFork.satMocks, studied2023));
+	let bookYears = $derived(bookYearsFor(ctx.state.readingFork, ctx.state.lezen.questionResults));
 	let paper = $derived(sitting);
 	let allQuestions = $derived(
 		paper
@@ -129,6 +132,9 @@
 	<h1>Mock</h1>
 
 	{#if sitting && done}
+		{#if misses.length > 0}
+			<PracticeBook years={bookYears} />
+		{/if}
 		<Card variant="soft-lavender">
 			<h2>{passed ? 'This sitting passes.' : 'Under 22.'}</h2>
 			<p>{correctCount} / {allQuestions.length}</p>
@@ -150,6 +156,7 @@
 			{/each}
 		{/each}
 	{:else if sitting && passage}
+		<PracticeBook years={bookYears} />
 		<div class="toolbar">
 			<TimeBox totalSeconds={MOCK_MINUTES * 60} label="Paper 110" onExpire={finish} />
 		</div>

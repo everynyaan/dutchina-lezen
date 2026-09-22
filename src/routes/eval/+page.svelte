@@ -9,6 +9,8 @@
 	import { looksLikeWordCopy, WORD_COPY_LINE } from '$lib/reading/wordCopy';
 	import TimeBox from '$lib/components/reading/TimeBox.svelte';
 	import PassageText from '$lib/components/reading/PassageText.svelte';
+	import PracticeBook from '$lib/components/reading/PracticeBook.svelte';
+	import { bookYearsFor } from '$lib/reading/practiceBook';
 	import Card from '$lib/components/ui/Card.svelte';
 	import { playSfx } from '$lib/sound/sfx';
 	import { resolve } from '$app/paths';
@@ -29,6 +31,7 @@
 	});
 
 	let evalState = $derived(ctx.state.readingFork.eval);
+	let bookYears = $derived(bookYearsFor(ctx.state.readingFork, ctx.state.lezen.questionResults));
 	let passage = $derived(evalState.passageSlug ? findPassage(evalState.passageSlug) : undefined);
 	let questions = $derived(passage?.questions ?? []);
 
@@ -104,6 +107,7 @@
 			<a class="btn ghost" href={resolve('/')}>Home</a>
 		</Card>
 	{:else if current}
+		<PracticeBook years={bookYears} />
 		<div class="pace">
 			<TimeBox totalSeconds={MINUTES_PER_TEXT * 60} label="~18 min pace" />
 		</div>

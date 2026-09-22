@@ -22,6 +22,8 @@
 	import TimeBox from '$lib/components/reading/TimeBox.svelte';
 	import { BOOKLET_PASS_LABEL, LIVE_PASS, MINUTES_PER_TEXT, practiceYears, yearStudied } from '$lib/reading/mock';
 	import { evidenceOf } from '$lib/reading/evidence';
+	import PracticeBook from '$lib/components/reading/PracticeBook.svelte';
+	import { bookYearsFor } from '$lib/reading/practiceBook';
 	import { MOVE_LINE, moveOf } from '$lib/reading/moves';
 
 	const ctx = getGameContext();
@@ -54,6 +56,7 @@
 		)
 	);
 	let years = $derived(practiceYears(ctx.state.readingFork.satMocks, studied2023));
+	let bookYears = $derived(bookYearsFor(ctx.state.readingFork, ctx.state.lezen.questionResults));
 	let exam = $derived(
 		LEZEN_EXAMS.find((e) => e.year === selectedYear) ??
 			LEZEN_EXAMS.find((e) => e.year === 2025)!
@@ -383,6 +386,7 @@
 			<Icon name="chevron-left" size={16} color="var(--color-muted-ink)" />
 			<span>Back</span>
 		</button>
+		<PracticeBook years={bookYears} />
 		<h2 class="reading-title">{activePassage.name}</h2>
 		<p class="reading-intro">{activePassage.intro}</p>
 		<p class="time-hint">About {MINUTES_PER_TEXT} minutes for this text. {BOOKLET_PASS_LABEL}</p>
@@ -472,6 +476,7 @@
 			<Icon name="chevron-left" size={16} color="var(--color-muted-ink)" />
 			<span>Back to Text</span>
 		</button>
+		<PracticeBook years={bookYears} />
 
 		<div class="q-counter">
 			Question {questionIndex + 1} / {activePassage.questions.length}
