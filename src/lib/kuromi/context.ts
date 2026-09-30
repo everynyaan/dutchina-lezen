@@ -267,7 +267,8 @@ export async function buildKuromiContext(
 				state.readingFork.lastMockScore && state.readingFork.lastMockScore.year !== 0
 					? state.readingFork.lastMockScore
 					: null,
-			cesuur: 22,
+			passLine: 24,
+			target: 25,
 			liveTotal: 36
 		},
 		recentAdjustments: buildRecentAdjustments(state.adjustments),

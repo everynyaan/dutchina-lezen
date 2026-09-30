@@ -3,11 +3,10 @@ import type { LezenExam } from '$lib/lezen/types';
 
 export const MOCK_MINUTES = 110;
 export const MINUTES_PER_TEXT = 18;
-/** Her live paper. Booklet objects keep their own passingScore. */
-export const LIVE_PASS = 22;
+/** Computer paper length. Booklets stay 35 items. Do not invent a 36th item. */
 export const LIVE_TOTAL = 36;
-export const BOOKLET_PASS_LABEL =
-	'Live paper is 22 of 36. This booklet has 35. 22 still passes.';
+/** Generic chrome. A sitting still scores on that paper's own passingScore. */
+export const BOOKLET_PASS_LABEL = 'The published papers needed 24 of 35. Aim for 25 or more.';
 /** The only paper that can stay sealed, and only for one predictive sitting. */
 export const PREDICTIVE_YEAR = 2023;
 export const TRAINING_YEARS = [2024, 2025] as const;
@@ -50,6 +49,14 @@ export function pickMockExam(satMocks: readonly number[], studied2023 = false): 
 	return LEZEN_EXAMS.find((exam) => exam.year === PREDICTIVE_YEAR) ?? null;
 }
 
-export function passedSitting(correct: number): boolean {
-	return correct >= LIVE_PASS;
+export function passLineFor(exam: LezenExam): number {
+	return exam.passingScore;
+}
+
+export function targetFor(exam: LezenExam): number {
+	return passLineFor(exam) + 1;
+}
+
+export function passedSitting(correct: number, exam: LezenExam): boolean {
+	return correct >= passLineFor(exam);
 }

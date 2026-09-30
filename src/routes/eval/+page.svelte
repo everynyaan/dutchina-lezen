@@ -94,7 +94,8 @@
 	<p class="eyebrow">One full text · all its questions</p>
 	<h1>Today</h1>
 	<p class="kuromi-line">
-		Live paper is 22 of 36. Skip, flag, don't hunt one word. This clock is a pace cue.
+		The published papers needed 24 of 35. Aim for 25 or more. Skip, flag, don't hunt one word. This
+		clock is a pace cue.
 	</p>
 
 	{#if !passage}

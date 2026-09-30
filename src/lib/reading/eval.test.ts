@@ -2,7 +2,14 @@ import { describe, expect, it } from 'vitest';
 import { LEZEN_EXAMS } from '$lib/lezen/LEZEN_CONTENT';
 import { EVIDENCE_BY_ID, evidenceOf } from './evidence';
 import { enqueueMiss, trainingPassages } from './eval';
-import { LIVE_PASS, passedSitting, pickMockExam, practiceYears, yearStudied } from './mock';
+import {
+	passLineFor,
+	passedSitting,
+	pickMockExam,
+	practiceYears,
+	targetFor,
+	yearStudied
+} from './mock';
 import { MOVE_BY_ID, moveOf, MOVES } from './moves';
 import { looksLikeWordCopy } from './wordCopy';
 
@@ -50,8 +57,16 @@ describe('pickMockExam', () => {
 		expect(pickMockExam([], true)).toBeNull();
 		expect(practiceYears([], false)).toEqual([2025, 2024]);
 		expect(practiceYears([2023], false)).toEqual([2025, 2024, 2023]);
-		expect(passedSitting(21)).toBe(false);
-		expect(passedSitting(LIVE_PASS)).toBe(true);
+		const exam2023 = LEZEN_EXAMS.find((exam) => exam.year === 2023)!;
+		const exam2024 = LEZEN_EXAMS.find((exam) => exam.year === 2024)!;
+		expect(passLineFor(exam2023)).toBe(23);
+		expect(passLineFor(exam2024)).toBe(24);
+		expect(targetFor(exam2023)).toBe(24);
+		expect(targetFor(exam2024)).toBe(25);
+		expect(passedSitting(22, exam2023)).toBe(false);
+		expect(passedSitting(23, exam2023)).toBe(true);
+		expect(passedSitting(23, exam2024)).toBe(false);
+		expect(passedSitting(24, exam2024)).toBe(true);
 		expect(yearStudied(2024, { 'lezen-2024-3': { correct: true } })).toBe(true);
 		expect(yearStudied(2023, {})).toBe(false);
 		expect(yearStudied(2025, {}, { 'lezen-2025-1': true })).toBe(true);

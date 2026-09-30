@@ -5,9 +5,9 @@
 	import { examByYear } from '$lib/reading/bank';
 	import {
 		BOOKLET_PASS_LABEL,
-		LIVE_PASS,
 		MOCK_MINUTES,
 		NOT_A_PREDICTION,
+		passLineFor,
 		passedSitting,
 		pickMockExam,
 		practiceYears,
@@ -55,7 +55,7 @@
 
 	let passage = $derived(paper?.passages[passageIndex]);
 	let correctCount = $derived(allQuestions.filter((q) => answers[q.id] === q.answer).length);
-	let passed = $derived(passedSitting(correctCount));
+	let passed = $derived(paper ? passedSitting(correctCount, paper) : false);
 	let last = $derived(ctx.state.readingFork.lastMockScore);
 
 	let misses = $derived(
@@ -117,13 +117,13 @@
 		ctx.state.readingFork.lastMockScore = {
 			correct: correctCount,
 			total: allQuestions.length,
-			passed: passedSitting(correctCount),
+			passed: passedSitting(correctCount, sitting),
 			year
 		};
 		if (!ctx.state.readingFork.satMocks.includes(year)) {
 			ctx.state.readingFork.satMocks = [...ctx.state.readingFork.satMocks, year];
 		}
-		playSfx(passedSitting(correctCount) ? 'rank_up' : 'session_complete');
+		playSfx(passedSitting(correctCount, sitting) ? 'rank_up' : 'session_complete');
 	}
 </script>
 
@@ -136,7 +136,7 @@
 			<PracticeBook years={bookYears} />
 		{/if}
 		<Card variant="soft-lavender">
-			<h2>{passed ? 'This sitting passes.' : 'Under 22.'}</h2>
+			<h2>{passed ? 'This sitting passes.' : 'Under the pass line.'}</h2>
 			<p>{correctCount} / {allQuestions.length}</p>
 			<p>{BOOKLET_PASS_LABEL}</p>
 			{#if scoreIsPrediction}
@@ -211,7 +211,7 @@
 
 		<p class="tiny">
 			{Object.keys(answers).length} answered · {Object.values(flagged).filter(Boolean).length} flagged
-			· pass {LIVE_PASS}
+			· pass {paper ? passLineFor(paper) : ''}
 		</p>
 		<button type="button" class="btn" onclick={finish}>Hand in</button>
 	{:else}

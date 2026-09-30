@@ -63,13 +63,14 @@ export interface KuromiContextPacket {
 		completed: boolean;
 		score: { correct: number; total: number } | null;
 	};
-	/** Reading-fork pulse: live paper passes at 22 of 36. */
+	/** Reading-fork pulse. Published papers: pass line 24, target 25. */
 	readingFork: {
 		showUpStreak: number;
 		evalCompleted: boolean;
 		unseenMisses: number;
 		lastMock: { correct: number; total: number; passed: boolean; year: number } | null;
-		cesuur: 22;
+		passLine: 24;
+		target: 25;
 		liveTotal: 36;
 	};
 	/** Newest 5 steward adjustments (tool/outcome/detail/timestamp/undone only — no payload). */

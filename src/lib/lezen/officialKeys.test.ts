@@ -36,7 +36,7 @@ describe('official Lezen I beoordelingsmodel keys', () => {
 		}
 	});
 
-	it('uses the openbaar-examen cesuur from those PDFs (not live 22/36)', () => {
+	it('uses the openbaar-examen pass line from those PDFs', () => {
 		expect(LEZEN_2023.passingScore).toBe(23);
 		expect(LEZEN_2024.passingScore).toBe(24);
 		expect(LEZEN_2025.passingScore).toBe(24);

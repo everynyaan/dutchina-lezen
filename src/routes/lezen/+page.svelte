@@ -20,7 +20,14 @@
 	import { resolve } from '$app/paths';
 	import ExamPaperBanner from '$lib/components/ExamPaperBanner.svelte';
 	import TimeBox from '$lib/components/reading/TimeBox.svelte';
-	import { BOOKLET_PASS_LABEL, LIVE_PASS, MINUTES_PER_TEXT, practiceYears, yearStudied } from '$lib/reading/mock';
+	import {
+		BOOKLET_PASS_LABEL,
+		MINUTES_PER_TEXT,
+		passLineFor,
+		passedSitting,
+		practiceYears,
+		yearStudied
+	} from '$lib/reading/mock';
 	import { evidenceOf } from '$lib/reading/evidence';
 	import PracticeBook from '$lib/components/reading/PracticeBook.svelte';
 	import { bookYearsFor } from '$lib/reading/practiceBook';
@@ -373,10 +380,11 @@
 			<span class="stat-label">Score: {examProg.correct} / {examProg.total}</span>
 			<p class="stat-hint">{BOOKLET_PASS_LABEL}</p>
 			{#if examProg.answered === examProg.total && examProg.total > 0}
-				{#if examProg.correct >= LIVE_PASS}<Pill variant="teal" size="sm"
+				{#if passedSitting(examProg.correct, exam)}<Pill variant="teal" size="sm"
 						><Icon name="check" size={12} />Sitting passes</Pill
 					>
-				{:else}<Pill variant="rose" size="sm">Need {LIVE_PASS - examProg.correct} more</Pill>{/if}
+				{:else}<Pill variant="rose" size="sm">Need {passLineFor(exam) - examProg.correct} more</Pill
+					>{/if}
 			{/if}
 		</div>
 	</div>

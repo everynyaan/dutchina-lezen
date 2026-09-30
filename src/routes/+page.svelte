@@ -138,8 +138,8 @@
 	<Card variant="soft-rose">
 		<p class="kicker">Kuromi says</p>
 		<p class="hero-copy">
-			Live paper is 22 of 36. Skip, flag, don't hunt one word. Training is 2024 and 2025. 2023 stays
-			sealed for one predictive mock.
+			The published papers needed 24 of 35. Aim for 25 or more. Skip, flag, don't hunt one word.
+			Training is 2024 and 2025. 2023 stays sealed for one predictive mock.
 		</p>
 	</Card>
 
@@ -154,7 +154,7 @@
 	<a class="hub-card" href={resolve('/mock')} onclick={() => playSfx('button_tap')}>
 		<span class="hub-title">Mock</span>
 		<span class="hub-sub">{predictiveOpen ? 'Predictive mock. Once.' : 'Format rehearsal.'}</span>
-		<span class="hub-sub">Live paper is 22 of 36.</span>
+		<span class="hub-sub">The published papers needed 24 of 35. Aim for 25 or more.</span>
 	</a>
 
 	{#if installVisible}

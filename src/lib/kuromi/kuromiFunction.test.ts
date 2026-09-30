@@ -398,8 +398,8 @@ describe('kuromi handler', () => {
 		expect(names).not.toContain('show_stickers');
 	});
 
-	it('persona is filled in on cesuur-22 reading fork, not four-gate homework', () => {
-		expect(KUROMI_CHAT_SYSTEM_PROMPT).toMatch(/22 of 36/);
+	it('persona is filled in on the 24-of-35 reading fork, not four-gate homework', () => {
+		expect(KUROMI_CHAT_SYSTEM_PROMPT).toMatch(/24 of 35/);
 		expect(KUROMI_CHAT_SYSTEM_PROMPT).toMatch(/detail/);
 		expect(KUROMI_CHAT_SYSTEM_PROMPT).toMatch(/doel/);
 		expect(KUROMI_CHAT_SYSTEM_PROMPT).toMatch(/verband/);
@@ -408,6 +408,7 @@ describe('kuromi handler', () => {
 		expect(KUROMI_CHAT_SYSTEM_PROMPT).toMatch(/Never send her to Match/);
 		expect(KUROMI_CHAT_SYSTEM_PROMPT).toMatch(/no set_gate/i);
 		expect(KUROMI_CHAT_SYSTEM_PROMPT).not.toMatch(/cesuur 24|verwijzing|hoofdonderwerp|bijna-goed|bron-doel/);
+		expect(KUROMI_DRILL_SYSTEM_PROMPT).toMatch(/pass line 24 of 35/);
 		expect(KUROMI_DRILL_SYSTEM_PROMPT).toMatch(/do not offer a new exam-question set/i);
 		expect(KUROMI_DRILL_SYSTEM_PROMPT).not.toMatch(/hoofdonderwerp|bijna-goed/);
 		const createPage = KUROMI_TOOLS.find((t) => t.function.name === 'create_page');
@@ -870,8 +871,9 @@ describe('kuromi handler', () => {
 				showUpStreak: 3,
 				evalCompleted: true,
 				unseenMisses: 2,
-				lastMock: { correct: 22, total: 35, passed: true, year: 2024 },
-				cesuur: 22,
+				lastMock: { correct: 24, total: 35, passed: true, year: 2024 },
+				passLine: 24,
+				target: 25,
 				liveTotal: 36
 			},
 			recentAdjustments: [
