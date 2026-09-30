@@ -6,6 +6,7 @@
 // the tekst-/opgavenboekje — most items here still only have A–C.
 // ============================================================
 
+import { examsWithSupplied } from './suppliedPapers';
 import type { LezenExam, LezenQuestion, LezenAnswer } from './types';
 
 function q(
@@ -1307,4 +1308,5 @@ export const LEZEN_2023: LezenExam = {
 	]
 };
 
-export const LEZEN_EXAMS: LezenExam[] = [LEZEN_2025, LEZEN_2024, LEZEN_2023];
+/** Loaded papers only. A supplied 2021 or 2022 file is appended after its key checks out. */
+export const LEZEN_EXAMS: LezenExam[] = examsWithSupplied([LEZEN_2025, LEZEN_2024, LEZEN_2023]);

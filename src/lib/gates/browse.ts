@@ -5,6 +5,7 @@
  * Default: current open gate. Looking up a later gate is allowed —
  * copy must say she is browsing, not unlocking.
  */
+import { loadSuppliedPapers } from '$lib/lezen/suppliedPapers';
 import { GRAMMAR_CONTENT } from '$lib/grammar/GRAMMAR_CONTENT';
 import type { GrammarChapter } from '$lib/grammar/types';
 import { TASKS, getTasksByRank } from '$lib/reviews/SCHRIJVEN_CONTENT';
@@ -20,6 +21,7 @@ import {
 
 export const BROWSE_GATES: readonly GateId[] = [1, 2, 3, 4];
 export const BROWSE_SESSION_KEY = 'dutchina.browseGate';
+/** Training-bank years. 2021 and 2022 join the browse list only after a supplied file checks out. */
 export const EXAM_YEARS = [2025, 2024, 2023] as const;
 
 /** Handbook chapters that belong to a room. G4 lookup shows the full book. */
@@ -111,7 +113,12 @@ export function schrijvenTasksForBrowse(gate: GateId): SchrijvenTask[] {
 }
 
 export function examYearsForBrowse(gate: GateId): number[] {
-	return gate === 4 ? [...EXAM_YEARS] : [];
+	if (gate !== 4) return [];
+	const known = new Set<number>(EXAM_YEARS);
+	const extra = loadSuppliedPapers()
+		.exams.map((exam) => exam.year)
+		.filter((year) => !known.has(year));
+	return [...EXAM_YEARS, ...extra];
 }
 
 /** Homework / quiz / week-set always use the engine gate, never the browse chip. */
