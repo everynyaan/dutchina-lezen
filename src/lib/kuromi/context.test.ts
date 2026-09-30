@@ -74,28 +74,31 @@ describe('screenLabelForPath', () => {
 		expect(screenLabelForPath('/home')).toBe('somewhere in the app');
 	});
 
-	it('maps direct prefixes', () => {
-		expect(screenLabelForPath('/match')).toBe('the match game');
-		expect(screenLabelForPath('/lezen')).toBe('the Reading exam');
-		expect(screenLabelForPath('/quiz')).toBe("today's quiz");
-		expect(screenLabelForPath('/boss')).toBe('a boss fight');
-		expect(screenLabelForPath('/gate')).toBe('the gate hub');
-		expect(screenLabelForPath('/gate/extra')).toBe('the gate hub');
+	it('maps live routes and leaves retired rooms unlabeled', () => {
+		expect(screenLabelForPath('/lezen')).toBe('a full text');
+		expect(screenLabelForPath('/eval')).toBe("today's full training text");
+		expect(screenLabelForPath('/playbook')).toBe('the playbook');
+		expect(screenLabelForPath('/grammar')).toBe('the pattern handbook');
+		expect(screenLabelForPath('/mock')).toBe('a 110-minute mock');
+		expect(screenLabelForPath('/mock/booklet')).toBe('a 110-minute mock');
+		expect(screenLabelForPath('/kuromi/shelf')).toBe("Kuromi's shelf");
+		expect(screenLabelForPath('/kuromi')).toBe('Kuromi');
+		expect(screenLabelForPath('/match')).toBe('somewhere in the app');
+		expect(screenLabelForPath('/quiz')).toBe('somewhere in the app');
+		expect(screenLabelForPath('/boss')).toBe('somewhere in the app');
+		expect(screenLabelForPath('/gate')).toBe('somewhere in the app');
+		expect(screenLabelForPath('/gate/extra')).toBe('somewhere in the app');
 	});
 
-	it('maps nested paths under a prefix', () => {
-		expect(screenLabelForPath('/cards/session')).toBe('debrief of misses');
+	it('maps nested paths under a live prefix', () => {
+		expect(screenLabelForPath('/cards/session')).toBe('trap drills');
 	});
 
-	it('maps story chapters (3+ segments) to a story chapter', () => {
-		expect(screenLabelForPath('/stories/foo/1')).toBe('a story chapter');
-		expect(screenLabelForPath('/stories/hello-world/3')).toBe('a story chapter');
-	});
-
-	it('maps bare 2-segment story paths to the story shelf', () => {
-		// stories/<story> only — not a chapter (needs story + chapter segments)
-		expect(screenLabelForPath('/stories/foo')).toBe('the story shelf');
-		expect(screenLabelForPath('/stories')).toBe('the story shelf');
+	it('does not label retired story routes', () => {
+		expect(screenLabelForPath('/stories/foo/1')).toBe('somewhere in the app');
+		expect(screenLabelForPath('/stories/hello-world/3')).toBe('somewhere in the app');
+		expect(screenLabelForPath('/stories/foo')).toBe('somewhere in the app');
+		expect(screenLabelForPath('/stories')).toBe('somewhere in the app');
 	});
 
 	it('falls back for unknown paths', () => {
@@ -122,7 +125,7 @@ describe('buildKuromiContext', () => {
 		const packet = await buildKuromiContext('/lezen', state, '2026-08-15');
 
 		expect(packet.route).toBe('/lezen');
-		expect(packet.screen).toBe('the Reading exam');
+		expect(packet.screen).toBe('a full text');
 		expect(packet).not.toHaveProperty('rank');
 		expect(packet).not.toHaveProperty('rankName');
 		expect(packet.currentGate).toBe(1);
@@ -135,6 +138,11 @@ describe('buildKuromiContext', () => {
 		expect(packet.mastery.pieces.every((p) => p.done === false)).toBe(true);
 		expect(packet.mastery.pieces.find((p) => p.key === 'C')?.human).toMatch(/dail/i);
 		expect(packet.rustyWords).toEqual(['huis', 'kat']);
+		expect(packet.readingFork.passLine).toBe(24);
+		expect(packet.readingFork.target).toBe(25);
+		expect(packet.readingFork.examDate).toBe('2026-11-12');
+		expect(packet.readingFork.daysLeft).toBeGreaterThan(0);
+		expect(packet.currentItem).toBeUndefined();
 		expect(packet.recentActivity).toEqual([
 			'3-week streak',
 			"finished today's quiz",

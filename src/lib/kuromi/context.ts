@@ -9,6 +9,9 @@ import { loadRustyWords } from '$lib/fresh/freshSource';
 import { currentGateFromState, getWordsUpToGate } from '$lib/gates/gates';
 import { lockWhenLines } from '$lib/gates/home';
 import { kuromiMasterySnapshot, masteryInputFromState } from '$lib/gates/progress';
+import { TRAP_LABEL } from '$lib/reading/annotations';
+import { daysToExam, locateWindow, openTraps, qtypeReadiness } from '$lib/reading/readiness';
+import type { KuromiFocusExtra } from './focus';
 import type {
 	KuromiActivitySignal,
 	KuromiContextPacket,
@@ -16,23 +19,16 @@ import type {
 	KuromiShelfSummary
 } from './types';
 
-/** Direct pathname-prefix → screen label (longest-prefix match, excluding '/'). */
+/** Live routes only. Longest-prefix match, excluding '/'. */
 const SCREEN_PREFIXES: ReadonlyArray<readonly [string, string]> = [
+	['/kuromi/shelf', "Kuromi's shelf"],
+	['/kuromi', 'Kuromi'],
+	['/playbook', 'the playbook'],
 	['/eval', "today's full training text"],
-	['/mock', 'a 110-minute mock: 2023 sealed once, or a format rehearsal'],
-	['/gate', 'the gate hub'],
-	['/match', 'the match game'],
-	['/cards', 'debrief of misses'],
-	['/stories', 'the story shelf'],
+	['/mock', 'a 110-minute mock'],
+	['/cards', 'trap drills'],
 	['/grammar', 'the pattern handbook'],
-	['/vocab', 'the vocabulary lists'],
-	['/quiz', "today's quiz"],
-	['/read', "today's reading"],
-	['/lezen', 'the Reading exam'],
-	['/luisteren', 'the Listening exam'],
-	['/daily', 'the weekly homework'],
-	['/boss', 'a boss fight'],
-	['/reviews', 'the writing reviews']
+	['/lezen', 'a full text']
 ];
 
 /** Packet detail clamp: executor writes up to 400; 5×400 is too large for every chat turn. */
@@ -63,12 +59,6 @@ const SHELF_LABEL_CHARS_MAX = 24;
  */
 export function screenLabelForPath(pathname: string): string {
 	if (pathname === '/') return 'home';
-
-	// stories/<story>/<chapter>… → chapter takes priority over shelf
-	const segments = pathname.replace(/^\//, '').split('/').filter(Boolean);
-	if (segments[0] === 'stories' && segments.length >= 3) {
-		return 'a story chapter';
-	}
 
 	let bestLabel: string | null = null;
 	let bestLen = -1;
@@ -235,7 +225,8 @@ function buildShelfSummary(pages: KuromiPage[]): KuromiShelfSummary {
 export async function buildKuromiContext(
 	pathname: string,
 	state: CurrentState,
-	today: string
+	today: string,
+	extra?: KuromiFocusExtra
 ): Promise<KuromiContextPacket> {
 	const currentGate = currentGateFromState(state);
 	const entries = await loadRustyWords(today, 5, getWordsUpToGate(currentGate));
@@ -248,7 +239,11 @@ export async function buildKuromiContext(
 		lockWhen[0]?.when ?? null
 	);
 
-	return {
+	const fork = state.readingFork;
+	const examDate = fork.settings?.examDate ?? '';
+	const daily =
+		fork.eval.date === today ? fork.eval : { completed: false, passageSlug: null, mapDone: false };
+	const packet: KuromiContextPacket = {
 		route: pathname,
 		screen: screenLabelForPath(pathname),
 		currentGate,
@@ -260,19 +255,36 @@ export async function buildKuromiContext(
 		streak: { weeks: state.practiceDays, mode: state.appConfig.streaks },
 		lastQuiz: buildLastQuiz(state),
 		readingFork: {
-			showUpStreak: state.readingFork.showUpStreak,
-			evalCompleted: state.readingFork.eval.completed,
-			unseenMisses: state.readingFork.misses.filter((miss) => !miss.seen).length,
-			lastMock:
-				state.readingFork.lastMockScore && state.readingFork.lastMockScore.year !== 0
-					? state.readingFork.lastMockScore
-					: null,
+			showUpStreak: fork.showUpStreak,
+			evalCompleted: fork.eval.completed && fork.eval.date === today,
+			unseenMisses: fork.misses.filter((miss) => !miss.seen).length,
+			lastMock: fork.lastMockScore && fork.lastMockScore.year !== 0 ? fork.lastMockScore : null,
 			passLine: 24,
 			target: 25,
-			liveTotal: 36
+			liveTotal: 36,
+			examDate,
+			daysLeft: daysToExam(examDate, today),
+			openTraps: openTraps(fork).map((trap) => TRAP_LABEL[trap]),
+			readiness: qtypeReadiness(fork).map((row) => ({
+				qtype: row.qtype,
+				label: row.label,
+				correct: row.correct,
+				attempts: row.attempts
+			})),
+			locate: locateWindow(fork, 50),
+			daily: {
+				completed: daily.completed,
+				passageSlug: daily.passageSlug,
+				mapDone: daily.mapDone
+			}
 		},
 		recentAdjustments: buildRecentAdjustments(state.adjustments),
 		activityShape: buildActivityShape(state, today),
 		shelf: buildShelfSummary(state.pages)
 	};
+	if (extra?.currentItem) packet.currentItem = extra.currentItem;
+	if (extra?.textChat) packet.textChat = extra.textChat;
+	if (extra?.mockDebrief) packet.mockDebrief = extra.mockDebrief;
+	if (extra?.mondayBrief) packet.mondayBrief = true;
+	return packet;
 }

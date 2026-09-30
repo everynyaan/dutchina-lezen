@@ -3,6 +3,7 @@
 	import { fly } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
 	import { page } from '$app/stores';
+	import { goto } from '$app/navigation';
 	import { resolve } from '$app/paths';
 	import { X, Maximize2, History } from 'lucide-svelte';
 	import { getGameContext } from '$lib/state/context';
@@ -17,6 +18,9 @@
 		sortByRecency
 	} from '$lib/kuromi/conversations';
 	import { buildKuromiContext } from '$lib/kuromi/context';
+	import { readKuromiFocus } from '$lib/kuromi/focus';
+	import { takePendingDrill } from '$lib/kuromi/coachTools';
+	import { WIFI_FALLBACK } from '$lib/kuromi/lines';
 	import { sendKuromiChat, sendKuromiToolResults } from '$lib/kuromi/client';
 	import type { KuromiClientResult } from '$lib/kuromi/client';
 	import { chooseReplyWhenPendingEmpty, executeIntents } from '$lib/kuromi/executor';
@@ -168,21 +172,12 @@
 
 	const reactByUserIndex = $derived(buildReactMap(messages));
 
-	function sulkMessage(code: KuromiErrorCode | 'network'): string {
-		// 'timeout' gets its own line -- distinct from a dead connection (network/
-		// upstream) and from a server misconfiguration, so Eyad can tell a slow
-		// upstream call apart from a real outage instead of both reading as "the
-		// internet is broken".
-		if (code === 'timeout') {
-			return 'You made me wait too long and I have limits. Try that again, but faster this time.';
-		}
-		if (code === 'network' || code === 'upstream') {
-			return 'Ugh. The internet gave up. I refuse to work under these conditions — try me again.';
-		}
-		if (code === 'unauthorized' || code === 'not_configured') {
-			return "Something's unplugged behind the scenes and it's not my fault. Tell someone technical.";
-		}
-		return "That came out wrong and I'm not showing you. Ask me again.";
+	function sulkMessage(_code: KuromiErrorCode | 'network'): string {
+		return WIFI_FALLBACK;
+	}
+
+	async function buildTurnContext() {
+		return buildKuromiContext($page.url.pathname, ctx.state, getTodayDate(), readKuromiFocus());
 	}
 
 	function close() {
@@ -481,6 +476,8 @@
 		}
 
 		const { results, undos, pendingToolCalls } = executeIntents(toolCalls, ctx.steward);
+		const drillPath = takePendingDrill();
+		if (drillPath) void goto(drillPath);
 		const announcements = buildAnnouncements(pendingToolCalls, results);
 
 		if (pendingToolCalls.length === 0) {
@@ -541,9 +538,7 @@
 
 		try {
 			const leg1Messages = capHistory(messages);
-			const pathname = $page.url.pathname;
-			const today = getTodayDate();
-			const context = await buildKuromiContext(pathname, ctx.state, today);
+			const context = await buildTurnContext();
 			const result = await requestReply(leg1Messages, context);
 			await settleAfterLeg1(result, leg1Messages, context);
 		} catch {
@@ -566,9 +561,7 @@
 
 		try {
 			const leg1Messages = capHistory(messages);
-			const pathname = $page.url.pathname;
-			const today = getTodayDate();
-			const context = await buildKuromiContext(pathname, ctx.state, today);
+			const context = await buildTurnContext();
 			const result = await requestReply(leg1Messages, context);
 			await settleAfterLeg1(result, leg1Messages, context);
 		} catch {

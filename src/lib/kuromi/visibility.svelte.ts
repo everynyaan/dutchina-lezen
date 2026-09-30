@@ -6,10 +6,20 @@
 // ============================================================
 
 let visible = $state(true);
+let chatNonce = $state(0);
 
 /** Set whether the summon button (and by extension chat access) is shown. */
 export function setKuromiVisible(v: boolean): void {
 	visible = v;
+}
+
+/** Ask the shell to open chat. Hint and Ask Kuromi call this. */
+export function requestKuromiChat(): void {
+	chatNonce += 1;
+}
+
+export function kuromiChatNonce(): number {
+	return chatNonce;
 }
 
 /**

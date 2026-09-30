@@ -1272,7 +1272,7 @@ describe('executeIntents — adversarial boundary', () => {
 		expect(results[0].outcome).toBe('applied');
 		expect(state.pages[0].title).toBe('Short');
 		expect(state.pages[0].quip).toBe('q');
-		expect(state.pages[0].labels).toEqual(['gate-1', 'grammar', 'vocab']);
+		expect(state.pages[0].labels).toEqual(['grammar', 'vocab']);
 		expect(state.pages[0].blocks).toHaveLength(1);
 	});
 

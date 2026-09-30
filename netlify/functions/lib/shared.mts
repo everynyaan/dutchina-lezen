@@ -297,90 +297,68 @@ function extractContent(data: unknown): string | null {
 // ============================================================
 
 const KUROMI_TOOL_NAMES = new Set([
-	'update_config',
-	'award_lp',
-	'forgive_streak',
+	'add_notebook_entry',
+	'suggest_drill',
+	'save_coach_note',
 	'create_page',
 	'update_page',
-	'archive_page'
+	'archive_page',
+	// Not offered in KUROMI_TOOLS. Kept so an in-flight leg 2 from an older
+	// client still names a known tool. The model is not given these schemas.
+	'update_config',
+	'award_lp',
+	'forgive_streak'
 ]);
 
 export const KUROMI_TOOLS = [
 	{
 		type: 'function',
 		function: {
-			name: 'update_config',
+			name: 'add_notebook_entry',
 			description:
-				"Adjust Domi's app settings. This is the only settings tool. Use it when she asks to see her sticker book / stickers / collection, hide or show missions, hide score numbers, change streak mode, bias the daily quiz, or change which home-screen item glows. A chat [sticker:] tag is a decoration in the bubble — it does not open the sticker book. You cannot delete achievements, ranks, or LP; refuse that in character and offer to hide the numbers or open the sticker book instead. Frame the change as a favor or deal — never a system notification.",
+				'Save a word or sentence Domi is discussing. kind is word or sentence. quote is the text she marked. note is her own line. The notebook is not stored in this build: if the app rejects the call, say so and do not pretend it was kept.',
+			strict: true,
 			parameters: {
 				type: 'object',
 				additionalProperties: false,
-				required: ['patch', 'reason'],
+				required: ['kind', 'quote', 'note'],
 				properties: {
-					patch: {
-						type: 'object',
-						additionalProperties: false,
+					kind: {
+						type: 'string',
+						description: 'word or sentence.'
+					},
+					quote: {
+						type: 'string',
+						description: 'The word or sentence from the passage.'
+					},
+					note: {
+						type: 'string',
+						description: 'Her note, or a short gloss she asked you to keep.'
+					}
+				}
+			}
+		}
+	},
+	{
+		type: 'function',
+		function: {
+			name: 'suggest_drill',
+			description:
+				'Open a drill. Send a question type or a trap, and leave the other one as an empty string. This opens /cards?qtype= or /cards?trap=. Do not invent an exam question.',
+			strict: true,
+			parameters: {
+				type: 'object',
+				additionalProperties: false,
+				required: ['qtype', 'trap'],
+				properties: {
+					qtype: {
+						type: 'string',
 						description:
-							'Only include keys you intend to change. Nested shape matches her current config in session context.',
-						properties: {
-							progression: {
-								type: 'object',
-								additionalProperties: false,
-								description:
-									"Progression display. 'collection' is her sticker book (earned gate stickers and achievements on shelves) — use this when she asks to show stickers or see her collection. 'hidden' hides the numbers. 'score' is the normal numbers view. None of these delete anything she earned.",
-								properties: {
-									display: {
-										type: 'string',
-										enum: ['score', 'collection', 'hidden']
-									}
-								}
-							},
-							streaks: {
-								type: 'string',
-								enum: ['strict', 'gentle', 'off'],
-								description:
-									"'gentle' quietly repairs a missed week; 'off' stops streak pressure; 'strict' is full streak rules."
-							},
-							missions: {
-								type: 'string',
-								enum: ['on', 'off'],
-								description:
-									"'off' hides missions (what she means by remove / hate / turn off missions); 'on' shows them again. Hide is not delete."
-							},
-							quiz: {
-								type: 'object',
-								additionalProperties: false,
-								description: 'Quiz preferences.',
-								properties: {
-									focusCategories: {
-										type: 'array',
-										items: { type: 'string' },
-										description:
-											'Biases (never restricts) what the daily quiz draws from — soft preference only.'
-									}
-								}
-							},
-							dailyPath: {
-								type: 'object',
-								additionalProperties: false,
-								description: 'Home-screen daily path.',
-								properties: {
-									order: {
-										type: 'array',
-										items: {
-											type: 'string',
-											enum: ['weekset-urgent', 'quiz', 'tekst', 'weekset']
-										},
-										description:
-											'Reorders which single thing on the home screen glows. An empty array means nothing glows.'
-									}
-								}
-							}
-						}
+							'A question type id such as detail or doel-tekst, or an empty string when trap is set.'
 					},
-					reason: {
+					trap: {
 						type: 'string',
-						description: 'Why you are changing this for her (in-character motive).'
+						description: 'A trap id such as echo, or an empty string when qtype is set.'
 					}
 				}
 			}
@@ -389,40 +367,18 @@ export const KUROMI_TOOLS = [
 	{
 		type: 'function',
 		function: {
-			name: 'award_lp',
+			name: 'save_coach_note',
 			description:
-				'Quiet extra credit only — never the point of the chat, and never a way to open a gate. Positive only — you can never deduct LP. A single award is capped at 72 LP; your rolling seven-day total is capped at 144. The app enforces both caps server/executor-side and will tell you if it trimmed your award.',
+				"Save one line on the readiness screen, labelled Kuromi's note this week. One short line. Do not invent a plan.",
+			strict: true,
 			parameters: {
 				type: 'object',
 				additionalProperties: false,
-				required: ['amount', 'reason'],
+				required: ['text'],
 				properties: {
-					amount: {
-						type: 'integer',
-						description: 'Positive LP amount to award (executor may cap it).'
-					},
-					reason: {
+					text: {
 						type: 'string',
-						description: 'Why she earned this (favor / deal framing).'
-					}
-				}
-			}
-		}
-	},
-	{
-		type: 'function',
-		function: {
-			name: 'forgive_streak',
-			description:
-				"Restores one week of Domi's practice streak. Usable at most once per calendar week; refused outright if streaks are switched off.",
-			parameters: {
-				type: 'object',
-				additionalProperties: false,
-				required: ['reason'],
-				properties: {
-					reason: {
-						type: 'string',
-						description: 'Why you are granting this mercy (grudging, in character).'
+						description: "The one line shown as Kuromi's note this week."
 					}
 				}
 			}
@@ -433,7 +389,7 @@ export const KUROMI_TOOLS = [
 		function: {
 			name: 'create_page',
 			description:
-				"Build a new page on Domi's shelf for the gate she is in now (currentGate). Gate 1 pages are first words only — no exam Dutch, no B1. A page is a title, optional quip and labels, and an ordered stack of teaching blocks (grammar-card, vocab-set, drill, read, note). You write teaching content inside those blocks only; layout/HTML/markup do not survive. Frame it as something you made for her, then actually say what you made.",
+				"Build a note page on Domi's shelf. A page is a title, optional quip and labels, and an ordered stack of blocks (grammar-card, vocab-set, drill, read, note). You write the teaching inside those blocks only. Layout, HTML and markup do not survive. Say what you made.",
 			strict: true,
 			parameters: {
 				type: 'object',

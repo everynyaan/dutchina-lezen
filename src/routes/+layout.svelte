@@ -52,6 +52,10 @@
 	import Icon from '$lib/icons/Icon.svelte';
 	import SummonButton from '$lib/components/kuromi/SummonButton.svelte';
 	import ChatSheet from '$lib/components/kuromi/ChatSheet.svelte';
+	import { env } from '$env/dynamic/public';
+	import { configureKuromiLive } from '$lib/kuromi/live';
+	import { kuromiChatNonce } from '$lib/kuromi/visibility.svelte';
+	configureKuromiLive(env.PUBLIC_KUROMI_LIVE);
 	import RailNav from '$lib/components/shell/RailNav.svelte';
 	import KuromiResident from '$lib/components/shell/KuromiResident.svelte';
 
@@ -73,6 +77,15 @@
 		// Return focus to the summon FAB after dismiss
 		queueMicrotask(() => summonButtonEl?.focus());
 	}
+
+	let seenChatNonce = 0;
+	$effect(() => {
+		const nonce = kuromiChatNonce();
+		if (nonce > seenChatNonce) {
+			seenChatNonce = nonce;
+			kuromiOpen = true;
+		}
+	});
 
 	// ============================================================
 	// STATE + PROFILE

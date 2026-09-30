@@ -3,6 +3,7 @@
 	import { getGameContext } from '$lib/state/context';
 	import { getTodayDate } from '$lib/match/engine';
 	import { buildKuromiContext } from '$lib/kuromi/context';
+	import { WIFI_FALLBACK } from '$lib/kuromi/lines';
 	import { startKuromiDrill, pollKuromiDrill } from '$lib/kuromi/drillClient';
 	import type { KuromiDrillSet } from '$lib/kuromi/drill';
 	import type { KuromiErrorCode } from '$lib/kuromi/types';
@@ -38,14 +39,8 @@
 		topic = value;
 	}
 
-	function mapError(code: KuromiErrorCode | 'network' | 'timeout'): string {
-		if (code === 'network' || code === 'upstream' || code === 'timeout') {
-			return 'Ugh. The internet gave up. I refuse to work under these conditions -- try me again.';
-		}
-		if (code === 'unauthorized' || code === 'not_configured') {
-			return 'Something is unplugged behind the scenes and it is not my fault. Tell someone technical.';
-		}
-		return 'That came out wrong and I am not showing you. Ask me again.';
+	function mapError(_code: KuromiErrorCode | 'network' | 'timeout'): string {
+		return WIFI_FALLBACK;
 	}
 
 	function clearWaitTimer() {

@@ -6,6 +6,8 @@
 	import { applyShowUpStreak, ensureTodayEval } from '$lib/reading/eval';
 	import { QTYPE_LABEL, TRAP_LABEL } from '$lib/reading/annotations';
 	import { paragraphMapFor, paraphraseById } from '$lib/reading/practice';
+	import { textChatFromLoop } from '$lib/kuromi/coach';
+	import { setTextChat } from '$lib/kuromi/focus';
 	import { recordMiss } from '$lib/reading/traps';
 	import PracticeBook from '$lib/components/reading/PracticeBook.svelte';
 	import { bookYearsFor } from '$lib/reading/practiceBook';
@@ -53,6 +55,28 @@
 	let locatedP = $state<number | null>(null);
 
 	let answerP = $derived(item?.evidence?.[0]?.p ?? null);
+
+	$effect(() => {
+		if (!passage) {
+			setTextChat(null);
+			return;
+		}
+		const rows = evalState.itemIds.flatMap((id) => {
+			const loop = dailyLoopItem(passage, id);
+			return loop ? [{ id, item: loop }] : [];
+		});
+		setTextChat(
+			textChatFromLoop({
+				passageText: passage.text,
+				paragraphMap: mapEntries,
+				items: rows,
+				answeredIds: new Set(Object.keys(evalState.answers)),
+				activeId,
+				activePhase: phase
+			})
+		);
+		return () => setTextChat(null);
+	});
 
 	function finishMap() {
 		if (!passage) return;
@@ -191,6 +215,7 @@
 				<QuestionBlock
 					{item}
 					{phase}
+					paragraphMap={mapEntries}
 					{picked}
 					shuffle={true}
 					seed={`${item.id}|${today}`}

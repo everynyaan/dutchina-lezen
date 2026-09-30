@@ -385,13 +385,16 @@ describe('kuromi handler', () => {
 		expect(Array.isArray(sent.tools)).toBe(true);
 		const names = (sent.tools as Array<{ function: { name: string } }>).map((t) => t.function.name);
 		expect(names).toEqual([
-			'update_config',
-			'award_lp',
-			'forgive_streak',
+			'add_notebook_entry',
+			'suggest_drill',
+			'save_coach_note',
 			'create_page',
 			'update_page',
 			'archive_page'
 		]);
+		expect(names).not.toContain('update_config');
+		expect(names).not.toContain('award_lp');
+		expect(names).not.toContain('forgive_streak');
 		expect(names).not.toContain('set_gate');
 		expect(names).not.toContain('unlock_gate');
 		expect(names).not.toContain('swap_question');
@@ -407,15 +410,23 @@ describe('kuromi handler', () => {
 		expect(KUROMI_CHAT_SYSTEM_PROMPT).toMatch(/conclusie/);
 		expect(KUROMI_CHAT_SYSTEM_PROMPT).toMatch(/Never send her to Match/);
 		expect(KUROMI_CHAT_SYSTEM_PROMPT).toMatch(/no set_gate/i);
-		expect(KUROMI_CHAT_SYSTEM_PROMPT).not.toMatch(/cesuur 24|verwijzing|hoofdonderwerp|bijna-goed|bron-doel/);
+		expect(KUROMI_CHAT_SYSTEM_PROMPT).not.toMatch(
+			/cesuur 24|verwijzing|hoofdonderwerp|bijna-goed|bron-doel/
+		);
 		expect(KUROMI_DRILL_SYSTEM_PROMPT).toMatch(/pass line 24 of 35/);
 		expect(KUROMI_DRILL_SYSTEM_PROMPT).toMatch(/do not offer a new exam-question set/i);
 		expect(KUROMI_DRILL_SYSTEM_PROMPT).not.toMatch(/hoofdonderwerp|bijna-goed/);
 		const createPage = KUROMI_TOOLS.find((t) => t.function.name === 'create_page');
-		expect(createPage?.function.description).toMatch(/currentGate/);
-		expect(createPage?.function.description).toMatch(/Gate 1 pages are first words/);
-		const award = KUROMI_TOOLS.find((t) => t.function.name === 'award_lp');
-		expect(award?.function.description).toMatch(/never a way to open a gate/);
+		expect(createPage?.function.description).not.toMatch(/currentGate/);
+		expect(createPage?.function.description).not.toMatch(/Gate 1 pages are first words/);
+		expect(KUROMI_CHAT_SYSTEM_PROMPT).toMatch(/Guess before lookup/);
+		expect(KUROMI_CHAT_SYSTEM_PROMPT).toMatch(
+			/Before she has answered, never name a paragraph, an option or the answer/
+		);
+		expect(KUROMI_CHAT_SYSTEM_PROMPT).toMatch(/Which paragraph holds the answer/);
+		expect(KUROMI_CHAT_SYSTEM_PROMPT).not.toMatch(/het huis/);
+		expect(KUROMI_CHAT_SYSTEM_PROMPT).not.toMatch(/STEWARDSHIP/);
+		expect(KUROMI_CHAT_SYSTEM_PROMPT).not.toMatch(/## Her settings/);
 	});
 
 	it('leg 1 with content null and valid tool_calls returns empty reply + toolCalls', async () => {
@@ -626,9 +637,9 @@ describe('kuromi handler', () => {
 		expect(Array.isArray(sent.tools)).toBe(true);
 		const names = (sent.tools as Array<{ function: { name: string } }>).map((t) => t.function.name);
 		expect(names).toEqual([
-			'update_config',
-			'award_lp',
-			'forgive_streak',
+			'add_notebook_entry',
+			'suggest_drill',
+			'save_coach_note',
 			'create_page',
 			'update_page',
 			'archive_page'
@@ -1300,35 +1311,24 @@ describe('KUROMI_TOOLS schema shape', () => {
 		}
 	});
 
-	it('update_config patch uses nested AppConfig shape (matches session context)', () => {
-		const params = findTool('update_config').parameters;
-		const patch = params.properties?.patch;
-		expect(patch?.properties?.progression).toBeDefined();
-		expect(patch?.properties?.missions).toBeDefined();
-		expect(patch?.properties?.['progression.display']).toBeUndefined();
-		expect(patch?.properties?.['quiz.focusCategories']).toBeUndefined();
-		expect(patch?.properties?.['dailyPath.order']).toBeUndefined();
-		expect(patch?.properties?.quiz?.properties?.focusCategories).toBeDefined();
-		expect(patch?.properties?.dailyPath?.properties?.order).toBeDefined();
-	});
-
-	it('update_config description maps sticker book, missions hide, and refuses deleting achievements', () => {
-		const blob = JSON.stringify(findTool('update_config')).toLowerCase();
-		expect(blob).toContain('sticker book');
-		expect(blob).toContain('show stickers');
-		expect(blob).toMatch(/hide.*missions|missions.*hide/);
-		expect(blob).toContain('cannot delete achievements');
-		expect(blob).toContain('[sticker:]');
+	it('does not offer update_config', () => {
+		const names = KUROMI_TOOLS.map((tool) => tool.function.name as string);
+		expect(names).not.toContain('update_config');
+		expect(names).not.toContain('award_lp');
+		expect(names).not.toContain('forgive_streak');
 	});
 });
 
-describe('KUROMI_CHAT_SYSTEM_PROMPT — settings vs shelf', () => {
-	it('maps sticker book and missions to the settings tool and forbids deleting achievements', () => {
-		const p = KUROMI_CHAT_SYSTEM_PROMPT.toLowerCase();
-		expect(p).toContain('sticker book');
-		expect(p).toContain('remove missions');
-		expect(p).toContain('cannot delete achievements');
-		expect(p).toContain('those tags are decorations');
-		expect(KUROMI_CHAT_SYSTEM_PROMPT).not.toContain('update_config');
+describe('KUROMI_CHAT_SYSTEM_PROMPT — teaching vs shelf', () => {
+	it('teaches the guarded hint and does not name retired settings tools', () => {
+		const p = KUROMI_CHAT_SYSTEM_PROMPT;
+		expect(p).toContain('Guess before lookup. Text before options.');
+		expect(p).toContain(
+			'Before she has answered, never name a paragraph, an option or the answer. If she asks, refuse in character.'
+		);
+		expect(p).toContain('Those tags are decorations');
+		expect(p).not.toContain('update_config');
+		expect(p).not.toContain('STEWARDSHIP');
+		expect(p).not.toContain('## Her settings');
 	});
 });

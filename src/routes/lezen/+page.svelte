@@ -5,7 +5,12 @@
 	import { findPassage } from '$lib/reading/bank';
 	import { appendAttempt, dailyLoopItem } from '$lib/reading/daily';
 	import { BOOKLET_PASS_LABEL } from '$lib/reading/mock';
-	import { practiceItemsFor } from '$lib/reading/practice';
+	import { paragraphMapFor, practiceItemsFor } from '$lib/reading/practice';
+	import { textChatFromLoop } from '$lib/kuromi/coach';
+	import { setTextChat } from '$lib/kuromi/focus';
+	import { reflexLine } from '$lib/kuromi/lines';
+	import { isKuromiLive } from '$lib/kuromi/live';
+	import { requestKuromiChat } from '$lib/kuromi/visibility.svelte';
 	import { bookYearsFor } from '$lib/reading/practiceBook';
 	import { recentOfficial, seenLabel, seenTimes } from '$lib/reading/texts';
 	import { recordMiss } from '$lib/reading/traps';
@@ -50,6 +55,31 @@
 	let activeId = $derived(ids[index] ?? null);
 	let item = $derived(passage && activeId ? dailyLoopItem(passage, activeId) : null);
 	let answerP = $derived(item?.evidence?.[0]?.p ?? null);
+	let live = isKuromiLive();
+	let askLabel = reflexLine('ask-label');
+	let mapEntries = $derived(passage ? paragraphMapFor(passage.slug) : []);
+
+	$effect(() => {
+		if (!passage || stage === 'list') {
+			setTextChat(null);
+			return;
+		}
+		const rows = ids.flatMap((id) => {
+			const loop = dailyLoopItem(passage, id);
+			return loop ? [{ id, item: loop }] : [];
+		});
+		setTextChat(
+			textChatFromLoop({
+				passageText: passage.text,
+				paragraphMap: mapEntries,
+				items: rows,
+				answeredIds: new Set(Object.keys(answers)),
+				activeId,
+				activePhase: phase
+			})
+		);
+		return () => setTextChat(null);
+	});
 
 	function timesFor(passageSlug: string): string {
 		return seenLabel(seenTimes(ctx.state.readingFork, passageSlug));
@@ -208,6 +238,9 @@
 		{/each}
 	{:else if passage}
 		<button type="button" class="back" onclick={backToList}>Back</button>
+		{#if live && askLabel}
+			<button type="button" class="back" onclick={() => requestKuromiChat()}>{askLabel}</button>
+		{/if}
 		{#if stage === 'warn'}
 			<Card variant="soft-peach">
 				<p>You answered these recently. Try the practice questions instead.</p>
@@ -247,6 +280,7 @@
 					<QuestionBlock
 						{item}
 						{phase}
+						paragraphMap={mapEntries}
 						{picked}
 						shuffle={true}
 						seed={item.id}

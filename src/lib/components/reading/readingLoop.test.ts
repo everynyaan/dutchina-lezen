@@ -101,6 +101,7 @@ describe('reading loop components', () => {
 		expect(locateText).not.toContain('by the river');
 		expect(locateText).not.toContain('on the tram');
 		expect(locateText).not.toContain('Check');
+		expect(locateText).not.toContain('Hint');
 
 		const locate = mounted.pop();
 		if (!locate) throw new Error('missing locate component');

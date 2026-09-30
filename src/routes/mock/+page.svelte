@@ -32,6 +32,7 @@
 	import { bookYearsFor } from '$lib/reading/practiceBook';
 	import Card from '$lib/components/ui/Card.svelte';
 	import { setKuromiVisible } from '$lib/kuromi/visibility.svelte';
+	import { setMockDebrief, setTextChat } from '$lib/kuromi/focus';
 	import { playSfx } from '$lib/sound/sfx';
 	import { resolve } from '$app/paths';
 
@@ -67,6 +68,35 @@
 	$effect(() => {
 		setKuromiVisible(ctx.state.readingFork.mockInProgress === null);
 		return () => setKuromiVisible(true);
+	});
+
+	$effect(() => {
+		if (session) {
+			setTextChat(null);
+			setMockDebrief(null);
+			return;
+		}
+		if (!result || !resultExam) {
+			setMockDebrief(null);
+			return;
+		}
+		const flags = flagSplit(resultExam, result);
+		setMockDebrief({
+			correct: result.correct,
+			total: result.total,
+			passLine: result.passLine,
+			target: result.passLine + 1,
+			passed: result.correct >= result.passLine,
+			minutesPerText: result.textMs.map((ms) => Math.round(ms / 60000)),
+			flaggedRight: flags.right,
+			flaggedWrong: flags.wrong,
+			byQtype: Object.entries(result.byQtype).map(([qtype, row]) => ({
+				qtype,
+				correct: row.c,
+				total: row.t
+			}))
+		});
+		return () => setMockDebrief(null);
 	});
 
 	$effect(() => {

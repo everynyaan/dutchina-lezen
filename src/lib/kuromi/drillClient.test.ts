@@ -40,7 +40,13 @@ const SAMPLE_CONTEXT: KuromiContextPacket = {
 		lastMock: null,
 		passLine: 24,
 		target: 25,
-		liveTotal: 36
+		liveTotal: 36,
+		examDate: '2026-11-12',
+		daysLeft: null,
+		openTraps: [],
+		readiness: [],
+		locate: null,
+		daily: { completed: false, passageSlug: null, mapDone: false }
 	},
 	recentAdjustments: [],
 	activityShape: [

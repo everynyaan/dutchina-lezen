@@ -15,7 +15,16 @@
 	} from '$lib/reading/drills';
 	import { dueTraps, gradeTrap, recordMiss } from '$lib/reading/traps';
 	import { QTYPE_LABEL, TRAP_EXPLANATION, TRAP_LABEL } from '$lib/reading/annotations';
-	import { QTYPES, type AttemptSource, type QType, type TrapKind } from '$lib/reading/types';
+	import {
+		QTYPES,
+		TRAP_KINDS,
+		type AttemptSource,
+		type QType,
+		type TrapKind
+	} from '$lib/reading/types';
+	import { paragraphMapFor } from '$lib/reading/practice';
+	import { textChatFromLoop } from '$lib/kuromi/coach';
+	import { setTextChat } from '$lib/kuromi/focus';
 	import PracticeBook from '$lib/components/reading/PracticeBook.svelte';
 	import { bookYearsFor } from '$lib/reading/practiceBook';
 	import QuestionBlock from '$lib/components/reading/QuestionBlock.svelte';
@@ -31,6 +40,12 @@
 	let mode = $derived($page.url.searchParams.get('mode'));
 	let qtypeParam = $derived($page.url.searchParams.get('qtype'));
 	let qtypeOk = $derived(qtypeParam !== null && (QTYPES as readonly string[]).includes(qtypeParam));
+	let trapParam = $derived($page.url.searchParams.get('trap'));
+	let namedTrap = $derived(
+		trapParam !== null && (TRAP_KINDS as readonly string[]).includes(trapParam)
+			? (trapParam as TrapKind)
+			: null
+	);
 	let bookYears = $derived(bookYearsFor(ctx.state.readingFork, ctx.state.lezen.questionResults));
 
 	let snapKey = $state('');
@@ -45,7 +60,7 @@
 	let heldTrap = $state<TrapKind | null>(null);
 
 	$effect(() => {
-		const key = `${today}|${mode ?? ''}|${qtypeParam ?? ''}`;
+		const key = `${today}|${mode ?? ''}|${qtypeParam ?? ''}|${trapParam ?? ''}`;
 		if (snapKey === key) return;
 		snapKey = key;
 		step = 0;
@@ -60,13 +75,16 @@
 		qtypeIds = qtypeOk && qtypeParam ? selectQtypeItems(state, qtypeParam as QType, today) : [];
 	});
 
-	let liveTrap = $derived(dueTraps(ctx.state.readingFork, today)[0] ?? null);
-	let watchTrap = $derived(heldTrap ?? liveTrap?.trap ?? null);
+	let dueTrap = $derived(dueTraps(ctx.state.readingFork, today)[0]?.trap ?? null);
+	let activeTrap = $derived(
+		qtypeParam || mode === 'lure' || mode === 'paraphrase' ? null : (namedTrap ?? dueTrap)
+	);
+	let watchTrap = $derived(heldTrap ?? activeTrap);
 	let trapItemId = $derived.by(() => {
 		if (qtypeParam || mode === 'lure' || mode === 'paraphrase') return null;
 		if (phase === 'feedback' && heldId) return heldId;
-		if (!liveTrap) return null;
-		return selectTrapItem(ctx.state.readingFork, liveTrap.trap, today);
+		if (!activeTrap) return null;
+		return selectTrapItem(ctx.state.readingFork, activeTrap, today);
 	});
 	let loopIds = $derived(qtypeParam ? qtypeIds : mode === 'paraphrase' ? paraphraseIds : []);
 	let loopId = $derived(
@@ -83,6 +101,25 @@
 	let passage = $derived(activeId ? findPassage(itemSlug(activeId) ?? '') : undefined);
 	let item = $derived(passage && activeId ? dailyLoopItem(passage, activeId) : null);
 	let answerP = $derived(item?.evidence?.[0]?.p ?? null);
+	let mapEntries = $derived(passage ? paragraphMapFor(passage.slug) : []);
+
+	$effect(() => {
+		if (!passage || !item || !activeId) {
+			setTextChat(null);
+			return;
+		}
+		setTextChat(
+			textChatFromLoop({
+				passageText: passage.text,
+				paragraphMap: mapEntries,
+				items: [{ id: activeId, item }],
+				answeredIds: phase === 'feedback' ? new Set([activeId]) : new Set(),
+				activeId,
+				activePhase: phase
+			})
+		);
+		return () => setTextChat(null);
+	});
 	let sequenceDone = $derived(
 		(mode === 'lure' && lures.length > 0 && step >= lures.length) ||
 			((Boolean(qtypeParam) || mode === 'paraphrase') &&
@@ -207,7 +244,7 @@
 		<Card variant="soft-peach">
 			<p>No items of that type are ready.</p>
 		</Card>
-	{:else if !qtypeParam && mode !== 'lure' && mode !== 'paraphrase' && !liveTrap && !heldId}
+	{:else if !qtypeParam && mode !== 'lure' && mode !== 'paraphrase' && !activeTrap && !heldId}
 		<Card variant="soft-peach">
 			<p>Nothing to debrief. Finish the daily text.</p>
 			<a class="btn" href={resolve('/eval')}>Daily text</a>
@@ -264,6 +301,7 @@
 				<QuestionBlock
 					{item}
 					{phase}
+					paragraphMap={mapEntries}
 					{picked}
 					shuffle={true}
 					seed={`${item.id}|${today}`}

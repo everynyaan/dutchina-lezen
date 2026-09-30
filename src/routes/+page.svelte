@@ -10,6 +10,11 @@
 	import { getTodayDate } from '$lib/match/engine';
 	import { evalResults, unseenMisses } from '$lib/reading/eval';
 	import { predictiveAvailable, yearStudied } from '$lib/reading/mock';
+	import { readCoachNote } from '$lib/kuromi/note';
+	import { reflexLine } from '$lib/kuromi/lines';
+	import { showWeeklyMessage } from '$lib/kuromi/live';
+	import { setMondayBrief } from '$lib/kuromi/focus';
+	import { requestKuromiChat } from '$lib/kuromi/visibility.svelte';
 	import {
 		PLAN_LINE,
 		examCountdown,
@@ -61,6 +66,14 @@
 	let typeRows = $derived(qtypeReadiness(ctx.state.readingFork));
 	let locatedLine = $derived(locateLine(locateWindow(ctx.state.readingFork, 50)));
 	let trapsLine = $derived(trapLine(openTraps(ctx.state.readingFork)));
+	let coachNoteText = $state('');
+	let noteLabel = reflexLine('note-label');
+	let weekly = showWeeklyMessage(today);
+
+	function openWeekly() {
+		setMondayBrief(true);
+		requestKuromiChat();
+	}
 
 	interface BeforeInstallPromptEvent extends Event {
 		prompt: () => Promise<void>;
@@ -76,6 +89,7 @@
 		const now = new Date();
 		greeting = greetingForHour(now.getHours());
 		dateLabel = formatDateLabel(now);
+		coachNoteText = readCoachNote();
 
 		if (localStorage.getItem(INSTALL_DISMISSED_KEY) === '1') return;
 
@@ -169,6 +183,13 @@
 		<p>{mockLine}</p>
 		<h2>Plan</h2>
 		<p class="plan">{PLAN_LINE}</p>
+		{#if coachNoteText && noteLabel}
+			<h2>{noteLabel}</h2>
+			<p class="plan">{coachNoteText}</p>
+		{/if}
+		{#if weekly}
+			<button type="button" class="weekly" onclick={openWeekly}>Weekly message</button>
+		{/if}
 		<h2>Question types</h2>
 		<ul class="types">
 			{#each typeRows as row (row.qtype)}
@@ -318,6 +339,17 @@
 	.plan {
 		margin: 0;
 		line-height: 1.45;
+	}
+
+	.weekly {
+		align-self: flex-start;
+		font: inherit;
+		font-weight: 700;
+		border: 2px solid var(--color-ink);
+		border-radius: 999px;
+		background: var(--color-rose);
+		padding: 0.35rem 0.8rem;
+		cursor: pointer;
 	}
 
 	.types {

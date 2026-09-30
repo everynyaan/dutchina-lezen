@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { TRAP_LABEL } from '$lib/reading/annotations';
 	import { temptingLure, type LoopItem, type ResolvedLoopItem } from '$lib/reading/loop';
+	import { reflexLine } from '$lib/kuromi/lines';
 
 	interface Props {
 		item: LoopItem;
@@ -18,6 +19,7 @@
 	let looked = $derived(typeof locatedP === 'number' ? locatedP : null);
 	let answerAt = $derived(typeof answerP === 'number' ? answerP : null);
 	let samePlace = $derived(looked !== null && answerAt !== null && looked === answerAt);
+	let missAsk = reflexLine('miss-ask');
 </script>
 
 <div class="feedback">
@@ -26,6 +28,9 @@
 		<p>{resolved.why}</p>
 	{:else}
 		<p class="verdict">Not this one.</p>
+		{#if missAsk}
+			<p>{missAsk}</p>
+		{/if}
 		{#if pickedTrap}
 			<p>{TRAP_LABEL[pickedTrap.trap]}. {pickedTrap.why}</p>
 		{/if}

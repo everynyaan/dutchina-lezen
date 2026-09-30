@@ -5,8 +5,14 @@
 		resolveLoopItem,
 		shownPhase,
 		type LoopItem,
-		type LoopPhase
+		type LoopPhase,
+		type ParagraphMapEntry
 	} from '$lib/reading/loop';
+	import { buildCoachContext, coachSourceFromLoop } from '$lib/kuromi/coach';
+	import { setHintItem } from '$lib/kuromi/focus';
+	import { reflexLine } from '$lib/kuromi/lines';
+	import { isKuromiLive } from '$lib/kuromi/live';
+	import { requestKuromiChat } from '$lib/kuromi/visibility.svelte';
 
 	interface Props {
 		item: LoopItem;
@@ -22,6 +28,7 @@
 		onCheck?: () => void;
 		onSkip?: () => void;
 		onFlag?: () => void;
+		paragraphMap?: ParagraphMapEntry[];
 	}
 
 	let {
@@ -37,12 +44,21 @@
 		onPick,
 		onCheck,
 		onSkip,
-		onFlag
+		onFlag,
+		paragraphMap = []
 	}: Props = $props();
 
+	let hintLabel = reflexLine('hint-label');
+	let live = isKuromiLive();
 	let resolved = $derived(resolveLoopItem(item));
 	let phaseNow = $derived(shownPhase(phase, resolved.wholeText));
 	let rows = $derived(displayOptions(item.options, shuffle, seed || item.id));
+
+	function askHint() {
+		const coachPhase = phaseNow === 'options' ? 'options' : 'locate';
+		setHintItem(buildCoachContext(coachPhase, coachSourceFromLoop(item, paragraphMap)));
+		requestKuromiChat();
+	}
 </script>
 
 <section class="question">
@@ -54,6 +70,9 @@
 	{#if phaseNow === 'locate'}
 		<p class="prompt">Click the paragraph where the answer is</p>
 		<button type="button" class="skip" onclick={() => onSkip?.()}>Skip</button>
+		{#if live && hintLabel}
+			<button type="button" class="hint" onclick={askHint}>{hintLabel}</button>
+		{/if}
 	{:else if phaseNow === 'options'}
 		<div class="opts">
 			{#each rows as row (row.original)}
@@ -77,6 +96,9 @@
 			<button type="button" class="flag" onclick={() => onFlag?.()}>
 				{flagged ? 'Flagged' : 'Flag'}
 			</button>
+		{/if}
+		{#if live && hintLabel}
+			<button type="button" class="hint" onclick={askHint}>{hintLabel}</button>
 		{/if}
 	{:else}
 		<AnswerFeedback {item} {resolved} {picked} {locatedP} {answerP} />
@@ -131,7 +153,8 @@
 		background: var(--color-rose);
 		font-weight: 700;
 	}
-	.skip {
+	.skip,
+	.hint {
 		align-self: flex-start;
 		border: 0;
 		background: transparent;
