@@ -67,6 +67,8 @@
 	}
 	.desk {
 		display: none;
+		width: 100%;
+		min-width: 0;
 	}
 	@media (min-width: 1200px) {
 		.narrow {
@@ -74,20 +76,37 @@
 		}
 		.desk {
 			display: grid;
-			grid-template-columns: 55% 30% 15%;
-			height: calc(100vh - 8rem);
+			grid-template-columns: minmax(0, 11fr) minmax(0, 6fr) minmax(0, 3fr);
+			grid-template-rows: minmax(0, 1fr);
+			width: 100%;
+			min-width: 0;
+			height: calc(100vh - 12rem);
 			min-height: 24rem;
 			gap: 0.75rem;
 		}
 		.desk.wide {
-			grid-template-columns: 40% 30% 30%;
+			grid-template-columns: minmax(0, 8fr) minmax(0, 6fr) minmax(0, 6fr);
 		}
 		.desk.tab {
-			grid-template-columns: 55% 30% 2.75rem;
+			grid-template-columns: minmax(0, 11fr) minmax(0, 6fr) 2.75rem;
+		}
+		.text {
+			grid-column: 1;
+			grid-row: 1;
+		}
+		.ask {
+			grid-column: 2;
+			grid-row: 1;
+		}
+		.notes {
+			grid-column: 3;
+			grid-row: 1;
 		}
 		.text,
 		.ask,
 		.notes {
+			min-width: 0;
+			max-width: 100%;
 			min-height: 0;
 			overflow: auto;
 		}

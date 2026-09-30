@@ -308,3 +308,13 @@ export function paraphraseById(id: string): ParaphraseDrill | undefined {
 	}
 	return undefined;
 }
+
+/** Passage that owns a practice item or a paraphrase drill. */
+export function itemPassageSlug(id: string): string | undefined {
+	for (const row of loaded) {
+		const slug = row.pack?.passageSlug || fileSlug(row.file);
+		if (row.pack.items?.some((item) => item.id === id)) return slug;
+		if (row.pack.paraphrase?.some((drill) => drill.id === id)) return slug;
+	}
+	return undefined;
+}

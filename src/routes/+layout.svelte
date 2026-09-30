@@ -46,7 +46,8 @@
 	import { initAuth } from '$lib/auth/session.svelte';
 	import { initDb, seedCardReviews, exportCardReviews } from '$lib/db/db';
 	import { currentGateFromState } from '$lib/gates/gates';
-	import { unseenMisses } from '$lib/reading/eval';
+	import { dueTraps } from '$lib/reading/traps';
+	import { getTodayDate } from '$lib/match/engine';
 
 	import Icon from '$lib/icons/Icon.svelte';
 	import SummonButton from '$lib/components/kuromi/SummonButton.svelte';
@@ -329,7 +330,7 @@
 
 	async function refreshCardsDue(): Promise<void> {
 		try {
-			cardsDue = unseenMisses(gameState.readingFork.misses).length;
+			cardsDue = dueTraps(gameState.readingFork, getTodayDate()).length;
 		} catch {
 			cardsDue = 0;
 		}
@@ -700,6 +701,7 @@
 
 	.content {
 		flex: 1;
+		min-width: 0;
 		/* Bottom reservation must clear the Kuromi summon FAB, the tallest
 		   fixed element above the safe area: FAB sits at
 		   safe-area + 100px and is 56px tall, so its top edge is at
