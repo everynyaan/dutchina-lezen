@@ -1,0 +1,2725 @@
+[
+	{
+		"id": "lezen-2023-1",
+		"qtype": "doel-tekst",
+		"evidence": [
+			{
+				"p": 0,
+				"quote": "Vijf fabels over mbo-opleidingen van Ameda"
+			},
+			{
+				"p": 2,
+				"quote": "De mbo-opleidingen van Ameda bereiden je dus voor op alle aspecten van een beroep!"
+			},
+			{
+				"p": 8,
+				"quote": "Dit maakt Ameda tot één van de grootste mbo-opleiders van Nederland!"
+			}
+		],
+		"move": "Look at how the text is built: each negative claim ('fabel') is knocked down with 'Niet waar', 'Onjuist!', 'Echt niet!' followed by praise of Ameda.",
+		"why": "A school's own website sets up five myths only to reject them and ends every section with positive claims ('perfect voorbereiden', 'één van de grootste'), so the writer wants to convince the reader that Ameda offers good education.",
+		"distractors": {
+			"B": {
+				"trap": "te-breed",
+				"why": "The text does contain information about the courses, but that is the topic; every fact is chosen to refute a myth and praise Ameda, so the purpose is to persuade."
+			},
+			"C": {
+				"trap": "echo",
+				"why": "Paragraph IV mentions the Inspectie, CREBO and the WEB, but only to prove that Ameda diplomas are recognised, not to explain how mbo in the Netherlands is organised."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2023-2",
+		"qtype": "vergelijking",
+		"evidence": [
+			{
+				"p": 8,
+				"quote": "Een mbo-diploma van Ameda heeft dus exact dezelfde waarde als dat van bijvoorbeeld een ROC."
+			}
+		],
+		"move": "Scan for the only place where 'ROC' is named and read what is compared there.",
+		"why": "The ROC appears only once, in paragraph IV, where the text says an Ameda diploma has 'exact dezelfde waarde' as an ROC diploma; the only comparison the text makes is that there is no difference in value.",
+		"distractors": {
+			"A": {
+				"trap": "niet-in-tekst",
+				"why": "The text praises Ameda's individual guidance, but never says ROCs give less guidance, so no comparison is made."
+			},
+			"B": {
+				"trap": "waar-niet-gevraagd",
+				"why": "The introduction says you can study at home with Ameda, but the text never contrasts this with ROCs, so it is not presented as the difference."
+			}
+		},
+		"keyCheck": "suspect: the question asks for the 'belangrijkste verschil' but the keyed answer says there is no difference; B (home study, stated in the intro) is arguably a real difference, though the text never says ROCs lack it"
+	},
+	{
+		"id": "lezen-2023-3",
+		"qtype": "detail",
+		"evidence": [
+			{
+				"p": 10,
+				"quote": "Bovendien krijg je door Ameda ook een BPV-begeleider toegewezen."
+			},
+			{
+				"p": 10,
+				"quote": "De BPV-begeleider geeft jou en je praktijkbegeleider tussentijds feedback en advies!"
+			}
+		],
+		"move": "Find 'BPV-begeleider' in the stage section and separate it from the 'praktijkbegeleider' mentioned just before it.",
+		"why": "The BPV-begeleider is assigned 'door Ameda' and gives feedback and advice to both 'jou en je praktijkbegeleider', so it is an Ameda supervisor who supports the student and the placement company.",
+		"distractors": {
+			"B": {
+				"trap": "verkeerde-persoon",
+				"why": "This describes the 'praktijkbegeleider', the experienced employee of the company, which is a different person from the BPV-begeleider."
+			},
+			"C": {
+				"trap": "echo",
+				"why": "Ameda's 'deskundige docenten' appear in paragraph III giving feedback on homework, but the BPV-begeleider is not described as teaching lessons."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2023-4",
+		"qtype": "detail",
+		"evidence": [
+			{
+				"p": 6,
+				"quote": "Dat kan via Ameda Campus, de digitale leeromgeving van Ameda!"
+			},
+			{
+				"p": 6,
+				"quote": "En vind je het fijn om met je medestudenten van gedachten te wisselen?"
+			}
+		],
+		"move": "Locate the name 'Ameda Campus' and read the apposition right after it and the question before it.",
+		"why": "Ameda Campus is called 'de digitale leeromgeving van Ameda' and it is the way to exchange ideas 'met je medestudenten', so it is an online environment for communicating with fellow students.",
+		"distractors": {
+			"A": {
+				"trap": "niet-in-tekst",
+				"why": "The word 'Campus' suggests a building, but the text explicitly calls it a digital learning environment."
+			},
+			"C": {
+				"trap": "niet-in-tekst",
+				"why": "Internships are discussed in paragraph V, but no organisation that arranges placements is mentioned, and Ameda Campus is not linked to the stage at all."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2023-5",
+		"qtype": "detail",
+		"evidence": [
+			{
+				"p": 2,
+				"quote": "Je leert allerlei taken uit te voeren."
+			},
+			{
+				"p": 2,
+				"quote": "je doet ook communicatieve vaardigheden op en je leert onder meer bepaalde receptiewerkzaamheden uitvoeren"
+			}
+		],
+		"move": "Find the example 'Dierenartsassistent' and watch the 'niet alleen ... ook' structure.",
+		"why": "The example says you learn 'niet alleen' about surgical instruments and hygiene but 'ook' communication skills and reception work, which illustrates 'allerlei taken': the course prepares you for different tasks.",
+		"distractors": {
+			"A": {
+				"trap": "tegenovergesteld",
+				"why": "The text says 'niet alleen' medical knowledge; the option turns 'not only' into 'only'."
+			},
+			"C": {
+				"trap": "niet-in-tekst",
+				"why": "The length of the course is never mentioned."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2023-6",
+		"qtype": "detail",
+		"evidence": [
+			{
+				"p": 4,
+				"quote": "Minstens twee keer per jaar bespreken de OR en de werkgever in de overlegvergadering de algemene gang van zaken van de onderneming."
+			}
+		],
+		"move": "Go to the heading 'Overlegvergadering' and look for a frequency word.",
+		"why": "The text says 'Minstens twee keer per jaar' they discuss 'de algemene gang van zaken', and 'minstens' means 'minimaal'.",
+		"distractors": {
+			"A": {
+				"trap": "niet-in-tekst",
+				"why": "A monthly meeting is never mentioned."
+			},
+			"C": {
+				"trap": "echo",
+				"why": "The number four appears in 'vier bevoegdheden', not in the meeting frequency."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2023-7",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 14,
+				"quote": "De werkgever moet de OR instemming vragen voor het vaststellen, wijzigen of intrekken van"
+			},
+			{
+				"p": 14,
+				"quote": "een personeelsvolgsysteem of registratiesysteem"
+			}
+		],
+		"move": "Match the scenario keyword 'personeelsvolgsysteem' to the list under one of the four rights.",
+		"why": "'Een personeelsvolgsysteem' is in the list under 'Instemmingsrecht', where the employer 'moet de OR instemming vragen', so he must ask the OR for consent.",
+		"distractors": {
+			"A": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "Asking for advice is the rule for the cases under 'Adviesrecht' (investments, mergers, appointing directors), not for a personeelsvolgsysteem."
+			},
+			"B": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "Informing the OR is the 'Informatierecht' rule; for this system just informing is not enough, the OR must consent."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2023-8",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 12,
+				"quote": "De OR kan het oneens zijn met de plannen van de werkgever. De OR krijgt dan een maand de tijd om de zaak voor te leggen aan de Ondernemingskamer"
+			}
+		],
+		"move": "'Belangrijk besluit' is the wording of the 'Adviesrecht' section; read what happens there when the OR disagrees.",
+		"why": "Under 'Adviesrecht' the employer asks advice on 'een belangrijk besluit', and if the OR disagrees it has a month to bring the case to the Ondernemingskamer.",
+		"distractors": {
+			"A": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "The OR asks the bedrijfscommissie to mediate only when the employer refuses to give information; in the consent procedure it is the employer who asks the bedrijfscommissie."
+			},
+			"C": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "Blocking by withholding consent applies only to the specific regelingen under 'Instemmingsrecht', not to important decisions that fall under the right of advice."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2023-9",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 14,
+				"quote": "De kantonrechter geeft alleen toestemming als:\n• de beslissing van de ondernemingsraad onredelijk is;\n• de werkgever zijn besluit neemt vanwege zwaarwegende redenen."
+			}
+		],
+		"move": "Find 'kantonrechter' and count the bullet points after 'alleen toestemming als'.",
+		"why": "The text lists two situations for the kantonrechter: the OR's decision is unreasonable (A) and the employer has weighty reasons (B), so both are correct.",
+		"distractors": {
+			"A": {
+				"trap": "te-smal",
+				"why": "This is only the first of the two situations the text lists."
+			},
+			"B": {
+				"trap": "te-smal",
+				"why": "This is only the second of the two situations the text lists."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2023-10",
+		"qtype": "detail",
+		"evidence": [
+			{
+				"p": 16,
+				"quote": "De OR mag op eigen initiatief de werkgever voorstellen doen over alle sociale, organisatorische, financiële en economische zaken van de onderneming."
+			}
+		],
+		"move": "Go to the heading 'Initiatiefrecht' and read its first sentence.",
+		"why": "The OR may make proposals to the employer about 'alle sociale, organisatorische, financiële en economische zaken', which is everything to do with the company.",
+		"distractors": {
+			"B": {
+				"trap": "tegenovergesteld",
+				"why": "The OR only proposes; the text says the employer decides ('Voordat de werkgever over het voorstel beslist')."
+			},
+			"C": {
+				"trap": "echo",
+				"why": "Consulting staff appears under 'Achterban raadplegen', a different section, and it is not what the initiatiefrecht is."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2023-11",
+		"qtype": "doel-tekst",
+		"evidence": [
+			{
+				"p": 2,
+				"quote": "Een ondernemingsraad (OR) bestaat uit werknemers die namens het personeel overleg voeren met de werkgever."
+			},
+			{
+				"p": 10,
+				"quote": "De OR heeft vier bevoegdheden, namelijk:"
+			}
+		],
+		"move": "Notice the neutral textbook structure: headings 'Taken' and 'Bevoegdheden', definitions and lists, with no opinions or instructions.",
+		"why": "The text defines the OR, lists its tasks and then explains each of its four rights, so it informs the reader about the rights and tasks of a works council.",
+		"distractors": {
+			"B": {
+				"trap": "niet-in-tekst",
+				"why": "There is no opinion or argument that an OR is important; the tone is neutral and descriptive."
+			},
+			"C": {
+				"trap": "niet-in-tekst",
+				"why": "Nothing is said about how to set up a works council; the text describes an existing OR's tasks and rights."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2023-12",
+		"qtype": "conclusie",
+		"evidence": [
+			{
+				"p": 2,
+				"quote": "Maar als een samenleving als geheel meer gaat verdienen, wordt daar niemand gelukkiger van."
+			}
+		],
+		"move": "Read the first paragraph, where the research result is stated before the explanations, and notice the contrast word 'Maar'.",
+		"why": "The key finding is that when a society as a whole earns more, 'wordt daar niemand gelukkiger van', illustrated by Americans, Japanese and Europeans who got richer but not happier.",
+		"distractors": {
+			"B": {
+				"trap": "overdreven",
+				"why": "The text says an individual who gets richer gets happier, but 'altijd' and the rich-versus-poor claim go further than that."
+			},
+			"C": {
+				"trap": "echo",
+				"why": "Free time is discussed, but the text says we do not compete over free time, not that it makes us happier than money."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2023-13",
+		"qtype": "betekenis-in-context",
+		"evidence": [
+			{
+				"p": 4,
+				"quote": "we gaan een betere levensstandaard al gauw als gewoon ervaren"
+			}
+		],
+		"move": "The word 'Gewenning' is a heading; the definition follows right after the colon in the next sentence.",
+		"why": "The text explains 'gewenning' as experiencing a better standard of living 'al gauw als gewoon', illustrated by central heating going from luxury to normal.",
+		"distractors": {
+			"A": {
+				"trap": "niet-in-tekst",
+				"why": "How fast people spend money is not discussed."
+			},
+			"C": {
+				"trap": "echo",
+				"why": "Comparing with others is the second explanation, under 'Vergelijken met buren', not what 'gewenning' means."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2023-14",
+		"qtype": "conclusie",
+		"evidence": [
+			{
+				"p": 6,
+				"quote": "Ze kregen liever het lagere bedrag zolang dat meer was dan wat anderen ontvingen."
+			}
+		],
+		"move": "Find the student experiment and read the sentence right after 'De meerderheid koos voor het eerste', which interprets the choice.",
+		"why": "The text interprets the choice itself: they preferred the lower amount 'zolang dat meer was dan wat anderen ontvingen', so people accept less if it means having more than others.",
+		"distractors": {
+			"A": {
+				"trap": "overdreven",
+				"why": "The text says comparison matters more than actual income, not that people do not care about money at all."
+			},
+			"C": {
+				"trap": "niet-in-tekst",
+				"why": "Arithmetic skills play no role; the text explains the choice through comparison with others."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2023-15",
+		"qtype": "vergelijking",
+		"evidence": [
+			{
+				"p": 8,
+				"quote": "Ditmaal koos een duidelijke meerderheid voor het laatste."
+			},
+			{
+				"p": 8,
+				"quote": "We wedijveren over ons inkomen, maar niet over onze vrije tijd."
+			}
+		],
+		"move": "Compare the two experiments and look for the contrast signals 'Ditmaal' and 'maar niet'.",
+		"why": "With money they chose more than others (relatively more), but with free time they chose four weeks over two even though others got eight (absolutely more), summed up in 'We wedijveren over ons inkomen, maar niet over onze vrije tijd'.",
+		"distractors": {
+			"B": {
+				"trap": "tegenovergesteld",
+				"why": "They were not indifferent about money: they deliberately chose earning more than others."
+			},
+			"C": {
+				"trap": "tegenovergesteld",
+				"why": "For free time they did the opposite of relative thinking, choosing four weeks while others got eight."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2023-16",
+		"qtype": "doel-tekst",
+		"evidence": [
+			{
+				"p": 0,
+				"quote": "MAAKT GELD ONS GELUKKIG?"
+			},
+			{
+				"p": 2,
+				"quote": "Dit blijkt uit onderzoek naar het verband tussen rijkdom en mate van geluksgevoel."
+			},
+			{
+				"p": 4,
+				"quote": "Een verklaring is gewenning"
+			}
+		],
+		"move": "The title is a question; check whether the text answers it with research and explanations or with tips and warnings.",
+		"why": "The magazine article reports research on 'het verband tussen rijkdom en mate van geluksgevoel' and gives explanations ('Een verklaring is gewenning'), so it informs about the relation between money and happiness.",
+		"distractors": {
+			"A": {
+				"trap": "niet-in-tekst",
+				"why": "There are no tips or instructions on how to become happier."
+			},
+			"C": {
+				"trap": "te-smal",
+				"why": "Only one line ('dat kan ons zelfs ongelukkiger maken') hints at a downside; the text as a whole explains research, not warns."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2023-17",
+		"qtype": "detail",
+		"evidence": [
+			{
+				"p": 1,
+				"quote": "Totdat ik een oproep zag om mee te doen aan een wedstrijd bij het Dolfinarium."
+			},
+			{
+				"p": 1,
+				"quote": "Ze schreef zich in, kwam en won."
+			}
+		],
+		"move": "Read the first paragraph, where Emma tells how she ended up in this world.",
+		"why": "Emma saw a call for a competition at the Dolfinarium, entered and won, and after that she got the chance to work there.",
+		"distractors": {
+			"A": {
+				"trap": "tegenovergesteld",
+				"why": "The text says Dierenverzorging gives the best chance, but Emma did many courses 'Behalve iets met dieren', so she did not do this one."
+			},
+			"C": {
+				"trap": "niet-in-tekst",
+				"why": "She responded to a call for a competition ('oproep'), not to a job vacancy."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2023-18",
+		"qtype": "mening-persoon",
+		"evidence": [
+			{
+				"p": 3,
+				"quote": "het is heel speciaal om één op één met het dier te zijn"
+			},
+			{
+				"p": 3,
+				"quote": "Die vertrouwensband is echt iets moois!"
+			}
+		],
+		"move": "Under 'Bijzondere baan' look for Emma's own evaluative words ('heel speciaal', 'iets moois').",
+		"why": "Emma says it is 'heel speciaal' to be one on one with the animal and calls the bond of trust 'echt iets moois', so the trust bond is what makes the job special.",
+		"distractors": {
+			"A": {
+				"trap": "echo",
+				"why": "The shows are mentioned in the same passage ('Zowel in, als buiten de show'), but what she calls special is the one-on-one bond, in and out of the show."
+			},
+			"C": {
+				"trap": "waar-niet-gevraagd",
+				"why": "Teamwork is true but is named as a requirement ('een vereiste'), not as what is most special."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2023-19",
+		"qtype": "mening-persoon",
+		"evidence": [
+			{
+				"p": 7,
+				"quote": "vindt ze de vis toch wel een minpuntje"
+			},
+			{
+				"p": 7,
+				"quote": "Ook geeft ze aan dat het lichamelijk best zwaar is."
+			}
+		],
+		"move": "Look for negative words ('minpuntje', 'zwaar') and the connector 'Ook' that adds a second point.",
+		"why": "Emma calls the fish 'een minpuntje' and 'Ook' says the work is physically heavy, so both are disadvantages.",
+		"distractors": {
+			"A": {
+				"trap": "te-smal",
+				"why": "The fish smell is only the first disadvantage; 'Ook' adds a second one."
+			},
+			"B": {
+				"trap": "te-smal",
+				"why": "The physical workload is only the second disadvantage; the fish is named too."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2023-20",
+		"qtype": "oorzaak-reden",
+		"evidence": [
+			{
+				"p": 9,
+				"quote": "Ik vind het zeker niet zielig voor de dieren. Ze doen niks wat ze niet willen."
+			},
+			{
+				"p": 9,
+				"quote": "Ook merken we dat ze gelukkig zijn."
+			}
+		],
+		"move": "Find 'niet zielig' and read the reasons she gives directly after it.",
+		"why": "Right after 'niet zielig' Emma says the dolphins do nothing they do not want, and 'Ook' that they are happy (they mate and have babies).",
+		"distractors": {
+			"A": {
+				"trap": "echo",
+				"why": "Love for the animals is mentioned later as something the trainers feel ('liefde voor het vak'), not as her main reason why it is not sad."
+			},
+			"C": {
+				"trap": "te-smal",
+				"why": "She does mention no natural enemies and longer lives, but that is supporting detail; her main reasons are that they do nothing against their will and are happy."
+			}
+		},
+		"keyCheck": "suspect: C is partly supported too (no natural enemies, dolphins live longer than in the wild), so the item leans on B being her first and most direct reason"
+	},
+	{
+		"id": "lezen-2023-21",
+		"qtype": "mening-persoon",
+		"evidence": [
+			{
+				"p": 11,
+				"quote": "Zolang ik het hier leuk vind, blijf ik dit voorlopig nog even doen."
+			}
+		],
+		"move": "Go to the last paragraph and separate what Emma says about herself from what 'De meesten' do.",
+		"why": "Emma says she will keep doing it 'Zolang ik het hier leuk vind', so as long as she enjoys it.",
+		"distractors": {
+			"A": {
+				"trap": "verkeerde-persoon",
+				"why": "Stopping around 35 is what 'De meesten' do, not Emma's own plan."
+			},
+			"C": {
+				"trap": "te-breed",
+				"why": "She is not totally sure, but she does give a clear condition: as long as she enjoys it."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2023-22",
+		"qtype": "doel-tekst",
+		"evidence": [
+			{
+				"p": 1,
+				"quote": "In deze rubriek laten we deze mensen aan het woord over hun carrière."
+			}
+		],
+		"move": "Read the first lines: the magazine introduces a recurring column ('rubriek') where people talk about their careers.",
+		"why": "It is a column in which people with special jobs talk about their career; Emma describes her work, her daily routine, downsides and opinions, so the text informs about the work and life of a dolphin trainer.",
+		"distractors": {
+			"A": {
+				"trap": "niet-in-tekst",
+				"why": "The tone is positive, but the reader is never invited to become a trainer, and downsides like the fish smell and heavy work are named."
+			},
+			"C": {
+				"trap": "te-smal",
+				"why": "Animal welfare is only one section ('Wel of niet zielig?'), not the purpose of the whole text."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2023-23",
+		"qtype": "detail",
+		"evidence": [
+			{
+				"p": 3,
+				"quote": "In eerste instantie wordt een buddy voor een jaar gekoppeld aan een cliënt."
+			}
+		],
+		"move": "Scan for the phrase 'In eerste instantie', which the question repeats.",
+		"why": "The text says 'In eerste instantie wordt een buddy voor een jaar gekoppeld aan een cliënt'.",
+		"distractors": {
+			"A": {
+				"trap": "niet-in-tekst",
+				"why": "Half a year is not mentioned."
+			},
+			"C": {
+				"trap": "niet-in-tekst",
+				"why": "Two years is not mentioned."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2023-24",
+		"qtype": "detail",
+		"evidence": [
+			{
+				"p": 5,
+				"quote": "Buddyzorg is ontstaan in de jaren tachtig voor mensen met hiv en aids."
+			}
+		],
+		"move": "Go to the heading 'Ontstaan' and read the first sentence; separate 'ontstaan' from 'Tegenwoordig'.",
+		"why": "Buddy care 'is ontstaan in de jaren tachtig voor mensen met hiv en aids'.",
+		"distractors": {
+			"B": {
+				"trap": "tegenovergesteld",
+				"why": "People with cancer are mentioned under 'Tegenwoordig', so they came later, not at the start."
+			},
+			"C": {
+				"trap": "niet-in-tekst",
+				"why": "Lonely elderly people are not mentioned as the origin."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2023-25",
+		"qtype": "vergelijking",
+		"evidence": [
+			{
+				"p": 5,
+				"quote": "Buddyzorg ontstond als begeleiding bij het sterven, maar tegenwoordig is de zorg veel meer gericht op hulp bij het verder leven."
+			}
+		],
+		"move": "Look for the then-versus-now contrast ('ontstond ... maar tegenwoordig') in the 'Ontstaan' section.",
+		"why": "The text says buddy care started as support with dying but 'tegenwoordig' focuses much more on help with living on.",
+		"distractors": {
+			"A": {
+				"trap": "niet-in-tekst",
+				"why": "Buddies get training, but the text never says it is better now than before."
+			},
+			"C": {
+				"trap": "overdreven",
+				"why": "The word 'alleen' is wrong: the group actually widened to other diseases, disabilities and conditions."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2023-26",
+		"qtype": "oorzaak-reden",
+		"evidence": [
+			{
+				"p": 9,
+				"quote": "Veel cliënten hebben immers al behoorlijk wat meegemaakt. Dat vraagt om een buddy met levenservaring."
+			}
+		],
+		"move": "Find 'minimaal 21 jaar' and read the next sentence; 'immers' signals the reason.",
+		"why": "Many clients have been through a lot ('immers'), which 'vraagt om een buddy met levenservaring'.",
+		"distractors": {
+			"A": {
+				"trap": "niet-in-tekst",
+				"why": "It is a condition set by Buddyzorg ('stelt wel als voorwaarde'), not a legal requirement."
+			},
+			"B": {
+				"trap": "niet-in-tekst",
+				"why": "Time is named only as a practical requirement for all buddies, not as the reason for the age limit."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2023-27",
+		"qtype": "detail",
+		"evidence": [
+			{
+				"p": 13,
+				"quote": "De conclusie wordt open en eerlijk met de kandidaat besproken, ook wanneer hij niet geschikt blijkt."
+			}
+		],
+		"move": "Go to 'Training' and find the sentence with 'niet geschikt'.",
+		"why": "The conclusion is discussed 'open en eerlijk' with the candidate, 'ook wanneer hij niet geschikt blijkt'.",
+		"distractors": {
+			"A": {
+				"trap": "niet-in-tekst",
+				"why": "Nothing is said about another role for an unsuitable candidate."
+			},
+			"C": {
+				"trap": "niet-in-tekst",
+				"why": "Repeating the training is not mentioned."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2023-28",
+		"qtype": "doel-tekst",
+		"evidence": [
+			{
+				"p": 0,
+				"quote": "Maak het verschil, word buddy!"
+			},
+			{
+				"p": 1,
+				"quote": "Deze tekst schetst wat een cliënt van een buddy verwacht en andersom"
+			}
+		],
+		"move": "Combine the title, an imperative call to action, with the sentence that says what the text describes.",
+		"why": "The title 'Maak het verschil, word buddy!' recruits readers, and the body explains what buddy care is and involves, so the text informs and enthuses the reader to become a buddy.",
+		"distractors": {
+			"B": {
+				"trap": "echo",
+				"why": "Professional care appears only in the history (it was not ready for hiv/aids in the 1980s); the text never says buddy care is better than professional care."
+			},
+			"C": {
+				"trap": "te-smal",
+				"why": "Costs and €25 a month are one small practical section, and buddies are volunteers, so 'verdient' misrepresents it."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2023-29",
+		"qtype": "detail",
+		"evidence": [
+			{
+				"p": 4,
+				"quote": "Deelname is alleen voor de cursisten van Rosarius Opleidingen."
+			}
+		],
+		"move": "Go to '1.1 Toelatingseisen' and read what follows 'géén open toelating'.",
+		"why": "The text says there is no open admission and 'Deelname is alleen voor de cursisten van Rosarius Opleidingen'.",
+		"distractors": {
+			"B": {
+				"trap": "tegenovergesteld",
+				"why": "The text says 'géén open toelating', so not just anyone who registers can take part."
+			},
+			"C": {
+				"trap": "tegenovergesteld",
+				"why": "The text says there are no requirements about prior education ('geen eisen ten aanzien van de vooropleiding')."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2023-30",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 15,
+				"quote": "Bij te laat komen beslist de examenleider of de kandidaat alsnog mag starten met het examen."
+			}
+		],
+		"move": "Go to '2.2 De kandidaat' and find 'te laat komen'.",
+		"why": "When a candidate is late, 'beslist de examenleider' whether he may still start.",
+		"distractors": {
+			"A": {
+				"trap": "overdreven",
+				"why": "Being late does not automatically exclude you; the exam supervisor decides."
+			},
+			"C": {
+				"trap": "niet-in-tekst",
+				"why": "Extra time for latecomers is not discussed; the only rule is that the supervisor decides."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2023-31",
+		"qtype": "detail",
+		"evidence": [
+			{
+				"p": 15,
+				"quote": "Het is de kandidaat niet toegestaan het examenlokaal binnen 50 minuten na de start te verlaten."
+			}
+		],
+		"move": "Scan section 2.2 for a number of minutes linked to 'verlaten'.",
+		"why": "Leaving is not allowed 'binnen 50 minuten na de start', so from 50 minutes on a candidate may leave.",
+		"distractors": {
+			"A": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "30 minutes is the extra exam time for dyslexia or a non-native speaker, a different rule."
+			},
+			"C": {
+				"trap": "overdreven",
+				"why": "The rule only forbids leaving in the first 50 minutes, not until the very end."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2023-32",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 22,
+				"quote": "Dat betekent een minimum puntentotaal van 36."
+			},
+			{
+				"p": 22,
+				"quote": "- Geen van de resultaten mag lager zijn dan 4.\n- Er mogen maximaal 2 verliespunten zijn behaald."
+			}
+		],
+		"move": "Find the conditions under '4.2 administratief medewerker' and check the six results against each condition one by one.",
+		"why": "The total is 36 (average 6) and no result is below 4, but counting each point under 6 as a verliespunt gives 1 for the 5 and 2 for the 4, which is 3 and more than the maximum of 2.",
+		"distractors": {
+			"A": {
+				"trap": "te-smal",
+				"why": "The average is exactly 6 (total 36), but that is only one of the conditions; the verliespunt limit is not met."
+			},
+			"B": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "The lowest result is 4 and the rule is 'lager dan 4', so this condition is met; 'lager dan 5' is the rule for telefoniste/receptioniste."
+			}
+		},
+		"keyCheck": "suspect: the text never defines 'verliespunt'; the key depends on the outside convention that each point below 6 counts as one (5 = 1, 4 = 2, total 3)"
+	},
+	{
+		"id": "lezen-2023-33",
+		"qtype": "detail",
+		"evidence": [
+			{
+				"p": 32,
+				"quote": "Dit houdt in dat het resultaat niet alleen omhoog maar ook omlaag kan gaan of gelijk blijft."
+			}
+		],
+		"move": "Go to '6 Bezwaar en beroep' and find the sentence starting 'Dit houdt in'.",
+		"why": "After re-marking the result 'niet alleen omhoog maar ook omlaag kan gaan', so it can go up or down.",
+		"distractors": {
+			"A": {
+				"trap": "tegenovergesteld",
+				"why": "It echoes 'niet alleen omhoog' but drops the 'niet', reversing the meaning."
+			},
+			"C": {
+				"trap": "te-smal",
+				"why": "Staying the same is only one possible outcome; the grade can also go up or down."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2023-34",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 34,
+				"quote": "Wanneer de kandidaat korter dan vijf jaar in Nederland verblijft, heeft hij recht op 30 minuten extra examentijd. Hij mag ook een Nederlands handwoordenboek gebruiken."
+			}
+		],
+		"move": "Match the scenario (four years, Dutch not first language) to the rule 'korter dan vijf jaar' under '7 Bijzondere gevallen', then check for 'ook'.",
+		"why": "Four years is shorter than five, so he gets 30 minutes extra and 'ook' may use a Dutch dictionary: both rights.",
+		"distractors": {
+			"A": {
+				"trap": "te-smal",
+				"why": "Extra time is right but 'Hij mag ook' adds the dictionary."
+			},
+			"B": {
+				"trap": "te-smal",
+				"why": "The dictionary is right but he also gets 30 minutes extra."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2023-35",
+		"qtype": "doel-tekst",
+		"evidence": [
+			{
+				"p": 1,
+				"quote": "Het is belangrijk dat iedereen die bij de examens van Rosarius Opleidingen is betrokken goed wordt geïnformeerd."
+			},
+			{
+				"p": 1,
+				"quote": "Deze examenwijzer is bedoeld voor docenten, examenleiders en examenkandidaten van Rosarius Opleidingen."
+			}
+		],
+		"move": "Read the opening paragraph, where the text states who it is for and why it exists.",
+		"why": "The text says everyone involved should be 'goed wordt geïnformeerd' and that the guide is for teachers, supervisors and candidates of Rosarius, followed by rules, so its purpose is to inform about Rosarius exam rules.",
+		"distractors": {
+			"B": {
+				"trap": "niet-in-tekst",
+				"why": "There is no promotion of the courses; the guide is for people already involved in the exams."
+			},
+			"C": {
+				"trap": "te-breed",
+				"why": "The rules apply only to Rosarius Opleidingen, not to exams in the Netherlands in general."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2024-1",
+		"qtype": "detail",
+		"evidence": [
+			{
+				"p": 5,
+				"quote": "Hier worden de producten gemaakt die in de decentrale bakkerijen als basis dienen voor alle soorten gebak."
+			}
+		],
+		"move": "Scan the section headings for 'Centrale bakkerij' and look for the word 'basis' in that section.",
+		"why": "The central bakery section says this is where the products are made that serve as the 'basis' for all pastry in the decentral bakeries, and it is located in Utrecht.",
+		"distractors": {
+			"B": {
+				"trap": "echo",
+				"why": "The decentral bakeries appear in the same sentence, but they use the base products to finish the pastry; they do not make the base."
+			},
+			"C": {
+				"trap": "echo",
+				"why": "The 'proefbakkerij' is a department under 'Kantoor' that develops new products and recipes, not the place where base products are made."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2024-2",
+		"qtype": "detail",
+		"evidence": [
+			{
+				"p": 5,
+				"quote": "In de centrale bakkerij wordt van 5.00 uur tot 23.00 uur gewerkt. Af en toe wordt ook ’s nachts doorgewerkt."
+			}
+		],
+		"move": "Find the working hours at the end of the 'Centrale bakkerij' section and watch the frequency word 'Af en toe'.",
+		"why": "Work runs from 5.00 to 23.00 (daytime) and 'Af en toe' (sometimes) also at night, which matches 'overdag en soms ook 's nachts'.",
+		"distractors": {
+			"A": {
+				"trap": "tegenovergesteld",
+				"why": "'Alleen overdag' denies the night work the text explicitly mentions with 'Af en toe wordt ook ’s nachts doorgewerkt'."
+			},
+			"C": {
+				"trap": "overdreven",
+				"why": "Turns the occasional night shift into 'dag en nacht, altijd open'; the normal hours stop at 23.00."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2024-3",
+		"qtype": "detail",
+		"evidence": [
+			{
+				"p": 5,
+				"quote": "In deze bakkerij wordt op een industriële manier gewerkt."
+			},
+			{
+				"p": 5,
+				"quote": "vind je het leuk om met machines te werken"
+			}
+		],
+		"move": "Go to the 'Centrale bakkerij' section and look for what makes this bakery different: the words 'industriële', 'techniek' and 'machines'.",
+		"why": "The central bakery works 'op een industriële manier' and uses technology to make 1500 apple pies an hour, so working with machines is its characteristic.",
+		"distractors": {
+			"A": {
+				"trap": "echo",
+				"why": "'Op traditionele wijze' comes from the opening paragraph about all Marké bakeries; the central bakery section itself stresses the industrial, machine-based way of working."
+			},
+			"C": {
+				"trap": "echo",
+				"why": "Developing new products is the job of the 'proefbakkerij', listed under 'Kantoor', not a feature of the central bakery."
+			}
+		},
+		"keyCheck": "suspect: paragraph 1 says staff of the centrale bakkerij also work 'op traditionele wijze', so A has some literal support; B is only clearly best because paragraph 5 calls the central bakery 'industriële'."
+	},
+	{
+		"id": "lezen-2024-4",
+		"qtype": "detail",
+		"evidence": [
+			{
+				"p": 7,
+				"quote": "Als nieuwe medewerker start je met eenvoudige werkzaamheden. Als dit goed gaat, leer je steeds meer"
+			}
+		],
+		"move": "Make sure you read the 'Decentrale bakkerij' section, not the central one, and look for 'nieuwe medewerker'.",
+		"why": "In the decentral bakery a new employee starts with 'eenvoudige werkzaamheden' and, if that goes well, learns 'steeds meer' (cream, whipped cream, decorating).",
+		"distractors": {
+			"B": {
+				"trap": "echo",
+				"why": "Guidance by experienced colleagues ('begeleid door ervaren collega’s') is described for the central bakery, not the decentral one."
+			},
+			"C": {
+				"trap": "echo",
+				"why": "Evaluating with managers ('evalueert regelmatig met de leidinggevenden') belongs to the central bakery section, not the decentral one."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2024-5",
+		"qtype": "detail",
+		"evidence": [
+			{
+				"p": 3,
+				"quote": "De afdeling inkoop zorgt dat alle ingrediënten en verpakkingsmaterialen aanwezig zijn"
+			}
+		],
+		"move": "In the bullet list under 'Kantoor', find the bullet that starts with 'De afdeling inkoop'.",
+		"why": "Inkoop makes sure all 'ingrediënten en verpakkingsmaterialen' are present, which is buying raw materials and packaging.",
+		"distractors": {
+			"A": {
+				"trap": "echo",
+				"why": "Making the planning is the task of the 'bedrijfsbureau', a different bullet in the same list."
+			},
+			"C": {
+				"trap": "echo",
+				"why": "Developing new products is done by the 'proefbakkerij', the first bullet in the list."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2024-6",
+		"qtype": "doel-tekst",
+		"evidence": [
+			{
+				"p": 5,
+				"quote": "dan is dit de plek voor jou"
+			},
+			{
+				"p": 9,
+				"quote": "Wij bieden een uitdagende werkomgeving met mogelijkheden om door te groeien."
+			},
+			{
+				"p": 9,
+				"quote": "Ben je geïnteresseerd, stuur dan je cv naar ons op"
+			}
+		],
+		"move": "Look at who is addressed and how the text ends: direct 'je', job offers, and a call to send your cv signal recruitment.",
+		"why": "The text addresses the reader as a possible employee ('dit is de plek voor jou'), promotes growth opportunities and ends with 'stuur dan je cv', so it aims to make readers want to work there.",
+		"distractors": {
+			"B": {
+				"trap": "te-breed",
+				"why": "The text does describe how pastry is made, but only as the topic; the direct address and the cv call show the purpose is recruiting."
+			},
+			"C": {
+				"trap": "te-smal",
+				"why": "A few products (tompouce, appeltaart, saucijzenbroodjes) are named only as examples; the text is not about the types of pastry."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2024-7",
+		"qtype": "detail",
+		"evidence": [
+			{
+				"p": 1,
+				"quote": "De meeste mogelijkheden biedt een eilandstand"
+			}
+		],
+		"move": "Find the comparison of stand types in paragraph 1 and look for the superlative 'De meeste mogelijkheden'.",
+		"why": "The text lists stand types from fewer to more options and says 'De meeste mogelijkheden biedt een eilandstand'.",
+		"distractors": {
+			"B": {
+				"trap": "echo",
+				"why": "The hoekstand is named as giving more options than a tussenstand, but not the most."
+			},
+			"C": {
+				"trap": "echo",
+				"why": "The kopstand is mentioned in the same comparison with the hoekstand, but the superlative goes to the eilandstand."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2024-8",
+		"qtype": "niet-vraag",
+		"evidence": [
+			{
+				"p": 1,
+				"quote": "Hoe groot de stand moet zijn hangt niet alleen af van het budget, maar ook van het verwachte aantal bezoekers."
+			},
+			{
+				"p": 2,
+				"quote": "Met de organisator overleg je waar de stand precies komt"
+			}
+		],
+		"move": "Find the sentence 'Hoe groot de stand moet zijn hangt ... af van' and list the factors that follow; the option that is not in that list is the answer.",
+		"why": "Size depends on budget, expected visitors, product range and catering; the location on the fair is discussed afterwards as a separate decision made with the organizer, not as a size factor.",
+		"distractors": {
+			"A": {
+				"trap": "waar-niet-gevraagd",
+				"why": "The budget is explicitly named as a size factor, so it cannot be the one that does NOT belong."
+			},
+			"C": {
+				"trap": "waar-niet-gevraagd",
+				"why": "The expected number of visitors is explicitly named as a size factor, so it does belong to the list."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2024-9",
+		"qtype": "detail",
+		"evidence": [
+			{
+				"p": 8,
+				"quote": "niet te veel licht bij de entree, daar houden mensen niet van"
+			},
+			{
+				"p": 8,
+				"quote": "dus je wilt meer licht achterin of in het centrum"
+			}
+		],
+		"move": "Go to the 'Verlichting' heading and read the 'algemene regel' about where the light should be.",
+		"why": "The rule is little light at the entrance and 'meer licht achterin of in het centrum', because people look at lit areas.",
+		"distractors": {
+			"A": {
+				"trap": "tegenovergesteld",
+				"why": "The text says the opposite: 'niet te veel licht bij de entree', because people do not like that."
+			},
+			"B": {
+				"trap": "niet-in-tekst",
+				"why": "Even light everywhere sounds sensible, but the text wants more light at the back or centre and adapts light to the product."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2024-10",
+		"qtype": "detail",
+		"evidence": [
+			{
+				"p": 10,
+				"quote": "Dus zorg voor een goede voorbereiding: laat je zakelijke kennissen weten dat je er zult zijn!"
+			}
+		],
+		"move": "Look for the signal words 'goede voorbereiding' in the last section and read what follows.",
+		"why": "Good preparation is to let your business contacts know you will be there, which is inviting them in advance to visit the fair.",
+		"distractors": {
+			"A": {
+				"trap": "niet-in-tekst",
+				"why": "Making deals with other exhibitors sounds businesslike, but the text only talks about attracting your own contacts and clients."
+			},
+			"C": {
+				"trap": "echo",
+				"why": "The text mentions giving away 'toegangskaarten' to make a good impression, but C turns this into asking whether contacts want free tickets, which is not how the text phrases the preparation step."
+			}
+		},
+		"keyCheck": "suspect: the text also says 'Met het weggeven van toegangskaarten voor de beurs maak je een goede indruk', so C (offering free tickets to business relations) is close to a stated good preparation; B is keyed as the direct paraphrase of 'laat je zakelijke kennissen weten'."
+	},
+	{
+		"id": "lezen-2024-11",
+		"qtype": "doel-tekst",
+		"evidence": [
+			{
+				"p": 1,
+				"quote": "Een stand moet worden ontworpen en ingericht, net als een winkel."
+			},
+			{
+				"p": 4,
+				"quote": "De entree van je stand moet open zijn."
+			}
+		],
+		"move": "Look at the headings ('Entree', 'Zitruimte', 'Verlichting', 'Routing'): each covers one part of setting up a stand, so the text explains how to do it.",
+		"why": "The whole text explains how to design and furnish a stand, section by section, in a neutral textbook style, so its purpose is to inform about setting up a stand.",
+		"distractors": {
+			"B": {
+				"trap": "echo",
+				"why": "The text says participation is a big investment that is only worth it with many visitors, but it assumes you already take part and never argues why you should."
+			},
+			"C": {
+				"trap": "te-smal",
+				"why": "Costs come up in only a few sentences (an eilandstand is 'duurder', 'weggegooid geld'); they are not the point of the text."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2024-12",
+		"qtype": "detail",
+		"evidence": [
+			{
+				"p": 7,
+				"quote": "Het wordt anders als een werknemer zes weken of langer ziek is. Dit heet langdurend ziekteverzuim."
+			}
+		],
+		"move": "Go to heading '3. Langdurend ziekteverzuim' and look for the time limit right before 'Dit heet'.",
+		"why": "The text defines long-term absence as being sick for 'zes weken of langer'.",
+		"distractors": {
+			"A": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "Three weeks is the wrong threshold; the text sets the limit at six weeks."
+			},
+			"C": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "Half a year is the wrong threshold; the text sets the limit at six weeks (the two-year period is the maximum wage payment)."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2024-13",
+		"qtype": "detail",
+		"evidence": [
+			{
+				"p": 7,
+				"quote": "Jouw bedrijf moet de kosten voor het re-integratietraject betalen."
+			},
+			{
+				"p": 7,
+				"quote": "de kosten van de loondoorbetaling van minimaal 70 procent van het loon gedurende maximaal twee jaar"
+			},
+			{
+				"p": 7,
+				"quote": "Ook maak je kosten voor vervanging van de medewerker."
+			}
+		],
+		"move": "In the long-term absence section, collect every cost the employer has: follow the markers 'moet ... betalen', 'Daarbij komen nog' and 'Ook'.",
+		"why": "The employer pays for the re-integration process, at least 70 percent of the wage for up to two years, and replacement costs, which is exactly option C.",
+		"distractors": {
+			"A": {
+				"trap": "te-smal",
+				"why": "Re-integration costs are only one of three costs; 'alleen' leaves out wage payment and replacement."
+			},
+			"B": {
+				"trap": "overdreven",
+				"why": "The text says 'minimaal 70 procent', with 100 percent only in some cao's in the first year, so 'het volledige loon' overstates it and B also omits re-integration."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2024-14",
+		"qtype": "niet-vraag",
+		"evidence": [
+			{
+				"p": 5,
+				"quote": "Bijvoorbeeld: een zwakke gezondheid, werkstress, een conflict op het werk of privéproblemen."
+			}
+		],
+		"move": "Find the list of causes for frequent short absence ('Bijvoorbeeld:') and tick off each option against it.",
+		"why": "The list names weak health, work stress, a conflict at work and private problems; a chronic condition is not named (weak health is not the same as a specific chronic disease).",
+		"distractors": {
+			"B": {
+				"trap": "waar-niet-gevraagd",
+				"why": "'Een conflict op het werk' is literally in the list of causes, so it is referred to."
+			},
+			"C": {
+				"trap": "waar-niet-gevraagd",
+				"why": "'Werkstress' is literally in the list of causes, so it is referred to."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2024-15",
+		"qtype": "detail",
+		"evidence": [
+			{
+				"p": 14,
+				"quote": "Grijs verzuim: Je werknemer is bijvoorbeeld licht verkouden en kan eigenlijk wel werken, maar meldt zich toch ziek."
+			}
+		],
+		"move": "Find where 'grijs verzuim' is mentioned and check whether the text says anything about detecting it; it only gives a definition.",
+		"why": "The text only defines grey absence (mildly ill, could work, reports sick anyway) and gives no method to discover it, so 'Dit staat niet in de tekst' is correct.",
+		"distractors": {
+			"A": {
+				"trap": "niet-in-tekst",
+				"why": "A company doctor check sounds logical, and the 'bedrijfsarts' is mentioned elsewhere for sick reports, but never as a way to detect grey absence."
+			},
+			"B": {
+				"trap": "niet-in-tekst",
+				"why": "A debt collection agency has nothing to do with absence and appears nowhere in the text."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2024-16",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 16,
+				"quote": "heb je als werkgever het recht hem formeel hierop te wijzen en hem te vragen met de sport te stoppen"
+			},
+			{
+				"p": 16,
+				"quote": "Je kunt de werknemer echter niet ontslaan wegens herhaaldelijk verzuim door een sportongeval."
+			}
+		],
+		"move": "Match the scenario (repeated sports injury) to the heading 'Verzuim door een sportongeval' and apply only the rules from that section.",
+		"why": "For repeated sports injuries the employer may formally point this out and ask the employee to stop the sport, which is option B.",
+		"distractors": {
+			"A": {
+				"trap": "tegenovergesteld",
+				"why": "The same section says explicitly 'Je kunt de werknemer echter niet ontslaan' for repeated sports-injury absence."
+			},
+			"C": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "'Geen arbeid, geen loon' is the rule for unauthorised absence; for a sports injury the employer 'betaalt het loon gewoon door'."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2024-17",
+		"qtype": "doel-tekst",
+		"evidence": [
+			{
+				"p": 1,
+				"quote": "Lees welke vormen van verzuim er zijn, wat je kunt doen om verzuim te voorkomen en hoe je de financiële risico’s zo goed mogelijk afdekt."
+			},
+			{
+				"p": 7,
+				"quote": "Het is verstandig om je als ondernemer goed te laten adviseren over deze risico’s."
+			},
+			{
+				"p": 3,
+				"quote": "Controleer dit in je cao."
+			}
+		],
+		"move": "Check who 'je' is (the employer, 'jou als ondernemer') and look for advice language like 'wat je kunt doen', 'Het is verstandig' and imperatives like 'Controleer'.",
+		"why": "The text speaks to business owners and keeps telling them what they can do, what is wise and what to check, so it advises employers on handling absence.",
+		"distractors": {
+			"B": {
+				"trap": "echo",
+				"why": "Employees and absence are the topic, but the text is written from the employer's side ('jou als ondernemer') about the employer's obligations and risks, not about employees' rights."
+			},
+			"C": {
+				"trap": "te-smal",
+				"why": "Unjustified sick reports (zwart and grijs verzuim) are only one short section, and the text addresses employers, not employees."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2024-18",
+		"qtype": "doel-onderdeel",
+		"evidence": [
+			{
+				"p": 3,
+				"quote": "Dat hoopt met de autosportklas jongeren warm te maken voor een technische opleiding"
+			},
+			{
+				"p": 3,
+				"quote": "‘Maar het is niet zo dat wij nou mensen opleiden voor Defensie’"
+			}
+		],
+		"move": "Find 'ministerie van Defensie' and read the next sentence starting with 'Dat hoopt'; 'warm maken voor' means making enthusiastic about.",
+		"why": "Defensie hopes to 'jongeren warm te maken voor een technische opleiding', which is the same as making young people enthusiastic for technical training.",
+		"distractors": {
+			"B": {
+				"trap": "tegenovergesteld",
+				"why": "A career at Defensie is only a possible bonus ('mogelijk'), and the teacher explicitly says 'het is niet zo dat wij nou mensen opleiden voor Defensie'."
+			},
+			"C": {
+				"trap": "echo",
+				"why": "'Leuk en spannend' in the text describes a technical education, not racing itself."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2024-19",
+		"qtype": "detail",
+		"evidence": [
+			{
+				"p": 4,
+				"quote": "Alleen goede cijfers zijn niet genoeg. Doorzettingsvermogen, discipline en motivatie zijn zeker zo belangrijk."
+			}
+		],
+		"move": "Find the question in the text 'Hoe Marelis en Bitar de studenten selecteren?' and read the answer, noting the contrast 'niet genoeg' versus 'zeker zo belangrijk'.",
+		"why": "The teachers say grades alone are 'niet genoeg' and that perseverance, discipline and motivation are 'zeker zo belangrijk'; they also ask for a motivation letter, so motivation and perseverance are the key criteria.",
+		"distractors": {
+			"A": {
+				"trap": "echo",
+				"why": "Grades are mentioned ('We kijken naar resultaten'), but the text stresses that 'Alleen goede cijfers zijn niet genoeg'."
+			},
+			"C": {
+				"trap": "niet-in-tekst",
+				"why": "Technical skills sound like an obvious criterion for this class, but they are not named in the selection passage."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2024-20",
+		"qtype": "oorzaak-reden",
+		"evidence": [
+			{
+				"p": 5,
+				"quote": "De grootste uitdaging is om het vol te houden, in dit geval ook financieel."
+			},
+			{
+				"p": 5,
+				"quote": "‘Tot nu toe zijn we daar steeds weer in geslaagd, maar het is elk jaar spannend.’ Het raceteam is afhankelijk van sponsoren."
+			}
+		],
+		"move": "Look for the signal word 'uitdaging' and read the explanation that follows ('financieel', 'elk jaar spannend', 'sponsoren').",
+		"why": "Bitar says the biggest challenge is keeping it going financially; it is 'elk jaar spannend' because the team depends on sponsors, so each year money is uncertain.",
+		"distractors": {
+			"A": {
+				"trap": "niet-in-tekst",
+				"why": "The text never mentions a shortage of applicants; only the best students are selected and racers even queue up for the cars."
+			},
+			"C": {
+				"trap": "niet-in-tekst",
+				"why": "Finding teachers is not mentioned; the class is run by Marelis and Bitar and the problem named is money."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2024-21",
+		"qtype": "oorzaak-reden",
+		"evidence": [
+			{
+				"p": 7,
+				"quote": "maar toen ik hoorde van de autosportklas, heb ik mijn best gedaan om toch niveau 4 te halen."
+			},
+			{
+				"p": 1,
+				"quote": "Alleen de beste studenten van de richting technisch specialist niveau 4 komen in aanmerking."
+			}
+		],
+		"move": "Find Hussam's quote and link it back to the entry rule in paragraph 1 about which level is admitted.",
+		"why": "Hussam worked for level 4 after hearing about the class, and paragraph 1 says only level 4 students qualify, so he needed level 4 to join.",
+		"distractors": {
+			"B": {
+				"trap": "niet-in-tekst",
+				"why": "No teacher advice to Hussam is mentioned; he made the effort himself after hearing about the class."
+			},
+			"C": {
+				"trap": "verkeerde-persoon",
+				"why": "The idea of a better job chance ('mooi op je cv', 'voorsprong') is what Abel says about the class, not Hussam's reason for going to level 4."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2024-22",
+		"qtype": "oorzaak-reden",
+		"evidence": [
+			{
+				"p": 9,
+				"quote": "Het is onhandig dat het raceseizoen één kalenderjaar loopt, waardoor het extra jaar raceklas noodgedwongen is uitgesmeerd over twee schooljaren"
+			}
+		],
+		"move": "Find 'twee schooljaren' in the 'Uitbreiding' section and read the cause just before the linking word 'waardoor'.",
+		"why": "Because the racing season runs one calendar year ('waardoor'), the extra year necessarily spreads over two school years.",
+		"distractors": {
+			"A": {
+				"trap": "niet-in-tekst",
+				"why": "Too much course material is never mentioned as a reason."
+			},
+			"C": {
+				"trap": "waar-niet-gevraagd",
+				"why": "Internships are a real reason in the text, but for why the class falls in the second and third year rather than later, not for why it spans two school years."
+			}
+		},
+		"keyCheck": "suspect: C is defensible because the next sentence links the arrangement to internships ('Dat is de enige mogelijkheid, omdat studenten anders ... in de knel komen met stages'); B is the direct cause signalled by 'waardoor'."
+	},
+	{
+		"id": "lezen-2024-23",
+		"qtype": "oorzaak-reden",
+		"evidence": [
+			{
+				"p": 11,
+				"quote": "Want de voertaal in de racewereld is Engels."
+			}
+		],
+		"move": "Find 'tweetalig' under 'Internationalisering' and read the reason introduced by 'Want'.",
+		"why": "Marelis gives the reason with 'Want': the working language in the racing world is English (and the only relevant hbo programme is in England).",
+		"distractors": {
+			"A": {
+				"trap": "niet-in-tekst",
+				"why": "Nothing is said about foreign students in the class."
+			},
+			"C": {
+				"trap": "waar-niet-gevraagd",
+				"why": "Excursions abroad are true according to the text, but they are described after the reason and are not why the programme should be bilingual."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2024-24",
+		"qtype": "doel-tekst",
+		"evidence": [
+			{
+				"p": 0,
+				"quote": "Met deze opleiding heb je echt een voorsprong"
+			},
+			{
+				"p": 3,
+				"quote": "staan coureurs in de rij om in de Newton-auto’s te mogen racen"
+			},
+			{
+				"p": 7,
+				"quote": "Hij is duidelijk enthousiast."
+			}
+		],
+		"move": "Read the title and the tone of the quotes: a positive headline, enthusiastic students and proud teachers point to a promotional aim.",
+		"why": "The title promises 'echt een voorsprong' and the article is full of positive, enthusiastic quotes about the class, so it aims to make readers enthusiastic about Newton College's autosportklas.",
+		"distractors": {
+			"B": {
+				"trap": "te-smal",
+				"why": "Some difficulties are mentioned ('onhandig', 'lastigheid') in one section about expansion, but the text is not a balanced list of pros and cons."
+			},
+			"C": {
+				"trap": "verkeerde-persoon",
+				"why": "Getting young people into technical education is the aim of the ministerie van Defensie, not the purpose of the article itself."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2024-25",
+		"qtype": "detail",
+		"evidence": [
+			{
+				"p": 3,
+				"quote": "Maar liefst 70 procent van de jongeren noemt zekerheid en stabiliteit als grootste wens."
+			},
+			{
+				"p": 11,
+				"quote": "Jongeren tot 24 jaar\n1. zekerheid en stabiliteit"
+			}
+		],
+		"move": "Look for superlatives like 'grootste wens' or number 1 in the top 5 list for 'Jongeren tot 24 jaar'.",
+		"why": "70 percent of young people name security and stability as their 'grootste wens', and it is number 1 in their top 5.",
+		"distractors": {
+			"A": {
+				"trap": "echo",
+				"why": "'Financiële beloning' is only number 5 in the list, so salary is not the most important."
+			},
+			"B": {
+				"trap": "waar-niet-gevraagd",
+				"why": "Physically active work is really in the young people's top 5, but at number 2, not number 1."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2024-26",
+		"qtype": "conclusie",
+		"evidence": [
+			{
+				"p": 3,
+				"quote": "Ook denken we vaak dat jongeren eerder risico’s willen nemen dan ouderen. Maar het tegenovergestelde is waar."
+			},
+			{
+				"p": 3,
+				"quote": "In de top 5 van de 45-plussers komt die wens niet eens voor."
+			}
+		],
+		"move": "Look for the researcher's contrast between what 'we denken' and what is actually true ('Maar het tegenovergestelde is waar'); that marks the surprise.",
+		"why": "Van Veen says people expect young people to take more risks, but the opposite is true: 70 percent of young people want security, while it is not even in the older group's top 5.",
+		"distractors": {
+			"B": {
+				"trap": "niet-in-tekst",
+				"why": "The text never says older people want to earn more; their top 5 does not even include money."
+			},
+			"C": {
+				"trap": "echo",
+				"why": "The first paragraph says young people value 'arbeidsvoorwaarden' over content, but C swaps in 'salaris', which is only number 5 on their list, and this point is not presented as the surprise."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2024-27",
+		"qtype": "mening-persoon",
+		"evidence": [
+			{
+				"p": 5,
+				"quote": "Vera Tames van ouderenuitzendbureau Plustalent gelooft niet dat ouderen ambitieuzer zijn dan jongeren."
+			},
+			{
+				"p": 5,
+				"quote": "Veel 45-plussers hebben een financiële basis. Dat maakt het eenvoudiger om te zeggen dat ze creatief bezig willen zijn."
+			}
+		],
+		"move": "Find the name 'Vera Tames' and read only her sentences; the reason follows 'Dat maakt het eenvoudiger'.",
+		"why": "Tames says many 45-plussers have a financial base, which makes it easier for them to choose creative, meaningful work.",
+		"distractors": {
+			"A": {
+				"trap": "niet-in-tekst",
+				"why": "More experience leading to more ideas sounds logical, but Tames does not say this."
+			},
+			"C": {
+				"trap": "tegenovergesteld",
+				"why": "Tames explicitly 'gelooft niet dat ouderen ambitieuzer zijn dan jongeren'."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2024-28",
+		"qtype": "mening-persoon",
+		"evidence": [
+			{
+				"p": 7,
+				"quote": "de wereld verandert misschien niet, maar de arbeidsmarkt wel. Een vast contract heb je niet zomaar."
+			}
+		],
+		"move": "Find 'Marcia Bregman' and read her explanation after 'Ze maken zich zorgen'.",
+		"why": "Bregman says the labour market is changing, a permanent contract is not easy to get and employers can let staff go more easily, which matches B.",
+		"distractors": {
+			"A": {
+				"trap": "tegenovergesteld",
+				"why": "Bregman says the world may NOT be changing ('de wereld verandert misschien niet'), only the labour market is."
+			},
+			"C": {
+				"trap": "niet-in-tekst",
+				"why": "Not finding a suitable job is not what Bregman says; her point is about job security and contracts."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2024-29",
+		"qtype": "mening-persoon",
+		"evidence": [
+			{
+				"p": 9,
+				"quote": "Van Veen adviseert werkgevers die zoeken naar jong personeel om rekening te houden met de uitkomsten van zijn onderzoek"
+			},
+			{
+				"p": 9,
+				"quote": "Je bereikt jonge werkzoekenden niet door alleen maar het avontuurlijke karakter van een baan te benadrukken."
+			}
+		],
+		"move": "Find 'adviseert werkgevers' and connect 'de uitkomsten van zijn onderzoek' to the main finding: young people want security.",
+		"why": "Van Veen tells employers to take his results into account; the main result for young people is 'zekerheid en stabiliteit', so the advice is to offer that rather than adventure.",
+		"distractors": {
+			"A": {
+				"trap": "tegenovergesteld",
+				"why": "Van Veen says you do NOT reach young job seekers by only stressing 'het avontuurlijke karakter'."
+			},
+			"B": {
+				"trap": "niet-in-tekst",
+				"why": "Holiday days are never mentioned and salary is only number 5 for young people, so this is not his advice."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2024-30",
+		"qtype": "doel-tekst",
+		"evidence": [
+			{
+				"p": 0,
+				"quote": "Arbeidsmarkt: jongere op zoek naar zekerheid, oudere naar uitdaging"
+			},
+			{
+				"p": 1,
+				"quote": "Dit blijkt uit onderzoek van adviesbureau Arda onder 1200 werkzoekenden (m/v) van alle leeftijden."
+			}
+		],
+		"move": "Read the headline, which contrasts young and old, and note that the text reports research results and quotes experts without taking sides.",
+		"why": "The newspaper article reports research on what young and older job seekers want, as the headline contrast shows, so its purpose is to inform about those differences.",
+		"distractors": {
+			"B": {
+				"trap": "niet-in-tekst",
+				"why": "The text compares wishes, not quality as workers, and never claims young people are better employees."
+			},
+			"C": {
+				"trap": "echo",
+				"why": "The only advice in the text is Van Veen's advice to employers, not advice to job seekers on how to find work."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2024-31",
+		"qtype": "niet-vraag",
+		"evidence": [
+			{
+				"p": 39,
+				"quote": "Opzeggen kan door het opzegformulier op www.wonderrijk.com/abonnementen in te vullen, te ondertekenen en te e-mailen naar abonnementen@wonderrijk.com"
+			},
+			{
+				"p": 39,
+				"quote": "Opzegging is tevens mogelijk bij de Gastenservice."
+			}
+		],
+		"move": "Go straight to heading '5. Opzegging' and list the allowed ways; the phone number elsewhere in the text is for loss, theft and information, not cancelling.",
+		"why": "Cancelling is possible by e-mail, by post or at the Gastenservice; phone is not listed, so C is the way you cannot cancel.",
+		"distractors": {
+			"A": {
+				"trap": "waar-niet-gevraagd",
+				"why": "Article 5.2 says 'Opzegging is tevens mogelijk bij de Gastenservice', so this way is allowed."
+			},
+			"B": {
+				"trap": "waar-niet-gevraagd",
+				"why": "Article 5.2 allows e-mailing the signed cancellation form, so this way is allowed."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2024-32",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 32,
+				"quote": "Heb je het abonnement in één keer betaald? Dan stopt het na een jaar automatisch."
+			}
+		],
+		"move": "Identify Jan's condition (paid in one go) and find the rule for that case in article 4.1, not the rule for monthly payment.",
+		"why": "A subscription paid in one go stops automatically after a year, so to continue Jan has to buy a new one.",
+		"distractors": {
+			"A": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "Automatic continuation applies to subscriptions with monthly payment, not to Jan's one-time payment."
+			},
+			"C": {
+				"trap": "niet-in-tekst",
+				"why": "The text describes no extension procedure at the Gastenservice; a paid-in-one-go subscription simply ends."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2024-33",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 9,
+				"quote": "Eenieder voor wie of door wie een abonnement wordt aangeschaft bij de Gastenservice, dient zich te legitimeren."
+			},
+			{
+				"p": 1,
+				"quote": "Een pasfoto meenemen is niet nodig als de abonnementhouder er zelf bij is."
+			}
+		],
+		"move": "Ignore the age detail (it only affects the price) and apply the rules for buying at the Gastenservice: ID (1.6) and the photo rule in the first paragraph.",
+		"why": "Everyone buying at the Gastenservice must identify themselves, and since Fatima is there herself her photo is taken at the desk, so she only needs ID.",
+		"distractors": {
+			"B": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "A passport photo is only needed when the subscription holder is not present; Fatima buys it herself, so a photo is taken on the spot."
+			},
+			"C": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "The photo is not needed because Fatima is present, and C leaves out the ID that article 1.6 requires."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2024-34",
+		"qtype": "niet-vraag",
+		"evidence": [
+			{
+				"p": 30,
+				"quote": "Het oprijden van het parkeerterrein is niet meer toegestaan vanaf één uur voor sluitingstijd van het attractiepark."
+			},
+			{
+				"p": 25,
+				"quote": "Een parkeerabonnement geeft bij grote drukte geen voorrang of garantie op een parkeerplaats."
+			}
+		],
+		"move": "Go to '3. Parkeerabonnement' and look for the words 'niet toegestaan' or 'niet meer toegestaan'.",
+		"why": "Article 3.9 says you may no longer drive onto the car park from one hour before closing time, which is 'kort voor sluitingstijd'.",
+		"distractors": {
+			"A": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "When it is busy you get no guarantee of a space (3.4), but parking is not forbidden as long as a space is free."
+			},
+			"C": {
+				"trap": "echo",
+				"why": "The 'bedrijfsevenementen' days come from article 4.3 about the park subscription; the parking section does not name them as a parking ban."
+			}
+		},
+		"keyCheck": "suspect: C can also be derived, since the subscription is not valid on company-event days (4.3) and parking is only allowed with a park visit during regular opening hours (3.7, 3.9); B is the only one stated explicitly in the parking rules."
+	},
+	{
+		"id": "lezen-2024-35",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 32,
+				"quote": "Indien je een abonnement met maandelijkse betaling hebt afgesloten, loopt het abonnement na het eerste jaar door voor onbepaalde tijd."
+			},
+			{
+				"p": 38,
+				"quote": "Vervolgens geldt een opzegtermijn van één kalendermaand."
+			}
+		],
+		"move": "Pick out the condition 'maandelijkse betaling' and find the matching rule in 4.1 or 5.1, not the one for paying in one go.",
+		"why": "A monthly-paid subscription continues for an indefinite period after the first year and can then be cancelled with one calendar month's notice.",
+		"distractors": {
+			"A": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "Stopping automatically after a year is the rule for a subscription paid in one go, not for monthly payment."
+			},
+			"C": {
+				"trap": "niet-in-tekst",
+				"why": "No renewal reminder is mentioned; the subscription simply continues."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2025-1",
+		"qtype": "bron-publiek",
+		"evidence": [
+			{
+				"p": 1,
+				"quote": "Binnenkort stopt hij echter bij zijn huidige werkgever."
+			},
+			{
+				"p": 1,
+				"quote": "hulp van zowel werkgever Jeurissen als van adviescentrum Valedo"
+			},
+			{
+				"p": 3,
+				"quote": "Joke Hermans, personeelsadviseur bij Jeurissen"
+			}
+		],
+		"move": "Scan for the name 'Jeurissen' and read the word placed right before it: the text labels it 'werkgever'.",
+		"why": "The text calls Jeurissen Ruud's 'werkgever' and Joke is its 'personeelsadviseur'; since Ruud is still a timmerman who will soon stop at his current employer, Jeurissen is the company where he works as a carpenter now.",
+		"distractors": {
+			"A": {
+				"trap": "echo",
+				"why": "Jeurissen gives him the exam days and helps with the retraining, but the text never says the course is run by Jeurissen; he found the course through an internet ad."
+			},
+			"B": {
+				"trap": "niet-in-tekst",
+				"why": "It sounds logical for someone becoming a driving instructor, but the text never names the driving school where he will work."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2025-2",
+		"qtype": "mening-persoon",
+		"evidence": [
+			{
+				"p": 5,
+				"quote": "Ruud vindt het een goede zaak dat mensen in de sector regelmatig medisch onderzocht worden."
+			},
+			{
+				"p": 5,
+				"quote": "“Dat geldt zeker voor de zware beroepen.”"
+			}
+		],
+		"move": "Find the sentence that starts with 'Ruud vindt' next to 'medisch onderzocht' and read the follow-up remark about 'zware beroepen'.",
+		"why": "Ruud calls regular medical checks 'een goede zaak' and adds that this is especially true ('zeker') for heavy jobs, so he finds them very useful for people doing heavy work.",
+		"distractors": {
+			"B": {
+				"trap": "niet-in-tekst",
+				"why": "The text mentions a 35-year-old colleague with back surgery, but Ruud never complains that young workers are not examined often enough."
+			},
+			"C": {
+				"trap": "echo",
+				"why": "Both the medical check and the 'adviesgesprek' are mentioned, but Ruud calls the talk a 'goede aanvulling' (an addition), not something more important than the check."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2025-3",
+		"qtype": "functie-tekstdeel",
+		"evidence": [
+			{
+				"p": 5,
+				"quote": "Hij moet nog zeker 30 jaar, maar houdt dat in dit beroep waarschijnlijk niet vol."
+			},
+			{
+				"p": 5,
+				"quote": "Voor de zware beroepen is dat niet te doen."
+			}
+		],
+		"move": "Read the sentences right after the example and look for the general statement it supports ('Voor de zware beroepen is dat niet te doen').",
+		"why": "The colleague is 35, already had back surgery and probably cannot last another 30 years; Ruud draws the general point that heavy jobs are often not doable for a whole working life.",
+		"distractors": {
+			"A": {
+				"trap": "niet-in-tekst",
+				"why": "Nothing in the example is about failing to find other work; the colleague still has his job."
+			},
+			"B": {
+				"trap": "overdreven",
+				"why": "Ruud advises thinking early about whether you can keep doing your job, not avoiding construction work altogether."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2025-4",
+		"qtype": "mening-persoon",
+		"evidence": [
+			{
+				"p": 7,
+				"quote": "Ik merk zelf ook dat het op deze leeftijd lastig is."
+			},
+			{
+				"p": 7,
+				"quote": "Maar als je heel goed je best doet, lukt het echt wel."
+			}
+		],
+		"move": "Look for 'leren' in the 'Bewustwording' section and read Ruud's own 'Ik merk zelf' remark plus the 'Maar' sentence after it.",
+		"why": "Ruud admits learning is 'lastig' at his age, but says that if you really do your best 'lukt het echt wel', which matches 'hard to keep up, but it works with hard work'.",
+		"distractors": {
+			"B": {
+				"trap": "tegenovergesteld",
+				"why": "Ruud says learning is 'lastig' (hard) at his age, not that he finds it easy."
+			},
+			"C": {
+				"trap": "overdreven",
+				"why": "Ruud says it is hard at his age, not that he is too old for it; he says it does work out, and he never says he enjoys it."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2025-5",
+		"qtype": "vergelijking",
+		"evidence": [
+			{
+				"p": 7,
+				"quote": "Heel veel medewerkers in de leeftijdscategorie van Ruud zijn afwachtend."
+			},
+			{
+				"p": 3,
+				"quote": "Joke noemt Ruud een prachtig voorbeeld van iemand die regie pakt op zijn loopbaan."
+			}
+		],
+		"move": "Find what Joke says about 'medewerkers in de leeftijdscategorie van Ruud' and contrast it with how she describes Ruud himself.",
+		"why": "Joke says most workers of Ruud's age are 'afwachtend' (waiting passively), while she praises Ruud for taking this step and taking control of his career himself.",
+		"distractors": {
+			"A": {
+				"trap": "tegenovergesteld",
+				"why": "Joke contrasts Ruud with colleagues who wait; the phrase 'wat later in het proces' only means he told his employer late, not that he waited long to retrain."
+			},
+			"B": {
+				"trap": "echo",
+				"why": "The text mentions others starting at 15 or 16 and Ruud at 17, but Joke never presents starting age as the difference between Ruud and the others."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2025-6",
+		"qtype": "doel-tekst",
+		"evidence": [
+			{
+				"p": 3,
+				"quote": "Joke noemt Ruud een prachtig voorbeeld van iemand die regie pakt op zijn loopbaan."
+			},
+			{
+				"p": 5,
+				"quote": "Denk zo vroeg mogelijk na of je je werk over 20 jaar nog kunt uitvoeren."
+			},
+			{
+				"p": 7,
+				"quote": "Maar als je heel goed je best doet, lukt het echt wel."
+			}
+		],
+		"move": "Look at how the whole text is built: one personal story ('Ruud'), labelled a 'prachtig voorbeeld', plus advice aimed at the reader.",
+		"why": "The text tells Ruud's retraining story in a positive way, calls him a 'prachtig voorbeeld' and urges readers to think early about switching, so it uses an example to make readers positive about retraining.",
+		"distractors": {
+			"B": {
+				"trap": "overdreven",
+				"why": "Ruud says learning is 'lastig' but that it works out; the text never says retraining usually takes a lot of time and effort, and its tone is encouraging."
+			},
+			"C": {
+				"trap": "te-smal",
+				"why": "'Ook is niet iedereen in staat om te leren' is a single side remark, not the purpose of the whole text."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2025-7",
+		"qtype": "vergelijking",
+		"evidence": [
+			{
+				"p": 3,
+				"quote": "Dieren hebben ook traanklieren, maar je zal ze niet zien huilen van emotie."
+			},
+			{
+				"p": 3,
+				"quote": "Maar huilen van emotie, dat is iets wat alleen wij mensen doen."
+			},
+			{
+				"p": 3,
+				"quote": "maar ook als je overweldigd bent door gevoelens van geluk en vreugde"
+			}
+		],
+		"move": "Go to the section 'Alleen mensen huilen van emotie' and compare what it says about 'dieren' with what it says about 'mensen'.",
+		"why": "Only humans cry from emotion, and the text lists both negative feelings (verdriet, woede) and positive ones (geluk, vreugde); animals do not cry from emotion.",
+		"distractors": {
+			"A": {
+				"trap": "niet-in-tekst",
+				"why": "The text says human eyes produce tears 'meteen' when something gets in, but it never compares this speed with animals."
+			},
+			"B": {
+				"trap": "echo",
+				"why": "'Fysieke pijn' is mentioned as a reason why humans cry; for animals the text only says their tears rinse out dust and bacteria."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2025-8",
+		"qtype": "detail",
+		"evidence": [
+			{
+				"p": 5,
+				"quote": "Gedragswetenschappers geven aan dat huilen bij volwassenen ook die functie heeft."
+			}
+		],
+		"move": "In 'Huilen als communicatiemiddel', follow the words 'ook die functie' back to the baby sentence before it.",
+		"why": "After explaining that babies cry to signal 'Help mij', the text says crying has 'ook die functie' for adults, so the function is the same for both.",
+		"distractors": {
+			"B": {
+				"trap": "niet-in-tekst",
+				"why": "Babies are 'volledig afhankelijk', which makes this sound logical, but the text never says crying is more useful for them than for adults."
+			},
+			"C": {
+				"trap": "echo",
+				"why": "'Snel getroost als je in het openbaar huilt' is said about adults ('je'), not about babies being comforted by their parents."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2025-9",
+		"qtype": "oorzaak-reden",
+		"evidence": [
+			{
+				"p": 7,
+				"quote": "Dat vrouwen meer huilen heeft te maken met de verschillende hormonen die mannen en vrouwen aanmaken."
+			},
+			{
+				"p": 7,
+				"quote": "Ook zijn de traanbuizen (kleine buisjes die de tranen afvoeren) van mannen kleiner dan die van vrouwen"
+			}
+		],
+		"move": "In the section on women crying more, look for every cause, and notice the signal word 'Ook' that adds a second one.",
+		"why": "The text first names hormones (testosteron, prolactine) and then, with 'Ook', the smaller tear ducts of men, so both causes count.",
+		"distractors": {
+			"A": {
+				"trap": "te-smal",
+				"why": "Hormones are named, but 'Ook' adds a second cause, the tear ducts, so 'alleen' hormones leaves one out."
+			},
+			"B": {
+				"trap": "te-smal",
+				"why": "The tear ducts are only the second cause; the text first explains the hormone difference, so 'alleen' tear ducts is incomplete."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2025-10",
+		"qtype": "detail",
+		"evidence": [
+			{
+				"p": 9,
+				"quote": "Ook komen er tijdens het huilen in het lichaam zelf gelukshormonen vrij, zoals endorfinen, die je kalm maken."
+			}
+		],
+		"move": "Find the word 'gelukshormonen' and read the relative clause after it ('die je kalm maken').",
+		"why": "The text says happiness hormones such as endorphins 'je kalm maken', which means they make you calmer.",
+		"distractors": {
+			"A": {
+				"trap": "echo",
+				"why": "'Pijnstillende werking' belongs to the hormones in emotional tears (prolactine, corticotropine, leucine), not to the happiness hormones."
+			},
+			"B": {
+				"trap": "tegenovergesteld",
+				"why": "Endorphins are themselves one of the happiness hormones that are released; nothing removes them from the body."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2025-11",
+		"qtype": "hoofdgedachte",
+		"evidence": [
+			{
+				"p": 10,
+				"quote": "Huilen mag!"
+			},
+			{
+				"p": 11,
+				"quote": "Het is jammer dat huilen zo vaak als een teken van zwakte wordt gezien"
+			},
+			{
+				"p": 11,
+				"quote": "Kijk eens of het je lukt een potje te huilen."
+			}
+		],
+		"move": "For the writer's opinion, read the final section: its heading 'Huilen mag!' and closing advice show the writer's own view.",
+		"why": "The writer regrets that crying is seen as weakness, lists its benefits (it relieves, calms) and ends by encouraging you to have 'een potje' cry now and then, so crying is healthy and fine to do sometimes.",
+		"distractors": {
+			"B": {
+				"trap": "overdreven",
+				"why": "The writer only says you need not cry over every trifle; the text even mentions crying from happiness, so 'alleen' when you feel bad or have pain is too strict."
+			},
+			"C": {
+				"trap": "tegenovergesteld",
+				"why": "The 'teken van zwakte' view is one the writer calls 'jammer'; the writer encourages crying instead of warning against it."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2025-12",
+		"qtype": "doel-tekst",
+		"evidence": [
+			{
+				"p": 1,
+				"quote": "Lees verder voor een paar leuke weetjes over huilen"
+			},
+			{
+				"p": 2,
+				"quote": "Alleen mensen huilen van emotie"
+			},
+			{
+				"p": 6,
+				"quote": "Vrouwen huilen meer dan mannen"
+			}
+		],
+		"move": "Read the last line of the first paragraph, which announces what follows, and check that the headings are a series of facts.",
+		"why": "The introduction promises 'een paar leuke weetjes over huilen' and each section presents one fact (animals versus humans, communication, men versus women, why it relieves), so the text mainly informs.",
+		"distractors": {
+			"B": {
+				"trap": "te-smal",
+				"why": "Only the last section touches on when to cry, and it just says crying is fine; the text does not set out when crying is appropriate."
+			},
+			"C": {
+				"trap": "tegenovergesteld",
+				"why": "The text is positive about crying and describes its benefits; it does not warn against it."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2025-13",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 4,
+				"quote": "Maar de meeste klanten willen eerst even rondkijken en voelen zich juist opgejaagd als je dat direct zou vragen."
+			},
+			{
+				"p": 6,
+				"quote": "Je ziet vanzelf wanneer hij jouw hulp zou kunnen gebruiken."
+			},
+			{
+				"p": 6,
+				"quote": "Dan is het tijd om op hem af te stappen en te kijken of je hem kunt helpen."
+			}
+		],
+		"move": "Use the sections 'Het juiste moment' and 'Goed kijken': the rule is to watch the customer's behaviour for a signal before approaching.",
+		"why": "Most customers want to look around first, and the seller should approach once the customer's behaviour shows interest or need (feeling the fabric, checking the price tag), so the seller waits until the customer shows they want help.",
+		"distractors": {
+			"B": {
+				"trap": "niet-in-tekst",
+				"why": "The text says you can see from behaviour when help is wanted; it never says to wait until the customer asks out loud."
+			},
+			"C": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "Approaching straight away is only advised for a hurried customer who knows what he wants; most customers feel 'opgejaagd' by that."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2025-14",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 8,
+				"quote": "Je stelt eerst gerichte vragen om erachter te komen wat hij wil en waarom."
+			},
+			{
+				"p": 8,
+				"quote": "Pas dan weet je wat zijn koopwens is en kun je hem een goed advies geven."
+			}
+		],
+		"move": "In 'Een deskundig en zakelijk advies', look for the order words 'eerst' and 'Pas dan'.",
+		"why": "The text says the seller 'eerst' asks targeted questions and only after that ('Pas dan') gives advice, so the seller starts by asking what the customer wants.",
+		"distractors": {
+			"A": {
+				"trap": "tegenovergesteld",
+				"why": "Advice comes 'pas dan', after the questions, so starting with advice reverses the order."
+			},
+			"B": {
+				"trap": "echo",
+				"why": "Showing or demonstrating a product is mentioned as a handy extra, but only after asking questions; the text says to start with questions."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2025-15",
+		"qtype": "functie-tekstdeel",
+		"evidence": [
+			{
+				"p": 12,
+				"quote": "Wat maakt jouw bedrijf wel bijzonder? Dat is de goede service."
+			},
+			{
+				"p": 12,
+				"quote": "Welke extra service biedt jouw bedrijf?"
+			},
+			{
+				"p": 12,
+				"quote": "Het is belangrijk dat je weet welke service jouw bedrijf kan bieden."
+			}
+		],
+		"move": "Check what all the questions have in common and find the statement that frames them ('Dat is de goede service').",
+		"why": "The questions list kinds of service (fast help, exchange, guarantee, delivery, repair) right after the text says good service makes your shop special, so they show that offering good service is important.",
+		"distractors": {
+			"B": {
+				"trap": "echo",
+				"why": "They are questions, but they are the seller's questions about the shop's service, not customers' questions that need answering."
+			},
+			"C": {
+				"trap": "waar-niet-gevraagd",
+				"why": "The text does stress a friendly attitude in the last sentence, but the question list itself is about the types of service the shop offers."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2025-16",
+		"qtype": "detail",
+		"evidence": [
+			{
+				"p": 12,
+				"quote": "Maar vergeet niet dat jouw vriendelijke houding het meest bijdraagt aan een goed imago."
+			}
+		],
+		"move": "Match 'positief beeld van de winkel' in the question to 'goed imago' in the text and look for the superlative 'het meest'.",
+		"why": "The text says your friendly attitude 'het meest bijdraagt aan een goed imago', so it is the most important factor for a positive image.",
+		"distractors": {
+			"A": {
+				"trap": "echo",
+				"why": "The text stresses giving 'een goed advies', but never calls advice the thing that contributes most, and the word 'eerlijk' is not used."
+			},
+			"B": {
+				"trap": "waar-niet-gevraagd",
+				"why": "A good price-quality ratio 'speelt een belangrijke rol', but the text adds 'daarin ben je niet uniek'; it is not named the most important."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2025-17",
+		"qtype": "detail",
+		"evidence": [
+			{
+				"p": 16,
+				"quote": "Het is dan heel erg belangrijk dat je de klant serieus neemt."
+			},
+			{
+				"p": 16,
+				"quote": "Maar sta niet te snel klaar met je oordeel."
+			},
+			{
+				"p": 16,
+				"quote": "Want alleen een tevreden klant zorgt voor positieve reclame."
+			}
+		],
+		"move": "Go to the section 'Neem klager en klacht serieus' and read what the seller must do and the reason given with 'Want'.",
+		"why": "The seller must take the customer seriously, stay calm and treat him properly so that trust is regained and the customer becomes satisfied again.",
+		"distractors": {
+			"B": {
+				"trap": "overdreven",
+				"why": "Taking a complaint seriously is not the same as always agreeing; the text even says 'Als de klacht terecht is', so not every complaint is justified."
+			},
+			"C": {
+				"trap": "tegenovergesteld",
+				"why": "The text says not to judge too quickly and to stay calm; trying to convince customers they are wrong goes against that."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2025-18",
+		"qtype": "doel-tekst",
+		"evidence": [
+			{
+				"p": 2,
+				"quote": "Het is belangrijk dat je weet wat de klant wil en hoe je hem of haar het beste helpt."
+			},
+			{
+				"p": 8,
+				"quote": "Je stelt eerst gerichte vragen om erachter te komen wat hij wil en waarom."
+			},
+			{
+				"p": 16,
+				"quote": "Het is belangrijk dat je hem netjes en serieus behandelt."
+			}
+		],
+		"move": "Look at the headings and the recurring 'je' plus 'het is belangrijk dat' sentences: the text keeps telling the reader what to do with customers.",
+		"why": "Every section explains how a seller should deal with customers (when to approach, how to advise, service, complaints), which fits a textbook explaining how best to treat customers.",
+		"distractors": {
+			"A": {
+				"trap": "echo",
+				"why": "The title 'Verkopen is een vak' and the word 'Moeilijk' appear, but the text does not aim to show that selling is a nice but hard job; it gives practical guidance."
+			},
+			"C": {
+				"trap": "niet-in-tekst",
+				"why": "The text contains no funny anecdotes; its examples (the winter coat) serve to teach, not to entertain."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2025-19",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 1,
+				"quote": "De individuele werktijd in de metaalindustrie is 8 uren per dag."
+			},
+			{
+				"p": 1,
+				"quote": "Uren die u werkt buiten het dienstrooster, maar binnen de 8 werkuren per dag, worden ‘verschoven uren’ genoemd."
+			}
+		],
+		"move": "Count Joseph's hours (8.00 to 16.00 is 8 hours) and check them against the rule for hours outside the rooster but within 8 hours a day.",
+		"why": "Joseph works 8 hours, which is within the 8-hour working day, so the hour after 15.00 counts as 'verschoven uren', not as overtime.",
+		"distractors": {
+			"A": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "This applies the general definition 'buiten het dienstrooster' but ignores the exception for hours that stay within 8 hours a day."
+			},
+			"C": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "'Af en toe' and 'een enkele keer' belong to the half-hour rule; how often the shift changes does not matter for shifted hours."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2025-20",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 1,
+				"quote": "Als u overwerkt tot 24.00 uur na een volle werkdag hoeft u de eerste 11 uren na het overwerk niet te werken."
+			}
+		],
+		"move": "Match Marly's situation (full day, overtime until 24.00) to the rule that mentions exactly '24.00 uur' and count 11 hours from midnight.",
+		"why": "After overtime until 24.00 following a full day, she does not have to work for the next 11 hours, so she does not start at 7.00 but only after 11 hours of rest (and her planned hours in that window are still paid).",
+		"distractors": {
+			"A": {
+				"trap": "overdreven",
+				"why": "The rule gives 11 hours off, not the whole next day; after 11.00 she can be expected to work again."
+			},
+			"C": {
+				"trap": "tegenovergesteld",
+				"why": "Starting at 7.00 is only 7 hours after midnight, which breaks the 11-hour rule."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2025-21",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 3,
+				"quote": "Als u 55 jaar of ouder bent, kan u verplicht worden tot maximaal 5 uren overwerk in een periode van vier weken."
+			}
+		],
+		"move": "Pick out Claire's key facts (56, healthy) and find the rule with the matching age threshold ('55 jaar of ouder').",
+		"why": "Claire is over 55, so her employer can oblige her to work at most 5 hours of overtime per four weeks, whatever her preference.",
+		"distractors": {
+			"A": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "No obligation at all only applies to workers under 18 or those who cannot work overtime for health reasons; Claire is 56 and healthy."
+			},
+			"C": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "10 hours per four weeks is the limit for workers under 55; for 55 and older the maximum is 5."
+			},
+			"D": {
+				"trap": "overdreven",
+				"why": "The employer can never oblige unlimited overtime; for Claire there is a fixed maximum of 5 hours per four weeks."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2025-22",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 5,
+				"quote": "Als u overwerkt kan u kiezen hoe u de overuren wil laten vergoeden."
+			}
+		],
+		"move": "Go to 'Betaling van overuren' and read the first sentence, which says who decides how overtime is compensated.",
+		"why": "The worker 'kan kiezen' how the overtime is compensated, in money or in free time, so Pawel chooses himself.",
+		"distractors": {
+			"A": {
+				"trap": "te-smal",
+				"why": "Payment in money is only one of the options Pawel can choose, not what automatically happens."
+			},
+			"B": {
+				"trap": "te-smal",
+				"why": "Free time is only one of the options; the text says the worker chooses between money and free time."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2025-23",
+		"qtype": "doel-tekst",
+		"evidence": [
+			{
+				"p": 1,
+				"quote": "Er is echter wel een aantal regels en uitzonderingen."
+			},
+			{
+				"p": 3,
+				"quote": "De werkgever mag u verplichten om over te werken tot 10 uur per vier weken"
+			},
+			{
+				"p": 5,
+				"quote": "Als u overwerkt kan u kiezen hoe u de overuren wil laten vergoeden."
+			}
+		],
+		"move": "Note the source (terms of employment) and the neutral 'u' plus rule language ('mag', 'moet', 'kan') in every section.",
+		"why": "The text sets out rules and exceptions: what counts as overtime, when it is obligatory and how it is paid, so it explains the rules.",
+		"distractors": {
+			"A": {
+				"trap": "niet-in-tekst",
+				"why": "The text never argues that overtime is important; it only states when it may be required."
+			},
+			"C": {
+				"trap": "echo",
+				"why": "'Calamiteiten', 'boetes' and 'schade' appear, but as cases in which overtime may be required, not as risks of working overtime."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2025-24",
+		"qtype": "doel-onderdeel",
+		"evidence": [
+			{
+				"p": 1,
+				"quote": "Deze speciale whatsappgroepen zijn vaak bedoeld om verdachte situaties te melden aan buurtgenoten."
+			}
+		],
+		"move": "Match 'bedoeling' in the question with 'bedoeld om' in the first paragraph.",
+		"why": "The groups are 'bedoeld om verdachte situaties te melden aan buurtgenoten', which means neighbours warn each other about things they do not trust.",
+		"distractors": {
+			"A": {
+				"trap": "echo",
+				"why": "'Ruzie' appears, but as a reason some people do not join and as a problem the groups cause, not as their purpose."
+			},
+			"B": {
+				"trap": "tegenovergesteld",
+				"why": "The text says a buurt-whatsapp 'niet bedoeld [is] voor oproepjes' and has a 'serieus doel', unlike chats with friends and family."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2025-25",
+		"qtype": "oorzaak-reden",
+		"evidence": [
+			{
+				"p": 3,
+				"quote": "Maar wat kon ik doen om de buurt snel te informeren over mogelijke gevaren?"
+			}
+		],
+		"move": "Read Tea Rukavina's quote after the attempted burglary and find the question she asked herself just before 'Zo is de buurt-whatsapp begonnen'.",
+		"why": "She wanted a way 'om de buurt snel te informeren over mogelijke gevaren', which means warning the neighbourhood about burglars.",
+		"distractors": {
+			"A": {
+				"trap": "echo",
+				"why": "The police and their 'zoektocht' are mentioned, but she wanted to inform the neighbours about danger, not explain what the police would do."
+			},
+			"B": {
+				"trap": "niet-in-tekst",
+				"why": "Asking neighbours for witnesses sounds logical after a burglary, but she never says this; her goal was to warn them."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2025-26",
+		"qtype": "mening-persoon",
+		"evidence": [
+			{
+				"p": 5,
+				"quote": "“Het is niet verantwoord als mensen zelf politie gaan spelen”, zegt Wajid."
+			}
+		],
+		"move": "Find Wajid's quote right after the example of members chasing a suspected burglar ('zegt Wajid').",
+		"why": "Wajid says it is 'niet verantwoord' when people play police themselves, so he does not think it is wise.",
+		"distractors": {
+			"A": {
+				"trap": "echo",
+				"why": "Wajid does say the app 'kan het gevoel van veiligheid stimuleren', but that is about the groups in general, not about chasing burglars."
+			},
+			"C": {
+				"trap": "niet-in-tekst",
+				"why": "Wajid sets no condition; he rejects people playing police without any exception."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2025-27",
+		"qtype": "detail",
+		"evidence": [
+			{
+				"p": 7,
+				"quote": "Een buurt-whatsapp is niet bedoeld voor oproepjes, dus af en toe grijp ik in."
+			},
+			{
+				"p": 7,
+				"quote": "Die hebben geen zin in overbodige berichten."
+			}
+		],
+		"move": "Find 'grijp ik in' and read the reason given with 'dus' just before it.",
+		"why": "Van de Kuilen steps in because the group is 'niet bedoeld voor oproepjes', such as missing cats or rubbish reminders, which are unnecessary messages.",
+		"distractors": {
+			"A": {
+				"trap": "waar-niet-gevraagd",
+				"why": "People do leave the group, but that is a reaction to unnecessary messages, not the moment when she intervenes."
+			},
+			"C": {
+				"trap": "echo",
+				"why": "'Oproep' is in the text, but the problem is the call itself (a missing cat), not how others react to it."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2025-28",
+		"qtype": "doel-tekst",
+		"evidence": [
+			{
+				"p": 3,
+				"quote": "“Het kan het gevoel van veiligheid stimuleren”"
+			},
+			{
+				"p": 3,
+				"quote": "Maar er zijn ook allerlei groepen waarbij de appgroep het gevoel van onveiligheid juist vergroot."
+			},
+			{
+				"p": 6,
+				"quote": "De zin en onzin van buurt-whatsapp"
+			}
+		],
+		"move": "Use the headings and the 'Maar' contrasts: the text sets positive sides ('Gevoel van veiligheid') against negative ones ('Gevaren', 'onzin').",
+		"why": "The text reports facts and expert views on both the benefits (feeling of safety) and the drawbacks (vigilantism, unrest, irritation) without advising or persuading, so it informs about pros and cons.",
+		"distractors": {
+			"A": {
+				"trap": "te-smal",
+				"why": "The dangers are only one part of the text, and they are described, not turned into advice to the reader."
+			},
+			"C": {
+				"trap": "niet-in-tekst",
+				"why": "The text never urges the reader to start a group; it also shows many downsides."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2025-29",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 2,
+				"quote": "dien je dit voor 09.00 uur ’s ochtends te melden bij het Onderwijsservicebureau (OSB) van jouw sector"
+			}
+		],
+		"move": "In the 'Aanwezigheid' section, find the sentence starting with 'Wanneer je niet op school ... aanwezig kunt zijn' and note who and when.",
+		"why": "Absence must be reported before 09.00 in the morning to the Onderwijsservicebureau, so you report it that morning to the OSB.",
+		"distractors": {
+			"B": {
+				"trap": "echo",
+				"why": "The 'docent' appears in the text, but only to register attendance at the start of a lesson, not to receive absence reports."
+			},
+			"C": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "The deadline is before 09.00 on the same morning, not the day before."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2025-30",
+		"qtype": "detail",
+		"evidence": [
+			{
+				"p": 2,
+				"quote": "Je scant je pas bij de toegangspoortjes bij de ingang."
+			},
+			{
+				"p": 2,
+				"quote": "Bij aanvang van de les registreert de docent of je aanwezig bent."
+			}
+		],
+		"move": "Read the short passage after 'Visionpas' and count how many registration steps it names.",
+		"why": "Scanning the pass registers that you are in the building, and the teacher registers you at the start of the lesson; you are only officially present after both, so both ways apply.",
+		"distractors": {
+			"A": {
+				"trap": "te-smal",
+				"why": "Scanning only shows you are in the building; the teacher's check is also needed to be officially present."
+			},
+			"B": {
+				"trap": "te-smal",
+				"why": "The teacher's check is the second step; scanning the pass at the entrance also registers you."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2025-31",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 6,
+				"quote": "Zie je dat er ergens brand is of dat een andere gevaarlijke situatie zich voordoet en heb je nog geen alarmsignaal gehoord, waarschuw dan een conciërge of de receptie."
+			}
+		],
+		"move": "In 'Calamiteit', find the rule for seeing a fire yourself before anyone has responded ('nog geen alarmsignaal').",
+		"why": "If you see a fire and no alarm has sounded yet, the text says to warn a conciërge or the reception.",
+		"distractors": {
+			"A": {
+				"trap": "niet-in-tekst",
+				"why": "The text never mentions calling the fire brigade; the numbers it gives (100 and 8888) are the school's own emergency lines."
+			},
+			"B": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "Going to the assembly point is the procedure once the alarm signal has sounded, not when you are the first to notice a fire."
+			}
+		},
+		"keyCheck": "suspect: the stem says the bedrijfshulpverlener is not there yet but does not say whether the alarm has sounded; the key C only follows if you infer no alarm yet, and if the alarm had sounded B (go to the verzamelplaats) would be the rule."
+	},
+	{
+		"id": "lezen-2025-32",
+		"qtype": "detail",
+		"evidence": [
+			{
+				"p": 8,
+				"quote": "Je moet wettelijk cursusgeld betalen als je een BBL-opleiding volgt en op 1 augustus 18 jaar of ouder bent."
+			},
+			{
+				"p": 8,
+				"quote": "Je moet ook wettelijk cursusgeld betalen als je een deeltijd-vavo-opleiding volgt"
+			}
+		],
+		"move": "In 'Cursusgeld', collect every 'Je moet ... cursusgeld betalen als' condition and see what they have in common.",
+		"why": "Course fees apply to students in specific programme types (BBL at 18 or older, part-time vavo, and some vavo under 29 hours), so it depends on the type of programme.",
+		"distractors": {
+			"A": {
+				"trap": "overdreven",
+				"why": "Not every student pays; only students in certain programmes such as BBL or part-time vavo."
+			},
+			"C": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "Age 18 only matters for BBL; age alone is not enough, and for vavo there is no age limit at all."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2025-33",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 8,
+				"quote": "Ook vavo-studenten die een opleiding volgen van minder dan 29 lesuren en via de rijksoverheid bekostigd worden, moeten wettelijk cursusgeld betalen: € 30,- per lesuur."
+			}
+		],
+		"move": "Match the student's conditions (vavo, 25 hours, under 29, paid by the rijksoverheid) to the rule with the per-hour rate and multiply.",
+		"why": "A state-funded vavo student with fewer than 29 lesson hours pays 30 euros per lesson hour: 25 x 30 = 750 euros.",
+		"distractors": {
+			"A": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "236 euros is the rate for level 1 or 2 programmes, not for a vavo student under 29 hours."
+			},
+			"B": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "573 euros is the rate for level 3 or 4 programmes, not for a vavo student under 29 hours."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2025-34",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 34,
+				"quote": "Je kunt een tijdelijke pas krijgen voor een dag."
+			},
+			{
+				"p": 34,
+				"quote": "Je betaalt daarvoor € 5,- administratiekosten."
+			}
+		],
+		"move": "Go to the heading 'Je bent je Visionpas vergeten' (forgotten, not lost or broken) and read only the cost under it.",
+		"why": "For a forgotten pass you get a one-day temporary pass and pay 5 euros administration costs; returning it only unblocks your own pass.",
+		"distractors": {
+			"B": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "10 euros (5 administration plus 5 for the card) applies to a lost pass or one broken by your own fault, not a forgotten one."
+			},
+			"C": {
+				"trap": "echo",
+				"why": "Returning the temporary pass unblocks your Visionpas, but it does not cancel the 5 euros administration fee."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "lezen-2025-35",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 22,
+				"quote": "Als je de gewonde persoon niet kunt of durft te verplaatsen, blijf je altijd bij hem of haar en laat je iemand anders de receptie of conciërge waarschuwen."
+			},
+			{
+				"p": 22,
+				"quote": "Vraag of diegene wel daarna terugkomt om te vertellen wat er moet gebeuren."
+			}
+		],
+		"move": "In 'EHBO', find the rule for an injured person who cannot be moved and apply it to yourself as that injured person.",
+		"why": "When the injured person cannot be moved, one person stays and someone else warns the reception and comes back; since you cannot walk and your fellow student is already fetching help, you stay where you are.",
+		"distractors": {
+			"A": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "'Ga of bel naar de receptie' is the rule for small first-aid needs like a plaster; here someone is already alerting the reception."
+			},
+			"C": {
+				"trap": "echo",
+				"why": "The text says every location has 'EHBO-hulpmiddelen', but it never tells an injured person to go looking for them, and you cannot walk."
+			}
+		},
+		"keyCheck": "ok"
+	}
+]
