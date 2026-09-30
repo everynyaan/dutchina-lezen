@@ -9,6 +9,7 @@ import {
 	practiceById,
 	practiceItemsFor
 } from './practice';
+import { eligibleSetPassages } from './sets';
 import {
 	ATTEMPT_CAP,
 	type DailyTextState,
@@ -39,7 +40,10 @@ function notSeenRecently(fork: ReadingForkState, slug: string, date: string): bo
 /** Non-reserved passages, unseen for 7 days, oldest last-seen first. Ties use dayIndex. */
 export function pickPassage(fork: ReadingForkState, date: string): BankPassage | null {
 	const reserved = reservedYears(fork);
-	const pool = allPassages().filter((passage) => !reserved.has(passage.year));
+	const pool = [
+		...allPassages().filter((passage) => !reserved.has(passage.year)),
+		...eligibleSetPassages(fork)
+	];
 	if (pool.length === 0) return null;
 	const fresh = pool.filter((passage) => notSeenRecently(fork, passage.slug, date));
 	const candidates = (fresh.length > 0 ? fresh : pool).slice().sort((a, b) => {
@@ -80,6 +84,22 @@ export function selectQuestions(
 	passage: BankPassage,
 	date: string
 ): string[] {
+	if (passage.year === 0) {
+		const stats = accuracyByQtype(fork);
+		const fresh = passage.questions.filter((question) => neverAnswered(fork, question.id));
+		const doel = fresh.find((question) => getAnnotation(question.id)?.qtype === 'doel-tekst');
+		const rest = fresh
+			.filter((question) => question.id !== doel?.id)
+			.sort((a, b) => {
+				const aType = getAnnotation(a.id)?.qtype ?? 'detail';
+				const bType = getAnnotation(b.id)?.qtype ?? 'detail';
+				const gap = qtypeAccuracy(stats, aType) - qtypeAccuracy(stats, bType);
+				return gap || a.id.localeCompare(b.id);
+			});
+		const chosen = rest.slice(0, doel ? 2 : 3).map((question) => question.id);
+		if (doel) chosen.push(doel.id);
+		return chosen;
+	}
 	const practice = practiceItemsFor(passage.slug);
 	const stats = accuracyByQtype(fork);
 	const officialDoel = passage.questions.find(

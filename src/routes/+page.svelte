@@ -23,9 +23,12 @@
 		locateLine,
 		locateWindow,
 		openTraps,
+		practiceSetLine,
 		qtypeLine,
 		qtypeReadiness,
-		trapLine
+		SET_MIX_NOTE,
+		trapLine,
+		unseenSetLine
 	} from '$lib/reading/readiness';
 
 	const ctx = getGameContext();
@@ -63,6 +66,8 @@
 	);
 	let examLine = $derived(examCountdown(ctx.state.readingFork.settings.examDate, today));
 	let mockLine = $derived(lastMockLine(lastMockView(ctx.state.readingFork)));
+	let setLine = $derived(practiceSetLine(ctx.state.readingFork));
+	let unseenLine = $derived(unseenSetLine(ctx.state.readingFork));
 	let typeRows = $derived(qtypeReadiness(ctx.state.readingFork));
 	let locatedLine = $derived(locateLine(locateWindow(ctx.state.readingFork, 50)));
 	let trapsLine = $derived(trapLine(openTraps(ctx.state.readingFork)));
@@ -181,6 +186,10 @@
 		<p>{examLine}</p>
 		<h2>Last mock</h2>
 		<p>{mockLine}</p>
+		<h2>Practice sets</h2>
+		<p>{setLine}</p>
+		<p>{unseenLine}</p>
+		<p class="plan">{SET_MIX_NOTE}</p>
 		<h2>Plan</h2>
 		<p class="plan">{PLAN_LINE}</p>
 		{#if coachNoteText && noteLabel}
@@ -221,6 +230,10 @@
 	<a class="hub-card" href={resolve('/lezen')} onclick={() => playSfx('button_tap')}>
 		<span class="hub-title">Texts</span>
 		<span class="hub-sub">2024 and 2025. 2023 is saved for your mock.</span>
+	</a>
+	<a class="hub-card" href={resolve('/sets')} onclick={() => playSfx('button_tap')}>
+		<span class="hub-title">Practice sets</span>
+		<span class="hub-sub">Unofficial. Set 2, then set 3, then set 1 after the 2025 mock.</span>
 	</a>
 
 	{#if installVisible}

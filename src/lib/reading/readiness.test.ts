@@ -9,8 +9,10 @@ import {
 	locateLine,
 	locateWindow,
 	openTraps,
+	practiceSetLine,
 	qtypeLine,
-	qtypeReadiness
+	qtypeReadiness,
+	unseenSetLine
 } from './readiness';
 
 function attempt(
@@ -179,6 +181,89 @@ describe('readiness home', () => {
 			})
 		);
 		expect(traps).toEqual(['echo']);
+	});
+
+	it('keeps a practice set out of the official last mock', () => {
+		const view = lastMockView(
+			fork({
+				mocks: [
+					{
+						id: 'official',
+						paperYear: 2024,
+						finishedAt: '2026-10-01',
+						expired: false,
+						correct: 24,
+						total: 35,
+						passLine: 24,
+						byQtype: {},
+						textMs: [],
+						answers: {},
+						flagged: {}
+					},
+					{
+						id: 'set-newer',
+						paperYear: 0,
+						setId: 'set2',
+						finishedAt: '2026-10-20',
+						expired: false,
+						correct: 22,
+						total: 35,
+						passLine: 25,
+						byQtype: {},
+						textMs: [],
+						answers: {},
+						flagged: {}
+					}
+				]
+			})
+		);
+		expect(view?.year).toBe(2024);
+		expect(practiceSetLine(fork({ mocks: view ? [] : [] }))).toBe('No practice set yet.');
+		expect(
+			practiceSetLine(
+				fork({
+					mocks: [
+						{
+							id: 'set-newer',
+							paperYear: 0,
+							setId: 'set2',
+							finishedAt: '2026-10-20',
+							expired: false,
+							correct: 22,
+							total: 35,
+							passLine: 25,
+							byQtype: {},
+							textMs: [],
+							answers: {},
+							flagged: {}
+						}
+					]
+				})
+			)
+		).toBe('Practice set 2: 22 of 35 on 2026-10-20. Practice set, unofficial.');
+		expect(unseenSetLine(fork())).toBe('Unseen texts: no first attempts yet.');
+		expect(
+			unseenSetLine(
+				fork({
+					attempts: [
+						attempt({
+							itemId: 'set2-1',
+							at: '2026-10-20',
+							origin: 'fresh',
+							correct: false,
+							passageSlug: 'set2-meryem-werktijden'
+						}),
+						attempt({
+							itemId: 'set2-1',
+							at: '2026-10-21',
+							origin: 'fresh',
+							correct: true,
+							passageSlug: 'set2-meryem-werktijden'
+						})
+					]
+				})
+			)
+		).toBe('Unseen texts: 0 of 1.');
 	});
 
 	it('keeps the plan on the published dates', () => {

@@ -8,6 +8,7 @@
 	import { paragraphMapFor, paraphraseById } from '$lib/reading/practice';
 	import { textChatFromLoop } from '$lib/kuromi/coach';
 	import { setTextChat } from '$lib/kuromi/focus';
+	import { originForItem } from '$lib/reading/sets';
 	import { recordMiss } from '$lib/reading/traps';
 	import PracticeBook from '$lib/components/reading/PracticeBook.svelte';
 	import { bookYearsFor } from '$lib/reading/practiceBook';
@@ -108,7 +109,7 @@
 		};
 		ctx.state.readingFork.attempts = appendAttempt(ctx.state.readingFork.attempts, {
 			itemId,
-			origin: itemId.startsWith('lezen-') ? 'official' : 'practice',
+			origin: originForItem(itemId),
 			passageSlug: passage.slug,
 			source: paraphraseById(itemId) ? 'paraphrase' : 'daily',
 			at: today,

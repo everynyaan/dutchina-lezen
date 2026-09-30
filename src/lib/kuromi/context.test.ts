@@ -80,6 +80,7 @@ describe('screenLabelForPath', () => {
 		expect(screenLabelForPath('/playbook')).toBe('the playbook');
 		expect(screenLabelForPath('/grammar')).toBe('the pattern handbook');
 		expect(screenLabelForPath('/mock')).toBe('a 110-minute mock');
+		expect(screenLabelForPath('/sets')).toBe('practice sets');
 		expect(screenLabelForPath('/mock/booklet')).toBe('a 110-minute mock');
 		expect(screenLabelForPath('/kuromi/shelf')).toBe("Kuromi's shelf");
 		expect(screenLabelForPath('/kuromi')).toBe('Kuromi');

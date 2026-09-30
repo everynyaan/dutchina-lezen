@@ -81,6 +81,8 @@ export interface DailyTextState {
 export interface MockSession {
 	id: string;
 	paperYear: number;
+	/** Set when this sitting is a practice set, not an official paper. */
+	setId?: string;
 	booklet: boolean;
 	startedAt: number;
 	endsAt: number;

@@ -24,6 +24,7 @@
 		textScores,
 		unansweredCount
 	} from '$lib/reading/mockSession';
+	import { setHistoryLabel } from '$lib/reading/sets';
 	import { QTYPE_LABEL } from '$lib/reading/annotations';
 	import type { QType } from '$lib/reading/types';
 	import AnswerFeedback from '$lib/components/reading/AnswerFeedback.svelte';
@@ -55,7 +56,8 @@
 		)
 	);
 	let choice = $derived(chooseMockPaper(ctx.state.readingFork, studied));
-	let session = $derived(ctx.state.readingFork.mockInProgress);
+	let sitting = $derived(ctx.state.readingFork.mockInProgress);
+	let session = $derived(sitting && !sitting.setId ? sitting : null);
 	let exam = $derived(session ? examForYear(session.paperYear) : examForYear(choice.year));
 	let passage = $derived(exam && session ? exam.passages[session.activeText] : undefined);
 	let bookYears = $derived(bookYearsFor(ctx.state.readingFork, ctx.state.lezen.questionResults));
@@ -66,7 +68,7 @@
 	);
 
 	$effect(() => {
-		setKuromiVisible(ctx.state.readingFork.mockInProgress === null);
+		setKuromiVisible(session === null);
 		return () => setKuromiVisible(true);
 	});
 
@@ -100,7 +102,7 @@
 	});
 
 	$effect(() => {
-		if (!ctx.state.readingFork.mockInProgress) return;
+		if (!session) return;
 		const timer = setInterval(() => {
 			now = Date.now();
 		}, 250);
@@ -109,11 +111,12 @@
 
 	$effect(() => {
 		const current = ctx.state.readingFork.mockInProgress;
-		if (!current || current.endsAt > now) return;
+		if (!current || current.setId || current.endsAt > now) return;
 		commit(true);
 	});
 
 	function start(booklet: boolean) {
+		if (ctx.state.readingFork.mockInProgress?.setId) return;
 		ctx.state.readingFork.mockInProgress = startMockSession(choice.year, booklet, Date.now());
 		openId = null;
 		confirmHandIn = false;
@@ -329,6 +332,9 @@
 			</section>
 		{/each}
 		<button type="button" class="btn ghost" onclick={() => (openId = null)}>Back</button>
+	{:else if sitting?.setId}
+		<p>A practice set is in progress.</p>
+		<a class="btn ghost" href={resolve('/sets')}>Back to practice sets</a>
 	{:else if exam}
 		<Card variant="soft-teal">
 			{#if choice.sealed}
@@ -361,10 +367,16 @@
 			<ul class="history">
 				{#each ctx.state.readingFork.mocks as mock (mock.id)}
 					<li>
-						<button type="button" onclick={() => (openId = mock.id)}>
-							{mock.paperYear}: {mock.correct}/{mock.total}
-							{mock.correct >= mock.passLine ? 'pass' : 'not yet'}
-						</button>
+						{#if mock.setId}
+							<a href="{resolve('/sets')}?result={mock.id}">
+								{setHistoryLabel(mock.setId)}: {mock.correct}/{mock.total}
+							</a>
+						{:else}
+							<button type="button" onclick={() => (openId = mock.id)}>
+								{mock.paperYear}: {mock.correct}/{mock.total}
+								{mock.correct >= mock.passLine ? 'pass' : 'not yet'}
+							</button>
+						{/if}
 					</li>
 				{/each}
 			</ul>
@@ -422,13 +434,19 @@
 	.flag,
 	.opt,
 	.btn,
-	.history button {
+	.history button,
+	.history a {
 		font: inherit;
 		font-weight: 700;
 		cursor: pointer;
 		border: 2px solid var(--color-ink);
 		background: #fff;
 		color: var(--color-ink);
+	}
+	.history a {
+		text-decoration: none;
+		padding: 0.35rem 0.7rem;
+		border-radius: 999px;
 	}
 	.switcher button,
 	.cell {

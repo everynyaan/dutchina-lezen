@@ -13,6 +13,7 @@
 		selectTrapItem,
 		type LurePrompt
 	} from '$lib/reading/drills';
+	import { originForItem } from '$lib/reading/sets';
 	import { dueTraps, gradeTrap, recordMiss } from '$lib/reading/traps';
 	import { QTYPE_LABEL, TRAP_EXPLANATION, TRAP_LABEL } from '$lib/reading/annotations';
 	import {
@@ -137,7 +138,7 @@
 		const locateHit = locatedP === null || answerP === null ? null : locatedP === answerP;
 		ctx.state.readingFork.attempts = appendAttempt(ctx.state.readingFork.attempts, {
 			itemId,
-			origin: itemId.startsWith('lezen-') ? 'official' : 'practice',
+			origin: originForItem(itemId),
 			passageSlug,
 			source,
 			at: today,

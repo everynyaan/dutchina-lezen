@@ -26,6 +26,7 @@ const SCREEN_PREFIXES: ReadonlyArray<readonly [string, string]> = [
 	['/playbook', 'the playbook'],
 	['/eval', "today's full training text"],
 	['/mock', 'a 110-minute mock'],
+	['/sets', 'practice sets'],
 	['/cards', 'trap drills'],
 	['/grammar', 'the pattern handbook'],
 	['/lezen', 'a full text']

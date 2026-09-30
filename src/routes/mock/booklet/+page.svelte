@@ -1,16 +1,26 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import { getGameContext } from '$lib/state/context';
 	import { examForYear } from '$lib/reading/mockSession';
+	import { examForSet, horizonLocked } from '$lib/reading/sets';
 	import { resolve } from '$app/paths';
 
+	const ctx = getGameContext();
 	let year = $derived(Number($page.url.searchParams.get('paper')));
-	let exam = $derived(examForYear(year));
+	let setId = $derived($page.url.searchParams.get('set'));
+	let exam = $derived(
+		setId ? examForSet(setId, !horizonLocked(ctx.state.readingFork.mocks)) : examForYear(year)
+	);
 </script>
 
 <div class="booklet">
 	{#if exam}
 		<p class="screen-only">
-			<a href={resolve('/mock')}>Back to the mock</a>
+			{#if setId}
+				<a href={resolve('/sets')}>Back to practice sets</a>
+			{:else}
+				<a href={resolve('/mock')}>Back to the mock</a>
+			{/if}
 			<button type="button" onclick={() => window.print()}>Print</button>
 		</p>
 		{#each exam.passages as passage, index (passage.slug)}
@@ -23,7 +33,11 @@
 		{/each}
 	{:else}
 		<p>That paper is not in the bank.</p>
-		<a href={resolve('/mock')}>Back to the mock</a>
+		{#if setId}
+			<a href={resolve('/sets')}>Back to practice sets</a>
+		{:else}
+			<a href={resolve('/mock')}>Back to the mock</a>
+		{/if}
 	{/if}
 </div>
 

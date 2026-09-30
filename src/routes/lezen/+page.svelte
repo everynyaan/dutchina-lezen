@@ -13,6 +13,7 @@
 	import { requestKuromiChat } from '$lib/kuromi/visibility.svelte';
 	import { bookYearsFor } from '$lib/reading/practiceBook';
 	import { recentOfficial, seenLabel, seenTimes } from '$lib/reading/texts';
+	import { originForItem } from '$lib/reading/sets';
 	import { recordMiss } from '$lib/reading/traps';
 	import PracticeBook from '$lib/components/reading/PracticeBook.svelte';
 	import QuestionBlock from '$lib/components/reading/QuestionBlock.svelte';
@@ -162,7 +163,7 @@
 		const defer = examStyle && !reviewing;
 		ctx.state.readingFork.attempts = appendAttempt(ctx.state.readingFork.attempts, {
 			itemId,
-			origin: itemId.startsWith('lezen-') ? 'official' : 'practice',
+			origin: originForItem(itemId),
 			passageSlug: slugNow,
 			source: 'texts',
 			at: today,

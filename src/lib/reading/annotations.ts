@@ -1,9 +1,15 @@
 import rawAnnotations from './annotations.json';
+import setAnnotations from './sets/annotations.json';
 import type { Evidence, ItemAnnotation, QType, TrapKind } from './types';
 
 export const ANNOTATIONS: ItemAnnotation[] = rawAnnotations as unknown as ItemAnnotation[];
+export const SET_ANNOTATIONS: ItemAnnotation[] = setAnnotations as unknown as ItemAnnotation[];
 
-const byId = new Map(ANNOTATIONS.map((annotation) => [annotation.id, annotation]));
+const byId = new Map<string, ItemAnnotation>();
+for (const annotation of ANNOTATIONS) byId.set(annotation.id, annotation);
+for (const annotation of SET_ANNOTATIONS) {
+	if (!byId.has(annotation.id)) byId.set(annotation.id, annotation);
+}
 
 export const QTYPE_LABEL: Record<QType, string> = {
 	'doel-tekst': 'Purpose of the text',

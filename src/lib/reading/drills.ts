@@ -3,6 +3,7 @@ import { getAnnotation } from './annotations';
 import { allPassages, dayIndex, findQuestion, type BankPassage } from './bank';
 import { itemAttemptedWithin } from './history';
 import { paraphraseFor, itemPassageSlug, practiceItemsFor } from './practice';
+import { eligibleSetPassages } from './sets';
 import { TRAP_KINDS, type QType, type ReadingForkState, type TrapKind } from './types';
 
 export interface LurePrompt {
@@ -18,7 +19,7 @@ export interface LurePrompt {
 interface TrapRow {
 	id: string;
 	slug: string;
-	origin: 'practice' | 'official';
+	origin: 'practice' | 'official' | 'fresh';
 }
 
 function reservedYears(fork: ReadingForkState): Set<number> {
@@ -27,7 +28,10 @@ function reservedYears(fork: ReadingForkState): Set<number> {
 
 function openPassages(fork: ReadingForkState): BankPassage[] {
 	const reserved = reservedYears(fork);
-	return allPassages().filter((passage) => !reserved.has(passage.year));
+	return [
+		...allPassages().filter((passage) => !reserved.has(passage.year)),
+		...eligibleSetPassages(fork)
+	];
 }
 
 export function itemSlug(id: string): string | null {
@@ -46,7 +50,13 @@ function trapRows(fork: ReadingForkState, trap: TrapKind): TrapRow[] {
 			const hit = annotation
 				? Object.values(annotation.distractors).some((row) => row.trap === trap)
 				: false;
-			if (hit) rows.push({ id: question.id, slug: passage.slug, origin: 'official' });
+			if (hit) {
+				rows.push({
+					id: question.id,
+					slug: passage.slug,
+					origin: passage.year === 0 ? 'fresh' : 'official'
+				});
+			}
 		}
 	}
 	return rows;
@@ -72,16 +82,19 @@ export function selectTrapItem(
 	const rows = trapRows(fork, trap);
 	const away = (row: TrapRow) => row.slug !== lastSlug;
 	const fresh = (days: number) => (row: TrapRow) => !itemAttemptedWithin(fork, row.id, days, date);
-	const tiers: ((row: TrapRow) => boolean)[] = [
-		(row) => row.origin === 'practice' && away(row) && fresh(14)(row),
-		(row) => row.origin === 'official' && away(row) && fresh(14)(row),
-		(row) => row.origin === 'practice' && away(row) && fresh(3)(row),
-		(row) => row.origin === 'official' && away(row) && fresh(3)(row),
-		(row) => row.origin === 'practice',
-		(row) => row.origin === 'official'
+	const tiers: { test: (row: TrapRow) => boolean; salt: number }[] = [
+		{ test: (row) => row.origin === 'practice' && away(row) && fresh(14)(row), salt: 1 },
+		{ test: (row) => row.origin === 'fresh' && away(row) && fresh(14)(row), salt: 12 },
+		{ test: (row) => row.origin === 'official' && away(row) && fresh(14)(row), salt: 2 },
+		{ test: (row) => row.origin === 'practice' && away(row) && fresh(3)(row), salt: 3 },
+		{ test: (row) => row.origin === 'fresh' && away(row) && fresh(3)(row), salt: 13 },
+		{ test: (row) => row.origin === 'official' && away(row) && fresh(3)(row), salt: 4 },
+		{ test: (row) => row.origin === 'practice', salt: 5 },
+		{ test: (row) => row.origin === 'fresh', salt: 14 },
+		{ test: (row) => row.origin === 'official', salt: 6 }
 	];
-	for (const [index, tier] of tiers.entries()) {
-		const id = pickRow(rows.filter(tier), date, index + 1);
+	for (const tier of tiers) {
+		const id = pickRow(rows.filter(tier.test), date, tier.salt);
 		if (id) return id;
 	}
 	return null;
@@ -182,13 +195,16 @@ export function selectQtypeItems(
 	count = 3
 ): string[] {
 	const practice: string[] = [];
+	const freshIds: string[] = [];
 	const official: string[] = [];
 	for (const passage of openPassages(fork)) {
 		for (const item of practiceItemsFor(passage.slug)) {
 			if (item.qtype === qtype) practice.push(item.id);
 		}
 		for (const question of passage.questions) {
-			if (getAnnotation(question.id)?.qtype === qtype) official.push(question.id);
+			if (getAnnotation(question.id)?.qtype !== qtype) continue;
+			if (passage.year === 0) freshIds.push(question.id);
+			else official.push(question.id);
 		}
 	}
 	const freshFirst = (ids: string[]) => {
@@ -196,6 +212,10 @@ export function selectQtypeItems(
 		return (fresh.length > 0 ? fresh : ids).slice().sort((a, b) => a.localeCompare(b));
 	};
 	const fromPractice = rotate(freshFirst(practice), date, 7).slice(0, count);
-	const fromOfficial = rotate(freshFirst(official), date, 8).slice(0, count - fromPractice.length);
-	return [...fromPractice, ...fromOfficial];
+	const fromFresh = rotate(freshFirst(freshIds), date, 11).slice(0, count - fromPractice.length);
+	const fromOfficial = rotate(freshFirst(official), date, 8).slice(
+		0,
+		count - fromPractice.length - fromFresh.length
+	);
+	return [...fromPractice, ...fromFresh, ...fromOfficial];
 }

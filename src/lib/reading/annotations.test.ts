@@ -4,6 +4,7 @@ import {
 	ANNOTATIONS,
 	QTYPE_LABEL,
 	QTYPE_MOVE,
+	SET_ANNOTATIONS,
 	TRAP_EXPLANATION,
 	TRAP_LABEL,
 	getAnnotation,
@@ -11,6 +12,7 @@ import {
 	resolveEvidence,
 	trapForPick
 } from './annotations';
+import { allSetQuestions, practiceSets } from './sets';
 import { QTYPES, TRAP_KINDS } from './types';
 
 const questions = LEZEN_EXAMS.flatMap((exam) =>
@@ -87,7 +89,53 @@ describe('official item annotations', () => {
 	it('has no em dashes in annotations or the English labels', () => {
 		const blob =
 			JSON.stringify(ANNOTATIONS) +
+			JSON.stringify(SET_ANNOTATIONS) +
 			JSON.stringify({ QTYPE_LABEL, QTYPE_MOVE, TRAP_LABEL, TRAP_EXPLANATION });
 		expect(blob.includes('\u2014')).toBe(false);
+	});
+});
+
+describe('practice set annotations', () => {
+	const questions = allSetQuestions();
+	const passages = practiceSets().flatMap((set) => set.passages);
+
+	it('covers all 105 set items and no official ids', () => {
+		expect(SET_ANNOTATIONS).toHaveLength(105);
+		expect(questions).toHaveLength(105);
+		expect(SET_ANNOTATIONS.map((annotation) => annotation.id).sort()).toEqual(
+			questions.map((row) => row.question.id).sort()
+		);
+		expect(SET_ANNOTATIONS.some((annotation) => annotation.id.startsWith('lezen-'))).toBe(false);
+		expect(getAnnotation('set1-1')?.qtype).toBeTruthy();
+		expect(getAnnotation('set3-35')?.qtype).toBeTruthy();
+	});
+
+	it('labels every wrong option and finds each quote in one paragraph', () => {
+		for (const annotation of SET_ANNOTATIONS) {
+			expect(QTYPES).toContain(annotation.qtype);
+			const row = questions.find((item) => item.question.id === annotation.id);
+			expect(row, annotation.id).toBeTruthy();
+			const expected = Object.keys(row!.question.options)
+				.filter((letter) => letter !== row!.question.answer)
+				.sort();
+			expect(Object.keys(annotation.distractors).sort(), annotation.id).toEqual(expected);
+			expect(annotation.distractors[row!.question.answer], annotation.id).toBeUndefined();
+			for (const distractor of Object.values(annotation.distractors)) {
+				expect(TRAP_KINDS).toContain(distractor.trap);
+				expect(distractor.why.length).toBeGreaterThan(0);
+			}
+		}
+		for (const passage of passages) {
+			for (const paragraph of paragraphsOf(passage.text)) {
+				expect(paragraph.length, passage.slug).toBeGreaterThanOrEqual(3);
+				expect(words(paragraph), passage.slug).toBeLessThanOrEqual(250);
+			}
+			for (const question of passage.questions) {
+				const annotation = getAnnotation(question.id);
+				expect(annotation, question.id).toBeTruthy();
+				const resolved = resolveEvidence(passage.text, annotation!.evidence);
+				expect(resolved, question.id).toEqual(annotation!.evidence.map((item) => item.p));
+			}
+		}
 	});
 });

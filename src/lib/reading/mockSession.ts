@@ -3,6 +3,7 @@ import { LEZEN_EXAMS } from '$lib/lezen/LEZEN_CONTENT';
 import type { LezenExam, LezenQuestion } from '$lib/lezen/types';
 import { appendAttempt } from './daily';
 import { MOCK_MINUTES, passLineFor } from './mock';
+import { examForSet, horizonLocked, originForItem, SET_TARGET } from './sets';
 import { recordMiss } from './traps';
 import type { MockResult, MockSession, QType, ReadingForkState } from './types';
 
@@ -76,6 +77,29 @@ export function examForYear(year: number): LezenExam | null {
 	return LEZEN_EXAMS.find((exam) => exam.year === year) ?? null;
 }
 
+export function startSetSession(
+	setId: string,
+	booklet: boolean,
+	horizonOpen: boolean,
+	now = Date.now()
+): MockSession | null {
+	const exam = examForSet(setId, horizonOpen);
+	if (!exam) return null;
+	return {
+		id: `set-${setId}-${now}`,
+		paperYear: 0,
+		setId,
+		booklet,
+		startedAt: now,
+		endsAt: now + MOCK_MS,
+		answers: {},
+		flagged: {},
+		textMs: Array.from({ length: exam.passages.length }, () => 0),
+		activeText: 0,
+		activeSince: now
+	};
+}
+
 export function startMockSession(
 	paperYear: number,
 	booklet: boolean,
@@ -143,6 +167,7 @@ export function handInMock(
 	today: string,
 	expired: boolean
 ): ReadingForkState {
+	if (session.setId) return handInPracticeSet(fork, session, now, today, expired);
 	const accrued = accrueText(session, now);
 	const exam = examForYear(accrued.paperYear);
 	if (!exam || exam.year !== accrued.paperYear) return fork;
@@ -209,6 +234,73 @@ export function handInMock(
 			...next.settings,
 			reservedPapers: releasePaper(next.settings.reservedPapers, exam.year)
 		}
+	};
+}
+
+function handInPracticeSet(
+	fork: ReadingForkState,
+	session: MockSession,
+	now: number,
+	today: string,
+	expired: boolean
+): ReadingForkState {
+	const setId = session.setId;
+	if (!setId) return fork;
+	const accrued = accrueText(session, now);
+	const exam = examForSet(setId, !horizonLocked(fork.mocks));
+	if (!exam) return fork;
+	let next: ReadingForkState = { ...fork, attempts: fork.attempts };
+	let attempts = fork.attempts;
+	const byQtype: Partial<Record<QType, { c: number; t: number }>> = {};
+	let correct = 0;
+	let total = 0;
+	for (const row of questionsOf(exam)) {
+		total += 1;
+		const picked = accrued.answers[row.question.id] ?? '';
+		const hit = picked !== '' && picked === row.question.answer;
+		if (hit) correct += 1;
+		const qtype = getAnnotation(row.question.id)?.qtype;
+		if (qtype) {
+			const prev = byQtype[qtype] ?? { c: 0, t: 0 };
+			byQtype[qtype] = { c: prev.c + (hit ? 1 : 0), t: prev.t + 1 };
+		}
+		attempts = appendAttempt(attempts, {
+			itemId: row.question.id,
+			origin: originForItem(row.question.id),
+			passageSlug: row.passageSlug,
+			source: 'mock',
+			at: today,
+			picked,
+			correct: hit,
+			locateP: null,
+			locateHit: null,
+			ms: 0,
+			mockId: accrued.id
+		});
+		if (picked && !hit) {
+			next = recordMiss({ ...next, attempts }, row.question.id, picked, today);
+			attempts = next.attempts;
+		}
+	}
+	const result: MockResult = {
+		id: accrued.id,
+		paperYear: 0,
+		setId,
+		finishedAt: today,
+		expired,
+		correct,
+		total,
+		passLine: SET_TARGET,
+		byQtype,
+		textMs: accrued.textMs,
+		answers: { ...accrued.answers },
+		flagged: { ...accrued.flagged }
+	};
+	return {
+		...next,
+		attempts,
+		mockInProgress: null,
+		mocks: [...next.mocks, result]
 	};
 }
 

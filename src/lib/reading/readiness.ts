@@ -3,7 +3,10 @@ import { daysBetween } from './bank';
 import { accuracyByQtype } from './history';
 import { examForYear } from './mockSession';
 import { passLineFor } from './mock';
+import { setHistoryLabel, SET_MIX_NOTE, unseenSetAccuracy } from './sets';
 import { QTYPES, type QType, type ReadingForkState, type TrapKind } from './types';
+
+export { SET_MIX_NOTE };
 
 export const PLAN_LINE =
 	'Baseline official mock by 2026-10-12. Practice set 2 in exam mode in the week of 2026-10-12. Practice set 3 in the week of 2026-10-19. A second official mock, or practice set 1, in the week of 2026-10-26. Final official mock from 2026-11-02 to 2026-11-05. Light review only from 2026-11-09.';
@@ -40,9 +43,9 @@ export interface LastMockView {
 export function lastMockView(
 	fork: Pick<ForkSlice, 'mocks' | 'lastMockScore'>
 ): LastMockView | null {
-	const latest = [...fork.mocks].sort(
-		(a, b) => b.finishedAt.localeCompare(a.finishedAt) || b.id.localeCompare(a.id)
-	)[0];
+	const latest = [...fork.mocks]
+		.filter((mock) => !mock.setId && mock.paperYear !== 0)
+		.sort((a, b) => b.finishedAt.localeCompare(a.finishedAt) || b.id.localeCompare(a.id))[0];
 	if (latest) {
 		return {
 			year: latest.paperYear,
@@ -156,6 +159,23 @@ export function openTraps(fork: Pick<ReadingForkState, 'traps'>): TrapKind[] {
 		.slice()
 		.sort((a, b) => b.misses - a.misses || a.trap.localeCompare(b.trap))
 		.map((card) => card.trap);
+}
+
+export function practiceSetLine(fork: Pick<ReadingForkState, 'mocks'>): string {
+	const rows = fork.mocks.filter((mock) => mock.setId);
+	if (rows.length === 0) return 'No practice set yet.';
+	return rows
+		.map((mock) => {
+			const name = setHistoryLabel(mock.setId ?? '');
+			return `${name}: ${mock.correct} of ${mock.total} on ${mock.finishedAt}. Practice set, unofficial.`;
+		})
+		.join(' ');
+}
+
+export function unseenSetLine(fork: Pick<ReadingForkState, 'attempts'>): string {
+	const stats = unseenSetAccuracy(fork);
+	if (!stats) return 'Unseen texts: no first attempts yet.';
+	return `Unseen texts: ${stats.correct} of ${stats.total}.`;
 }
 
 export function trapLine(traps: readonly TrapKind[]): string {
