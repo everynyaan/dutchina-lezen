@@ -108,7 +108,7 @@ export interface MockResult {
 	flagged: Record<string, boolean>;
 }
 
-/** lookupsPerText default 5. The notebook that spends them is Unit 15. */
+/** lookupsPerText default 5. The notebook spends them. The budget is a nudge, never a lock. */
 export interface ReadingSettings {
 	examDate: string;
 	reservedPapers: number[];
@@ -134,6 +134,44 @@ export const EMPTY_READING_SETTINGS: ReadingSettings = {
 	lookupsPerText: LOOKUPS_PER_TEXT
 };
 
+export type NoteKind = 'word' | 'sentence' | 'trap';
+export type SentenceNoteType = 'signal' | 'rule' | 'opinion' | 'hard';
+
+export interface NotebookEntry {
+	id: string;
+	kind: NoteKind;
+	createdAt: string;
+	passageSlug: string;
+	p: number;
+	quote: string;
+	lemma?: string;
+	surface?: string;
+	sentenceType?: SentenceNoteType;
+	trap?: TrapKind;
+	itemId?: string;
+	picked?: string;
+	englishRevealed: boolean;
+	guessed: 'knew' | 'unsure' | null;
+	guessText?: string;
+	note: string;
+	tags: string[];
+	starred: boolean;
+	metSince: number;
+	lastMetAt: string | null;
+	/** Passages already counted in metSince. Keeps a reload from counting twice. */
+	metPassages?: string[];
+}
+
+export interface NotebookState {
+	entries: NotebookEntry[];
+	/** passageSlug -> lookups used */
+	lookups: Record<string, number>;
+}
+
+export const EMPTY_NOTEBOOK: NotebookState = { entries: [], lookups: {} };
+
+export const NOTE_TAGS = ['work', 'school', 'health', 'rules', 'money'] as const;
+
 export interface ReadingForkState {
 	eval: DailyTextState;
 	showUpStreak: number;
@@ -147,6 +185,7 @@ export interface ReadingForkState {
 	mockInProgress: MockSession | null;
 	mocks: MockResult[];
 	settings: ReadingSettings;
+	notebook: NotebookState;
 }
 
 export const EMPTY_READING_FORK: ReadingForkState = {
@@ -161,7 +200,8 @@ export const EMPTY_READING_FORK: ReadingForkState = {
 	traps: [],
 	mockInProgress: null,
 	mocks: [],
-	settings: { ...EMPTY_READING_SETTINGS, reservedPapers: [2023] }
+	settings: { ...EMPTY_READING_SETTINGS, reservedPapers: [2023] },
+	notebook: { entries: [], lookups: {} }
 };
 
 /** p is a hint. Resolve the paragraph by the quote. */

@@ -6,7 +6,9 @@
 	import { appendAttempt, dailyLoopItem } from '$lib/reading/daily';
 	import { BOOKLET_PASS_LABEL } from '$lib/reading/mock';
 	import { paragraphMapFor, practiceItemsFor } from '$lib/reading/practice';
+	import { page } from '$app/stores';
 	import { textChatFromLoop } from '$lib/kuromi/coach';
+	import { chatNotebook, notebookOf } from '$lib/reading/notebook';
 	import { setTextChat } from '$lib/kuromi/focus';
 	import { reflexLine } from '$lib/kuromi/lines';
 	import { isKuromiLive } from '$lib/kuromi/live';
@@ -76,10 +78,17 @@
 				items: rows,
 				answeredIds: new Set(Object.keys(answers)),
 				activeId,
-				activePhase: phase
+				activePhase: phase,
+				notebook: chatNotebook(notebookOf(ctx.state.readingFork).entries, passage.slug)
 			})
 		);
 		return () => setTextChat(null);
+	});
+
+	$effect(() => {
+		const wanted = $page.url.searchParams.get('passage');
+		if (!wanted || wanted === slug) return;
+		openPassage(wanted);
 	});
 
 	function timesFor(passageSlug: string): string {

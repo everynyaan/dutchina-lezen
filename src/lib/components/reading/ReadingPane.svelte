@@ -7,12 +7,20 @@
 		markQuotes,
 		type TextRun
 	} from '$lib/reading/loop';
+	import { paintWords, type WordMark } from '$lib/reading/notebook';
 	import type { Evidence } from '$lib/reading/types';
 
 	interface PassageView {
 		name: string;
 		intro: string;
 		text: string;
+		slug?: string;
+	}
+
+	interface TextSelection {
+		text: string;
+		p: number;
+		sentence: boolean;
 	}
 
 	interface Props {
@@ -22,6 +30,8 @@
 		onLocate?: (p: number) => void;
 		locatedP?: number | null;
 		scrollToEvidence?: boolean;
+		marks?: WordMark[];
+		onSelect?: (selection: TextSelection) => void;
 	}
 
 	let {
@@ -30,7 +40,9 @@
 		locateMode = false,
 		onLocate,
 		locatedP = null,
-		scrollToEvidence = false
+		scrollToEvidence = false,
+		marks = [],
+		onSelect
 	}: Props = $props();
 
 	let root = $state<HTMLElement | null>(null);
@@ -41,11 +53,44 @@
 		return markQuotes(text, quotes);
 	}
 
+	function wholeSentence(text: string, paragraph: string): boolean {
+		const trimmed = text.trim();
+		if (trimmed.split(/\s+/).length >= 6 && /[.!?]$/.test(trimmed)) return true;
+		return paragraph
+			.split(/(?<=[.!?])\s+/)
+			.some((sentence) => sentence.replace(/\s+/g, ' ').trim() === trimmed);
+	}
+
+	function onMouseUp() {
+		if (locateMode || !onSelect) return;
+		const sel = window.getSelection();
+		if (!sel || sel.isCollapsed) return;
+		const text = sel.toString().replace(/\s+/g, ' ').trim();
+		if (!text || text.length > 280) return;
+		const node = sel.anchorNode;
+		const el = node instanceof Element ? node : node?.parentElement;
+		const block = el?.closest('[data-p]');
+		if (!block || !root?.contains(block)) return;
+		const p = Number(block.getAttribute('data-p'));
+		if (!Number.isInteger(p)) return;
+		onSelect({ text, p, sentence: wholeSentence(text, paragraphs[p] ?? '') });
+	}
+
 	function onKey(event: KeyboardEvent, index: number) {
 		if (event.key !== 'Enter' && event.key !== ' ') return;
 		event.preventDefault();
 		onLocate?.(index);
 	}
+
+	$effect(() => {
+		const el = root;
+		if (!el || !onSelect) return;
+		passage.text;
+		locateMode;
+		const onUp = () => onMouseUp();
+		el.addEventListener('mouseup', onUp);
+		return () => el.removeEventListener('mouseup', onUp);
+	});
 
 	$effect(() => {
 		if (!scrollToEvidence || !root) return;
@@ -59,7 +104,17 @@
 
 {#snippet marked(text: string)}
 	{#each runs(text) as run, runIndex (runIndex)}
-		{#if run.mark}<mark>{run.text}</mark>{:else}{run.text}{/if}
+		{#if run.mark}<mark>{@render words(run.text)}</mark>{:else}{@render words(run.text)}{/if}
+	{/each}
+{/snippet}
+
+{#snippet words(text: string)}
+	{#each paintWords(text, marks) as piece, pieceIndex (pieceIndex)}
+		{#if piece.tone}
+			<span class="noted" class:faint={piece.tone === 'faint'} title={piece.note || undefined}
+				>{piece.text}</span
+			>
+		{:else}{piece.text}{/if}
 	{/each}
 {/snippet}
 
@@ -161,5 +216,15 @@
 		background: color-mix(in srgb, var(--color-teal) 45%, white);
 		color: inherit;
 		padding: 0 2px;
+	}
+	.noted {
+		text-decoration: underline;
+		text-decoration-thickness: 2px;
+		text-underline-offset: 3px;
+		text-decoration-color: color-mix(in srgb, var(--color-rose-deep) 70%, white);
+	}
+	.noted.faint {
+		text-decoration-color: color-mix(in srgb, var(--color-muted-ink) 55%, white);
+		text-decoration-thickness: 1px;
 	}
 </style>

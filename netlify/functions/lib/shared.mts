@@ -316,7 +316,7 @@ export const KUROMI_TOOLS = [
 		function: {
 			name: 'add_notebook_entry',
 			description:
-				'Save a word or sentence Domi is discussing. kind is word or sentence. quote is the text she marked. note is her own line. The notebook is not stored in this build: if the app rejects the call, say so and do not pretend it was kept.',
+				'Save a word or sentence Domi is discussing. kind is word or sentence. quote is the text she marked. note is her own line. The app stores the entry when this call is applied. If the app rejects it, say so and do not pretend it was kept.',
 			strict: true,
 			parameters: {
 				type: 'object',

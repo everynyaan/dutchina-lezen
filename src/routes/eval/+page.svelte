@@ -7,6 +7,7 @@
 	import { QTYPE_LABEL, TRAP_LABEL } from '$lib/reading/annotations';
 	import { paragraphMapFor, paraphraseById } from '$lib/reading/practice';
 	import { textChatFromLoop } from '$lib/kuromi/coach';
+	import { chatNotebook, notebookOf } from '$lib/reading/notebook';
 	import { setTextChat } from '$lib/kuromi/focus';
 	import { originForItem } from '$lib/reading/sets';
 	import { recordMiss } from '$lib/reading/traps';
@@ -73,7 +74,8 @@
 				items: rows,
 				answeredIds: new Set(Object.keys(evalState.answers)),
 				activeId,
-				activePhase: phase
+				activePhase: phase,
+				notebook: chatNotebook(notebookOf(ctx.state.readingFork).entries, passage.slug)
 			})
 		);
 		return () => setTextChat(null);

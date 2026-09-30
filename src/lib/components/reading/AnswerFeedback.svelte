@@ -1,7 +1,10 @@
 <script lang="ts">
 	import { TRAP_LABEL } from '$lib/reading/annotations';
+	import { findQuestion } from '$lib/reading/bank';
 	import { temptingLure, type LoopItem, type ResolvedLoopItem } from '$lib/reading/loop';
+	import { addTrapEntry, notebookOf, withNotebook } from '$lib/reading/notebook';
 	import { reflexLine } from '$lib/kuromi/lines';
+	import { getGameContext } from '$lib/state/context';
 
 	interface Props {
 		item: LoopItem;
@@ -20,6 +23,26 @@
 	let answerAt = $derived(typeof answerP === 'number' ? answerP : null);
 	let samePlace = $derived(looked !== null && answerAt !== null && looked === answerAt);
 	let missAsk = reflexLine('miss-ask');
+	const ctx = getGameContext();
+
+	function saveTrap() {
+		if (!ctx || correct || !pickedTrap) return;
+		const found = findQuestion(item.id);
+		const evidence = resolved.evidence[0];
+		ctx.state.readingFork = withNotebook(
+			ctx.state.readingFork,
+			addTrapEntry(notebookOf(ctx.state.readingFork), {
+				question: item.question,
+				passageSlug: found?.passage.slug ?? '',
+				p: evidence?.p ?? 0,
+				evidence: evidence?.quote ?? '',
+				trap: pickedTrap.trap,
+				itemId: item.id,
+				picked,
+				why: pickedTrap.why
+			})
+		);
+	}
 </script>
 
 <div class="feedback">
@@ -33,6 +56,9 @@
 		{/if}
 		{#if pickedTrap}
 			<p>{TRAP_LABEL[pickedTrap.trap]}. {pickedTrap.why}</p>
+			{#if ctx}
+				<button type="button" class="add" onclick={saveTrap}>Add to notebook</button>
+			{/if}
 		{/if}
 		<p>{resolved.why}</p>
 	{/if}
@@ -62,5 +88,10 @@
 	}
 	p {
 		margin: 0;
+	}
+	.add {
+		font: inherit;
+		cursor: pointer;
+		align-self: flex-start;
 	}
 </style>

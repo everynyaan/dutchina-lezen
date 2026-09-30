@@ -34,9 +34,11 @@
 	} from '$lib/reading/sets';
 	import { recordMiss } from '$lib/reading/traps';
 	import { textChatFromLoop } from '$lib/kuromi/coach';
+	import { chatNotebook, notebookOf } from '$lib/reading/notebook';
 	import { setMockDebrief, setTextChat } from '$lib/kuromi/focus';
 	import { setKuromiVisible } from '$lib/kuromi/visibility.svelte';
 	import AnswerFeedback from '$lib/components/reading/AnswerFeedback.svelte';
+	import DebriefNotes from '$lib/components/reading/DebriefNotes.svelte';
 	import PracticeBook from '$lib/components/reading/PracticeBook.svelte';
 	import QuestionBlock from '$lib/components/reading/QuestionBlock.svelte';
 	import ReadingLoop from '$lib/components/reading/ReadingLoop.svelte';
@@ -134,7 +136,11 @@
 				items: [{ id: practiceId, item: practiceItem }],
 				answeredIds: phase === 'feedback' ? new Set([practiceId]) : new Set(),
 				activeId: practiceId,
-				activePhase: phase
+				activePhase: phase,
+				notebook: chatNotebook(
+					notebookOf(ctx.state.readingFork).entries,
+					practicePassage.slug
+				)
 			})
 		);
 		return () => setTextChat(null);
@@ -368,7 +374,7 @@
 			<p class="note">Booklet mode. The texts are on paper. The screen is only questions.</p>
 			{@render questions(activePassage)}
 		{:else}
-			<ReadingLoop passage={activePassage}>
+			<ReadingLoop passage={activePassage} hideNotebook={true}>
 				{#snippet question()}
 					{@render questions(activePassage)}
 				{/snippet}
@@ -443,6 +449,7 @@
 		</ul>
 		{@const flagsNow = flagSplit(resultExam, result)}
 		<p>Flagged and right: {flagsNow.right}. Flagged and wrong: {flagsNow.wrong}.</p>
+		<DebriefNotes slugs={resultExam.passages.map((row) => row.slug)} />
 		{#each textScores(resultExam, result.answers) as row, textIndex (row.slug)}
 			<section class="text-score">
 				<h2>Text {textIndex + 1}. {row.name}</h2>

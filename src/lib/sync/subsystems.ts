@@ -1218,8 +1218,27 @@ function mergeReadingFork(
 		traps: local.traps ?? [],
 		mockInProgress: local.mockInProgress ?? null,
 		mocks: local.mocks ?? [],
-		settings: local.settings ?? structuredClone(EMPTY_READING_FORK.settings)
+		settings: local.settings ?? structuredClone(EMPTY_READING_FORK.settings),
+		notebook: mergeNotebook(local.notebook, remote.notebook)
 	};
+}
+
+function mergeNotebook(
+	local: ReadingForkState['notebook'] | undefined,
+	remote: ReadingForkState['notebook'] | undefined
+): ReadingForkState['notebook'] {
+	const byId = new Map<string, ReadingForkState['notebook']['entries'][number]>();
+	for (const entry of [...(remote?.entries ?? []), ...(local?.entries ?? [])]) {
+		byId.set(entry.id, entry);
+	}
+	const lookups: Record<string, number> = {};
+	for (const source of [remote?.lookups, local?.lookups]) {
+		if (!source) continue;
+		for (const [slug, used] of Object.entries(source)) {
+			lookups[slug] = Math.max(lookups[slug] ?? 0, used);
+		}
+	}
+	return { entries: [...byId.values()], lookups };
 }
 
 function mergeMisses(local: Miss[], remote: Miss[]): Miss[] {

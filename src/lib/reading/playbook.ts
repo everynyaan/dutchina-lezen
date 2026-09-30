@@ -76,6 +76,25 @@ const SIGNAL_GROUPS: { name: string; words: string[] }[] = [
 	{ name: 'Limits', words: ['niet', 'geen', 'nooit', 'alleen', 'pas', 'al'] }
 ];
 
+const SIGNAL_FUNCTION: Record<string, string> = {
+	Reasons: 'Gives a reason.',
+	Contrast: 'Gives a contrast.',
+	Addition: 'Adds a point.',
+	Conditions: 'Gives a condition.',
+	Limits: 'Limits the claim.'
+};
+
+/** One-line playbook function for a signal word, when the playbook lists it. */
+export function signalFunction(word: string): string | null {
+	const key = word.toLowerCase();
+	if (key === 'ondanks') return 'Gives a contrast.';
+	if (key === 'namelijk') return 'Gives an explanation.';
+	for (const group of SIGNAL_GROUPS) {
+		if (group.words.includes(key)) return SIGNAL_FUNCTION[group.name] ?? null;
+	}
+	return null;
+}
+
 interface OfficialRow {
 	year: number;
 	passage: LezenPassage;

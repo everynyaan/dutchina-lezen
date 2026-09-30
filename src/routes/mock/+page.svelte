@@ -28,6 +28,7 @@
 	import { QTYPE_LABEL } from '$lib/reading/annotations';
 	import type { QType } from '$lib/reading/types';
 	import AnswerFeedback from '$lib/components/reading/AnswerFeedback.svelte';
+	import DebriefNotes from '$lib/components/reading/DebriefNotes.svelte';
 	import PracticeBook from '$lib/components/reading/PracticeBook.svelte';
 	import ReadingLoop from '$lib/components/reading/ReadingLoop.svelte';
 	import { bookYearsFor } from '$lib/reading/practiceBook';
@@ -261,7 +262,7 @@
 			<p class="note">Booklet mode. The texts are on paper. The screen is only questions.</p>
 			{@render questions(activePassage)}
 		{:else}
-			<ReadingLoop passage={activePassage}>
+			<ReadingLoop passage={activePassage} hideNotebook={true}>
 				{#snippet question()}
 					{@render questions(activePassage)}
 				{/snippet}
@@ -303,6 +304,7 @@
 		</ul>
 		{@const flags = flagSplit(resultExam, result)}
 		<p>Flagged and right: {flags.right}. Flagged and wrong: {flags.wrong}.</p>
+		<DebriefNotes slugs={resultExam.passages.map((row) => row.slug)} />
 		{#each textScores(resultExam, result.answers) as row, index (row.slug)}
 			<section class="text-score">
 				<h2>Text {index + 1}. {row.name}</h2>

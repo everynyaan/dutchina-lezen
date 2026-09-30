@@ -234,6 +234,18 @@ describe('reading loop components', () => {
 		expect(document.body.textContent).toContain('Use a wider window.');
 		expect(document.body.textContent).toContain('Notebook');
 		expect(document.body.textContent).toContain('Notes for this text land here.');
+		expect(document.body.textContent).toContain('Notebook');
 		expect(document.body.textContent).toContain('Where does she pay?');
+	});
+
+	it('hides the notebook rail in exam mode', async () => {
+		mounted.push(
+			mount(ReadingLoopHost, {
+				target: document.body,
+				props: { passage, hideNotebook: true }
+			})
+		);
+		await tick();
+		expect(document.querySelector('[aria-label="Notebook"]')).toBeNull();
 	});
 });

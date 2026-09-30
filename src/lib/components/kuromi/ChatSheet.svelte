@@ -5,6 +5,7 @@
 	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
 	import { resolve } from '$app/paths';
+	import { resolvePath } from '$lib/paths';
 	import { X, Maximize2, History } from 'lucide-svelte';
 	import { getGameContext } from '$lib/state/context';
 	import { getTodayDate } from '$lib/match/engine';
@@ -741,7 +742,7 @@
 							/>
 						{/if}
 						{#each announcementsByIndex[i] ?? [] as ann (ann.href)}
-							<a class="page-announce-link" href={resolve(ann.href)}>{ann.text}</a>
+							<a class="page-announce-link" href={resolvePath(ann.href)}>{ann.text}</a>
 						{/each}
 					</Bubble>
 				{:else}

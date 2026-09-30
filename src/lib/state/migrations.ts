@@ -544,5 +544,15 @@ export function migrate(raw: unknown): State {
 		current = migration(current);
 	}
 
+	if (current?.readingFork && !current.readingFork.notebook) {
+		current = {
+			...current,
+			readingFork: {
+				...current.readingFork,
+				notebook: { entries: [], lookups: {} }
+			}
+		};
+	}
+
 	return current as State;
 }

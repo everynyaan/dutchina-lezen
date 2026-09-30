@@ -186,8 +186,12 @@ describe('coach tools', () => {
 		expect(takePendingDrill()).toBe('/cards?qtype=detail');
 	});
 
-	it('rejects a notebook save because the notebook is not in this build', () => {
-		const host = { getState: () => createDefaultState() } as StewardHost;
+	it('saves a notebook entry on the reading fork', () => {
+		const state = createDefaultState();
+		const host = {
+			getState: () => state,
+			nowISO: () => '2026-09-30T12:00:00.000Z'
+		} as StewardHost;
 		const { results } = executeIntents(
 			[
 				{
@@ -200,9 +204,34 @@ describe('coach tools', () => {
 		);
 		expect(results[0]).toEqual({
 			id: 'note-1',
-			outcome: 'rejected',
-			detail: 'Notebook is not stored in this build.'
+			outcome: 'applied',
+			detail: 'Saved the notebook entry.'
 		});
+		expect(state.readingFork.notebook.entries[0]).toMatchObject({
+			kind: 'word',
+			quote: 'mits',
+			note: 'condition'
+		});
+	});
+
+	it('rejects an empty notebook quote', () => {
+		const state = createDefaultState();
+		const host = {
+			getState: () => state,
+			nowISO: () => '2026-09-30T12:00:00.000Z'
+		} as StewardHost;
+		const { results } = executeIntents(
+			[
+				{
+					id: 'note-2',
+					name: 'add_notebook_entry',
+					arguments: JSON.stringify({ kind: 'word', quote: ' ', note: 'condition' })
+				}
+			],
+			host
+		);
+		expect(results[0]).toMatchObject({ id: 'note-2', outcome: 'rejected' });
+		expect(state.readingFork.notebook.entries).toEqual([]);
 	});
 });
 

@@ -428,7 +428,7 @@ export function executeIntents(
 				pendingToolCalls.push(call);
 				continue;
 			}
-			results.push(executeCoachCall(call, coachParsed));
+			results.push(executeCoachCall(call, coachParsed, host));
 			pendingToolCalls.push(call);
 			continue;
 		}

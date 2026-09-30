@@ -631,6 +631,7 @@
 		character?: boolean;
 	}[] = [
 		{ href: '/lezen', label: 'Texts' },
+		{ href: '/notebook', label: 'Notebook' },
 		{ href: '/sets', label: 'Practice sets' },
 		{ href: '/grammar', label: 'Patterns' },
 		{ href: '/kuromi/shelf', label: 'Kuromi', character: true }

@@ -25,6 +25,7 @@
 	} from '$lib/reading/types';
 	import { paragraphMapFor } from '$lib/reading/practice';
 	import { textChatFromLoop } from '$lib/kuromi/coach';
+	import { chatNotebook, notebookOf } from '$lib/reading/notebook';
 	import { setTextChat } from '$lib/kuromi/focus';
 	import PracticeBook from '$lib/components/reading/PracticeBook.svelte';
 	import { bookYearsFor } from '$lib/reading/practiceBook';
@@ -116,7 +117,8 @@
 				items: [{ id: activeId, item }],
 				answeredIds: phase === 'feedback' ? new Set([activeId]) : new Set(),
 				activeId,
-				activePhase: phase
+				activePhase: phase,
+				notebook: chatNotebook(notebookOf(ctx.state.readingFork).entries, passage.slug)
 			})
 		);
 		return () => setTextChat(null);

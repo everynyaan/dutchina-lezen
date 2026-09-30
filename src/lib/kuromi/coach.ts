@@ -47,8 +47,8 @@ export type CoachPacket = LocatePacket | OptionsPacket | FeedbackPacket;
 export interface TextChatPacket {
 	passageText: string;
 	paragraphMap: { role: string; summary: string }[];
-	/** Unit 15 owns notebook entries. This build always sends an empty list. */
-	notebook: [];
+	/** Learner notes for this text. Not keys, evidence, or trap labels of unanswered items. */
+	notebook: { kind: string; quote: string; note: string; lemma?: string; surface?: string }[];
 	items: CoachPacket[];
 }
 
@@ -148,11 +148,12 @@ export function textChatFromLoop(input: {
 	answeredIds: ReadonlySet<string>;
 	activeId: string | null;
 	activePhase: LoopPhase;
+	notebook?: TextChatPacket['notebook'];
 }): TextChatPacket {
 	return {
 		passageText: input.passageText,
 		paragraphMap: mapRoles(input.paragraphMap),
-		notebook: [],
+		notebook: input.notebook ?? [],
 		items: input.items.map((row) =>
 			buildCoachContext(
 				phaseForItem(row.id, input.answeredIds, input.activeId, input.activePhase),

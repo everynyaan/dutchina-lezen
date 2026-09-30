@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
 	import type { Pathname } from '$app/types';
+	import { resolvePath } from '$lib/paths';
 	import Character from '$lib/components/art/Character.svelte';
 	import { getGameContext } from '$lib/state/context';
 	import { currentGateFromState, getWordsUpToGate } from '$lib/gates/gates';
@@ -73,7 +73,7 @@
 	{#each cards as card (card.href)}
 		<a
 			class="card r-card offset-card edge-hair card-{card.identity}"
-			href={resolve(card.href)}
+			href={resolvePath(card.href)}
 			aria-label={card.aria}
 		>
 			<span class="label">{card.label}</span>
