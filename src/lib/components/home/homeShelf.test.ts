@@ -33,6 +33,13 @@ describe('home page — gates then collection', () => {
 		expect(pageSrc).toContain('The published papers needed 24 of 35. Aim for 25 or more.');
 		expect(pageSrc).toContain('Predictive mock. Once.');
 		expect(pageSrc).toContain('Training is 2024 and 2025.');
+		expect(pageSrc).toContain('Days to the exam');
+		expect(pageSrc).toContain('Practice this');
+		expect(pageSrc).toContain('Found the right paragraph');
+		expect(pageSrc).toContain('Open trap cards');
+		expect(pageSrc).toContain("resolve('/lezen')");
+		expect(pageSrc).toContain('PLAN_LINE');
+		expect(pageSrc).not.toContain('PracticeBook');
 		expect(pageSrc).not.toContain('<GatePath {cards} />');
 		expect(pageSrc).not.toContain('<HomeShelf />');
 		expect(pageSrc).not.toContain('HomeRail');

@@ -10,6 +10,18 @@
 	import { getTodayDate } from '$lib/match/engine';
 	import { evalResults, unseenMisses } from '$lib/reading/eval';
 	import { predictiveAvailable, yearStudied } from '$lib/reading/mock';
+	import {
+		PLAN_LINE,
+		examCountdown,
+		lastMockLine,
+		lastMockView,
+		locateLine,
+		locateWindow,
+		openTraps,
+		qtypeLine,
+		qtypeReadiness,
+		trapLine
+	} from '$lib/reading/readiness';
 
 	const ctx = getGameContext();
 	let settingsOpen = $state(false);
@@ -44,6 +56,11 @@
 			)
 		)
 	);
+	let examLine = $derived(examCountdown(ctx.state.readingFork.settings.examDate, today));
+	let mockLine = $derived(lastMockLine(lastMockView(ctx.state.readingFork)));
+	let typeRows = $derived(qtypeReadiness(ctx.state.readingFork));
+	let locatedLine = $derived(locateLine(locateWindow(ctx.state.readingFork, 50)));
+	let trapsLine = $derived(trapLine(openTraps(ctx.state.readingFork)));
 
 	interface BeforeInstallPromptEvent extends Event {
 		prompt: () => Promise<void>;
@@ -145,12 +162,32 @@
 		</p>
 	</Card>
 
+	<section class="readiness">
+		<h2>Days to the exam</h2>
+		<p>{examLine}</p>
+		<h2>Last mock</h2>
+		<p>{mockLine}</p>
+		<h2>Question types</h2>
+		<ul class="types">
+			{#each typeRows as row (row.qtype)}
+				<li class="type-row">
+					<span>{qtypeLine(row)}</span>
+					<a href="{resolve('/cards')}?qtype={row.qtype}">Practice this</a>
+				</li>
+			{/each}
+		</ul>
+		<h2>Found the right paragraph</h2>
+		<p>{locatedLine}</p>
+		<h2>Open trap cards</h2>
+		<p>{trapsLine}</p>
+	</section>
+
 	<a class="hub-card" href={resolve('/eval')} onclick={() => playSfx('button_tap')}>
 		<span class="hub-title">{evalDone ? 'Daily text done' : 'Daily text'}</span>
 		<span class="hub-sub">One passage. Map, three questions, one paraphrase.</span>
 	</a>
 	<a class="hub-card" href={resolve('/cards')} onclick={() => playSfx('button_tap')}>
-		<span class="hub-title">Debrief</span>
+		<span class="hub-title">Drills</span>
 		<span class="hub-sub">{unseen ? `${unseen} unseen` : 'Clear.'}</span>
 	</a>
 	<a class="hub-card" href={resolve('/mock')} onclick={() => playSfx('button_tap')}>
@@ -158,6 +195,12 @@
 		<span class="hub-sub">{predictiveOpen ? 'Predictive mock. Once.' : 'Format rehearsal.'}</span>
 		<span class="hub-sub">The published papers needed 24 of 35. Aim for 25 or more.</span>
 	</a>
+	<a class="hub-card" href={resolve('/lezen')} onclick={() => playSfx('button_tap')}>
+		<span class="hub-title">Texts</span>
+		<span class="hub-sub">2024 and 2025. 2023 is saved for your mock.</span>
+	</a>
+
+	<p class="plan">{PLAN_LINE}</p>
 
 	{#if installVisible}
 		<InstallSticker onInstall={installApp} onDismiss={dismissInstall} />
@@ -257,5 +300,50 @@
 		font-size: var(--text-small);
 		color: var(--color-muted-ink);
 		line-height: 1.4;
+	}
+
+	.readiness {
+		display: flex;
+		flex-direction: column;
+		gap: 0.45rem;
+	}
+
+	.readiness h2 {
+		font-family: var(--font-display);
+		font-size: var(--text-title);
+		margin: 0.6rem 0 0;
+	}
+
+	.readiness p,
+	.plan {
+		margin: 0;
+		line-height: 1.45;
+	}
+
+	.types {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 0.55rem;
+	}
+
+	.type-row {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		gap: 0.25rem 0.75rem;
+		align-items: baseline;
+	}
+
+	.type-row a {
+		color: var(--color-ink);
+		font-weight: 700;
+	}
+
+	.plan {
+		font-size: var(--text-small);
+		color: var(--color-muted-ink);
 	}
 </style>
