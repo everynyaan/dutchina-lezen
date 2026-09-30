@@ -608,7 +608,8 @@
 		{ href: '/', label: 'Home', icon: 'house' },
 		{ href: '/eval', label: 'Daily text', icon: 'list-check' },
 		{ href: '/cards', label: 'Debrief', icon: 'rectangle-history' },
-		{ href: '/mock', label: 'Mock', icon: 'bullseye' }
+		{ href: '/mock', label: 'Mock', icon: 'bullseye' },
+		{ href: '/playbook', label: 'Playbook', icon: 'book-sparkles' }
 	] as const;
 
 	const secondaryLinks: {
@@ -617,6 +618,7 @@
 		character?: boolean;
 	}[] = [
 		{ href: '/lezen', label: 'Texts' },
+		{ href: '/grammar', label: 'Patterns' },
 		{ href: '/kuromi/shelf', label: 'Kuromi', character: true }
 	];
 

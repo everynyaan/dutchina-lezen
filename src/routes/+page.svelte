@@ -167,6 +167,8 @@
 		<p>{examLine}</p>
 		<h2>Last mock</h2>
 		<p>{mockLine}</p>
+		<h2>Plan</h2>
+		<p class="plan">{PLAN_LINE}</p>
 		<h2>Question types</h2>
 		<ul class="types">
 			{#each typeRows as row (row.qtype)}
@@ -199,8 +201,6 @@
 		<span class="hub-title">Texts</span>
 		<span class="hub-sub">2024 and 2025. 2023 is saved for your mock.</span>
 	</a>
-
-	<p class="plan">{PLAN_LINE}</p>
 
 	{#if installVisible}
 		<InstallSticker onInstall={installApp} onDismiss={dismissInstall} />
@@ -343,7 +343,8 @@
 	}
 
 	.plan {
-		font-size: var(--text-small);
-		color: var(--color-muted-ink);
+		margin: 0;
+		line-height: 1.45;
+		color: var(--color-ink);
 	}
 </style>
