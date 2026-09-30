@@ -28,7 +28,12 @@ import type {
 	GateId,
 	SwapLedger
 } from '$lib/state/schema';
-import { ADJUSTMENT_TOOL_NAMES, CURRENT_SCHEMA_VERSION, EMPTY_SWAPS, GLOW_RULES } from '$lib/state/schema';
+import {
+	ADJUSTMENT_TOOL_NAMES,
+	CURRENT_SCHEMA_VERSION,
+	EMPTY_SWAPS,
+	GLOW_RULES
+} from '$lib/state/schema';
 import { createDefaultState } from '$lib/state/defaults';
 import type { Miss, ReadingForkState } from '$lib/reading/types';
 import { EMPTY_READING_FORK } from '$lib/reading/types';
@@ -366,12 +371,8 @@ function readGates(raw: unknown, fallback: GatesState): GatesState {
 		mastered: isArray(raw.mastered)
 			? raw.mastered.filter((n): n is number => typeof n === 'number')
 			: [...fallback.mastered],
-		quizLog: isArray(raw.quizLog)
-			? (raw.quizLog as GatesState['quizLog'])
-			: [...fallback.quizLog],
-		weekLog: isArray(raw.weekLog)
-			? (raw.weekLog as GatesState['weekLog'])
-			: [...fallback.weekLog]
+		quizLog: isArray(raw.quizLog) ? (raw.quizLog as GatesState['quizLog']) : [...fallback.quizLog],
+		weekLog: isArray(raw.weekLog) ? (raw.weekLog as GatesState['weekLog']) : [...fallback.weekLog]
 	};
 }
 
@@ -508,7 +509,9 @@ function readDaily(raw: unknown): DailySlice {
 		dailyQuiz: isRecord(raw.dailyQuiz)
 			? (raw.dailyQuiz as unknown as DailyQuizState)
 			: fb.dailyQuiz,
-		dailyRead: isRecord(raw.dailyRead) ? (raw.dailyRead as unknown as DailyReadState) : fb.dailyRead,
+		dailyRead: isRecord(raw.dailyRead)
+			? (raw.dailyRead as unknown as DailyReadState)
+			: fb.dailyRead,
 		readingFork: isRecord(raw.readingFork)
 			? (raw.readingFork as unknown as ReadingForkState)
 			: structuredClone(EMPTY_READING_FORK)
@@ -1210,7 +1213,12 @@ function mergeReadingFork(
 		misses,
 		satMocks,
 		lastMockAt,
-		lastMockScore
+		lastMockScore,
+		attempts: local.attempts ?? [],
+		traps: local.traps ?? [],
+		mockInProgress: local.mockInProgress ?? null,
+		mocks: local.mocks ?? [],
+		settings: local.settings ?? structuredClone(EMPTY_READING_FORK.settings)
 	};
 }
 

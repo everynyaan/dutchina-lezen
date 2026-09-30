@@ -1,24 +1,35 @@
 import type { BankPassage } from './bank';
 import { allPassages, dayIndex } from './bank';
-import type { Miss, ReadingEvalState, ReadingForkState } from './types';
+import type { DailyTextState, Miss, ReadingForkState } from './types';
 
 /** Training bank is 2024 and 2025. 2023 stays off Today while it can still be a predictive mock. */
 export function trainingPassages(): BankPassage[] {
 	return allPassages().filter((passage) => passage.year === 2024 || passage.year === 2025);
 }
 
-export function buildDailyEval(date: string): ReadingEvalState {
+/** Right/wrong map derived from today's answers. Callers that still think in booleans use this. */
+export function evalResults(state: DailyTextState): Record<string, boolean> {
+	const out: Record<string, boolean> = {};
+	for (const [id, answer] of Object.entries(state.answers)) {
+		out[id] = answer.correct;
+	}
+	return out;
+}
+
+export function buildDailyEval(date: string): DailyTextState {
 	const passages = trainingPassages();
 	const passage = passages[dayIndex(date, passages.length)];
 	return {
 		date,
 		passageSlug: passage.slug,
-		results: {},
+		mapDone: false,
+		itemIds: passage.questions.map((question) => question.id),
+		answers: {},
 		completed: false
 	};
 }
 
-export function ensureTodayEval(current: ReadingEvalState, date: string): ReadingEvalState {
+export function ensureTodayEval(current: DailyTextState, date: string): DailyTextState {
 	if (current.date === date && current.passageSlug) return current;
 	return buildDailyEval(date);
 }

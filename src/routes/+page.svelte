@@ -8,7 +8,7 @@
 	import Card from '$lib/components/ui/Card.svelte';
 	import { resolve } from '$app/paths';
 	import { getTodayDate } from '$lib/match/engine';
-	import { unseenMisses } from '$lib/reading/eval';
+	import { evalResults, unseenMisses } from '$lib/reading/eval';
 	import { predictiveAvailable, yearStudied } from '$lib/reading/mock';
 
 	const ctx = getGameContext();
@@ -29,7 +29,9 @@
 	let greeting = $state(greetingForHour(new Date().getHours()));
 	let dateLabel = $state(formatDateLabel(new Date()));
 
-	let evalDone = $derived(ctx.state.readingFork.eval.date === today && ctx.state.readingFork.eval.completed);
+	let evalDone = $derived(
+		ctx.state.readingFork.eval.date === today && ctx.state.readingFork.eval.completed
+	);
 	let unseen = $derived(unseenMisses(ctx.state.readingFork.misses).length);
 	let predictiveOpen = $derived(
 		predictiveAvailable(
@@ -37,7 +39,7 @@
 			yearStudied(
 				2023,
 				ctx.state.lezen.questionResults,
-				ctx.state.readingFork.eval.results,
+				evalResults(ctx.state.readingFork.eval),
 				ctx.state.readingFork.misses.map((miss) => miss.questionId)
 			)
 		)

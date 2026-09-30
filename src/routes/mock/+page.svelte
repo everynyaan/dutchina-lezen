@@ -3,6 +3,7 @@
 	import { getGameContext } from '$lib/state/context';
 	import { getTodayDate } from '$lib/match/engine';
 	import { examByYear } from '$lib/reading/bank';
+	import { evalResults } from '$lib/reading/eval';
 	import {
 		BOOKLET_PASS_LABEL,
 		MOCK_MINUTES,
@@ -33,7 +34,7 @@
 		yearStudied(
 			2023,
 			ctx.state.lezen.questionResults,
-			ctx.state.readingFork.eval.results,
+			evalResults(ctx.state.readingFork.eval),
 			ctx.state.readingFork.misses.map((miss) => miss.questionId)
 		)
 	);
@@ -58,11 +59,7 @@
 	let passed = $derived(paper ? passedSitting(correctCount, paper) : false);
 	let last = $derived(ctx.state.readingFork.lastMockScore);
 
-	let misses = $derived(
-		done
-			? allQuestions.filter((q) => answers[q.id] !== q.answer)
-			: []
-	);
+	let misses = $derived(done ? allQuestions.filter((q) => answers[q.id] !== q.answer) : []);
 	let grouped = $derived(
 		MOVES.map((move) => ({
 			move,
@@ -79,7 +76,7 @@
 				yearStudied(
 					exam.year,
 					ctx.state.lezen.questionResults,
-					ctx.state.readingFork.eval.results,
+					evalResults(ctx.state.readingFork.eval),
 					ctx.state.readingFork.misses.map((miss) => miss.questionId)
 				));
 		playSfx('session_start');
@@ -128,7 +125,9 @@
 </script>
 
 <div class="mock-page stagger">
-	<p class="eyebrow">{predictive ? 'Predictive mock · once' : 'Format rehearsal'} · {MOCK_MINUTES} min</p>
+	<p class="eyebrow">
+		{predictive ? 'Predictive mock · once' : 'Format rehearsal'} · {MOCK_MINUTES} min
+	</p>
 	<h1>Mock</h1>
 
 	{#if sitting && done}
@@ -246,7 +245,7 @@
 					{/if}
 				{/each}
 			</div>
-			{#if rehearsalPick !== null && (ctx.state.readingFork.satMocks.includes(rehearsalPick) || yearStudied(rehearsalPick, ctx.state.lezen.questionResults, ctx.state.readingFork.eval.results, ctx.state.readingFork.misses.map((miss) => miss.questionId)))}
+			{#if rehearsalPick !== null && (ctx.state.readingFork.satMocks.includes(rehearsalPick) || yearStudied( rehearsalPick, ctx.state.lezen.questionResults, evalResults(ctx.state.readingFork.eval), ctx.state.readingFork.misses.map((miss) => miss.questionId) ))}
 				<p>{NOT_A_PREDICTION}</p>
 			{/if}
 			{#if rehearsalPick !== null}

@@ -1240,8 +1240,29 @@ export interface StateV23 extends Omit<StateV22, 'schemaVersion'> {
 	readingFork: ReadingForkV23;
 }
 
+/** Persisted v24 fork, before attempt memory. Eval still stored `results`. */
+export interface ReadingForkV24 {
+	eval: {
+		date: string | null;
+		passageSlug: string | null;
+		results: Record<string, boolean>;
+		completed: boolean;
+	};
+	showUpStreak: number;
+	lastEvalDate: string | null;
+	misses: { questionId: string; picked: string; seen: boolean }[];
+	satMocks: number[];
+	lastMockAt: string | null;
+	lastMockScore: { correct: number; total: number; passed: boolean; year: number } | null;
+}
+
 export interface StateV24 extends Omit<StateV22, 'schemaVersion'> {
 	schemaVersion: 24;
+	readingFork: ReadingForkV24;
+}
+
+export interface StateV25 extends Omit<StateV22, 'schemaVersion'> {
+	schemaVersion: 25;
 	readingFork: ReadingForkState;
 }
 
@@ -1270,9 +1291,10 @@ export type State =
 	| StateV21
 	| StateV22
 	| StateV23
-	| StateV24;
+	| StateV24
+	| StateV25;
 
 // The latest version is the one the app runs on.
-export type CurrentState = StateV24;
+export type CurrentState = StateV25;
 
-export const CURRENT_SCHEMA_VERSION = 24;
+export const CURRENT_SCHEMA_VERSION = 25;

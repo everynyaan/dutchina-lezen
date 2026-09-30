@@ -1,3 +1,4 @@
+import { evalResults } from './eval';
 import { PREDICTIVE_YEAR, TRAINING_YEARS, practiceYears, yearStudied } from './mock';
 import type { ReadingForkState } from './types';
 
@@ -23,7 +24,7 @@ export function bookYearsFor(
 		yearStudied(
 			PREDICTIVE_YEAR,
 			questionResults,
-			fork.eval.results,
+			evalResults(fork.eval),
 			fork.misses.map((miss) => miss.questionId)
 		)
 	);
@@ -505,7 +506,10 @@ export function normalizeLookup(raw: string): string {
 	return raw.toLowerCase().replace(/[^\p{L}]+/gu, '');
 }
 
-export function wordsForLetter(letter: string, years: readonly number[] = DEFAULT_YEARS): BookEntry[] {
+export function wordsForLetter(
+	letter: string,
+	years: readonly number[] = DEFAULT_YEARS
+): BookEntry[] {
 	const initial = letter.toLocaleLowerCase('nl').charAt(0);
 	return bookEntries(years)
 		.filter((entry) => entry.headword.toLocaleLowerCase('nl').startsWith(initial))
@@ -513,7 +517,10 @@ export function wordsForLetter(letter: string, years: readonly number[] = DEFAUL
 }
 
 /** Exact headword after lowercasing and stripping punctuation. Does not stem. */
-export function entryFor(headword: string, years: readonly number[] = DEFAULT_YEARS): BookEntry | null {
+export function entryFor(
+	headword: string,
+	years: readonly number[] = DEFAULT_YEARS
+): BookEntry | null {
 	const key = normalizeLookup(headword);
 	if (!key) return null;
 	return bookEntries(years).find((entry) => normalizeLookup(entry.headword) === key) ?? null;

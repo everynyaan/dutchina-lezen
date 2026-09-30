@@ -1,7 +1,24 @@
-import { describe, it, expect } from 'vitest';
-import { loadStateFromJSON } from '$lib/state/store';
+import { afterEach, describe, it, expect, vi } from 'vitest';
+import { createDefaultState } from '$lib/state/defaults';
+import { loadState, loadStateFromJSON } from '$lib/state/store';
 import { CURRENT_SCHEMA_VERSION, EMPTY_SWAPS } from '$lib/state/schema';
 import type { StateV18 } from '$lib/state/schema';
+
+function memoryStorage() {
+	const data = new Map<string, string>();
+	return {
+		getItem: (key: string) => (data.has(key) ? (data.get(key) ?? null) : null),
+		setItem: (key: string, value: string) => {
+			data.set(key, value);
+		},
+		removeItem: (key: string) => {
+			data.delete(key);
+		},
+		clear: () => {
+			data.clear();
+		}
+	};
+}
 
 describe('loadStateFromJSON()', () => {
 	it('round-trips a v18 state with non-default dailyQuiz and dailyRead', () => {
@@ -144,5 +161,46 @@ describe('loadStateFromJSON()', () => {
 	it('returns null on malformed JSON', () => {
 		const result = loadStateFromJSON('{not valid json garbage');
 		expect(result).toBeNull();
+	});
+});
+
+describe('loadState backup', () => {
+	afterEach(() => {
+		vi.unstubAllGlobals();
+	});
+
+	it('copies the raw string before migrating and leaves the stored key alone', () => {
+		const storage = memoryStorage();
+		vi.stubGlobal('window', { localStorage: storage });
+		vi.stubGlobal('localStorage', storage);
+		const raw = JSON.stringify({ ...createDefaultState(), schemaVersion: 24 });
+		storage.setItem('dutchina_state_domi', raw);
+		const loaded = loadState('domi');
+		expect(loaded.schemaVersion).toBe(CURRENT_SCHEMA_VERSION);
+		expect(storage.getItem('dutchina_state_domi')).toBe(raw);
+		expect(storage.getItem('dutchina_state_domi_backup_v24')).toBe(raw);
+	});
+
+	it('does not write defaults over a state whose migration throws', () => {
+		const storage = memoryStorage();
+		vi.stubGlobal('window', { localStorage: storage });
+		vi.stubGlobal('localStorage', storage);
+		const raw = JSON.stringify({ schemaVersion: 0 });
+		storage.setItem('dutchina_state_domi', raw);
+		const loaded = loadState('domi');
+		expect(loaded.schemaVersion).toBe(CURRENT_SCHEMA_VERSION);
+		expect(storage.getItem('dutchina_state_domi')).toBe(raw);
+		expect(storage.getItem('dutchina_state_domi_backup_v0')).toBe(raw);
+	});
+
+	it('does not back up a state that is already current', () => {
+		const storage = memoryStorage();
+		vi.stubGlobal('window', { localStorage: storage });
+		vi.stubGlobal('localStorage', storage);
+		const raw = JSON.stringify(createDefaultState());
+		storage.setItem('dutchina_state_domi', raw);
+		loadState('domi');
+		expect(storage.getItem('dutchina_state_domi_backup_v25')).toBeNull();
+		expect(storage.getItem('dutchina_state_domi')).toBe(raw);
 	});
 });

@@ -28,6 +28,7 @@
 		practiceYears,
 		yearStudied
 	} from '$lib/reading/mock';
+	import { evalResults } from '$lib/reading/eval';
 	import { evidenceOf } from '$lib/reading/evidence';
 	import PracticeBook from '$lib/components/reading/PracticeBook.svelte';
 	import { bookYearsFor } from '$lib/reading/practiceBook';
@@ -58,15 +59,14 @@
 		yearStudied(
 			2023,
 			ctx.state.lezen.questionResults,
-			ctx.state.readingFork.eval.results,
+			evalResults(ctx.state.readingFork.eval),
 			ctx.state.readingFork.misses.map((miss) => miss.questionId)
 		)
 	);
 	let years = $derived(practiceYears(ctx.state.readingFork.satMocks, studied2023));
 	let bookYears = $derived(bookYearsFor(ctx.state.readingFork, ctx.state.lezen.questionResults));
 	let exam = $derived(
-		LEZEN_EXAMS.find((e) => e.year === selectedYear) ??
-			LEZEN_EXAMS.find((e) => e.year === 2025)!
+		LEZEN_EXAMS.find((e) => e.year === selectedYear) ?? LEZEN_EXAMS.find((e) => e.year === 2025)!
 	);
 
 	$effect(() => {
@@ -322,7 +322,6 @@
 			</div>
 		</div>
 
-
 		<ExamPaperBanner
 			note={years.includes(2023)
 				? 'Practice papers, 2023–2025. A studied paper is not a November prediction.'
@@ -399,7 +398,11 @@
 		<p class="reading-intro">{activePassage.intro}</p>
 		<p class="time-hint">About {MINUTES_PER_TEXT} minutes for this text. {BOOKLET_PASS_LABEL}</p>
 		<div class="time-dock">
-			<TimeBox totalSeconds={MINUTES_PER_TEXT * 60} warnSeconds={120} label={`~${MINUTES_PER_TEXT} min`} />
+			<TimeBox
+				totalSeconds={MINUTES_PER_TEXT * 60}
+				warnSeconds={120}
+				label={`~${MINUTES_PER_TEXT} min`}
+			/>
 		</div>
 
 		<Card variant="white" class="passage-text-card">

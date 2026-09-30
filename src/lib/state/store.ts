@@ -1,6 +1,6 @@
 import { createDefaultState } from './defaults';
 import { migrate } from './migrations';
-import type { State } from './schema';
+import { CURRENT_SCHEMA_VERSION, type State } from './schema';
 import type { ProfileId } from '$lib/profiles/profiles';
 
 // ============================================================
@@ -14,6 +14,29 @@ const STORAGE_PREFIX = 'dutchina_state_';
 
 function storageKey(profile: ProfileId): string {
 	return `${STORAGE_PREFIX}${profile}`;
+}
+
+function schemaVersionOf(raw: string): number | null {
+	try {
+		const parsed: unknown = JSON.parse(raw);
+		if (!parsed || typeof parsed !== 'object' || !('schemaVersion' in parsed)) return 0;
+		const version = (parsed as { schemaVersion: unknown }).schemaVersion;
+		if (typeof version === 'number' && Number.isFinite(version)) return version;
+		return 0;
+	} catch {
+		return null;
+	}
+}
+
+/** Copy the raw string before a migration. A thrown migration must not replace the stored state. */
+function backupBeforeMigrate(profile: ProfileId, raw: string): void {
+	const version = schemaVersionOf(raw);
+	if (version === null || version >= CURRENT_SCHEMA_VERSION) return;
+	try {
+		localStorage.setItem(`${STORAGE_PREFIX}${profile}_backup_v${version}`, raw);
+	} catch (err) {
+		console.warn(`[dutchina] Failed to back up state for profile "${profile}".`, err);
+	}
 }
 
 // ============================================================
@@ -38,6 +61,7 @@ export function loadState(profile: ProfileId = 'domi'): State {
 		const legacyRaw = localStorage.getItem('dutchina_state');
 		if (legacyRaw) {
 			try {
+				backupBeforeMigrate(profile, legacyRaw);
 				const parsed: unknown = JSON.parse(legacyRaw);
 				const migrated = migrate(parsed);
 				// Save under the new key and remove the old one
@@ -55,6 +79,7 @@ export function loadState(profile: ProfileId = 'domi'): State {
 	}
 
 	try {
+		backupBeforeMigrate(profile, raw);
 		const parsed: unknown = JSON.parse(raw);
 		return migrate(parsed);
 	} catch (err) {

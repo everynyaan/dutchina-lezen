@@ -42,15 +42,13 @@
 
 	$effect.pre(() => {
 		if (booted || !passage || evalState.completed) return;
-		const open = passage.questions.findIndex((q) => evalState.results[q.id] === undefined);
+		const open = passage.questions.findIndex((q) => evalState.answers[q.id] === undefined);
 		qIndex = open < 0 ? 0 : open;
 		booted = true;
 	});
 
 	let current = $derived(questions[qIndex] ? findQuestion(questions[qIndex].id) : null);
-	let pickedText = $derived(
-		current && picked ? (current.question.options[picked] ?? '') : ''
-	);
+	let pickedText = $derived(current && picked ? (current.question.options[picked] ?? '') : '');
 	let showEcho = $derived(
 		revealed &&
 			current &&
@@ -71,7 +69,10 @@
 		if (!picked || !current || !passage) return;
 		const id = current.question.id;
 		const ok = picked === current.question.answer;
-		ctx.state.readingFork.eval.results = { ...ctx.state.readingFork.eval.results, [id]: ok };
+		ctx.state.readingFork.eval.answers = {
+			...ctx.state.readingFork.eval.answers,
+			[id]: { picked, correct: ok, locateP: null }
+		};
 		if (!ok) {
 			ctx.state.readingFork.misses = enqueueMiss(ctx.state.readingFork.misses, id, picked);
 		}
@@ -116,7 +117,9 @@
 			<h2>{passage.name}</h2>
 			<PassageText
 				text={passage.text}
-				needle={revealed && picked !== current.question.answer ? evidenceOf(current.question.id) : null}
+				needle={revealed && picked !== current.question.answer
+					? evidenceOf(current.question.id)
+					: null}
 			/>
 			<p class="job">Question {qIndex + 1} of {questions.length}</p>
 			<p class="prompt">{current.question.question}</p>
