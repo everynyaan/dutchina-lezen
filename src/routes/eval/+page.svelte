@@ -150,6 +150,7 @@
 		<p>No text is ready today.</p>
 	{:else if !evalState.mapDone}
 		<p class="kuromi-line">About 2 minutes. Map the paragraphs before the questions.</p>
+		<PracticeBook years={bookYears} />
 		<ParagraphMap
 			{passage}
 			entries={mapEntries}

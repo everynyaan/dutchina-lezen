@@ -186,7 +186,6 @@
 		<p class="eyebrow">Training papers</p>
 		<h1>Texts</h1>
 		<p class="pass">{BOOKLET_PASS_LABEL}</p>
-		<PracticeBook years={bookYears} />
 		{#each years as exam (exam.year)}
 			<section class="year">
 				<h2>{exam.year}</h2>
@@ -209,7 +208,6 @@
 		{/each}
 	{:else if passage}
 		<button type="button" class="back" onclick={backToList}>Back</button>
-		<PracticeBook years={bookYears} />
 		{#if stage === 'warn'}
 			<Card variant="soft-peach">
 				<p>You answered these recently. Try the practice questions instead.</p>
@@ -228,6 +226,7 @@
 				</p>
 			</Card>
 		{:else if item}
+			<PracticeBook years={bookYears} />
 			<label class="exam-style">
 				<input type="checkbox" bind:checked={examStyle} disabled={reviewing || index > 0} />
 				Exam style: feedback at the end

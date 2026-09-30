@@ -1,408 +1,477 @@
 <script lang="ts">
-	import type { LezenExam } from '$lib/lezen/types';
 	import { getGameContext } from '$lib/state/context';
 	import { getTodayDate } from '$lib/match/engine';
-	import { examByYear } from '$lib/reading/bank';
 	import { evalResults } from '$lib/reading/eval';
+	import { dailyLoopItem } from '$lib/reading/daily';
+	import { resolveLoopItem } from '$lib/reading/loop';
 	import {
 		BOOKLET_PASS_LABEL,
-		MOCK_MINUTES,
 		NOT_A_PREDICTION,
 		passLineFor,
-		passedSitting,
-		pickMockExam,
-		practiceYears,
+		targetFor,
 		yearStudied
 	} from '$lib/reading/mock';
-	import { MOVES, moveOf } from '$lib/reading/moves';
-	import TimeBox from '$lib/components/reading/TimeBox.svelte';
-	import MissReview from '$lib/components/reading/MissReview.svelte';
+	import {
+		SEEN_PAPER_WARNING,
+		chooseMockPaper,
+		examForYear,
+		flagSplit,
+		formatRemaining,
+		handInMock,
+		remainingMs,
+		startMockSession,
+		switchText,
+		textScores,
+		unansweredCount
+	} from '$lib/reading/mockSession';
+	import { QTYPE_LABEL } from '$lib/reading/annotations';
+	import type { QType } from '$lib/reading/types';
+	import AnswerFeedback from '$lib/components/reading/AnswerFeedback.svelte';
 	import PracticeBook from '$lib/components/reading/PracticeBook.svelte';
+	import ReadingLoop from '$lib/components/reading/ReadingLoop.svelte';
 	import { bookYearsFor } from '$lib/reading/practiceBook';
 	import Card from '$lib/components/ui/Card.svelte';
+	import { setKuromiVisible } from '$lib/kuromi/visibility.svelte';
 	import { playSfx } from '$lib/sound/sfx';
 	import { resolve } from '$app/paths';
 
 	const ctx = getGameContext();
 	const today = getTodayDate();
 
-	let sitting = $state<LezenExam | null>(null);
-	let scoreIsPrediction = $state(false);
-	let rehearsalWasStudied = $state(false);
-	let rehearsalPick = $state<number | null>(null);
-	let studied2023 = $derived(
-		yearStudied(
-			2023,
-			ctx.state.lezen.questionResults,
-			evalResults(ctx.state.readingFork.eval),
-			ctx.state.readingFork.misses.map((miss) => miss.questionId)
+	let now = $state(Date.now());
+	let openId = $state<string | null>(null);
+	let confirmHandIn = $state(false);
+	let finishing = false;
+
+	let studied = $derived(
+		[2023, 2024, 2025].filter((year) =>
+			yearStudied(
+				year,
+				ctx.state.lezen.questionResults,
+				evalResults(ctx.state.readingFork.eval),
+				ctx.state.readingFork.misses.map((miss) => miss.questionId)
+			)
 		)
 	);
-	let predictive = $derived(pickMockExam(ctx.state.readingFork.satMocks, studied2023));
-	let rehearsalYears = $derived(practiceYears(ctx.state.readingFork.satMocks, studied2023));
+	let choice = $derived(chooseMockPaper(ctx.state.readingFork, studied));
+	let session = $derived(ctx.state.readingFork.mockInProgress);
+	let exam = $derived(session ? examForYear(session.paperYear) : examForYear(choice.year));
+	let passage = $derived(exam && session ? exam.passages[session.activeText] : undefined);
 	let bookYears = $derived(bookYearsFor(ctx.state.readingFork, ctx.state.lezen.questionResults));
-	let paper = $derived(sitting);
-	let allQuestions = $derived(
-		paper
-			? paper.passages.flatMap((p) =>
-					p.questions.map((q) => ({ ...q, slug: p.slug, passageName: p.name }))
-				)
-			: []
-	);
-	let passageIndex = $state(0);
-	let answers = $state<Record<string, string>>({});
-	let flagged = $state<Record<string, boolean>>({});
-	let done = $state(false);
-
-	let passage = $derived(paper?.passages[passageIndex]);
-	let correctCount = $derived(allQuestions.filter((q) => answers[q.id] === q.answer).length);
-	let passed = $derived(paper ? passedSitting(correctCount, paper) : false);
-	let last = $derived(ctx.state.readingFork.lastMockScore);
-
-	let misses = $derived(done ? allQuestions.filter((q) => answers[q.id] !== q.answer) : []);
-	let grouped = $derived(
-		MOVES.map((move) => ({
-			move,
-			items: misses.filter((q) => moveOf(q.id) === move)
-		})).filter((group) => group.items.length > 0)
+	let result = $derived(ctx.state.readingFork.mocks.find((mock) => mock.id === openId) ?? null);
+	let resultExam = $derived(result ? examForYear(result.paperYear) : null);
+	let flat = $derived(
+		exam ? exam.passages.flatMap((row) => row.questions.map((question) => question)) : []
 	);
 
-	function begin(exam: LezenExam, prediction: boolean) {
-		sitting = exam;
-		scoreIsPrediction = prediction;
-		rehearsalWasStudied =
-			!prediction &&
-			(ctx.state.readingFork.satMocks.includes(exam.year) ||
-				yearStudied(
-					exam.year,
-					ctx.state.lezen.questionResults,
-					evalResults(ctx.state.readingFork.eval),
-					ctx.state.readingFork.misses.map((miss) => miss.questionId)
-				));
+	$effect(() => {
+		setKuromiVisible(ctx.state.readingFork.mockInProgress === null);
+		return () => setKuromiVisible(true);
+	});
+
+	$effect(() => {
+		if (!ctx.state.readingFork.mockInProgress) return;
+		const timer = setInterval(() => {
+			now = Date.now();
+		}, 250);
+		return () => clearInterval(timer);
+	});
+
+	$effect(() => {
+		const current = ctx.state.readingFork.mockInProgress;
+		if (!current || current.endsAt > now) return;
+		commit(true);
+	});
+
+	function start(booklet: boolean) {
+		ctx.state.readingFork.mockInProgress = startMockSession(choice.year, booklet, Date.now());
+		openId = null;
+		confirmHandIn = false;
+		now = Date.now();
+		setKuromiVisible(false);
 		playSfx('session_start');
 	}
 
-	function startPredictive() {
-		if (!predictive) return;
-		begin(predictive, true);
-	}
-
-	function startRehearsal() {
-		if (rehearsalPick === null) return;
-		if (rehearsalPick === 2023 && predictive) return;
-		const exam = examByYear(rehearsalPick);
-		if (!exam || exam.year !== rehearsalPick) return;
-		begin(exam, false);
+	function patchSession(next: NonNullable<typeof session>) {
+		ctx.state.readingFork.mockInProgress = next;
 	}
 
 	function select(id: string, letter: string) {
-		answers = { ...answers, [id]: letter };
+		const current = ctx.state.readingFork.mockInProgress;
+		if (!current) return;
+		patchSession({ ...current, answers: { ...current.answers, [id]: letter } });
 	}
 
-	function jumpTo(id: string) {
-		if (!sitting) return;
-		const paper = sitting;
-		const index = paper.passages.findIndex((p) => p.questions.some((q) => q.id === id));
-		if (index >= 0) passageIndex = index;
+	function toggleFlag(id: string) {
+		const current = ctx.state.readingFork.mockInProgress;
+		if (!current) return;
+		patchSession({
+			...current,
+			flagged: { ...current.flagged, [id]: !current.flagged[id] }
+		});
 	}
 
-	function finish() {
-		if (done || !sitting) return;
-		done = true;
-		const year = sitting.year;
-		ctx.state.readingFork.lastMockAt = today;
-		ctx.state.readingFork.lastMockScore = {
-			correct: correctCount,
-			total: allQuestions.length,
-			passed: passedSitting(correctCount, sitting),
-			year
-		};
-		if (!ctx.state.readingFork.satMocks.includes(year)) {
-			ctx.state.readingFork.satMocks = [...ctx.state.readingFork.satMocks, year];
+	function go(index: number) {
+		const current = ctx.state.readingFork.mockInProgress;
+		if (!current) return;
+		patchSession(switchText(current, index, Date.now()));
+	}
+
+	function jump(id: string) {
+		if (!exam) return;
+		const index = exam.passages.findIndex((row) =>
+			row.questions.some((question) => question.id === id)
+		);
+		if (index < 0) return;
+		go(index);
+		queueMicrotask(() => {
+			const nodes = [...document.querySelectorAll(`[data-q="${id}"]`)];
+			const visible = nodes.find((node) => node.getClientRects().length > 0);
+			visible?.scrollIntoView({ block: 'center' });
+		});
+	}
+
+	function askHandIn() {
+		const current = ctx.state.readingFork.mockInProgress;
+		const paper = exam;
+		if (!current || !paper) return;
+		if (unansweredCount(paper, current.answers) > 0) {
+			confirmHandIn = true;
+			return;
 		}
-		playSfx(passedSitting(correctCount, sitting) ? 'rank_up' : 'session_complete');
+		commit(false);
+	}
+
+	function commit(expired: boolean) {
+		if (finishing) return;
+		const current = ctx.state.readingFork.mockInProgress;
+		if (!current) return;
+		finishing = true;
+		const finished = handInMock(ctx.state.readingFork, current, Date.now(), today, expired);
+		openId = current.id;
+		ctx.state.readingFork = finished;
+		confirmHandIn = false;
+		setKuromiVisible(true);
+		const score = finished.lastMockScore;
+		playSfx(score?.passed ? 'rank_up' : 'session_complete');
+		finishing = false;
+	}
+
+	function minutes(ms: number | undefined): number {
+		return Math.round((ms ?? 0) / 60000);
 	}
 </script>
 
-<div class="mock-page stagger">
-	<p class="eyebrow">
-		{predictive ? 'Predictive mock · once' : 'Format rehearsal'} · {MOCK_MINUTES} min
-	</p>
-	<h1>Mock</h1>
-
-	{#if sitting && done}
-		{#if misses.length > 0}
-			<PracticeBook years={bookYears} />
-		{/if}
-		<Card variant="soft-lavender">
-			<h2>{passed ? 'This sitting passes.' : 'Under the pass line.'}</h2>
-			<p>{correctCount} / {allQuestions.length}</p>
-			<p>{BOOKLET_PASS_LABEL}</p>
-			{#if scoreIsPrediction}
-				<p>November prediction.</p>
-			{:else if rehearsalWasStudied}
-				<p>{NOT_A_PREDICTION}</p>
-			{:else}
-				<p>Format rehearsal.</p>
-			{/if}
-		</Card>
-		{#each grouped as group (group.move)}
-			<h2 class="move-head">{group.move}</h2>
-			{#each group.items as q (q.id)}
-				<Card>
-					<MissReview questionId={q.id} picked={answers[q.id] ?? ''} />
-				</Card>
-			{/each}
-		{/each}
-	{:else if sitting && passage}
-		<PracticeBook years={bookYears} />
-		<div class="toolbar">
-			<TimeBox totalSeconds={MOCK_MINUTES * 60} label="Paper 110" onExpire={finish} />
-		</div>
-		<nav class="grid" aria-label="Questions">
-			{#each allQuestions as q, i (q.id)}
+{#snippet questions(active: {
+	questions: { id: string; vraag: number; question: string; options: Record<string, string> }[];
+})}
+	{#each active.questions as question (question.id)}
+		<section class="q-block" data-q={question.id}>
+			<div class="qhead">
+				<p class="q">{question.vraag}. {question.question}</p>
 				<button
 					type="button"
-					class="cell"
-					class:answered={Boolean(answers[q.id])}
-					class:flagged={flagged[q.id]}
-					class:blank={!answers[q.id]}
-					onclick={() => jumpTo(q.id)}
+					class="flag"
+					class:on={session?.flagged[question.id]}
+					onclick={() => toggleFlag(question.id)}
 				>
-					{i + 1}
+					{session?.flagged[question.id] ? 'Flagged' : 'Flag'}
+				</button>
+			</div>
+			<div class="opts">
+				{#each Object.entries(question.options) as [letter, text] (letter)}
+					<button
+						type="button"
+						class="opt"
+						class:picked={session?.answers[question.id] === letter}
+						onclick={() => select(question.id, letter)}
+					>
+						<strong>{letter}</strong>
+						{text}
+					</button>
+				{/each}
+			</div>
+		</section>
+	{/each}
+{/snippet}
+
+<div class="mock-page">
+	<p class="eyebrow">110 minutes</p>
+	<h1>Mock</h1>
+
+	{#if session && exam && passage}
+		{@const activePassage = passage}
+		<p class="clock">{formatRemaining(remainingMs(session, now))}</p>
+		<nav class="switcher" aria-label="Texts">
+			{#each exam.passages as row, index (row.slug)}
+				<button type="button" class:on={session.activeText === index} onclick={() => go(index)}>
+					{index + 1}
 				</button>
 			{/each}
 		</nav>
-
-		<Card>
-			<p class="intro">{passage.intro}</p>
-			<div class="text">{passage.text}</div>
-		</Card>
-
-		{#each passage.questions as q (q.id)}
-			<Card>
-				<div class="qhead">
-					<p class="q">{q.question}</p>
-					<button
-						type="button"
-						class="flag"
-						class:on={flagged[q.id]}
-						onclick={() => (flagged = { ...flagged, [q.id]: !flagged[q.id] })}
-					>
-						{flagged[q.id] ? 'Flagged' : 'Flag'}
-					</button>
-				</div>
-				<div class="opts">
-					{#each Object.entries(q.options) as [letter, text] (letter)}
-						<button
-							type="button"
-							class="opt"
-							class:picked={answers[q.id] === letter}
-							onclick={() => select(q.id, letter)}
-						>
-							<strong>{letter}</strong>
-							{text}
-						</button>
-					{/each}
-				</div>
-			</Card>
-		{/each}
-
-		<p class="tiny">
-			{Object.keys(answers).length} answered · {Object.values(flagged).filter(Boolean).length} flagged
-			· pass {paper ? passLineFor(paper) : ''}
-		</p>
-		<button type="button" class="btn" onclick={finish}>Hand in</button>
-	{:else}
-		{#if predictive}
-			<Card variant="soft-teal">
-				<p>2023 · 35 items. Sealed. Sat once.</p>
-				<p>{BOOKLET_PASS_LABEL}</p>
-				<p>This sitting is a November prediction.</p>
-				<p>The live paper is 110 minutes and a bit longer.</p>
-				<button type="button" class="btn start" onclick={startPredictive}>Start the clock</button>
-			</Card>
+		<nav class="grid" aria-label="Questions">
+			{#each flat as question, index (question.id)}
+				<button
+					type="button"
+					class="cell"
+					class:answered={Boolean(session.answers[question.id])}
+					class:blank={!session.answers[question.id]}
+					class:flagged={session.flagged[question.id]}
+					onclick={() => jump(question.id)}
+				>
+					{index + 1}
+				</button>
+			{/each}
+		</nav>
+		<PracticeBook years={bookYears} />
+		{#if session.booklet}
+			<p class="note">Booklet mode. The texts are on paper. The screen is only questions.</p>
+			{@render questions(activePassage)}
+		{:else}
+			<ReadingLoop passage={activePassage}>
+				{#snippet question()}
+					{@render questions(activePassage)}
+				{/snippet}
+			</ReadingLoop>
 		{/if}
+		{#if confirmHandIn}
+			{@const blank = unansweredCount(exam, session.answers)}
+			<p class="warn">
+				{blank === 1
+					? '1 question is still unanswered.'
+					: `${blank} questions are still unanswered.`}
+				Hand in anyway?
+			</p>
+			<button type="button" class="btn" onclick={() => commit(false)}>Hand in</button>
+			<button type="button" class="btn ghost" onclick={() => (confirmHandIn = false)}
+				>Keep going</button
+			>
+		{:else}
+			<button type="button" class="btn" onclick={askHandIn}>Hand in</button>
+		{/if}
+	{:else if result && resultExam}
 		<Card variant="soft-lavender">
-			{#if predictive}
-				<p>Format rehearsal of 2024 or 2025. Those papers stay in the training bank.</p>
-			{:else}
-				<p>No paper is sealed. All three are practice.</p>
-			{/if}
+			<h2>
+				{result.correct >= result.passLine ? 'This sitting passes.' : 'Under the pass line.'}
+			</h2>
+			{#if result.expired}<p>Time is up.</p>{/if}
+			<p>{result.correct} / {result.total}</p>
+			<p>Pass line {result.passLine} of {result.total}. Target {result.passLine + 1}.</p>
 			<p>{BOOKLET_PASS_LABEL}</p>
-			<p>The live paper is 110 minutes and a bit longer.</p>
-			<div class="years">
-				{#each rehearsalYears as year (year)}
-					{#if !(year === 2023 && predictive)}
-						<button
-							type="button"
-							class="year"
-							class:picked={rehearsalPick === year}
-							onclick={() => (rehearsalPick = year)}
-						>
-							{year}
-						</button>
-					{/if}
-				{/each}
-			</div>
-			{#if rehearsalPick !== null && (ctx.state.readingFork.satMocks.includes(rehearsalPick) || yearStudied( rehearsalPick, ctx.state.lezen.questionResults, evalResults(ctx.state.readingFork.eval), ctx.state.readingFork.misses.map((miss) => miss.questionId) ))}
+			{#if studied.includes(result.paperYear)}
 				<p>{NOT_A_PREDICTION}</p>
 			{/if}
-			{#if rehearsalPick !== null}
-				<button type="button" class="btn start" onclick={startRehearsal}>Start the clock</button>
-			{/if}
-			{#if last && last.year !== 0}
-				<p class="tiny">
-					Last sitting: {last.correct}/{last.total}
-					({last.passed ? 'pass' : 'not yet'}).
-				</p>
-			{/if}
-			<a class="ghost" href={resolve('/')}>Back home</a>
 		</Card>
+		<h2>By question type</h2>
+		<ul>
+			{#each Object.entries(result.byQtype) as [qtype, row] (qtype)}
+				<li>{QTYPE_LABEL[qtype as QType]}: {row.c} of {row.t}</li>
+			{/each}
+		</ul>
+		{@const flags = flagSplit(resultExam, result)}
+		<p>Flagged and right: {flags.right}. Flagged and wrong: {flags.wrong}.</p>
+		{#each textScores(resultExam, result.answers) as row, index (row.slug)}
+			<section class="text-score">
+				<h2>Text {index + 1}. {row.name}</h2>
+				<p>{row.correct} of {row.total}. {minutes(result.textMs[index])} min.</p>
+				{#each resultExam.passages[index].questions as question (question.id)}
+					{@const item = dailyLoopItem(
+						{ ...resultExam.passages[index], year: result.paperYear },
+						question.id
+					)}
+					<article class="item">
+						<p>
+							{#if result.answers[question.id]}
+								You answered {result.answers[question.id]}. The key is {question.answer}.
+							{:else}
+								You left this blank. The key is {question.answer}.
+							{/if}
+						</p>
+						{#if item}
+							<AnswerFeedback
+								{item}
+								resolved={resolveLoopItem(item)}
+								picked={result.answers[question.id] ?? ''}
+							/>
+						{/if}
+					</article>
+				{/each}
+			</section>
+		{/each}
+		<button type="button" class="btn ghost" onclick={() => (openId = null)}>Back</button>
+	{:else if exam}
+		<Card variant="soft-teal">
+			{#if choice.sealed}
+				<p>{choice.year}. 35 items. Sealed. Sat once.</p>
+				<p>This paper passes at {passLineFor(exam)}. Aim for {targetFor(exam)}.</p>
+			{:else}
+				<p>{choice.year}. 35 items.</p>
+				<p>This paper passes at {passLineFor(exam)}. Aim for {targetFor(exam)}.</p>
+			{/if}
+			<p>{BOOKLET_PASS_LABEL}</p>
+			<p>110 minutes for the whole paper.</p>
+			{#if choice.seen}<p>{SEEN_PAPER_WARNING}</p>{/if}
+			{#if choice.studied}<p>{NOT_A_PREDICTION}</p>{/if}
+			<p>
+				Print the booklet and answer on the screen, as on the exam day. Use the booklet for every
+				full mock, with her Van Dale NT2 dictionary on the desk.
+			</p>
+			<a class="btn ghost" href="{resolve('/mock/booklet')}?paper={choice.year}"
+				>Print the booklet</a
+			>
+			<button type="button" class="btn start" onclick={() => start(false)}>
+				Start with the text on screen
+			</button>
+			<button type="button" class="btn start" onclick={() => start(true)}>
+				Start with questions only
+			</button>
+		</Card>
+		{#if ctx.state.readingFork.mocks.length > 0}
+			<h2>History</h2>
+			<ul class="history">
+				{#each ctx.state.readingFork.mocks as mock (mock.id)}
+					<li>
+						<button type="button" onclick={() => (openId = mock.id)}>
+							{mock.paperYear}: {mock.correct}/{mock.total}
+							{mock.correct >= mock.passLine ? 'pass' : 'not yet'}
+						</button>
+					</li>
+				{/each}
+			</ul>
+		{/if}
+	{:else}
+		<p>No paper is ready.</p>
 	{/if}
 </div>
 
 <style>
 	.mock-page {
-		padding: 0.5rem 0 6rem;
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
+		min-width: 0;
+		padding: 0.5rem 0 2rem;
 	}
 	.eyebrow {
 		font-size: var(--text-micro);
+		letter-spacing: 0.04em;
 		text-transform: uppercase;
 		color: var(--color-muted-ink);
 		margin: 0;
 	}
 	h1,
-	h2,
-	.move-head {
+	h2 {
 		font-family: var(--font-display);
 		margin: 0;
 	}
 	h1 {
 		font-size: var(--text-hero);
+		line-height: 1.1;
 	}
-	.move-head {
+	h2 {
 		font-size: var(--text-title);
-		text-transform: capitalize;
 	}
-	.intro,
-	.q,
-	.text {
-		line-height: 1.6;
-		font-size: var(--text-base);
+	.clock {
+		margin: 0;
+		font-weight: 700;
+		font-variant-numeric: tabular-nums;
+		font-size: 1.4rem;
 	}
-	.text {
-		font-size: 18px;
-		white-space: pre-wrap;
-	}
-	.toolbar {
-		display: flex;
-	}
-	.grid {
-		position: sticky;
-		top: 0;
-		z-index: 2;
+	.switcher,
+	.grid,
+	.history {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 4px;
-		padding: 8px 0;
-		background: var(--color-paper, #fffaf6);
+		gap: 0.35rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
 	}
+	.switcher button,
 	.cell,
 	.flag,
 	.opt,
-	.btn {
-		border: 3px solid var(--color-ink);
-		background: #fff;
-		cursor: pointer;
-	}
-	.cell {
-		width: 32px;
-		height: 32px;
-		border-radius: 8px;
+	.btn,
+	.history button {
+		font: inherit;
 		font-weight: 700;
-		font-size: var(--text-small);
-	}
-	.cell.blank {
+		cursor: pointer;
+		border: 2px solid var(--color-ink);
 		background: #fff;
+		color: var(--color-ink);
 	}
-	.cell.answered {
+	.switcher button,
+	.cell {
+		width: 2rem;
+		height: 2rem;
+		border-radius: 8px;
+	}
+	.switcher button.on,
+	.cell.answered,
+	.opt.picked {
 		background: var(--color-lilac, #ede4ff);
 	}
 	.cell.flagged {
 		outline: 3px solid var(--color-rose-deep, #c43b6e);
 	}
+	.q-block {
+		display: flex;
+		flex-direction: column;
+		gap: 0.55rem;
+		margin-bottom: 1rem;
+	}
 	.qhead {
 		display: flex;
 		justify-content: space-between;
-		gap: 8px;
+		gap: 0.5rem;
 		align-items: flex-start;
+	}
+	.q,
+	.note,
+	.warn {
+		margin: 0;
+		line-height: 1.45;
 	}
 	.flag {
 		border-radius: 999px;
-		padding: 4px 10px;
+		padding: 0.25rem 0.6rem;
 		flex-shrink: 0;
 	}
 	.flag.on {
-		background: var(--color-blush);
+		background: var(--color-blush, #ffd6e0);
 	}
 	.opts {
 		display: flex;
 		flex-direction: column;
-		gap: 8px;
-		margin-top: 8px;
+		gap: 0.4rem;
 	}
 	.opt {
 		text-align: left;
-		border-radius: 14px;
-		padding: 10px 12px;
-	}
-	.opt.picked {
-		background: var(--color-lilac, #ede4ff);
-	}
-	.years {
-		display: flex;
-		gap: 8px;
-		margin-top: 8px;
-	}
-	.year {
-		flex: 1;
-		border-radius: 14px;
-		padding: 10px 8px;
-		font-weight: 700;
-		border: 3px solid var(--color-ink);
-		background: #fff;
-		cursor: pointer;
-	}
-	.year.picked {
-		background: var(--color-lilac, #ede4ff);
+		border-radius: 10px;
+		padding: 0.55rem 0.7rem;
 	}
 	.btn {
 		display: inline-flex;
 		padding: 10px 16px;
 		border-radius: 999px;
+		border-width: 3px;
 		background: var(--color-pink, #ff9bb8);
-		font-weight: 700;
 		text-decoration: none;
-		color: var(--color-ink);
-		cursor: pointer;
-		border: 3px solid var(--color-ink);
 	}
 	.btn.start {
-		display: flex;
-		width: 100%;
 		justify-content: center;
-		margin-top: 12px;
 	}
-	.ghost {
-		margin-left: 8px;
-		color: var(--color-ink);
+	.btn.ghost {
+		background: #fff;
 	}
-	.tiny {
-		font-size: var(--text-small);
-		color: var(--color-muted-ink);
+	.item,
+	.text-score {
+		display: flex;
+		flex-direction: column;
+		gap: 0.4rem;
+	}
+	ul {
+		margin: 0;
+		padding-left: 1.2rem;
 	}
 </style>
