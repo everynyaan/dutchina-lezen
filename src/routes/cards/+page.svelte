@@ -24,7 +24,7 @@
 	{#if open.length === 0}
 		<Card variant="soft-peach">
 			<p>Nothing to debrief. Finish today's text.</p>
-			<a class="btn" href={resolve('/eval')}>Today</a>
+			<a class="btn" href={resolve('/eval')}>Daily text</a>
 		</Card>
 	{:else}
 		<PracticeBook years={bookYears} />

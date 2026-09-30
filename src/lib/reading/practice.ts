@@ -292,3 +292,19 @@ export function paragraphMapFor(slug: string): ParagraphMapEntry[] {
 export function paraphraseFor(slug: string): ParaphraseDrill[] {
 	return serve(slug)?.paraphrase ?? [];
 }
+
+export function practiceById(id: string): PracticeItem | undefined {
+	for (const row of loaded) {
+		const item = row.pack.items?.find((candidate) => candidate.id === id);
+		if (item) return item;
+	}
+	return undefined;
+}
+
+export function paraphraseById(id: string): ParaphraseDrill | undefined {
+	for (const row of loaded) {
+		const drill = row.pack.paraphrase?.find((candidate) => candidate.id === id);
+		if (drill) return drill;
+	}
+	return undefined;
+}

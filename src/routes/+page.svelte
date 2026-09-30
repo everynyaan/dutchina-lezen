@@ -146,8 +146,8 @@
 	</Card>
 
 	<a class="hub-card" href={resolve('/eval')} onclick={() => playSfx('button_tap')}>
-		<span class="hub-title">{evalDone ? 'Today done' : 'Today'}</span>
-		<span class="hub-sub">One full text. All its questions.</span>
+		<span class="hub-title">{evalDone ? 'Daily text done' : 'Daily text'}</span>
+		<span class="hub-sub">One passage. Map, three questions, one paraphrase.</span>
 	</a>
 	<a class="hub-card" href={resolve('/cards')} onclick={() => playSfx('button_tap')}>
 		<span class="hub-title">Debrief</span>

@@ -15,7 +15,11 @@
 	} from '$lib/state/schema';
 	import { setGameContext, type SyncStatus } from '$lib/state/context';
 	import { applyEvent as applyLpEvent, type LpEvent, type LpResult } from '$lib/lp/lp';
-	import { foldMissingSessionLogs, maybeAdvanceGates, unlockToastMessage } from '$lib/gates/mastery';
+	import {
+		foldMissingSessionLogs,
+		maybeAdvanceGates,
+		unlockToastMessage
+	} from '$lib/gates/mastery';
 	import { CONFIG_TOP_LEVEL_KEYS, type StewardHost } from '$lib/kuromi/executor';
 	import { upsertPageIn, removePageFrom } from '$lib/kuromi/pageStore';
 	import { playSfx, setSfxMuted } from '$lib/sound/sfx';
@@ -601,7 +605,7 @@
 	// ============================================================
 	const tabs = [
 		{ href: '/', label: 'Home', icon: 'house' },
-		{ href: '/eval', label: 'Today', icon: 'list-check' },
+		{ href: '/eval', label: 'Daily text', icon: 'list-check' },
 		{ href: '/cards', label: 'Debrief', icon: 'rectangle-history' },
 		{ href: '/mock', label: 'Mock', icon: 'bullseye' }
 	] as const;
@@ -626,9 +630,7 @@
 		peach: '--color-peach-deep',
 		teal: '--color-teal-deep'
 	};
-	let currentRankColorVar = $derived(
-		GATE_PILL[GATE_IDENTITY[currentGateFromState(gameState)]]
-	);
+	let currentRankColorVar = $derived(GATE_PILL[GATE_IDENTITY[currentGateFromState(gameState)]]);
 </script>
 
 <Toast />

@@ -7,8 +7,14 @@ import { GATE_COPY, homeGateCards } from '$lib/gates/home';
 import GatePath from './GatePath.svelte';
 import HomeShelfHost from './homeShelf.host.svelte';
 
-const pageSrc = readFileSync(fileURLToPath(new URL('../../../routes/+page.svelte', import.meta.url)), 'utf8');
-const shelfSrc = readFileSync(fileURLToPath(new URL('./HomeShelf.svelte', import.meta.url)), 'utf8');
+const pageSrc = readFileSync(
+	fileURLToPath(new URL('../../../routes/+page.svelte', import.meta.url)),
+	'utf8'
+);
+const shelfSrc = readFileSync(
+	fileURLToPath(new URL('./HomeShelf.svelte', import.meta.url)),
+	'utf8'
+);
 
 describe('home page — gates then collection', () => {
 	it('SSR GatePath still has the four gate titles', () => {
@@ -23,7 +29,7 @@ describe('home page — gates then collection', () => {
 	it('home is the reading-fork hub, not the four-gate path', () => {
 		expect(pageSrc).toContain("resolve('/eval')");
 		expect(pageSrc).toContain("resolve('/mock')");
-		expect(pageSrc).toContain('One full text. All its questions.');
+		expect(pageSrc).toContain('One passage. Map, three questions, one paraphrase.');
 		expect(pageSrc).toContain('The published papers needed 24 of 35. Aim for 25 or more.');
 		expect(pageSrc).toContain('Predictive mock. Once.');
 		expect(pageSrc).toContain('Training is 2024 and 2025.');

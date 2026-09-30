@@ -1,5 +1,6 @@
 import type { BankPassage } from './bank';
-import { allPassages, dayIndex } from './bank';
+import { allPassages } from './bank';
+import { buildDailyText } from './daily';
 import type { DailyTextState, Miss, ReadingForkState } from './types';
 
 /** Training bank is 2024 and 2025. 2023 stays off Today while it can still be a predictive mock. */
@@ -16,22 +17,11 @@ export function evalResults(state: DailyTextState): Record<string, boolean> {
 	return out;
 }
 
-export function buildDailyEval(date: string): DailyTextState {
-	const passages = trainingPassages();
-	const passage = passages[dayIndex(date, passages.length)];
-	return {
-		date,
-		passageSlug: passage.slug,
-		mapDone: false,
-		itemIds: passage.questions.map((question) => question.id),
-		answers: {},
-		completed: false
-	};
-}
-
-export function ensureTodayEval(current: DailyTextState, date: string): DailyTextState {
+/** Keep today's stored text. Build a new one only when the date changes. */
+export function ensureTodayEval(fork: ReadingForkState, date: string): DailyTextState {
+	const current = fork.eval;
 	if (current.date === date && current.passageSlug) return current;
-	return buildDailyEval(date);
+	return buildDailyText(fork, date);
 }
 
 export function applyShowUpStreak(
