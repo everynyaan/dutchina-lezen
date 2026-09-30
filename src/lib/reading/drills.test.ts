@@ -238,9 +238,19 @@ describe('debrief page', () => {
 			fileURLToPath(new URL('../components/reading/ReadingLoop.svelte', import.meta.url)),
 			'utf8'
 		);
-		expect(desk).toContain('minmax(0, 11fr) minmax(0, 6fr) minmax(0, 3fr)');
+		expect(desk).toContain('@container app-card (min-width: 42rem)');
+		expect(desk).toContain('minmax(0, 1.6fr) minmax(0, 1fr) minmax(7.5rem, 9rem)');
+		expect(desk).toContain('contain: inline-size');
+		expect(desk).toContain('overflow-x: clip');
+		expect(desk).not.toContain('@media (min-width: 1200px)');
 		expect(desk).toContain('grid-column: 1');
 		expect(desk).toContain('grid-column: 2');
 		expect(desk).toContain('Use a wider window.');
+		const layout = readFileSync(
+			fileURLToPath(new URL('../../routes/+layout.svelte', import.meta.url)),
+			'utf8'
+		);
+		expect(layout).toContain('container-name: app-card');
+		expect(layout).toContain('container-type: inline-size');
 	});
 });

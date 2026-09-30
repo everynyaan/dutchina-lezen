@@ -114,9 +114,11 @@
 
 <style>
 	.pane {
+		max-width: 100%;
 		font-size: 18px;
 		line-height: 1.6;
 		color: var(--color-ink);
+		overflow-wrap: break-word;
 	}
 	.source {
 		margin: 0 0 0.35rem;

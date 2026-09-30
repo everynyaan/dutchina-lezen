@@ -68,27 +68,31 @@
 	.desk {
 		display: none;
 		width: 100%;
+		max-width: 100%;
 		min-width: 0;
 	}
-	@media (min-width: 1200px) {
+	/* 42rem is the app card's content box, not the viewport. */
+	@container app-card (min-width: 42rem) {
 		.narrow {
 			display: none;
 		}
 		.desk {
 			display: grid;
-			grid-template-columns: minmax(0, 11fr) minmax(0, 6fr) minmax(0, 3fr);
+			grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr) minmax(7.5rem, 9rem);
 			grid-template-rows: minmax(0, 1fr);
 			width: 100%;
+			max-width: 100%;
 			min-width: 0;
-			height: calc(100vh - 12rem);
-			min-height: 24rem;
-			gap: 0.75rem;
+			height: calc(100dvh - 18rem);
+			min-height: 22rem;
+			gap: 1rem;
+			overflow: hidden;
 		}
 		.desk.wide {
-			grid-template-columns: minmax(0, 8fr) minmax(0, 6fr) minmax(0, 6fr);
+			grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) minmax(0, 1fr);
 		}
 		.desk.tab {
-			grid-template-columns: minmax(0, 11fr) minmax(0, 6fr) 2.75rem;
+			grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr) 2.75rem;
 		}
 		.text {
 			grid-column: 1;
@@ -105,10 +109,15 @@
 		.text,
 		.ask,
 		.notes {
+			contain: inline-size;
 			min-width: 0;
 			max-width: 100%;
 			min-height: 0;
-			overflow: auto;
+			overflow-x: clip;
+			overflow-y: auto;
+			background: #fff;
+			padding: 0 0.85rem;
+			box-sizing: border-box;
 		}
 		.note-bar {
 			display: flex;

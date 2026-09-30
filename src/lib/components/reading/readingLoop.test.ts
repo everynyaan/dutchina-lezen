@@ -210,6 +210,23 @@ describe('reading loop components', () => {
 		expect(done).toEqual(['done']);
 	});
 
+	it('keeps the space between sentences in one paragraph', async () => {
+		mounted.push(
+			mount(ReadingPane, {
+				target: document.body,
+				props: {
+					passage: {
+						name: 'Gap',
+						intro: '',
+						text: 'Eerste zin. Tweede zin.'
+					}
+				}
+			})
+		);
+		await tick();
+		expect(document.body.textContent).toContain('Eerste zin. Tweede zin.');
+	});
+
 	it('asks for a wider window and keeps a notebook rail', async () => {
 		mounted.push(mount(ReadingLoopHost, { target: document.body, props: { passage } }));
 		await tick();

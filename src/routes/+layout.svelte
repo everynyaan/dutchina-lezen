@@ -702,6 +702,9 @@
 	.content {
 		flex: 1;
 		min-width: 0;
+		/* The reading desk keys off this card, not the browser window. */
+		container-type: inline-size;
+		container-name: app-card;
 		/* Bottom reservation must clear the Kuromi summon FAB, the tallest
 		   fixed element above the safe area: FAB sits at
 		   safe-area + 100px and is 56px tall, so its top edge is at
