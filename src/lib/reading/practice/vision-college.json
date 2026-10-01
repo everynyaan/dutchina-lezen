@@ -1,0 +1,299 @@
+{
+	"passageSlug": "vision-college",
+	"note": "Sample practice pack. Not official exam items. Never used in mock scores.",
+	"paragraphMap": [
+		{
+			"p": 2,
+			"anchor": "Onder Lestijden vind je de tijden waarbinnen de",
+			"role": "states-rule",
+			"summary": "You must be available for school all week; report absence before 9.00 to the OSB, otherwise it counts as unauthorised absence."
+		},
+		{
+			"p": 4,
+			"anchor": ". Je scant je pas bij de toegangspoortjes bij de",
+			"role": "states-rule",
+			"summary": "Scanning your pass registers you in the building; the teacher registers you at the start of the lesson."
+		},
+		{
+			"p": 6,
+			"anchor": "Zorg ervoor dat de school altijd over een correc",
+			"role": "advice-instruction",
+			"summary": "Keep your phone number, address and contact person up to date and use ICE on your phone."
+		},
+		{
+			"p": 8,
+			"anchor": "Een calamiteit is een situatie die gevaarlijk ka",
+			"role": "advice-instruction",
+			"summary": "What a calamity is and what to do: alarm, emergency exit, assembly point, BHV staff, and how to raise the alarm yourself."
+		},
+		{
+			"p": 10,
+			"anchor": "Je moet wettelijk cursusgeld betalen als je een",
+			"role": "states-rule",
+			"summary": "Who must pay the legal course fee (BBL from 18 on 1 August, part-time vavo) and how much."
+		},
+		{
+			"p": 12,
+			"anchor": "Als je vindt dat de factuur niet klopt, kun je b",
+			"role": "advice-instruction",
+			"summary": "If the invoice is wrong, write to the finance department within 14 days of the invoice date."
+		},
+		{
+			"p": 14,
+			"anchor": "Je bent zelf verantwoordelijk voor de betaling.",
+			"role": "states-rule",
+			"summary": "You are responsible for paying; if you do not pay, a collection agency can be called in."
+		},
+		{
+			"p": 16,
+			"anchor": "Bij BBL wordt het cursusgeld door sommige werkge",
+			"role": "exception-condition",
+			"summary": "An employer can pay a BBL student's fee through a third-party authorisation signed by both; otherwise you stay responsible."
+		},
+		{
+			"p": 18,
+			"anchor": "Als je tussentijds met de opleiding stopt, kun j",
+			"role": "exception-condition",
+			"summary": "The only cases in which you get course fee back when you stop, and that you must request it yourself."
+		},
+		{
+			"p": 20,
+			"anchor": "? Ga naar Team debiteuren (in Alkmaar).",
+			"role": "advice-instruction",
+			"summary": "Questions about course fees go to Team debiteuren in Alkmaar."
+		},
+		{
+			"p": 22,
+			"anchor": "De sectoren Economie, Gezondheidszorg, Welzijn &",
+			"role": "advice-instruction",
+			"summary": "When you can go to a dean or adviser, and that Techniek students go to their mentor instead."
+		},
+		{
+			"p": 24,
+			"anchor": "Elke locatie van het Vision College heeft EHBO-h",
+			"role": "advice-instruction",
+			"summary": "First aid: go to reception or a caretaker, call 100 in urgent cases, stay with an injured person you cannot move."
+		},
+		{
+			"p": 26,
+			"anchor": "Bij een aantal opleidingen worden uitjes georgan",
+			"role": "states-rule",
+			"summary": "Outings in the programme are compulsory and free, others are paid via the webshop; what the Visionpas is used for."
+		},
+		{
+			"p": 28,
+			"anchor": "Je kunt de pas krijgen bij het Passenbureau (in",
+			"role": "advice-instruction",
+			"summary": "Where and when you can collect your pass, for new and for registered students; the pass stays school property."
+		},
+		{
+			"p": 30,
+			"anchor": "Als je nog op je Visionpas wacht, maar wel het g",
+			"role": "exception-condition",
+			"summary": "While waiting for your pass you can collect a temporary pass, based on a list from your OSB."
+		},
+		{
+			"p": 32,
+			"anchor": "Het kan zijn dat het toegangspoortje een enkele",
+			"role": "problem-risk",
+			"summary": "What to do if the gate or the pass does not work, and the cost if the pass broke through your own fault."
+		},
+		{
+			"p": 34,
+			"anchor": "Je kunt een tijdelijke pas krijgen voor een dag.",
+			"role": "states-rule",
+			"summary": "Forgotten pass: a day pass for 5 euros, both passes blocked at the end of the day until you return the temporary one."
+		},
+		{
+			"p": 36,
+			"anchor": "Je kunt bij het Passenbureau een nieuwe pas aanv",
+			"role": "states-rule",
+			"summary": "Lost pass: a new one costs 5 euros admin plus 5 euros, and the old one stops working."
+		},
+		{
+			"p": 38,
+			"anchor": "Bij misbruik van de Visionpas wordt deze ingenom",
+			"role": "states-rule",
+			"summary": "A misused pass is taken in or blocked; the location manager decides on a replacement."
+		},
+		{
+			"p": 40,
+			"anchor": "Lever de pas in bij het Passenbureau. De pas wor",
+			"role": "advice-instruction",
+			"summary": "Hand in a pass you no longer need; it becomes invalid when you are deregistered."
+		},
+		{
+			"p": 42,
+			"anchor": "Op de Visionpas staat je foto. Deze foto wordt g",
+			"role": "states-rule",
+			"summary": "The Passenbureau takes your photo, and it must not be damaged because it is used for identification."
+		}
+	],
+	"items": [
+		{
+			"id": "p-vision-college-1",
+			"qtype": "betekenis-in-context",
+			"question": "Als je niet op school of stage kunt zijn, meld je dat bij het OSB 'en indien van toepassing ook bij je stagebedrijf'. Wat betekent 'indien van toepassing' hier?",
+			"options": {
+				"A": "alleen als je stagebedrijf daarom vraagt",
+				"B": "als het voor jou geldt, omdat je stage loopt",
+				"C": "altijd, ook als je geen stage loopt"
+			},
+			"answer": "B",
+			"evidence": [
+				{
+					"p": 2,
+					"quote": "en indien van toepassing ook bij je stagebedrijf"
+				}
+			],
+			"move": "Look at what the phrase is attached to: 'ook bij je stagebedrijf'. Ask for whom reporting to an internship company makes sense.",
+			"why": "'Indien van toepassing' means 'if it applies to you': you only report to an internship company if you have one and are expected there.",
+			"distractors": {
+				"A": {
+					"trap": "verkeerde-voorwaarde",
+					"why": "Adds a condition the text does not give: it depends on your situation, not on a request from the company."
+				},
+				"C": {
+					"trap": "overdreven",
+					"why": "'Altijd' removes the condition; a student without an internship has no company to call."
+				}
+			}
+		},
+		{
+			"id": "p-vision-college-2",
+			"qtype": "toepassing",
+			"question": "Lotte volgt een BBL-opleiding op niveau 3. Op 1 augustus, aan het begin van het schooljaar, is ze 17 jaar. Op 20 september wordt ze 18. Moet Lotte dit schooljaar wettelijk cursusgeld betalen?",
+			"options": {
+				"A": "Ja, want ze wordt tijdens het schooljaar 18 jaar.",
+				"B": "Ja, € 573,00, want ze volgt een opleiding op niveau 3.",
+				"C": "Nee, want ze is op 1 augustus nog geen 18 jaar."
+			},
+			"answer": "C",
+			"evidence": [
+				{
+					"p": 10,
+					"quote": "Je moet wettelijk cursusgeld betalen als je een BBL-opleiding volgt en op 1 augustus 18 jaar of ouder bent."
+				}
+			],
+			"move": "Find the rule for BBL and check both conditions against Lotte: the type of course and her age on one exact date.",
+			"why": "BBL students pay only if they are 18 or older on 1 August. Lotte follows BBL but is 17 on that date, so she does not have to pay this school year.",
+			"distractors": {
+				"A": {
+					"trap": "verkeerde-voorwaarde",
+					"why": "The age counts on 1 August only; turning 18 later in the year does not matter."
+				},
+				"B": {
+					"trap": "verkeerde-voorwaarde",
+					"why": "The amount per level only matters once you have to pay; the level is not a condition for paying."
+				}
+			}
+		},
+		{
+			"id": "p-vision-college-3",
+			"qtype": "toepassing",
+			"question": "Bram begint in september aan een BBL-opleiding en betaalt het cursusgeld. Op 15 november van hetzelfde jaar laat hij zich uitschrijven, omdat de opleiding hem tegenvalt. Krijgt Bram cursusgeld terug?",
+			"options": {
+				"A": "Nee, want hij laat zich pas na 1 oktober uitschrijven.",
+				"B": "Ja, als hij het zelf aanvraagt bij Team debiteuren.",
+				"C": "Ja, want hij stopt vóór 1 mei van het komende jaar."
+			},
+			"answer": "A",
+			"evidence": [
+				{
+					"p": 18,
+					"quote": "kun je het cursusgeld geheel of gedeeltelijk alleen terugkrijgen als jij"
+				},
+				{
+					"p": 18,
+					"quote": "je vóór 1 oktober van dit jaar laat uitschrijven"
+				}
+			],
+			"move": "The word 'alleen' means the list is complete. Check Bram against every line: date, diploma, switching course, family circumstances.",
+			"why": "You only get money back in the listed cases. Bram deregisters after 1 October, has no diploma, does not switch to BOL and stops for no family reason, so none of the cases applies.",
+			"distractors": {
+				"B": {
+					"trap": "verkeerde-voorwaarde",
+					"why": "Asking Team debiteuren is needed, but only works when one of the listed conditions applies, and none does for Bram."
+				},
+				"C": {
+					"trap": "verkeerde-voorwaarde",
+					"why": "The 1 May date is for students who get their diploma and leave, not for students who just stop."
+				}
+			}
+		}
+	],
+	"paraphrase": [
+		{
+			"id": "pp-vision-college-1",
+			"source": {
+				"p": 18,
+				"quote": "Teruggave gaat niet automatisch."
+			},
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "Je krijgt het cursusgeld nooit terug.",
+				"B": "Je krijgt het geld niet vanzelf terug.",
+				"C": "De school betaalt het geld zelf terug."
+			},
+			"answer": "B",
+			"distractors": {
+				"A": {
+					"trap": "overdreven",
+					"why": "'Niet automatisch' is about how you get it back, not 'nooit'."
+				},
+				"C": {
+					"trap": "tegenovergesteld",
+					"why": "The school does not pay it back on its own; you have to ask for it."
+				}
+			}
+		},
+		{
+			"id": "pp-vision-college-2",
+			"source": {
+				"p": 16,
+				"quote": "Als de derdenmachtiging niet ondertekend door de school wordt ontvangen, blijf je zelf verantwoordelijk voor de betaling."
+			},
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "Als de school geen getekende derdenmachtiging krijgt, moet je zelf betalen.",
+				"B": "Als de school de derdenmachtiging niet tekent, betaalt je werkgever.",
+				"C": "Als de school geen derdenmachtiging krijgt, hoef je niets te betalen."
+			},
+			"answer": "A",
+			"distractors": {
+				"B": {
+					"trap": "echo",
+					"why": "Reuses 'school' and 'ondertekend', but the point is that you stay responsible, not your employer."
+				},
+				"C": {
+					"trap": "tegenovergesteld",
+					"why": "Without the signed form you keep paying yourself, not nothing."
+				}
+			}
+		},
+		{
+			"id": "pp-vision-college-3",
+			"source": {
+				"p": 2,
+				"quote": "Als je aanwezig moet zijn, maar wegblijft zonder geldige reden en/of zonder dit te melden, ziet de school dit als ongeoorloofd verzuim."
+			},
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "Voor de school is wegblijven nooit toegestaan, ook niet met een goede reden.",
+				"B": "Als je een geldige reden hebt, hoef je je afwezigheid niet te melden.",
+				"C": "Wie zonder goede reden of zonder afmelding wegblijft, doet iets wat niet mag."
+			},
+			"answer": "C",
+			"distractors": {
+				"A": {
+					"trap": "overdreven",
+					"why": "Only absence without a valid reason or without reporting counts; 'nooit' goes too far."
+				},
+				"B": {
+					"trap": "echo",
+					"why": "Uses 'geldige reden' and 'melden', but 'en/of' means you must still report it even with a good reason."
+				}
+			}
+		}
+	]
+}

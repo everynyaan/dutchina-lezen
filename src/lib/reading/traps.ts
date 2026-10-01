@@ -1,42 +1,78 @@
-import type { TrapType } from './types';
-import { TRAP_TYPES } from './types';
+import { trapForPick } from './annotations';
+import { addDays } from './bank';
+import { paraphraseById, practiceById } from './practice';
+import type { ReadingForkState, TrapCardV2, TrapKind } from './types';
 
-export function classifyTrap(question: string): TrapType {
-	const q = question.toLowerCase();
-	if (
-		/verwijs|verwijst|waar slaat|bedoeld met/.test(q) ||
-		/wie of wat is ['‘]?(hij|zij|die|dat|deze|dit|het)\b/.test(q) ||
-		/\b(hij|zij|die|deze)\b.+\b(wie|wat)\b/.test(q)
-	) {
-		return 'verwijzing';
-	}
-	if (
-		/doel van deze tekst|doel van |waar gaat .+ over|hoofd(onderwerp|gedachte)|waarvoor is deze tekst bedoeld|voor wie is deze tekst|bedoeling van/.test(
-			q
-		)
-	) {
-		return 'hoofdonderwerp';
-	}
-	if (
-		/conclusie|wat kun je .+ afleiden|wat blijkt uit|wat is de strekking|vat de mening|wat laat dit zien|verrassende uitkomst/.test(
-			q
-		)
-	) {
-		return 'conclusie';
-	}
-	if (/wat voor (organisatie|tekst|website)|soort tekst|bron van/.test(q)) {
-		return 'bron-doel';
-	}
-	return 'bijna-goed';
+export function trapOf(itemId: string, picked: string): TrapKind | null {
+	const official = trapForPick(itemId, picked);
+	if (official) return official.trap;
+	const practice = practiceById(itemId)?.distractors[picked];
+	if (practice) return practice.trap;
+	const drill = paraphraseById(itemId)?.distractors[picked];
+	if (drill) return drill.trap;
+	return null;
 }
 
-export function isTrapType(value: string): value is TrapType {
-	return (TRAP_TYPES as readonly string[]).includes(value);
+/** One card per trap. A miss resets the streak and makes the card due today. */
+export function recordMiss(
+	fork: ReadingForkState,
+	itemId: string,
+	picked: string,
+	today: string
+): ReadingForkState {
+	const trap = trapOf(itemId, picked);
+	if (!trap) return fork;
+	const existing = fork.traps.find((card) => card.trap === trap);
+	const next: TrapCardV2 = existing
+		? {
+				...existing,
+				lastItemId: itemId,
+				seenItemIds: existing.seenItemIds.includes(itemId)
+					? existing.seenItemIds
+					: [...existing.seenItemIds, itemId],
+				dueDate: today,
+				streak: 0,
+				misses: existing.misses + 1,
+				tamedAt: null
+			}
+		: {
+				trap,
+				lastItemId: itemId,
+				seenItemIds: [itemId],
+				dueDate: today,
+				streak: 0,
+				misses: 1,
+				createdAt: today,
+				tamedAt: null
+			};
+	const traps = existing
+		? fork.traps.map((card) => (card.trap === trap ? next : card))
+		: [...fork.traps, next];
+	return { ...fork, traps };
 }
 
-/** First ~280 chars of a passage, used as the card snippet — not a translation. */
-export function passageSnippet(text: string): string {
-	const compact = text.replace(/\s+/g, ' ').trim();
-	if (compact.length <= 280) return compact;
-	return compact.slice(0, 277).trimEnd() + '…';
+/** Correct: due in 1, then 3, then 7 days. The third in a row tames the card. Wrong: due tomorrow, not learned. */
+export function gradeTrap(card: TrapCardV2, correct: boolean, today: string): TrapCardV2 {
+	if (!correct) {
+		return { ...card, streak: 0, dueDate: addDays(today, 1), tamedAt: null };
+	}
+	const streak = card.streak + 1;
+	const dueIn = streak >= 3 ? 7 : streak === 2 ? 3 : 1;
+	return {
+		...card,
+		streak,
+		dueDate: addDays(today, dueIn),
+		tamedAt: streak >= 3 ? (card.tamedAt ?? today) : card.tamedAt
+	};
+}
+
+/** Cards whose due date is today or earlier. Oldest due date first. */
+export function dueTraps(fork: ReadingForkState, today: string): TrapCardV2[] {
+	return fork.traps
+		.filter((card) => card.dueDate <= today)
+		.slice()
+		.sort(
+			(a, b) =>
+				a.dueDate.localeCompare(b.dueDate) || b.misses - a.misses || a.trap.localeCompare(b.trap)
+		);
 }

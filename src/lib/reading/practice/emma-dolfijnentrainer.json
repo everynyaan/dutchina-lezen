@@ -1,0 +1,207 @@
+{
+	"passageSlug": "emma-dolfijnentrainer",
+	"note": "Sample practice pack. Not official exam items. Never used in mock scores.",
+	"paragraphMap": [
+		{
+			"p": 1,
+			"anchor": "Sommige mensen hebben van die beroepen waarvan j",
+			"role": "introduces-topic",
+			"summary": "Introduces Emma, a dolphin trainer for four years, and how she got the job by winning a competition."
+		},
+		{
+			"p": 3,
+			"anchor": "Alhoewel ze denkt dat je met een opleiding als D",
+			"role": "reports-opinion",
+			"summary": "Her varied education, why she finds the job special (the bond of trust) and how people react to it."
+		},
+		{
+			"p": 5,
+			"anchor": "“Hoe mijn werkdag eruitziet hangt ervan af of he",
+			"role": "gives-example",
+			"summary": "A typical working day: preparing, shows, talking to visitors, and daily health checks of the dolphins."
+		},
+		{
+			"p": 7,
+			"anchor": "Om een goede dolfijnentrainer te zijn moet je da",
+			"role": "advice-instruction",
+			"summary": "What a good trainer needs (team player, fit, not minding fish) and the downsides of the job."
+		},
+		{
+			"p": 9,
+			"anchor": "De discussie over dieren in gevangenschap is ons",
+			"role": "reports-opinion",
+			"summary": "Emma's view that the dolphins are not to be pitied: they choose, breed and live longer than in the wild."
+		},
+		{
+			"p": 11,
+			"anchor": "“Ik maak hier zoveel bijzondere en leuke dingen ",
+			"role": "conclusion",
+			"summary": "Funny mishaps and her plans: she stays as long as she enjoys it; most trainers stop around 35."
+		}
+	],
+	"items": [
+		{
+			"id": "p-emma-dolfijnentrainer-1",
+			"qtype": "betekenis-in-context",
+			"question": "'Ik ben er plotseling en totaal onverwacht ingerold.' Wat bedoelt Emma hiermee?",
+			"options": {
+				"A": "Ze heeft er een speciale opleiding voor gevolgd.",
+				"B": "Ze is er bij toeval in terechtgekomen.",
+				"C": "Ze vond het werk in het begin erg moeilijk."
+			},
+			"answer": "B",
+			"evidence": [
+				{
+					"p": 3,
+					"quote": "Het is geluk hebben en ik ben er plotseling en totaal onverwacht ingerold."
+				}
+			],
+			"move": "Use the words around 'ingerold': 'geluk hebben', 'plotseling' and 'onverwacht' all point to chance.",
+			"why": "'Ergens inrollen' means ending up somewhere without planning it; Emma says it was luck and totally unexpected.",
+			"distractors": {
+				"A": {
+					"trap": "tegenovergesteld",
+					"why": "Just before this she says a specific dolphin trainer course does not exist."
+				},
+				"C": {
+					"trap": "niet-in-tekst",
+					"why": "She says nothing about the start of the job being hard."
+				}
+			}
+		},
+		{
+			"id": "p-emma-dolfijnentrainer-2",
+			"qtype": "betekenis-in-context",
+			"question": "'Dat is een teken dat ze goed in hun vel zitten.' Wat betekent 'goed in hun vel zitten' hier?",
+			"options": {
+				"A": "Ze hebben een gezonde, gladde huid.",
+				"B": "Ze worden elke dag gewogen en gecontroleerd.",
+				"C": "Ze voelen zich prettig en hebben het goed."
+			},
+			"answer": "C",
+			"evidence": [
+				{
+					"p": 9,
+					"quote": "en dat is een teken dat ze goed in hun vel zitten"
+				}
+			],
+			"move": "The sentence comes right after 'Ook merken we dat ze gelukkig zijn.' The expression repeats that idea.",
+			"why": "'Goed in je vel zitten' is a fixed expression for feeling well; breeding is given as a sign that the dolphins are happy and healthy.",
+			"distractors": {
+				"A": {
+					"trap": "echo",
+					"why": "'Vel' literally means skin, but the expression is about how the animals feel."
+				},
+				"B": {
+					"trap": "echo",
+					"why": "Weighing and checking are in the paragraph about her working day, not the meaning of this expression."
+				}
+			}
+		},
+		{
+			"id": "p-emma-dolfijnentrainer-3",
+			"qtype": "mening-persoon",
+			"question": "Het publiek ziet een show en denkt: de trainer geeft een teken en de dolfijn doet het. Wat vindt Emma daarvan?",
+			"options": {
+				"A": "Dat klopt niet, want er zit veel werk achter een show.",
+				"B": "Dat klopt, want een dolfijn doet wat het teken vraagt.",
+				"C": "Dat klopt niet, want de dolfijnen doen niet graag mee."
+			},
+			"answer": "A",
+			"evidence": [
+				{
+					"p": 7,
+					"quote": "Iedereen ziet een leuke show: je geeft een teken en het dier doet het. Maar zo werkt het niet. Er zit een hele theorie en veel werk achter!"
+				}
+			],
+			"move": "Separate what 'iedereen' sees from what Emma says after 'Maar'. Her own view comes after the contrast word.",
+			"why": "Emma says 'Maar zo werkt het niet': there is a lot of theory and work behind every show.",
+			"distractors": {
+				"B": {
+					"trap": "verkeerde-persoon",
+					"why": "This is how the audience ('iedereen') sees it; Emma says right after that it does not work like that."
+				},
+				"C": {
+					"trap": "tegenovergesteld",
+					"why": "Emma says the dolphins do nothing they do not want, so she does not say they dislike the shows."
+				}
+			}
+		}
+	],
+	"paraphrase": [
+		{
+			"id": "pp-emma-dolfijnentrainer-1",
+			"source": {
+				"p": 9,
+				"quote": "Ze doen niks wat ze niet willen."
+			},
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "De dolfijnen willen eigenlijk niks doen.",
+				"B": "De dolfijnen moeten soms dingen doen die ze niet willen.",
+				"C": "De dolfijnen doen alleen wat ze zelf willen."
+			},
+			"answer": "C",
+			"distractors": {
+				"A": {
+					"trap": "echo",
+					"why": "Uses 'niks' and 'willen' but says the dolphins want to do nothing at all."
+				},
+				"B": {
+					"trap": "tegenovergesteld",
+					"why": "It says they are forced, the opposite of the sentence."
+				}
+			}
+		},
+		{
+			"id": "pp-emma-dolfijnentrainer-2",
+			"source": {
+				"p": 11,
+				"quote": "De meesten stoppen rond hun 35e omdat je toch dagelijks voorstellingen geeft en het werk veel energie kost."
+			},
+			"afterItemId": "lezen-2023-22",
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "De meeste trainers stoppen rond hun 35e, omdat het dagelijkse werk zwaar is.",
+				"B": "Emma stopt zelf rond haar 35e, omdat ze elke dag voorstellingen geeft.",
+				"C": "Alle trainers moeten op hun 35e stoppen met het geven van shows."
+			},
+			"answer": "A",
+			"distractors": {
+				"B": {
+					"trap": "verkeerde-persoon",
+					"why": "'De meesten' are other trainers; Emma herself stays as long as she enjoys it."
+				},
+				"C": {
+					"trap": "overdreven",
+					"why": "'De meesten' and 'rond' become 'alle' and 'moeten'."
+				}
+			}
+		},
+		{
+			"id": "pp-emma-dolfijnentrainer-3",
+			"source": {
+				"p": 3,
+				"quote": "Een gerichte opleiding tot dolfijnentrainer bestaat er niet."
+			},
+			"afterItemId": "lezen-2023-18",
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "Je moet een speciale opleiding doen om dolfijnentrainer te worden.",
+				"B": "Er is geen speciale opleiding om dolfijnentrainer te worden.",
+				"C": "De opleiding tot dolfijnentrainer is niet goed genoeg."
+			},
+			"answer": "B",
+			"distractors": {
+				"A": {
+					"trap": "tegenovergesteld",
+					"why": "The sentence says such a course does not exist at all."
+				},
+				"C": {
+					"trap": "echo",
+					"why": "Uses 'opleiding tot dolfijnentrainer' but judges its quality, while the sentence says it does not exist."
+				}
+			}
+		}
+	]
+}

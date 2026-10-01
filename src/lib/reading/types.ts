@@ -1,90 +1,225 @@
-export const TRAP_TYPES = [
-	'verwijzing',
-	'hoofdonderwerp',
-	'bijna-goed',
-	'conclusie',
-	'bron-doel'
-] as const;
-
-export type TrapType = (typeof TRAP_TYPES)[number];
-
-export const TRAP_LABEL: Record<TrapType, string> = {
-	verwijzing: 'Who is “hij”?',
-	hoofdonderwerp: 'What’s this about?',
-	'bijna-goed': 'Almost-right trap',
-	conclusie: 'What follows?',
-	'bron-doel': 'Where / why this text?'
-};
-
-/** How to practice the move — English chrome, never a translation prompt. */
-export const TRAP_MOVE: Record<TrapType, string> = {
-	verwijzing: 'Find who or what that word points back to. Don’t hunt a new noun.',
-	hoofdonderwerp: 'What’s the text doing? First lines and last line, not a side fact.',
-	'bijna-goed':
-		'Two options look right. The trap copies a word from the text. Answer the question that was asked.',
-	conclusie: 'What follows from the whole stretch — not a line you can quote.',
-	'bron-doel': 'Where did this appear, and what is it for? Not the topic itself.'
-};
-
-export interface TrapCard {
-	id: string;
-	trap: TrapType;
-	/** Exam item that minted or last refreshed this sticker (avoid on drills). */
+export interface Miss {
 	questionId: string;
-	passageSlug: string;
-	passageName: string;
-	question: string;
-	correct: string;
 	picked: string;
-	correctText: string;
-	snippet: string;
-	createdAt: string;
-	dueDate: string;
-	reps: number;
-	/** Real exam ids already drilled for this trap. */
-	seenDrillIds?: string[];
+	seen: boolean;
 }
 
-export interface ReadingEvalState {
+export const QTYPES = [
+	'doel-tekst',
+	'doel-onderdeel',
+	'bron-publiek',
+	'hoofdgedachte',
+	'mening-persoon',
+	'detail',
+	'oorzaak-reden',
+	'toepassing',
+	'niet-vraag',
+	'functie-tekstdeel',
+	'betekenis-in-context',
+	'conclusie',
+	'vergelijking'
+] as const;
+export type QType = (typeof QTYPES)[number];
+
+export const TRAP_KINDS = [
+	'echo',
+	'waar-niet-gevraagd',
+	'te-breed',
+	'te-smal',
+	'tegenovergesteld',
+	'niet-in-tekst',
+	'verkeerde-persoon',
+	'verkeerde-voorwaarde',
+	'overdreven'
+] as const;
+export type TrapKind = (typeof TRAP_KINDS)[number];
+
+export type ItemOrigin = 'official' | 'practice' | 'fresh';
+export type AttemptSource = 'daily' | 'drill' | 'texts' | 'mock' | 'map' | 'paraphrase' | 'lure';
+
+export interface ReadingAttempt {
+	itemId: string;
+	origin: ItemOrigin;
+	passageSlug: string;
+	source: AttemptSource;
+	at: string;
+	picked: string;
+	correct: boolean;
+	locateP: number | null;
+	locateHit: boolean | null;
+	ms: number;
+	mockId?: string;
+}
+
+export interface TrapCardV2 {
+	trap: TrapKind;
+	lastItemId: string;
+	seenItemIds: string[];
+	dueDate: string;
+	streak: number;
+	misses: number;
+	createdAt: string;
+	tamedAt: string | null;
+}
+
+export interface DailyAnswer {
+	picked: string;
+	correct: boolean;
+	locateP: number | null;
+}
+
+/** Daily text. The field on the fork stays `eval`. */
+export interface DailyTextState {
 	date: string | null;
 	passageSlug: string | null;
-	year: number | null;
-	gistOptions: string[];
-	gistAnswer: string;
-	gistPicked: string | null;
-	questionIds: string[];
-	results: Record<string, boolean>;
+	mapDone: boolean;
+	itemIds: string[];
+	answers: Record<string, DailyAnswer>;
 	completed: boolean;
 }
 
-export interface ReadingForkState {
-	eval: ReadingEvalState;
-	showUpStreak: number;
-	lastEvalDate: string | null;
-	trapCards: TrapCard[];
-	trapStickers: TrapType[];
-	lastMockAt: string | null;
-	lastMockScore: { correct: number; total: number; passed: boolean } | null;
+export interface MockSession {
+	id: string;
+	paperYear: number;
+	/** Set when this sitting is a practice set, not an official paper. */
+	setId?: string;
+	booklet: boolean;
+	startedAt: number;
+	endsAt: number;
+	answers: Record<string, string>;
+	flagged: Record<string, boolean>;
+	textMs: number[];
+	activeText: number;
+	activeSince: number | null;
 }
 
-export const EMPTY_READING_EVAL: ReadingEvalState = {
+export interface MockResult {
+	id: string;
+	paperYear: number;
+	setId?: string;
+	finishedAt: string;
+	expired: boolean;
+	correct: number;
+	total: number;
+	passLine: number;
+	byQtype: Partial<Record<QType, { c: number; t: number }>>;
+	textMs: number[];
+	answers: Record<string, string>;
+	flagged: Record<string, boolean>;
+}
+
+/** lookupsPerText default 5. The notebook spends them. The budget is a nudge, never a lock. */
+export interface ReadingSettings {
+	examDate: string;
+	reservedPapers: number[];
+	lookupsPerText: number;
+}
+
+export const EXAM_DATE = '2026-11-12';
+export const LOOKUPS_PER_TEXT = 5;
+export const ATTEMPT_CAP = 5000;
+
+export const EMPTY_DAILY_TEXT: DailyTextState = {
 	date: null,
 	passageSlug: null,
-	year: null,
-	gistOptions: [],
-	gistAnswer: '',
-	gistPicked: null,
-	questionIds: [],
-	results: {},
+	mapDone: false,
+	itemIds: [],
+	answers: {},
 	completed: false
 };
 
+export const EMPTY_READING_SETTINGS: ReadingSettings = {
+	examDate: EXAM_DATE,
+	reservedPapers: [2023],
+	lookupsPerText: LOOKUPS_PER_TEXT
+};
+
+export type NoteKind = 'word' | 'sentence' | 'trap';
+export type SentenceNoteType = 'signal' | 'rule' | 'opinion' | 'hard';
+
+export interface NotebookEntry {
+	id: string;
+	kind: NoteKind;
+	createdAt: string;
+	passageSlug: string;
+	p: number;
+	quote: string;
+	lemma?: string;
+	surface?: string;
+	sentenceType?: SentenceNoteType;
+	trap?: TrapKind;
+	itemId?: string;
+	picked?: string;
+	englishRevealed: boolean;
+	guessed: 'knew' | 'unsure' | null;
+	guessText?: string;
+	note: string;
+	tags: string[];
+	starred: boolean;
+	metSince: number;
+	lastMetAt: string | null;
+	/** Passages already counted in metSince. Keeps a reload from counting twice. */
+	metPassages?: string[];
+}
+
+export interface NotebookState {
+	entries: NotebookEntry[];
+	/** passageSlug -> lookups used */
+	lookups: Record<string, number>;
+}
+
+export const EMPTY_NOTEBOOK: NotebookState = { entries: [], lookups: {} };
+
+export const NOTE_TAGS = ['work', 'school', 'health', 'rules', 'money'] as const;
+
+export interface ReadingForkState {
+	eval: DailyTextState;
+	showUpStreak: number;
+	lastEvalDate: string | null;
+	misses: Miss[];
+	satMocks: number[];
+	lastMockAt: string | null;
+	lastMockScore: { correct: number; total: number; passed: boolean; year: number } | null;
+	attempts: ReadingAttempt[];
+	traps: TrapCardV2[];
+	mockInProgress: MockSession | null;
+	mocks: MockResult[];
+	settings: ReadingSettings;
+	notebook: NotebookState;
+}
+
 export const EMPTY_READING_FORK: ReadingForkState = {
-	eval: { ...EMPTY_READING_EVAL },
+	eval: { ...EMPTY_DAILY_TEXT, answers: {} },
 	showUpStreak: 0,
 	lastEvalDate: null,
-	trapCards: [],
-	trapStickers: [],
+	misses: [],
+	satMocks: [],
 	lastMockAt: null,
-	lastMockScore: null
+	lastMockScore: null,
+	attempts: [],
+	traps: [],
+	mockInProgress: null,
+	mocks: [],
+	settings: { ...EMPTY_READING_SETTINGS, reservedPapers: [2023] },
+	notebook: { entries: [], lookups: {} }
 };
+
+/** p is a hint. Resolve the paragraph by the quote. */
+export interface Evidence {
+	p: number;
+	quote: string;
+}
+
+export interface ItemAnnotation {
+	id: string;
+	qtype: QType;
+	evidence: Evidence[];
+	/** English. */
+	move: string;
+	/** English. */
+	why: string;
+	/** Every option letter except the key. */
+	distractors: Record<string, { trap: TrapKind; why: string }>;
+	/** For Eyad only. Not shown to the learner. */
+	keyCheck: string;
+}

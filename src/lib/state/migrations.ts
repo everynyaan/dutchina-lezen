@@ -24,11 +24,101 @@ import {
 	type StateV21,
 	type StateV22,
 	type StateV23,
+	type StateV24,
+	type StateV25,
+	type StateV26,
 	DEFAULT_GLOW_ORDER,
 	EMPTY_SWAPS
 } from './schema';
-import { EMPTY_READING_FORK } from '$lib/reading/types';
+import { LEZEN_EXAMS } from '$lib/lezen/LEZEN_CONTENT';
+import { dayIndex, findQuestion } from '$lib/reading/bank';
+import {
+	ATTEMPT_CAP,
+	EMPTY_READING_FORK,
+	type MockResult,
+	type ReadingAttempt
+} from '$lib/reading/types';
 import { placementFromState } from '$lib/gates/gates';
+
+const PAPER_CYCLE = [2025, 2024, 2023] as const;
+
+function isPaperYear(year: number): year is 2023 | 2024 | 2025 {
+	return year === 2023 || year === 2024 || year === 2025;
+}
+
+/** A year of 0 means the old score was not a sat paper. Invent one only for the result row. */
+function paperYearForScore(year: number | undefined, lastMockAt: string | null): number {
+	if (year !== undefined && isPaperYear(year)) return year;
+	return PAPER_CYCLE[dayIndex(lastMockAt ?? '', PAPER_CYCLE.length, 9)];
+}
+
+function passLineForYear(year: number): number {
+	return LEZEN_EXAMS.find((exam) => exam.year === year)?.passingScore ?? 24;
+}
+
+/**
+ * 2023 stays reserved until a real sitting names it.
+ * A dayIndex year on a year-0 score is not a sitting.
+ * Once 2023 is spent, reserve the newest other paper that has no mock.
+ */
+export function reservedPapersFor(satMocks: readonly number[], scoreYear: number | null): number[] {
+	const sat = new Set<number>();
+	for (const year of satMocks) {
+		if (isPaperYear(year)) sat.add(year);
+	}
+	if (scoreYear !== null && isPaperYear(scoreYear)) sat.add(scoreYear);
+	if (!sat.has(2023)) return [2023];
+	if (!sat.has(2025)) return [2025];
+	if (!sat.has(2024)) return [2024];
+	return [];
+}
+
+function seedAttempts(
+	results: Record<string, { correct?: boolean; attemptedAt?: string } | boolean> | undefined
+): ReadingAttempt[] {
+	const attempts: ReadingAttempt[] = [];
+	for (const [itemId, raw] of Object.entries(results ?? {})) {
+		const correct = typeof raw === 'boolean' ? raw : Boolean(raw?.correct);
+		const at = typeof raw === 'boolean' ? '' : (raw?.attemptedAt ?? '');
+		attempts.push({
+			itemId,
+			origin: 'official',
+			passageSlug: findQuestion(itemId)?.passage.slug ?? '',
+			source: 'texts',
+			at,
+			picked: '',
+			correct,
+			locateP: null,
+			locateHit: null,
+			ms: 0
+		});
+	}
+	attempts.sort((a, b) => a.at.localeCompare(b.at) || a.itemId.localeCompare(b.itemId));
+	if (attempts.length > ATTEMPT_CAP) return attempts.slice(attempts.length - ATTEMPT_CAP);
+	return attempts;
+}
+
+function mockFromScore(
+	score: { correct: number; total: number; passed: boolean; year?: number } | null,
+	lastMockAt: string | null
+): MockResult | null {
+	if (!score) return null;
+	const paperYear = paperYearForScore(score.year, lastMockAt);
+	const finishedAt = lastMockAt ?? '';
+	return {
+		id: `migrated-${finishedAt || 'mock'}`,
+		paperYear,
+		finishedAt,
+		expired: false,
+		correct: score.correct,
+		total: score.total,
+		passLine: passLineForYear(paperYear),
+		byQtype: {},
+		textMs: [],
+		answers: {},
+		flagged: {}
+	};
+}
 
 // ============================================================
 // MIGRATION CONTRACT
@@ -346,8 +436,145 @@ export const migrations: Migration[] = [
 	(state: StateV22): StateV23 => ({
 		...state,
 		schemaVersion: 23,
-		readingFork: structuredClone(EMPTY_READING_FORK)
-	})
+		readingFork: {
+			eval: {
+				date: null,
+				passageSlug: null,
+				year: null,
+				gistOptions: [],
+				gistAnswer: '',
+				gistPicked: null,
+				questionIds: [],
+				results: {},
+				completed: false
+			},
+			showUpStreak: 0,
+			lastEvalDate: null,
+			trapCards: [],
+			trapStickers: [],
+			lastMockAt: null,
+			lastMockScore: null
+		}
+	}),
+
+	// v23 -> v24: exam-trainer misses. Do not reclassify old stickers.
+	// Keep the show-up streak. Old mock scores are not a sat paper (year 0).
+	// This step still writes the v24 fork (eval.results). Attempt memory is v25.
+	(state: StateV23): StateV24 => {
+		const prev = state.readingFork;
+		const oldScore = prev?.lastMockScore ?? null;
+		return {
+			...state,
+			schemaVersion: 24,
+			readingFork: {
+				eval: {
+					date: null,
+					passageSlug: null,
+					results: {},
+					completed: false
+				},
+				showUpStreak: prev?.showUpStreak ?? 0,
+				lastEvalDate: prev?.lastEvalDate ?? null,
+				misses: [],
+				satMocks: [],
+				lastMockAt: prev?.lastMockAt ?? null,
+				lastMockScore: oldScore
+					? {
+							correct: oldScore.correct,
+							total: oldScore.total,
+							passed: oldScore.passed,
+							year: 0
+						}
+					: null
+			}
+		};
+	},
+
+	// v24 -> v25: attempt memory. Reset daily eval. Do not revive trap stickers.
+	// A stored year of 2023, 2024, or 2025 is that paper. Year 0 uses the spec cycle.
+	// reservedPapers keeps 2023 until a real sitting names it.
+	(state: StateV24): StateV25 => {
+		const prev = state.readingFork;
+		const score = prev?.lastMockScore ?? null;
+		const mock = mockFromScore(score, prev?.lastMockAt ?? null);
+		const satMocks = prev?.satMocks ?? [];
+		const scoreYear = score && isPaperYear(score.year) ? score.year : null;
+		return {
+			...state,
+			schemaVersion: 25,
+			readingFork: {
+				...structuredClone(EMPTY_READING_FORK),
+				showUpStreak: prev?.showUpStreak ?? 0,
+				lastEvalDate: prev?.lastEvalDate ?? null,
+				misses: prev?.misses ?? [],
+				satMocks,
+				lastMockAt: prev?.lastMockAt ?? null,
+				lastMockScore: score,
+				attempts: seedAttempts(state.lezen?.questionResults),
+				mocks: mock ? [mock] : [],
+				settings: {
+					examDate: '2026-11-12',
+					lookupsPerText: 5,
+					reservedPapers: reservedPapersFor(satMocks, scoreYear)
+				}
+			}
+		};
+	},
+
+	// v25 -> v26: the 2023 and 2024 questions changed. A mock sat on the old
+	// items is not a result. Drop those papers and reserve them again.
+	// 2025 sittings stay. A set sitting (setId, paper year 0) stays.
+	(state: StateV25): StateV26 => {
+		const fork = state.readingFork;
+		const retired = (year: number) => year === 2023 || year === 2024;
+		const removed = new Set<number>();
+		const mocks = fork.mocks.filter((mock) => {
+			if (mock.setId || !retired(mock.paperYear)) return true;
+			removed.add(mock.paperYear);
+			return false;
+		});
+		let mockInProgress = fork.mockInProgress;
+		if (mockInProgress && !mockInProgress.setId && retired(mockInProgress.paperYear)) {
+			removed.add(mockInProgress.paperYear);
+			mockInProgress = null;
+		}
+		const satMocks = fork.satMocks.filter((year) => {
+			if (!retired(year)) return true;
+			removed.add(year);
+			return false;
+		});
+		let lastMockScore = fork.lastMockScore;
+		let lastMockAt = fork.lastMockAt;
+		if (lastMockScore && retired(lastMockScore.year)) {
+			removed.add(lastMockScore.year);
+			lastMockScore = null;
+			if (mocks.length === 0) lastMockAt = null;
+		}
+		const attempts = fork.attempts.filter((attempt) => {
+			if (attempt.source !== 'mock') return true;
+			return !(
+				attempt.itemId.startsWith('lezen-2023-') || attempt.itemId.startsWith('lezen-2024-')
+			);
+		});
+		const reserved = [...fork.settings.reservedPapers];
+		for (const year of [2023, 2024]) {
+			if (removed.has(year) && !reserved.includes(year)) reserved.push(year);
+		}
+		return {
+			...state,
+			schemaVersion: 26,
+			readingFork: {
+				...fork,
+				mocks,
+				mockInProgress,
+				satMocks,
+				lastMockAt,
+				lastMockScore,
+				attempts,
+				settings: { ...fork.settings, reservedPapers: reserved }
+			}
+		};
+	}
 ];
 
 export function migrate(raw: unknown): State {
@@ -371,6 +598,16 @@ export function migrate(raw: unknown): State {
 			);
 		}
 		current = migration(current);
+	}
+
+	if (current?.readingFork && !current.readingFork.notebook) {
+		current = {
+			...current,
+			readingFork: {
+				...current.readingFork,
+				notebook: { entries: [], lookups: {} }
+			}
+		};
 	}
 
 	return current as State;

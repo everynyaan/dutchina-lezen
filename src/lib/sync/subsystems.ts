@@ -28,11 +28,15 @@ import type {
 	GateId,
 	SwapLedger
 } from '$lib/state/schema';
-import { ADJUSTMENT_TOOL_NAMES, CURRENT_SCHEMA_VERSION, EMPTY_SWAPS, GLOW_RULES } from '$lib/state/schema';
+import {
+	ADJUSTMENT_TOOL_NAMES,
+	CURRENT_SCHEMA_VERSION,
+	EMPTY_SWAPS,
+	GLOW_RULES
+} from '$lib/state/schema';
 import { createDefaultState } from '$lib/state/defaults';
-import type { ReadingForkState, TrapCard, TrapType } from '$lib/reading/types';
+import type { Miss, ReadingForkState } from '$lib/reading/types';
 import { EMPTY_READING_FORK } from '$lib/reading/types';
-import { coalesceTrapCards } from '$lib/reading/eval';
 
 // ---------------------------------------------------------------------------
 // Public types
@@ -367,12 +371,8 @@ function readGates(raw: unknown, fallback: GatesState): GatesState {
 		mastered: isArray(raw.mastered)
 			? raw.mastered.filter((n): n is number => typeof n === 'number')
 			: [...fallback.mastered],
-		quizLog: isArray(raw.quizLog)
-			? (raw.quizLog as GatesState['quizLog'])
-			: [...fallback.quizLog],
-		weekLog: isArray(raw.weekLog)
-			? (raw.weekLog as GatesState['weekLog'])
-			: [...fallback.weekLog]
+		quizLog: isArray(raw.quizLog) ? (raw.quizLog as GatesState['quizLog']) : [...fallback.quizLog],
+		weekLog: isArray(raw.weekLog) ? (raw.weekLog as GatesState['weekLog']) : [...fallback.weekLog]
 	};
 }
 
@@ -509,7 +509,9 @@ function readDaily(raw: unknown): DailySlice {
 		dailyQuiz: isRecord(raw.dailyQuiz)
 			? (raw.dailyQuiz as unknown as DailyQuizState)
 			: fb.dailyQuiz,
-		dailyRead: isRecord(raw.dailyRead) ? (raw.dailyRead as unknown as DailyReadState) : fb.dailyRead,
+		dailyRead: isRecord(raw.dailyRead)
+			? (raw.dailyRead as unknown as DailyReadState)
+			: fb.dailyRead,
 		readingFork: isRecord(raw.readingFork)
 			? (raw.readingFork as unknown as ReadingForkState)
 			: structuredClone(EMPTY_READING_FORK)
@@ -1197,12 +1199,8 @@ function mergeReadingFork(
 	if (local.eval.date !== remote.eval.date) {
 		notes.push(note(now, 'daily', 'readingFork.eval', local.eval, remote.eval, evalState));
 	}
-	const cardsById = new Map<string, TrapCard>();
-	for (const card of [...remote.trapCards, ...local.trapCards]) {
-		const prev = cardsById.get(card.id);
-		if (!prev || (card.dueDate ?? '') >= (prev.dueDate ?? '')) cardsById.set(card.id, card);
-	}
-	const stickers = Array.from(new Set([...local.trapStickers, ...remote.trapStickers])) as TrapType[];
+	const misses = mergeMisses(local.misses ?? [], remote.misses ?? []);
+	const satMocks = Array.from(new Set([...(remote.satMocks ?? []), ...(local.satMocks ?? [])]));
 	const lastMockAt = laterDate(local.lastMockAt, remote.lastMockAt);
 	const lastMockScore =
 		lastMockAt === local.lastMockAt ? local.lastMockScore : remote.lastMockScore;
@@ -1212,11 +1210,44 @@ function mergeReadingFork(
 		eval: evalState,
 		showUpStreak,
 		lastEvalDate,
-		trapCards: coalesceTrapCards([...cardsById.values()]),
-		trapStickers: stickers,
+		misses,
+		satMocks,
 		lastMockAt,
-		lastMockScore
+		lastMockScore,
+		attempts: local.attempts ?? [],
+		traps: local.traps ?? [],
+		mockInProgress: local.mockInProgress ?? null,
+		mocks: local.mocks ?? [],
+		settings: local.settings ?? structuredClone(EMPTY_READING_FORK.settings),
+		notebook: mergeNotebook(local.notebook, remote.notebook)
 	};
+}
+
+function mergeNotebook(
+	local: ReadingForkState['notebook'] | undefined,
+	remote: ReadingForkState['notebook'] | undefined
+): ReadingForkState['notebook'] {
+	const byId = new Map<string, ReadingForkState['notebook']['entries'][number]>();
+	for (const entry of [...(remote?.entries ?? []), ...(local?.entries ?? [])]) {
+		byId.set(entry.id, entry);
+	}
+	const lookups: Record<string, number> = {};
+	for (const source of [remote?.lookups, local?.lookups]) {
+		if (!source) continue;
+		for (const [slug, used] of Object.entries(source)) {
+			lookups[slug] = Math.max(lookups[slug] ?? 0, used);
+		}
+	}
+	return { entries: [...byId.values()], lookups };
+}
+
+function mergeMisses(local: Miss[], remote: Miss[]): Miss[] {
+	const byId = new Map<string, Miss>();
+	for (const miss of [...remote, ...local]) {
+		const prev = byId.get(miss.questionId);
+		if (!prev || (!miss.seen && prev.seen)) byId.set(miss.questionId, miss);
+	}
+	return [...byId.values()];
 }
 
 function asBoolRecord(x: unknown): Record<string, boolean> {

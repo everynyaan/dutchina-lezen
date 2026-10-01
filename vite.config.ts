@@ -2,8 +2,11 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig, configDefaults } from 'vitest/config';
 import tailwindcss from '@tailwindcss/vite';
 
+const vitestRun = process.env.VITEST === 'true';
+
 export default defineConfig({
 	plugins: [tailwindcss(), sveltekit()],
+	resolve: vitestRun ? { conditions: ['browser'] } : undefined,
 	test: {
 		// Agent worktrees under .claude/worktrees/ are nested checkouts of this
 		// same repo, so vitest collects THEIR test files too and the suite count

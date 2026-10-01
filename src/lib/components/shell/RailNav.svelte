@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
 	import type { Pathname } from '$app/types';
+	import { resolvePath } from '$lib/paths';
 	import { onMount } from 'svelte';
 	import Icon from '$lib/icons/Icon.svelte';
 	import type { IconName } from '$lib/icons/icons';
@@ -56,7 +56,7 @@
 		{#each tabs as tab (tab.href)}
 			{@const active = isActive(tab.href, pathname)}
 			<a
-				href={resolve(tab.href)}
+				href={resolvePath(tab.href)}
 				class="nav-link"
 				class:active
 				onclick={() => {
@@ -72,12 +72,12 @@
 	<div class="secondary-links">
 		{#each secondaryLinks as link (link.href)}
 			{#if link.character}
-				<a href={resolve(link.href)} class="secondary-link secondary-link--character">
+				<a href={resolvePath(link.href)} class="secondary-link secondary-link--character">
 					<Character who="kuromi" mood="mischief" size={24} alt="" />
 					<span>{link.label}</span>
 				</a>
 			{:else}
-				<a href={resolve(link.href)} class="secondary-link">{link.label}</a>
+				<a href={resolvePath(link.href)} class="secondary-link">{link.label}</a>
 			{/if}
 		{/each}
 	</div>

@@ -8,7 +8,6 @@
 // ============================================================
 
 import { WORD_CATEGORIES } from '$lib/data/wordPool';
-import { currentGateFromState } from '$lib/gates/gates';
 import type { LpEvent, LpResult } from '$lib/lp/lp';
 import type {
 	AdjustmentEntry,
@@ -36,6 +35,7 @@ import {
 	normalizeLabels,
 	validateBlocks
 } from './pageSchema';
+import { COACH_TOOL_NAMES, executeCoachCall } from './coachTools';
 import type { KuromiToolCall, StewardOutcome, StewardToolResult } from './types';
 
 // ---- Caps (derived from homework session economics) --------------------
@@ -414,6 +414,24 @@ export function executeIntents(
 			continue;
 		}
 		seenIds.add(call.id);
+
+		if ((COACH_TOOL_NAMES as readonly string[]).includes(call.name)) {
+			let coachParsed: unknown;
+			try {
+				coachParsed = JSON.parse(call.arguments);
+			} catch {
+				results.push({
+					id: call.id,
+					outcome: 'rejected',
+					detail: 'Rejected: the instruction was unreadable.'
+				});
+				pendingToolCalls.push(call);
+				continue;
+			}
+			results.push(executeCoachCall(call, coachParsed, host));
+			pendingToolCalls.push(call);
+			continue;
+		}
 
 		if (!STEWARD_TOOL_SET.has(call.name)) {
 			// Fabricated / out-of-whitelist tool name. Segregate into `dropped`
@@ -831,10 +849,7 @@ function executeCreatePage(
 		return { result: { id: call.id, outcome: 'rejected', detail } };
 	}
 
-	const gateLabel = `gate-${currentGateFromState(host.getState())}`;
-	const labels = normalizeLabels(
-		Array.isArray(raw.labels) ? [gateLabel, ...raw.labels] : [gateLabel]
-	);
+	const labels = normalizeLabels(Array.isArray(raw.labels) ? raw.labels : []);
 	const title = clampString(raw.title, PAGE_TITLE_MAX);
 	const quip = typeof raw.quip === 'string' ? clampString(raw.quip, PAGE_QUIP_MAX) : '';
 

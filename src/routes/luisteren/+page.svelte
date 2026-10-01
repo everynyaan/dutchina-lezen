@@ -295,7 +295,7 @@
 		</div>
 
 
-		<ExamPaperBanner />
+		<ExamPaperBanner note="Official NT2 exam." />
 
 		<GateBrowseFilter
 			current={engineGate}

@@ -1214,9 +1214,61 @@ export interface StateV22 {
 	gates: GatesState;
 }
 
+/** Persisted v23 fork, before misses replaced trap stickers. */
+export interface ReadingForkV23 {
+	eval: {
+		date: string | null;
+		passageSlug: string | null;
+		year: number | null;
+		gistOptions: string[];
+		gistAnswer: string;
+		gistPicked: string | null;
+		questionIds: string[];
+		results: Record<string, boolean>;
+		completed: boolean;
+	};
+	showUpStreak: number;
+	lastEvalDate: string | null;
+	trapCards: unknown[];
+	trapStickers: string[];
+	lastMockAt: string | null;
+	lastMockScore: { correct: number; total: number; passed: boolean } | null;
+}
+
 export interface StateV23 extends Omit<StateV22, 'schemaVersion'> {
 	schemaVersion: 23;
+	readingFork: ReadingForkV23;
+}
+
+/** Persisted v24 fork, before attempt memory. Eval still stored `results`. */
+export interface ReadingForkV24 {
+	eval: {
+		date: string | null;
+		passageSlug: string | null;
+		results: Record<string, boolean>;
+		completed: boolean;
+	};
+	showUpStreak: number;
+	lastEvalDate: string | null;
+	misses: { questionId: string; picked: string; seen: boolean }[];
+	satMocks: number[];
+	lastMockAt: string | null;
+	lastMockScore: { correct: number; total: number; passed: boolean; year: number } | null;
+}
+
+export interface StateV24 extends Omit<StateV22, 'schemaVersion'> {
+	schemaVersion: 24;
+	readingFork: ReadingForkV24;
+}
+
+export interface StateV25 extends Omit<StateV22, 'schemaVersion'> {
+	schemaVersion: 25;
 	readingFork: ReadingForkState;
+}
+
+/** Same shape as v25. One-time clear of mock results recorded on the old 2023 and 2024 items. */
+export interface StateV26 extends Omit<StateV25, 'schemaVersion'> {
+	schemaVersion: 26;
 }
 
 // State is a union of all versions. Add new versions here as they ship.
@@ -1243,9 +1295,12 @@ export type State =
 	| StateV20
 	| StateV21
 	| StateV22
-	| StateV23;
+	| StateV23
+	| StateV24
+	| StateV25
+	| StateV26;
 
 // The latest version is the one the app runs on.
-export type CurrentState = StateV23;
+export type CurrentState = StateV26;
 
-export const CURRENT_SCHEMA_VERSION = 23;
+export const CURRENT_SCHEMA_VERSION = 26;

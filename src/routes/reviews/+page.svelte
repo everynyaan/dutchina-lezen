@@ -297,7 +297,7 @@
 		/>
 
 		{#if examGym}
-			<ExamPaperBanner />
+			<ExamPaperBanner note="Official NT2 exam." />
 		{/if}
 
 		<!-- Squiggle heading + segmented tab toggle -->

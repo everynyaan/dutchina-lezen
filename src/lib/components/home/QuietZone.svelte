@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import type { Pathname } from '$app/types';
+	import { resolvePath } from '$lib/paths';
 	import Icon from '$lib/icons/Icon.svelte';
 	import Doodle from '$lib/components/art/Doodle.svelte';
 	import Character from '$lib/components/art/Character.svelte';
@@ -78,12 +79,12 @@
 		{#each bankLinks as link, i (link.href)}
 			{#if i > 0}<span class="sep"> · </span>{/if}
 			{#if link.character}
-				<a href={resolve(link.href)} aria-label={link.aria} class="bank-link-character">
+				<a href={resolvePath(link.href)} aria-label={link.aria} class="bank-link-character">
 					<Character who="kuromi" mood="mischief" size={16} alt="" />
 					<span>{link.label}</span>
 				</a>
 			{:else}
-				<a href={resolve(link.href)} aria-label={link.aria}>{link.label}</a>
+				<a href={resolvePath(link.href)} aria-label={link.aria}>{link.label}</a>
 			{/if}
 		{/each}
 	</div>

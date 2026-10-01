@@ -1,122 +1,242 @@
-import type { LezenQuestion } from '$lib/lezen/types';
-import { allPassages, dayIndex, type BankPassage } from './bank';
-import { classifyTrap, passageSnippet } from './traps';
-import type { TrapType } from './types';
-import { TRAP_MOVE, TRAP_TYPES } from './types';
+import { seededRng, shuffle } from '$lib/quiz/rng';
+import { getAnnotation } from './annotations';
+import { allPassages, dayIndex, findQuestion, type BankPassage } from './bank';
+import { itemAttemptedWithin } from './history';
+import { itemPassageSlug, paraphraseFor, practiceItemsFor, takeSpaced } from './practice';
+import { eligibleSetPassages } from './sets';
+import { TRAP_KINDS, type QType, type ReadingForkState, type TrapKind } from './types';
 
-export interface DrillItem {
-	passage: BankPassage;
-	question: LezenQuestion;
+export interface LurePrompt {
+	itemId: string;
+	slug: string;
+	letter: string;
+	text: string;
+	trap: TrapKind;
+	why: string;
+	choices: TrapKind[];
 }
 
-export interface DrillPrompt {
-	trap: TrapType;
-	questionId: string;
-	passageSlug: string;
-	passageName: string;
-	year: number;
-	snippet: string;
-	question: string;
-	options: Record<string, string>;
-	answer: string;
-	move: string;
-	/** Classified type of the stem (may differ on thin-bank fallback). */
-	stemTrap: TrapType;
-	reused: boolean;
-	sameAsMiss: boolean;
-	fallback: boolean;
+interface TrapRow {
+	id: string;
+	slug: string;
+	origin: 'practice' | 'official' | 'fresh';
 }
 
-export function itemsForTrap(trap: TrapType): DrillItem[] {
-	const items: DrillItem[] = [];
-	for (const passage of allPassages()) {
+function reservedYears(fork: ReadingForkState): Set<number> {
+	return new Set(fork.settings?.reservedPapers ?? [2023]);
+}
+
+function openPassages(fork: ReadingForkState): BankPassage[] {
+	const reserved = reservedYears(fork);
+	return [
+		...allPassages().filter((passage) => !reserved.has(passage.year)),
+		...eligibleSetPassages(fork)
+	];
+}
+
+export function itemSlug(id: string): string | null {
+	return itemPassageSlug(id) ?? findQuestion(id)?.passage.slug ?? null;
+}
+
+function trapRows(fork: ReadingForkState, trap: TrapKind): TrapRow[] {
+	const rows: TrapRow[] = [];
+	for (const passage of openPassages(fork)) {
+		for (const item of practiceItemsFor(
+			passage.slug,
+			fork.attempts.map((attempt) => attempt.itemId)
+		)) {
+			const hit = Object.values(item.distractors).some((row) => row.trap === trap);
+			if (hit) rows.push({ id: item.id, slug: passage.slug, origin: 'practice' });
+		}
 		for (const question of passage.questions) {
-			if (classifyTrap(question.question) === trap) {
-				items.push({ passage, question });
+			const annotation = getAnnotation(question.id);
+			const hit = annotation
+				? Object.values(annotation.distractors).some((row) => row.trap === trap)
+				: false;
+			if (hit) {
+				rows.push({
+					id: question.id,
+					slug: passage.slug,
+					origin: passage.year === 0 ? 'fresh' : 'official'
+				});
 			}
 		}
 	}
-	return items;
+	return rows;
 }
 
-export function uniqueIds(ids: Array<string | undefined | null>): string[] {
-	const out: string[] = [];
-	for (const id of ids) {
-		if (id && !out.includes(id)) out.push(id);
-	}
-	return out;
-}
-
-function toPrompt(
-	item: DrillItem,
-	trap: TrapType,
-	flags: { reused: boolean; sameAsMiss: boolean; fallback: boolean }
-): DrillPrompt {
-	return {
-		trap,
-		questionId: item.question.id,
-		passageSlug: item.passage.slug,
-		passageName: item.passage.name,
-		year: item.passage.year,
-		snippet: drillSnippet(item.passage.text, item.question.id),
-		question: item.question.question,
-		options: item.question.options,
-		answer: item.question.answer,
-		move: TRAP_MOVE[trap],
-		stemTrap: classifyTrap(item.question.question),
-		reused: flags.reused,
-		sameAsMiss: flags.sameAsMiss,
-		fallback: flags.fallback
-	};
-}
-
-/** Prefer a later paragraph so the card is not the same first-280-chars cut. */
-export function drillSnippet(text: string, salt: string): string {
-	const paras = text
-		.split(/\n\n+/)
-		.map((p) => p.trim())
-		.filter(Boolean);
-	if (paras.length <= 1) return passageSnippet(text);
-	const i = dayIndex(salt, paras.length, 11);
-	const chunk = [paras[i], paras[i + 1] ?? paras[i === 0 ? 1 : i - 1]].filter(Boolean).join('\n\n');
-	return passageSnippet(chunk);
+function pickRow(rows: TrapRow[], date: string, salt: number): string | null {
+	if (rows.length === 0) return null;
+	const sorted = rows.slice().sort((a, b) => a.id.localeCompare(b.id));
+	return sorted[dayIndex(date, sorted.length, salt)]?.id ?? null;
 }
 
 /**
- * Pick a real exam item to drill a trap.
- * Never invents questions. Prefers an unused same-type stem, then a used
- * same-type stem that is not the miss, then any other real stem.
+ * Practice first, then official. Fresh for 14 days and off the last miss's passage,
+ * then fresh for 3 days, then any item that carries the trap.
  */
-export function pickDrill(opts: {
-	trap: TrapType;
-	avoidIds: string[];
-	seed: string;
-}): DrillPrompt {
-	const avoid = uniqueIds(opts.avoidIds);
-	const pool = itemsForTrap(opts.trap);
-	const unused = pool.filter((item) => !avoid.includes(item.question.id));
-
-	if (unused.length > 0) {
-		const item = unused[dayIndex(opts.seed, unused.length)];
-		return toPrompt(item, opts.trap, { reused: false, sameAsMiss: false, fallback: false });
+export function selectTrapItem(
+	fork: ReadingForkState,
+	trap: TrapKind,
+	date: string
+): string | null {
+	const card = fork.traps.find((row) => row.trap === trap);
+	const lastSlug = card ? itemSlug(card.lastItemId) : null;
+	const rows = trapRows(fork, trap);
+	const away = (row: TrapRow) => row.slug !== lastSlug;
+	const fresh = (days: number) => (row: TrapRow) => !itemAttemptedWithin(fork, row.id, days, date);
+	const tiers: { test: (row: TrapRow) => boolean; salt: number }[] = [
+		{ test: (row) => row.origin === 'practice' && away(row) && fresh(14)(row), salt: 1 },
+		{ test: (row) => row.origin === 'fresh' && away(row) && fresh(14)(row), salt: 12 },
+		{ test: (row) => row.origin === 'official' && away(row) && fresh(14)(row), salt: 2 },
+		{ test: (row) => row.origin === 'practice' && away(row) && fresh(3)(row), salt: 3 },
+		{ test: (row) => row.origin === 'fresh' && away(row) && fresh(3)(row), salt: 13 },
+		{ test: (row) => row.origin === 'official' && away(row) && fresh(3)(row), salt: 4 },
+		{ test: (row) => row.origin === 'practice', salt: 5 },
+		{ test: (row) => row.origin === 'fresh', salt: 14 },
+		{ test: (row) => row.origin === 'official', salt: 6 }
+	];
+	for (const tier of tiers) {
+		const id = pickRow(rows.filter(tier.test), date, tier.salt);
+		if (id) return id;
 	}
+	return null;
+}
 
-	const notOriginal = pool.filter((item) => item.question.id !== avoid[0]);
-	if (notOriginal.length > 0) {
-		const item = notOriginal[dayIndex(opts.seed, notOriginal.length, 1)];
-		return toPrompt(item, opts.trap, { reused: true, sameAsMiss: false, fallback: false });
-	}
+function rotate<T>(rows: T[], date: string, salt: number): T[] {
+	if (rows.length === 0) return [];
+	const start = dayIndex(date, rows.length, salt);
+	return [...rows.slice(start), ...rows.slice(0, start)];
+}
 
-	if (pool.length > 0) {
-		return toPrompt(pool[0], opts.trap, { reused: true, sameAsMiss: true, fallback: false });
-	}
+/** The right trap plus two others, in a stable shuffled order. */
+export function lureChoices(trap: TrapKind, seed: string): TrapKind[] {
+	const others = shuffle(
+		TRAP_KINDS.filter((kind) => kind !== trap),
+		seededRng(seed)
+	);
+	const trio = [trap, others[0], others[1]].filter((kind): kind is TrapKind => Boolean(kind));
+	return shuffle(trio, seededRng(`${seed}|order`));
+}
 
-	const cousins = TRAP_TYPES.filter((t) => t !== opts.trap).flatMap(itemsForTrap);
-	const other = cousins.filter((item) => !avoid.includes(item.question.id));
-	const fallbackPool = other.length ? other : cousins;
-	if (fallbackPool.length === 0) {
-		throw new Error('Lezen bank is empty — cannot build a trap drill');
+/** Five wrong options from items she has attempted. Open trap cards come first. */
+export function selectLures(fork: ReadingForkState, date: string, count = 5): LurePrompt[] {
+	const seen = new Set(fork.attempts.map((attempt) => attempt.itemId));
+	const open = new Set(fork.traps.filter((card) => card.tamedAt === null).map((card) => card.trap));
+	const preferred: Omit<LurePrompt, 'choices'>[] = [];
+	const rest: Omit<LurePrompt, 'choices'>[] = [];
+	for (const passage of openPassages(fork)) {
+		const practice = practiceItemsFor(
+			passage.slug,
+			fork.attempts.map((attempt) => attempt.itemId)
+		).map((item) => ({
+			id: item.id,
+			options: item.options,
+			distractors: item.distractors
+		}));
+		const official = passage.questions.flatMap((question) => {
+			const annotation = getAnnotation(question.id);
+			if (!annotation) return [];
+			return [{ id: question.id, options: question.options, distractors: annotation.distractors }];
+		});
+		for (const item of [...practice, ...official]) {
+			if (!seen.has(item.id)) continue;
+			for (const [letter, row] of Object.entries(item.distractors)) {
+				const prompt = {
+					itemId: item.id,
+					slug: passage.slug,
+					letter,
+					text: item.options[letter] ?? '',
+					trap: row.trap,
+					why: row.why
+				};
+				if (open.has(row.trap)) preferred.push(prompt);
+				else rest.push(prompt);
+			}
+		}
 	}
-	const item = fallbackPool[dayIndex(opts.seed, fallbackPool.length, 2)];
-	return toPrompt(item, opts.trap, { reused: true, sameAsMiss: false, fallback: true });
+	const byId = (a: Omit<LurePrompt, 'choices'>, b: Omit<LurePrompt, 'choices'>) =>
+		a.itemId.localeCompare(b.itemId) || a.letter.localeCompare(b.letter);
+	const ordered = [
+		...rotate(preferred.slice().sort(byId), date, 9),
+		...rotate(rest.slice().sort(byId), date, 10)
+	];
+	const spaced: typeof ordered = [];
+	for (const prompt of ordered) {
+		if (spaced.length >= count) break;
+		const pack = itemPassageSlug(prompt.itemId);
+		const prev = spaced.at(-1);
+		const prevPack = prev ? itemPassageSlug(prev.itemId) : undefined;
+		if (pack && prevPack && pack === prevPack) continue;
+		spaced.push(prompt);
+	}
+	return spaced.map((prompt) => ({
+		...prompt,
+		choices: lureChoices(prompt.trap, `${prompt.itemId}|${prompt.letter}|${date}`)
+	}));
+}
+
+/** Paraphrase drills from passages she has seen. afterItemId must already be attempted. */
+export function selectParaphraseDrills(
+	fork: ReadingForkState,
+	date: string,
+	count = 5
+): { slug: string; id: string }[] {
+	const seen = new Set(
+		fork.attempts.map((attempt) => attempt.passageSlug).filter((slug) => slug.length > 0)
+	);
+	const drills: { slug: string; id: string }[] = [];
+	for (const passage of openPassages(fork)) {
+		if (!seen.has(passage.slug)) continue;
+		for (const drill of paraphraseFor(
+			passage.slug,
+			fork.attempts.map((attempt) => attempt.itemId)
+		)) {
+			drills.push({ slug: passage.slug, id: drill.id });
+		}
+	}
+	drills.sort((a, b) => a.id.localeCompare(b.id));
+	const ids = takeSpaced(
+		rotate(drills, date, 4).map((drill) => drill.id),
+		count
+	);
+	return ids.flatMap((id) => {
+		const drill = drills.find((row) => row.id === id);
+		return drill ? [drill] : [];
+	});
+}
+
+/** Three items of one question type. Practice items come before official ones. */
+export function selectQtypeItems(
+	fork: ReadingForkState,
+	qtype: QType,
+	date: string,
+	count = 3
+): string[] {
+	const practice: string[] = [];
+	const freshIds: string[] = [];
+	const official: string[] = [];
+	for (const passage of openPassages(fork)) {
+		for (const item of practiceItemsFor(
+			passage.slug,
+			fork.attempts.map((attempt) => attempt.itemId)
+		)) {
+			if (item.qtype === qtype) practice.push(item.id);
+		}
+		for (const question of passage.questions) {
+			if (getAnnotation(question.id)?.qtype !== qtype) continue;
+			if (passage.year === 0) freshIds.push(question.id);
+			else official.push(question.id);
+		}
+	}
+	const freshFirst = (ids: string[]) => {
+		const fresh = ids.filter((id) => !itemAttemptedWithin(fork, id, 21, date));
+		return (fresh.length > 0 ? fresh : ids).slice().sort((a, b) => a.localeCompare(b));
+	};
+	const pool = [
+		...rotate(freshFirst(practice), date, 7),
+		...rotate(freshFirst(freshIds), date, 11),
+		...rotate(freshFirst(official), date, 8)
+	];
+	return takeSpaced(pool, count);
 }

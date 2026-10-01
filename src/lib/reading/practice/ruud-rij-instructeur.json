@@ -1,0 +1,342 @@
+{
+	"passageSlug": "ruud-rij-instructeur",
+	"note": "Sample practice pack. Not official exam items. Never used in mock scores.",
+	"paragraphMap": [
+		{
+			"p": 1,
+			"anchor": "Ruud Kaag is timmerman en al sinds zijn 17e werk",
+			"role": "introduces-topic",
+			"summary": "Introduces Ruud, a carpenter for 45 years whose body can no longer do the work, now training as a driving instructor with help from his employer and Valedo."
+		},
+		{
+			"p": 3,
+			"anchor": "Ruud nam het initiatief tot omscholing zelf. “Vo",
+			"role": "background-origin",
+			"summary": "How Ruud started the retraining himself, how Joke and Valedo helped, and why Jeurissen supports him."
+		},
+		{
+			"p": 5,
+			"anchor": "Ruud vindt het een goede zaak dat mensen in de s",
+			"role": "advice-instruction",
+			"summary": "Ruud values medical checks and advice talks and urges people in heavy jobs to think early about whether they can keep going."
+		},
+		{
+			"p": 7,
+			"anchor": "Waar volgens Ruud nog winst is te behalen, is me",
+			"role": "reports-opinion",
+			"summary": "Ruud on making workers aware of their health and on learning at his age; Joke on older workers who wait and on Ruud's step."
+		}
+	],
+	"items": [
+		{
+			"id": "p-ruud-rij-instructeur-1",
+			"qtype": "oorzaak-reden",
+			"question": "Waarom stopt Ruud met zijn werk als timmerman?",
+			"options": {
+				"A": "Zijn lichaam kan het werk niet meer aan.",
+				"B": "Hij heeft 40 dienstjaren en mag daarom stoppen.",
+				"C": "Zijn werkgever wil niet dat hij langer blijft."
+			},
+			"answer": "A",
+			"evidence": [
+				{
+					"p": 1,
+					"quote": "Mijn lichaam wil niet meer."
+				}
+			],
+			"move": "Look for Ruud's own words in the first paragraph, right after 'voor Ruud was er geen andere optie'.",
+			"why": "Ruud says 'Mijn lichaam wil niet meer' and that he has problems with his bones: his body cannot do the work any more.",
+			"distractors": {
+				"B": {
+					"trap": "echo",
+					"why": "'40 dienstjaren' comes from Joke, who says many workers thought they could stop then, but that age keeps moving up; Ruud even goes 'vervroegd' (early)."
+				},
+				"C": {
+					"trap": "tegenovergesteld",
+					"why": "Ruud took the initiative himself and told his employer he wanted to stop; the employer helps him."
+				}
+			}
+		},
+		{
+			"id": "p-ruud-rij-instructeur-2",
+			"qtype": "mening-persoon",
+			"question": "Wat vindt Ruud van de hulp van Valedo?",
+			"options": {
+				"A": "Hij is blij, want Valedo betaalt zijn hele opleiding.",
+				"B": "Hij is blij, want hij kreeg goed advies van Valedo.",
+				"C": "Hij is blij, want hij krijgt van Valedo de examendagen cadeau."
+			},
+			"answer": "B",
+			"evidence": [
+				{
+					"p": 3,
+					"quote": "Valedo heeft mij goed geadviseerd."
+				}
+			],
+			"move": "Find the sentence where Ruud names Valedo himself, and check who gives what in the sentences after it.",
+			"why": "Ruud says 'Valedo heeft mij goed geadviseerd': he is happy with the advice he got.",
+			"distractors": {
+				"A": {
+					"trap": "overdreven",
+					"why": "Ruud gets 'een deel van de opleiding' paid, not the whole course."
+				},
+				"C": {
+					"trap": "verkeerde-persoon",
+					"why": "The exam days are a gift from his current employer, Jeurissen, not from Valedo."
+				}
+			}
+		},
+		{
+			"id": "p-ruud-rij-instructeur-3",
+			"qtype": "betekenis-in-context",
+			"question": "“Ik heb collega’s die er lacherig over doen.” Wat bedoelt Ruud met “er lacherig over doen”?",
+			"options": {
+				"A": "Ze worden er vrolijk van.",
+				"B": "Ze praten er graag met elkaar over.",
+				"C": "Ze nemen het niet serieus."
+			},
+			"answer": "C",
+			"evidence": [
+				{
+					"p": 7,
+					"quote": "Ik heb collega’s die er lacherig over doen, die denken dat het niet voor hen geldt."
+				}
+			],
+			"move": "Read the rest of the sentence: 'die denken dat het niet voor hen geldt' explains the attitude.",
+			"why": "The colleagues think thinking about your health does not apply to them, so they laugh it off: they do not take it seriously.",
+			"distractors": {
+				"A": {
+					"trap": "echo",
+					"why": "'Lacherig' looks like 'lachen', but here it means laughing something away, not being happy about it."
+				},
+				"B": {
+					"trap": "niet-in-tekst",
+					"why": "Nothing says the colleagues like to talk about their health."
+				}
+			}
+		},
+		{
+			"id": "p-ruud-rij-instructeur-4",
+			"qtype": "betekenis-in-context",
+			"question": "“Maar ik ben geen stilzitter.” Wat bedoelt Ruud hiermee?",
+			"options": {
+				"A": "Door zijn botten kan hij niet lang op een stoel zitten.",
+				"B": "Hij wil eigenlijk helemaal niet met pensioen gaan.",
+				"C": "Hij wil graag actief blijven en iets blijven doen."
+			},
+			"answer": "C",
+			"evidence": [
+				{
+					"p": 3,
+					"quote": "Maar ik ben geen stilzitter, dus mijn baan als rij-instructeur doe ik er gewoon naast."
+				}
+			],
+			"move": "Look at what follows 'dus': because he is 'geen stilzitter', he takes a job next to his pension.",
+			"why": "Someone who is 'geen stilzitter' does not like doing nothing; that is why Ruud works as a driving instructor next to his early pension.",
+			"distractors": {
+				"A": {
+					"trap": "echo",
+					"why": "A literal reading of 'stilzitten' mixed with his bone problems; the sentence is about staying active, not about sitting."
+				},
+				"B": {
+					"trap": "tegenovergesteld",
+					"why": "Ruud says 'Ik ga dan met vervroegd pensioen': he does go, he just keeps working next to it."
+				}
+			}
+		},
+		{
+			"id": "p-ruud-rij-instructeur-5",
+			"qtype": "betekenis-in-context",
+			"question": "“Ik krijg een deel van de opleiding betaald en dat is mooi meegenomen.” Wat betekent “mooi meegenomen” hier?",
+			"options": {
+				"A": "een fijn voordeel dat hij er extra bij krijgt",
+				"B": "iets wat hij mee naar huis mag nemen",
+				"C": "iets wat hij later moet terugbetalen"
+			},
+			"answer": "A",
+			"evidence": [
+				{
+					"p": 3,
+					"quote": "Ik krijg een deel van de opleiding betaald en dat is mooi meegenomen"
+				}
+			],
+			"move": "The phrase follows good news (part of the course is paid) and Ruud is positive about Valedo, so expect a positive meaning.",
+			"why": "'Mooi meegenomen' means a welcome extra: having part of the course paid is a nice bonus for Ruud.",
+			"distractors": {
+				"B": {
+					"trap": "echo",
+					"why": "Takes 'meenemen' literally; nothing is carried home."
+				},
+				"C": {
+					"trap": "niet-in-tekst",
+					"why": "Paying back is never mentioned, and it would not be 'mooi'."
+				}
+			}
+		},
+		{
+			"id": "p-ruud-rij-instructeur-6",
+			"qtype": "niet-vraag",
+			"question": "Wat heeft Valedo volgens de tekst NIET gedaan?",
+			"options": {
+				"A": "Ruud goed advies gegeven",
+				"B": "een opleiding voor Ruud gezocht",
+				"C": "contact met Ruud gezocht"
+			},
+			"answer": "B",
+			"evidence": [
+				{
+					"p": 3,
+					"quote": "Ik las op internet een advertentie voor een opleiding tot rij-instructeur."
+				},
+				{
+					"p": 3,
+					"quote": "Zij zochten contact met Ruud"
+				}
+			],
+			"move": "Check each option against the text, and look at the start of the paragraph: who found the course?",
+			"why": "Ruud found the course himself in an advertisement on the internet, before Valedo was involved.",
+			"distractors": {
+				"A": {
+					"trap": "waar-niet-gevraagd",
+					"why": "True: Ruud says 'Valedo heeft mij goed geadviseerd', so this is something Valedo did."
+				},
+				"C": {
+					"trap": "waar-niet-gevraagd",
+					"why": "True: after Joke's call, 'Zij zochten contact met Ruud', so Valedo did this."
+				}
+			}
+		},
+		{
+			"id": "p-ruud-rij-instructeur-7",
+			"qtype": "oorzaak-reden",
+			"question": "Waarom helpt Jeurissen Ruud, volgens Joke Hermans?",
+			"options": {
+				"A": "Het bedrijf wil Ruud graag als timmerman houden.",
+				"B": "Valedo heeft het bedrijf om hulp voor Ruud gevraagd.",
+				"C": "Ruud heeft altijd goed werk gedaan voor het bedrijf."
+			},
+			"answer": "C",
+			"evidence": [
+				{
+					"p": 3,
+					"quote": "Ruud heeft altijd goed voor Jeurissen gezorgd, natuurlijk zorgen wij nu het nodig is ook goed voor Ruud."
+				}
+			],
+			"move": "Find Joke's last quote in the paragraph: 'natuurlijk' signals the reason the company helps.",
+			"why": "Joke says Ruud always took good care of Jeurissen, so now the company takes good care of him.",
+			"distractors": {
+				"A": {
+					"trap": "tegenovergesteld",
+					"why": "Ruud is leaving the company, and Jeurissen supports that step."
+				},
+				"B": {
+					"trap": "echo",
+					"why": "It was the other way round: 'Joke zocht contact met Valedo'."
+				}
+			}
+		},
+		{
+			"id": "p-ruud-rij-instructeur-8",
+			"qtype": "mening-persoon",
+			"question": "Welk advies geeft Ruud aan mensen met een zwaar beroep?",
+			"options": {
+				"A": "Denk op tijd na of je je werk later nog kunt doen.",
+				"B": "Werk door tot je 40 dienstjaren hebt gehaald.",
+				"C": "Wacht af tot je werkgever een oplossing bedenkt."
+			},
+			"answer": "A",
+			"evidence": [
+				{
+					"p": 5,
+					"quote": "Denk zo vroeg mogelijk na of je je werk over 20 jaar nog kunt uitvoeren."
+				}
+			],
+			"move": "Look under the heading 'Denk op tijd na over je toekomst' for Ruud's sentences in the imperative ('Denk', 'ga').",
+			"why": "Ruud says to think as early as possible about whether you can still do your job in 20 years, and to change while you still can.",
+			"distractors": {
+				"B": {
+					"trap": "echo",
+					"why": "'40 dienstjaren' is Joke's description of what older workers assumed, not Ruud's advice."
+				},
+				"C": {
+					"trap": "tegenovergesteld",
+					"why": "Ruud advises taking action yourself early; waiting ('afwachtend') is what Joke says many older workers do."
+				}
+			}
+		}
+	],
+	"paraphrase": [
+		{
+			"id": "pp-ruud-rij-instructeur-1",
+			"source": {
+				"p": 3,
+				"quote": "Ondanks dat Ruud ons wat later in het proces heeft betrokken, hebben we alsnog een traject in gang kunnen zetten."
+			},
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "Ruud vroeg vrij laat om hulp, maar toch kon het bedrijf nog iets voor hem regelen.",
+				"B": "Omdat Ruud pas laat om hulp vroeg, kon het bedrijf niets meer voor hem regelen.",
+				"C": "Ruud is later dan gepland begonnen met zijn opleiding tot rij-instructeur."
+			},
+			"answer": "A",
+			"distractors": {
+				"B": {
+					"trap": "tegenovergesteld",
+					"why": "'Ondanks' and 'alsnog' mean they still managed; this option says they could not."
+				},
+				"C": {
+					"trap": "echo",
+					"why": "'Later' is about involving the employer late, not about starting the course late."
+				}
+			}
+		},
+		{
+			"id": "pp-ruud-rij-instructeur-2",
+			"source": {
+				"p": 7,
+				"quote": "Ook is niet iedereen in staat om te leren."
+			},
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "Niemand kan op oudere leeftijd nog iets nieuws leren.",
+				"B": "Niet iedereen krijgt de kans om een opleiding te volgen.",
+				"C": "Sommige mensen kunnen niet zo goed iets nieuws leren."
+			},
+			"answer": "C",
+			"distractors": {
+				"A": {
+					"trap": "overdreven",
+					"why": "'Niet iedereen' becomes 'niemand', and Ruud himself shows it can work."
+				},
+				"B": {
+					"trap": "echo",
+					"why": "'In staat zijn' is about being able to learn, not about getting the chance."
+				}
+			}
+		},
+		{
+			"id": "pp-ruud-rij-instructeur-3",
+			"source": {
+				"p": 7,
+				"quote": "Die leeftijd schuift steeds verder op."
+			},
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "Mensen kunnen steeds eerder stoppen met werken.",
+				"B": "Mensen moeten steeds langer werken voordat ze kunnen stoppen.",
+				"C": "Mensen in de bouw worden steeds ouder."
+			},
+			"answer": "B",
+			"distractors": {
+				"A": {
+					"trap": "tegenovergesteld",
+					"why": "'Verder op' means later, not earlier."
+				},
+				"C": {
+					"trap": "echo",
+					"why": "'Leeftijd' here is the age at which you can stop working, not how old people get."
+				}
+			}
+		}
+	]
+}

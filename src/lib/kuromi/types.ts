@@ -63,15 +63,56 @@ export interface KuromiContextPacket {
 		completed: boolean;
 		score: { correct: number; total: number } | null;
 	};
-	/** Reading-fork pulse: cesuur 22, show-up streak, trap stickers. */
+	/** Reading-fork pulse. Published papers: pass line 24, target 25. */
 	readingFork: {
 		showUpStreak: number;
 		evalCompleted: boolean;
-		trapStickers: string[];
-		dueCards: number;
-		lastMock: { correct: number; total: number; passed: boolean } | null;
-		cesuur: 22;
+		unseenMisses: number;
+		lastMock: { correct: number; total: number; passed: boolean; year: number } | null;
+		passLine: 24;
+		target: 25;
+		liveTotal: 36;
+		examDate: string;
+		daysLeft: number | null;
+		openTraps: string[];
+		readiness: { qtype: string; label: string; correct: number; attempts: number }[];
+		locate: { hits: number; total: number } | null;
+		daily: { completed: boolean; passageSlug: string | null; mapDone: boolean };
 	};
+	/**
+	 * Guarded item for a Hint, when one is on screen.
+	 * Absent before she asks. Locate and options packets omit the key.
+	 */
+	currentItem?: {
+		phase: string;
+		question: string;
+		qtype: string;
+		move?: string;
+		paragraphMap?: { role: string; summary: string }[];
+		key?: string;
+		evidence?: string[];
+		traps?: string[];
+	};
+	/** Passage on screen. Unanswered items in `items` use the guarded packet. */
+	textChat?: {
+		passageText: string;
+		paragraphMap: { role: string; summary: string }[];
+		notebook: unknown[];
+		items: unknown[];
+	};
+	/** Mock debrief summary. Not sent during a sitting. */
+	mockDebrief?: {
+		correct: number;
+		total: number;
+		passLine: number;
+		target: number;
+		passed: boolean;
+		minutesPerText: number[];
+		flaggedRight: number;
+		flaggedWrong: number;
+		byQtype: { qtype: string; correct: number; total: number }[];
+	};
+	mondayBrief?: boolean;
 	/** Newest 5 steward adjustments (tool/outcome/detail/timestamp/undone only — no payload). */
 	recentAdjustments: Array<{
 		tool: AdjustmentEntry['tool'];

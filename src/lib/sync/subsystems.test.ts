@@ -9,7 +9,7 @@ import type {
 	GlowRule,
 	ProgressionDisplay
 } from '$lib/state/schema';
-import { DEFAULT_GLOW_ORDER } from '$lib/state/schema';
+import { CURRENT_SCHEMA_VERSION, DEFAULT_GLOW_ORDER } from '$lib/state/schema';
 import { createDefaultState } from '$lib/state/defaults';
 import { EMPTY_READING_FORK } from '$lib/reading/types';
 import {
@@ -250,7 +250,7 @@ function randomState(rng: () => number): CurrentState {
 	}
 
 	const state: CurrentState = {
-		schemaVersion: 23,
+		schemaVersion: CURRENT_SCHEMA_VERSION,
 		rank: randInt(rng, 0, 7),
 		tier: randInt(rng, 1, 4),
 		lp: randInt(rng, 0, 99),

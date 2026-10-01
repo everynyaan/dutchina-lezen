@@ -1,0 +1,1541 @@
+[
+	{
+		"id": "set1",
+		"title": "Oefenexamen Set 1",
+		"origin": "video-set",
+		"passages": [
+			{
+				"slug": "set1-nadia-werkbegeleider",
+				"name": "Nadia wordt werkbegeleider",
+				"intro": "Deze tekst komt van een website over werken en gezondheid. De tekst gaat over de omscholing van Nadia. Omscholing is iets nieuws leren om ander werk te kunnen doen.",
+				"text": "Nadia wordt werkbegeleider\n\nNadia El Amrani werkt al bijna dertig jaar in de kinderopvang. Ze begon als jonge leidster op een peutergroep en heeft daarna op verschillende locaties gewerkt. Ze vindt het contact met kinderen en ouders nog steeds het mooiste deel van haar werk. Toch merkt ze dat haar lichaam ouder wordt. Tillen, bukken en de hele dag op haar knieën zitten kosten steeds meer energie. Na een lange werkdag heeft zij vaak pijn in haar rug en schouders. Soms slaapt ze slecht omdat haar spieren blijven trekken. “Ik wil niet ziek thuis komen te zitten,” zegt Nadia. “Maar ik wil ook niet zomaar weg uit de kinderopvang.”\n\nEen nieuwe stap\n\nNadia dacht eerst dat zij gewoon moest volhouden. Veel collega’s zeiden dat lichamelijke klachten bij het werk hoorden. Tijdens een medisch onderzoek op haar werk kreeg zij echter het advies om serieus over haar toekomst na te denken. De bedrijfsarts vroeg: “Kunt u dit werk nog tien jaar op dezelfde manier doen?” Die vraag bleef in haar hoofd zitten. Thuis besprak ze het met haar partner. Hij zei dat omscholen niet betekende dat ze had gefaald, maar dat ze verstandig vooruitkeek.\n\nEen paar weken later sprak Nadia met haar leidinggevende, Karin de Wit. Karin vertelde dat er binnen de organisatie behoefte was aan ervaren medewerkers die nieuwe collega’s kunnen begeleiden. Nadia volgde daarom een opleiding tot werkbegeleider. In die functie werkt zij nog steeds op de groep, maar niet meer de hele week. Twee dagen per week helpt zij stagiairs en nieuwe collega’s met plannen, observeren en praten met ouders. Ook bespreekt zij moeilijke situaties, bijvoorbeeld wanneer een kind extra aandacht nodig heeft of wanneer ouders bezorgd zijn.\n\nHulp bij het leren\n\nDe opleiding was in het begin lastig. Nadia was lang niet meer naar school geweest en moest wennen aan opdrachten maken op de computer. Via loopbaancentrum BrugWerk kreeg zij hulp bij studievaardigheden. Haar werkgever betaalt een deel van de opleiding en geeft haar tijd om opdrachten te maken. “Ik dacht dat leren alleen voor jonge mensen was,” zegt Nadia. “Nu merk ik dat mijn ervaring juist helpt. Ik begrijp de praktijk en kan voorbeelden geven uit echte situaties.”\n\nDenk eerder vooruit\n\nKarin vindt Nadia een goed voorbeeld. “Veel medewerkers praten pas over ander werk als ze echt uitvallen. Nadia kwam op tijd in beweging.” Volgens Karin moeten organisaties vaker met oudere medewerkers praten over zwaar werk. Niet iedereen hoeft manager te worden, maar er zijn vaak taken waarbij ervaring heel waardevol is. Nadia wil andere collega’s daarom aanmoedigen om niet te wachten tot de pijn te groot wordt. Volgens haar betekent omscholen niet dat je afscheid neemt van je vak. “Ik blijf in de kinderopvang, maar op een manier die beter bij mijn lichaam past. Zo kan ik langer blijven werken met plezier.”\n\nVoor Nadia was vooral het eerste gesprek moeilijk. Zij was bang dat haar leidinggevende zou denken dat zij minder gemotiveerd was. Het tegenovergestelde gebeurde. Karin was blij dat Nadia eerlijk was, omdat problemen dan eerder opgelost kunnen worden. Ook andere collega’s vroegen later naar haar opleiding. Sommigen willen nu zelf een loopbaangesprek aanvragen.",
+				"questions": [
+					{
+						"id": "set1-1",
+						"vraag": 1,
+						"question": "Wat is het verschil tussen het werk van Nadia vroeger en haar werk nu?",
+						"options": {
+							"A": "Nu werkt zij niet meer met kinderen, maar alleen nog met stagiairs.",
+							"B": "Nu staat zij minder dagen op de groep, omdat zij ook nieuwe mensen begeleidt.",
+							"C": "Nu werkt zij op meer locaties, omdat zij veel ervaring heeft."
+						},
+						"answer": "B",
+						"origin": "revised",
+						"replaces": 1
+					},
+					{
+						"id": "set1-2",
+						"vraag": 2,
+						"question": "Waarom noemt de schrijver de vraag van de bedrijfsarts?",
+						"options": {
+							"A": "om te laten zien dat Nadia het advies eerst niet serieus nam",
+							"B": "om te laten zien dat de bedrijfsarts vond dat Nadia moest stoppen",
+							"C": "om te laten zien waardoor Nadia ging nadenken over haar werk"
+						},
+						"answer": "C",
+						"origin": "new",
+						"replaces": 2
+					},
+					{
+						"id": "set1-3",
+						"vraag": 3,
+						"question": "Welke hulp bij haar opleiding krijgt Nadia NIET, volgens de tekst?",
+						"options": {
+							"A": "Haar werkgever betaalt alle kosten van de opleiding.",
+							"B": "Een loopbaancentrum helpt haar om beter te leren studeren.",
+							"C": "Haar werkgever geeft haar tijd om aan opdrachten te werken."
+						},
+						"answer": "A",
+						"origin": "new",
+						"replaces": 3
+					},
+					{
+						"id": "set1-4",
+						"vraag": 4,
+						"question": "Wat vindt Karin de Wit, volgens de tekst?",
+						"options": {
+							"A": "Bedrijven moeten vaker met oudere werknemers over zwaar werk in gesprek gaan.",
+							"B": "Lichamelijke klachten horen er nu eenmaal bij als je met jonge kinderen werkt.",
+							"C": "Ervaren medewerkers moeten vaker de kans krijgen om zelf manager te worden."
+						},
+						"answer": "A",
+						"origin": "revised",
+						"replaces": 4
+					},
+					{
+						"id": "set1-5",
+						"vraag": 5,
+						"question": "Karin zegt: “Nadia kwam op tijd in beweging.” Wat bedoelt zij daarmee?",
+						"options": {
+							"A": "Nadia besloot op tijd om uit de kinderopvang te vertrekken.",
+							"B": "Nadia ging op tijd meer sporten om haar lichaam fit te houden.",
+							"C": "Nadia deed iets aan haar situatie voordat het te laat was."
+						},
+						"answer": "C",
+						"origin": "new",
+						"replaces": 5
+					},
+					{
+						"id": "set1-6",
+						"vraag": 6,
+						"question": "Wat is het doel van deze tekst?",
+						"options": {
+							"A": "de lezer uitleggen hoe je bij je werkgever een loopbaangesprek aanvraagt",
+							"B": "de lezer met een voorbeeld laten zien hoe omscholing kan helpen",
+							"C": "de lezer waarschuwen voor de klachten van zwaar werk in de kinderopvang"
+						},
+						"answer": "B",
+						"origin": "revised",
+						"replaces": 6
+					}
+				]
+			},
+			{
+				"slug": "set1-bewegen-zittende-dag",
+				"name": "Bewegen tijdens een zittende dag",
+				"intro": "Deze tekst komt van een website over gezondheid.",
+				"text": "Bewegen tijdens een zittende dag\n\nVeel mensen zitten een groot deel van de dag. Ze werken achter een computer, reizen met de auto of trein en ontspannen daarna op de bank. Zitten lijkt rustig, maar te lang stilzitten is niet goed voor je lichaam. Je spieren worden stijf, je rug kan pijn gaan doen en je voelt je sneller moe. Ook voor mensen die een paar keer per week sporten, blijft lang achter elkaar zitten ongezond. Het lichaam is namelijk gemaakt om regelmatig van houding te veranderen.\n\nKleine onderbrekingen\n\nGezondheidsdeskundigen adviseren om niet pas na het werk te bewegen, maar ook tijdens de dag korte pauzes te nemen. Sta bijvoorbeeld elk half uur even op. Loop naar de keuken, haal water, loop naar een collega in plaats van te mailen of doe een paar eenvoudige rekbewegingen. Zo’n pauze hoeft niet lang te duren. Twee minuten bewegen kan al helpen om je lichaam wakker te houden. Het gaat vooral om het doorbreken van lang zitten.\n\nBewegen zonder sportkleding\n\nVeel mensen denken bij bewegen meteen aan hardlopen of fitness. Dat is niet nodig. Traplopen, fietsen naar de winkel, wandelen tijdens een telefoongesprek of staand vergaderen zijn ook vormen van beweging. Het voordeel van zulke kleine activiteiten is dat ze makkelijk in een drukke dag passen. Je hoeft er geen aparte sportafspraak voor te maken. Juist daardoor houden veel mensen het beter vol dan een zwaar trainingsschema.\n\nConcentratie en stemming\n\nBewegen helpt niet alleen je lichaam. Sommige mensen merken dat ze na een korte wandeling beter kunnen nadenken. Dat komt doordat je even afstand neemt van het scherm en je aandacht opnieuw kunt richten. Ook kan bewegen je stemming verbeteren. Wie de hele dag binnen zit, voelt zich soms loom of prikkelbaar. Buitenlucht en daglicht kunnen dan veel verschil maken. Een korte wandeling tijdens de lunch kan daardoor nuttiger zijn dan gedacht.\n\nNiet overdrijven\n\nToch is het niet de bedoeling dat iedereen plotseling fanatiek gaat sporten. Als je weinig beweegt, begin dan rustig. Kies iets dat je vol kunt houden. Een dagelijkse wandeling van tien minuten is beter dan één keer per maand heel zwaar trainen en daarna stoppen. Heb je pijn of een medische beperking? Vraag dan advies aan de huisarts of fysiotherapeut. Zij kunnen helpen bepalen welke beweging veilig is.\n\nEen gewoon onderdeel van de dag\n\nHet belangrijkste is dat bewegen normaal wordt. Zet je printer wat verder weg, stap een halte eerder uit of spreek met een collega af om na de lunch een rondje te lopen. Sommige bedrijven zetten wandelroutes in het gebouw of organiseren korte beweegmomenten. Dat hoeft niet kinderachtig te zijn. Het laat juist zien dat gezondheid ook tijdens werktijd aandacht verdient. Kleine keuzes lijken misschien onbelangrijk, maar samen kunnen ze je dag gezonder maken. Wie regelmatig even opstaat, helpt zijn lichaam, maar vaak ook zijn hoofd.\n\nThuiswerken\n\nVoor thuiswerkers is bewegen soms nog lastiger. De afstand tussen bureau, keuken en bank is klein. Daardoor merk je minder snel dat je al uren zit. Een wekker of melding op je telefoon kan helpen, maar maak het niet te ingewikkeld. Spreek bijvoorbeeld met jezelf af dat je na elke online vergadering even opstaat. Ook kun je telefoongesprekken lopend voeren. Zo wordt beweging geen extra taak, maar een vast onderdeel van wat je toch al doet.\n\nSamen werkt beter\n\nSommige mensen bewegen meer als zij het samen doen. Een collega die meeloopt in de pauze of een huisgenoot die na het eten een rondje wil maken, kan helpen. Je hoeft elkaar niet streng te controleren. Een vriendelijke afspraak maakt de stap kleiner.",
+				"questions": [
+					{
+						"id": "set1-7",
+						"vraag": 7,
+						"question": "Ilse sport drie avonden per week. Overdag zit zij vaak drie uur achter elkaar achter haar computer. Wat past bij het advies in de tekst?",
+						"options": {
+							"A": "Zij kan beter ook tijdens het werk regelmatig even opstaan.",
+							"B": "Zij hoeft niets te veranderen, want zij sport al genoeg.",
+							"C": "Zij kan beter nog een extra avond per week gaan sporten."
+						},
+						"answer": "A",
+						"origin": "revised",
+						"replaces": 7
+					},
+					{
+						"id": "set1-8",
+						"vraag": 8,
+						"question": "Welk voordeel van kleine activiteiten, zoals traplopen, noemt de tekst NIET?",
+						"options": {
+							"A": "Veel mensen houden ze langer vol dan zware training.",
+							"B": "Ze passen gemakkelijk in een volle dag.",
+							"C": "Je wordt er sneller fit van dan van een zwaar trainingsschema."
+						},
+						"answer": "C",
+						"origin": "new",
+						"replaces": 8
+					},
+					{
+						"id": "set1-9",
+						"vraag": 9,
+						"question": "Boven een deel van de tekst staat ‘Bewegen zonder sportkleding’. Wat bedoelt de schrijver daarmee?",
+						"options": {
+							"A": "beweging die je vooral buiten in de frisse lucht doet",
+							"B": "beweging die je gewoon tijdens je normale bezigheden kunt doen",
+							"C": "beweging die je rustig opbouwt voordat je echt gaat sporten"
+						},
+						"answer": "B",
+						"origin": "revised",
+						"replaces": 9
+					},
+					{
+						"id": "set1-10",
+						"vraag": 10,
+						"question": "Waarom is bewegen voor thuiswerkers soms nog lastiger?",
+						"options": {
+							"A": "Ze worden thuis de hele dag gestoord door meldingen op hun telefoon.",
+							"B": "Door de korte afstanden thuis merken ze niet hoe lang ze al zitten.",
+							"C": "Ze hebben thuis geen collega die in de pauze even met hen meeloopt."
+						},
+						"answer": "B",
+						"origin": "new",
+						"replaces": 10
+					},
+					{
+						"id": "set1-11",
+						"vraag": 11,
+						"question": "In de tekst staan voorbeelden als ‘zet je printer wat verder weg’ en ‘stap een halte eerder uit’. Waarom geeft de schrijver deze voorbeelden?",
+						"options": {
+							"A": "om te laten zien hoe beweging vanzelf bij een gewone dag kan horen",
+							"B": "om te laten zien dat bedrijven hun kantoren anders moeten inrichten",
+							"C": "om te laten zien dat kleine keuzes weinig verschil maken voor je gezondheid"
+						},
+						"answer": "A",
+						"origin": "new",
+						"replaces": 11
+					},
+					{
+						"id": "set1-12",
+						"vraag": 12,
+						"question": "Wat is het doel van deze tekst?",
+						"options": {
+							"A": "de lezer overhalen om vaker naar de sportschool te gaan",
+							"B": "de lezer waarschuwen voor de gevaren van de hele dag thuiswerken",
+							"C": "de lezer adviseren hoe je lang stilzitten kunt onderbreken"
+						},
+						"answer": "C",
+						"origin": "revised",
+						"replaces": 12
+					}
+				]
+			},
+			{
+				"slug": "set1-gasten-ontvangen",
+				"name": "Gasten ontvangen is een vak",
+				"intro": "Deze tekst komt uit een studieboek voor opleidingen tot medewerker in een hotel.",
+				"text": "Gasten ontvangen is een vak\n\nWie bij de receptie van een hotel werkt, is vaak de eerste persoon die een gast ontmoet. Die eerste indruk is belangrijk. Een gast die vriendelijk wordt ontvangen, voelt zich sneller welkom. Toch is receptiewerk meer dan glimlachen en een sleutel geven. Je moet luisteren, informatie zoeken, problemen oplossen en rustig blijven, ook wanneer het druk is. Daarnaast vertegenwoordig je het hele hotel. De manier waarop jij reageert, bepaalt vaak hoe een gast het verblijf begint.\n\nWat wil de gast?\n\nNiet iedere gast komt met dezelfde vraag. De ene gast wil alleen snel inchecken omdat hij moe is van de reis. Een andere gast wil uitleg over ontbijt, parkeren of openbaar vervoer. Soms vraagt iemand om een rustige kamer, een extra kussen of hulp met een taxi. Een goede receptionist probeert eerst te begrijpen wat de gast precies nodig heeft. Dat doe je door gerichte vragen te stellen en goed te luisteren naar het antwoord. Vraag bijvoorbeeld: “Wilt u vooral snel naar uw kamer, of zal ik eerst de belangrijkste informatie uitleggen?”\n\nHet juiste moment\n\nVeel gasten willen niet meteen een lang verhaal horen. Bij het inchecken is het daarom verstandig om eerst de belangrijkste informatie te geven: kamernummer, ontbijturen en hoe de sleutel werkt. Daarna kun je vragen of de gast nog iets wil weten. Heeft iemand haast? Geef dan korte informatie. Is iemand nieuwsgierig naar de stad? Dan kun je uitgebreider advies geven over restaurants, musea of vervoer. Let goed op lichaamstaal. Een gast die steeds op zijn horloge kijkt, wil waarschijnlijk snel verder. Een gast die rustig blijft staan, heeft misschien tijd voor extra uitleg.\n\nDuidelijke informatie\n\nEen receptionist moet informatie duidelijk en vriendelijk geven. Zeg niet alleen: “De lift is daar.” Leg liever uit: “U loopt rechtdoor, daarna links. De lift is naast de trap.” Voor gasten die de taal niet goed spreken, is langzaam en eenvoudig praten extra belangrijk. Gebruik eventueel een plattegrond of schrijf een adres op. Controleer ook of de gast de informatie begrijpt. Zo voorkomt u misverstanden. Duidelijkheid is een vorm van service.\n\nOmgaan met klachten\n\nOok in een goed hotel gaat er soms iets mis. De kamer is nog niet klaar, de verwarming doet het niet of de gast vindt het lawaaiig. Een klacht is vervelend, maar ook een kans om het vertrouwen te herstellen. Laat de gast eerst uitpraten. Zeg dat u begrijpt dat de situatie vervelend is. Daarna zoekt u een oplossing, bijvoorbeeld een andere kamer, technische hulp of een drankje tijdens het wachten. Beloof nooit iets wat u niet zeker weet. Als u moet overleggen, zeg dan wanneer u terugkomt met een antwoord.\n\nSamenwerken met collega’s\n\nEen receptionist kan niet alles alleen oplossen. Daarom is samenwerken belangrijk. Bij technische problemen bel je de technische dienst. Bij vragen over schoonmaak overleg je met housekeeping. Als een gast boos blijft of om geld terug vraagt, schakel je een leidinggevende in. Het is beter om op tijd hulp te vragen dan zelf iets te beloven wat niet kan. Goede samenwerking zorgt ervoor dat de gast sneller geholpen wordt en dat collega’s elkaar vertrouwen.\n\nService maakt verschil\n\nVeel hotels bieden vergelijkbare kamers aan. Het verschil zit vaak in de service. Een gast onthoudt dat iemand meedacht, rustig bleef of extra moeite deed. Kleine dingen, zoals een duidelijke route, een vriendelijk woord, een extra kop koffie of snel reageren op een klacht, zorgen ervoor dat gasten terugkomen en het hotel aanraden aan anderen. Service is dus geen extraatje, maar een belangrijk onderdeel van het werk.\n\nCulturele verschillen\n\nIn een hotel komen gasten uit veel landen. Wat voor de ene gast normaal is, kan voor een andere gast onduidelijk zijn. Sommige gasten verwachten veel persoonlijke aandacht, terwijl anderen juist liever met rust worden gelaten. Een goede receptionist oordeelt niet te snel, maar probeert professioneel te reageren. Stel open vragen en gebruik eenvoudige woorden. Als iets niet kan, leg dan rustig uit waarom.\n\nAdministratie\n\nNaast contact met gasten hoort ook administratie bij het werk. Reserveringen moeten correct in het systeem staan. Namen, data, betaalgegevens en speciale wensen moeten kloppen. Een kleine fout kan later veel werk veroorzaken. Controleer daarom rustig, ook als er een rij staat. Snel werken is belangrijk, maar precies werken is minstens zo belangrijk. Een gast merkt het meteen als informatie niet klopt.\n\nTot slot\n\nGoed receptiewerk draait dus om balans. Je bent vriendelijk, maar ook duidelijk. Je geeft aandacht, maar houdt overzicht. Je lost problemen op, maar weet wanneer je hulp moet vragen. Wie deze vaardigheden oefent, kan gasten professioneel helpen, ook op drukke of moeilijke momenten. In de praktijk leer je vooral door situaties na te bespreken en feedback van collega’s serieus te nemen.",
+				"questions": [
+					{
+						"id": "set1-13",
+						"vraag": 13,
+						"question": "Wat wil de schrijver duidelijk maken in de eerste alinea?",
+						"options": {
+							"A": "dat een receptionist bij drukte vooral snel moet werken",
+							"B": "dat gasten de receptie minder belangrijk vinden dan hun kamer",
+							"C": "dat receptiewerk veel meer vraagt dan alleen aardig zijn"
+						},
+						"answer": "C",
+						"origin": "new",
+						"replaces": 13
+					},
+					{
+						"id": "set1-14",
+						"vraag": 14,
+						"question": "Meneer Brandt checkt in. Terwijl de receptionist praat, kijkt hij steeds op zijn horloge. Wat kan de receptionist het beste doen?",
+						"options": {
+							"A": "Hem kort het belangrijkste over zijn kamer en ontbijt vertellen.",
+							"B": "Hem een plattegrond geven en alles langzaam en eenvoudig uitleggen.",
+							"C": "Hem uitgebreid advies geven over goede restaurants en musea in de stad."
+						},
+						"answer": "A",
+						"origin": "new",
+						"replaces": 14
+					},
+					{
+						"id": "set1-15",
+						"vraag": 15,
+						"question": "Wat raadt de tekst aan bij gasten die de taal niet goed spreken?",
+						"options": {
+							"A": "hen doorsturen naar een collega die hun vraag beter kan oplossen",
+							"B": "rustig praten met makkelijke woorden en zo nodig iets opschrijven",
+							"C": "zo kort mogelijk antwoorden, zodat zij niet lang hoeven te luisteren"
+						},
+						"answer": "B",
+						"origin": "revised",
+						"replaces": 15
+					},
+					{
+						"id": "set1-16",
+						"vraag": 16,
+						"question": "Wat hoort volgens de tekst NIET bij een goede reactie op een klacht?",
+						"options": {
+							"A": "zeggen wanneer u terugkomt als u moet overleggen",
+							"B": "laten merken dat u begrijpt dat de situatie vervelend is",
+							"C": "meteen een oplossing geven, ook als de gast nog praat"
+						},
+						"answer": "C",
+						"origin": "new",
+						"replaces": 16
+					},
+					{
+						"id": "set1-17",
+						"vraag": 17,
+						"question": "Mevrouw Visser klaagt dat haar kamer koud is. De verwarming is inmiddels gerepareerd, maar zij blijft boos en wil een deel van haar geld terug. Wie schakelt de receptionist nu in?",
+						"options": {
+							"A": "een leidinggevende",
+							"B": "de technische dienst",
+							"C": "een medewerker van housekeeping"
+						},
+						"answer": "A",
+						"origin": "revised",
+						"replaces": 17
+					},
+					{
+						"id": "set1-18",
+						"vraag": 18,
+						"question": "Wat is het doel van deze tekst?",
+						"options": {
+							"A": "de lezer informeren over administratie in een hotel",
+							"B": "de lezer uitleggen welke vaardigheden goed receptiewerk vraagt",
+							"C": "de lezer overtuigen dat service belangrijker is dan een goede kamer"
+						},
+						"answer": "B",
+						"origin": "revised",
+						"replaces": 18
+					}
+				]
+			},
+			{
+				"slug": "set1-diensten-ruilen",
+				"name": "Diensten ruilen",
+				"intro": "Deze tekst is een deel uit de arbeidsvoorwaarden van een logistiek bedrijf. De tekst gaat over diensten ruilen: een dienst met een collega wisselen.",
+				"text": "Diensten ruilen\n\nEen dienst ruilen betekent dat u uw geplande werktijd wisselt met de geplande werktijd van een collega. Dit mag alleen als de werkzaamheden en de functie vergelijkbaar zijn. Een magazijnmedewerker mag dus niet zomaar ruilen met een planner. Ook mag een ruil niet zorgen voor te weinig medewerkers op een afdeling.\n\nToestemming\n\nU moet een ruilverzoek minimaal 48 uur van tevoren indienen via het personeelssysteem. Uw leidinggevende moet het verzoek goedkeuren voordat de ruil geldig is. Een mondelinge afspraak met een collega is niet genoeg. Als u zonder goedkeuring niet op uw eigen dienst verschijnt, kan dit worden gezien als ongeoorloofd verzuim. In bijzondere situaties, bijvoorbeeld bij plotselinge familieomstandigheden, kan de leidinggevende een laat verzoek toch beoordelen.\n\nRusttijd\n\nBij het goedkeuren van een ruil kijkt de leidinggevende ook naar rusttijd. Tussen twee diensten moet minimaal 11 uur rust zitten. Door een ruil mag u niet meer dan 9 uur op één dag werken, behalve bij een calamiteit. Heeft u al drie late diensten achter elkaar gewerkt? Dan kan een extra late dienst worden geweigerd.\n\nZiekte\n\nAls uw collega ziek wordt na een goedgekeurde ruil, blijft de ruil geldig. U werkt dan dus de dienst die u hebt overgenomen. De zieke collega meldt zich ziek voor de dienst die hij of zij van u heeft gekregen. Is de ruil nog niet goedgekeurd? Dan blijft iedereen verantwoordelijk voor zijn oorspronkelijke dienst.\n\nWeigeren\n\nDe werkgever mag een ruilverzoek weigeren als de planning daardoor onveilig wordt, als er te weinig ervaren medewerkers aanwezig zijn of als het verzoek te laat is ingediend. Jongeren onder de 18 jaar mogen alleen ruilen met toestemming van hun ouder of verzorger.\n\nWeekend en feestdagen\n\nVoor diensten in het weekend of op feestdagen gelden soms extra toeslagen. Als u zo’n dienst ruilt, neemt u ook de toeslag of verplichting van die dienst over. Controleer daarom altijd goed welke dienst u accepteert voordat u akkoord gaat.",
+				"questions": [
+					{
+						"id": "set1-19",
+						"vraag": 19,
+						"question": "Fatima en haar collega werken allebei in het magazijn. Op maandag spreken zij mondeling af dat zij op vrijdag van dienst ruilen. Een verzoek in het systeem doen zij niet. Wat geldt?",
+						"options": {
+							"A": "De ruil telt, omdat zij het meer dan 48 uur van tevoren hebben afgesproken.",
+							"B": "De ruil telt, omdat zij allebei hetzelfde werk in het magazijn doen.",
+							"C": "De ruil telt niet, omdat de leidinggevende hem niet heeft goedgekeurd."
+						},
+						"answer": "C",
+						"origin": "revised",
+						"replaces": 19
+					},
+					{
+						"id": "set1-20",
+						"vraag": 20,
+						"question": "Tom werkt op dinsdag een late dienst tot 23.00 uur. Door een ruil zou hij op woensdag om 7.00 uur beginnen. Wat zal de leidinggevende waarschijnlijk doen?",
+						"options": {
+							"A": "De ruil goedkeuren, omdat Tom nog geen drie late diensten achter elkaar heeft.",
+							"B": "De ruil goedkeuren, omdat Tom op één dag niet meer dan 9 uur werkt.",
+							"C": "De ruil afwijzen, omdat Tom dan te weinig rust heeft tussen de diensten."
+						},
+						"answer": "C",
+						"origin": "revised",
+						"replaces": 20
+					},
+					{
+						"id": "set1-21",
+						"vraag": 21,
+						"question": "Sanne en Bas hebben een goedgekeurde ruil. Sanne werkt op dinsdag de dienst van Bas en Bas werkt op donderdag de dienst van Sanne. Op maandag wordt Bas ziek en hij kan die week niet werken. Wat geldt?",
+						"options": {
+							"A": "Sanne werkt dinsdag gewoon, en Bas meldt zich voor donderdag ziek.",
+							"B": "Sanne werkt dinsdag, en zij valt op donderdag ook nog voor Bas in.",
+							"C": "De ruil vervalt, en Sanne werkt op donderdag weer haar eigen dienst."
+						},
+						"answer": "A",
+						"origin": "revised",
+						"replaces": 21
+					},
+					{
+						"id": "set1-22",
+						"vraag": 22,
+						"question": "Lisa is 17 jaar. Zij heeft op tijd een ruilverzoek in het systeem gezet en haar leidinggevende wil het goedkeuren. Mag de ruil doorgaan?",
+						"options": {
+							"A": "Nee, want jongeren onder de 18 mogen geen diensten ruilen.",
+							"B": "Ja, als een ouder of verzorger van Lisa er ook mee instemt.",
+							"C": "Ja, want de goedkeuring van haar leidinggevende is genoeg."
+						},
+						"answer": "B",
+						"origin": "revised",
+						"replaces": 22
+					},
+					{
+						"id": "set1-23",
+						"vraag": 23,
+						"question": "Wat is het doel van deze tekst?",
+						"options": {
+							"A": "de lezer vertellen wanneer en hoe je een dienst mag ruilen",
+							"B": "de lezer uitleggen hoe het personeelssysteem van het bedrijf werkt",
+							"C": "de lezer waarschuwen voor te korte rusttijden"
+						},
+						"answer": "A",
+						"origin": "revised",
+						"replaces": 23
+					}
+				]
+			},
+			{
+				"slug": "set1-stille-uren-bibliotheek",
+				"name": "Stille uren in de bibliotheek",
+				"intro": "Deze tekst komt van een nieuwssite en gaat over stille uren in de bibliotheek.",
+				"text": "Stille uren in de bibliotheek\n\nSteeds meer bibliotheken organiseren stille uren. Tijdens deze uren is er minder geluid, zijn de lampen iets zachter en worden er geen groepsactiviteiten gepland. De stille uren zijn bedoeld voor bezoekers die snel overprikkeld raken, bijvoorbeeld door drukte, harde stemmen of fel licht. Ook mensen die moeite hebben met concentratie kunnen er baat bij hebben.\n\nHoe het begon\n\nBibliotheekmedewerker Sander Meijer kreeg het idee na een gesprek met een moeder van een kind met autisme. Zij vertelde dat haar zoon graag boeken wilde lenen, maar de bibliotheek vaak te druk vond. Sander besprak dit met collega’s en begon op woensdagochtend met een proef. Er kwamen posters bij de ingang, zodat bezoekers wisten waarom het stiller was dan normaal.\n\nPositieve reacties\n\nDe proef bleek populairder dan verwacht. Niet alleen mensen met autisme kwamen tijdens de stille uren. Ook ouderen, studenten en mensen die rustig wilden lezen maakten er gebruik van. “Het is geen aparte bibliotheek,” zegt Sander. “Het is dezelfde plek, maar met meer rust.” Volgens hem voelen bezoekers zich welkomer als vooraf duidelijk is wat ze kunnen verwachten.\n\nNiet iedereen is tevreden\n\nToch zijn er ook bezoekers die de nieuwe regels lastig vinden. Zij vergeten dat ze zachter moeten praten of vinden het ongezellig zonder activiteiten. Soms moet een medewerker iemand herinneren aan de afspraken. Volgens Sander gebeurt dat meestal vriendelijk. “We zeggen niet dat mensen niet mogen praten, maar we vragen of het wat zachter kan.”\n\nEen vast onderdeel?\n\nDe gemeente wil dat de stille uren blijven, maar vraagt de bibliotheek om duidelijk aan te geven wanneer ze plaatsvinden. Zo weten bezoekers wat ze kunnen verwachten. Een onderzoeker van de hogeschool volgt de proef en kijkt of bezoekers vaker terugkomen. Sander vindt dat belangrijk: “Rust werkt alleen als mensen vooraf weten waarom de regels er zijn. Dan wordt het geen verbod, maar een afspraak waar iedereen iets aan heeft.”\n\nAndere organisaties kijken nu mee. Een buurthuis wil ook stille uren invoeren, maar dan voor huiswerkbegeleiding. De vraag is wel hoeveel personeel nodig is om bezoekers goed te informeren. Zonder uitleg kunnen mensen denken dat de bibliotheek ineens streng is geworden. Goede communicatie blijft daarom belangrijk. Voorlopig blijft de proef nog zes maanden lopen. Daarna beslist de bibliotheek of de stille uren op meer dagen worden aangeboden.",
+				"questions": [
+					{
+						"id": "set1-24",
+						"vraag": 24,
+						"question": "Voor wie zijn de stille uren vooral bedoeld?",
+						"options": {
+							"A": "voor mensen die snel last hebben van drukte, lawaai of fel licht",
+							"B": "voor kinderen met autisme die samen met hun ouders komen",
+							"C": "voor bezoekers die graag samen met anderen aan activiteiten meedoen"
+						},
+						"answer": "A",
+						"origin": "revised",
+						"replaces": 24
+					},
+					{
+						"id": "set1-25",
+						"vraag": 25,
+						"question": "Hoe kwam Sander Meijer op het idee voor stille uren?",
+						"options": {
+							"A": "Een onderzoeker van de hogeschool had het hem aangeraden.",
+							"B": "De gemeente vroeg de bibliotheek om het er rustiger te maken.",
+							"C": "Een moeder zei dat haar zoon het er vaak te onrustig vond."
+						},
+						"answer": "C",
+						"origin": "revised",
+						"replaces": 25
+					},
+					{
+						"id": "set1-26",
+						"vraag": 26,
+						"question": "Wat vindt Sander Meijer, volgens de tekst?",
+						"options": {
+							"A": "De stille uren moeten zo snel mogelijk op meer dagen komen.",
+							"B": "Als bezoekers weten wat er gaat gebeuren, voelen ze zich meer welkom.",
+							"C": "Zonder activiteiten is het tijdens de stille uren ongezellig."
+						},
+						"answer": "B",
+						"origin": "new",
+						"replaces": 26
+					},
+					{
+						"id": "set1-27",
+						"vraag": 27,
+						"question": "Waarom is goede uitleg over de stille uren belangrijk, volgens de tekst?",
+						"options": {
+							"A": "Anders komen bezoekers minder vaak terug naar de bibliotheek.",
+							"B": "Anders weten medewerkers niet wanneer zij iemand moeten waarschuwen.",
+							"C": "Anders denken bezoekers dat er opeens strengere regels gelden."
+						},
+						"answer": "C",
+						"origin": "revised",
+						"replaces": 27
+					},
+					{
+						"id": "set1-28",
+						"vraag": 28,
+						"question": "Wat is het doel van deze tekst?",
+						"options": {
+							"A": "de lezer overhalen om naar de stille uren in de bibliotheek te gaan",
+							"B": "de lezer informeren over een proef met rustige uren in de bibliotheek",
+							"C": "de lezer vertellen welke kritiek bezoekers hebben op de stille uren"
+						},
+						"answer": "B",
+						"origin": "revised",
+						"replaces": 28
+					}
+				]
+			},
+			{
+				"slug": "set1-horizon-college",
+				"name": "Algemene informatie Horizon College",
+				"intro": "Deze tekst komt van de website van Horizon College.",
+				"text": "Algemene informatie Horizon College\n\nAanwezigheid\n\nOnder Lestijden vind je de tijden waarop je onderwijs kunt volgen. Tussen de eerste les op maandag en de laatste les op vrijdag moet je beschikbaar zijn voor school, stage en verplichte activiteiten. Kun je niet aanwezig zijn? Meld dit dan vóór 09.00 uur bij het Onderwijsservicebureau van jouw sector. Als je stage loopt, meld je je ook af bij je stagebedrijf. De reden van je afwezigheid wordt geregistreerd. Als je zonder geldige reden wegblijft of je niet op tijd afmeldt, ziet de school dit als ongeoorloofd verzuim. De school neemt dan contact met jou op. Bij regelmatig verzuim kan ook contact worden opgenomen met je ouder, verzorger of contactpersoon.\n\nAanwezigheid registreren\n\nJe meldt je aanwezigheid met je Horizonpas. Je houdt de pas bij de toegangspoortjes bij de ingang. Hierdoor registreert de school dat je in het gebouw bent. Bij het begin van de les registreert de docent of je in de juiste onderwijsruimte aanwezig bent. Pas daarna ben je officieel aanwezig bij de onderwijsactiviteit. Alleen het scannen van je pas bij de ingang is dus niet genoeg.\n\nBereikbaarheid\n\nZorg ervoor dat de school altijd je juiste telefoonnummer, adres en e-mailadres heeft. Ook de gegevens van een contactpersoon moeten kloppen. In geval van nood kan de school dan snel iemand bereiken. Verandert je telefoonnummer of e-mailadres? Dan kun je dit zelf aanpassen via Selfservice. Verandert je woonadres of contactpersoon? Dan geef je dit schriftelijk door aan de Studentenadministratie. Daar kun je een wijzigingsformulier ophalen. Gebruik op je mobiele telefoon ook ICE, dat betekent In Case of Emergency. Hulpverleners kunnen dan in een noodsituatie zien wie zij moeten bellen.\n\nCalamiteiten\n\nEen calamiteit is een gevaarlijke situatie, bijvoorbeeld brand, rook of een ernstig ongeval. Als er een calamiteit is, hoor je een alarmsignaal. Ga dan zo snel mogelijk via de dichtstbijzijnde nooduitgang naar de verzamelplaats buiten. Gebruik geen lift. Blijf op de verzamelplaats totdat een bedrijfshulpverlener toestemming geeft om terug te gaan. Bedrijfshulpverleners zijn medewerkers die helpen bij noodsituaties. Je herkent ze aan een geel of oranje hesje met de letters BHV.\n\nZie je brand of een andere gevaarlijke situatie en hoor je nog geen alarm? Waarschuw dan direct de receptie of een conciërge. In alle gebouwen hangen kaarten met richtlijnen bij brand en ongevallen. Is de situatie zo gevaarlijk dat er direct alarm nodig is? Dan kun je zelf een handmelder indrukken. Je kunt ook toestel 100 bellen via een vaste telefoon of 8888 via je mobiele telefoon.\n\nCursusgeld\n\nJe moet wettelijk cursusgeld betalen als je een BBL-opleiding volgt en op 1 augustus 18 jaar of ouder bent. Je moet ook cursusgeld betalen als je een deeltijd-vavo-opleiding volgt. Voor vavo is geen leeftijdsgrens. De hoogte van het cursusgeld wordt elk jaar opnieuw vastgesteld. Voor niveau 1 en 2 geldt een lager bedrag dan voor niveau 3 en 4. Vavo-studenten die minder dan 29 lesuren volgen, betalen per lesuur. Over de betaling ontvang je een bericht van Horizon College. Lees het financieel reglement op de website zorgvuldig door.\n\nDe factuur klopt niet\n\nVind je dat de factuur niet klopt? Stuur dan binnen 14 dagen na de factuurdatum een brief of e-mail naar de Financiële administratie, Team debiteuren. Vermeld altijd je naam, geboortedatum, studentnummer en factuurnummer. Als je niet op tijd reageert, blijft de factuur geldig. Je bent zelf verantwoordelijk voor betaling. Als je niet betaalt, kan de school een incassobureau inschakelen.\n\nBetaling door werkgever\n\nBij sommige BBL-opleidingen betaalt de werkgever het cursusgeld. Daarvoor is een derdenmachtiging nodig. Deze machtiging moet elk schooljaar opnieuw worden ingevuld. De werkgever en de student moeten allebei ondertekenen. Pas nadat Team debiteuren de ondertekende machtiging heeft ontvangen, kan de factuur op naam van de werkgever worden gezet. Is de machtiging niet compleet of niet ondertekend, dan blijf je zelf verantwoordelijk voor de betaling.\n\nCursusgeld terugvragen\n\nStop je tussentijds met je opleiding? Dan kun je het cursusgeld alleen in bepaalde situaties geheel of gedeeltelijk terugkrijgen. Bijvoorbeeld als je vóór de eerste lesdag uitschrijft, vóór 1 oktober stopt, vóór 1 mei je diploma haalt en de school verlaat, of door ernstige familieomstandigheden moet stoppen. Teruggave gaat nooit automatisch. Je moet dit zelf aanvragen bij Team debiteuren met het formulier Aanvraag terugbetaling cursusgeld.\n\nDecaan en mentor\n\nBij de sectoren Economie, Zorg, Welzijn en Dienstverlening kun je naar de decaan als je meer wilt weten over vervolgopleidingen, kosten, kansen op werk of uitschrijven. Ook kan de decaan je doorverwijzen naar het Studie Informatie Punt. Studenten van de sector Techniek gaan voor deze vragen eerst naar hun mentor. De mentor bespreekt daarna of doorverwijzing nodig is.\n\nEHBO\n\nElke locatie heeft EHBO-hulpmiddelen. Heb je een pleister nodig of is er een klein ongeluk gebeurd? Ga dan naar de receptie of een conciërge. Bij een ongeval help je de gewonde persoon naar de receptie als dat veilig kan. Kun je de persoon niet verplaatsen? Blijf dan bij hem of haar en laat iemand anders hulp halen. Volg altijd de instructies van de EHBO’er of bedrijfshulpverlener. Bij spoedeisende hulp bel je toestel 100 via een vaste telefoon.\n\nUitjes en excursies\n\nBij sommige opleidingen horen uitjes of excursies bij het lesprogramma. Deelname is dan verplicht en er zijn geen extra kosten. Er kunnen ook activiteiten worden georganiseerd die niet bij het verplichte lesprogramma horen. Voor deze activiteiten betaal je apart via de webshop van Horizon College. De kosten worden dan niet uit het lesgeld of cursusgeld betaald.\n\nHorizonpas\n\nJe hebt een Horizonpas nodig als je een opleiding volgt. Met de pas krijg je toegang tot de gebouwen, kun je je legitimeren bij examens, kun je prints en kopieën maken en kun je je aanwezigheid registreren. Nieuwe studenten krijgen bericht wanneer de pas klaar is. Ben je je pas vergeten? Dan kun je voor één dag een tijdelijke pas krijgen. Hiervoor betaal je 5 euro administratiekosten. Als je de tijdelijke pas aan het einde van de dag terugbrengt, wordt je gewone pas weer geactiveerd. Ben je je Horizonpas kwijt? Dan kun je een nieuwe pas aanvragen bij het Passenbureau. Hiervoor betaal je 5 euro administratiekosten en 5 euro voor de nieuwe pas. Als je eenmaal een vervangende pas hebt aangevraagd, kan de oude pas niet meer worden gebruikt.\n\nPas werkt niet of wordt misbruikt\n\nReageert het toegangspoortje niet op je pas? Meld je dan bij het Passenbureau, de beveiliging of een conciërge. Zij kunnen controleren of de pas nog werkt. Is de pas door je eigen schuld kapot, dan betaal je de kosten van een nieuwe pas zelf. Bij misbruik kan de pas worden ingenomen of ongeldig gemaakt. De locatiemanager beslist of je een vervangende pas krijgt.\n\nVragen\n\nMet algemene vragen over de Horizonpas kun je terecht bij het Passenbureau. Met financiële vragen ga je naar Team debiteuren. Met vragen over aanwezigheid of afmelden neem je contact op met het Onderwijsservicebureau van je sector.\n\nKluisjes en persoonlijke spullen\n\nOp sommige locaties kun je met je Horizonpas een kluisje openen. In andere gebouwen krijg je een aparte sleutel. Laat geen waardevolle spullen onbeheerd achter in lokalen, gangen of de kantine. De school is niet verantwoordelijk voor spullen die je kwijtraakt doordat je ze onbeheerd laat liggen. Vind je een portemonnee, telefoon of andere waardevolle spullen? Lever deze dan in bij de receptie.\n\nPrinten en kopiëren\n\nMet je Horizonpas kun je printen, kopiëren en scannen. Je moet voldoende tegoed op je account hebben. Het tegoed kun je online opwaarderen. Problemen met printen meld je niet bij je docent, maar bij de ICT-balie of bij de receptie als er geen ICT-balie op jouw locatie is.\n\nVertrouwenspersoon\n\nVoel je je onveilig, gepest of niet goed behandeld? Dan kun je contact opnemen met de vertrouwenspersoon. De vertrouwenspersoon luistert naar je verhaal en bespreekt met jou welke stappen mogelijk zijn. Er wordt niets gedaan zonder jouw toestemming, behalve wanneer er direct gevaar is voor jou of iemand anders. De contactgegevens staan op de website en op posters in de school.\n\nGedrag in het gebouw\n\nIedereen moet zich veilig kunnen voelen op school. Daarom zijn er regels voor gedrag. Je spreekt anderen met respect aan, houdt gangen vrij en volgt aanwijzingen van medewerkers op. Roken en vapen mag alleen op plekken waar dit duidelijk is toegestaan. Alcohol en drugs zijn verboden in en rond het schoolgebouw. Bij ernstige overtredingen kan de school maatregelen nemen.\n\nOpeningstijden\n\nDe meeste locaties zijn open van maandag tot en met vrijdag tussen 07.30 en 18.00 uur. Tijdens toetsweken of avonden met oudergesprekken kunnen de openingstijden anders zijn. Wil je buiten gewone openingstijden in het gebouw blijven, dan heb je toestemming nodig van een medewerker. Tijdens schoolvakanties zijn sommige balies gesloten of beperkt bereikbaar.\n\nContact\n\nOp de website staat per locatie welk telefoonnummer je kunt bellen. Bel bij algemene vragen de receptie. Bel bij vragen over roosters het Onderwijsservicebureau. Voor geldzaken neem je contact op met Team debiteuren. Voor problemen met je account of laptop ga je naar de ICT-balie. Zo komt je vraag sneller bij de juiste persoon terecht.\n\nFoto op de pas\n\nOp de Horizonpas staat je foto. Deze foto wordt gemaakt door het Passenbureau. De foto moet herkenbaar blijven, omdat de pas ook wordt gebruikt bij examens. Is de foto beschadigd of niet meer duidelijk? Dan kan de school je vragen een nieuwe pas te laten maken.",
+				"questions": [
+					{
+						"id": "set1-29",
+						"vraag": 29,
+						"question": "Youssef is verhuisd. Hij wil zijn nieuwe woonadres doorgeven aan de school. Hoe doet hij dat?",
+						"options": {
+							"A": "Hij levert een formulier in bij de Studentenadministratie.",
+							"B": "Hij meldt het bij het Onderwijsservicebureau.",
+							"C": "Hij verandert zijn adres zelf online via Selfservice."
+						},
+						"answer": "A",
+						"origin": "new",
+						"replaces": 29
+					},
+					{
+						"id": "set1-30",
+						"vraag": 30,
+						"question": "Lotte wordt in haar klas gepest. Zij vertelt dit aan de vertrouwenspersoon, maar zij wil nog niet dat er iets gebeurt. Er is geen direct gevaar. Wat doet de vertrouwenspersoon?",
+						"options": {
+							"A": "contact opnemen met de ouders of verzorgers van Lotte",
+							"B": "geen actie ondernemen zolang Lotte daar niet mee akkoord gaat",
+							"C": "het pesten direct melden bij de locatiemanager van de school"
+						},
+						"answer": "B",
+						"origin": "new",
+						"replaces": 30
+					},
+					{
+						"id": "set1-31",
+						"vraag": 31,
+						"question": "Wat is volgens de tekst het verschil tussen een excursie uit het lesprogramma en een andere activiteit van school?",
+						"options": {
+							"A": "Voor de andere activiteit betaal je niets extra, voor de excursie wel.",
+							"B": "Voor allebei betaal je apart via de webshop.",
+							"C": "Voor de excursie betaal je niets extra, voor de andere activiteit wel."
+						},
+						"answer": "C",
+						"origin": "new",
+						"replaces": 31
+					},
+					{
+						"id": "set1-32",
+						"vraag": 32,
+						"question": "Op de factuur van Daan staat een verkeerd bedrag. De factuurdatum is 2 september. Daan stuurt op 24 september een e-mail naar Team debiteuren. Wat is het gevolg?",
+						"options": {
+							"A": "Daan moet toch betalen, want hij heeft te laat gereageerd.",
+							"B": "De school geeft de factuur meteen aan een incassobureau.",
+							"C": "De factuur wordt aangepast, want een e-mail is een geldige manier."
+						},
+						"answer": "A",
+						"origin": "new",
+						"replaces": 32
+					},
+					{
+						"id": "set1-33",
+						"vraag": 33,
+						"question": "Nabil volgt een BBL-opleiding. Zijn werkgever wil het cursusgeld betalen. Nabil levert een derdenmachtiging in die alleen zijn werkgever heeft ondertekend. Wat is het gevolg?",
+						"options": {
+							"A": "De machtiging geldt pas vanaf het volgende schooljaar.",
+							"B": "Nabil moet de rekening dan zelf betalen.",
+							"C": "De factuur komt op naam van zijn werkgever."
+						},
+						"answer": "B",
+						"origin": "revised",
+						"replaces": 33
+					},
+					{
+						"id": "set1-34",
+						"vraag": 34,
+						"question": "Jeroen volgt een opleiding in de sector Techniek. Hij wil weten welke kansen op werk hij heeft na zijn opleiding. Naar wie gaat hij eerst?",
+						"options": {
+							"A": "naar zijn mentor",
+							"B": "naar het Studie Informatie Punt",
+							"C": "naar de decaan"
+						},
+						"answer": "A",
+						"origin": "revised",
+						"replaces": 34
+					},
+					{
+						"id": "set1-35",
+						"vraag": 35,
+						"question": "Noor wil in de pauze iets printen, maar de printer geeft steeds een foutmelding. Op haar locatie is geen ICT-balie. Waar meldt zij het probleem?",
+						"options": {
+							"A": "bij haar docent",
+							"B": "bij het Passenbureau",
+							"C": "bij de receptie"
+						},
+						"answer": "C",
+						"origin": "new",
+						"replaces": 35
+					}
+				]
+			}
+		],
+		"notes": [
+			"Version 2: the texts are unchanged except one spelling fix (personeelssysteem). The questions were rebuilt so the right answer paraphrases the text and every wrong option is a real trap from the text.",
+			"Every question has three options (A, B, C) and the keys are spread over A, B and C. Answer every question from the text, not from letter patterns.",
+			"The last text is based on an official 2025 exam text. Its questions ask about other parts of the text than the official questions do."
+		]
+	},
+	{
+		"id": "set2",
+		"title": "Oefenexamen Set 2",
+		"origin": "video-set",
+		"passages": [
+			{
+				"slug": "set2-meryem-werktijden",
+				"name": "Meryem werkt voortaan vooral overdag",
+				"intro": "Deze tekst komt van een website over werk en gezondheid. De tekst gaat over Meryem, die andere werktijden heeft afgesproken.",
+				"text": "Meryem werkt voortaan vooral overdag\n\nMeryem Aksoy werkt al veertien jaar op de bakkerijafdeling van een supermarkt. Ze vindt het contact met klanten leuk en is trots op het brood dat haar team iedere dag maakt. Toch werd het werken met wisselende diensten steeds zwaarder. De ene week begon ze om vijf uur 's ochtends, de volgende week werkte ze tot half tien 's avonds. Ook werkte ze regelmatig in het weekend.\n\nMeryem sliep onrustig, had vaker hoofdpijn en merkte dat zij zich minder goed kon concentreren. Eerst dacht ze dat dit alleen door drukte thuis kwam. Tijdens haar vakantie verdwenen de klachten bijna. Toen de wisselende diensten weer begonnen, kwamen ze terug.\n\nNiet meteen minder werken\n\nMeryem wilde niet minder uren gaan werken. Ze had haar inkomen nodig en wilde haar baan graag houden. Tijdens een vrijwillig gesprek over gezondheid op het werk vertelde ze haar situatie aan een inzetbaarheidscoach. Hij legde uit dat het lichaam tijd nodig heeft om aan een ritme te wennen. Steeds wisselen tussen vroege en late diensten kan het herstel moeilijker maken.\n\nDe coach adviseerde haar om vier weken bij te houden wanneer zij werkte, hoe zij sliep en hoeveel energie zij had. Daardoor werd het patroon duidelijk: vooral een late dienst vlak voor een vroege dienst gaf problemen.\n\nEen proef van drie maanden\n\nMet deze informatie ging Meryem naar haar leidinggevende Bas. Ze was bang dat hij zou zeggen dat iedereen flexibel moest blijven. Bas wilde wel zoeken naar een oplossing, maar het rooster moest eerlijk blijven voor het hele team.\n\nZe spraken een proef van drie maanden af. Meryem zou meestal vier vaste ochtenddiensten per week werken. Eens per twee weken werd één ochtenddienst vervangen door een zaterdagmiddagdienst. Daarnaast nam zij de voorraadcontrole en de dagelijkse versheidslijsten op zich. Het rooster werd zes weken van tevoren gepubliceerd. Ook andere collega's konden een gesprek aanvragen als zij vanwege gezondheidsredenen of zorgtaken meer voorspelbare werktijden nodig hadden.\n\nWat veranderde er?\n\nNa drie maanden sliep Meryem beter en had ze minder vaak hoofdpijn. Ook maakte zij minder fouten bij bestellingen. Niet alle klachten waren verdwenen. Een zeer drukke ochtend bleef vermoeiend, en zij moest thuis nog steeds op tijd naar bed gaan. 'Het nieuwe rooster is geen wondermiddel,' zegt ze, 'maar mijn lichaam weet nu beter waar het aan toe is.'\n\nBas zag dat Meryem zich minder vaak ziek meldde. Voor het team was het bovendien duidelijker wanneer zij aanwezig was en welke extra taken zij uitvoerde.\n\nEerst wat onbegrip\n\nEnkele collega's dachten in het begin dat Meryem een voordeel kreeg. Bas legde daarom uit dat zij hetzelfde aantal uren bleef werken en extra verantwoordelijkheid had gekregen. Meryem vertelde ook zelf waarom de verandering nodig was. Daarna verdween de meeste spanning.\n\nPraat voordat het misgaat\n\nMeryem raadt anderen aan om niet te wachten totdat zij helemaal uitvallen. 'Ga niet alleen zeggen wat niet meer lukt,' zegt ze. 'Neem voorbeelden mee en denk alvast na over mogelijke oplossingen.' Een werkgever kan niet ieder verzoek accepteren, maar een open gesprek kan wel mogelijkheden zichtbaar maken die eerder niemand zag.",
+				"questions": [
+					{
+						"id": "set2-1",
+						"vraag": 1,
+						"question": "Wat werd duidelijk doordat Meryem vier weken bijhield hoe zij werkte, sliep en zich voelde?",
+						"options": {
+							"A": "Vooral de diensten in het weekend waren zwaar voor haar.",
+							"B": "Haar klachten kwamen vooral door de drukte bij haar thuis.",
+							"C": "Vooral een ochtenddienst vlak na een avonddienst was zwaar."
+						},
+						"answer": "C",
+						"origin": "revised",
+						"replaces": 2
+					},
+					{
+						"id": "set2-2",
+						"vraag": 2,
+						"question": "Hoe stond Bas tegenover het verzoek van Meryem?",
+						"options": {
+							"A": "Hij wilde meedenken, als het team er maar geen nadeel van had.",
+							"B": "Hij vond dat steeds wisselende diensten slecht zijn voor het herstel.",
+							"C": "Hij vond dat iedereen in het team flexibel moest blijven."
+						},
+						"answer": "A",
+						"origin": "new",
+						"replaces": 1
+					},
+					{
+						"id": "set2-3",
+						"vraag": 3,
+						"question": "Meryem zegt: 'Het nieuwe rooster is geen wondermiddel.' Wat bedoelt zij daarmee?",
+						"options": {
+							"A": "Het rooster heeft haar klachten niet verminderd.",
+							"B": "Het rooster helpt haar, maar lost niet al haar problemen op.",
+							"C": "Het rooster helpt alleen als zij thuis op tijd naar bed gaat."
+						},
+						"answer": "B",
+						"origin": "revised",
+						"replaces": 4
+					},
+					{
+						"id": "set2-4",
+						"vraag": 4,
+						"question": "Waardoor verdween de meeste spanning in het team?",
+						"options": {
+							"A": "Doordat Meryem voortaan minder extra taken op zich nam.",
+							"B": "Doordat zowel Bas als Meryem uitleg gaf over de nieuwe afspraak.",
+							"C": "Doordat ook andere collega's voortaan vaste ochtenddiensten kregen."
+						},
+						"answer": "B",
+						"origin": "revised",
+						"replaces": 3
+					},
+					{
+						"id": "set2-5",
+						"vraag": 5,
+						"question": "Wat raadt Meryem andere werknemers aan?",
+						"options": {
+							"A": "Vraag om minder uren te werken voordat u helemaal uitvalt.",
+							"B": "Vertel uw werkgever vooral duidelijk wat u allemaal niet meer kunt.",
+							"C": "Begin op tijd een gesprek en bedenk zelf al wat er anders kan."
+						},
+						"answer": "C",
+						"origin": "revised",
+						"replaces": 5
+					},
+					{
+						"id": "set2-6",
+						"vraag": 6,
+						"question": "Wat is het doel van deze tekst?",
+						"options": {
+							"A": "Met een voorbeeld laten zien hoe aangepaste werktijden kunnen helpen.",
+							"B": "Werkgevers overtuigen om alle werknemers vaste ochtenddiensten te geven.",
+							"C": "Uitleggen hoe een coach werknemers met klachten begeleidt."
+						},
+						"answer": "A",
+						"origin": "revised",
+						"replaces": 6
+					}
+				]
+			},
+			{
+				"slug": "set2-minder-meldingen",
+				"name": "Rustiger werken met minder meldingen",
+				"intro": "Deze tekst komt van een website over gezondheid en concentratie.",
+				"text": "Rustiger werken met minder meldingen\n\nEen bericht van een collega, een nieuwsupdate, een aanbieding en daarna weer een groepsapp: veel telefoons en computers vragen de hele dag aandacht. Zo'n melding duurt maar kort, maar uw aandacht moet telkens van richting veranderen. Zelfs wanneer u het bericht niet opent, heeft uw brein het geluid of het lichtje al opgemerkt.\n\nWie vaak wordt onderbroken, heeft meestal meer tijd nodig om een taak af te maken en maakt sneller kleine fouten. Toch voelt direct reageren soms juist productief. U ziet immers dat er iets gebeurt. Het is daarom belangrijk om niet alle meldingen hetzelfde te behandelen.\n\nMaak onderscheid\n\nBepaal eerst welke berichten echt snel antwoord nodig hebben. Een telefoontje van de kinderopvang, een familielid of de storingsdienst kan belangrijk zijn. Meldingen over aanbiedingen, nieuws of reacties op sociale media kunnen meestal wachten.\n\nWerkt u in een team? Spreek dan samen af welk kanaal alleen voor spoed wordt gebruikt. Als collega's ieder bericht als dringend markeren, werkt zo'n afspraak niet meer.\n\nKies vaste kijkmomenten\n\nVoor e-mail en gewone chatberichten kunnen vaste momenten helpen. Kijk bijvoorbeeld om half elf, na de lunch en aan het einde van de middag. In werk waarbij sneller reageren nodig is, kunnen de blokken korter zijn, bijvoorbeeld iedere dertig minuten.\n\nLaat collega's weten wanneer u berichten leest. Zet tijdens een taak die aandacht vraagt de functie 'niet storen' aan en sluit onnodige tabbladen. Zo hoeft u niet de hele dag te beslissen of u nu wel of niet kijkt.\n\nNa werktijd\n\nWerkmeldingen in de avond houden sommige mensen langer in een werkstand. Zet ze daarom uit wanneer uw werkdag voorbij is, behalve als u officieel bereikbaarheidsdienst heeft. Leg de telefoon 's nachts liever niet naast uw kussen. Wie de telefoon als wekker gebruikt, kan hem aan de andere kant van de kamer leggen of een eenvoudige wekker gebruiken.\n\nNiet alleen het licht van een scherm kan de slaap verstoren. Ook de inhoud van berichten kan u wakker en actief houden. Een spannend nieuwsbericht of een moeilijke e-mail zorgt soms dat uw hoofd blijft doorgaan.\n\nBegin klein\n\nU hoeft niet alle apps te verwijderen en ook niet meteen een hele dag onbereikbaar te zijn. Kies één app waarvan u de meldingen een week uitzet. Kijk daarna wat er veranderde. Kon u rustiger werken? Heeft u iets belangrijks gemist? Pas uw instellingen zo nodig aan.\n\nHet doel is niet dat niemand u meer kan bereiken. Het doel is dat u zelf bepaalt wanneer iets uw aandacht krijgt.",
+				"questions": [
+					{
+						"id": "set2-7",
+						"vraag": 7,
+						"question": "Waarom kan een melding u storen, ook als u het bericht niet opent?",
+						"options": {
+							"A": "Een melding duurt vaak lang, zodat u niet meteen verder kunt werken.",
+							"B": "Direct reageren voelt productief, dus u opent het bericht toch.",
+							"C": "Uw hoofd heeft het signaal toch gezien en moet even omschakelen."
+						},
+						"answer": "C",
+						"origin": "revised",
+						"replaces": 7
+					},
+					{
+						"id": "set2-8",
+						"vraag": 8,
+						"question": "De schrijver zegt dat direct reageren 'soms juist productief' voelt. Waarom zegt de schrijver dat?",
+						"options": {
+							"A": "Om te laten zien dat snel reageren de beste manier van werken is.",
+							"B": "Om uit te leggen waarom mensen toch graag meteen reageren.",
+							"C": "Om te laten zien dat onderbrekingen tot kleine fouten leiden."
+						},
+						"answer": "B",
+						"origin": "new",
+						"replaces": 9
+					},
+					{
+						"id": "set2-9",
+						"vraag": 9,
+						"question": "Wat raadt de schrijver NIET aan om tijdens het werk minder gestoord te worden?",
+						"options": {
+							"A": "Uw telefoon tijdens het werk in een andere kamer leggen.",
+							"B": "Een instelling aanzetten waardoor meldingen even stil blijven.",
+							"C": "Uw collega's vertellen op welke momenten u berichten bekijkt."
+						},
+						"answer": "A",
+						"origin": "new",
+						"replaces": 8
+					},
+					{
+						"id": "set2-10",
+						"vraag": 10,
+						"question": "Linda heeft deze week officieel bereikbaarheidsdienst. Wat geldt volgens de tekst voor haar werkmeldingen na werktijd?",
+						"options": {
+							"A": "Zij kan ze deze week gewoon aan laten staan.",
+							"B": "Zij zet ze uit zodra haar werkdag voorbij is.",
+							"C": "Zij laat ze alleen aan als haar telefoon haar wekker is."
+						},
+						"answer": "A",
+						"origin": "new",
+						"replaces": 11
+					},
+					{
+						"id": "set2-11",
+						"vraag": 11,
+						"question": "Wat bedoelt de schrijver met de kop 'Begin klein'?",
+						"options": {
+							"A": "Kijk eerst iedere dertig minuten en daarna minder vaak.",
+							"B": "Zet eerst alle meldingen uit en zet later een paar weer aan.",
+							"C": "Verander eerst één ding en kijk dan of het helpt."
+						},
+						"answer": "C",
+						"origin": "revised",
+						"replaces": 10
+					},
+					{
+						"id": "set2-12",
+						"vraag": 12,
+						"question": "Wat is het doel van deze tekst?",
+						"options": {
+							"A": "Uitleggen hoe berichten en schermlicht de slaap verstoren.",
+							"B": "Lezers helpen om meldingen minder invloed te laten hebben.",
+							"C": "Lezers overtuigen om zo min mogelijk bereikbaar te zijn."
+						},
+						"answer": "B",
+						"origin": "revised",
+						"replaces": 12
+					}
+				]
+			},
+			{
+				"slug": "set2-fietstechnicus-onderzoeken",
+				"name": "Goed repareren begint met goed onderzoeken",
+				"intro": "Deze tekst komt uit een studieboek voor de opleiding tot fietstechnicus.",
+				"text": "Goed repareren begint met goed onderzoeken\n\nEen klant zegt soms alleen: 'Mijn fiets kraakt.' Dat is nog geen duidelijke diagnose. Het geluid kan uit de ketting, het stuur, een pedaal of zelfs uit de bagagedrager komen. Een goede fietstechnicus begint daarom niet meteen met onderdelen vervangen, maar met vragen stellen en controleren.\n\nLuisteren naar de klacht\n\nVraag wanneer het probleem ontstaat. Gebeurt het tijdens het remmen, bij een hoge snelheid, in een bepaalde versnelling of alleen wanneer de fiets zwaar beladen is? Vraag ook sinds wanneer de klant het merkt en of er kort daarvoor iets met de fiets is gebeurd.\n\nHerhaal daarna in uw eigen woorden wat u hebt begrepen. Zo kan de klant u verbeteren als u iets verkeerd hebt verstaan. Gebruik eenvoudige taal. Een klant hoeft de technische naam van een onderdeel niet te kennen om nuttige informatie te geven.\n\nDe fiets herkenbaar houden\n\nBevestig het werknummer en de naam van de klant aan de fiets voordat u begint. Zet de fiets veilig in de reparatiestandaard. Onderdelen die u verwijdert, legt u in een bakje met hetzelfde werknummer. Zo raken kleine boutjes niet kwijt en worden onderdelen van verschillende fietsen niet door elkaar gehaald.\n\nEerst controleren, dan afspreken\n\nControleer naast de gemelde klacht ook de onderdelen die met de veiligheid te maken hebben, zoals remmen, banden, verlichting en wielbevestiging. Vindt u een ander probleem, neem dan contact op met de klant voordat u extra werk uitvoert.\n\nDe prijsafspraak bevat arbeidskosten en onderdelen. Volgens de regels van deze werkplaats vraagt u eerst toestemming als de reparatie meer dan tien procent duurder dreigt te worden dan afgesproken. Noteer in de werkorder wanneer u contact hebt opgenomen en met wie u hebt gesproken. Krijgt u de klant niet te pakken, voer dan alleen het afgesproken werk uit.\n\nHet juiste onderdeel kiezen\n\nSoms zijn er meerdere geschikte onderdelen. Leg het verschil uit tussen een origineel onderdeel en een goedkoper passend alternatief. Bespreek prijs, verwachte levensduur en garantie. Kies niet automatisch de duurste mogelijkheid; de keuze moet passen bij het gebruik van de fiets en bij de wens van de klant.\n\nNetjes en veilig werken\n\nGebruik passend gereedschap en houd de werkplek overzichtelijk. Draai bouten vast met de juiste kracht. Een te losse bout kan gevaarlijk zijn, maar een te strak aangedraaide bout kan beschadigd raken of andere onderdelen beschadigen.",
+				"questions": [
+					{
+						"id": "set2-13",
+						"vraag": 13,
+						"question": "Waarom begint de tekst met een klant die zegt: 'Mijn fiets kraakt'?",
+						"options": {
+							"A": "Om te laten zien dat klanten technische woorden moeten leren.",
+							"B": "Om te laten zien dat een klacht de oorzaak nog niet verklaart.",
+							"C": "Om te laten zien dat een krakend geluid meestal uit de ketting komt."
+						},
+						"answer": "B",
+						"origin": "new",
+						"replaces": 13
+					},
+					{
+						"id": "set2-14",
+						"vraag": 14,
+						"question": "Waarom herhaalt de technicus in eigen woorden wat de klant heeft verteld?",
+						"options": {
+							"A": "Dan kan een misverstand direct worden rechtgezet.",
+							"B": "Dan leert de klant de juiste namen van de onderdelen.",
+							"C": "Dan weet de technicus meteen welk onderdeel hij moet vervangen."
+						},
+						"answer": "A",
+						"origin": "new",
+						"replaces": 17
+					},
+					{
+						"id": "set2-15",
+						"vraag": 15,
+						"question": "Waarom legt de technicus verwijderde onderdelen in een bakje met het werknummer?",
+						"options": {
+							"A": "Zo kan de klant na afloop precies zien welke onderdelen vervangen zijn.",
+							"B": "Zo is voor iedereen duidelijk van welke klant de fiets is.",
+							"C": "Zo gaan kleine onderdelen niet verloren en worden ze niet verwisseld."
+						},
+						"answer": "C",
+						"origin": "revised",
+						"replaces": 15
+					},
+					{
+						"id": "set2-16",
+						"vraag": 16,
+						"question": "Een technicus heeft met een klant een prijs van 60 euro afgesproken. Tijdens het werk blijkt dat de reparatie 70 euro gaat kosten. Hij kan de klant niet bereiken. Wat moet hij doen?",
+						"options": {
+							"A": "Een goedkoper onderdeel kiezen, zodat de prijs gelijk blijft.",
+							"B": "De hele reparatie uitvoeren, want de prijs stijgt minder dan tien procent.",
+							"C": "Alleen het werk uitvoeren waarvoor de klant al akkoord had gegeven."
+						},
+						"answer": "C",
+						"origin": "revised",
+						"replaces": 14
+					},
+					{
+						"id": "set2-17",
+						"vraag": 17,
+						"question": "Er passen twee onderdelen: een origineel en een goedkoper alternatief. Wat moet de technicus doen?",
+						"options": {
+							"A": "De verschillen uitleggen en samen met de klant een keuze maken.",
+							"B": "Het originele onderdeel kiezen, omdat dat de beste kwaliteit heeft.",
+							"C": "Het goedkoopste onderdeel kiezen, zodat de klant minder betaalt."
+						},
+						"answer": "A",
+						"origin": "new",
+						"replaces": 16
+					},
+					{
+						"id": "set2-18",
+						"vraag": 18,
+						"question": "Wat is de hoofdgedachte van deze tekst?",
+						"options": {
+							"A": "Een technicus moet bouten altijd met de juiste kracht vastdraaien.",
+							"B": "Een technicus moet eerst uitzoeken wat er mis is voordat hij iets vervangt.",
+							"C": "Een technicus moet vooraf een duidelijke prijsafspraak met de klant maken."
+						},
+						"answer": "B",
+						"origin": "revised",
+						"replaces": 18
+					}
+				]
+			},
+			{
+				"slug": "set2-hybride-werken-nova",
+				"name": "Regeling hybride werken bij Nova Administratie",
+				"intro": "Deze tekst komt uit het personeelshandboek van een administratiekantoor.",
+				"text": "Regeling hybride werken bij Nova Administratie\n\nMedewerkers van wie de functie geschikt is, mogen maximaal twee dagen per week thuiswerken. Maandag is de vaste teamdag op kantoor. Alleen in een bijzondere situatie kan de leidinggevende toestemming geven om die dag thuis te werken.\n\nThuiswerkdag aanvragen\n\nEen vaste thuiswerkdag vraagt u minimaal zeven kalenderdagen vooraf aan via MijnNova. De leidinggevende beoordeelt het verzoek. Wilt u door een onverwachte situatie één dag thuiswerken? Bel dan vóór 08.30 uur met uw leidinggevende en registreer de dag daarna alsnog in MijnNova.\n\nBereikbaarheid\n\nOp een thuiswerkdag bent u tussen 09.00 en 17.00 uur bereikbaar, behalve tijdens uw gewone pauze. U neemt deel aan geplande online vergaderingen en houdt uw agenda actueel.\n\nVergoedingen\n\nVoor een geregistreerde thuiswerkdag ontvangt u automatisch de thuiswerkvergoeding, als de dag vóór de twintigste van de maand in MijnNova staat. Voor diezelfde dag krijgt u geen woon-werkvergoeding. Zakelijke reizen vanaf huis kunnen wel apart worden gedeclareerd.\n\nMiddelen en storingen\n\nU gebruikt de werklaptop en een beveiligde verbinding. Een monitor en bureaustoel kunnen na een werkplekcheck in bruikleen worden gegeven. Meld schade direct. Werkt de laptop of internetverbinding langer dan een uur niet en kunt u geen ander werk doen? Neem contact op met ICT en uw leidinggevende. U komt naar kantoor of spreekt samen ander werk af.",
+				"questions": [
+					{
+						"id": "set2-19",
+						"vraag": 19,
+						"question": "Sara wil voortaan op maandag thuiswerken, omdat zij thuis rustiger kan werken. Wat geldt volgens de regeling?",
+						"options": {
+							"A": "Dat kan niet, want maandag is teamdag en haar reden is niet bijzonder.",
+							"B": "Dat kan, als zij die dag tussen 09.00 en 17.00 uur bereikbaar is.",
+							"C": "Dat kan, als zij het minimaal zeven dagen van tevoren aanvraagt."
+						},
+						"answer": "A",
+						"origin": "revised",
+						"replaces": 19
+					},
+					{
+						"id": "set2-20",
+						"vraag": 20,
+						"question": "Om 07.45 uur hoort Tim dat er vandaag geen treinen rijden. Hij wil daarom thuiswerken. Wat moet hij doen?",
+						"options": {
+							"A": "Alleen de dag in MijnNova zetten; bellen is dan niet nodig.",
+							"B": "Vóór half negen zijn leidinggevende bellen en de dag later registreren.",
+							"C": "Naar kantoor komen, want het is te laat om zijn leidinggevende te bellen."
+						},
+						"answer": "B",
+						"origin": "new",
+						"replaces": 20
+					},
+					{
+						"id": "set2-21",
+						"vraag": 21,
+						"question": "Lisa werkt dinsdag thuis en heeft die dag op tijd in MijnNova gezet. 's Middags reist zij van huis naar een klant. Welke vergoeding krijgt zij voor die dag?",
+						"options": {
+							"A": "De thuiswerkvergoeding en ook de gewone woon-werkvergoeding.",
+							"B": "Alleen de thuiswerkvergoeding; een zakelijke reis telt die dag niet.",
+							"C": "De thuiswerkvergoeding en een vergoeding voor de reis naar de klant."
+						},
+						"answer": "C",
+						"origin": "revised",
+						"replaces": 21
+					},
+					{
+						"id": "set2-22",
+						"vraag": 22,
+						"question": "Wat staat NIET in de regeling over middelen en storingen?",
+						"options": {
+							"A": "Als er iets kapotgaat, geeft u dat meteen door.",
+							"B": "Na een controle van uw werkplek kunt u een bureaustoel lenen.",
+							"C": "Bij een storing mag u tijdelijk op uw eigen computer werken."
+						},
+						"answer": "C",
+						"origin": "new",
+						"replaces": 22
+					},
+					{
+						"id": "set2-23",
+						"vraag": 23,
+						"question": "Wat is het doel van deze tekst?",
+						"options": {
+							"A": "Medewerkers aanmoedigen om zo vaak mogelijk thuis te werken.",
+							"B": "Medewerkers uitleggen welke afspraken gelden als zij thuiswerken.",
+							"C": "Medewerkers laten weten welke reiskosten zij kunnen declareren."
+						},
+						"answer": "B",
+						"origin": "revised",
+						"replaces": 23
+					}
+				]
+			},
+			{
+				"slug": "set2-gereedschapsbibliotheek",
+				"name": "Gereedschapsbibliotheek opent in De Haven",
+				"intro": "Deze tekst komt van een lokale nieuwssite.",
+				"text": "Gereedschapsbibliotheek opent in De Haven\n\nIn de wijk De Haven is zaterdag een gereedschapsbibliotheek geopend. Bewoners kunnen er onder andere een boormachine, ladder, behangtafel, hogedrukreiniger en naaimachine lenen. Initiatiefnemers Noura El Idrissi en Pieter Vos kwamen op het idee toen zij zagen hoeveel spullen mensen voor één klus kochten en daarna jarenlang in een kast of berging lieten staan.\n\n'Veel woningen in deze wijk zijn klein,' zegt Noura. 'Niet iedereen heeft ruimte of geld om gereedschap te bewaren dat maar één keer per jaar nodig is.' De bibliotheek begint als proef van twaalf maanden in een oude werkplaats naast het buurthuis.\n\nLenen en leren\n\nEen lidmaatschap kost 18 euro per jaar. De meeste spullen mogen één week mee. Wie voor het eerst elektrisch gereedschap leent, volgt vooraf een veiligheidsuitleg van twintig minuten. Vrijwilligers controleren de spullen bij het terugbrengen en voeren kleine reparaties uit.\n\nDe gemeente en woningcorporatie HavenWonen betaalden samen de verbouwing en de eerste aankoop van materialen. Daarna moet de bibliotheek vooral draaien op lidmaatschappen, workshops en vrijwillige inzet.\n\nMeer dan dure machines\n\nPieter verwachtte dat vooral boormachines en hogedrukreinigers populair zouden zijn. In de eerste inschrijfweek vroegen bewoners echter het vaakst naar een gewone ladder en een behangtafel. 'Blijkbaar zijn juist grote, eenvoudige spullen lastig om thuis te bewaren,' zegt hij.\n\nOok een ontmoetingsplek\n\nDe initiatiefnemers willen niet alleen geld en ruimte besparen. Iedere eerste donderdag van de maand is er een reparatieavond. Bewoners kunnen dan samen aan een kapot apparaat of meubel werken. Volgens Noura ontstaan tijdens het lenen vaak gesprekken tussen mensen die elkaar eerder niet kenden.\n\nEen winkelier uit de buurt vreest niet voor minder verkoop. 'Voor schroeven, verf en andere verbruiksmaterialen blijven mensen toch naar de winkel komen,' zegt hij. Na tien maanden beslist de gemeente of de proef wordt verlengd.",
+				"questions": [
+					{
+						"id": "set2-24",
+						"vraag": 24,
+						"question": "Hoe kwamen Noura en Pieter op het idee voor een gereedschapsbibliotheek?",
+						"options": {
+							"A": "Ze zagen dat gekocht gereedschap daarna vooral ongebruikt bleef liggen.",
+							"B": "Ze wilden dat buren samen kapotte spullen gingen repareren.",
+							"C": "Ze merkten dat winkels in de wijk weinig gereedschap verkochten."
+						},
+						"answer": "A",
+						"origin": "revised",
+						"replaces": 24
+					},
+					{
+						"id": "set2-25",
+						"vraag": 25,
+						"question": "Fatima heeft vorige week een ladder geleend. Nu wil zij voor het eerst een boormachine lenen. Wat moet zij eerst doen?",
+						"options": {
+							"A": "Een korte uitleg volgen over veilig werken met het apparaat.",
+							"B": "Meedoen aan een reparatieavond op de eerste donderdag.",
+							"C": "Niets, want zij heeft al eerder iets geleend."
+						},
+						"answer": "A",
+						"origin": "revised",
+						"replaces": 25
+					},
+					{
+						"id": "set2-26",
+						"vraag": 26,
+						"question": "Wat bleek in de eerste inschrijfweek?",
+						"options": {
+							"A": "Boormachines en hogedrukreinigers waren het populairst, zoals Pieter dacht.",
+							"B": "Bewoners wilden alleen eenvoudige spullen lenen en geen machines.",
+							"C": "Bewoners wilden vooral grote spullen lenen die thuis veel ruimte innemen."
+						},
+						"answer": "C",
+						"origin": "revised",
+						"replaces": 27
+					},
+					{
+						"id": "set2-27",
+						"vraag": 27,
+						"question": "Wat verwacht de winkelier uit de buurt?",
+						"options": {
+							"A": "Dat hij door de bibliotheek minder gereedschap zal verkopen.",
+							"B": "Dat de bibliotheek weinig gevolgen heeft voor zijn verkoop.",
+							"C": "Dat buren elkaar door het lenen beter leren kennen."
+						},
+						"answer": "B",
+						"origin": "new",
+						"replaces": 26
+					},
+					{
+						"id": "set2-28",
+						"vraag": 28,
+						"question": "Wat is het doel van deze tekst?",
+						"options": {
+							"A": "Bewoners informeren over een nieuwe plek om spullen te lenen.",
+							"B": "Bewoners uitnodigen voor de maandelijkse reparatieavond.",
+							"C": "Bewoners overtuigen om zelf geen gereedschap meer te kopen."
+						},
+						"answer": "A",
+						"origin": "revised",
+						"replaces": 28
+					}
+				]
+			},
+			{
+				"slug": "set2-sportcentrum-de-kade",
+				"name": "Praktische informatie Sportcentrum De Kade",
+				"intro": "Deze langere informatietekst komt van de website van een sportcentrum.",
+				"text": "Praktische informatie Sportcentrum De Kade\n\nLidmaatschappen en passen\n\nSportcentrum De Kade biedt een flexibel maandabonnement, een jaarabonnement en een tienrittenkaart. Abonnementen en sportpassen zijn persoonlijk. Jongeren onder de 18 jaar hebben voor een abonnement een handtekening van een ouder of verzorger nodig. Neem bij uw eerste bezoek een geldig identiteitsbewijs mee.\n\nGroepslessen reserveren\n\nU kunt een groepsles maximaal zeven dagen vooraf reserveren via de app, de website of de servicebalie. Kunt u niet komen? Annuleer dan uiterlijk drie uur vóór de start. Wie binnen dertig dagen twee keer te laat annuleert of niet verschijnt, kan zeven dagen geen nieuwe groepslessen boeken.\n\nStaat u op de wachtlijst en komt er een plaats vrij, dan ontvangt u automatisch een bericht. Tot één uur voor de les kunt u zo worden toegevoegd. Controleer daarom uw berichten. Annuleert het sportcentrum zelf een les, dan krijgen deelnemers bericht en wordt het gebruikte tegoed binnen 24 uur automatisch teruggezet.\n\nFitness voor jongeren\n\nVanaf 16 jaar mag u zelfstandig in de fitnessruimte trainen nadat u de algemene introductie hebt gevolgd. Jongeren van 14 en 15 jaar mogen alleen trainen na de speciale jongerenintroductie én met schriftelijke toestemming van een ouder of verzorger. Zij kunnen op werkdagen tussen 15.00 en 18.00 uur trainen. Buiten deze tijden moet een begeleider van De Kade aanwezig zijn.\n\nZwembad en kinderen\n\nKinderen zonder zwemdiploma A mogen alleen het water in met zwemvleugels én met een volwassene binnen armlengte. Kinderen jonger dan acht jaar worden ook met een diploma door een volwassene begeleid. De begeleider blijft verantwoordelijk en mag niet alleen vanaf de kant kijken.\n\nKluisjes en waardevolle spullen\n\nIn de kleedkamers opent u een kluisje met uw sportbandje. De kluisjes worden iedere avond leeggemaakt. Werkt uw bandje niet, ga dan naar de servicebalie en probeer het slot niet zelf open te maken. Waardevolle spullen kunt u in een klein kluisje bij de servicebalie bewaren. Het sportcentrum is niet verantwoordelijk voor spullen die onbeheerd in een kleedkamer achterblijven.\n\nGevonden voorwerpen\n\nGeef gevonden spullen af bij de servicebalie. De Kade bewaart ze vier weken. Bij het ophalen van een telefoon, portemonnee of sleutelbos moet u kunnen beschrijven wat van u is; bij waardevolle spullen kan om een identiteitsbewijs worden gevraagd. Gevonden voorwerpen worden niet per post verstuurd.\n\nToegankelijkheid\n\nDe rolstoeltoegang bevindt zich aan de oostkant van het gebouw. Er is een lift en een aangepaste kleedruimte. Voor gebruik van de zwembadlift is hulp van een medewerker nodig. Neem bij voorkeur minimaal 24 uur vooraf contact op met de receptie, zodat er op het gewenste tijdstip iemand beschikbaar is.\n\nMedische situatie en abonnement pauzeren\n\nVertel een trainer vóór de les over beperkingen die belangrijk zijn voor veilig sporten. Een jaarabonnement kan om een medische reden minimaal vier weken en maximaal zes maanden worden gepauzeerd. Stuur vóór het begin van de pauze het aanvraagformulier en een verklaring van arts of fysiotherapeut. Alleen bij een plotselinge opname in het ziekenhuis mag de aanvraag later worden ingediend.\n\nEen flexibel maandabonnement kan niet worden gepauzeerd. Dit abonnement kan wel per maand worden opgezegd volgens de opzegtermijn in het contract.\n\nBetaling en vragen\n\nDe contributie wordt rond de 26e van de maand afgeschreven. Lukt de betaling niet, dan ontvangt u eerst een betaalverzoek. Voor vragen over een persoonlijk trainingsplan maakt u een afspraak met het sportadviesteam. Voor een klacht over service bespreekt u de situatie eerst bij de servicebalie. Een formele klacht kan daarna via het online klachtenformulier worden ingediend.\n\nOpeningstijden\n\nDe fitnessruimte en servicebalie zijn maandag tot en met vrijdag open van 06.30 tot 22.30 uur en in het weekend van 08.00 tot 18.00 uur. Het zwembad sluit iedere dag dertig minuten voordat het gebouw sluit. Op feestdagen kunnen andere tijden gelden; deze staan uiterlijk twee weken vooraf op de website.\n\nHuisregels\n\nDraag in de fitnessruimte schone binnenschoenen en gebruik een handdoek op apparaten. Eten is niet toegestaan in sportzalen en kleedkamers. Zet uw telefoon op stil. Foto's en filmpjes maken in kleedkamers is altijd verboden. Aanwijzingen van medewerkers over veiligheid moeten direct worden opgevolgd.\n\nContact\n\nAlgemene vragen: servicebalie@dekade.nl. Reserveringen en wachtlijsten: via de app of telefoon 020-555 41 00.\n\nToegankelijkheid en zwembadlift: receptie@dekade.nl. Betalingen: administratie@dekade.nl.",
+				"questions": [
+					{
+						"id": "set2-29",
+						"vraag": 29,
+						"question": "Twee weken geleden zegde Noor een spinningles pas een uur van tevoren af. Vandaag om 17.00 uur zegt zij haar yogales van 19.00 uur af. Wat is het gevolg?",
+						"options": {
+							"A": "Zij krijgt het tegoed voor deze les binnen een dag terug.",
+							"B": "Er gebeurt niets, want zij heeft de les zelf afgezegd.",
+							"C": "Zij kan een week lang geen nieuwe lessen reserveren."
+						},
+						"answer": "C",
+						"origin": "revised",
+						"replaces": 29
+					},
+					{
+						"id": "set2-30",
+						"vraag": 30,
+						"question": "Hasan is 15 jaar. Hij heeft de jongerenintroductie gevolgd en heeft schriftelijke toestemming van zijn vader. Hij wil op zaterdag om 11.00 uur trainen. Wat geldt?",
+						"options": {
+							"A": "Dat mag pas als hij 16 is en de gewone introductie volgt.",
+							"B": "Dat mag alleen als er een medewerker van De Kade bij is.",
+							"C": "Dat mag, want hij heeft de introductie en de toestemming."
+						},
+						"answer": "B",
+						"origin": "revised",
+						"replaces": 30
+					},
+					{
+						"id": "set2-31",
+						"vraag": 31,
+						"question": "Lotte gaat zwemmen met haar zoon Daan van zes. Daan heeft zijn zwemdiploma A. Wat geldt voor hen?",
+						"options": {
+							"A": "Daan moet zwemvleugels dragen en Lotte blijft binnen armlengte.",
+							"B": "Daan mag zwemmen terwijl Lotte vanaf de kant naar hem kijkt.",
+							"C": "Daan hoeft geen zwemvleugels, maar Lotte moet hem begeleiden."
+						},
+						"answer": "C",
+						"origin": "new",
+						"replaces": 31
+					},
+					{
+						"id": "set2-32",
+						"vraag": 32,
+						"question": "Amir woont in een andere stad. Hij is bij De Kade zijn portemonnee verloren en die is bij de servicebalie afgegeven. Wat moet Amir doen?",
+						"options": {
+							"A": "Zijn adres doorgeven, zodat De Kade de portemonnee naar hem opstuurt.",
+							"B": "Hem binnen vier weken ophalen en kunnen zeggen hoe hij eruitziet.",
+							"C": "Een kopie van zijn identiteitsbewijs naar de servicebalie mailen."
+						},
+						"answer": "B",
+						"origin": "revised",
+						"replaces": 32
+					},
+					{
+						"id": "set2-33",
+						"vraag": 33,
+						"question": "Rosa gebruikt een rolstoel. Zij wil op zaterdag om 10.00 uur zwemmen en heeft daarbij de zwembadlift nodig. Wat kan zij het beste doen?",
+						"options": {
+							"A": "Uiterlijk vrijdag om 10.00 uur de receptie laten weten dat zij komt.",
+							"B": "Uiterlijk vrijdag om 10.00 uur de zwembadlift reserveren in de app.",
+							"C": "Zaterdag een uur van tevoren de receptie laten weten dat zij komt."
+						},
+						"answer": "A",
+						"origin": "revised",
+						"replaces": 33
+					},
+					{
+						"id": "set2-34",
+						"vraag": 34,
+						"question": "Wat is een verschil tussen een jaarabonnement en een flexibel maandabonnement?",
+						"options": {
+							"A": "Een jaarabonnement kan bij ziekte tijdelijk stoppen, een maandabonnement niet.",
+							"B": "Een maandabonnement kan bij ziekte tijdelijk stoppen, een jaarabonnement niet.",
+							"C": "Voor een jaarabonnement is een verklaring van een arts nodig om op te zeggen."
+						},
+						"answer": "A",
+						"origin": "new",
+						"replaces": 34
+					},
+					{
+						"id": "set2-35",
+						"vraag": 35,
+						"question": "Wat staat NIET in de huisregels van De Kade?",
+						"options": {
+							"A": "In de kleedkamers en sportzalen mag u niet eten.",
+							"B": "In de fitnessruimte legt u een handdoek op de apparaten.",
+							"C": "Uw telefoon mag niet mee de kleedkamer in."
+						},
+						"answer": "C",
+						"origin": "new",
+						"replaces": 35
+					}
+				]
+			}
+		],
+		"notes": [
+			"Onafhankelijk oefenmateriaal. Niet officieel verbonden aan DUO, Inburgeren.nl of een exameninstantie."
+		]
+	},
+	{
+		"id": "set3",
+		"title": "Oefenexamen Set 3",
+		"origin": "video-set",
+		"passages": [
+			{
+				"slug": "set3-samira-warme-dagen",
+				"name": "Samira werkt veiliger op warme dagen",
+				"intro": "Deze tekst komt van een website over werk en gezondheid. De tekst gaat over werken tijdens warme dagen.",
+				"text": "Samira werkt veiliger op warme dagen\n\nSamira Benali werkt al negen jaar in een grote wasserij waar lakens en handdoeken voor hotels worden gewassen. In de hal staan machines die de hele dag warmte afgeven. Vorig jaar merkte ze op een hete middag dat ze aan het einde van een middagdienst duizelig werd. Ze had hoofdpijn en maakte twee keer een fout bij het sorteren van wasgoed. Eerst dacht ze dat ze gewoon moe was, maar een collega zag dat ze bleek was en haalde de teamleider.\n\nNiet minder werken\n\nNa het incident sprak Samira met bedrijfsverpleegkundige Iris. Die vroeg hoe vaak Samira dronk, wanneer zij pauze nam en welke werkzaamheden zij op het warmste moment van de dag deed. Samira bleek haar waterfles vaak te laten staan, omdat zij niet steeds van haar werkplek wilde weglopen. Ook deed haar team het zwaarste werk meestal na de lunch, precies wanneer de hal het warmst was. Iris legde uit dat werken in warmte extra belasting geeft. Het lichaam probeert af te koelen door te zweten. Wie dan te weinig drinkt of lang zwaar werk doet, kan zich slap, misselijk of duizelig voelen. Het advies was niet om Samira minder uren te laten werken, maar om het werk op hete dagen anders te organiseren.\n\nEen hitteplan voor het hele team\n\nTeamleider Mark wilde geen afspraak maken die alleen voor Samira gold. Samen met Iris en enkele medewerkers maakte hij daarom een eenvoudig hitteplan. Bij een hoge buitentemperatuur beginnen medewerkers eerder met zwaar tilwerk en doen zij na de lunch vaker lichtere taken, zoals controleren, labelen en voorraad tellen. Er kwamen twee extra waterpunten in de hal. Daarnaast krijgt iedereen op warme dagen ieder uur de mogelijkheid om kort water te drinken, zonder dat dit van de gewone pauze afgaat. In de koelere personeelsruimte staat nu een ventilator en er liggen schone handdoeken. Medewerkers mogen daar kort herstellen als zij klachten krijgen. Ze dragen luchtigere werkkleding, zolang die veilig blijft bij de machines. Nieuwe medewerkers krijgen tijdens hun instructie ook uitleg over signalen van oververhitting.\n\nElkaar in de gaten houden\n\nEen belangrijk onderdeel van het plan is dat collega’s op elkaar letten. Iemand die verward reageert, erg duizelig wordt of niet goed meer kan staan, moet meteen stoppen met werken. De teamleider bepaalt dan of medische hulp nodig is. Mark benadrukt dat niemand stoer hoeft te doen. “We willen liever tien minuten te vroeg ingrijpen dan één keer te laat,” zegt hij. Samira vond dat in het begin overdreven. Ze wilde niet dat collega’s steeds vroegen of het wel ging. Maar na een paar warme weken merkte ze dat het juist rust gaf. Ook andere medewerkers bleken soms hoofdpijn of kramp te krijgen en maakten gebruik van de extra drinkmomenten.\n\nWat veranderde er?\n\nDeze zomer had Samira veel minder klachten. Op heel warme dagen is ze nog steeds moe na haar dienst, maar ze wordt niet meer duizelig. Ook het aantal kleine fouten op de afdeling daalde. Volgens Mark komt dat niet alleen door het drinken. “Mensen weten nu wat ze moeten doen en wachten minder lang met zeggen dat het niet goed gaat.” Samira raadt andere werknemers aan om klachten niet geheim te houden. “Ik dacht eerst: iedereen heeft het warm, dus ik moet niet zeuren. Maar je kunt pas iets verbeteren als je vertelt wanneer het misgaat.” Volgens haar hoeft een oplossing niet altijd groot te zijn. Soms maken een ander moment voor zwaar werk, voldoende drinken en duidelijke afspraken al veel verschil.",
+				"questions": [
+					{
+						"id": "set3-1",
+						"vraag": 1,
+						"question": "Waarom kwam de teamleider erbij toen Samira zich op een hete middag niet goed voelde?",
+						"options": {
+							"A": "Samira had zelf gezegd dat ze te moe was om door te werken.",
+							"B": "Een collega merkte dat Samira er slecht uitzag.",
+							"C": "De teamleider zag zelf dat Samira fouten maakte bij het sorteren."
+						},
+						"answer": "B",
+						"origin": "revised",
+						"replaces": 1
+					},
+					{
+						"id": "set3-2",
+						"vraag": 2,
+						"question": "Waarom geldt het hitteplan voor het hele team en niet alleen voor Samira?",
+						"options": {
+							"A": "Andere medewerkers hadden al vaak geklaagd over hoofdpijn en kramp.",
+							"B": "Iris vond dat Samira niet minder uren moest gaan werken.",
+							"C": "Mark vond dat er geen aparte regeling voor één persoon moest komen."
+						},
+						"answer": "C",
+						"origin": "revised",
+						"replaces": 3
+					},
+					{
+						"id": "set3-3",
+						"vraag": 3,
+						"question": "Wat wil Mark duidelijk maken met de zin 'We willen liever tien minuten te vroeg ingrijpen dan één keer te laat'?",
+						"options": {
+							"A": "dat het beter is om bij twijfel meteen actie te ondernemen",
+							"B": "dat medewerkers op warme dagen tien minuten eerder pauze krijgen",
+							"C": "dat bij elke klacht direct medische hulp gehaald moet worden"
+						},
+						"answer": "A",
+						"origin": "new",
+						"replaces": 4
+					},
+					{
+						"id": "set3-4",
+						"vraag": 4,
+						"question": "Hoe dacht Samira erover dat collega's op elkaar gingen letten?",
+						"options": {
+							"A": "Eerst vond ze het te veel, later gaf het haar een gerust gevoel.",
+							"B": "Ze vond het vanaf het begin fijn dat collega's vroegen hoe het ging.",
+							"C": "Ze bleef het overdreven vinden dat collega's steeds vroegen of het ging."
+						},
+						"answer": "A",
+						"origin": "new",
+						"replaces": 2
+					},
+					{
+						"id": "set3-5",
+						"vraag": 5,
+						"question": "Waardoor worden er op de afdeling minder fouten gemaakt, volgens Mark?",
+						"options": {
+							"A": "Vooral doordat iedereen op hete dagen veel meer water drinkt.",
+							"B": "Doordat het zware tilwerk nu vooral na de lunch wordt gedaan.",
+							"C": "Doordat mensen nu eerder zeggen dat ze zich niet goed voelen."
+						},
+						"answer": "C",
+						"origin": "new",
+						"replaces": 5
+					},
+					{
+						"id": "set3-6",
+						"vraag": 6,
+						"question": "Wat is het doel van deze tekst?",
+						"options": {
+							"A": "werknemers aanraden om klachten op het werk niet voor zich te houden",
+							"B": "laten zien hoe eenvoudige afspraken klachten door hitte kunnen verminderen",
+							"C": "uitleggen welke gezondheidsrisico's werken in de warmte met zich meebrengt"
+						},
+						"answer": "B",
+						"origin": "revised",
+						"replaces": 6
+					}
+				]
+			},
+			{
+				"slug": "set3-oren-rust",
+				"name": "Geef uw oren af en toe rust",
+				"intro": "Deze tekst komt van een website over gezondheid. De tekst gaat over gehoor en hard geluid.",
+				"text": "Geef uw oren af en toe rust\n\nGeluid hoort bij het dagelijks leven. Verkeer, muziek, machines, sportwedstrijden en zelfs een druk café kunnen behoorlijk hard klinken. Meestal merkt u direct wanneer een geluid onaangenaam is, maar schade aan het gehoor ontstaat niet altijd op één moment. Vooral lang luisteren naar hard geluid kan een probleem zijn. Daarom is niet alleen het volume belangrijk, maar ook hoe lang uw oren eraan worden blootgesteld.\n\nWat gebeurt er bij hard geluid?\n\nIn het binnenoor zitten heel kleine zintuigcellen die geluidssignalen doorgeven aan de hersenen. Bij hard geluid worden deze cellen zwaar belast. Na een concert of feest kan het daarom lijken alsof geluid tijdelijk zachter klinkt. Sommige mensen horen dan ook een piep of ruis. Vaak verdwijnt zo’n klacht weer na een periode van rust. Blijft een piep lang aanwezig, hoort u plotseling duidelijk minder of heeft u pijn, dan is het verstandig medische hulp te vragen.\n\nVolume én tijd\n\nEen hoofdtelefoon hoeft niet gevaarlijk te zijn. Het gaat vooral om de combinatie van hardheid en luistertijd. Wie muziek heel hard zet om omgevingsgeluid te overstemmen, belast het gehoor meer dan iemand die op een rustiger niveau luistert. Een goed passende hoofdtelefoon kan helpen, omdat u dan vaak minder volume nodig heeft. Ook pauzes zijn belangrijk. Luistert u lang naar muziek of werkt u in een lawaaiige omgeving, zoek dan tussendoor een stillere plek op. Uw oren krijgen zo tijd om te herstellen. Zet het volume niet automatisch hoger als u na een tijdje gewend raakt aan het geluid. Dat wennen betekent niet dat het geluid minder hard is geworden.\n\nBescherming gebruiken\n\nBij sommige werkzaamheden of hobby’s is gehoorbescherming verstandig of verplicht. Denk aan werken met machines, klussen met zwaar gereedschap of lang aanwezig zijn bij harde muziek. Oordoppen of oorkappen moeten goed passen. Bescherming die steeds wordt uitgedaan omdat zij oncomfortabel zit, helpt in de praktijk weinig. Muzikanten gebruiken soms speciale oordoppen die het geluid zachter maken zonder dat muziek erg vervormt. Voor incidenteel gebruik kunnen eenvoudige oordoppen voldoende zijn. Welke bescherming het meest geschikt is, hangt af van de situatie. Op een werkplek hoort de werkgever informatie te geven over de geldende veiligheidsregels.\n\nKinderen en jongeren\n\nJongeren gebruiken vaak oortjes tijdens reizen, sporten of huiswerk maken. Dat hoeft geen probleem te zijn, maar het is handig als zij leren om niet urenlang op een hoog volume te luisteren. Ouders kunnen beter samen afspraken maken dan alleen zeggen dat muziek zachter moet. Bijvoorbeeld: tijdens een lange treinreis wordt na ieder uur een korte luisterpauze genomen. Ook het voorbeeld van volwassenen telt. Wie zelf de televisie altijd heel hard zet of op een feestje vlak naast de luidspreker blijft staan, maakt het moeilijker om jongeren uit te leggen waarom gehoorbescherming belangrijk is.\n\nRust betekent niet volledige stilte\n\nUw oren rust geven betekent niet dat u in een stille kamer moet zitten. Gesprekken, muziek en alledaagse geluiden zijn normaal. Het gaat er vooral om dat harde geluidsmomenten niet zonder pauze op elkaar volgen. Na een festival kan het bijvoorbeeld prettig zijn om de volgende ochtend geen harde muziek te luisteren.\n\nLet op signalen\n\nEen piep na een luid evenement is geen bewijs dat er blijvende schade is, maar wel een reden om de volgende keer beter op volume, afstand en bescherming te letten. Ga bij een optreden niet onnodig vlak naast een luidspreker staan en neem af en toe afstand van het geluid. Hoort u regelmatig een piep, kost verstaan steeds meer moeite of merkt u dat u het volume van apparaten steeds hoger zet? Bespreek dit dan met uw huisarts of een deskundige. Het doel is niet om geluid te vermijden. Muziek, sport en sociale activiteiten horen bij het leven. Met verstandige keuzes kunt u ervan blijven genieten zonder uw oren onnodig zwaar te belasten.",
+				"questions": [
+					{
+						"id": "set3-7",
+						"vraag": 7,
+						"question": "Waarom is volgens de tekst niet alleen het volume van geluid belangrijk?",
+						"options": {
+							"A": "Omdat ook de luistertijd bepaalt hoe zwaar uw oren worden belast.",
+							"B": "Omdat u meestal niet direct merkt wanneer een geluid onaangenaam is.",
+							"C": "Omdat geluid na een concert tijdelijk zachter kan lijken te klinken."
+						},
+						"answer": "A",
+						"origin": "revised",
+						"replaces": 7
+					},
+					{
+						"id": "set3-8",
+						"vraag": 8,
+						"question": "Daan was gisteravond op een feest met harde muziek. Vanochtend hoorde hij een zachte piep, maar na een rustige ochtend is die weg. Wat past bij het advies in de tekst?",
+						"options": {
+							"A": "Hij moet meteen medische hulp vragen, omdat hij na het feest een piep hoorde.",
+							"B": "Hij weet nu zeker dat zijn gehoor door het feest blijvend beschadigd is.",
+							"C": "Hij hoeft niet meteen naar een arts, maar let voortaan beter op zijn oren."
+						},
+						"answer": "C",
+						"origin": "revised",
+						"replaces": 8
+					},
+					{
+						"id": "set3-9",
+						"vraag": 9,
+						"question": "In de tekst staat: 'Wie muziek heel hard zet om omgevingsgeluid te overstemmen'. Wat betekent 'omgevingsgeluid overstemmen' hier?",
+						"options": {
+							"A": "de geluiden om u heen juist beter en duidelijker kunnen horen",
+							"B": "zelf harder praten zodat anderen u boven het lawaai uit verstaan",
+							"C": "zo hard luisteren dat u de geluiden om u heen niet meer hoort"
+						},
+						"answer": "C",
+						"origin": "new",
+						"replaces": 9
+					},
+					{
+						"id": "set3-10",
+						"vraag": 10,
+						"question": "Wat staat NIET in de tekst over gehoorbescherming?",
+						"options": {
+							"A": "Oordoppen die slecht zitten en daarom vaak uitgaan, helpen weinig.",
+							"B": "Muzikanten moeten tijdens het spelen altijd speciale oordoppen dragen.",
+							"C": "Wie maar af en toe bescherming nodig heeft, kan soms met simpele oordoppen toe."
+						},
+						"answer": "B",
+						"origin": "new",
+						"replaces": 10
+					},
+					{
+						"id": "set3-11",
+						"vraag": 11,
+						"question": "Waarom noemt de schrijver het voorbeeld van een lange treinreis?",
+						"options": {
+							"A": "om een voorbeeld te geven van een regel die ouders en kinderen samen opstellen",
+							"B": "om te laten zien dat jongeren vooral tijdens het reizen te hard luisteren",
+							"C": "om duidelijk te maken dat jongeren in de trein beter geen oortjes gebruiken"
+						},
+						"answer": "A",
+						"origin": "new",
+						"replaces": 11
+					},
+					{
+						"id": "set3-12",
+						"vraag": 12,
+						"question": "Wat is het doel van deze tekst?",
+						"options": {
+							"A": "de lezer waarschuwen dat een hoofdtelefoon slecht is voor het gehoor",
+							"B": "de lezer tips geven om de oren te sparen zonder geluid te mijden",
+							"C": "de lezer uitleggen wat er in het binnenoor gebeurt bij hard geluid"
+						},
+						"answer": "B",
+						"origin": "revised",
+						"replaces": 12
+					}
+				]
+			},
+			{
+				"slug": "set3-schoonmaken-zorginstelling",
+				"name": "Schoonmaken in een zorginstelling",
+				"intro": "Deze tekst komt uit een studieboek voor opleidingen tot schoonmaakmedewerker in een zorginstelling.",
+				"text": "Schoonmaken in een zorginstelling\n\nWie schoonmaakt in een verpleeghuis of zorgcentrum doet meer dan zorgen dat een kamer er netjes uitziet. Goede schoonmaak helpt ook om verspreiding van vuil en ziekteverwekkers te beperken. Tegelijk werkt u in ruimtes waar bewoners wonen, rusten en persoonlijke zorg krijgen. U moet daarom hygiënisch, veilig en respectvol werken.\n\nVoorbereiden voordat u begint\n\nLees aan het begin van uw dienst de werklijst en controleer of er bijzonderheden zijn. Soms is een kamer tijdelijk niet beschikbaar omdat een bewoner wordt verzorgd of onderzocht. Neem alleen de materialen mee die u nodig heeft. Gebruik nooit een middel waarvan u niet weet wat erin zit. Draag werkkleding volgens de regels van de instelling. Lang haar wordt vastgemaakt en sieraden aan handen en polsen worden meestal niet gedragen, omdat vuil zich daar gemakkelijk kan verzamelen. Handschoenen gebruikt u alleen wanneer dat nodig is. Ze vervangen het wassen of reinigen van uw handen niet.\n\nWerk van schoon naar vuil\n\nEen volgorde voorkomt dat u vuil verspreidt. Begin in een kamer meestal bij schonere oppervlakken en eindig bij onderdelen die vaker met handen worden aangeraakt of zichtbaar vuil zijn. Gebruik voor het toilet niet dezelfde doek als voor een nachtkastje. Veel instellingen werken daarom met kleurcodes. Iedere kleur heeft een eigen toepassing. Vouw een doek meerdere keren zodat u steeds een schoon vlak kunt gebruiken. Is de doek zichtbaar vuil of hebt u er een toilet mee gereinigd, gebruik hem dan niet opnieuw in een andere ruimte. Doe gebruikte doeken direct in de daarvoor bestemde waszak.\n\nSchoonmaakmiddelen juist gebruiken\n\nMeer schoonmaakmiddel maakt niet automatisch beter schoon. Een te sterke oplossing kan oppervlakken beschadigen en resten achterlaten. Volg daarom altijd de dosering op het etiket of in het werkprotocol. Meng schoonmaakmiddelen nooit zelf. Sommige combinaties kunnen gevaarlijke dampen veroorzaken. Spuit een middel ook niet zomaar in de richting van een bewoner, voedsel of medische hulpmiddelen. Breng het middel volgens de instructie aan op de doek of het oppervlak. Staat er een onbekende fles zonder etiket? Zet die apart en meld dit aan uw leidinggevende. Gebruik de inhoud niet.\n\nRespect voor bewoners\n\nEen bewonerskamer is tegelijk een werkplek en iemands persoonlijke leefruimte. Klop daarom aan voordat u binnenkomt, ook wanneer de deur openstaat. Stel uzelf voor als de bewoner u niet kent en leg kort uit wat u komt doen. Vraag of het moment uitkomt wanneer de situatie dat toelaat. Verplaats persoonlijke spullen niet verder dan nodig. Moet u foto’s, brieven of andere bezittingen tijdelijk opzijzetten, leg ze daarna terug op dezelfde plaats. Open geen kasten of laden die niet bij uw schoonmaaktaak horen. Wat u in een kamer ziet of hoort, bespreekt u niet met andere bewoners of met mensen buiten de instelling.\n\nEen onverwachte situatie\n\nSoms treft u iets aan dat niet bij gewone schoonmaak hoort. Ligt er bijvoorbeeld bloed, braaksel of een andere lichaamsvloeistof, volg dan het speciale protocol. Zet de plek zo nodig af, gebruik de voorgeschreven beschermingsmiddelen en meld de situatie. Ga niet improviseren met extra sterk schoonmaakmiddel. Vindt u een losse kabel, een natte vloer of een kapot meubel dat gevaar kan opleveren? Zorg eerst dat niemand erover struikelt of uitglijdt en meld het probleem.\n\nAfval en scherpe voorwerpen\n\nGewoon afval en medisch afval worden niet altijd op dezelfde manier afgevoerd. Kijk naar de afspraken van de afdeling. Stop scherpe voorwerpen, zoals naalden, nooit met de hand in een gewone afvalzak. Raak een gevonden naald niet onbeschermd aan en waarschuw een zorgmedewerker of leidinggevende volgens het protocol. Druk een volle afvalzak niet met uw handen aan om meer ruimte te maken. U weet niet altijd wat erin zit. Sluit de zak op de afgesproken manier en vervang hem op tijd.\n\nLet op uw lichaam\n\nSchoonmaakwerk kan zwaar zijn voor rug, schouders en polsen. Stel de steel van een mop op de juiste hoogte in en probeer niet steeds ver voorover te buigen. Duw een schoonmaakkar liever dan dat u hem achter u aan trekt. Verdeel zwaar materiaal over meerdere ritten als dat veiliger is. Bij het verplaatsen van een stoel of klein meubelstuk kijkt u eerst of dit zonder risico kan. Een zwaar bed of een bewoner verplaatst u niet alleen omdat u snel wilt doorwerken. Vraag hulp wanneer dat nodig is.\n\nControle en overdracht\n\nKijk na afloop of u niets hebt achtergelaten, of de vloer veilig droog is en of gebruikte materialen zijn opgeruimd. Noteer werkzaamheden die volgens het systeem moeten worden geregistreerd. Kon een kamer niet worden schoongemaakt, geef dan de reden door zodat een collega weet wat nog moet gebeuren. Meld ook bijzonderheden die voor de volgende dienst belangrijk zijn, bijvoorbeeld een defecte kraan, een lege zeepdispenser of een ruimte die tijdelijk gesloten is. Een goede overdracht voorkomt dubbel werk en zorgt dat problemen niet blijven liggen.\n\nProfessioneel schoonmaken\n\nSnelheid is belangrijk, maar nooit belangrijker dan veiligheid, hygiëne en respect. Een ervaren schoonmaker kent de vaste werkwijze, maar blijft opletten. Geen kamer en geen bewoner is precies hetzelfde. Wie rustig werkt, de juiste middelen gebruikt, risico’s meldt en zorgvuldig met persoonlijke ruimte omgaat, draagt bij aan een veilige en prettige zorgomgeving.",
+				"questions": [
+					{
+						"id": "set3-13",
+						"vraag": 13,
+						"question": "Welk advies over de voorbereiding op het werk staat NIET in de tekst?",
+						"options": {
+							"A": "Neem niet meer materiaal mee dan u voor uw taken nodig hebt.",
+							"B": "Kijk bij de start van uw dienst of er iets bijzonders op de werklijst staat.",
+							"C": "Als u handschoenen draagt, hoeft u uw handen daarna niet te wassen."
+						},
+						"answer": "C",
+						"origin": "new",
+						"replaces": 16
+					},
+					{
+						"id": "set3-14",
+						"vraag": 14,
+						"question": "Waarom werkt u in een kamer van schoon naar vuil?",
+						"options": {
+							"A": "Zo brengt u geen vuil over naar plekken die al schoon zijn.",
+							"B": "Zo kunt u met één en dezelfde doek de hele kamer schoonmaken.",
+							"C": "Zo weet u steeds welke kleur doek bij welk onderdeel van de kamer hoort."
+						},
+						"answer": "A",
+						"origin": "revised",
+						"replaces": 13
+					},
+					{
+						"id": "set3-15",
+						"vraag": 15,
+						"question": "Fatima vindt in de schoonmaakkar een fles zonder etiket. Het middel ruikt naar de allesreiniger die zij altijd gebruikt. Wat moet zij doen?",
+						"options": {
+							"A": "Het middel gebruiken, want aan de geur weet zij wat erin zit.",
+							"B": "De fles niet gebruiken en het aan haar leidinggevende doorgeven.",
+							"C": "Het middel eerst met water mengen, zodat het zeker niet te sterk is."
+						},
+						"answer": "B",
+						"origin": "revised",
+						"replaces": 14
+					},
+					{
+						"id": "set3-16",
+						"vraag": 16,
+						"question": "U komt de kamer van mevrouw De Wit schoonmaken. De deur staat open en zij zit in haar stoel. Zij kent u nog niet. Wat doet u?",
+						"options": {
+							"A": "U loopt gewoon naar binnen, omdat de deur al voor u openstaat.",
+							"B": "U klopt aan, stelt uzelf voor en zegt waarvoor u komt.",
+							"C": "U wacht op de gang tot mevrouw De Wit haar kamer heeft verlaten."
+						},
+						"answer": "B",
+						"origin": "revised",
+						"replaces": 15
+					},
+					{
+						"id": "set3-17",
+						"vraag": 17,
+						"question": "Wat is volgens de tekst het verschil tussen het verplaatsen van een stoel en van een zwaar bed?",
+						"options": {
+							"A": "Een stoel mag u zelf verplaatsen als dat veilig kan; voor een zwaar bed vraagt u hulp.",
+							"B": "Zowel een stoel als een zwaar bed verplaatst u nooit zonder hulp van een collega.",
+							"C": "Een stoel verplaatst u samen met een collega; een zwaar bed kunt u meestal alleen schuiven."
+						},
+						"answer": "A",
+						"origin": "revised",
+						"replaces": 17
+					},
+					{
+						"id": "set3-18",
+						"vraag": 18,
+						"question": "Welke zin vat de tekst het beste samen?",
+						"options": {
+							"A": "Een ervaren schoonmaker kan in iedere kamer op precies dezelfde manier werken.",
+							"B": "Goed schoonmaken in de zorg is vooral bedoeld om ziekteverwekkers tegen te gaan.",
+							"C": "Veilig, schoon en respectvol werken is in de zorg belangrijker dan snel werken."
+						},
+						"answer": "C",
+						"origin": "revised",
+						"replaces": 18
+					}
+				]
+			},
+			{
+				"slug": "set3-opleidingsbudget-studieverlof",
+				"name": "Opleidingsbudget en studieverlof",
+				"intro": "Deze tekst is een deel uit het personeelshandboek van een dienstverlenend bedrijf.",
+				"text": "Opleidingsbudget en studieverlof\n\nMedewerkers van Delta Services kunnen ieder kalenderjaar maximaal 900 euro opleidingsbudget gebruiken voor een cursus, training of examen die past bij hun huidige werk of verdere ontwikkeling binnen het bedrijf. Een leidinggevende beoordeelt vooraf of de opleiding aan deze voorwaarde voldoet. Een ongebruikt deel van het budget gaat niet automatisch mee naar het volgende jaar.\n\nAanvragen\n\nDien uw aanvraag minimaal vier weken vóór de start in via MijnDelta. Vermeld de naam van de opleiding, de aanbieder, de kosten en de startdatum. Schrijf u pas definitief in nadat u schriftelijke goedkeuring hebt ontvangen. Wie zichzelf eerder inschrijft, loopt het risico de kosten zelf te moeten betalen.\n\nTijd en reiskosten\n\nIs een opleiding door Delta Services verplicht gesteld? Dan gelden de lesuren als werktijd en worden noodzakelijke reiskosten vergoed. Kiest u zelf voor een goedgekeurde opleiding, dan maakt u met uw leidinggevende afspraken over lestijd. Voor een officieel examen dat bij de goedgekeurde opleiding hoort, kunt u maximaal één betaalde examendag krijgen.\n\nBetaling en annulering\n\nNa goedkeuring betaalt het bedrijf de factuur rechtstreeks of declareert u de kosten met een betalingsbewijs. Boeken zijn alleen vergoed als ze verplicht op de materialenlijst staan. Annuleert u te laat zonder geldige reden en brengt de opleider kosten in rekening, dan kan Delta Services besluiten deze kosten niet te vergoeden.\n\nStoppen met de opleiding\n\nKunt u door ziekte of een andere bijzondere situatie niet verder, bespreek dit zo snel mogelijk met uw leidinggevende. Bij een vrijwillige beëindiging zonder overleg kan een nieuwe aanvraag in hetzelfde kalenderjaar worden geweigerd. Verplichte bedrijfstrainingen vallen niet onder het persoonlijke opleidingsbudget.\n\nAfronding en bewijs\n\nNa afloop levert u een certificaat of ander bewijs van deelname aan als dat beschikbaar is. Heeft u een examen niet gehaald, dan betekent dit niet automatisch dat u het geld moet terugbetalen. Een herkansing valt alleen binnen het budget als daar nog voldoende ruimte voor is. Kosten voor een lunch, vrijwillige extra boeken of een hotelovernachting worden niet vergoed, tenzij daar vooraf een aparte schriftelijke afspraak over is gemaakt.\n\nWie tijdens werktijd een opleiding volgt, blijft verantwoordelijk voor het tijdig doorgeven van wijzigingen in het lesrooster.",
+				"questions": [
+					{
+						"id": "set3-19",
+						"vraag": 19,
+						"question": "'Een ongebruikt deel van het budget gaat niet automatisch mee naar het volgende jaar.' Wat betekent dit?",
+						"options": {
+							"A": "Geld dat u dit jaar niet uitgeeft, blijft niet vanzelf voor u bewaard.",
+							"B": "Geld dat u dit jaar niet uitgeeft, moet u aan het bedrijf terugbetalen.",
+							"C": "Geld dat u dit jaar niet uitgeeft, komt volgend jaar bij uw budget."
+						},
+						"answer": "A",
+						"origin": "new",
+						"replaces": 21
+					},
+					{
+						"id": "set3-20",
+						"vraag": 20,
+						"question": "Yara vindt op 1 maart een cursus die op 20 maart begint. De cursus kost 450 euro en ze heeft nog geen aanvraag gedaan. Wat volgt uit de regeling?",
+						"options": {
+							"A": "Ze kan de cursus nog aanvragen, want de kosten blijven onder de 900 euro.",
+							"B": "Ze kan zich alvast inschrijven en de aanvraag daarna indienen.",
+							"C": "Ze is te laat, want ze had minstens vier weken vooraf moeten aanvragen."
+						},
+						"answer": "C",
+						"origin": "revised",
+						"replaces": 19
+					},
+					{
+						"id": "set3-21",
+						"vraag": 21,
+						"question": "Wat is volgens de regeling het verschil tussen een verplichte opleiding en een opleiding die u zelf kiest?",
+						"options": {
+							"A": "Bij een eigen keuze volgt u de lessen altijd in uw vrije tijd; bij een verplichte opleiding niet.",
+							"B": "Bij een verplichte opleiding is lestijd werktijd; bij een eigen keuze spreekt u dat af.",
+							"C": "Bij een eigen keuze worden reiskosten vergoed; bij een verplichte opleiding niet."
+						},
+						"answer": "B",
+						"origin": "revised",
+						"replaces": 20
+					},
+					{
+						"id": "set3-22",
+						"vraag": 22,
+						"question": "Bram heeft dit jaar 700 euro van zijn budget gebruikt voor een goedgekeurde cursus met examen. Hij is gezakt. De herkansing kost 250 euro. Wat geldt voor Bram?",
+						"options": {
+							"A": "Hij moet de 700 euro terugbetalen, omdat hij niet geslaagd is.",
+							"B": "Hij kan de herkansing niet helemaal uit zijn opleidingsbudget betalen.",
+							"C": "Hij krijgt de herkansing vergoed, omdat die bij zijn goedgekeurde opleiding hoort."
+						},
+						"answer": "B",
+						"origin": "new",
+						"replaces": 22
+					},
+					{
+						"id": "set3-23",
+						"vraag": 23,
+						"question": "Wat is het doel van deze tekst?",
+						"options": {
+							"A": "medewerkers uitleggen onder welke voorwaarden het bedrijf een opleiding betaalt",
+							"B": "medewerkers aanmoedigen om ieder jaar hun volledige opleidingsbudget te gebruiken",
+							"C": "medewerkers waarschuwen dat te laat annuleren hen zelf geld kan kosten"
+						},
+						"answer": "A",
+						"origin": "revised",
+						"replaces": 23
+					}
+				]
+			},
+			{
+				"slug": "set3-buurtbus-avondritten",
+				"name": "Buurtbus krijgt avondritten",
+				"intro": "Deze tekst komt van een lokale nieuwssite.",
+				"text": "Buurtbus krijgt avondritten\n\nDe buurtbus tussen station Lindeveen en de dorpen Ouddam en Kersenbroek rijdt vanaf volgende maand ook drie avonden per week. Tot nu toe stopte de laatste rit om 19.10 uur. Bewoners die later uit hun werk kwamen of ’s avonds een cursus volgden, waren daardoor vaak afhankelijk van familie, fiets of taxi. De nieuwe avondritten zijn een proef van zes maanden.\n\nVraag uit de dorpen\n\nDorpsraadvoorzitter Elena Jansen verzamelde vorig jaar reacties van bewoners. Vooral jongeren zonder auto en oudere inwoners gaven aan dat zij ’s avonds moeilijk thuis konden komen. “We vroegen niet om een grote stadsbus die ieder kwartier rijdt,” zegt Elena. “We wilden weten of een kleine verbinding op de belangrijkste momenten mogelijk was.” De vervoerder heeft nu twee extra ritten op dinsdag, donderdag en zaterdag toegevoegd. De bus vertrekt op die avonden om 20.30 en 22.15 uur vanaf station Lindeveen en rijdt via vijf vaste haltes naar Kersenbroek.\n\nVrijwilligers achter het stuur\n\nDe buurtbus wordt gereden door vrijwilligers die een training van de vervoerder hebben gevolgd. Voor de extra ritten zijn acht nieuwe chauffeurs gevonden. Volgens coördinator Henk Visser is dat genoeg om de proef te beginnen, maar hij zoekt nog reserves. “Een vrijwilliger kan ook ziek worden of op vakantie gaan. We willen niet dat een rit meteen uitvalt.” Een kaartje kost 2 euro per enkele rit en kan met pin in de bus worden betaald. Reizigers met een geldig regionaal abonnement hoeven niet apart te betalen.\n\nVooraf reserveren bij rolstoel\n\nDe gewone buurtbus heeft beperkte ruimte. Eén van de twee voertuigen is geschikt voor een reiziger die in een rolstoel blijft zitten. Wie daarvan gebruik wil maken, moet uiterlijk twee uur vóór vertrek bellen met de reserveringslijn. De chauffeur weet dan welk voertuig nodig is.\n\nWie betaalt de proef?\n\nDe gemeente betaalt de helft van de extra kosten. Een bedrijventerrein bij het station en twee lokale onderwijsinstellingen dragen ook bij, omdat personeel en cursisten de avondritten kunnen gebruiken. De vervoerder betaalt de opleiding van de nieuwe vrijwilligers.\n\nAansluiting op de trein\n\nDe dienstregeling is zo gemaakt dat de eerste avondrit aansluit op twee treinen uit de stad. Bij een grote treinvertraging wacht de buurtbus echter niet automatisch. Reizigers moeten dan de volgende rit nemen. Na vijf maanden worden reizigersaantallen, kosten en ervaringen van chauffeurs bekeken. Daarna besluit de gemeente of de avondritten blijven. Elena hoopt dat bewoners de bus daadwerkelijk gebruiken. “Als iedereen zegt dat vervoer belangrijk is maar niemand instapt, wordt verlengen natuurlijk moeilijk.”",
+				"questions": [
+					{
+						"id": "set3-24",
+						"vraag": 24,
+						"question": "Waarom rijdt de buurtbus als proef ook ’s avonds?",
+						"options": {
+							"A": "Omdat de vervoerder voor de avond genoeg nieuwe vrijwillige chauffeurs had.",
+							"B": "Omdat bewoners hadden gevraagd om een bus die ieder kwartier zou rijden.",
+							"C": "Omdat mensen na hun werk of cursus lastig naar huis konden komen."
+						},
+						"answer": "C",
+						"origin": "revised",
+						"replaces": 24
+					},
+					{
+						"id": "set3-25",
+						"vraag": 25,
+						"question": "Wat wilden de bewoners volgens Elena Jansen?",
+						"options": {
+							"A": "een eenvoudige busverbinding op de tijden dat die het meest nodig is",
+							"B": "genoeg reservechauffeurs, zodat er nooit een avondrit hoeft uit te vallen",
+							"C": "een bus met meer plaats voor reizigers die in een rolstoel blijven zitten"
+						},
+						"answer": "A",
+						"origin": "new",
+						"replaces": 25
+					},
+					{
+						"id": "set3-26",
+						"vraag": 26,
+						"question": "Meneer Bakker zit in een rolstoel en wil daarin blijven zitten. Hij wil op donderdag met de laatste avondrit vanaf station Lindeveen mee. Wanneer moet hij uiterlijk de reserveringslijn bellen?",
+						"options": {
+							"A": "om 18.30 uur",
+							"B": "om 20.15 uur",
+							"C": "om 21.15 uur"
+						},
+						"answer": "B",
+						"origin": "revised",
+						"replaces": 26
+					},
+					{
+						"id": "set3-27",
+						"vraag": 27,
+						"question": "Elena hoopt dat bewoners de bus 'daadwerkelijk gebruiken'. Wat bedoelt zij?",
+						"options": {
+							"A": "dat mensen aan de gemeente laten weten hoe belangrijk de bus voor hen is",
+							"B": "dat mensen een regionaal abonnement nemen in plaats van losse kaartjes",
+							"C": "dat mensen echt met de bus reizen en er niet alleen over praten"
+						},
+						"answer": "C",
+						"origin": "new",
+						"replaces": 27
+					},
+					{
+						"id": "set3-28",
+						"vraag": 28,
+						"question": "Wat is het doel van deze tekst?",
+						"options": {
+							"A": "de lezer informeren over een proef met extra busritten in de avond",
+							"B": "de lezer oproepen om zich als vrijwillige buschauffeur aan te melden",
+							"C": "de lezer vertellen dat de avondritten na de proef zeker blijven"
+						},
+						"answer": "A",
+						"origin": "revised",
+						"replaces": 28
+					}
+				]
+			},
+			{
+				"slug": "set3-afvalbrengstation-de-poort",
+				"name": "Praktische informatie Afvalbrengstation De Poort",
+				"intro": "Deze langere informatietekst komt van de website van de gemeente Waterdam. Lees eerst de vraag. Zoek het antwoord in de tekst.",
+				"text": "Praktische informatie Afvalbrengstation De Poort\n\nWie mag afval brengen?\n\nAfvalbrengstation De Poort is bedoeld voor inwoners van de gemeente Waterdam. U krijgt toegang met uw persoonlijke afvalpas. De pas hoort bij uw woonadres en mag niet aan iemand buiten uw huishouden worden uitgeleend. Neem bij twijfel ook een geldig identiteitsbewijs mee. Bedrijven, verenigingen en professionele klusbedrijven kunnen hun bedrijfsafval niet bij De Poort afgeven. Zij gebruiken een commerciële afvalinzamelaar. Bent u pas verhuisd en heeft u nog geen afvalpas? U kunt bij de servicebalie een tijdelijke toegangscode aanvragen. Neem daarvoor een identiteitsbewijs en een bewijs van inschrijving op uw nieuwe adres mee. De tijdelijke code is zeven dagen geldig.\n\nOpeningstijden en drukte\n\nDe Poort is maandag tot en met zaterdag open van 08.30 tot 17.00 uur. Op donderdag is het terrein tot 20.00 uur open. Op zondag is het gesloten. De toegangspoort sluit vijftien minuten vóór de officiële sluitingstijd, zodat bezoekers voldoende tijd hebben om hun afval veilig te lossen. Op zaterdag tussen 10.00 en 14.00 uur is het vaak druk. Wie kleine hoeveelheden brengt, wordt aangeraden een rustiger moment te kiezen. Op feestdagen kunnen andere openingstijden gelden. Deze worden uiterlijk twee weken vooraf op de website en bij de ingang bekendgemaakt.\n\nAfval scheiden\n\nSorteer uw afval zoveel mogelijk voordat u van huis vertrekt. Op het terrein staan aparte containers voor onder andere hout, metaal, papier en karton, harde kunststoffen, matrassen, elektrische apparaten en grof tuinafval. Bij iedere container hangt een bord met voorbeelden van wat er wel en niet in mag. Gooi verschillende soorten afval niet samen in één container als er aparte bakken beschikbaar zijn. Medewerkers kunnen u vragen een verkeerd geplaatst voorwerp weer uit een container te halen als dit veilig kan. Twijfelt u? Vraag eerst advies aan een terreinmedewerker.\n\nGratis en betaald afval\n\nVeel huishoudelijke afvalsoorten kunt u zonder extra betaling brengen. Voor schoon papier, metaal, elektrische apparaten en klein chemisch afval betaalt u bijvoorbeeld niets. Voor bepaalde materialen gelden wel tarieven, zoals grote hoeveelheden bouw- en sloopafval, geïmpregneerd hout en niet-herbruikbare dakbedekking. Betaling gebeurt bij voorkeur met pin. Contant betalen is niet mogelijk. U ontvangt op verzoek een digitaal betalingsbewijs. Heeft u alleen gratis afval bij u, dan hoeft u niet langs de betaalautomaat.\n\nBouw- en sloopafval\n\nKlust u thuis en heeft u puin, gipsplaten of oud sanitair? Breng deze materialen gescheiden. Voor huishoudens geldt per kalenderjaar een beperkte hoeveelheid bouw- en sloopafval tegen inwonerstarief. Boven die hoeveelheid geldt een hoger tarief. De registratie gebeurt via uw afvalpas. Afval dat duidelijk afkomstig is van professioneel uitgevoerd werk kan worden geweigerd. Heeft een aannemer uw badkamer verbouwd, dan is de aannemer in principe verantwoordelijk voor het afvoeren van het bedrijfsafval dat bij zijn werkzaamheden ontstaat. Kleine resten van een klus die u aantoonbaar zelf hebt uitgevoerd, kunt u als inwoner wel brengen volgens de gewone regels.\n\nKlein chemisch afval\n\nVerf, oplosmiddelen, accu’s, bepaalde schoonmaakmiddelen en andere producten met gevaarlijke stoffen horen bij het klein chemisch afval. Lever deze producten zo veel mogelijk in de originele verpakking in. Meng vloeistoffen nooit met elkaar en giet ze niet over in een drankfles. Geef klein chemisch afval persoonlijk af bij het speciale inzamelpunt. Zet het niet zonder toezicht naast een container. Een medewerker controleert waar het product veilig kan worden opgeslagen. Lege verfblikken zonder resten mogen soms bij een andere afvalsoort; vraag dit bij twijfel.\n\nElektrische apparaten en batterijen\n\nKapotte apparaten met een stekker, accu of batterij horen niet bij het gewone restafval. Lever ze in bij de container voor elektrische apparaten. Verwijder losse batterijen als dat eenvoudig en veilig kan en doe deze in de batterijbak. Is een accu beschadigd, opgezwollen of warm geworden? Meld dit direct aan een medewerker en leg de accu niet zelf in een container. Apparaten die nog goed werken, kunt u naar de hergebruikhoek brengen. Medewerkers beoordelen daar of het voorwerp geschikt is voor doorgeven aan een kringlooporganisatie.\n\nDe hergebruikhoek\n\nBij de ingang van De Poort staat een overdekte hergebruikhoek. Hier kunt u bruikbare spullen afgeven, zoals kleine meubels, servies, gereedschap, boeken en werkende huishoudelijke apparaten. De spullen moeten schoon, compleet en veilig zijn. Grote beschadigde meubels, vuile matrassen en kapotte apparaten worden niet aangenomen voor hergebruik. U kunt in de hergebruikhoek geen spullen kopen of reserveren. De ingezamelde goederen worden meerdere keren per week opgehaald door aangesloten kringlooporganisaties.\n\nGrof tuinafval\n\nTakken, bladeren, struiken en ander grof tuinafval gaan in de groencontainer. Verwijder plastic zakken, bloempotten, stenen en behandeld hout voordat u het groen stort. Boomstammen dikker dan twintig centimeter moeten apart worden aangeboden; vraag een medewerker waar u deze kunt neerleggen. Grond en zand vallen niet onder gewoon tuinafval. Voor schone grond gelden aparte voorwaarden en een maximum per bezoek. Grond waarvan u vermoedt dat deze vervuild is, mag u niet zonder voorafgaand overleg brengen.\n\nAsbestverdacht materiaal\n\nMateriaal dat mogelijk asbest bevat, wordt alleen onder strikte voorwaarden geaccepteerd. U moet vooraf telefonisch contact opnemen met De Poort. Een medewerker legt uit hoe u het materiaal moet verpakken en welke documenten eventueel nodig zijn. Kom niet onaangekondigd met los of beschadigd asbestverdacht materiaal naar het terrein. Tijdens het vervoer moet het materiaal volgens de gegeven instructie gesloten verpakt blijven. Open de verpakking niet op het terrein. Als u twijfelt of een oud bouwmateriaal asbest kan bevatten, behandel het dan niet alsof het gewoon puin is maar vraag eerst advies.\n\nGrof afval laten ophalen\n\nKunt u een groot voorwerp niet zelf naar De Poort brengen? Inwoners kunnen via de gemeentelijke website een afspraak maken voor het ophalen van grof huishoudelijk afval. U kiest een beschikbare datum en vermeldt welke spullen u aanbiedt. Zet het afval pas op de afgesproken ochtend buiten op de aangegeven plaats. Losse zakken met gewoon restafval, bouwafval van een aannemer en klein chemisch afval worden niet via deze dienst meegenomen. Voor sommige grote voorwerpen geldt een ophaaltarief. Het bedrag ziet u voordat u de afspraak definitief maakt.\n\nAanhanger lenen\n\nInwoners die geen geschikt vervoer hebben, kunnen bij De Poort gratis een kleine aanhanger lenen voor maximaal drie uur. Reserveren kan vanaf zeven dagen vooraf via de website. U heeft een geldig rijbewijs nodig en uw auto moet volgens de voertuiggegevens geschikt zijn om de aanhanger te trekken. Bij het ophalen tekent u een uitleenformulier. Breng de aanhanger schoon en op tijd terug. Komt u zonder bericht meer dan dertig minuten te laat, dan kan een volgende gratis reservering gedurende een maand worden geblokkeerd. De aanhanger is uitsluitend bedoeld voor het vervoeren van huishoudelijk afval naar De Poort.\n\nVoertuigen en veiligheid\n\nOp het terrein geldt een maximumsnelheid van 10 kilometer per uur. Kinderen onder de 12 jaar blijven in het voertuig, behalve wanneer een medewerker anders aangeeft. Huisdieren blijven eveneens in de auto. Roken en open vuur zijn op het hele terrein verboden. Parkeer zo dat andere bezoekers kunnen passeren. Klim niet in containers en haal geen spullen uit containers nadat deze zijn gestort. Draag stevige schoenen en volg aanwijzingen van medewerkers altijd op. Bij harde wind, brandgevaar of een andere onveilige situatie kan een deel van het terrein tijdelijk worden gesloten.\n\nHulp bij lossen\n\nMedewerkers geven uitleg en wijzen aan in welke container afval hoort. Zij zijn echter niet verplicht zware voorwerpen uit uw auto te tillen. Kunt u een groot meubel niet zelfstandig lossen, neem dan iemand mee die kan helpen. Voor bezoekers met een lichamelijke beperking kan soms ondersteuning worden afgesproken. Neem hiervoor minimaal één werkdag vooraf contact op met de servicebalie.\n\nAfvalpas kwijt of defect\n\nBent u uw afvalpas kwijt? Blokkeer de pas via MijnWaterdam en vraag daar een nieuwe aan. Voor een vervangende pas kunnen administratiekosten gelden. Totdat de nieuwe pas is aangekomen, kunt u bij de servicebalie vragen of een tijdelijke toegangscode mogelijk is. Werkt de pas niet bij de poort, probeer hem dan niet meerdere keren met kracht tegen de lezer te drukken. Ga naar de servicebalie. Een medewerker controleert of de pas actief is en of deze bij het juiste adres hoort.\n\nGevonden voorwerpen\n\nVindt u op het terrein een telefoon, portemonnee, sleutel of ander persoonlijk voorwerp? Geef dit af bij de servicebalie. Gevonden voorwerpen worden vier weken bewaard. Voor het ophalen van een waardevol voorwerp moet u kunnen beschrijven wat u kwijt bent; er kan ook om een identiteitsbewijs worden gevraagd. Afval of spullen die al in een container zijn gegooid, worden niet als gevonden voorwerp beschouwd. Medewerkers mogen om veiligheidsredenen niet in een container zoeken naar iets dat u per ongeluk heeft weggegooid.\n\nKlachten en schade\n\nHeeft u een klacht over de dienstverlening? Bespreek de situatie eerst met de medewerker of terreincoördinator als dat mogelijk is. Komt u er niet uit, dan kunt u via de gemeentelijke website een formele klacht indienen. Vermeld de datum, het tijdstip en zo duidelijk mogelijk wat er is gebeurd. Ontstaat er schade aan uw voertuig doordat u tegen een container, paal of ander zichtbaar object rijdt, meld dit dan direct voordat u het terrein verlaat. De gemeente beoordeelt daarna de omstandigheden. De Poort is niet verantwoordelijk voor schade die ontstaat doordat afval onveilig is geladen of doordat u aanwijzingen niet opvolgt.\n\nBezoek met fiets of bakfiets\n\nKomt u met de fiets of bakfiets, gebruik dan de aparte ingang naast de servicebalie. Fietsers rijden niet tussen wachtende auto’s door. Kleine hoeveelheden, zoals een kapot koffieapparaat of een doos oud papier, kunnen via deze ingang worden afgegeven. Voor grote of zware voorwerpen is de fietsroute niet geschikt. Bij de fietsenstalling staan twee leenkarretjes waarmee u spullen naar de juiste container kunt brengen. Breng het karretje na gebruik terug naar de stalling. Laat kinderen niet op een karretje zitten en gebruik het niet voor afval dat kan lekken. Is de fietsingang tijdelijk gesloten door werkzaamheden, volg dan de borden naar de gewone toegang en meld u eerst bij een medewerker.",
+				"questions": [
+					{
+						"id": "set3-29",
+						"vraag": 29,
+						"question": "Leonie woont sinds vorige week in Waterdam en heeft nog geen afvalpas. Hoe kan zij toch toegang krijgen tot De Poort?",
+						"options": {
+							"A": "met de afvalpas van haar buurvrouw, als die hem even uitleent",
+							"B": "met een tijdelijke code die ze bij de servicebalie aanvraagt",
+							"C": "met alleen een geldig identiteitsbewijs, dat ze bij de poort laat zien"
+						},
+						"answer": "B",
+						"origin": "revised",
+						"replaces": 29
+					},
+					{
+						"id": "set3-30",
+						"vraag": 30,
+						"question": "Ravi komt op donderdag om 19.50 uur met een paar zakken tuinafval bij De Poort aan. Kan hij nog naar binnen?",
+						"options": {
+							"A": "Ja, want op donderdag is het terrein tot 20.00 uur open.",
+							"B": "Nee, want De Poort sluit op alle werkdagen om 17.00 uur.",
+							"C": "Nee, want de poort is om 19.45 uur al dichtgegaan."
+						},
+						"answer": "C",
+						"origin": "revised",
+						"replaces": 30
+					},
+					{
+						"id": "set3-31",
+						"vraag": 31,
+						"question": "Mona heeft zelf een paar tegels in haar toilet vervangen. Daarnaast heeft een aannemer haar badkamer verbouwd. Welk afval mag zij als inwoner naar De Poort brengen?",
+						"options": {
+							"A": "het afval van beide klussen, omdat alles uit haar eigen woning komt",
+							"B": "geen van beide, omdat De Poort geen bouw- en sloopafval aanneemt",
+							"C": "alleen de resten van haar eigen klus in het toilet"
+						},
+						"answer": "C",
+						"origin": "revised",
+						"replaces": 31
+					},
+					{
+						"id": "set3-32",
+						"vraag": 32,
+						"question": "Yusuf wil een kapotte boormachine wegbrengen. De accu zit er nog in en is opgezwollen. Wat moet hij doen?",
+						"options": {
+							"A": "Hij waarschuwt direct een medewerker en gooit de machine niet zelf weg.",
+							"B": "Hij haalt de accu er voorzichtig uit en doet die in de batterijbak.",
+							"C": "Hij legt de boormachine gewoon in de container voor elektrische apparaten."
+						},
+						"answer": "A",
+						"origin": "revised",
+						"replaces": 32
+					},
+					{
+						"id": "set3-33",
+						"vraag": 33,
+						"question": "Wat gebeurt er met de spullen die in de hergebruikhoek worden afgegeven?",
+						"options": {
+							"A": "Andere bezoekers kunnen ze daar kopen of voor later reserveren.",
+							"B": "Organisaties voor tweedehands spullen komen ze regelmatig ophalen.",
+							"C": "Medewerkers repareren ze eerst, zodat ze weer veilig te gebruiken zijn."
+						},
+						"answer": "B",
+						"origin": "new",
+						"replaces": 34
+					},
+					{
+						"id": "set3-34",
+						"vraag": 34,
+						"question": "Nina vindt in haar schuur oude golfplaten. Ze weet niet zeker of er asbest in zit. Wat moet ze doen voordat ze ermee naar De Poort gaat?",
+						"options": {
+							"A": "De Poort bellen en de platen inpakken zoals een medewerker haar uitlegt.",
+							"B": "De platen als gewoon puin brengen, omdat het niet zeker is dat er asbest in zit.",
+							"C": "De platen inpakken en op het terrein openmaken zodat een medewerker ze bekijkt."
+						},
+						"answer": "A",
+						"origin": "revised",
+						"replaces": 33
+					},
+					{
+						"id": "set3-35",
+						"vraag": 35,
+						"question": "Sanne leent op zaterdag om 10.00 uur de gratis aanhanger. Ze brengt hem om 13.20 uur terug en heeft niet laten weten dat ze later kwam. Kan zij hierdoor een probleem krijgen met een volgende reservering?",
+						"options": {
+							"A": "Ja, want ze heeft niet laten weten dat ze later zou komen.",
+							"B": "Ja, want ze heeft de aanhanger langer dan drie uur gehad.",
+							"C": "Nee, want ze is maar twintig minuten over de tijd."
+						},
+						"answer": "C",
+						"origin": "revised",
+						"replaces": 35
+					}
+				]
+			}
+		],
+		"notes": []
+	}
+]

@@ -1,22 +1,62 @@
 import { LEZEN_EXAMS } from '$lib/lezen/LEZEN_CONTENT';
 import type { LezenExam } from '$lib/lezen/types';
-import { dayIndex, daysBetween } from './bank';
 
 export const MOCK_MINUTES = 110;
 export const MINUTES_PER_TEXT = 18;
-export const PASS_SCORE = 22;
-export const MOCK_COOLDOWN_DAYS = 14;
+/** Computer paper length. Booklets stay 35 items. Do not invent a 36th item. */
+export const LIVE_TOTAL = 36;
+/** Generic chrome. A sitting still scores on that paper's own passingScore. */
+export const BOOKLET_PASS_LABEL = 'The published papers needed 24 of 35. Aim for 25 or more.';
+/** The only paper that can stay sealed, and only for one predictive sitting. */
+export const PREDICTIVE_YEAR = 2023;
+export const TRAINING_YEARS = [2024, 2025] as const;
+export const NOT_A_PREDICTION =
+	'This score is not a November prediction. This paper was already studied.';
 
-export function pickMockExam(today: string): LezenExam {
-	const exams = LEZEN_EXAMS;
-	return exams[dayIndex(today, exams.length, 9)];
+export function yearStudied(
+	year: number,
+	questionResults: Record<string, unknown>,
+	evalResults: Record<string, boolean> = {},
+	missIds: readonly string[] = []
+): boolean {
+	const prefix = `lezen-${year}-`;
+	return (
+		Object.keys(questionResults).some((id) => id.startsWith(prefix)) ||
+		Object.keys(evalResults).some((id) => id.startsWith(prefix)) ||
+		missIds.some((id) => id.startsWith(prefix))
+	);
 }
 
-export function mockReady(lastMockAt: string | null, today: string): boolean {
-	if (!lastMockAt) return true;
-	return daysBetween(lastMockAt, today) >= MOCK_COOLDOWN_DAYS;
+/** 2023 stays sealed only while we still want one unseen predictive mock. */
+export function predictiveAvailable(satMocks: readonly number[], studied2023: boolean): boolean {
+	return !satMocks.includes(PREDICTIVE_YEAR) && !studied2023;
 }
 
-export function passedMock(correct: number): boolean {
-	return correct >= PASS_SCORE;
+/** Years on the practice page. 2023 appears once it is no longer sealed. */
+export function practiceYears(satMocks: readonly number[], studied2023: boolean): number[] {
+	const years: number[] = [2025, 2024];
+	if (!predictiveAvailable(satMocks, studied2023)) years.push(2023);
+	return years;
+}
+
+/**
+ * The sealed predictive paper, or null when there isn't one.
+ * Unstudied and not yet sat → 2023. Otherwise no paper is sealed.
+ * Never returns 2024 or 2025.
+ */
+export function pickMockExam(satMocks: readonly number[], studied2023 = false): LezenExam | null {
+	if (!predictiveAvailable(satMocks, studied2023)) return null;
+	return LEZEN_EXAMS.find((exam) => exam.year === PREDICTIVE_YEAR) ?? null;
+}
+
+export function passLineFor(exam: LezenExam): number {
+	return exam.passingScore;
+}
+
+export function targetFor(exam: LezenExam): number {
+	return passLineFor(exam) + 1;
+}
+
+export function passedSitting(correct: number, exam: LezenExam): boolean {
+	return correct >= passLineFor(exam);
 }

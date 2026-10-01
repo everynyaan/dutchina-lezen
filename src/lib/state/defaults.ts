@@ -1,15 +1,15 @@
 import { EMPTY_READING_FORK } from '$lib/reading/types';
-import { DEFAULT_GLOW_ORDER, EMPTY_SWAPS, type StateV23 } from './schema';
+import { DEFAULT_GLOW_ORDER, EMPTY_SWAPS, type CurrentState } from './schema';
 
 // ============================================================
 // STATE DEFAULTS
-// Returns a fresh StateV22 for a brand-new user.
+// Returns a fresh current-schema state for a brand-new user.
 // Safe values only. No nulls except where the type requires it.
 // ============================================================
 
-export function createDefaultState(): StateV23 {
+export function createDefaultState(): CurrentState {
 	return {
-		schemaVersion: 23,
+		schemaVersion: 26,
 		rank: 0,
 		tier: 1,
 		lp: 0,

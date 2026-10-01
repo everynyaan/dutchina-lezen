@@ -4,12 +4,11 @@ B1 Staatsexamen NT2 Programma I **Lezen** trainer for Domi. Context and pattern 
 
 ## What this fork is
 
-- Daily **5-minute eval** — one passage, gist then 1–2 questions, then stop. It **feeds trap cards**. It is not exam prep.
-- **Trap stickers** — a miss stamps a type (`verwijzing`, `hoofdonderwerp`, `bijna-goed`, `conclusie`, `bron-doel`). Review is a **drill of that move on a new real exam snippet**, never the same sentence, never EN↔NL.
-- **Kuromi** as cesuur coach: she needs **22 / 36**, skip, flag, don’t hunt one word.
-- Rare **110-minute mock** (6 texts, pass 22) — dress rehearsal, not weekly.
-- **~18 minute** time boxes per extra text (resets per text on the mock).
-- **Show-up streak** — finished the eval, not 5/5.
+- Today is one full training text from 2024 or 2025.
+- Debrief is the miss, on the sentence that answers it.
+- 2023 is the only sealed paper, sat once, and only as a November prediction. The published papers needed 24 of 35. Aim for 25 or more.
+- Otherwise no paper is sealed. All three are practice. A format rehearsal is not a November prediction if that paper was already studied.
+- Patterns is not a tab.
 
 Match, boss, listening, and random SRS are hidden.
 
@@ -27,4 +26,4 @@ Production Kuromi functions need `npm run build` and Netlify; `vite dev` will no
 
 ## Exam bank
 
-`src/lib/lezen/LEZEN_CONTENT.ts` — NT2 Programma I openbaar examen PDFs 2023–2025 (35 items/year in-file). Live exam shape is 36 questions / 110 minutes / pass 22. The mock does not invent a 36th item.
+`src/lib/lezen/LEZEN_CONTENT.ts`: NT2 Programma I openbaar examen PDFs 2023–2025 (35 items/year in-file). Live exam shape is 36 questions / 110 minutes. The published papers needed 24 of 35. Aim for 25 or more. The mock does not invent a 36th item.

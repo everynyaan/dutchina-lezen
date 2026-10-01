@@ -1,7 +1,6 @@
 <script lang="ts">
 	import ChatSheet from '$lib/components/kuromi/ChatSheet.svelte';
 	import ConversationList from '$lib/components/kuromi/ConversationList.svelte';
-	import DrillPanel from '$lib/components/kuromi/DrillPanel.svelte';
 	import AdjustmentsLog from '$lib/components/kuromi/AdjustmentsLog.svelte';
 	import Doodle from '$lib/components/art/Doodle.svelte';
 	import { setKuromiVisible } from '$lib/kuromi/visibility.svelte';
@@ -31,7 +30,7 @@
 			tilt={-3}
 			class="title-squiggle"
 		/>
-		<p class="page-sub">Chat, complain, and run a sandbox drill. No LP. No farming.</p>
+		<p class="page-sub">Chat and complain. No LP. No farming.</p>
 	</div>
 
 	<div class="hub-stack">
@@ -45,10 +44,6 @@
 
 		<section class="chat-section" aria-label="Chat with Kuromi">
 			<ChatSheet open={true} presentation="inline" bind:activeConversationId />
-		</section>
-
-		<section class="drill-section" aria-label="Sandbox drill">
-			<DrillPanel />
 		</section>
 
 		<section class="adjustments-section" aria-label="Adjustments audit log">

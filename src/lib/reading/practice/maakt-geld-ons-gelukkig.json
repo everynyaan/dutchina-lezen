@@ -1,0 +1,201 @@
+{
+	"passageSlug": "maakt-geld-ons-gelukkig",
+	"note": "Sample practice pack. Not official exam items. Never used in mock scores.",
+	"paragraphMap": [
+		{
+			"p": 2,
+			"anchor": "Wie rijker wordt, wordt gelukkiger. Maar als een",
+			"role": "introduces-topic",
+			"summary": "Research shows individuals get happier when richer, but whole societies do not; Layard studied why."
+		},
+		{
+			"p": 4,
+			"anchor": "Een verklaring is gewenning: we gaan een betere ",
+			"role": "reports-research",
+			"summary": "First explanation, habituation: a better standard of living soon feels normal, as with central heating."
+		},
+		{
+			"p": 6,
+			"anchor": "Een tweede en veel belangrijkere verklaring vond",
+			"role": "reports-research",
+			"summary": "Second and more important explanation: we compare our income with others, shown by the student choice."
+		},
+		{
+			"p": 8,
+			"anchor": "Aan dezelfde studenten werd ook gevraagd om te k",
+			"role": "conclusion",
+			"summary": "With free time students choose the most weeks off: we compete over income, not over free time."
+		}
+	],
+	"items": [
+		{
+			"id": "p-maakt-geld-ons-gelukkig-1",
+			"qtype": "betekenis-in-context",
+			"question": "Professor Layard 'dook in' psychologie-, sociologie- én economiestudies. Wat betekent 'dook in' hier?",
+			"options": {
+				"A": "Hij bestudeerde die onderzoeken heel grondig.",
+				"B": "Hij volgde zelf een opleiding in die drie vakken.",
+				"C": "Hij keek alleen even snel naar die onderzoeken."
+			},
+			"answer": "A",
+			"evidence": [
+				{
+					"p": 2,
+					"quote": "dook in psychologie-, sociologie- én economiestudies om deze onderzoeksresultaten nader te verklaren"
+				}
+			],
+			"move": "Read to the end of the sentence: he did this 'om deze onderzoeksresultaten nader te verklaren', to explain results in more depth.",
+			"why": "'Duiken in' something means going deep into it: Layard studied existing research closely to explain the results.",
+			"distractors": {
+				"B": {
+					"trap": "echo",
+					"why": "'Studies' here means research studies, not a study programme he followed himself."
+				},
+				"C": {
+					"trap": "tegenovergesteld",
+					"why": "Diving in means going deep, the opposite of a quick look."
+				}
+			}
+		},
+		{
+			"id": "p-maakt-geld-ons-gelukkig-2",
+			"qtype": "oorzaak-reden",
+			"question": "Wat is volgens professor Layard de belangrijkste reden dat we niet gelukkiger worden als de hele samenleving rijker wordt?",
+			"options": {
+				"A": "We vinden een betere levensstandaard snel gewoon.",
+				"B": "We vergelijken onze situatie met die van anderen.",
+				"C": "We gaan met z'n allen meer werken dan vroeger."
+			},
+			"answer": "B",
+			"evidence": [
+				{
+					"p": 6,
+					"quote": "Een tweede en veel belangrijkere verklaring vond professor Layard in onze neiging om onze eigen situatie te vergelijken met die van anderen."
+				}
+			],
+			"move": "The text gives two explanations. Look for the signal word that ranks them: 'veel belangrijkere'.",
+			"why": "Layard calls comparing ourselves with others the second and 'veel belangrijkere' explanation, so it is the most important one.",
+			"distractors": {
+				"A": {
+					"trap": "waar-niet-gevraagd",
+					"why": "Habituation is an explanation in the text, but it is the first one, not the more important one."
+				},
+				"C": {
+					"trap": "echo",
+					"why": "Working more is mentioned at the end of the paragraph as something that does not help, not as the explanation."
+				}
+			},
+			"afterItemId": "lezen-2023-17"
+		},
+		{
+			"id": "p-maakt-geld-ons-gelukkig-3",
+			"qtype": "functie-tekstdeel",
+			"question": "Waarom noemt de schrijver de centrale verwarming in de jaren zestig?",
+			"options": {
+				"A": "om te laten zien dat huizen vroeger slecht verwarmd waren",
+				"B": "om te laten zien dat we nu te veel geld aan luxe uitgeven",
+				"C": "om te laten zien dat iets wat eerst luxe was, nu gewoon is"
+			},
+			"answer": "C",
+			"evidence": [
+				{
+					"p": 4,
+					"quote": "In een Nederlandse woning eind jaren zestig van de vorige eeuw was centrale verwarming een luxe."
+				},
+				{
+					"p": 4,
+					"quote": "Intussen vinden we dit al lang normaal, of zelfs een noodzaak."
+				}
+			],
+			"move": "An example always serves the point just before it. Here that point is under the heading 'Gewenning': a better life soon feels normal.",
+			"why": "Central heating was a luxury then and is normal now, which illustrates habituation.",
+			"distractors": {
+				"A": {
+					"trap": "echo",
+					"why": "It repeats the content of the example but misses why it is there, under the heading 'Gewenning'."
+				},
+				"B": {
+					"trap": "niet-in-tekst",
+					"why": "The text never says we spend too much money on luxury."
+				}
+			},
+			"afterItemId": "lezen-2023-13"
+		}
+	],
+	"paraphrase": [
+		{
+			"id": "pp-maakt-geld-ons-gelukkig-1",
+			"source": {
+				"p": 6,
+				"quote": "We vinden een vergelijking van onze inkomsten met die van anderen belangrijker dan ons feitelijke inkomen op zich."
+			},
+			"afterItemId": "lezen-2023-14",
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "Ons eigen inkomen vinden we eigenlijk helemaal niet belangrijk.",
+				"B": "Hoeveel we verdienen naast anderen, telt meer dan het bedrag zelf.",
+				"C": "Ons eigen inkomen vinden we belangrijker dan wat anderen verdienen."
+			},
+			"answer": "B",
+			"distractors": {
+				"A": {
+					"trap": "overdreven",
+					"why": "'Belangrijker dan' becomes 'helemaal niet belangrijk'."
+				},
+				"C": {
+					"trap": "tegenovergesteld",
+					"why": "It turns the comparison around: the comparison counts more, not our own income."
+				}
+			}
+		},
+		{
+			"id": "pp-maakt-geld-ons-gelukkig-2",
+			"source": {
+				"p": 4,
+				"quote": "Een verbetering maakt ons voor even gelukkig, maar dat effect verdwijnt snel."
+			},
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "Na een verbetering zijn we even blijer, maar dat gevoel gaat snel voorbij.",
+				"B": "Een verbetering maakt ons nooit gelukkig.",
+				"C": "Een verbetering maakt ons pas na een tijdje gelukkig."
+			},
+			"answer": "A",
+			"distractors": {
+				"B": {
+					"trap": "overdreven",
+					"why": "'Voor even' becomes 'nooit': the sentence says we are happy for a short time."
+				},
+				"C": {
+					"trap": "tegenovergesteld",
+					"why": "It reverses the timing: the happiness comes first and then disappears."
+				}
+			}
+		},
+		{
+			"id": "pp-maakt-geld-ons-gelukkig-3",
+			"source": {
+				"p": 8,
+				"quote": "We wedijveren over ons inkomen, maar niet over onze vrije tijd."
+			},
+			"afterItemId": "lezen-2023-16",
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "Bij vrije tijd willen we meer dan anderen, bij inkomen niet.",
+				"B": "We werken liever voor ons inkomen dan dat we vrij zijn.",
+				"C": "Bij inkomen willen we meer dan anderen, bij vrije tijd niet."
+			},
+			"answer": "C",
+			"distractors": {
+				"A": {
+					"trap": "tegenovergesteld",
+					"why": "It swaps income and free time."
+				},
+				"B": {
+					"trap": "echo",
+					"why": "Uses 'inkomen' and 'vrij' but says we prefer work over free time, which the sentence does not say."
+				}
+			}
+		}
+	]
+}

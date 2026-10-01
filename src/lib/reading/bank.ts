@@ -1,5 +1,6 @@
 import { LEZEN_EXAMS } from '$lib/lezen/LEZEN_CONTENT';
 import type { LezenPassage, LezenQuestion } from '$lib/lezen/types';
+import { setPassageBySlug, setQuestionById } from './sets';
 
 export interface BankPassage extends LezenPassage {
 	year: number;
@@ -10,7 +11,24 @@ export function allPassages(): BankPassage[] {
 }
 
 export function findPassage(slug: string): BankPassage | undefined {
-	return allPassages().find((p) => p.slug === slug);
+	const official = allPassages().find((p) => p.slug === slug);
+	if (official) return official;
+	const setPassage = setPassageBySlug(slug);
+	if (!setPassage) return undefined;
+	return {
+		name: setPassage.name,
+		slug: setPassage.slug,
+		intro: setPassage.intro,
+		text: setPassage.text,
+		questions: setPassage.questions.map((question) => ({
+			id: question.id,
+			vraag: question.vraag,
+			question: question.question,
+			options: question.options,
+			answer: question.answer
+		})),
+		year: 0
+	};
 }
 
 export function findQuestion(id: string): { passage: BankPassage; question: LezenQuestion } | null {
@@ -18,7 +36,13 @@ export function findQuestion(id: string): { passage: BankPassage; question: Leze
 		const question = passage.questions.find((item) => item.id === id);
 		if (question) return { passage, question };
 	}
-	return null;
+	const setRow = setQuestionById(id);
+	if (!setRow) return null;
+	const passage = findPassage(setRow.passage.slug);
+	if (!passage) return null;
+	const question = passage.questions.find((item) => item.id === id);
+	if (!question) return null;
+	return { passage, question };
 }
 
 export function examByYear(year: number) {

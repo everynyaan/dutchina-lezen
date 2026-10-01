@@ -15,7 +15,11 @@
 	} from '$lib/state/schema';
 	import { setGameContext, type SyncStatus } from '$lib/state/context';
 	import { applyEvent as applyLpEvent, type LpEvent, type LpResult } from '$lib/lp/lp';
-	import { foldMissingSessionLogs, maybeAdvanceGates, unlockToastMessage } from '$lib/gates/mastery';
+	import {
+		foldMissingSessionLogs,
+		maybeAdvanceGates,
+		unlockToastMessage
+	} from '$lib/gates/mastery';
 	import { CONFIG_TOP_LEVEL_KEYS, type StewardHost } from '$lib/kuromi/executor';
 	import { upsertPageIn, removePageFrom } from '$lib/kuromi/pageStore';
 	import { playSfx, setSfxMuted } from '$lib/sound/sfx';
@@ -42,12 +46,16 @@
 	import { initAuth } from '$lib/auth/session.svelte';
 	import { initDb, seedCardReviews, exportCardReviews } from '$lib/db/db';
 	import { currentGateFromState } from '$lib/gates/gates';
-	import { dueTrapCards } from '$lib/reading/eval';
+	import { dueTraps } from '$lib/reading/traps';
 	import { getTodayDate } from '$lib/match/engine';
 
 	import Icon from '$lib/icons/Icon.svelte';
 	import SummonButton from '$lib/components/kuromi/SummonButton.svelte';
 	import ChatSheet from '$lib/components/kuromi/ChatSheet.svelte';
+	import { env } from '$env/dynamic/public';
+	import { configureKuromiLive } from '$lib/kuromi/live';
+	import { kuromiChatNonce } from '$lib/kuromi/visibility.svelte';
+	configureKuromiLive(env.PUBLIC_KUROMI_LIVE);
 	import RailNav from '$lib/components/shell/RailNav.svelte';
 	import KuromiResident from '$lib/components/shell/KuromiResident.svelte';
 
@@ -69,6 +77,15 @@
 		// Return focus to the summon FAB after dismiss
 		queueMicrotask(() => summonButtonEl?.focus());
 	}
+
+	let seenChatNonce = 0;
+	$effect(() => {
+		const nonce = kuromiChatNonce();
+		if (nonce > seenChatNonce) {
+			seenChatNonce = nonce;
+			kuromiOpen = true;
+		}
+	});
 
 	// ============================================================
 	// STATE + PROFILE
@@ -326,7 +343,7 @@
 
 	async function refreshCardsDue(): Promise<void> {
 		try {
-			cardsDue = dueTrapCards(gameState.readingFork, getTodayDate()).length;
+			cardsDue = dueTraps(gameState.readingFork, getTodayDate()).length;
 		} catch {
 			cardsDue = 0;
 		}
@@ -602,10 +619,10 @@
 	// ============================================================
 	const tabs = [
 		{ href: '/', label: 'Home', icon: 'house' },
-		{ href: '/eval', label: 'Eval', icon: 'list-check' },
-		{ href: '/cards', label: 'Cards', icon: 'rectangle-history' },
+		{ href: '/eval', label: 'Daily text', icon: 'list-check' },
+		{ href: '/cards', label: 'Debrief', icon: 'rectangle-history' },
 		{ href: '/mock', label: 'Mock', icon: 'bullseye' },
-		{ href: '/grammar', label: 'Patterns', icon: 'book-sparkles' }
+		{ href: '/playbook', label: 'Playbook', icon: 'book-sparkles' }
 	] as const;
 
 	const secondaryLinks: {
@@ -614,6 +631,9 @@
 		character?: boolean;
 	}[] = [
 		{ href: '/lezen', label: 'Texts' },
+		{ href: '/notebook', label: 'Notebook' },
+		{ href: '/sets', label: 'Practice sets' },
+		{ href: '/grammar', label: 'Patterns' },
 		{ href: '/kuromi/shelf', label: 'Kuromi', character: true }
 	];
 
@@ -628,9 +648,7 @@
 		peach: '--color-peach-deep',
 		teal: '--color-teal-deep'
 	};
-	let currentRankColorVar = $derived(
-		GATE_PILL[GATE_IDENTITY[currentGateFromState(gameState)]]
-	);
+	let currentRankColorVar = $derived(GATE_PILL[GATE_IDENTITY[currentGateFromState(gameState)]]);
 </script>
 
 <Toast />
@@ -700,6 +718,10 @@
 
 	.content {
 		flex: 1;
+		min-width: 0;
+		/* The reading desk keys off this card, not the browser window. */
+		container-type: inline-size;
+		container-name: app-card;
 		/* Bottom reservation must clear the Kuromi summon FAB, the tallest
 		   fixed element above the safe area: FAB sits at
 		   safe-area + 100px and is 56px tall, so its top edge is at

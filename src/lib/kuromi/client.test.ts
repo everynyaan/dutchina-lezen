@@ -38,10 +38,17 @@ function makeContext(): KuromiContextPacket {
 		readingFork: {
 			showUpStreak: 0,
 			evalCompleted: false,
-			trapStickers: [],
-			dueCards: 0,
+			unseenMisses: 0,
 			lastMock: null,
-			cesuur: 22
+			passLine: 24,
+			target: 25,
+			liveTotal: 36,
+			examDate: '2026-11-12',
+			daysLeft: null,
+			openTraps: [],
+			readiness: [],
+			locate: null,
+			daily: { completed: false, passageSlug: null, mapDone: false }
 		},
 		recentAdjustments: [],
 		activityShape: [],

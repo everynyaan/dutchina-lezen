@@ -1,0 +1,290 @@
+{
+	"passageSlug": "buurt-whatsapp",
+	"note": "Sample practice pack. Not official exam items. Never used in mock scores.",
+	"paragraphMap": [
+		{
+			"p": 1,
+			"anchor": "WhatsApp is één van de populairste diensten die ",
+			"role": "introduces-topic",
+			"summary": "Introduces neighbourhood WhatsApp groups, how common they are, and why some neighbours stay out."
+		},
+		{
+			"p": 3,
+			"anchor": "Tea Rukavina nam tien jaar geleden het initiatie",
+			"role": "background-origin",
+			"summary": "How the first group started, and a researcher's first view: it can make people feel safer or less safe."
+		},
+		{
+			"p": 5,
+			"anchor": "Wajid vertelt over situaties waarbij alle nieuwe",
+			"role": "problem-risk",
+			"summary": "Examples of what goes wrong: following newcomers, chasing a suspect, false alarms, exposing someone's private life."
+		},
+		{
+			"p": 7,
+			"anchor": "En dan zijn er nog de ruzies en irritaties die o",
+			"role": "rules-and-conflict",
+			"summary": "Irritation when members break the group's rules, how the admin steps in, and why some members leave."
+		}
+	],
+	"items": [
+		{
+			"id": "p-buurt-whatsapp-1",
+			"qtype": "oorzaak-reden",
+			"question": "Waarom willen sommige buurtbewoners niet in de buurt-whatsapp, volgens Mitra van de Kuilen?",
+			"options": {
+				"A": "Ze hebben ruzie met buren en willen niet met hen in een groep.",
+				"B": "Ze krijgen te veel berichten die niet in de groep horen.",
+				"C": "Ze vertrouwen de beheerder van de groep niet."
+			},
+			"answer": "A",
+			"evidence": [
+				{
+					"p": 1,
+					"quote": "Soms omdat ze ruzie hebben met hun buren of andere wijkbewoners en niet met hen in een groep willen zitten."
+				}
+			],
+			"move": "The question is about people who never join. Find where Van de Kuilen talks about people who 'niet willen', not about people who leave later.",
+			"why": "Paragraph 2 gives the reason directly: some residents have a conflict with neighbours and do not want to be in a group with them.",
+			"distractors": {
+				"B": {
+					"trap": "echo",
+					"why": "Unwanted messages are why members LEAVE the group (last paragraph), not why people refuse to join."
+				},
+				"C": {
+					"trap": "niet-in-tekst",
+					"why": "Nobody in the text says they distrust the admin."
+				}
+			}
+		},
+		{
+			"id": "p-buurt-whatsapp-2",
+			"qtype": "oorzaak-reden",
+			"question": "Waarom verlaten sommige leden de buurt-whatsapp, volgens Mitra van de Kuilen?",
+			"options": {
+				"A": "Ze hebben ruzie met andere mensen in de wijk.",
+				"B": "Ze hebben geen zin in berichten die niet nodig zijn.",
+				"C": "Ze vinden dat de beheerder te streng is."
+			},
+			"answer": "B",
+			"evidence": [
+				{
+					"p": 7,
+					"quote": "Die hebben geen zin in overbodige berichten."
+				}
+			],
+			"move": "'Verlaten' points to the end of the text, where Van de Kuilen describes what happens after off-topic messages.",
+			"why": "She says people leave immediately because they do not want 'overbodige berichten', messages that are not needed.",
+			"distractors": {
+				"A": {
+					"trap": "echo",
+					"why": "Conflict with neighbours is why some people never join (first paragraph), not why members leave."
+				},
+				"C": {
+					"trap": "niet-in-tekst",
+					"why": "She says she sometimes 'plays police officer', but nobody says she is too strict."
+				}
+			}
+		},
+		{
+			"id": "p-buurt-whatsapp-3",
+			"qtype": "mening-persoon",
+			"question": "Wat vindt Habib Wajid van buurt-whatsapps?",
+			"options": {
+				"A": "Ze maken een buurt altijd veiliger.",
+				"B": "Ze zijn alleen nuttig als de politie in de groep meeleest.",
+				"C": "Ze kunnen mensen een veiliger gevoel geven, maar soms ook juist een onveiliger gevoel."
+			},
+			"answer": "C",
+			"evidence": [
+				{
+					"p": 3,
+					"quote": "“Het kan het gevoel van veiligheid stimuleren”"
+				},
+				{
+					"p": 3,
+					"quote": "“Maar er zijn ook allerlei groepen waarbij de appgroep het gevoel van onveiligheid juist vergroot.”"
+				}
+			],
+			"move": "Find Wajid's name and read only his words. Watch for 'maar': his view has two sides.",
+			"why": "Wajid says the group 'can' strengthen the feeling of safety, 'but' in other groups it increases the feeling of being unsafe.",
+			"distractors": {
+				"A": {
+					"trap": "overdreven",
+					"why": "'Altijd' turns 'het kan' into a certainty and drops the 'maar' half of his view."
+				},
+				"B": {
+					"trap": "niet-in-tekst",
+					"why": "The police reading along is never mentioned."
+				}
+			}
+		},
+		{
+			"id": "p-buurt-whatsapp-4",
+			"qtype": "functie-tekstdeel",
+			"question": "Waarom noemt de schrijver het voorbeeld van de glazenwasser?",
+			"options": {
+				"A": "om te laten zien dat buren soms onterecht onrust veroorzaken",
+				"B": "om te laten zien dat glazenwassers vaak voor inbrekers worden aangezien",
+				"C": "om uit te leggen hoe je een inbreker kunt herkennen"
+			},
+			"answer": "A",
+			"evidence": [
+				{
+					"p": 5,
+					"quote": "Het kan ook andere onrust veroorzaken. Bijvoorbeeld als een doodgewone glazenwasser wordt aangezien voor een inbreker"
+				}
+			],
+			"move": "Read the sentence just before the example: 'Het kan ook andere onrust veroorzaken.' The example illustrates that sentence.",
+			"why": "The window cleaner is an ordinary person mistaken for a burglar, so the example shows unnecessary unrest caused by the group.",
+			"distractors": {
+				"B": {
+					"trap": "overdreven",
+					"why": "One example becomes 'vaak'. The point is the unrest the group causes, not something about window cleaners."
+				},
+				"C": {
+					"trap": "niet-in-tekst",
+					"why": "The text gives no tips on recognising burglars."
+				}
+			}
+		},
+		{
+			"id": "p-buurt-whatsapp-5",
+			"qtype": "vergelijking",
+			"question": "Wat is volgens de tekst het verschil tussen de meeste WhatsApp-groepen en een buurt-whatsapp?",
+			"options": {
+				"A": "Een buurt-whatsapp wordt beheerd door de politie.",
+				"B": "In een buurt-whatsapp zitten alleen mensen uit één straat.",
+				"C": "Een buurt-whatsapp heeft een serieuzer doel."
+			},
+			"answer": "C",
+			"evidence": [
+				{
+					"p": 1,
+					"quote": "Steeds vaker wordt WhatsApp ook gebruikt door groepen met een serieuzer doel. De buurt-whatsapp dient zo’n serieus doel."
+				}
+			],
+			"move": "Find where both sides are named: WhatsApp with friends and family on one side, groups 'met een serieuzer doel' on the other.",
+			"why": "The text contrasts chatting with friends and family with groups that serve a more serious purpose, and says buurt-whatsapp is one of those.",
+			"distractors": {
+				"A": {
+					"trap": "verkeerde-persoon",
+					"why": "The admin is a resident, Mitra van de Kuilen; she only 'plays' police officer."
+				},
+				"B": {
+					"trap": "niet-in-tekst",
+					"why": "The text talks about a 'wijk' with 115 households, not a single street."
+				}
+			}
+		},
+		{
+			"id": "p-buurt-whatsapp-6",
+			"qtype": "betekenis-in-context",
+			"question": "'De appgroep lijkt te voorzien in een behoefte.' Wat betekent dit hier?",
+			"options": {
+				"A": "Mensen hebben de appgroep echt nodig of willen die graag.",
+				"B": "De appgroep voorspelt welke problemen er komen.",
+				"C": "De appgroep heeft zelf hulp nodig."
+			},
+			"answer": "A",
+			"evidence": [
+				{
+					"p": 3,
+					"quote": "De appgroep lijkt te voorzien in een behoefte."
+				}
+			],
+			"move": "Use the context: the sentence follows the story of why the group started and comes before 'het kan het gevoel van veiligheid stimuleren'.",
+			"why": "'Voorzien in een behoefte' means meeting a need: people want and use the group, which fits its fast growth.",
+			"distractors": {
+				"B": {
+					"trap": "echo",
+					"why": "'Voorzien' can also mean 'foresee', but here it is 'voorzien in', which means providing for something."
+				},
+				"C": {
+					"trap": "tegenovergesteld",
+					"why": "It flips the direction: the group meets people's need, it does not need help itself."
+				}
+			}
+		},
+		{
+			"id": "p-buurt-whatsapp-7",
+			"qtype": "betekenis-in-context",
+			"question": "'Anderen zijn sowieso meer op zichzelf.' Wat betekent 'op zichzelf' hier?",
+			"options": {
+				"A": "Ze wonen alleen.",
+				"B": "Ze hebben liever weinig contact met anderen.",
+				"C": "Ze zijn tegen de buurt-whatsapp."
+			},
+			"answer": "B",
+			"evidence": [
+				{
+					"p": 1,
+					"quote": "Anderen zijn sowieso meer op zichzelf."
+				}
+			],
+			"move": "The sentence gives a second reason why some people do not join. Ask what kind of person would skip a neighbourhood group.",
+			"why": "Being 'op zichzelf' means keeping to yourself, preferring little contact, which explains not joining the group.",
+			"distractors": {
+				"A": {
+					"trap": "echo",
+					"why": "A literal reading of 'zichzelf'; the text says nothing about who they live with."
+				},
+				"C": {
+					"trap": "overdreven",
+					"why": "They just prefer to keep to themselves; the text does not say they oppose the group."
+				}
+			}
+		}
+	],
+	"paraphrase": [
+		{
+			"id": "pp-buurt-whatsapp-1",
+			"source": {
+				"p": 1,
+				"quote": "Steeds vaker wordt WhatsApp ook gebruikt door groepen met een serieuzer doel."
+			},
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "Alle WhatsApp-groepen hebben tegenwoordig een serieus doel.",
+				"B": "WhatsApp wordt zelf steeds serieuzer.",
+				"C": "Er zijn steeds meer WhatsApp-groepen met een belangrijk doel."
+			},
+			"answer": "C",
+			"distractors": {
+				"A": {
+					"trap": "overdreven",
+					"why": "'Steeds vaker' becomes 'alle'."
+				},
+				"B": {
+					"trap": "echo",
+					"why": "Same words, but now WhatsApp itself is serious, which the sentence does not say."
+				}
+			}
+		},
+		{
+			"id": "pp-buurt-whatsapp-2",
+			"source": {
+				"p": 5,
+				"quote": "“Het is niet verantwoord als mensen zelf politie gaan spelen”"
+			},
+			"afterItemId": "lezen-2025-26",
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "Mensen moeten de politie vaker bellen.",
+				"B": "Het is onverstandig als bewoners zelf achter verdachten aangaan.",
+				"C": "De politie mag geen gebruik maken van de buurt-whatsapp."
+			},
+			"answer": "B",
+			"distractors": {
+				"A": {
+					"trap": "niet-in-tekst",
+					"why": "Calling the police more often is never suggested."
+				},
+				"C": {
+					"trap": "echo",
+					"why": "Uses 'politie' but says something the text never says."
+				}
+			}
+		}
+	]
+}

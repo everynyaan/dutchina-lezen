@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { createDefaultState } from '$lib/state/defaults';
-import { migrate } from '$lib/state/migrations';
+import { migrate, reservedPapersFor } from '$lib/state/migrations';
+import { dayIndex } from '$lib/reading/bank';
 import { CURRENT_SCHEMA_VERSION, DEFAULT_GLOW_ORDER, EMPTY_SWAPS } from '$lib/state/schema';
 import type {
 	CurrentState,
@@ -778,7 +779,7 @@ describe('migrate()', () => {
 		const migrated = migrate(makeV16(14, '2026-06-05'));
 
 		expect(migrated.schemaVersion).toBe(CURRENT_SCHEMA_VERSION);
-		expect(CURRENT_SCHEMA_VERSION).toBe(23);
+		expect(CURRENT_SCHEMA_VERSION).toBe(26);
 
 		// Grammar fully removed — no orphan left in persisted state.
 		expect(migrated).not.toHaveProperty('grammar');
@@ -1293,7 +1294,7 @@ describe('migrate()', () => {
 		const migrated = migrate(v19State) as CurrentState;
 
 		expect(migrated.schemaVersion).toBe(CURRENT_SCHEMA_VERSION);
-		expect(CURRENT_SCHEMA_VERSION).toBe(23);
+		expect(CURRENT_SCHEMA_VERSION).toBe(26);
 
 		expect(migrated.rank).toEqual(v19State.rank);
 		expect(migrated.tier).toEqual(v19State.tier);
@@ -1406,7 +1407,8 @@ describe('migrate()', () => {
 		expect(migrated.dailyHomework.swaps).toEqual({ date: null, used: 0, swappedOutIds: [] });
 		expect(migrated.lp).toBe(12);
 		expect(migrated.gates.current).toBe(1);
-		expect(migrated.readingFork.trapCards).toEqual([]);
+		expect(migrated.readingFork.misses).toEqual([]);
+		expect(migrated.readingFork.satMocks).toEqual([]);
 	});
 
 	it('migrates v22 to v23: readingFork empty, LP untouched', () => {
@@ -1418,9 +1420,311 @@ describe('migrate()', () => {
 		};
 		delete (v22 as { readingFork?: unknown }).readingFork;
 		const migrated = migrate(v22) as CurrentState;
-		expect(migrated.schemaVersion).toBe(23);
+		expect(migrated.schemaVersion).toBe(CURRENT_SCHEMA_VERSION);
 		expect(migrated.readingFork.eval.completed).toBe(false);
-		expect(migrated.readingFork.trapCards).toEqual([]);
+		expect(migrated.readingFork.misses).toEqual([]);
+		expect(migrated.readingFork.satMocks).toEqual([]);
 		expect(migrated.lp).toBe(9);
+	});
+
+	it('migrates v23 through v25: streak stays, stickers stay gone, year 0 becomes a mock', () => {
+		const v23 = {
+			...createDefaultState(),
+			schemaVersion: 23 as const,
+			lp: 9,
+			readingFork: {
+				eval: {
+					date: '2026-09-01',
+					passageSlug: 'ruud-rij-instructeur',
+					year: 2025,
+					gistOptions: ['a'],
+					gistAnswer: 'a',
+					gistPicked: 'b',
+					questionIds: ['lezen-2025-1'],
+					results: { 'lezen-2025-1': false },
+					completed: true
+				},
+				showUpStreak: 4,
+				lastEvalDate: '2026-09-01',
+				trapCards: [{ id: 'trap:verwijzing' }],
+				trapStickers: ['verwijzing'],
+				lastMockAt: '2026-08-01',
+				lastMockScore: { correct: 20, total: 35, passed: false }
+			}
+		};
+		const migrated = migrate(v23) as CurrentState;
+		const paperYear = [2025, 2024, 2023][dayIndex('2026-08-01', 3, 9)];
+		expect(migrated.schemaVersion).toBe(26);
+		expect(migrated.readingFork.showUpStreak).toBe(4);
+		expect(migrated.readingFork.lastEvalDate).toBe('2026-09-01');
+		expect(migrated.readingFork.misses).toEqual([]);
+		expect(migrated.readingFork.satMocks).toEqual([]);
+		expect(migrated.readingFork.eval).toEqual({
+			date: null,
+			passageSlug: null,
+			mapDone: false,
+			itemIds: [],
+			answers: {},
+			completed: false
+		});
+		expect(migrated.readingFork.lastMockScore).toEqual({
+			correct: 20,
+			total: 35,
+			passed: false,
+			year: 0
+		});
+		expect(migrated.readingFork).not.toHaveProperty('trapCards');
+		expect(migrated.readingFork).not.toHaveProperty('trapStickers');
+		expect(migrated.readingFork.mocks).toEqual([
+			{
+				id: 'migrated-2026-08-01',
+				paperYear,
+				finishedAt: '2026-08-01',
+				expired: false,
+				correct: 20,
+				total: 35,
+				passLine: paperYear === 2023 ? 23 : 24,
+				byQtype: {},
+				textMs: [],
+				answers: {},
+				flagged: {}
+			}
+		]);
+		expect(migrated.readingFork.mockInProgress).toBeNull();
+		expect(migrated.readingFork.attempts).toEqual([]);
+		expect(migrated.readingFork.traps).toEqual([]);
+		expect(migrated.readingFork.settings).toEqual({
+			examDate: '2026-11-12',
+			reservedPapers: [2023],
+			lookupsPerText: 5
+		});
+		expect(migrated.lp).toBe(9);
+	});
+
+	it('migrates a realistic v24 fork: official attempts, real mock year, 2023 stays reserved', () => {
+		const v24 = {
+			...createDefaultState(),
+			schemaVersion: 24 as const,
+			lezen: {
+				questionResults: {
+					'missing-item': { correct: true, attemptedAt: '2026-09-01T10:00:00.000Z' },
+					'lezen-2024-1': { correct: true, attemptedAt: '2026-09-02T10:00:00.000Z' },
+					'lezen-2025-1': { correct: false, attemptedAt: '2026-09-03T10:00:00.000Z' }
+				}
+			},
+			readingFork: {
+				eval: {
+					date: '2026-09-04',
+					passageSlug: 'bakkerij',
+					results: { 'lezen-2024-1': true },
+					completed: true
+				},
+				showUpStreak: 2,
+				lastEvalDate: '2026-09-04',
+				misses: [{ questionId: 'lezen-2024-2', picked: 'A', seen: false }],
+				satMocks: [2024],
+				lastMockAt: '2026-09-05',
+				lastMockScore: { correct: 25, total: 35, passed: true, year: 2024 }
+			}
+		};
+		const migrated = migrate(v24) as CurrentState;
+		expect(migrated.schemaVersion).toBe(26);
+		expect(migrated.readingFork.showUpStreak).toBe(2);
+		expect(migrated.readingFork.lastEvalDate).toBe('2026-09-04');
+		expect(migrated.readingFork.misses).toEqual([
+			{ questionId: 'lezen-2024-2', picked: 'A', seen: false }
+		]);
+		expect(migrated.readingFork.satMocks).toEqual([]);
+		expect(migrated.readingFork.eval.date).toBeNull();
+		expect(migrated.readingFork.eval.answers).toEqual({});
+		expect(migrated.readingFork.attempts.map((attempt) => attempt.itemId)).toEqual([
+			'missing-item',
+			'lezen-2024-1',
+			'lezen-2025-1'
+		]);
+		expect(migrated.readingFork.attempts[1]).toMatchObject({
+			itemId: 'lezen-2024-1',
+			origin: 'official',
+			passageSlug: 'bakkerij',
+			source: 'texts',
+			picked: '',
+			correct: true,
+			locateP: null,
+			locateHit: null,
+			ms: 0
+		});
+		expect(migrated.readingFork.attempts[0].passageSlug).toBe('');
+		expect(migrated.readingFork.attempts[2]).toMatchObject({
+			itemId: 'lezen-2025-1',
+			origin: 'official',
+			passageSlug: 'ruud-rij-instructeur',
+			source: 'texts',
+			picked: '',
+			correct: false
+		});
+		expect(migrated.readingFork.mocks).toEqual([]);
+		expect(migrated.readingFork.lastMockScore).toBeNull();
+		expect(migrated.readingFork.lastMockAt).toBeNull();
+		expect(migrated.readingFork.settings.reservedPapers).toEqual([2023, 2024]);
+		expect(migrated.readingFork.settings.examDate).toBe('2026-11-12');
+	});
+
+	it('reserves the newest unsat paper only after 2023 has a real mock', () => {
+		expect(reservedPapersFor([], 0)).toEqual([2023]);
+		expect(reservedPapersFor([2024], 2024)).toEqual([2023]);
+		expect(reservedPapersFor([2023], 2023)).toEqual([2025]);
+		expect(reservedPapersFor([2023, 2025], 2023)).toEqual([2024]);
+		expect(reservedPapersFor([2023, 2025, 2024], 2024)).toEqual([]);
+	});
+
+	it('caps seeded attempts at 5000 and drops the oldest', () => {
+		const questionResults: Record<string, { correct: boolean; attemptedAt: string }> = {};
+		for (let i = 0; i < 5001; i++) {
+			questionResults[`extra-${i}`] = {
+				correct: i % 2 === 0,
+				attemptedAt: String(i).padStart(5, '0')
+			};
+		}
+		const v24 = {
+			...createDefaultState(),
+			schemaVersion: 24 as const,
+			lezen: { questionResults },
+			readingFork: {
+				eval: { date: null, passageSlug: null, results: {}, completed: false },
+				showUpStreak: 0,
+				lastEvalDate: null,
+				misses: [],
+				satMocks: [],
+				lastMockAt: null,
+				lastMockScore: null
+			}
+		};
+		const migrated = migrate(v24) as CurrentState;
+		expect(migrated.readingFork.attempts).toHaveLength(5000);
+		expect(migrated.readingFork.attempts[0].itemId).toBe('extra-1');
+		expect(migrated.readingFork.attempts[4999].itemId).toBe('extra-5000');
+		expect(migrated.readingFork.attempts.every((attempt) => attempt.picked === '')).toBe(true);
+		expect(migrated.readingFork.settings.reservedPapers).toEqual([2023]);
+	});
+
+	it('clears stored 2023 and 2024 mock results once, and keeps a sitting taken after that', () => {
+		const base = createDefaultState();
+		const v25 = {
+			...base,
+			schemaVersion: 25 as const,
+			readingFork: {
+				...base.readingFork,
+				satMocks: [2023, 2025],
+				lastMockAt: '2026-09-01',
+				lastMockScore: { correct: 30, total: 35, passed: true, year: 2025 },
+				settings: { ...base.readingFork.settings, reservedPapers: [] },
+				mocks: [
+					{
+						id: 'm23',
+						paperYear: 2023,
+						finishedAt: '2026-08-01',
+						expired: false,
+						correct: 23,
+						total: 35,
+						passLine: 23,
+						byQtype: {},
+						textMs: [],
+						answers: { 'lezen-2023-1': 'A' },
+						flagged: {}
+					},
+					{
+						id: 'm25',
+						paperYear: 2025,
+						finishedAt: '2026-09-01',
+						expired: false,
+						correct: 30,
+						total: 35,
+						passLine: 24,
+						byQtype: {},
+						textMs: [],
+						answers: {},
+						flagged: {}
+					}
+				],
+				attempts: [
+					{
+						itemId: 'lezen-2023-1',
+						origin: 'official' as const,
+						passageSlug: 'vijf-fabels',
+						source: 'mock' as const,
+						at: '2026-08-01',
+						picked: 'A',
+						correct: false,
+						locateP: null,
+						locateHit: null,
+						ms: 1
+					},
+					{
+						itemId: 'lezen-2023-2',
+						origin: 'official' as const,
+						passageSlug: 'vijf-fabels',
+						source: 'texts' as const,
+						at: '2026-08-02',
+						picked: 'B',
+						correct: true,
+						locateP: null,
+						locateHit: null,
+						ms: 1
+					},
+					{
+						itemId: 'lezen-2025-1',
+						origin: 'official' as const,
+						passageSlug: 'ruud-rij-instructeur',
+						source: 'mock' as const,
+						at: '2026-09-01',
+						picked: 'C',
+						correct: true,
+						locateP: null,
+						locateHit: null,
+						ms: 1
+					}
+				]
+			}
+		};
+		const migrated = migrate(v25) as CurrentState;
+		expect(migrated.schemaVersion).toBe(26);
+		expect(migrated.readingFork.mocks.map((mock) => mock.paperYear)).toEqual([2025]);
+		expect(migrated.readingFork.satMocks).toEqual([2025]);
+		expect(migrated.readingFork.lastMockScore).toEqual({
+			correct: 30,
+			total: 35,
+			passed: true,
+			year: 2025
+		});
+		expect(migrated.readingFork.settings.reservedPapers).toEqual([2023]);
+		expect(migrated.readingFork.attempts.map((attempt) => attempt.itemId)).toEqual([
+			'lezen-2023-2',
+			'lezen-2025-1'
+		]);
+
+		const again = createDefaultState();
+		again.readingFork = {
+			...again.readingFork,
+			satMocks: [2023],
+			settings: { ...again.readingFork.settings, reservedPapers: [] },
+			mocks: [
+				{
+					id: 'after',
+					paperYear: 2023,
+					finishedAt: '2026-10-02',
+					expired: false,
+					correct: 24,
+					total: 35,
+					passLine: 23,
+					byQtype: {},
+					textMs: [],
+					answers: {},
+					flagged: {}
+				}
+			]
+		};
+		const kept = migrate(again) as CurrentState;
+		expect(kept.readingFork.mocks).toHaveLength(1);
+		expect(kept.readingFork.settings.reservedPapers).toEqual([]);
 	});
 });
