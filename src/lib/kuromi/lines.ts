@@ -1,10 +1,10 @@
 /**
  * Reflex copy Kuromi may say with the model off.
- * UI labels stay the approved spec sentences. Longer moments come from kuromi-lines.json.
+ * UI labels stay the approved spec sentences. Longer moments come from lines.json.
  * A missing path returns null. Do not invent a line to fill a gap.
  */
 
-import rawLines from '../../../handoff/data/kuromi-lines.json';
+import rawLines from './lines.json';
 import { QTYPE_LABEL, TRAP_LABEL } from '$lib/reading/annotations';
 import { ROLE_LABEL } from '$lib/reading/loop';
 import type { QType, TrapKind } from '$lib/reading/types';
@@ -32,26 +32,6 @@ export const APPROVED_REFLEX = {
 } as const;
 
 export type ApprovedReflexId = keyof typeof APPROVED_REFLEX;
-
-/** Authored reflex slots. Nested paths use a dot, such as map-comment.right. */
-export const REFLEX_GAPS = [
-	'daily-open',
-	'map-comment',
-	'right-reaction',
-	'miss-reaction',
-	'done-card',
-	'drill-intro',
-	'drill-reaction',
-	'card-tamed',
-	'mock-debrief',
-	'readiness-plan',
-	'monday-message',
-	'playbook-voice',
-	'trap-labels',
-	'notebook-prompts'
-] as const;
-
-export type ReflexGapId = (typeof REFLEX_GAPS)[number];
 
 /** Slots that may be spoken before she has answered. Everything else waits. */
 export const BEFORE_ANSWER_SLOTS = [
