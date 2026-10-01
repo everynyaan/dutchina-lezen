@@ -42,6 +42,7 @@
 	import PracticeBook from '$lib/components/reading/PracticeBook.svelte';
 	import QuestionBlock from '$lib/components/reading/QuestionBlock.svelte';
 	import ReadingLoop from '$lib/components/reading/ReadingLoop.svelte';
+	import Doodle from '$lib/components/art/Doodle.svelte';
 	import Card from '$lib/components/ui/Card.svelte';
 	import { playSfx } from '$lib/sound/sfx';
 	import type { QType } from '$lib/reading/types';
@@ -477,6 +478,10 @@
 	{:else}
 		<p class="eyebrow">Unofficial</p>
 		<h1>Practice sets</h1>
+		<span class="jit-2"
+			><Doodle name="spark-sparkle-26" size={22} color="var(--color-rose-deep)" /></span
+		>
+		<span class="jit-5"><Doodle name="swirl-arrow-6" size={28} color="var(--color-ink)" /></span>
 		<p class="note">Suggested order: set 2, then set 3, then set 1 after the 2025 mock.</p>
 		<p class="note">{SET_MIX_NOTE}</p>
 		{#if officialBusy}

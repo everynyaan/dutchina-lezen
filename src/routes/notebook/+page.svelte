@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
+	import Doodle from '$lib/components/art/Doodle.svelte';
+	import KuromiBubble from '$lib/components/reading/KuromiBubble.svelte';
 	import { getGameContext } from '$lib/state/context';
 	import { findPassage } from '$lib/reading/bank';
 	import { TRAP_LABEL } from '$lib/reading/annotations';
@@ -74,6 +76,12 @@
 <div class="notebook-page" class:printing>
 	<p class="eyebrow">Your words</p>
 	<h1>Notebook</h1>
+	<span class="jit-2"
+		><Doodle name="spark-sparkle-26" size={22} color="var(--color-rose-deep)" /></span
+	>
+	<span class="jit-5"
+		><Doodle name="shape-swirl-loops-4" size={28} color="var(--color-rose-deep)" /></span
+	>
 	<p>Guess from the sentence first. English stays hidden until you ask for it.</p>
 
 	<div class="chips">
@@ -112,7 +120,9 @@
 	</div>
 
 	{#if book.entries.length === 0}
-		<p>No notes yet. Select a word in a text and add it here.</p>
+		<KuromiBubble mood="wink">
+			<p>No notes yet. Select a word in a text and add it here.</p>
+		</KuromiBubble>
 		<a class="btn ghost" href={resolve('/eval')}>Daily text</a>
 	{:else}
 		<div class="filters">

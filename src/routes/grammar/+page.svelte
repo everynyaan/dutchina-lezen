@@ -78,7 +78,7 @@
 			</span>
 		</div>
 		<p class="grammar-subtitle">
-			Word-order and traps that show up in B1 texts — not a vocab grind, not a gate ladder.
+			Word-order and traps that show up in B1 texts. Not a vocab grind, not a gate ladder.
 			{chapters.length} chapters &middot; {totalCards} cards
 			{#if showDrills}
 				&middot; warm-up drills

@@ -31,6 +31,8 @@
 	import { bookYearsFor } from '$lib/reading/practiceBook';
 	import QuestionBlock from '$lib/components/reading/QuestionBlock.svelte';
 	import ReadingLoop from '$lib/components/reading/ReadingLoop.svelte';
+	import Doodle from '$lib/components/art/Doodle.svelte';
+	import KuromiBubble from '$lib/components/reading/KuromiBubble.svelte';
 	import Card from '$lib/components/ui/Card.svelte';
 	import { playSfx } from '$lib/sound/sfx';
 	import { untrack } from 'svelte';
@@ -218,6 +220,12 @@
 <div class="cards-page stagger">
 	<p class="eyebrow">The trap, on the text</p>
 	<h1>Drills</h1>
+	<span class="jit-3"
+		><Doodle name="spark-sparkle-26" size={22} color="var(--color-rose-deep)" /></span
+	>
+	<span class="jit-5"
+		><Doodle name="shape-swirl-loops-4" size={28} color="var(--color-rose-deep)" /></span
+	>
 	<nav class="modes" aria-label="Drill modes">
 		<a href={resolve('/cards')} class:on={!mode && !qtypeParam}>Traps</a>
 		<a href="{resolve('/cards')}?mode=lure" class:on={mode === 'lure'}>Spot the lure</a>
@@ -248,10 +256,10 @@
 			<p>No items of that type are ready.</p>
 		</Card>
 	{:else if !qtypeParam && mode !== 'lure' && mode !== 'paraphrase' && !activeTrap && !heldId}
-		<Card variant="soft-peach">
+		<KuromiBubble mood="hmph">
 			<p>Nothing to debrief. Finish the daily text.</p>
-			<a class="btn" href={resolve('/eval')}>Daily text</a>
-		</Card>
+		</KuromiBubble>
+		<a class="btn" href={resolve('/eval')}>Daily text</a>
 	{:else if passage && mode === 'lure' && lure}
 		<PracticeBook years={bookYears} />
 		<ReadingLoop
@@ -361,7 +369,8 @@
 	.modes a {
 		padding: 0.35rem 0.75rem;
 		border-radius: 999px;
-		border: 2px solid var(--color-ink);
+		border: none;
+		box-shadow: var(--shadow-offset-pill);
 		text-decoration: none;
 		color: var(--color-ink);
 		font-weight: 700;

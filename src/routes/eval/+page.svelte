@@ -17,6 +17,7 @@
 	import QuestionBlock from '$lib/components/reading/QuestionBlock.svelte';
 	import ReadingLoop from '$lib/components/reading/ReadingLoop.svelte';
 	import type { LoopPhase } from '$lib/reading/loop';
+	import Doodle from '$lib/components/art/Doodle.svelte';
 	import Card from '$lib/components/ui/Card.svelte';
 	import { playSfx } from '$lib/sound/sfx';
 	import { resolve } from '$app/paths';
@@ -169,6 +170,10 @@
 <div class="eval-page stagger">
 	<p class="eyebrow">One passage</p>
 	<h1>Daily text</h1>
+	<span class="jit-2"
+		><Doodle name="spark-sparkle-26" size={22} color="var(--color-rose-deep)" /></span
+	>
+	<span class="jit-4"><Doodle name="swirl-arrow-6" size={28} color="var(--color-ink)" /></span>
 	<p class="kuromi-line">About 15 minutes. Map, then the questions.</p>
 
 	{#if !passage}

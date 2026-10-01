@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
+	import Doodle from '$lib/components/art/Doodle.svelte';
 	import Card from '$lib/components/ui/Card.svelte';
 	import {
 		RULES_TEXT,
@@ -22,6 +23,12 @@
 <div class="playbook">
 	<p class="eyebrow">Handbook</p>
 	<h1>Playbook</h1>
+	<span class="jit-2"
+		><Doodle name="spark-sparkle-26" size={22} color="var(--color-rose-deep)" /></span
+	>
+	<span class="jit-4"
+		><Doodle name="shape-swirl-loops-4" size={28} color="var(--color-rose-deep)" /></span
+	>
 	<p class="lead">
 		Moves, traps, and signal words from the papers. Examples are pulled from the texts, not
 		invented.
