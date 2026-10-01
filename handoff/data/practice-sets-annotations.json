@@ -1,0 +1,2773 @@
+[
+	{
+		"id": "set1-1",
+		"qtype": "vergelijking",
+		"evidence": [
+			{
+				"p": 4,
+				"quote": "In die functie werkt zij nog steeds op de groep, maar niet meer de hele week."
+			},
+			{
+				"p": 4,
+				"quote": "Twee dagen per week helpt zij stagiairs en nieuwe collega’s"
+			}
+		],
+		"move": "Go to the sentence that starts with 'In die functie' and compare 'nog steeds' with 'niet meer de hele week'.",
+		"why": "She still works on the group, but no longer the whole week, because two days a week she coaches interns and new colleagues.",
+		"distractors": {
+			"A": {
+				"trap": "tegenovergesteld",
+				"why": "The text says she 'werkt nog steeds op de groep', so she still works with children."
+			},
+			"C": {
+				"trap": "echo",
+				"why": "'verschillende locaties' comes from the first paragraph about her past career, not about what changed now."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set1-2",
+		"qtype": "functie-tekstdeel",
+		"evidence": [
+			{
+				"p": 3,
+				"quote": "kreeg zij echter het advies om serieus over haar toekomst na te denken"
+			},
+			{
+				"p": 3,
+				"quote": "Die vraag bleef in haar hoofd zitten."
+			}
+		],
+		"move": "Read what happens right after the doctor's question: 'Die vraag bleef in haar hoofd zitten'.",
+		"why": "The question is the turning point: before it she wanted to carry on, after it she kept thinking about her future and took the next steps.",
+		"distractors": {
+			"A": {
+				"trap": "tegenovergesteld",
+				"why": "She first wanted to carry on, but that was before the check-up; after the question 'Die vraag bleef in haar hoofd zitten'."
+			},
+			"B": {
+				"trap": "overdreven",
+				"why": "The doctor only asked whether she could do this work for ten more years; he did not tell her to stop."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set1-3",
+		"qtype": "niet-vraag",
+		"evidence": [
+			{
+				"p": 6,
+				"quote": "Haar werkgever betaalt een deel van de opleiding"
+			}
+		],
+		"move": "Go to 'Hulp bij het leren', tick off each kind of help, and check the word 'deel'.",
+		"why": "The employer pays 'een deel' of the course, not all of it, so full payment is the help she does not get.",
+		"distractors": {
+			"B": {
+				"trap": "waar-niet-gevraagd",
+				"why": "This is stated: BrugWerk gives her help with 'studievaardigheden'."
+			},
+			"C": {
+				"trap": "waar-niet-gevraagd",
+				"why": "This is stated: the employer 'geeft haar tijd om opdrachten te maken'."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set1-4",
+		"qtype": "mening-persoon",
+		"evidence": [
+			{
+				"p": 8,
+				"quote": "Volgens Karin moeten organisaties vaker met oudere medewerkers praten over zwaar werk."
+			}
+		],
+		"move": "Find the sentence that starts with 'Volgens Karin' in 'Denk eerder vooruit'.",
+		"why": "Karin says organizations should talk more often with older staff about heavy work, which the key says in other words.",
+		"distractors": {
+			"B": {
+				"trap": "verkeerde-persoon",
+				"why": "This is what 'Veel collega’s zeiden', not Karin's view."
+			},
+			"C": {
+				"trap": "echo",
+				"why": "Karin mentions 'manager', but says 'Niet iedereen hoeft manager te worden'."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set1-5",
+		"qtype": "betekenis-in-context",
+		"evidence": [
+			{
+				"p": 8,
+				"quote": "Veel medewerkers praten pas over ander werk als ze echt uitvallen. Nadia kwam op tijd in beweging."
+			}
+		],
+		"move": "Read the sentence before the quote: Karin contrasts Nadia with staff who only act 'als ze echt uitvallen'.",
+		"why": "Many workers only talk about other work when they drop out; Nadia acted earlier, so 'in beweging komen' means taking action.",
+		"distractors": {
+			"A": {
+				"trap": "tegenovergesteld",
+				"why": "Nadia says 'Ik blijf in de kinderopvang', so she did not leave."
+			},
+			"B": {
+				"trap": "echo",
+				"why": "'beweging' is not about sport here; the sentence before is about talking about other work."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set1-6",
+		"qtype": "doel-tekst",
+		"evidence": [
+			{
+				"p": 1,
+				"quote": "Toch merkt ze dat haar lichaam ouder wordt."
+			},
+			{
+				"p": 8,
+				"quote": "Ik blijf in de kinderopvang, maar op een manier die beter bij mijn lichaam past."
+			}
+		],
+		"move": "Look at how the text is built: one person's problem, her retraining, and the result in her own words.",
+		"why": "The whole text follows Nadia as an example: heavy work, retraining as a work coach, and staying in childcare in a way that suits her body.",
+		"distractors": {
+			"A": {
+				"trap": "echo",
+				"why": "A 'loopbaangesprek' is only mentioned in the last sentence; the text never explains how to request one."
+			},
+			"C": {
+				"trap": "te-smal",
+				"why": "The complaints are only the starting point in the first paragraph; the text is about what she did about them."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set1-7",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 1,
+				"quote": "Ook voor mensen die een paar keer per week sporten, blijft lang achter elkaar zitten ongezond."
+			},
+			{
+				"p": 3,
+				"quote": "Sta bijvoorbeeld elk half uur even op."
+			}
+		],
+		"move": "Check Ilse's two details (she sports, she sits three hours in a row) against the first paragraph and 'Kleine onderbrekingen'.",
+		"why": "Sport does not cancel out long sitting, and the advice is to stand up every half hour during the day.",
+		"distractors": {
+			"B": {
+				"trap": "tegenovergesteld",
+				"why": "The text says long sitting stays unhealthy 'Ook voor mensen die een paar keer per week sporten'."
+			},
+			"C": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "The advice is to move during the day, 'niet pas na het werk', so more evening sport misses the point."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set1-8",
+		"qtype": "niet-vraag",
+		"evidence": [
+			{
+				"p": 5,
+				"quote": "Het voordeel van zulke kleine activiteiten is dat ze makkelijk in een drukke dag passen."
+			},
+			{
+				"p": 5,
+				"quote": "Juist daardoor houden veel mensen het beter vol dan een zwaar trainingsschema."
+			}
+		],
+		"move": "Go to 'Bewegen zonder sportkleding', find 'Het voordeel' and tick off each option. Read the comparison with the training plan carefully: what exactly does it compare?",
+		"why": "The text says fitting into a busy day and that people keep them up better than a heavy training plan; it never says you get fitter faster. Keeping it up is not the same as getting fit.",
+		"distractors": {
+			"A": {
+				"trap": "waar-niet-gevraagd",
+				"why": "This is stated: people keep them up 'beter ... dan een zwaar trainingsschema'."
+			},
+			"B": {
+				"trap": "waar-niet-gevraagd",
+				"why": "This is stated: they 'makkelijk in een drukke dag passen'."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set1-9",
+		"qtype": "betekenis-in-context",
+		"evidence": [
+			{
+				"p": 5,
+				"quote": "Veel mensen denken bij bewegen meteen aan hardlopen of fitness. Dat is niet nodig."
+			},
+			{
+				"p": 5,
+				"quote": "Traplopen, fietsen naar de winkel, wandelen tijdens een telefoongesprek of staand vergaderen zijn ook vormen van beweging"
+			}
+		],
+		"move": "Read the paragraph under the heading and look at the examples after 'Dat is niet nodig'.",
+		"why": "The examples are stairs, cycling to the shop and walking while phoning: movement in daily life, not sport that needs special clothes.",
+		"distractors": {
+			"A": {
+				"trap": "echo",
+				"why": "'Buitenlucht en daglicht' come from the part about concentration and mood."
+			},
+			"C": {
+				"trap": "echo",
+				"why": "'begin dan rustig' belongs to the part 'Niet overdrijven', not to this heading."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set1-10",
+		"qtype": "oorzaak-reden",
+		"evidence": [
+			{
+				"p": 13,
+				"quote": "De afstand tussen bureau, keuken en bank is klein. Daardoor merk je minder snel dat je al uren zit."
+			}
+		],
+		"move": "Go to 'Thuiswerken' and follow the signal 'Daardoor' back to its cause.",
+		"why": "The distances at home are small, and because of that you notice less quickly that you have been sitting for hours.",
+		"distractors": {
+			"A": {
+				"trap": "echo",
+				"why": "A 'melding op je telefoon' is named as a help, not as the problem."
+			},
+			"C": {
+				"trap": "niet-in-tekst",
+				"why": "A colleague who walks along is in 'Samen werkt beter', but the text does not give it as the reason for home workers."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set1-11",
+		"qtype": "functie-tekstdeel",
+		"evidence": [
+			{
+				"p": 11,
+				"quote": "Het belangrijkste is dat bewegen normaal wordt."
+			},
+			{
+				"p": 11,
+				"quote": "Kleine keuzes lijken misschien onbelangrijk, maar samen kunnen ze je dag gezonder maken."
+			}
+		],
+		"move": "Read the sentence just before the examples: 'Het belangrijkste is dat bewegen normaal wordt'.",
+		"why": "The examples show small changes in things you already do, so that moving becomes a normal part of the day.",
+		"distractors": {
+			"B": {
+				"trap": "echo",
+				"why": "Some companies make walking routes, but the examples are things you do yourself, and nothing says companies must."
+			},
+			"C": {
+				"trap": "tegenovergesteld",
+				"why": "The text says they 'lijken misschien onbelangrijk', but together they make your day healthier."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set1-12",
+		"qtype": "doel-tekst",
+		"evidence": [
+			{
+				"p": 3,
+				"quote": "Sta bijvoorbeeld elk half uur even op."
+			},
+			{
+				"p": 11,
+				"quote": "Het belangrijkste is dat bewegen normaal wordt."
+			}
+		],
+		"move": "Notice that almost every section gives tips in the imperative ('Sta', 'Loop', 'Kies', 'Zet').",
+		"why": "The text explains why long sitting is bad and then gives practical tips to break it up with small moments of movement.",
+		"distractors": {
+			"A": {
+				"trap": "tegenovergesteld",
+				"why": "The text says thinking of fitness is 'niet nodig' and warns against suddenly training hard."
+			},
+			"B": {
+				"trap": "te-smal",
+				"why": "Working from home is only one short section near the end."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set1-13",
+		"qtype": "functie-tekstdeel",
+		"evidence": [
+			{
+				"p": 1,
+				"quote": "Toch is receptiewerk meer dan glimlachen en een sleutel geven."
+			},
+			{
+				"p": 1,
+				"quote": "Je moet luisteren, informatie zoeken, problemen oplossen en rustig blijven"
+			}
+		],
+		"move": "Look for the turn signal 'Toch' and the list of skills after it.",
+		"why": "After 'Toch' the writer says the job is more than smiling and handing over a key and lists listening, searching, solving and staying calm.",
+		"distractors": {
+			"A": {
+				"trap": "echo",
+				"why": "The word 'druk' is there, but the text says to stay calm when it is busy, not to work fast."
+			},
+			"B": {
+				"trap": "tegenovergesteld",
+				"why": "The paragraph says the receptionist often decides how a guest's stay begins."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set1-14",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 5,
+				"quote": "Heeft iemand haast? Geef dan korte informatie."
+			},
+			{
+				"p": 5,
+				"quote": "Een gast die steeds op zijn horloge kijkt, wil waarschijnlijk snel verder."
+			}
+		],
+		"move": "Match the scenario detail (looking at his watch) to the body-language sentence in 'Het juiste moment'.",
+		"why": "A guest who keeps checking his watch probably wants to move on, and for a guest in a hurry the advice is short information.",
+		"distractors": {
+			"B": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "Slow, simple speech and a map are advised for guests who do not speak the language well."
+			},
+			"C": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "Longer advice is for a guest who is 'nieuwsgierig naar de stad', not for a guest in a hurry."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set1-15",
+		"qtype": "detail",
+		"evidence": [
+			{
+				"p": 7,
+				"quote": "Voor gasten die de taal niet goed spreken, is langzaam en eenvoudig praten extra belangrijk."
+			},
+			{
+				"p": 7,
+				"quote": "Gebruik eventueel een plattegrond of schrijf een adres op."
+			}
+		],
+		"move": "Go to 'Duidelijke informatie' and find the sentence that names 'gasten die de taal niet goed spreken'.",
+		"why": "The text advises speaking slowly and simply and, if needed, using a map or writing down an address.",
+		"distractors": {
+			"A": {
+				"trap": "echo",
+				"why": "Passing on to colleagues is from 'Samenwerken met collega’s' and is for technical, cleaning or money problems."
+			},
+			"C": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "Short information is the advice for guests in a hurry, not for guests who struggle with the language."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set1-16",
+		"qtype": "niet-vraag",
+		"evidence": [
+			{
+				"p": 9,
+				"quote": "Laat de gast eerst uitpraten."
+			},
+			{
+				"p": 9,
+				"quote": "Daarna zoekt u een oplossing"
+			}
+		],
+		"move": "Go to 'Omgaan met klachten' and follow the order of steps signalled by 'eerst' and 'Daarna'.",
+		"why": "The guest must be allowed to finish first and only then do you look for a solution, so interrupting with a solution is wrong.",
+		"distractors": {
+			"A": {
+				"trap": "waar-niet-gevraagd",
+				"why": "This is advised in the last sentence of 'Omgaan met klachten'."
+			},
+			"B": {
+				"trap": "waar-niet-gevraagd",
+				"why": "This is advised: 'Zeg dat u begrijpt dat de situatie vervelend is'."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set1-17",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 11,
+				"quote": "Als een gast boos blijft of om geld terug vraagt, schakel je een leidinggevende in."
+			}
+		],
+		"move": "Go to 'Samenwerken met collega’s' and check which case matches both details: still angry and wants money back.",
+		"why": "The heating is fixed, so the remaining problem is an angry guest asking for money back, and for that you call in a manager.",
+		"distractors": {
+			"B": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "The technical service is for technical problems, and the heating has already been repaired."
+			},
+			"C": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "Housekeeping is for questions about cleaning, which is not the problem here."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set1-18",
+		"qtype": "doel-tekst",
+		"evidence": [
+			{
+				"p": 19,
+				"quote": "Goed receptiewerk draait dus om balans."
+			},
+			{
+				"p": 19,
+				"quote": "Wie deze vaardigheden oefent, kan gasten professioneel helpen"
+			}
+		],
+		"move": "Use the source line (a study book for hotel training) and the closing section 'Tot slot'.",
+		"why": "Each section treats one skill (listening, timing, clear information, complaints, teamwork) and the ending sums them up as skills to practise.",
+		"distractors": {
+			"A": {
+				"trap": "te-smal",
+				"why": "Administration is only one short section."
+			},
+			"C": {
+				"trap": "overdreven",
+				"why": "The text says the difference between hotels is often in service, not that service matters more than the room."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set1-19",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 3,
+				"quote": "Uw leidinggevende moet het verzoek goedkeuren voordat de ruil geldig is."
+			},
+			{
+				"p": 3,
+				"quote": "Een mondelinge afspraak met een collega is niet genoeg."
+			}
+		],
+		"move": "Check every detail of the case against 'Toestemming': same job, 48 hours, and approval.",
+		"why": "They meet the conditions of time and job, but without a request there is no approval, and a swap is only valid after approval.",
+		"distractors": {
+			"A": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "The 48 hours are for a request in the system; a spoken agreement is 'niet genoeg'."
+			},
+			"B": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "Having the same kind of job is one condition, but it does not replace the manager's approval."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set1-20",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 5,
+				"quote": "Tussen twee diensten moet minimaal 11 uur rust zitten."
+			}
+		],
+		"move": "Count the hours between 23.00 and 7.00 and compare them with the minimum in 'Rusttijd'.",
+		"why": "From 23.00 to 7.00 is only 8 hours, and there must be at least 11 hours of rest between two shifts.",
+		"distractors": {
+			"A": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "The rule about three late shifts is for an extra late shift; here the problem is the rest time."
+			},
+			"B": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "The 9-hour limit is a different rule; it does not fix the short rest between the shifts."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set1-21",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 7,
+				"quote": "Als uw collega ziek wordt na een goedgekeurde ruil, blijft de ruil geldig."
+			},
+			{
+				"p": 7,
+				"quote": "De zieke collega meldt zich ziek voor de dienst die hij of zij van u heeft gekregen."
+			}
+		],
+		"move": "Note the word 'goedgekeurde' in the case and go to 'Ziekte'.",
+		"why": "An approved swap stays valid, so Sanne works Bas's Tuesday, and Bas reports sick for the Thursday shift he took over.",
+		"distractors": {
+			"B": {
+				"trap": "niet-in-tekst",
+				"why": "The text says the sick colleague reports sick for his new shift; it never says Sanne must cover it."
+			},
+			"C": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "Going back to the original shifts is the rule for a swap that is not yet approved."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set1-22",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 9,
+				"quote": "Jongeren onder de 18 jaar mogen alleen ruilen met toestemming van hun ouder of verzorger."
+			}
+		],
+		"move": "Notice Lisa's age and look for the rule about 'Jongeren onder de 18 jaar'.",
+		"why": "Because Lisa is 17, the swap needs permission from a parent or carer as well as the manager.",
+		"distractors": {
+			"A": {
+				"trap": "overdreven",
+				"why": "Young people may swap, but 'alleen met toestemming' of a parent or carer."
+			},
+			"C": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "The manager's approval is enough for adults; for someone under 18 there is an extra condition."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set1-23",
+		"qtype": "doel-tekst",
+		"evidence": [
+			{
+				"p": 1,
+				"quote": "Dit mag alleen als de werkzaamheden en de functie vergelijkbaar zijn."
+			},
+			{
+				"p": 3,
+				"quote": "U moet een ruilverzoek minimaal 48 uur van tevoren indienen"
+			}
+		],
+		"move": "Use the source line (terms of employment) and the headings: each section adds a rule or condition.",
+		"why": "The text is a set of rules: when a swap is allowed, how to get approval, rest time, illness, refusal and weekend shifts.",
+		"distractors": {
+			"B": {
+				"trap": "echo",
+				"why": "The system is only named as the place to submit a request; the text does not explain how it works."
+			},
+			"C": {
+				"trap": "te-smal",
+				"why": "Rest time is only one of the sections."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set1-24",
+		"qtype": "doel-onderdeel",
+		"evidence": [
+			{
+				"p": 1,
+				"quote": "De stille uren zijn bedoeld voor bezoekers die snel overprikkeld raken, bijvoorbeeld door drukte, harde stemmen of fel licht."
+			}
+		],
+		"move": "Find the sentence with 'bedoeld voor' in the first paragraph and read the examples after 'bijvoorbeeld'.",
+		"why": "The hours are meant for visitors who are quickly overstimulated by crowds, loud voices or bright light.",
+		"distractors": {
+			"B": {
+				"trap": "te-smal",
+				"why": "The idea came from a boy with autism, but the hours are meant for everyone who is easily overstimulated."
+			},
+			"C": {
+				"trap": "tegenovergesteld",
+				"why": "During the quiet hours 'worden er geen groepsactiviteiten gepland'."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set1-25",
+		"qtype": "oorzaak-reden",
+		"evidence": [
+			{
+				"p": 3,
+				"quote": "kreeg het idee na een gesprek met een moeder van een kind met autisme"
+			},
+			{
+				"p": 3,
+				"quote": "Zij vertelde dat haar zoon graag boeken wilde lenen, maar de bibliotheek vaak te druk vond."
+			}
+		],
+		"move": "Go to 'Hoe het begon' and read the first two sentences.",
+		"why": "Sander got the idea after a mother told him her son wanted to borrow books but found the library too busy.",
+		"distractors": {
+			"A": {
+				"trap": "echo",
+				"why": "The researcher only follows the trial after it started."
+			},
+			"B": {
+				"trap": "verkeerde-persoon",
+				"why": "The municipality only comes in later, when it wants the quiet hours to stay."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set1-26",
+		"qtype": "mening-persoon",
+		"evidence": [
+			{
+				"p": 5,
+				"quote": "Volgens hem voelen bezoekers zich welkomer als vooraf duidelijk is wat ze kunnen verwachten."
+			}
+		],
+		"move": "Look for the signal 'Volgens hem' right after Sander's quote in 'Positieve reacties'.",
+		"why": "Sander says visitors feel more welcome when it is clear beforehand what they can expect.",
+		"distractors": {
+			"A": {
+				"trap": "echo",
+				"why": "More days are mentioned at the end, but the library decides after six months; Sander does not say this."
+			},
+			"C": {
+				"trap": "verkeerde-persoon",
+				"why": "This is what some visitors who dislike the new rules think, not Sander."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set1-27",
+		"qtype": "oorzaak-reden",
+		"evidence": [
+			{
+				"p": 10,
+				"quote": "Zonder uitleg kunnen mensen denken dat de bibliotheek ineens streng is geworden. Goede communicatie blijft daarom belangrijk."
+			}
+		],
+		"move": "Find 'daarom' in the last paragraph and read the sentence before it.",
+		"why": "Without explanation people may think the library has suddenly become strict, and 'daarom' links that to good communication.",
+		"distractors": {
+			"A": {
+				"trap": "echo",
+				"why": "Coming back is what the researcher is measuring; the text does not link it to a lack of explanation."
+			},
+			"B": {
+				"trap": "echo",
+				"why": "Staff reminding visitors is from 'Niet iedereen is tevreden' and is not given as the reason for explanation."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set1-28",
+		"qtype": "doel-tekst",
+		"evidence": [
+			{
+				"p": 1,
+				"quote": "Steeds meer bibliotheken organiseren stille uren."
+			},
+			{
+				"p": 10,
+				"quote": "Voorlopig blijft de proef nog zes maanden lopen."
+			}
+		],
+		"move": "Use the source line (a news site) and follow the story from start to 'Voorlopig'.",
+		"why": "A news text reports how the trial started, the reactions and what happens next, which is informing, not persuading.",
+		"distractors": {
+			"A": {
+				"trap": "niet-in-tekst",
+				"why": "It is a news report; it never invites or urges the reader to visit."
+			},
+			"C": {
+				"trap": "te-smal",
+				"why": "Criticism is only one section, 'Niet iedereen is tevreden'."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set1-29",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 6,
+				"quote": "Verandert je woonadres of contactpersoon? Dan geef je dit schriftelijk door aan de Studentenadministratie."
+			},
+			{
+				"p": 6,
+				"quote": "Daar kun je een wijzigingsformulier ophalen."
+			}
+		],
+		"move": "Go to 'Bereikbaarheid' and check which kind of change (phone or address) Youssef has.",
+		"why": "An address change must be passed on in writing to the Studentenadministratie, where you pick up a change form.",
+		"distractors": {
+			"B": {
+				"trap": "echo",
+				"why": "The Onderwijsservicebureau is for absence and timetables, not for personal details."
+			},
+			"C": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "Selfservice is only for a new phone number or e-mail address, not for a new home address."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set1-30",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 35,
+				"quote": "Er wordt niets gedaan zonder jouw toestemming, behalve wanneer er direct gevaar is voor jou of iemand anders."
+			}
+		],
+		"move": "Go to 'Vertrouwenspersoon' and check the exception ('behalve wanneer') against the case: there is no direct danger.",
+		"why": "Nothing is done without the student's permission unless there is direct danger, and the case says there is none.",
+		"distractors": {
+			"A": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "Contact with a parent or carer is named for regular absence, not for talking to the vertrouwenspersoon."
+			},
+			"C": {
+				"trap": "echo",
+				"why": "The locatiemanager is only named in the section about misuse of the pass."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set1-31",
+		"qtype": "vergelijking",
+		"evidence": [
+			{
+				"p": 23,
+				"quote": "Deelname is dan verplicht en er zijn geen extra kosten."
+			},
+			{
+				"p": 23,
+				"quote": "Voor deze activiteiten betaal je apart via de webshop van Horizon College."
+			}
+		],
+		"move": "Go to 'Uitjes en excursies' and compare the sentence about the lesson programme with the one that starts 'Er kunnen ook activiteiten'.",
+		"why": "Excursions in the lesson programme are compulsory and cost nothing extra; other activities are paid separately through the webshop.",
+		"distractors": {
+			"A": {
+				"trap": "tegenovergesteld",
+				"why": "This swaps the two: the compulsory excursion has 'geen extra kosten'."
+			},
+			"B": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "Paying via the webshop applies only to activities outside the compulsory programme, not to the excursion."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set1-32",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 13,
+				"quote": "Stuur dan binnen 14 dagen na de factuurdatum een brief of e-mail naar de Financiële administratie, Team debiteuren."
+			},
+			{
+				"p": 13,
+				"quote": "Als je niet op tijd reageert, blijft de factuur geldig."
+			}
+		],
+		"move": "Count the days between the invoice date and Daan's e-mail and compare with the limit in 'De factuur klopt niet'.",
+		"why": "From 2 to 24 September is more than 14 days, so the invoice stays valid and Daan is responsible for paying it.",
+		"distractors": {
+			"B": {
+				"trap": "echo",
+				"why": "An incassobureau comes in only if you do not pay, not because you reacted late."
+			},
+			"C": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "E-mail is allowed, but only within 14 days; Daan waited 22 days."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set1-33",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 15,
+				"quote": "De werkgever en de student moeten allebei ondertekenen."
+			},
+			{
+				"p": 15,
+				"quote": "Is de machtiging niet compleet of niet ondertekend, dan blijf je zelf verantwoordelijk voor de betaling."
+			}
+		],
+		"move": "Check who signed in the case against 'De werkgever en de student moeten allebei ondertekenen'.",
+		"why": "Nabil did not sign, so the form is incomplete and he stays responsible for paying himself.",
+		"distractors": {
+			"A": {
+				"trap": "echo",
+				"why": "The text says the form must be filled in again every school year, not that it starts later."
+			},
+			"C": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "That only happens after Team debiteuren receives a form signed by both."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set1-34",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 19,
+				"quote": "Studenten van de sector Techniek gaan voor deze vragen eerst naar hun mentor."
+			}
+		],
+		"move": "Notice Jeroen's sector and find the sentence about 'Techniek' in 'Decaan en mentor'.",
+		"why": "Questions about job chances are 'deze vragen', and Techniek students go to their mentor first.",
+		"distractors": {
+			"B": {
+				"trap": "echo",
+				"why": "Students can be referred to the Studie Informatie Punt later, but it is not the first stop."
+			},
+			"C": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "The decaan is the first stop for Economie, Zorg, Welzijn and Dienstverlening, not for Techniek."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set1-35",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 33,
+				"quote": "Problemen met printen meld je niet bij je docent, maar bij de ICT-balie of bij de receptie als er geen ICT-balie op jouw locatie is."
+			}
+		],
+		"move": "Go to 'Printen en kopiëren' and check the condition 'als er geen ICT-balie op jouw locatie is'.",
+		"why": "Printing problems go to the ICT desk, or to reception when there is no ICT desk, which is Noor's situation.",
+		"distractors": {
+			"A": {
+				"trap": "tegenovergesteld",
+				"why": "The text says printing problems are reported 'niet bij je docent'."
+			},
+			"B": {
+				"trap": "echo",
+				"why": "The Passenbureau is for passes that do not work at the gates, not for printer problems."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set2-1",
+		"qtype": "conclusie",
+		"evidence": [
+			{
+				"p": 5,
+				"quote": "Daardoor werd het patroon duidelijk: vooral een late dienst vlak voor een vroege dienst gaf problemen."
+			}
+		],
+		"move": "Find the paragraph about the coach's four-week diary and read what came after 'Daardoor werd het patroon duidelijk'.",
+		"why": "The diary showed that mainly a late shift right before an early shift caused problems, which the key restates as a morning shift directly after an evening shift.",
+		"distractors": {
+			"A": {
+				"trap": "echo",
+				"why": "Weekend work is mentioned in the first paragraph as part of her schedule, but the diary pointed to another pattern."
+			},
+			"B": {
+				"trap": "echo",
+				"why": "This is what she thought at first ('Eerst dacht ze'); the holiday and the diary showed the shifts were the cause."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set2-2",
+		"qtype": "mening-persoon",
+		"evidence": [
+			{
+				"p": 7,
+				"quote": "Bas wilde wel zoeken naar een oplossing, maar het rooster moest eerlijk blijven voor het hele team."
+			}
+		],
+		"move": "Go to the paragraph where Meryem visits Bas and separate what she feared from what he actually wanted ('Bas wilde wel ... maar').",
+		"why": "Bas was willing to look for a solution, on the condition that the roster stayed fair for the whole team.",
+		"distractors": {
+			"B": {
+				"trap": "verkeerde-persoon",
+				"why": "This explanation comes from the coach ('Hij legde uit'), not from Bas."
+			},
+			"C": {
+				"trap": "echo",
+				"why": "This is what Meryem was afraid he would say ('Ze was bang dat hij zou zeggen'), not what Bas actually said."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set2-3",
+		"qtype": "betekenis-in-context",
+		"evidence": [
+			{
+				"p": 10,
+				"quote": "Na drie maanden sliep Meryem beter en had ze minder vaak hoofdpijn."
+			},
+			{
+				"p": 10,
+				"quote": "Niet alle klachten waren verdwenen."
+			},
+			{
+				"p": 10,
+				"quote": "'maar mijn lichaam weet nu beter waar het aan toe is.'"
+			}
+		],
+		"move": "Read the whole paragraph around the quote: what got better, and what did not?",
+		"why": "A 'wondermiddel' solves everything at once; she means the roster clearly helps (better sleep, fewer headaches) but not all complaints are gone.",
+		"distractors": {
+			"A": {
+				"trap": "tegenovergesteld",
+				"why": "The same paragraph says she slept better and had headaches less often, so the roster did help."
+			},
+			"C": {
+				"trap": "echo",
+				"why": "Going to bed on time is mentioned as something she still has to do, not as a condition for the roster to work."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set2-4",
+		"qtype": "oorzaak-reden",
+		"evidence": [
+			{
+				"p": 13,
+				"quote": "Bas legde daarom uit dat zij hetzelfde aantal uren bleef werken"
+			},
+			{
+				"p": 13,
+				"quote": "Meryem vertelde ook zelf waarom de verandering nodig was. Daarna verdween de meeste spanning."
+			}
+		],
+		"move": "Go to the section 'Eerst wat onbegrip' and look at what happened just before 'Daarna verdween de meeste spanning'.",
+		"why": "Bas explained the arrangement and Meryem explained why she needed it; after that most of the tension disappeared.",
+		"distractors": {
+			"A": {
+				"trap": "tegenovergesteld",
+				"why": "Bas explained that she had taken on extra responsibility, not fewer tasks."
+			},
+			"C": {
+				"trap": "echo",
+				"why": "The text only says other colleagues could ask for a talk ('konden een gesprek aanvragen'), not that they got fixed shifts."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set2-5",
+		"qtype": "mening-persoon",
+		"evidence": [
+			{
+				"p": 15,
+				"quote": "Meryem raadt anderen aan om niet te wachten totdat zij helemaal uitvallen."
+			},
+			{
+				"p": 15,
+				"quote": "'Neem voorbeelden mee en denk alvast na over mogelijke oplossingen.'"
+			}
+		],
+		"move": "Go to the last section 'Praat voordat het misgaat' and read only the sentences that are Meryem's own advice.",
+		"why": "She advises not waiting until you break down and coming prepared with examples and possible solutions.",
+		"distractors": {
+			"A": {
+				"trap": "echo",
+				"why": "It borrows 'uitvallen' from her advice and 'minder uren' from earlier, but Meryem herself did not want fewer hours and does not advise it."
+			},
+			"B": {
+				"trap": "tegenovergesteld",
+				"why": "She says the opposite: 'Ga niet alleen zeggen wat niet meer lukt'."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set2-6",
+		"qtype": "doel-tekst",
+		"evidence": [
+			{
+				"p": 0,
+				"quote": "Meryem werkt voortaan vooral overdag"
+			},
+			{
+				"p": 10,
+				"quote": "Na drie maanden sliep Meryem beter en had ze minder vaak hoofdpijn."
+			},
+			{
+				"p": 15,
+				"quote": "Een werkgever kan niet ieder verzoek accepteren, maar een open gesprek kan wel mogelijkheden zichtbaar maken"
+			}
+		],
+		"move": "Look at the title, the results section and the closing paragraph together: one person's case used to make a general point.",
+		"why": "The text tells one worker's story (problem, arrangement, results) to show that adjusted working hours can help people keep working healthily.",
+		"distractors": {
+			"B": {
+				"trap": "overdreven",
+				"why": "The text even says an employer cannot accept every request; it does not argue for fixed shifts for everyone."
+			},
+			"C": {
+				"trap": "te-smal",
+				"why": "The coach appears in one section only; the text follows Meryem's whole story."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set2-7",
+		"qtype": "oorzaak-reden",
+		"evidence": [
+			{
+				"p": 1,
+				"quote": "uw aandacht moet telkens van richting veranderen"
+			},
+			{
+				"p": 1,
+				"quote": "Zelfs wanneer u het bericht niet opent, heeft uw brein het geluid of het lichtje al opgemerkt"
+			}
+		],
+		"move": "Stay in the first paragraph and find the sentence that starts with 'Zelfs wanneer'.",
+		"why": "Your brain has already noticed the sound or light, so your attention has to switch direction even if you never open the message.",
+		"distractors": {
+			"A": {
+				"trap": "tegenovergesteld",
+				"why": "The text says a notification only lasts a moment ('duurt maar kort')."
+			},
+			"B": {
+				"trap": "echo",
+				"why": "The 'productief' idea comes from the next paragraph and is about reacting, not about unopened messages."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set2-8",
+		"qtype": "functie-tekstdeel",
+		"evidence": [
+			{
+				"p": 2,
+				"quote": "Toch voelt direct reageren soms juist productief. U ziet immers dat er iets gebeurt."
+			}
+		],
+		"move": "Notice the signal word 'Toch' and the reason word 'immers': the writer explains a feeling, then contrasts it with the facts.",
+		"why": "The writer admits why reacting at once is tempting (you see that something is happening) before advising to treat notifications differently.",
+		"distractors": {
+			"A": {
+				"trap": "tegenovergesteld",
+				"why": "The sentence starts with 'Toch': it feels productive, but the paragraph has just said interruptions cost time and cause mistakes."
+			},
+			"C": {
+				"trap": "waar-niet-gevraagd",
+				"why": "That is true (previous sentence), but it is not what the 'productief' remark is for."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set2-9",
+		"qtype": "niet-vraag",
+		"evidence": [
+			{
+				"p": 8,
+				"quote": "Laat collega's weten wanneer u berichten leest."
+			},
+			{
+				"p": 8,
+				"quote": "Zet tijdens een taak die aandacht vraagt de functie 'niet storen' aan"
+			},
+			{
+				"p": 10,
+				"quote": "kan hem aan de andere kant van de kamer leggen"
+			}
+		],
+		"move": "Check each option against the section 'Kies vaste kijkmomenten'; the phone-across-the-room tip belongs to 'Na werktijd'.",
+		"why": "Moving the phone away is only advised for the night (across the bedroom, as an alarm clock); for working hours the text does not advise putting it in another room.",
+		"distractors": {
+			"B": {
+				"trap": "waar-niet-gevraagd",
+				"why": "This is advised: the 'niet storen' function during a task that needs attention."
+			},
+			"C": {
+				"trap": "waar-niet-gevraagd",
+				"why": "This is advised: 'Laat collega's weten wanneer u berichten leest'."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set2-10",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 10,
+				"quote": "Zet ze daarom uit wanneer uw werkdag voorbij is, behalve als u officieel bereikbaarheidsdienst heeft."
+			}
+		],
+		"move": "Find the rule about work notifications in the evening and read it to the end: 'behalve als' introduces the exception.",
+		"why": "Linda has official on-call duty, which is exactly the exception to the advice to switch work notifications off after work.",
+		"distractors": {
+			"B": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "That is the general rule, but the same sentence makes an exception for official on-call duty."
+			},
+			"C": {
+				"trap": "echo",
+				"why": "The alarm-clock remark is about where to put the phone at night, not about when work notifications may stay on."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set2-11",
+		"qtype": "betekenis-in-context",
+		"evidence": [
+			{
+				"p": 13,
+				"quote": "Kies één app waarvan u de meldingen een week uitzet. Kijk daarna wat er veranderde."
+			}
+		],
+		"move": "Read the paragraph under the heading: the heading is explained by the concrete step that follows.",
+		"why": "The writer means: switch off notifications for just one app for a week, then check the effect and adjust.",
+		"distractors": {
+			"A": {
+				"trap": "echo",
+				"why": "'Iedere dertig minuten' comes from the section on fixed check moments for jobs that need fast replies."
+			},
+			"B": {
+				"trap": "tegenovergesteld",
+				"why": "The section says the opposite: you do not have to remove all apps or be unreachable at once."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set2-12",
+		"qtype": "doel-tekst",
+		"evidence": [
+			{
+				"p": 8,
+				"quote": "Zet tijdens een taak die aandacht vraagt de functie 'niet storen' aan"
+			},
+			{
+				"p": 14,
+				"quote": "Het doel is niet dat niemand u meer kan bereiken. Het doel is dat u zelf bepaalt wanneer iets uw aandacht krijgt."
+			}
+		],
+		"move": "Look at the imperative tips in every section and at the closing paragraph, which states the goal outright.",
+		"why": "The text gives practical tips so readers decide themselves when notifications get their attention, which means less disruption.",
+		"distractors": {
+			"A": {
+				"trap": "te-smal",
+				"why": "Sleep is one short section ('Na werktijd'), not the purpose of the whole text."
+			},
+			"C": {
+				"trap": "tegenovergesteld",
+				"why": "The last paragraph says the goal is not that nobody can reach you."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set2-13",
+		"qtype": "functie-tekstdeel",
+		"evidence": [
+			{
+				"p": 1,
+				"quote": "Dat is nog geen duidelijke diagnose."
+			},
+			{
+				"p": 1,
+				"quote": "Het geluid kan uit de ketting, het stuur, een pedaal of zelfs uit de bagagedrager komen."
+			}
+		],
+		"move": "Read the two sentences right after the example: the writer says what the example proves.",
+		"why": "The example is followed by 'Dat is nog geen duidelijke diagnose' and a list of possible sources, so it shows a complaint alone does not tell you the cause.",
+		"distractors": {
+			"A": {
+				"trap": "tegenovergesteld",
+				"why": "The text says a customer does not need to know the technical name of a part."
+			},
+			"C": {
+				"trap": "overdreven",
+				"why": "The chain is only one of several possible sources the text lists."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set2-14",
+		"qtype": "oorzaak-reden",
+		"evidence": [
+			{
+				"p": 4,
+				"quote": "Zo kan de klant u verbeteren als u iets verkeerd hebt verstaan."
+			}
+		],
+		"move": "Find 'Herhaal daarna in uw eigen woorden' and read the sentence starting with 'Zo', which gives the reason.",
+		"why": "Repeating in your own words lets the customer correct you if you misunderstood something.",
+		"distractors": {
+			"B": {
+				"trap": "tegenovergesteld",
+				"why": "The same paragraph says the customer does not need to know technical names."
+			},
+			"C": {
+				"trap": "echo",
+				"why": "The opening paragraph says a good technician does not start by replacing parts; repeating is about checking understanding."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set2-15",
+		"qtype": "oorzaak-reden",
+		"evidence": [
+			{
+				"p": 6,
+				"quote": "Zo raken kleine boutjes niet kwijt en worden onderdelen van verschillende fietsen niet door elkaar gehaald."
+			}
+		],
+		"move": "In the section 'De fiets herkenbaar houden', find the sentence starting with 'Zo' right after the tray is mentioned.",
+		"why": "The tray keeps small bolts from getting lost and stops parts of different bikes from being mixed up.",
+		"distractors": {
+			"A": {
+				"trap": "niet-in-tekst",
+				"why": "Sounds sensible, but the text never mentions showing the parts to the customer."
+			},
+			"B": {
+				"trap": "echo",
+				"why": "That is the job of the work number and name attached to the bike itself, earlier in the same paragraph."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set2-16",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 9,
+				"quote": "vraagt u eerst toestemming als de reparatie meer dan tien procent duurder dreigt te worden dan afgesproken"
+			},
+			{
+				"p": 9,
+				"quote": "Krijgt u de klant niet te pakken, voer dan alleen het afgesproken werk uit."
+			}
+		],
+		"move": "Work out the price rise as a percentage, then read the ten-percent rule and the sentence about not reaching the customer.",
+		"why": "The rise is about 17 percent, more than ten, so permission is needed; since the customer cannot be reached, only the agreed work may be done.",
+		"distractors": {
+			"A": {
+				"trap": "echo",
+				"why": "Cheaper alternatives come from the section on choosing parts, and that choice has to be discussed with the customer."
+			},
+			"B": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "10 euro on 60 euro is about 17 percent, so the ten-percent limit is passed and permission is needed."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set2-17",
+		"qtype": "detail",
+		"evidence": [
+			{
+				"p": 11,
+				"quote": "Leg het verschil uit tussen een origineel onderdeel en een goedkoper passend alternatief."
+			},
+			{
+				"p": 11,
+				"quote": "de keuze moet passen bij het gebruik van de fiets en bij de wens van de klant"
+			}
+		],
+		"move": "Go to 'Het juiste onderdeel kiezen' and follow the instructions in order: explain, discuss, do not choose automatically.",
+		"why": "The technician must explain the difference (price, lifespan, warranty) and the choice must fit the bike's use and the customer's wish.",
+		"distractors": {
+			"B": {
+				"trap": "tegenovergesteld",
+				"why": "The text says not to choose the most expensive option automatically."
+			},
+			"C": {
+				"trap": "echo",
+				"why": "It picks up 'goedkoper passend alternatief', but the text wants the choice discussed, not made alone on price."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set2-18",
+		"qtype": "hoofdgedachte",
+		"evidence": [
+			{
+				"p": 0,
+				"quote": "Goed repareren begint met goed onderzoeken"
+			},
+			{
+				"p": 1,
+				"quote": "begint daarom niet meteen met onderdelen vervangen, maar met vragen stellen en controleren"
+			}
+		],
+		"move": "Combine the title with the last sentence of the first paragraph; the later sections work this idea out.",
+		"why": "The title and opening say good repair starts with investigating (asking and checking) instead of replacing parts straight away.",
+		"distractors": {
+			"A": {
+				"trap": "te-smal",
+				"why": "Tightening bolts is a detail from the last section only."
+			},
+			"C": {
+				"trap": "te-smal",
+				"why": "The price agreement is one paragraph, not the main idea of the text."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set2-19",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 1,
+				"quote": "Maandag is de vaste teamdag op kantoor. Alleen in een bijzondere situatie kan de leidinggevende toestemming geven om die dag thuis te werken."
+			}
+		],
+		"move": "Check the first paragraph for a rule about Monday, then ask whether Sara's reason is a special situation.",
+		"why": "Monday is the fixed office day and only a special situation allows an exception; working more quietly at home is an ordinary preference.",
+		"distractors": {
+			"B": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "Being reachable is a rule for a home day that is already allowed; it does not make Monday possible."
+			},
+			"C": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "The seven-day rule is for requesting a fixed home day on other days, not for Monday."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set2-20",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 3,
+				"quote": "Bel dan vóór 08.30 uur met uw leidinggevende en registreer de dag daarna alsnog in MijnNova."
+			}
+		],
+		"move": "Find the rule for an unexpected home day ('onverwachte situatie') and compare Tim's time with the deadline.",
+		"why": "At 07.45 Tim is before the 08.30 deadline, so he calls his manager and registers the day in MijnNova afterwards.",
+		"distractors": {
+			"A": {
+				"trap": "echo",
+				"why": "Registering in MijnNova is only the second step; for an unexpected day he must call first."
+			},
+			"C": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "The deadline is 08.30, and Tim hears the news at 07.45, so he is still on time."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set2-21",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 7,
+				"quote": "Voor diezelfde dag krijgt u geen woon-werkvergoeding. Zakelijke reizen vanaf huis kunnen wel apart worden gedeclareerd."
+			}
+		],
+		"move": "Go to 'Vergoedingen' and check each part of Lisa's day: the home day itself, commuting, and the trip to the client.",
+		"why": "Her registered home day gives the home-working allowance, not the commuting allowance, and her trip to the client can be claimed separately.",
+		"distractors": {
+			"A": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "For a registered home day there is no commuting allowance."
+			},
+			"B": {
+				"trap": "tegenovergesteld",
+				"why": "The text says business trips from home can be claimed separately."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set2-22",
+		"qtype": "niet-vraag",
+		"evidence": [
+			{
+				"p": 9,
+				"quote": "U gebruikt de werklaptop en een beveiligde verbinding."
+			},
+			{
+				"p": 9,
+				"quote": "Een monitor en bureaustoel kunnen na een werkplekcheck in bruikleen worden gegeven. Meld schade direct."
+			},
+			{
+				"p": 9,
+				"quote": "U komt naar kantoor of spreekt samen ander werk af."
+			}
+		],
+		"move": "Check each option against the section 'Middelen en storingen'; the one with no matching sentence is the answer.",
+		"why": "The rules say you use the work laptop, and in a long outage you come to the office or agree on other work; using your own computer is not mentioned.",
+		"distractors": {
+			"A": {
+				"trap": "waar-niet-gevraagd",
+				"why": "This is stated: 'Meld schade direct'."
+			},
+			"B": {
+				"trap": "waar-niet-gevraagd",
+				"why": "This is stated: a chair can be lent after a 'werkplekcheck'."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set2-23",
+		"qtype": "doel-tekst",
+		"evidence": [
+			{
+				"p": 1,
+				"quote": "mogen maximaal twee dagen per week thuiswerken"
+			},
+			{
+				"p": 3,
+				"quote": "Een vaste thuiswerkdag vraagt u minimaal zeven kalenderdagen vooraf aan via MijnNova."
+			},
+			{
+				"p": 5,
+				"quote": "Op een thuiswerkdag bent u tussen 09.00 en 17.00 uur bereikbaar"
+			}
+		],
+		"move": "Look at the source (a staff handbook) and the headings: each section states a rule.",
+		"why": "Every section lays down a condition or procedure for working from home, so the text explains the rules.",
+		"distractors": {
+			"A": {
+				"trap": "overdreven",
+				"why": "The text sets a maximum of two home days a week and a fixed office day."
+			},
+			"C": {
+				"trap": "te-smal",
+				"why": "Travel costs are one part of the section 'Vergoedingen' only."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set2-24",
+		"qtype": "oorzaak-reden",
+		"evidence": [
+			{
+				"p": 1,
+				"quote": "kwamen op het idee toen zij zagen hoeveel spullen mensen voor één klus kochten en daarna jarenlang in een kast of berging lieten staan"
+			}
+		],
+		"move": "Find 'kwamen op het idee toen' in the first paragraph and read what they saw.",
+		"why": "They saw people buying things for one job and then leaving them in a cupboard for years.",
+		"distractors": {
+			"B": {
+				"trap": "echo",
+				"why": "The repair evening is an extra activity mentioned later, not how the idea started."
+			},
+			"C": {
+				"trap": "niet-in-tekst",
+				"why": "Sounds plausible for a local project, but the text says nothing like this."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set2-25",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 4,
+				"quote": "Wie voor het eerst elektrisch gereedschap leent, volgt vooraf een veiligheidsuitleg van twintig minuten."
+			}
+		],
+		"move": "Find the rule for borrowing and decide whether a ladder and a drill fall under 'elektrisch gereedschap'.",
+		"why": "This is Fatima's first electric tool, so she must first follow the twenty-minute safety explanation, whatever she borrowed before.",
+		"distractors": {
+			"B": {
+				"trap": "echo",
+				"why": "The repair evening is a social activity, not a condition for borrowing."
+			},
+			"C": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "The rule is about borrowing electric tools for the first time; a ladder is not an electric tool."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set2-26",
+		"qtype": "conclusie",
+		"evidence": [
+			{
+				"p": 7,
+				"quote": "In de eerste inschrijfweek vroegen bewoners echter het vaakst naar een gewone ladder en een behangtafel."
+			},
+			{
+				"p": 7,
+				"quote": "'Blijkbaar zijn juist grote, eenvoudige spullen lastig om thuis te bewaren,'"
+			}
+		],
+		"move": "In 'Meer dan dure machines', separate Pieter's expectation from what happened after 'echter'.",
+		"why": "Residents asked most for a ladder and a wallpaper table, which Pieter explains as large, simple items that are hard to store at home.",
+		"distractors": {
+			"A": {
+				"trap": "tegenovergesteld",
+				"why": "That was Pieter's expectation; 'echter' shows the result was different."
+			},
+			"B": {
+				"trap": "overdreven",
+				"why": "The text says a ladder and table were asked for most often, not that nobody wanted machines."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set2-27",
+		"qtype": "mening-persoon",
+		"evidence": [
+			{
+				"p": 10,
+				"quote": "Een winkelier uit de buurt vreest niet voor minder verkoop."
+			},
+			{
+				"p": 10,
+				"quote": "'Voor schroeven, verf en andere verbruiksmaterialen blijven mensen toch naar de winkel komen,'"
+			}
+		],
+		"move": "Find the paragraph about the shopkeeper and do not mix his words up with Noura's in the paragraph before.",
+		"why": "He does not fear fewer sales because people will still come to his shop for screws, paint and other supplies.",
+		"distractors": {
+			"A": {
+				"trap": "tegenovergesteld",
+				"why": "The text says he does not fear lower sales."
+			},
+			"C": {
+				"trap": "verkeerde-persoon",
+				"why": "This is Noura's observation about conversations while borrowing, not the shopkeeper's view."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set2-28",
+		"qtype": "doel-tekst",
+		"evidence": [
+			{
+				"p": 1,
+				"quote": "In de wijk De Haven is zaterdag een gereedschapsbibliotheek geopend."
+			},
+			{
+				"p": 4,
+				"quote": "Een lidmaatschap kost 18 euro per jaar. De meeste spullen mogen één week mee."
+			}
+		],
+		"move": "Use the source (a local news site) and the first sentence, then check how the rest explains how the library works.",
+		"why": "It is a news report about a new tool library in the area and how it works (cost, rules, funding, plans).",
+		"distractors": {
+			"B": {
+				"trap": "te-smal",
+				"why": "The repair evening is one detail in one section."
+			},
+			"C": {
+				"trap": "overdreven",
+				"why": "The text reports on the library; it does not tell readers to stop buying tools."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set2-29",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 4,
+				"quote": "Annuleer dan uiterlijk drie uur vóór de start."
+			},
+			{
+				"p": 4,
+				"quote": "Wie binnen dertig dagen twee keer te laat annuleert of niet verschijnt, kan zeven dagen geen nieuwe groepslessen boeken."
+			}
+		],
+		"move": "Check both of Noor's events against the rule: is 17.00 on time for a 19.00 class, and how many times in thirty days?",
+		"why": "17.00 is only two hours before the class, so this is a late cancellation; with the late cancellation two weeks ago that makes two in thirty days, so she cannot book classes for seven days.",
+		"distractors": {
+			"A": {
+				"trap": "echo",
+				"why": "Credit is returned within 24 hours only when the sports centre itself cancels a class."
+			},
+			"B": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "Cancelling two hours before is too late (the limit is three hours), and it is her second late cancellation within thirty days."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set2-30",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 7,
+				"quote": "Zij kunnen op werkdagen tussen 15.00 en 18.00 uur trainen. Buiten deze tijden moet een begeleider van De Kade aanwezig zijn."
+			}
+		],
+		"move": "Tick off Hasan's age, introduction and permission, then check the day and time against the youth rule.",
+		"why": "Saturday is not a working day, so it falls outside the 15.00 to 18.00 weekday slot and a supervisor from De Kade must be present.",
+		"distractors": {
+			"A": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "That is the rule for training fully on your own from 16; at 15 he may train with a supervisor."
+			},
+			"C": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "Those two conditions only cover weekdays between 15.00 and 18.00; Saturday is outside those times."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set2-31",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 9,
+				"quote": "Kinderen zonder zwemdiploma A mogen alleen het water in met zwemvleugels"
+			},
+			{
+				"p": 9,
+				"quote": "Kinderen jonger dan acht jaar worden ook met een diploma door een volwassene begeleid. De begeleider blijft verantwoordelijk en mag niet alleen vanaf de kant kijken."
+			}
+		],
+		"move": "Check Daan's two facts (diploma yes, age six) against the two rules in 'Zwembad en kinderen'.",
+		"why": "With diploma A he needs no armbands, but he is under eight, so an adult must accompany him and may not just watch from the side.",
+		"distractors": {
+			"A": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "That is the rule for children without swimming diploma A; Daan has the diploma."
+			},
+			"B": {
+				"trap": "tegenovergesteld",
+				"why": "The text says the adult may not just watch from the side."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set2-32",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 13,
+				"quote": "De Kade bewaart ze vier weken."
+			},
+			{
+				"p": 13,
+				"quote": "moet u kunnen beschrijven wat van u is"
+			},
+			{
+				"p": 13,
+				"quote": "Gevonden voorwerpen worden niet per post verstuurd."
+			}
+		],
+		"move": "Go to 'Gevonden voorwerpen' and check three things: how long items are kept, what you must do to collect, and whether they are posted.",
+		"why": "Items are kept four weeks, you must be able to describe what is yours, and nothing is posted, so Amir has to come in person.",
+		"distractors": {
+			"A": {
+				"trap": "tegenovergesteld",
+				"why": "Found items are not sent by post, however far away the owner lives."
+			},
+			"C": {
+				"trap": "echo",
+				"why": "An ID can be asked for when you collect a valuable item, not instead of collecting it."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set2-33",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 15,
+				"quote": "Voor gebruik van de zwembadlift is hulp van een medewerker nodig."
+			},
+			{
+				"p": 15,
+				"quote": "Neem bij voorkeur minimaal 24 uur vooraf contact op met de receptie"
+			}
+		],
+		"move": "Go to 'Toegankelijkheid', then count back 24 hours from Rosa's swim time.",
+		"why": "The lift needs a staff member, and reception should be contacted at least 24 hours ahead, which for Saturday 10.00 means Friday 10.00 at the latest.",
+		"distractors": {
+			"B": {
+				"trap": "echo",
+				"why": "The app is for class reservations; for the pool lift you contact the reception."
+			},
+			"C": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "One hour is the waiting-list rule for classes; for the pool lift the advice is at least 24 hours."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set2-34",
+		"qtype": "vergelijking",
+		"evidence": [
+			{
+				"p": 17,
+				"quote": "Een jaarabonnement kan om een medische reden minimaal vier weken en maximaal zes maanden worden gepauzeerd."
+			},
+			{
+				"p": 18,
+				"quote": "Een flexibel maandabonnement kan niet worden gepauzeerd."
+			}
+		],
+		"move": "Read the two paragraphs under 'Medische situatie en abonnement pauzeren' side by side.",
+		"why": "An annual membership can be paused for a medical reason; a flexible monthly one cannot be paused, only cancelled.",
+		"distractors": {
+			"B": {
+				"trap": "tegenovergesteld",
+				"why": "It swaps the two: only the annual membership can be paused."
+			},
+			"C": {
+				"trap": "echo",
+				"why": "The doctor's statement is needed to pause an annual membership, not to cancel it."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set2-35",
+		"qtype": "niet-vraag",
+		"evidence": [
+			{
+				"p": 24,
+				"quote": "Zet uw telefoon op stil."
+			},
+			{
+				"p": 24,
+				"quote": "Foto's en filmpjes maken in kleedkamers is altijd verboden."
+			}
+		],
+		"move": "Check each option against 'Huisregels', and read the phone and changing-room sentences exactly.",
+		"why": "The rules only say to put your phone on silent and ban taking photos or videos in changing rooms; taking a phone into the changing room is not forbidden.",
+		"distractors": {
+			"A": {
+				"trap": "waar-niet-gevraagd",
+				"why": "This is a house rule: eating is not allowed in sports halls and changing rooms."
+			},
+			"B": {
+				"trap": "waar-niet-gevraagd",
+				"why": "This is a house rule: 'gebruik een handdoek op apparaten'."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set3-1",
+		"qtype": "oorzaak-reden",
+		"evidence": [
+			{
+				"p": 1,
+				"quote": "Eerst dacht ze dat ze gewoon moe was, maar een collega zag dat ze bleek was en haalde de teamleider."
+			}
+		],
+		"move": "Read the last sentence of the opening paragraph and check who noticed Samira and what they noticed ('maar een collega zag').",
+		"why": "A colleague saw that she was pale ('bleek') and fetched the team leader; being pale is looking unwell, so A paraphrases it.",
+		"distractors": {
+			"A": {
+				"trap": "echo",
+				"why": "'Moe' is only what Samira thought herself ('Eerst dacht ze'); she told nobody, it was a colleague who acted."
+			},
+			"C": {
+				"trap": "verkeerde-persoon",
+				"why": "The mistakes are real, but it was a colleague who noticed her and fetched the team leader, not the team leader himself."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set3-2",
+		"qtype": "oorzaak-reden",
+		"evidence": [
+			{
+				"p": 5,
+				"quote": "Teamleider Mark wilde geen afspraak maken die alleen voor Samira gold."
+			},
+			{
+				"p": 5,
+				"quote": "maakte hij daarom een eenvoudig hitteplan"
+			}
+		],
+		"move": "Go to the paragraph under 'Een hitteplan voor het hele team' and read the sentence before 'daarom'.",
+		"why": "Mark did not want an arrangement that applied only to Samira, and 'daarom' links that wish directly to the team plan.",
+		"distractors": {
+			"A": {
+				"trap": "echo",
+				"why": "Headaches and cramps of others are mentioned only later, as something that turned out ('bleken') once the plan was running, not as the reason for it."
+			},
+			"B": {
+				"trap": "waar-niet-gevraagd",
+				"why": "True: the advice was not to cut her hours, but that explains how to help, not why the plan covers the whole team."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set3-3",
+		"qtype": "functie-tekstdeel",
+		"evidence": [
+			{
+				"p": 7,
+				"quote": "Mark benadrukt dat niemand stoer hoeft te doen."
+			},
+			{
+				"p": 7,
+				"quote": "We willen liever tien minuten te vroeg ingrijpen dan één keer te laat"
+			},
+			{
+				"p": 7,
+				"quote": "De teamleider bepaalt dan of medische hulp nodig is."
+			}
+		],
+		"move": "Read the quote together with the sentence before it ('niemand stoer hoeft te doen') and ask what general attitude it expresses.",
+		"why": "Intervening too early is better than once too late: when in doubt, act straight away instead of pushing on.",
+		"distractors": {
+			"B": {
+				"trap": "echo",
+				"why": "Takes 'tien minuten' literally; the sentence is about stepping in early when someone is unwell, not about break times."
+			},
+			"C": {
+				"trap": "overdreven",
+				"why": "Stepping in early means stopping work; the text says the team leader then decides whether medical help is needed, not that it is always called."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set3-4",
+		"qtype": "mening-persoon",
+		"evidence": [
+			{
+				"p": 7,
+				"quote": "Samira vond dat in het begin overdreven."
+			},
+			{
+				"p": 7,
+				"quote": "Maar na een paar warme weken merkte ze dat het juist rust gaf."
+			}
+		],
+		"move": "Find Samira's name in the paragraph 'Elkaar in de gaten houden' and follow the time signals 'in het begin' and 'Maar na een paar warme weken'.",
+		"why": "She first thought it was 'overdreven' but later noticed it 'juist rust gaf': her opinion changed from too much to reassuring.",
+		"distractors": {
+			"B": {
+				"trap": "tegenovergesteld",
+				"why": "At first she found it 'overdreven' and did not want colleagues asking all the time; she only came round later."
+			},
+			"C": {
+				"trap": "echo",
+				"why": "Copies 'overdreven', but the text says that was only 'in het begin'; after a few warm weeks she changed her mind."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set3-5",
+		"qtype": "mening-persoon",
+		"evidence": [
+			{
+				"p": 9,
+				"quote": "Volgens Mark komt dat niet alleen door het drinken."
+			},
+			{
+				"p": 9,
+				"quote": "wachten minder lang met zeggen dat het niet goed gaat"
+			}
+		],
+		"move": "Find 'Volgens Mark' in the last paragraph and read his quote that follows it.",
+		"why": "Mark says people now know what to do and wait less long before saying they are not well, which is the same as saying it sooner.",
+		"distractors": {
+			"A": {
+				"trap": "te-smal",
+				"why": "Mark says it is 'niet alleen door het drinken'; drinking is only part of it and not the cause he points to."
+			},
+			"B": {
+				"trap": "tegenovergesteld",
+				"why": "The plan moves heavy lifting earlier; after lunch staff do lighter tasks."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set3-6",
+		"qtype": "doel-tekst",
+		"evidence": [
+			{
+				"p": 5,
+				"quote": "maakte hij daarom een eenvoudig hitteplan"
+			},
+			{
+				"p": 9,
+				"quote": "Deze zomer had Samira veel minder klachten."
+			},
+			{
+				"p": 9,
+				"quote": "Soms maken een ander moment voor zwaar werk, voldoende drinken en duidelijke afspraken al veel verschil."
+			}
+		],
+		"move": "Look at the structure: problem, talk with the nurse, a team plan, and 'Wat veranderde er?'; the closing sentence states the lesson.",
+		"why": "The text tells how a simple heat plan cut Samira's complaints and ends by saying small, clear arrangements already make a big difference.",
+		"distractors": {
+			"A": {
+				"trap": "te-smal",
+				"why": "That is Samira's advice in the last paragraph, one part of the story rather than what the whole text is for."
+			},
+			"C": {
+				"trap": "te-breed",
+				"why": "The health effects get a few lines in Iris's explanation; the text follows one team's plan and its result, not heat risks in general."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set3-7",
+		"qtype": "oorzaak-reden",
+		"evidence": [
+			{
+				"p": 1,
+				"quote": "Vooral lang luisteren naar hard geluid kan een probleem zijn."
+			},
+			{
+				"p": 1,
+				"quote": "maar ook hoe lang uw oren eraan worden blootgesteld"
+			}
+		],
+		"move": "Find 'niet alleen het volume' in the first paragraph and read what follows 'maar ook'.",
+		"why": "The text says long listening to loud sound is a problem, so how long your ears are exposed counts as well as how loud it is.",
+		"distractors": {
+			"B": {
+				"trap": "tegenovergesteld",
+				"why": "The text says 'Meestal merkt u direct wanneer een geluid onaangenaam is'; this reverses it."
+			},
+			"C": {
+				"trap": "waar-niet-gevraagd",
+				"why": "True (second paragraph), but it describes an effect of loud sound, not why duration matters as well as volume."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set3-8",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 3,
+				"quote": "Vaak verdwijnt zo’n klacht weer na een periode van rust."
+			},
+			{
+				"p": 3,
+				"quote": "Blijft een piep lang aanwezig"
+			},
+			{
+				"p": 13,
+				"quote": "maar wel een reden om de volgende keer beter op volume, afstand en bescherming te letten"
+			}
+		],
+		"move": "Check Daan's case against the condition for medical help ('Blijft een piep lang aanwezig') and then read what 'Let op signalen' says about a single beep.",
+		"why": "His beep disappeared after rest, so the condition for medical help is not met; a beep is still a reason to watch volume, distance and protection next time.",
+		"distractors": {
+			"A": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "Medical help is advised when a beep stays for a long time; Daan's beep went away after rest."
+			},
+			"B": {
+				"trap": "tegenovergesteld",
+				"why": "The text says a beep after a loud event 'is geen bewijs dat er blijvende schade is'."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set3-9",
+		"qtype": "betekenis-in-context",
+		"evidence": [
+			{
+				"p": 5,
+				"quote": "Wie muziek heel hard zet om omgevingsgeluid te overstemmen, belast het gehoor meer"
+			},
+			{
+				"p": 5,
+				"quote": "Een goed passende hoofdtelefoon kan helpen, omdat u dan vaak minder volume nodig heeft."
+			}
+		],
+		"move": "Read the whole sentence: the music is put very loud 'om' (in order to) do something to the sound around you; the next tip about a well-fitting headphone confirms it.",
+		"why": "You turn the music up so the sounds around you disappear under it; a headphone that fits well blocks those sounds, so you need less volume.",
+		"distractors": {
+			"A": {
+				"trap": "tegenovergesteld",
+				"why": "Overstemmen means drowning other sounds out, so you hear them less, not better."
+			},
+			"B": {
+				"trap": "niet-in-tekst",
+				"why": "Tempting if you think of 'stem' (voice), but the sentence is about putting music loud, not about talking."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set3-10",
+		"qtype": "niet-vraag",
+		"evidence": [
+			{
+				"p": 7,
+				"quote": "Muzikanten gebruiken soms speciale oordoppen"
+			},
+			{
+				"p": 7,
+				"quote": "Bescherming die steeds wordt uitgedaan omdat zij oncomfortabel zit, helpt in de praktijk weinig."
+			},
+			{
+				"p": 7,
+				"quote": "Voor incidenteel gebruik kunnen eenvoudige oordoppen voldoende zijn."
+			}
+		],
+		"move": "Go to 'Bescherming gebruiken' and tick off each option; watch for small words like 'soms' versus 'altijd' and 'moeten'.",
+		"why": "The text says musicians 'soms' use special earplugs; it never says they must always wear them, so C is the statement that is not in the text.",
+		"distractors": {
+			"A": {
+				"trap": "waar-niet-gevraagd",
+				"why": "Stated: protection that keeps being taken off because it is uncomfortable 'helpt in de praktijk weinig'."
+			},
+			"C": {
+				"trap": "waar-niet-gevraagd",
+				"why": "Stated: 'Voor incidenteel gebruik kunnen eenvoudige oordoppen voldoende zijn'."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set3-11",
+		"qtype": "functie-tekstdeel",
+		"evidence": [
+			{
+				"p": 9,
+				"quote": "Ouders kunnen beter samen afspraken maken dan alleen zeggen dat muziek zachter moet."
+			},
+			{
+				"p": 9,
+				"quote": "Bijvoorbeeld: tijdens een lange treinreis wordt na ieder uur een korte luisterpauze genomen."
+			}
+		],
+		"move": "Look at the sentence right before 'Bijvoorbeeld:'; an example usually illustrates the claim just made.",
+		"why": "The train trip follows the advice that parents should make agreements together with young people, so it shows what such a shared rule can look like.",
+		"distractors": {
+			"B": {
+				"trap": "echo",
+				"why": "Travelling is just one of the moments young people use earbuds; the text does not say they listen too loud mainly then."
+			},
+			"C": {
+				"trap": "tegenovergesteld",
+				"why": "The example allows listening with a short break every hour, and the text says earbuds 'hoeft geen probleem te zijn'."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set3-12",
+		"qtype": "doel-tekst",
+		"evidence": [
+			{
+				"p": 13,
+				"quote": "Het doel is niet om geluid te vermijden."
+			},
+			{
+				"p": 13,
+				"quote": "Met verstandige keuzes kunt u ervan blijven genieten zonder uw oren onnodig zwaar te belasten."
+			},
+			{
+				"p": 5,
+				"quote": "Een hoofdtelefoon hoeft niet gevaarlijk te zijn."
+			}
+		],
+		"move": "Notice the many 'u' instructions (zoek, zet, ga) and read the closing lines, which state the aim in so many words.",
+		"why": "The text gives advice on volume, pauses and protection and ends by saying the goal is not to avoid sound but to keep enjoying it without overloading your ears.",
+		"distractors": {
+			"A": {
+				"trap": "tegenovergesteld",
+				"why": "The text says 'Een hoofdtelefoon hoeft niet gevaarlijk te zijn'; it is about volume and time, not the device."
+			},
+			"C": {
+				"trap": "te-smal",
+				"why": "That is only the second paragraph; most of the text gives practical advice."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set3-13",
+		"qtype": "niet-vraag",
+		"evidence": [
+			{
+				"p": 3,
+				"quote": "Handschoenen gebruikt u alleen wanneer dat nodig is. Ze vervangen het wassen of reinigen van uw handen niet."
+			},
+			{
+				"p": 3,
+				"quote": "Neem alleen de materialen mee die u nodig heeft."
+			},
+			{
+				"p": 3,
+				"quote": "Lees aan het begin van uw dienst de werklijst en controleer of er bijzonderheden zijn."
+			}
+		],
+		"move": "Go to 'Voorbereiden voordat u begint' and check each option against it; the last two sentences are about gloves.",
+		"why": "The text says gloves do not replace washing your hands, so the idea that gloves make washing unnecessary is not in the text; the other two are.",
+		"distractors": {
+			"A": {
+				"trap": "waar-niet-gevraagd",
+				"why": "Stated: 'Neem alleen de materialen mee die u nodig heeft'."
+			},
+			"B": {
+				"trap": "waar-niet-gevraagd",
+				"why": "Stated: read the work list at the start of your shift and check for 'bijzonderheden'."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set3-14",
+		"qtype": "oorzaak-reden",
+		"evidence": [
+			{
+				"p": 5,
+				"quote": "Een volgorde voorkomt dat u vuil verspreidt."
+			}
+		],
+		"move": "Read the first sentence under 'Werk van schoon naar vuil'; it gives the reason ('voorkomt dat') for the order.",
+		"why": "Working in a fixed order prevents you from spreading dirt, which means carrying dirt to surfaces that are already clean.",
+		"distractors": {
+			"B": {
+				"trap": "tegenovergesteld",
+				"why": "The same paragraph says not to use the toilet cloth for the bedside table, so one cloth for everything is exactly what is not allowed."
+			},
+			"C": {
+				"trap": "echo",
+				"why": "Colour codes are in the same paragraph, but they are a separate measure; the order clean to dirty is not what tells you the colour."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set3-15",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 7,
+				"quote": "Staat er een onbekende fles zonder etiket? Zet die apart en meld dit aan uw leidinggevende. Gebruik de inhoud niet."
+			},
+			{
+				"p": 3,
+				"quote": "Gebruik nooit een middel waarvan u niet weet wat erin zit."
+			}
+		],
+		"move": "Match Fatima's situation to the question sentence 'Staat er een onbekende fles zonder etiket?' and read the three instructions after it; the smell is a trap.",
+		"why": "A bottle without a label must be put aside and reported, and its contents may not be used, however familiar it smells.",
+		"distractors": {
+			"A": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "The rule is: never use a product if you do not know what is in it; a smell is not knowing, and a bottle without a label must not be used at all."
+			},
+			"C": {
+				"trap": "echo",
+				"why": "Echoes the dosage advice, but the text says to put an unlabelled bottle aside and not use its contents."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set3-16",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 9,
+				"quote": "Klop daarom aan voordat u binnenkomt, ook wanneer de deur openstaat."
+			},
+			{
+				"p": 9,
+				"quote": "Stel uzelf voor als de bewoner u niet kent en leg kort uit wat u komt doen."
+			}
+		],
+		"move": "Check each detail of the case (open door, she does not know you) against the rules under 'Respect voor bewoners'.",
+		"why": "Knock even when the door is open, and because she does not know you, introduce yourself and briefly say what you have come to do.",
+		"distractors": {
+			"A": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "The text says to knock 'ook wanneer de deur openstaat'; an open door is no exception."
+			},
+			"C": {
+				"trap": "niet-in-tekst",
+				"why": "Sounds polite, but the text says to ask whether the moment suits her, not to wait until she leaves."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set3-17",
+		"qtype": "vergelijking",
+		"evidence": [
+			{
+				"p": 15,
+				"quote": "Bij het verplaatsen van een stoel of klein meubelstuk kijkt u eerst of dit zonder risico kan."
+			},
+			{
+				"p": 15,
+				"quote": "Een zwaar bed of een bewoner verplaatst u niet alleen omdat u snel wilt doorwerken. Vraag hulp wanneer dat nodig is."
+			}
+		],
+		"move": "In 'Let op uw lichaam', find the two sentences about moving things and compare what each says.",
+		"why": "A chair or small piece of furniture you may move after checking it is safe; a heavy bed you do not move alone, you ask for help.",
+		"distractors": {
+			"B": {
+				"trap": "overdreven",
+				"why": "For a chair you only check first whether it can be done without risk; help is for heavy items."
+			},
+			"C": {
+				"trap": "tegenovergesteld",
+				"why": "Swaps the two: the text says a heavy bed is not moved alone, while a chair may be moved if it is safe."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set3-18",
+		"qtype": "hoofdgedachte",
+		"evidence": [
+			{
+				"p": 19,
+				"quote": "Snelheid is belangrijk, maar nooit belangrijker dan veiligheid, hygiëne en respect."
+			},
+			{
+				"p": 1,
+				"quote": "U moet daarom hygiënisch, veilig en respectvol werken."
+			}
+		],
+		"move": "Compare the first and the last paragraph: both name the same values, and the last one ranks them against speed.",
+		"why": "The text opens by saying you must work hygienically, safely and respectfully and closes by saying speed is never more important than those.",
+		"distractors": {
+			"A": {
+				"trap": "tegenovergesteld",
+				"why": "The last paragraph says an experienced cleaner 'blijft opletten' because no room or resident is exactly the same."
+			},
+			"B": {
+				"trap": "te-smal",
+				"why": "Limiting germs is one point from the first paragraph; the text also covers safety, respect and handover."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set3-19",
+		"qtype": "betekenis-in-context",
+		"evidence": [
+			{
+				"p": 1,
+				"quote": "Een ongebruikt deel van het budget gaat niet automatisch mee naar het volgende jaar."
+			},
+			{
+				"p": 1,
+				"quote": "ieder kalenderjaar maximaal 900 euro opleidingsbudget"
+			}
+		],
+		"move": "Read the phrase 'gaat niet automatisch mee' with the first sentence, which says the budget is per calendar year.",
+		"why": "The budget is set per calendar year; what you do not use is not carried over by itself ('niet automatisch' = 'niet vanzelf').",
+		"distractors": {
+			"B": {
+				"trap": "echo",
+				"why": "'Terugbetalen' comes from the part about failed exams; unspent budget is simply not carried over, there is nothing to pay back."
+			},
+			"C": {
+				"trap": "tegenovergesteld",
+				"why": "This is exactly what 'gaat niet automatisch mee' denies."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set3-20",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 3,
+				"quote": "Dien uw aanvraag minimaal vier weken vóór de start in via MijnDelta."
+			},
+			{
+				"p": 3,
+				"quote": "Schrijf u pas definitief in nadat u schriftelijke goedkeuring hebt ontvangen."
+			}
+		],
+		"move": "Count the days between 1 and 20 March and compare them with the deadline under 'Aanvragen'; the price is a distractor.",
+		"why": "From 1 to 20 March is less than four weeks, so Yara cannot meet the rule that the request must be in at least four weeks before the start.",
+		"distractors": {
+			"A": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "The amount is within the budget, but the other condition, applying at least four weeks before the start, is not met: only 19 days remain."
+			},
+			"B": {
+				"trap": "tegenovergesteld",
+				"why": "The text says to enrol only after written approval; enrolling first risks paying yourself."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set3-21",
+		"qtype": "vergelijking",
+		"evidence": [
+			{
+				"p": 5,
+				"quote": "Dan gelden de lesuren als werktijd en worden noodzakelijke reiskosten vergoed."
+			},
+			{
+				"p": 5,
+				"quote": "dan maakt u met uw leidinggevende afspraken over lestijd"
+			}
+		],
+		"move": "Under 'Tijd en reiskosten', read the two cases one after the other: the question 'verplicht gesteld?' and 'Kiest u zelf'.",
+		"why": "For a compulsory course class hours count as working time; for a course you choose, you agree class time with your manager.",
+		"distractors": {
+			"A": {
+				"trap": "overdreven",
+				"why": "For a chosen course you make arrangements about class time with your manager; nothing says it is always in your own time."
+			},
+			"C": {
+				"trap": "tegenovergesteld",
+				"why": "Travel costs are mentioned for the compulsory course, not for the one you choose yourself."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set3-22",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 1,
+				"quote": "maximaal 900 euro opleidingsbudget"
+			},
+			{
+				"p": 11,
+				"quote": "Een herkansing valt alleen binnen het budget als daar nog voldoende ruimte voor is."
+			}
+		],
+		"move": "Work out what is left of the yearly budget (900 minus 700) and compare it with the resit price, using the rule under 'Afronding en bewijs'.",
+		"why": "Only 200 euro is left and the resit costs 250, so there is not enough room in the budget to cover it fully.",
+		"distractors": {
+			"A": {
+				"trap": "tegenovergesteld",
+				"why": "The text says failing an exam 'betekent niet automatisch' that you must pay the money back."
+			},
+			"C": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "A resit is covered only if there is enough room left in the budget; belonging to an approved course is not the condition."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set3-23",
+		"qtype": "doel-tekst",
+		"evidence": [
+			{
+				"p": 1,
+				"quote": "Een leidinggevende beoordeelt vooraf of de opleiding aan deze voorwaarde voldoet."
+			},
+			{
+				"p": 3,
+				"quote": "Dien uw aanvraag minimaal vier weken vóór de start in via MijnDelta."
+			},
+			{
+				"p": 11,
+				"quote": "worden niet vergoed, tenzij daar vooraf een aparte schriftelijke afspraak over is gemaakt"
+			}
+		],
+		"move": "Use the source line (a staff handbook) and the headings: each section gives conditions for applying, paying and reimbursing.",
+		"why": "Every section states a condition or rule about when and what the company pays for training, so the text explains those conditions.",
+		"distractors": {
+			"B": {
+				"trap": "niet-in-tekst",
+				"why": "Sounds likely from an employer, but the text only sets out rules; it never urges staff to spend the budget."
+			},
+			"C": {
+				"trap": "te-smal",
+				"why": "Late cancellation is one rule under 'Betaling en annulering', not the purpose of the whole text."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set3-24",
+		"qtype": "oorzaak-reden",
+		"evidence": [
+			{
+				"p": 1,
+				"quote": "Bewoners die later uit hun werk kwamen of ’s avonds een cursus volgden, waren daardoor vaak afhankelijk van familie, fiets of taxi."
+			},
+			{
+				"p": 3,
+				"quote": "gaven aan dat zij ’s avonds moeilijk thuis konden komen"
+			}
+		],
+		"move": "Read the first paragraph after 'Tot nu toe stopte de laatste rit om 19.10 uur' and the residents' feedback in the next paragraph.",
+		"why": "Because the last bus left at 19.10, people coming from work or a course in the evening depended on family, a bike or a taxi to get home.",
+		"distractors": {
+			"A": {
+				"trap": "echo",
+				"why": "The eight new drivers were found for the extra rides; that made the trial possible but is not why it was started."
+			},
+			"B": {
+				"trap": "tegenovergesteld",
+				"why": "Elena says 'We vroegen niet om een grote stadsbus die ieder kwartier rijdt'."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set3-25",
+		"qtype": "mening-persoon",
+		"evidence": [
+			{
+				"p": 3,
+				"quote": "We wilden weten of een kleine verbinding op de belangrijkste momenten mogelijk was."
+			},
+			{
+				"p": 3,
+				"quote": "We vroegen niet om een grote stadsbus die ieder kwartier rijdt"
+			}
+		],
+		"move": "Find Elena's two quotes in 'Vraag uit de dorpen': first what they did not ask for, then what they did want.",
+		"why": "Elena says they wanted a small connection at the most important moments, not a big city bus: a simple link when it is most needed.",
+		"distractors": {
+			"B": {
+				"trap": "verkeerde-persoon",
+				"why": "Reserve drivers are Henk Visser's concern as coordinator, not what residents asked for through Elena."
+			},
+			"C": {
+				"trap": "echo",
+				"why": "Wheelchair space comes from the section on booking ahead; Elena does not mention it."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set3-26",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 3,
+				"quote": "De bus vertrekt op die avonden om 20.30 en 22.15 uur vanaf station Lindeveen"
+			},
+			{
+				"p": 7,
+				"quote": "moet uiterlijk twee uur vóór vertrek bellen met de reserveringslijn"
+			}
+		],
+		"move": "Combine two details: the departure time of the last evening ride and the booking deadline under 'Vooraf reserveren bij rolstoel'.",
+		"why": "The last evening ride leaves at 22.15 and he must call at least two hours before departure, so 20.15 at the latest.",
+		"distractors": {
+			"A": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "That is two hours before the first evening ride (20.30); he wants the last one."
+			},
+			"C": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "That is only one hour before departure; the rule is at least two hours."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set3-27",
+		"qtype": "betekenis-in-context",
+		"evidence": [
+			{
+				"p": 11,
+				"quote": "Als iedereen zegt dat vervoer belangrijk is maar niemand instapt, wordt verlengen natuurlijk moeilijk."
+			}
+		],
+		"move": "Read Elena's quote right after the word: it contrasts 'zegt' with 'instapt'.",
+		"why": "She fears everyone says transport matters but nobody gets on, so 'daadwerkelijk' means really doing it, actually travelling on the bus.",
+		"distractors": {
+			"A": {
+				"trap": "tegenovergesteld",
+				"why": "Her quote contrasts saying transport is important with actually getting on; this option is only the saying."
+			},
+			"B": {
+				"trap": "echo",
+				"why": "Tickets and regional passes are from the paragraph about the volunteers and fares, not what Elena means."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set3-28",
+		"qtype": "doel-tekst",
+		"evidence": [
+			{
+				"p": 1,
+				"quote": "De nieuwe avondritten zijn een proef van zes maanden."
+			},
+			{
+				"p": 11,
+				"quote": "Daarna besluit de gemeente of de avondritten blijven."
+			}
+		],
+		"move": "Use the source (a local news site), the headline and the section headings, which each explain one practical side of the new rides.",
+		"why": "The news article reports on a six-month trial with evening rides and explains times, drivers, booking, funding and the evaluation.",
+		"distractors": {
+			"B": {
+				"trap": "te-smal",
+				"why": "Henk is still looking for reserves, but that is one remark; the text never asks readers to sign up."
+			},
+			"C": {
+				"trap": "tegenovergesteld",
+				"why": "The text says the council decides after the evaluation whether the evening rides stay."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set3-29",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 2,
+				"quote": "Bent u pas verhuisd en heeft u nog geen afvalpas? U kunt bij de servicebalie een tijdelijke toegangscode aanvragen."
+			},
+			{
+				"p": 2,
+				"quote": "mag niet aan iemand buiten uw huishouden worden uitgeleend"
+			}
+		],
+		"move": "Leonie has just moved; look for the question in 'Wie mag afval brengen?' that describes exactly that case.",
+		"why": "Someone who has just moved and has no pass yet can request a temporary access code at the service desk.",
+		"distractors": {
+			"A": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "The pass may not be lent to anyone outside your household, and a neighbour is outside it."
+			},
+			"C": {
+				"trap": "echo",
+				"why": "An ID is something to bring 'bij twijfel' next to the pass, and to request the code; on its own it does not open the gate."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set3-30",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 4,
+				"quote": "Op donderdag is het terrein tot 20.00 uur open."
+			},
+			{
+				"p": 4,
+				"quote": "De toegangspoort sluit vijftien minuten vóór de officiële sluitingstijd"
+			}
+		],
+		"move": "Find the Thursday closing time, then apply the gate rule that follows it.",
+		"why": "On Thursday the site closes at 20.00, and the gate closes fifteen minutes before, at 19.45, so at 19.50 Ravi is too late.",
+		"distractors": {
+			"A": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "20.00 is when the site closes; the entrance gate closes fifteen minutes earlier."
+			},
+			"B": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "That is the normal closing time; on Thursday the site is open until 20.00."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set3-31",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 10,
+				"quote": "dan is de aannemer in principe verantwoordelijk voor het afvoeren van het bedrijfsafval"
+			},
+			{
+				"p": 10,
+				"quote": "Kleine resten van een klus die u aantoonbaar zelf hebt uitgevoerd, kunt u als inwoner wel brengen"
+			}
+		],
+		"move": "Split Mona's case into two jobs and check each against the last two sentences of the building-waste section.",
+		"why": "Small leftovers from a job she did herself she may bring; the contractor's bathroom waste is his to remove.",
+		"distractors": {
+			"A": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "Waste from professional work is the contractor's responsibility, even when it comes from her home."
+			},
+			"B": {
+				"trap": "tegenovergesteld",
+				"why": "Households may bring a limited amount of building waste per year at the resident rate."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set3-32",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 14,
+				"quote": "Is een accu beschadigd, opgezwollen of warm geworden? Meld dit direct aan een medewerker en leg de accu niet zelf in een container."
+			}
+		],
+		"move": "The detail 'opgezwollen' decides it: find the question in 'Elektrische apparaten en batterijen' that names swollen batteries.",
+		"why": "For a damaged or swollen battery the rule is to tell a staff member at once and not put it in a container yourself.",
+		"distractors": {
+			"B": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "Removing batteries is for loose batteries when that is easy and safe; a swollen battery must be reported, not handled."
+			},
+			"C": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "That is the rule for ordinary broken appliances; a damaged or swollen battery is the exception."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set3-33",
+		"qtype": "detail",
+		"evidence": [
+			{
+				"p": 16,
+				"quote": "De ingezamelde goederen worden meerdere keren per week opgehaald door aangesloten kringlooporganisaties."
+			},
+			{
+				"p": 16,
+				"quote": "U kunt in de hergebruikhoek geen spullen kopen of reserveren."
+			}
+		],
+		"move": "Read to the end of 'De hergebruikhoek'; the last sentence says what happens to the collected goods.",
+		"why": "Charity shops (kringlooporganisaties) collect the goods several times a week.",
+		"distractors": {
+			"A": {
+				"trap": "tegenovergesteld",
+				"why": "The text says 'U kunt in de hergebruikhoek geen spullen kopen of reserveren'."
+			},
+			"C": {
+				"trap": "echo",
+				"why": "Items must already be clean, complete and safe when you bring them; the text mentions no repairs."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set3-34",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 20,
+				"quote": "U moet vooraf telefonisch contact opnemen met De Poort."
+			},
+			{
+				"p": 20,
+				"quote": "Een medewerker legt uit hoe u het materiaal moet verpakken"
+			},
+			{
+				"p": 20,
+				"quote": "behandel het dan niet alsof het gewoon puin is maar vraag eerst advies"
+			}
+		],
+		"move": "Nina is not sure; read 'Asbestverdacht materiaal' to the end, where the text says what to do when in doubt.",
+		"why": "Suspected asbestos is accepted only after you phone first; staff then explain how to pack it, and doubt means you ask rather than treat it as rubble.",
+		"distractors": {
+			"B": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "Doubt is exactly the case the text covers: then do not treat it as ordinary rubble, ask first."
+			},
+			"C": {
+				"trap": "tegenovergesteld",
+				"why": "The text says 'Open de verpakking niet op het terrein'."
+			}
+		},
+		"keyCheck": "ok"
+	},
+	{
+		"id": "set3-35",
+		"qtype": "toepassing",
+		"evidence": [
+			{
+				"p": 24,
+				"quote": "gratis een kleine aanhanger lenen voor maximaal drie uur"
+			},
+			{
+				"p": 24,
+				"quote": "Komt u zonder bericht meer dan dertig minuten te laat, dan kan een volgende gratis reservering gedurende een maand worden geblokkeerd."
+			}
+		],
+		"move": "Work out when the trailer was due (10.00 plus three hours) and check both conditions of the blocking rule.",
+		"why": "It was due at 13.00, so she is twenty minutes late; a block needs no message and more than thirty minutes, so she stays within the limit.",
+		"distractors": {
+			"A": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "Not letting them know is only one of two conditions; the block also needs more than thirty minutes' delay."
+			},
+			"B": {
+				"trap": "verkeerde-voorwaarde",
+				"why": "Three hours is the loan period; the sanction starts only at more than thirty minutes late."
+			}
+		},
+		"keyCheck": "ok"
+	}
+]
