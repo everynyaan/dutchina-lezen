@@ -2,7 +2,7 @@ import { seededRng, shuffle } from '$lib/quiz/rng';
 import { getAnnotation } from './annotations';
 import { allPassages, dayIndex, findQuestion, type BankPassage } from './bank';
 import { itemAttemptedWithin } from './history';
-import { paraphraseFor, itemPassageSlug, practiceItemsFor } from './practice';
+import { itemPassageSlug, paraphraseFor, practiceItemsFor, takeSpaced } from './practice';
 import { eligibleSetPassages } from './sets';
 import { TRAP_KINDS, type QType, type ReadingForkState, type TrapKind } from './types';
 
@@ -161,7 +161,16 @@ export function selectLures(fork: ReadingForkState, date: string, count = 5): Lu
 		...rotate(preferred.slice().sort(byId), date, 9),
 		...rotate(rest.slice().sort(byId), date, 10)
 	];
-	return ordered.slice(0, count).map((prompt) => ({
+	const spaced: typeof ordered = [];
+	for (const prompt of ordered) {
+		if (spaced.length >= count) break;
+		const pack = itemPassageSlug(prompt.itemId);
+		const prev = spaced.at(-1);
+		const prevPack = prev ? itemPassageSlug(prev.itemId) : undefined;
+		if (pack && prevPack && pack === prevPack) continue;
+		spaced.push(prompt);
+	}
+	return spaced.map((prompt) => ({
 		...prompt,
 		choices: lureChoices(prompt.trap, `${prompt.itemId}|${prompt.letter}|${date}`)
 	}));
@@ -179,18 +188,22 @@ export function selectParaphraseDrills(
 	const drills: { slug: string; id: string }[] = [];
 	for (const passage of openPassages(fork)) {
 		if (!seen.has(passage.slug)) continue;
-		for (const drill of paraphraseFor(passage.slug)) {
-			if (
-				drill.afterItemId &&
-				!fork.attempts.some((attempt) => attempt.itemId === drill.afterItemId)
-			) {
-				continue;
-			}
+		for (const drill of paraphraseFor(
+			passage.slug,
+			fork.attempts.map((attempt) => attempt.itemId)
+		)) {
 			drills.push({ slug: passage.slug, id: drill.id });
 		}
 	}
 	drills.sort((a, b) => a.id.localeCompare(b.id));
-	return rotate(drills, date, 4).slice(0, count);
+	const ids = takeSpaced(
+		rotate(drills, date, 4).map((drill) => drill.id),
+		count
+	);
+	return ids.flatMap((id) => {
+		const drill = drills.find((row) => row.id === id);
+		return drill ? [drill] : [];
+	});
 }
 
 /** Three items of one question type. Practice items come before official ones. */
@@ -220,11 +233,10 @@ export function selectQtypeItems(
 		const fresh = ids.filter((id) => !itemAttemptedWithin(fork, id, 21, date));
 		return (fresh.length > 0 ? fresh : ids).slice().sort((a, b) => a.localeCompare(b));
 	};
-	const fromPractice = rotate(freshFirst(practice), date, 7).slice(0, count);
-	const fromFresh = rotate(freshFirst(freshIds), date, 11).slice(0, count - fromPractice.length);
-	const fromOfficial = rotate(freshFirst(official), date, 8).slice(
-		0,
-		count - fromPractice.length - fromFresh.length
-	);
-	return [...fromPractice, ...fromFresh, ...fromOfficial];
+	const pool = [
+		...rotate(freshFirst(practice), date, 7),
+		...rotate(freshFirst(freshIds), date, 11),
+		...rotate(freshFirst(official), date, 8)
+	];
+	return takeSpaced(pool, count);
 }

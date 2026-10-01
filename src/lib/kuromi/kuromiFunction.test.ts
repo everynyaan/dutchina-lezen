@@ -402,7 +402,7 @@ describe('kuromi handler', () => {
 	});
 
 	it('persona is filled in on the 24-of-35 reading fork, not four-gate homework', () => {
-		expect(KUROMI_CHAT_SYSTEM_PROMPT).toMatch(/24 of 35/);
+		expect(KUROMI_CHAT_SYSTEM_PROMPT).toMatch(/23 or 24 of 35/);
 		expect(KUROMI_CHAT_SYSTEM_PROMPT).toMatch(/detail/);
 		expect(KUROMI_CHAT_SYSTEM_PROMPT).toMatch(/doel/);
 		expect(KUROMI_CHAT_SYSTEM_PROMPT).toMatch(/verband/);
@@ -413,7 +413,7 @@ describe('kuromi handler', () => {
 		expect(KUROMI_CHAT_SYSTEM_PROMPT).not.toMatch(
 			/cesuur 24|verwijzing|hoofdonderwerp|bijna-goed|bron-doel/
 		);
-		expect(KUROMI_DRILL_SYSTEM_PROMPT).toMatch(/pass line 24 of 35/);
+		expect(KUROMI_DRILL_SYSTEM_PROMPT).toMatch(/pass line 23 or 24 of 35/);
 		expect(KUROMI_DRILL_SYSTEM_PROMPT).toMatch(/do not offer a new exam-question set/i);
 		expect(KUROMI_DRILL_SYSTEM_PROMPT).not.toMatch(/hoofdonderwerp|bijna-goed/);
 		const createPage = KUROMI_TOOLS.find((t) => t.function.name === 'create_page');

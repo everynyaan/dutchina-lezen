@@ -1,0 +1,240 @@
+{
+	"passageSlug": "vijf-fabels",
+	"note": "Sample practice pack. Not official exam items. Never used in mock scores.",
+	"paragraphMap": [
+		{
+			"p": 2,
+			"anchor": "Niet waar. Bij Ameda vind je 29 erkende mbo-ople",
+			"role": "gives-example",
+			"summary": "Rebuts myth 1: Ameda has 29 recognised programmes, and the vet assistant example shows you learn every side of a job."
+		},
+		{
+			"p": 4,
+			"anchor": "Onjuist! Ameda bepaalt samen met het bedrijfslev",
+			"role": "background-origin",
+			"summary": "Rebuts myth 2: Ameda sets course requirements together with employers, so school and work match and graduates find jobs fast."
+		},
+		{
+			"p": 6,
+			"anchor": "Zeker niet! Een Ameda-opleiding is ingericht als",
+			"role": "advice-instruction",
+			"summary": "Rebuts myth 3: each course is an individual track with expert teachers, feedback within 48 hours and the online Ameda Campus."
+		},
+		{
+			"p": 8,
+			"anchor": "Echt niet! Alle mbo-opleidingen van Ameda: - sta",
+			"role": "states-rule",
+			"summary": "Rebuts myth 4: the courses are supervised, registered and recognised, so the diploma is worth the same as one from an ROC."
+		},
+		{
+			"p": 10,
+			"anchor": "Niet waar! De beroepspraktijkvorming (BPV) vormt",
+			"role": "states-rule",
+			"summary": "Rebuts myth 5: the internship (BPV) is a key part of the course, with a guide at the company and one from Ameda."
+		}
+	],
+	"items": [
+		{
+			"id": "p-vijf-fabels-1",
+			"qtype": "betekenis-in-context",
+			"question": "‘Bij Ameda zit tussen onderwijs en praktijk een wereld van verschil.’ Wat betekent ‘een wereld van verschil’ in deze zin?",
+			"options": {
+				"A": "een heel groot verschil",
+				"B": "een verschil tussen landen",
+				"C": "bijna geen verschil"
+			},
+			"answer": "A",
+			"evidence": [
+				{
+					"p": 3,
+					"quote": "een wereld van verschil"
+				}
+			],
+			"move": "This sentence is one of the myths. Read the answer under it: 'Onjuist!' and then 'juist wél goed op elkaar aansluiten'. The myth says the opposite of that.",
+			"why": "'Een wereld van verschil' means a very big difference. The myth claims school and real work are far apart, which Ameda then denies.",
+			"distractors": {
+				"B": {
+					"trap": "echo",
+					"why": "A literal reading of 'wereld'; the sentence is not about countries."
+				},
+				"C": {
+					"trap": "tegenovergesteld",
+					"why": "'Bijna geen verschil' is what Ameda claims in its answer, the opposite of the myth's words."
+				}
+			}
+		},
+		{
+			"id": "p-vijf-fabels-2",
+			"qtype": "betekenis-in-context",
+			"question": "‘Ameda-studenten zijn een nummer.’ Wat wordt hiermee bedoeld?",
+			"options": {
+				"A": "Ameda heeft elk jaar duizenden studenten.",
+				"B": "Iedere student krijgt een eigen studentnummer.",
+				"C": "Studenten krijgen geen persoonlijke aandacht."
+			},
+			"answer": "C",
+			"evidence": [
+				{
+					"p": 5,
+					"quote": "ze krijgen geen individuele begeleiding"
+				}
+			],
+			"move": "Read on after the comma: the second half of the myth explains what 'een nummer zijn' means.",
+			"why": "If you are 'een nummer', nobody treats you as a person; the myth itself adds 'ze krijgen geen individuele begeleiding'.",
+			"distractors": {
+				"A": {
+					"trap": "waar-niet-gevraagd",
+					"why": "True, more than 5000 students a year (p8), but that is not what 'een nummer zijn' means."
+				},
+				"B": {
+					"trap": "echo",
+					"why": "A literal reading of 'nummer'; the text never mentions student numbers."
+				}
+			}
+		},
+		{
+			"id": "p-vijf-fabels-3",
+			"qtype": "oorzaak-reden",
+			"question": "Waarom heb je na een mbo-opleiding bij Ameda volgens de tekst een grote kans op werk?",
+			"options": {
+				"A": "Ameda zoekt na je diploma samen met jou een baan.",
+				"B": "Ameda spreekt met bedrijven af wat studenten moeten kunnen.",
+				"C": "Ameda is een van de grootste mbo-opleiders van Nederland."
+			},
+			"answer": "B",
+			"evidence": [
+				{
+					"p": 4,
+					"quote": "Ameda bepaalt samen met het bedrijfsleven aan welke eisen bepaalde opleidingen moeten voldoen"
+				},
+				{
+					"p": 4,
+					"quote": "Doordat het onderwijs en de praktijk juist wél goed op elkaar aansluiten"
+				}
+			],
+			"move": "Find 'kans om supersnel een baan te vinden' and look for the signal word 'Doordat' just before it.",
+			"why": "Ameda decides with employers what students must know and be able to do, so school and work fit together; 'doordat' links that to the big chance of a job.",
+			"distractors": {
+				"A": {
+					"trap": "niet-in-tekst",
+					"why": "The text never says Ameda helps you look for a job after your diploma."
+				},
+				"C": {
+					"trap": "waar-niet-gevraagd",
+					"why": "True (end of p8), but the text does not give its size as the reason you find work."
+				}
+			}
+		},
+		{
+			"id": "p-vijf-fabels-4",
+			"qtype": "functie-tekstdeel",
+			"question": "Wat doet de schrijver steeds direct na een fabel?",
+			"options": {
+				"A": "Hij geeft de fabel gelijk en geeft een voorbeeld.",
+				"B": "Hij vertelt het verhaal van een student van Ameda.",
+				"C": "Hij zegt dat de fabel niet klopt en legt uit waarom."
+			},
+			"answer": "C",
+			"evidence": [
+				{
+					"p": 2,
+					"quote": "Niet waar. Bij Ameda vind je 29 erkende mbo-opleidingen"
+				},
+				{
+					"p": 8,
+					"quote": "Echt niet! Alle mbo-opleidingen van Ameda"
+				}
+			],
+			"afterItemId": "lezen-2023-6",
+			"move": "Look at the first words under each myth: 'Niet waar', 'Onjuist!', 'Zeker niet!', 'Echt niet!'. Then see what follows them.",
+			"why": "Every answer opens by denying the myth and then gives facts about Ameda to show why it is wrong.",
+			"distractors": {
+				"A": {
+					"trap": "tegenovergesteld",
+					"why": "The writer never agrees with a myth; every answer starts with a denial."
+				},
+				"B": {
+					"trap": "niet-in-tekst",
+					"why": "No student tells their own story anywhere in the text."
+				}
+			}
+		}
+	],
+	"paraphrase": [
+		{
+			"id": "pp-vijf-fabels-1",
+			"source": {
+				"p": 8,
+				"quote": "Een mbo-diploma van Ameda heeft dus exact dezelfde waarde als dat van bijvoorbeeld een ROC."
+			},
+			"afterItemId": "lezen-2023-5",
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "Een diploma van een ROC is meer waard dan een diploma van Ameda.",
+				"B": "Een diploma van Ameda is evenveel waard als een diploma van een ROC.",
+				"C": "Bij Ameda en bij een ROC kun je precies dezelfde opleidingen volgen."
+			},
+			"answer": "B",
+			"distractors": {
+				"A": {
+					"trap": "tegenovergesteld",
+					"why": "The sentence says the value is the same, not that the ROC diploma is worth more."
+				},
+				"C": {
+					"trap": "echo",
+					"why": "Echoes 'exact dezelfde', but the sentence compares the diploma's value, not the courses on offer."
+				}
+			}
+		},
+		{
+			"id": "pp-vijf-fabels-2",
+			"source": {
+				"p": 10,
+				"quote": "Tijdens de BPV word je intensief begeleid door een praktijkbegeleider, een ervaren medewerker van het bedrijf waar je werkt."
+			},
+			"afterItemId": "lezen-2023-4",
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "Tijdens je stage helpt een ervaren collega van het bedrijf je veel.",
+				"B": "Tijdens je stage begeleid je zelf een nieuwe medewerker van het bedrijf.",
+				"C": "Tijdens je stage komt een docent van Ameda elke dag langs."
+			},
+			"answer": "A",
+			"distractors": {
+				"B": {
+					"trap": "tegenovergesteld",
+					"why": "It turns the roles around: the student is guided, the student does not guide."
+				},
+				"C": {
+					"trap": "verkeerde-persoon",
+					"why": "The praktijkbegeleider works at the company, not at Ameda, and 'elke dag' is not stated."
+				}
+			}
+		},
+		{
+			"id": "pp-vijf-fabels-3",
+			"source": {
+				"p": 2,
+				"quote": "De mbo-opleidingen van Ameda bereiden je dus voor op alle aspecten van een beroep!"
+			},
+			"afterItemId": "lezen-2023-1",
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "Bij Ameda kun je voor alle beroepen een opleiding volgen.",
+				"B": "Na een opleiding bij Ameda kun je elk beroep doen.",
+				"C": "Bij Ameda leer je alle verschillende taken die bij een beroep horen."
+			},
+			"answer": "C",
+			"distractors": {
+				"A": {
+					"trap": "echo",
+					"why": "Echoes 'alle' and 'beroep', but the sentence is about all sides of one job, not all jobs."
+				},
+				"B": {
+					"trap": "overdreven",
+					"why": "One course prepares you for one job in full, not for every job."
+				}
+			}
+		}
+	]
+}

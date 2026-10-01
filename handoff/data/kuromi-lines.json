@@ -1,0 +1,264 @@
+{
+  "daily-open": [
+    "{genre}, {paragraphs} paragraphs, about {minutes} minutes. Read the questions first, then hunt.",
+    "Today's victim: a {genre}, {paragraphs} paragraphs of Dutch. Questions first, text second, options last.",
+    "{genre} again, the Dutch never run out of paper. {paragraphs} paragraphs, {minutes} minutes: you read, I glare.",
+    "One {genre}, {paragraphs} paragraphs. Find where each answer lives before you even look at the options.",
+    "Ugh, a {genre}, fine. {minutes} minutes, {paragraphs} paragraphs, and we only read hard where a question sends us.",
+    "{paragraphs} paragraphs of {genre}. Read the questions, find the sentence, then let the options try to trick you."
+  ],
+  "map-comment": {
+    "right": [
+      "Yes, {role}. You read what the paragraph does, not just what it says.",
+      "{role}, correct. Now you know which room to search when a question knocks.",
+      "Right, {role}. See, the Dutch hide things in predictable places.",
+      "{role}, exactly. I hate that you are good at this, keep going."
+    ],
+    "wrong": [
+      "Close, but this one is {role}. Look at what the paragraph is for, not what words it uses.",
+      "Not quite, it is {role}. Read the first and last sentence again, they usually confess.",
+      "That paragraph is {role}. The Dutch disguised it, it is not your fault, it is theirs.",
+      "Hmph, it is {role}. Ask yourself: is it giving a rule, an example, or someone's opinion?"
+    ]
+  },
+  "right-reaction": [
+    "Correct. And you walked straight past the {lure} trap like it was a pigeon.",
+    "Yes! The {lure} option was waving at you and you ignored it, rude and perfect.",
+    "Right. You found the sentence first, so the {lure} lure never stood a chance.",
+    "Got it. Remember why the {lure} option was wrong, that is the real point you just won.",
+    "Correct, obviously. I only ever doubted the Dutch, not you.",
+    "Yes. Point to the sentence that proves it in your head, then move on, that is the habit."
+  ],
+  "miss-reaction": [
+    "That was the {trap} trap, and it got you fair and square. Read the evidence again: what in that sentence would have told you?",
+    "That was {trap}, and the Dutch set it, not you. Look at the quote: which word in that sentence should have tipped you off?",
+    "Caught by {trap}, annoying, I know. So tell me, what in that sentence would have told you?",
+    "The villain here is {trap}, not you. Go back to the sentence: what in it gives the real answer away?",
+    "Hmph, {trap} again, it is sneaky. Look at the evidence sentence once more: what in it should have warned you?",
+    "That one was {trap} in a nice coat. Find the sentence I quoted: what in it would have told you?"
+  ],
+  "done-card": [
+    "{score} out of {total}. Tomorrow, one thing only: {move}",
+    "Done. {score}/{total}. The move to carry into tomorrow: {move}",
+    "{score} of {total}, and the Dutch are slightly less smug now. Tomorrow: {move}",
+    "That is today's text beaten, {score} out of {total}. Keep this in your pocket for tomorrow: {move}",
+    "{score}/{total}, not bad, not that I am impressed. Tomorrow's move: {move}"
+  ],
+  "drill-intro": [
+    "Today we hunt {trap}. {explanation}",
+    "Meet {trap}, my least favourite Dutch trick. {explanation}",
+    "Drill time: {trap}. {explanation} Spot it before it spots you.",
+    "This one is about {trap}. {explanation} Read every option like it is lying, because one of them is.",
+    "{trap} is on the menu. {explanation} Short drill, sharp eyes."
+  ],
+  "drill-reaction": {
+    "right": [
+      "Yes. You saw the {trap} lure and stepped around it.",
+      "Correct. {trap} is getting nervous around you.",
+      "Right. That is how you beat {trap}: sentence first, options last.",
+      "Got it. One more like that and {trap} files a complaint."
+    ],
+    "wrong": [
+      "{trap} got you this time. Read the sentence again and find the word it twisted.",
+      "That was {trap}, a slippery thing. What did the text actually say?",
+      "Hmph, {trap}. Go back to the evidence and see where the option drifts away from it.",
+      "{trap} wins this round, only this round. Look at the quote and try the next one."
+    ]
+  },
+  "card-tamed": [
+    "{trap}: tamed. I am putting this in my diary, not because I care.",
+    "That's the {trap} card done. It used to bite, now it just sits there.",
+    "{trap} is tamed, one fewer Dutch trick in the world. You're welcome, world.",
+    "Tamed: {trap}. You beat it so often that it gave up."
+  ],
+  "mock-debrief": {
+    "open": [
+      "Mock done: {score} correct, pass line {passLine}, and we are aiming for {target}. Let's look at what happened.",
+      "{score} right, pass line {passLine}, target {target}. Here is what the Dutch did to us today.",
+      "Debrief time: you got {score}, the pass line is {passLine} and our target is {target}. Three things to fix, then we move on."
+    ],
+    "over-line": [
+      "{score} is over the line of {passLine}, good. Now we make it boring and safe: {target} or more.",
+      "Over the line, I knew it, I was not worried, stop looking at me. Next stop is {target}.",
+      "You passed this one. The goal now is a cushion, so a bad text on the day cannot hurt you."
+    ],
+    "under-line": [
+      "Under the line this time, and that is information, not a verdict. We fix three things and try again.",
+      "{score} is short of {passLine}. A few traps did the damage, and traps are exactly what we can train.",
+      "Not over the line yet. The Dutch got some cheap points; we will take them back one trap at a time."
+    ],
+    "time-ran-out": [
+      "Time ran out before the end. Next mock: flag hard ones and keep moving, every question is worth the same.",
+      "The clock beat you, not the questions. Read the question first and only the paragraph you need.",
+      "You ran out of time. Pace beats perfection: if a question is stubborn, mark a guess, flag it, move on."
+    ]
+  },
+  "readiness-plan": {
+    "baseline-mock": [
+      "This week: one full mock, just to see where we stand. No pressure, it is a map, not a test.",
+      "First a baseline mock this week. I need to know which Dutch tricks work on you so I can ruin them.",
+      "Baseline mock this week. Do it once, honestly, and then we plan around the real numbers."
+    ],
+    "daily-and-drills": [
+      "The plan: one daily text and your drills. Small, every day, and the traps get weaker.",
+      "Daily text plus drills, that is it. Boring works, and I hate admitting that.",
+      "Keep the rhythm: today's text, then the drills it unlocks. We are training moves, not memory."
+    ],
+    "second-mock": [
+      "Second mock this week. Let's see how many traps you have tamed since the first one.",
+      "Mock number two this week. Same rules, new chance to prove the Dutch wrong.",
+      "This week we test again with a full mock, then compare it with the first."
+    ],
+    "final-mock": [
+      "Final mock this week: exam conditions, full time, phone away. Think of it as the dress rehearsal.",
+      "Last full mock. Treat it like the real day, then we only polish.",
+      "This week is the final mock. One last full run before the real one."
+    ],
+    "light-review": [
+      "Light review only now: a short text, a few cards, plenty of sleep. You are ready.",
+      "No more heavy lifting: review a few traps, read something easy, rest. The work is done.",
+      "Keep it light now: one short text, your trap cards, then stop. Rest is part of the plan."
+    ]
+  },
+  "monday-message": [
+    "New week: you did {attempts} attempts last week. This week we go after {weakestType}.",
+    "Monday, and {attempts} attempts last week, I counted. Focus this week: {weakestType}.",
+    "Last week: {attempts} attempts. The questions that gave you most trouble were {weakestType}, so that is our target.",
+    "Week starts now. {weakestType} is where the Dutch are still winning, so that is where we hit them.",
+    "{attempts} attempts last week, and whatever the number, we pick up from here. This week: {weakestType}."
+  ],
+  "playbook-voice": {
+    "doel-tekst": [
+      "Why does this text exist? Look at the source line, the title and the ending, then ask what the writer wants from you."
+    ],
+    "doel-onderdeel": [
+      "The goal of one thing in the text, not the whole text. Find where that thing is named and read the sentence about what it is for."
+    ],
+    "bron-publiek": [
+      "Who wrote this, and for whom? The intro line, the 'u' or 'je', and the tone give it away."
+    ],
+    "hoofdgedachte": [
+      "The main point covers the whole text. If an option fits only one paragraph, it is too small."
+    ],
+    "mening-persoon": [
+      "Find the name, then read only that person's words. Other people's opinions are bait."
+    ],
+    "detail": [
+      "A plain fact. Scan for the key word from the question, then read the whole sentence around it."
+    ],
+    "oorzaak-reden": [
+      "Hunt the reason words: omdat, want, doordat, daardoor, zodat. The answer sits next to them."
+    ],
+    "toepassing": [
+      "A person, a situation, numbers. Find the one rule that fits and check every condition, age, time and amount."
+    ],
+    "niet-vraag": [
+      "NIET question: three options are in the text, one is not. Tick off the true ones, the leftover wins."
+    ],
+    "functie-tekstdeel": [
+      "Why is this example or quote here? Read the sentence just before it, that is what it is proving."
+    ],
+    "betekenis-in-context": [
+      "Guess the meaning from the sentence around it before you look at the options. The context explains the word."
+    ],
+    "conclusie": [
+      "What does the research or example show? Look for 'dus', 'blijkt' and 'conclusie', and do not go further than the text goes."
+    ],
+    "vergelijking": [
+      "Two sides. Find where both are named and what makes them different, not what they share."
+    ],
+    "echo": [
+      "Echo: the option copies words from the text but says something else with them. Same words, wrong meaning."
+    ],
+    "waar-niet-gevraagd": [
+      "True, but not the answer to this question. Read the question again before you fall for it."
+    ],
+    "te-breed": [
+      "Too big. The option claims more than the text supports, or names the topic instead of the point."
+    ],
+    "te-smal": [
+      "Too small. It is one detail, and the question wants the whole idea."
+    ],
+    "tegenovergesteld": [
+      "The flip: it says the reverse. Watch for niet, geen, meer, minder, voor and na."
+    ],
+    "niet-in-tekst": [
+      "Sounds reasonable, is not in the text. Common sense is not evidence."
+    ],
+    "verkeerde-persoon": [
+      "Right opinion, wrong mouth. Check who actually said it."
+    ],
+    "verkeerde-voorwaarde": [
+      "The rule for a different case. Check the age, the time, the amount, the condition."
+    ],
+    "overdreven": [
+      "Altijd, nooit, alle, alleen, moet. When the text says 'soms' or 'kan', the strong option is lying."
+    ]
+  },
+  "trap-labels": {
+    "echo": [
+      "Echo: the option borrows the text's words but changes what they mean."
+    ],
+    "waar-niet-gevraagd": [
+      "True in the text, but it answers a different question."
+    ],
+    "te-breed": [
+      "Too broad: it claims more than the text, or names the topic instead of the point."
+    ],
+    "te-smal": [
+      "Too narrow: one detail standing in for the whole idea."
+    ],
+    "tegenovergesteld": [
+      "Flipped: it says the opposite of the text, often by one small word."
+    ],
+    "niet-in-tekst": [
+      "Not in the text: plausible, maybe even true in real life, but nobody wrote it here."
+    ],
+    "verkeerde-persoon": [
+      "Wrong person: someone in the text says it, just not the person the question asks about."
+    ],
+    "verkeerde-voorwaarde": [
+      "Wrong condition: the rule for another age, time, amount or case."
+    ],
+    "overdreven": [
+      "Overstated: a soft 'soms' or 'kan' turned into 'altijd', 'alle' or 'moet'."
+    ]
+  },
+  "notebook-prompts": {
+    "guess-first": [
+      "Guess first: what could it mean here? I will tell you after, not before.",
+      "Before you look it up: your guess. Even a bad guess makes the word stick.",
+      "Guess first, dictionary second. Dutch words hate being guessed right."
+    ],
+    "clue-colon": [
+      "Look at what comes after the colon. The Dutch explain themselves there.",
+      "There is a colon nearby. Whatever follows it usually spells the word out.",
+      "Read past the colon. That part tells you what the word is."
+    ],
+    "clue-sentence-before": [
+      "The sentence before gives the reason. Read it, then guess again.",
+      "Go one sentence back. It sets up what this word means.",
+      "Look at the sentence before this one. The meaning starts there."
+    ],
+    "clue-heading": [
+      "Check the heading above this paragraph. The word belongs to that topic.",
+      "Look at the heading. It tells you what kind of word this could be.",
+      "The heading is a clue. What would a word under that heading mean?"
+    ],
+    "clue-example": [
+      "An example follows. Read it, the example shows what the word means.",
+      "Keep reading: 'bijvoorbeeld' is coming, and it does the explaining for you.",
+      "There is an example right after it. Let the example define the word."
+    ],
+    "met-again": [
+      "Oh look, this one again, {times} times now. You know it, right?",
+      "You have met this word {times} times, it keeps following you around. Guess before you peek.",
+      "Back again, {times} times now. The Dutch reuse their words, so this one is worth keeping."
+    ],
+    "lookup-budget": [
+      "{left} lookups left today. Spend them on words that block the answer.",
+      "You have {left} lookups left. Guess the easy ones, save them for the hard ones.",
+      "{left} left. Only look up a word if you cannot answer without it."
+    ]
+  }
+}

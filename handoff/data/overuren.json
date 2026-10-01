@@ -1,0 +1,311 @@
+{
+	"passageSlug": "overuren",
+	"note": "Sample practice pack. Not official exam items. Never used in mock scores.",
+	"paragraphMap": [
+		{
+			"p": 1,
+			"anchor": "Overwerk is werktijd die buiten het dienstrooste",
+			"role": "exception-condition",
+			"summary": "Defines overwerk and gives the exceptions: verschoven uren within 8 hours, no pay for a rare half hour, 11 hours rest after overtime until midnight."
+		},
+		{
+			"p": 3,
+			"anchor": "De werkgever mag u verplichten om over te werken",
+			"role": "states-rule",
+			"summary": "When the employer can oblige overtime: up to 10 hours per four weeks, more only in calamities, never under 18 or for health reasons, at most 5 hours from 55."
+		},
+		{
+			"p": 5,
+			"anchor": "Als u overwerkt kan u kiezen hoe u de overuren w",
+			"role": "states-rule",
+			"summary": "The worker chooses how overtime is paid: in money, or in free time up to 10 days a year, or more in agreement with the employer."
+		}
+	],
+	"items": [
+		{
+			"id": "p-overuren-1",
+			"qtype": "betekenis-in-context",
+			"question": "Wat zijn ‘verschoven uren’ in deze tekst?",
+			"options": {
+				"A": "uren die u later moet inhalen, omdat u eerder vrij was",
+				"B": "uren buiten uw dienstrooster, maar niet meer dan 8 uur per dag",
+				"C": "uren die u werkt bovenop de 8 uur van een werkdag"
+			},
+			"answer": "B",
+			"evidence": [
+				{
+					"p": 1,
+					"quote": "Uren die u werkt buiten het dienstrooster, maar binnen de 8 werkuren per dag, worden ‘verschoven uren’ genoemd."
+				}
+			],
+			"move": "The term is defined in the same sentence: read what comes before 'worden ... genoemd'.",
+			"why": "Verschoven uren are hours outside your schedule but still within the 8 working hours of a day.",
+			"distractors": {
+				"A": {
+					"trap": "niet-in-tekst",
+					"why": "'Verschoven' can suggest making up hours later, but the text does not define it that way."
+				},
+				"C": {
+					"trap": "tegenovergesteld",
+					"why": "Hours above the 8 hours of a day are overwerk; verschoven uren stay 'binnen de 8 werkuren'."
+				}
+			},
+			"afterItemId": "lezen-2025-19"
+		},
+		{
+			"id": "p-overuren-2",
+			"qtype": "betekenis-in-context",
+			"question": "‘Overwerk boven de 10 uur per vier weken kan alleen worden verplicht in het geval van calamiteiten.’ Wat zijn ‘calamiteiten’ hier?",
+			"options": {
+				"A": "drukke periodes met veel bestellingen",
+				"B": "periodes waarin werknemers ziek zijn",
+				"C": "ernstige problemen, zoals boetes of schade"
+			},
+			"answer": "C",
+			"evidence": [
+				{
+					"p": 3,
+					"quote": "Met calamiteiten wordt bijvoorbeeld bedoeld: • boetes; • schade voor opdrachtgevers/derden of het eigen bedrijf."
+				}
+			],
+			"move": "The next sentence explains the word: look for 'Met calamiteiten wordt bijvoorbeeld bedoeld' and the list after it.",
+			"why": "The text gives fines and damage to clients, others or the company as examples of calamiteiten: serious problems.",
+			"distractors": {
+				"A": {
+					"trap": "niet-in-tekst",
+					"why": "A busy period is a common reason for overtime, but the text does not call it a calamity."
+				},
+				"B": {
+					"trap": "echo",
+					"why": "Health ('gezondheidsredenen') is mentioned later, as a reason why a worker cannot be obliged, not as a calamity."
+				}
+			}
+		},
+		{
+			"id": "p-overuren-3",
+			"qtype": "betekenis-in-context",
+			"question": "‘De opname van de vrije tijd gebeurt in overleg met uw werkgever.’ Wat betekent dit?",
+			"options": {
+				"A": "U spreekt met uw werkgever af wanneer u vrij neemt.",
+				"B": "U bepaalt zelf wanneer u vrij neemt, want u mag kiezen.",
+				"C": "Uw werkgever beslist zonder u wanneer u vrij neemt."
+			},
+			"answer": "A",
+			"evidence": [
+				{
+					"p": 5,
+					"quote": "De opname van de vrije tijd gebeurt in overleg met uw werkgever"
+				}
+			],
+			"move": "'Opname' here is not a hospital stay: it is taking your free time. 'In overleg met' means you talk and decide together.",
+			"why": "Taking the free time is arranged together with your employer: you agree on it with each other.",
+			"distractors": {
+				"B": {
+					"trap": "echo",
+					"why": "You may choose between money and free time ('kan u kiezen'), but when you take the free time is agreed with the employer."
+				},
+				"C": {
+					"trap": "tegenovergesteld",
+					"why": "'In overleg' means together with you, not without you."
+				}
+			}
+		},
+		{
+			"id": "p-overuren-4",
+			"qtype": "niet-vraag",
+			"question": "Welke werknemer kan de werkgever NIET verplichten om over te werken?",
+			"options": {
+				"A": "een werknemer van 60 jaar",
+				"B": "een werknemer van 25 jaar die liever niet overwerkt",
+				"C": "een werknemer van 17 jaar"
+			},
+			"answer": "C",
+			"evidence": [
+				{
+					"p": 3,
+					"quote": "• als u jonger bent dan 18 jaar;"
+				}
+			],
+			"move": "Find the list after 'Voor bepaalde werknemers geldt de verplichting tot overwerk in elk geval niet' and compare each age with it.",
+			"why": "Workers younger than 18 can never be obliged to work overtime, so the 17-year-old is the answer.",
+			"distractors": {
+				"A": {
+					"trap": "verkeerde-voorwaarde",
+					"why": "From 55 the employer can still oblige overtime, only less: at most 5 hours per four weeks."
+				},
+				"B": {
+					"trap": "niet-in-tekst",
+					"why": "Not wanting to is not an exception in the text; up to 10 hours per four weeks can be obliged."
+				}
+			},
+			"afterItemId": "lezen-2025-21"
+		},
+		{
+			"id": "p-overuren-5",
+			"qtype": "detail",
+			"question": "Wat moet de werkgever volgens de tekst altijd doen als hij overwerk verplicht?",
+			"options": {
+				"A": "rekening houden met de persoonlijke situatie van de werknemer",
+				"B": "de overuren altijd in geld aan de werknemer uitbetalen",
+				"C": "eerst nagaan of er sprake is van een calamiteit"
+			},
+			"answer": "A",
+			"evidence": [
+				{
+					"p": 3,
+					"quote": "maar moet altijd rekening houden met uw persoonlijke omstandigheden"
+				}
+			],
+			"move": "Look at the first sentence about obliging overtime and find the word 'altijd'.",
+			"why": "The employer may oblige up to 10 hours per four weeks, but must always take the worker's personal circumstances into account.",
+			"distractors": {
+				"B": {
+					"trap": "verkeerde-persoon",
+					"why": "The worker, not the employer, chooses between money and free time."
+				},
+				"C": {
+					"trap": "verkeerde-voorwaarde",
+					"why": "A calamity is only needed for overtime above 10 hours per four weeks, not always."
+				}
+			}
+		},
+		{
+			"id": "p-overuren-6",
+			"qtype": "toepassing",
+			"question": "Femke heeft dit jaar al 10 dagen vrij genomen voor haar overuren. Ze heeft nog meer overuren gemaakt en wil daarvoor nog 2 dagen vrij. Kan dat?",
+			"options": {
+				"A": "Nee, want meer dan 10 dagen per jaar in vrije tijd kan niet.",
+				"B": "Ja, als ze dit samen met haar werkgever afspreekt.",
+				"C": "Ja, want ze mag zelf kiezen hoe ze haar overuren laat vergoeden."
+			},
+			"answer": "B",
+			"evidence": [
+				{
+					"p": 5,
+					"quote": "3) in overleg met uw werkgever kunnen meer dan 10 dagen per jaar ingezet worden als vrije tijd."
+				}
+			],
+			"move": "Femke is above the 10 days of point 2), so read point 3) for what is possible beyond that maximum.",
+			"why": "Point 3) says more than 10 days per year can be taken as free time if you agree on it with your employer.",
+			"distractors": {
+				"A": {
+					"trap": "verkeerde-voorwaarde",
+					"why": "The 10-day maximum is the standard rule, but point 3) allows more with the employer's agreement."
+				},
+				"C": {
+					"trap": "echo",
+					"why": "She may choose money or free time, but going above 10 days needs 'overleg met uw werkgever'."
+				}
+			}
+		},
+		{
+			"id": "p-overuren-7",
+			"qtype": "toepassing",
+			"question": "Volgens zijn dienstrooster werkt Tom van 7.00 tot 15.00 uur. Op een dag werkt hij tot 15.20 uur door om een klus af te maken. Dat gebeurt bijna nooit. Krijgt Tom extra betaald voor die 20 minuten?",
+			"options": {
+				"A": "Ja, want hij werkt buiten zijn dienstrooster.",
+				"B": "Ja, want hij heeft al een volle werkdag gewerkt.",
+				"C": "Nee, want het is een enkele keer en korter dan een half uur."
+			},
+			"answer": "C",
+			"evidence": [
+				{
+					"p": 1,
+					"quote": "Er is geen beloning als u slechts een enkele keer maximaal een half uur overwerkt, direct aansluitend op het normale werk."
+				}
+			],
+			"move": "Check Tom against every part of the exception: how often, how long, and directly after normal work.",
+			"why": "Tom works overtime only once, for less than half an hour, right after his normal work: that is the case with 'geen beloning'.",
+			"distractors": {
+				"A": {
+					"trap": "verkeerde-voorwaarde",
+					"why": "This is the general rule; the half-hour exception overrules it in Tom's case."
+				},
+				"B": {
+					"trap": "echo",
+					"why": "'Volle werkdag' belongs to the rule about overtime until 24.00 and the 11 hours of rest."
+				}
+			}
+		},
+		{
+			"id": "p-overuren-8",
+			"qtype": "toepassing",
+			"question": "Volgens haar dienstrooster werkt Lisa van 8.00 tot 16.00 uur. Deze maand werkt ze elke dag tot 16.30 uur door, omdat het druk is. Krijgt Lisa extra betaald voor dat half uur?",
+			"options": {
+				"A": "Ja, want ze werkt niet af en toe, maar elke dag over.",
+				"B": "Nee, want ze werkt per keer niet meer dan een half uur over.",
+				"C": "Nee, want dit zijn verschoven uren."
+			},
+			"answer": "A",
+			"evidence": [
+				{
+					"p": 1,
+					"quote": "Bijvoorbeeld het afmaken van een klus, als dit af en toe voorkomt."
+				}
+			],
+			"move": "The half-hour exception has two conditions: the length and how often it happens. Check both for Lisa.",
+			"why": "The exception only applies 'een enkele keer' or 'af en toe'. Lisa works the extra half hour every day, so it counts as paid overwerk.",
+			"distractors": {
+				"B": {
+					"trap": "echo",
+					"why": "The half hour fits, but 'een enkele keer' does not: the exception needs both conditions."
+				},
+				"C": {
+					"trap": "verkeerde-voorwaarde",
+					"why": "Lisa already works 8 hours; the extra half hour is above the 8 hours, so these are not verschoven uren."
+				}
+			}
+		}
+	],
+	"paraphrase": [
+		{
+			"id": "pp-overuren-1",
+			"source": {
+				"p": 3,
+				"quote": "Als er geen sprake is van een calamiteit, mag u overwerk boven de 10 uur per vier weken dus weigeren."
+			},
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "U mag overwerk altijd weigeren als u dat wilt.",
+				"B": "Zonder calamiteit hoeft u niet meer dan 10 uur per vier weken over te werken.",
+				"C": "Bij een calamiteit mag u overwerk boven de 10 uur per vier weken weigeren."
+			},
+			"answer": "B",
+			"distractors": {
+				"A": {
+					"trap": "overdreven",
+					"why": "The right to refuse is only for overtime above 10 hours and only without a calamity, not 'altijd'."
+				},
+				"C": {
+					"trap": "tegenovergesteld",
+					"why": "It flips the condition: you may refuse when there is NO calamity."
+				}
+			}
+		},
+		{
+			"id": "pp-overuren-2",
+			"source": {
+				"p": 1,
+				"quote": "Als er binnen die 11 uren gewone werktijd gepland staat in het dienstrooster, moet de werkgever deze gewone werktijd echter wel betalen!"
+			},
+			"afterItemId": "lezen-2025-20",
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "Werkuren die u door de 11 uren rust mist, krijgt u toch betaald.",
+				"B": "Werkuren die u door de 11 uren rust mist, worden niet betaald.",
+				"C": "De 11 uren rust worden extra betaald, net als overuren."
+			},
+			"answer": "A",
+			"distractors": {
+				"B": {
+					"trap": "tegenovergesteld",
+					"why": "'Echter wel betalen' means the missed hours ARE paid."
+				},
+				"C": {
+					"trap": "echo",
+					"why": "Only the planned working hours inside the 11 hours are paid, as normal hours; the rest itself is not paid as overtime."
+				}
+			}
+		}
+	]
+}

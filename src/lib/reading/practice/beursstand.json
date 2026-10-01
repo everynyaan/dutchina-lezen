@@ -1,0 +1,232 @@
+{
+	"passageSlug": "beursstand",
+	"note": "Sample practice pack. Not official exam items. Never used in mock scores.",
+	"paragraphMap": [
+		{
+			"p": 1,
+			"anchor": "Op een beurs moeten de aanbieders ruimte huren v",
+			"role": "introduces-topic",
+			"summary": "What a stand is, the types of stand and their options, what decides size and location, and why a good layout matters."
+		},
+		{
+			"p": 3,
+			"anchor": "De entree van je stand moet open zijn. Ook al ze",
+			"role": "advice-instruction",
+			"summary": "The entrance must be open so people can look in and walk in easily."
+		},
+		{
+			"p": 5,
+			"anchor": "Er moet ruimte zijn voor mensen om een poosje te",
+			"role": "advice-instruction",
+			"summary": "Make room for people to stay: seats, a play corner for children, space to talk, but keep the stand clearly separate."
+		},
+		{
+			"p": 7,
+			"anchor": "Verlichting is belangrijk. Net als bij winkels i",
+			"role": "advice-instruction",
+			"summary": "Lighting: little light at the entrance, more at the back or centre, and the type of light depends on the product."
+		},
+		{
+			"p": 9,
+			"anchor": "Ook bij een kleine stand is routing belangrijk: ",
+			"role": "advice-instruction",
+			"summary": "Routing inside the stand, and preparing well so many visitors come: tell contacts, newsletters, free tickets, an article."
+		}
+	],
+	"items": [
+		{
+			"id": "p-beursstand-1",
+			"qtype": "betekenis-in-context",
+			"question": "‘De stand is je visitekaartje.’ Wat betekent dit hier?",
+			"options": {
+				"A": "Bij je stand geef je bezoekers je visitekaartje.",
+				"B": "Je stand moet rustig zijn en niet te veel opvallen.",
+				"C": "Aan je stand zien mensen wat voor bedrijf je bent."
+			},
+			"answer": "C",
+			"evidence": [
+				{
+					"p": 1,
+					"quote": "De stand is je visitekaartje. Hij moet er uitnodigend uitzien en in het oog springen."
+				}
+			],
+			"move": "Read the next sentence: it explains the image. The stand must look inviting and catch the eye.",
+			"why": "Like a business card, the stand is the first thing people see of your company, so it shows who you are; that is why it must look inviting.",
+			"distractors": {
+				"A": {
+					"trap": "echo",
+					"why": "A literal reading; the text never says you hand out business cards."
+				},
+				"B": {
+					"trap": "tegenovergesteld",
+					"why": "The next sentence says the stand must 'in het oog springen', catch the eye."
+				}
+			}
+		},
+		{
+			"id": "p-beursstand-2",
+			"qtype": "oorzaak-reden",
+			"question": "Waarom is het inrichten van een stand belangrijk, volgens de tekst?",
+			"options": {
+				"A": "omdat de organisator alleen mooie stands toelaat",
+				"B": "omdat een stand die er slecht uitziet weinig mensen trekt",
+				"C": "omdat een stand er precies zo uit moet zien als een winkel"
+			},
+			"answer": "B",
+			"evidence": [
+				{
+					"p": 1,
+					"quote": "Het is ook belangrijk: een slecht gepresenteerde stand trekt weinig publiek"
+				}
+			],
+			"move": "Look for the word 'belangrijk' at the end of the first paragraph; the colon after it introduces the reason.",
+			"why": "After 'Het is ook belangrijk:' the text says a badly presented stand draws few visitors, so taking part is wasted money.",
+			"distractors": {
+				"A": {
+					"trap": "niet-in-tekst",
+					"why": "The organiser rents out space and helps choose the location; nothing about refusing ugly stands."
+				},
+				"C": {
+					"trap": "echo",
+					"why": "'Net als een winkel' only means a stand must be designed and furnished too, not that it must look exactly like a shop."
+				}
+			}
+		},
+		{
+			"id": "p-beursstand-3",
+			"qtype": "toepassing",
+			"question": "Marco verkoopt fietsen op een beurs. Hij verwacht veel ouders met jonge kinderen. Welke tip uit de tekst past het best bij Marco?",
+			"options": {
+				"A": "Maak een speelhoek, zodat ouders rustig kunnen kijken.",
+				"B": "Gebruik warm licht, zodat de fietsen mooi opvallen.",
+				"C": "Zet geen stoelen neer, zodat mensen snel doorlopen."
+			},
+			"answer": "A",
+			"evidence": [
+				{
+					"p": 5,
+					"quote": "Komen er gezinnen, zorg dan voor een speelhoek voor kinderen."
+				},
+				{
+					"p": 5,
+					"quote": "Dan geef je de ouders de tijd en ruimte om te doen waar ze voor kwamen."
+				}
+			],
+			"move": "The key fact in the case is 'ouders met jonge kinderen'. Scan the headings for where families are mentioned: 'Zitruimte'.",
+			"why": "The text says: if families come, make a play corner, so parents have time and space to do what they came for.",
+			"distractors": {
+				"B": {
+					"trap": "verkeerde-voorwaarde",
+					"why": "Warm light is the tip for jewellery, not for bikes; the text gives no light tip for bikes."
+				},
+				"C": {
+					"trap": "tegenovergesteld",
+					"why": "The text wants people to stay: chairs or bar stools, and 'ga niet te snel weer weg'."
+				}
+			}
+		},
+		{
+			"id": "p-beursstand-4",
+			"qtype": "vergelijking",
+			"question": "Wat is volgens de tekst het verschil tussen een tussenstand en een hoekstand?",
+			"options": {
+				"A": "Een hoekstand heeft aan alle kanten looppaden.",
+				"B": "Een hoekstand staat dwars op de rij.",
+				"C": "Een hoekstand biedt meer mogelijkheden voor de inrichting."
+			},
+			"answer": "C",
+			"evidence": [
+				{
+					"p": 1,
+					"quote": "Een tussenstand in een rij geeft minder mogelijkheden dan een hoekstand"
+				}
+			],
+			"move": "Four stand types are named close together. Find the sentence that names both 'tussenstand' and 'hoekstand' and look at 'minder ... dan'.",
+			"why": "A stand in the middle of a row gives fewer options than a corner stand, so a corner stand offers more options for the layout.",
+			"distractors": {
+				"A": {
+					"trap": "echo",
+					"why": "Walkways all around describe the eilandstand, not the hoekstand."
+				},
+				"B": {
+					"trap": "echo",
+					"why": "'Dwars op de rij' describes the kopstand; a hoekstand is at the end of the row."
+				}
+			}
+		}
+	],
+	"paraphrase": [
+		{
+			"id": "pp-beursstand-1",
+			"source": {
+				"p": 3,
+				"quote": "Ook al zet je een paar wanden om een stand, mensen moeten naar binnen kunnen kijken en makkelijk naar binnen kunnen lopen."
+			},
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "Een stand mag geen wanden hebben, want dan komt niemand binnen.",
+				"B": "Ook een stand met wanden moet open blijven voor kijkers en bezoekers.",
+				"C": "Met een paar wanden kunnen mensen niet meer naar binnen kijken."
+			},
+			"answer": "B",
+			"distractors": {
+				"A": {
+					"trap": "overdreven",
+					"why": "Walls are allowed ('ook al zet je een paar wanden'); the stand just has to stay open."
+				},
+				"C": {
+					"trap": "tegenovergesteld",
+					"why": "The sentence says people must still be able to look in, even with walls."
+				}
+			}
+		},
+		{
+			"id": "pp-beursstand-2",
+			"source": {
+				"p": 9,
+				"quote": "Deelname aan een beurs is vaak een flinke investering. Dat is het natuurlijk alleen waard als je veel bezoekers trekt."
+			},
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "Omdat een beurs duur is, komen er meestal weinig bezoekers.",
+				"B": "Een beurs is alleen de moeite waard als alle bezoekers iets kopen.",
+				"C": "Een beurs kost vaak veel geld, dus je hebt veel bezoekers nodig."
+			},
+			"answer": "C",
+			"distractors": {
+				"A": {
+					"trap": "echo",
+					"why": "Uses the same ideas, cost and visitors, but invents a cause: the text never says few visitors come."
+				},
+				"B": {
+					"trap": "overdreven",
+					"why": "'Veel bezoekers' becomes 'alle bezoekers' who must also buy something."
+				}
+			}
+		},
+		{
+			"id": "pp-beursstand-3",
+			"source": {
+				"p": 5,
+				"quote": "Ook al ziet je stand er ‘open’ uit, hij moet wel duidelijk afgescheiden zijn van andere stands."
+			},
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "Je stand mag open lijken, maar moet wel duidelijk apart staan van andere stands.",
+				"B": "Omdat je stand open is, hoeft hij niet gescheiden te zijn van andere stands.",
+				"C": "Je stand moet open zijn, zodat bezoekers ook andere stands kunnen zien."
+			},
+			"answer": "A",
+			"distractors": {
+				"B": {
+					"trap": "tegenovergesteld",
+					"why": "The sentence says the stand must be clearly separated, 'wel duidelijk afgescheiden'."
+				},
+				"C": {
+					"trap": "echo",
+					"why": "Uses 'open' and 'andere stands', but the sentence is about separating your stand from them."
+				}
+			}
+		}
+	]
+}

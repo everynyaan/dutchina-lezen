@@ -8,7 +8,8 @@ import {
 	paraphraseById,
 	paraphraseFor,
 	practiceById,
-	practiceItemsFor
+	practiceItemsFor,
+	takeSpaced
 } from './practice';
 import { eligibleSetPassages } from './sets';
 import {
@@ -132,15 +133,16 @@ export function selectQuestions(
 		)
 		.sort((a, b) => a.id.localeCompare(b.id));
 	const slots = last ? 2 : 3;
-	const chosen: string[] = [];
-	for (const item of practiceRest) {
-		if (chosen.length >= slots) break;
-		chosen.push(item.id);
+	const pool = practiceRest.map((item) => item.id);
+	if (!officialDoel && officialRest[0]) pool.push(officialRest[0].id);
+	const chosen = takeSpaced(pool, slots);
+	if (last) {
+		const prev = chosen.at(-1);
+		const lastPack = itemPassageSlug(last);
+		const prevPack = prev ? itemPassageSlug(prev) : undefined;
+		if (lastPack && prevPack && lastPack === prevPack && chosen.length > 0) chosen.pop();
+		chosen.push(last);
 	}
-	if (!officialDoel && chosen.length < slots && officialRest[0]) {
-		chosen.push(officialRest[0].id);
-	}
-	if (last) chosen.push(last);
 	return chosen;
 }
 
@@ -151,13 +153,8 @@ export function selectParaphrase(
 	date: string,
 	questionIds: readonly string[]
 ): string | null {
-	const drills = paraphraseFor(slug)
-		.filter((drill) => {
-			if (!drill.afterItemId) return true;
-			if (questionIds.includes(drill.afterItemId)) return true;
-			return fork.attempts.some((attempt) => attempt.itemId === drill.afterItemId);
-		})
-		.sort((a, b) => a.id.localeCompare(b.id));
+	const seen = new Set([...fork.attempts.map((attempt) => attempt.itemId), ...questionIds]);
+	const drills = paraphraseFor(slug, seen).sort((a, b) => a.id.localeCompare(b.id));
 	if (drills.length === 0) return null;
 	return drills[dayIndex(date, drills.length)]?.id ?? null;
 }
@@ -186,11 +183,18 @@ export function buildDailyText(fork: ReadingForkState, date: string): DailyTextS
 	}
 	const questions = selectQuestions(fork, passage, date);
 	const paraphrase = selectParaphrase(fork, passage.slug, date, questions);
+	const prev = questions.at(-1);
+	const paraphrasePack = paraphrase ? itemPassageSlug(paraphrase) : undefined;
+	const prevPack = prev ? itemPassageSlug(prev) : undefined;
+	const spaced =
+		paraphrase && !(paraphrasePack && prevPack && paraphrasePack === prevPack)
+			? [...questions, paraphrase]
+			: questions;
 	return {
 		date,
 		passageSlug: passage.slug,
 		mapDone: !shouldMap(fork, passage.slug, date),
-		itemIds: paraphrase ? [...questions, paraphrase] : questions,
+		itemIds: spaced,
 		answers: {},
 		completed: false
 	};

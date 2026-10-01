@@ -1,0 +1,170 @@
+{
+	"passageSlug": "autosportklas",
+	"note": "Sample practice pack. Not official exam items. Never used in mock scores.",
+	"paragraphMap": [
+		{
+			"p": 1,
+			"anchor": "De autosportklas van Newton College is een extra",
+			"role": "introduces-topic",
+			"summary": "Introduces the race class at Newton College: an extra year for the best level 4 students, doing car maintenance and going to races."
+		},
+		{
+			"p": 3,
+			"anchor": "De Tilburgse autosportklas bestaat al veel lange",
+			"role": "background-origin",
+			"summary": "History since 1988, cars lent by Defence and why, how students are selected, and the yearly struggle to keep it funded."
+		},
+		{
+			"p": 5,
+			"anchor": "Abel (17) en Hussam (18) volgen de autosport-opl",
+			"role": "reports-opinion",
+			"summary": "Students Abel and Hussam show their enthusiasm: Hussam worked up to level 4, Abel sees it as an advantage for a racing career."
+		},
+		{
+			"p": 7,
+			"anchor": "Het is onhandig dat het raceseizoen één kalender",
+			"role": "problem-risk",
+			"summary": "Practical problems with how the race year fits into the course, and the manager's plans to extend and broaden the class."
+		},
+		{
+			"p": 9,
+			"anchor": "Het traject van de autosportklas moet bij voorke",
+			"role": "reports-opinion",
+			"summary": "Why the class should be bilingual, trips abroad and company visits, and Marelis's view that students learn most at races."
+		}
+	],
+	"items": [
+		{
+			"id": "p-autosportklas-1",
+			"qtype": "betekenis-in-context",
+			"question": "Newton College steekt geld in het raceteam, 'omdat het raceteam ook een visitekaartje voor de school is'. Wat betekent dit?",
+			"options": {
+				"A": "Het raceteam brengt veel geld op voor de school.",
+				"B": "Het raceteam geeft de school een goede naam.",
+				"C": "Het raceteam deelt kaartjes van de school uit aan sponsoren."
+			},
+			"answer": "B",
+			"evidence": [
+				{
+					"p": 3,
+					"quote": "omdat het raceteam ook een visitekaartje voor de school is"
+				}
+			],
+			"move": "Read the whole sentence: the school pays money 'omdat' the team is a 'visitekaartje'. Ask what the school gets back that is not money.",
+			"why": "A 'visitekaartje' here is something that shows others who you are and makes a good impression: the race team is good publicity for the school, so the school invests in it.",
+			"distractors": {
+				"A": {
+					"trap": "tegenovergesteld",
+					"why": "The money goes the other way: the school puts money into the team, and the team depends on sponsors."
+				},
+				"C": {
+					"trap": "echo",
+					"why": "A literal reading of 'kaartje' plus the word 'sponsoren' from the text; nobody hands out cards."
+				}
+			}
+		},
+		{
+			"id": "p-autosportklas-2",
+			"qtype": "mening-persoon",
+			"question": "Wat is volgens Abel het voordeel van de autosportklas?",
+			"options": {
+				"A": "Je ziet dat een technische opleiding leuk en spannend kan zijn.",
+				"B": "Je hebt later meer kans op een baan bij het ministerie van Defensie.",
+				"C": "Je maakt later meer kans als je in de racewereld wilt werken."
+			},
+			"answer": "C",
+			"evidence": [
+				{
+					"p": 5,
+					"quote": "als je deze opleiding hebt gedaan, heb je echt een voorsprong"
+				}
+			],
+			"move": "Find Abel's name and read only his own words at the end of the paragraph about the students.",
+			"why": "Abel says the class looks good on your cv and, because he wants to go on in the racing branch, gives you 'echt een voorsprong'.",
+			"distractors": {
+				"A": {
+					"trap": "verkeerde-persoon",
+					"why": "This is what teacher Marelis says the class is meant to show, not Abel's view."
+				},
+				"B": {
+					"trap": "verkeerde-persoon",
+					"why": "A career at Defence is what the ministry hopes for; Abel talks about the racing branch."
+				}
+			}
+		}
+	],
+	"paraphrase": [
+		{
+			"id": "pp-autosportklas-1",
+			"source": {
+				"p": 7,
+				"quote": "Dat is de enige mogelijkheid, omdat studenten anders later in hun opleiding in de knel komen met stages."
+			},
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "Anders krijgen studenten later in hun opleiding problemen met hun stages.",
+				"B": "Studenten kunnen later in hun opleiding stage lopen bij de autosportklas.",
+				"C": "Door de autosportklas kunnen studenten nooit meer stage lopen."
+			},
+			"answer": "A",
+			"distractors": {
+				"B": {
+					"trap": "echo",
+					"why": "Same words (later, opleiding, stage), but the sentence is about a timing problem, not about doing an internship in the race class."
+				},
+				"C": {
+					"trap": "overdreven",
+					"why": "'In de knel komen' means getting into difficulty, not 'nooit meer' doing an internship."
+				}
+			}
+		},
+		{
+			"id": "pp-autosportklas-2",
+			"source": {
+				"p": 3,
+				"quote": "We hebben vier auto’s, en het heeft geen zin om met meer dan vier studenten aan één auto te sleutelen."
+			},
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "Elke student krijgt een eigen auto om aan te werken.",
+				"B": "Meer dan vier studenten per auto is niet zinvol.",
+				"C": "De school wil nooit meer dan vier auto’s hebben."
+			},
+			"answer": "B",
+			"distractors": {
+				"A": {
+					"trap": "tegenovergesteld",
+					"why": "The sentence is about several students sharing one car, not one car per student."
+				},
+				"C": {
+					"trap": "echo",
+					"why": "Reuses 'vier' and 'auto’s', but the limit of four is about students per car, not the number of cars."
+				}
+			}
+		},
+		{
+			"id": "pp-autosportklas-3",
+			"source": {
+				"p": 9,
+				"quote": "Maar dichter bij huis is natuurlijk ook genoeg te leren."
+			},
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "Studenten leren alleen in het buitenland echt veel.",
+				"B": "Studenten leren thuis meer dan op school.",
+				"C": "Ook in de buurt kunnen studenten veel leren."
+			},
+			"answer": "C",
+			"distractors": {
+				"A": {
+					"trap": "tegenovergesteld",
+					"why": "The sentence says there is also enough to learn nearby, the opposite of 'alleen in het buitenland'."
+				},
+				"B": {
+					"trap": "echo",
+					"why": "Takes 'huis' literally; 'dichter bij huis' means in the Netherlands, close by, not at home."
+				}
+			}
+		}
+	]
+}

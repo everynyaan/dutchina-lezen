@@ -11,8 +11,11 @@ import {
 
 describe('practice packs', () => {
 	it('validates every pack that has arrived', () => {
-		expect(packSlugs()).toEqual(['buurt-whatsapp']);
+		expect(packSlugs()).toHaveLength(18);
+		expect(packSlugs()).toContain('buurt-whatsapp');
+		expect(packSlugs()).toContain('bakkerij');
 		expect(allPackProblems()).toEqual([]);
+		expect(passagesMissingPacks()).toEqual([]);
 	});
 
 	it('resolves the buurt-whatsapp sample against the live passage', () => {
@@ -28,14 +31,12 @@ describe('practice packs', () => {
 		expect(drills[1]?.source.p).toBe(5);
 	});
 
-	it('serves legacy items beside the authored packs and still reports missing packs', () => {
+	it('serves legacy items beside the authored packs and respects both gates', () => {
 		const bakkerij = practiceItemsFor('bakkerij');
-		expect(bakkerij.length).toBeGreaterThan(0);
-		expect(bakkerij.every((item) => item.id.startsWith('p-legacy-'))).toBe(true);
-		expect(paragraphMapFor('bakkerij')).toEqual([]);
-		expect(paraphraseFor('bakkerij')).toEqual([]);
-		expect(passagesMissingPacks()).toHaveLength(17);
-		expect(passagesMissingPacks()).not.toContain('buurt-whatsapp');
+		expect(bakkerij.some((item) => item.id.startsWith('p-bakkerij-'))).toBe(true);
+		expect(bakkerij.some((item) => item.id.startsWith('p-legacy-'))).toBe(true);
+		expect(paragraphMapFor('bakkerij').length).toBeGreaterThan(0);
+		expect(paraphraseFor('bakkerij').length).toBeGreaterThan(0);
 		expect(practiceItemsFor('buurt-whatsapp').some((item) => item.id.startsWith('p-legacy-'))).toBe(
 			false
 		);
@@ -44,6 +45,25 @@ describe('practice packs', () => {
 		expect(
 			practiceItemsFor('vijf-fabels', ['lezen-2023-6']).some(
 				(item) => item.id === 'p-legacy-2023-1'
+			)
+		).toBe(true);
+		expect(
+			practiceItemsFor('maakt-geld-ons-gelukkig').some(
+				(item) => item.id === 'p-maakt-geld-ons-gelukkig-2'
+			)
+		).toBe(false);
+		expect(
+			practiceItemsFor('maakt-geld-ons-gelukkig', ['lezen-2023-17']).some(
+				(item) => item.id === 'p-maakt-geld-ons-gelukkig-2'
+			)
+		).toBe(true);
+		const held = paraphraseFor('verkopen-is-een-vak', []).some(
+			(drill) => drill.afterItemId === 'lezen-2025-13' || drill.afterItemId === 'lezen-2025-16'
+		);
+		expect(held).toBe(false);
+		expect(
+			paraphraseFor('verkopen-is-een-vak', ['lezen-2025-16']).some(
+				(drill) => drill.afterItemId === 'lezen-2025-16'
 			)
 		).toBe(true);
 	});

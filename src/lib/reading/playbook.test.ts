@@ -71,8 +71,7 @@ describe('playbook', () => {
 		expect(words.find((hit) => hit.word === 'omdat')?.example).toBeTruthy();
 		expect(words.find((hit) => hit.word === 'mits')?.example).toBeNull();
 		const packed = roleCards().filter((role) => role.example);
-		expect(packed.length).toBeGreaterThan(0);
-		expect(packed.length).toBeLessThan(roleCards().length);
+		expect(packed.length).toBe(roleCards().length);
 		expect(playbookYears()).toEqual([2025, 2024, 2023]);
 	});
 

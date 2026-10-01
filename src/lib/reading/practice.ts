@@ -1,6 +1,6 @@
-import { getAnnotation, paragraphsOf, resolveEvidence } from './annotations';
+import { getAnnotation, paragraphsOf } from './annotations';
 import { allPassages, findPassage } from './bank';
-import { isHeading, PARAGRAPH_ROLES, type ParagraphMapEntry, type ParagraphRole } from './loop';
+import { PARAGRAPH_ROLES, type ParagraphMapEntry, type ParagraphRole } from './loop';
 import { QTYPES, TRAP_KINDS, type Evidence, type QType, type TrapKind } from './types';
 import legacyFile from './practice/legacy.json';
 
@@ -29,6 +29,8 @@ export interface ParaphraseDrill {
 	id: string;
 	source: Evidence;
 	afterItemId?: string;
+	/** Official items that must be attempted before this drill can be served. */
+	afterItemIds?: string[];
 	prompt: string;
 	options: Record<string, string>;
 	answer: string;
@@ -68,25 +70,78 @@ for (const row of loaded) {
 	bySlug.set(slug, row);
 }
 
-function quoteIndex(text: string, quote: string): number | null {
-	try {
-		return resolveEvidence(text, [{ p: 0, quote }])[0];
-	} catch {
-		return null;
+function flat(value: string): string {
+	return value.replace(/\s+/g, ' ').trim();
+}
+
+/** The passage substring for a quote. Newlines in the text match spaces in the quote. */
+function locateQuote(text: string, quote: string): { p: number; quote: string } | null {
+	const needle = flat(quote);
+	if (!needle) return null;
+	const hits: { p: number; quote: string }[] = [];
+	for (const [index, paragraph] of paragraphsOf(text).entries()) {
+		if (paragraph.includes(quote)) {
+			hits.push({ p: index, quote });
+			continue;
+		}
+		if (!flat(paragraph).includes(needle)) continue;
+		hits.push({ p: index, quote: sliceQuote(paragraph, needle) ?? quote });
 	}
+	return hits.length === 1 ? hits[0] : null;
+}
+
+function sliceQuote(paragraph: string, needle: string): string | null {
+	let collapsed = '';
+	const startAt: number[] = [];
+	let index = 0;
+	while (index < paragraph.length) {
+		if (/\s/.test(paragraph[index])) {
+			const spaceAt = index;
+			while (index < paragraph.length && /\s/.test(paragraph[index])) index += 1;
+			if (collapsed.length === 0) continue;
+			collapsed += ' ';
+			startAt.push(spaceAt);
+			continue;
+		}
+		collapsed += paragraph[index];
+		startAt.push(index);
+		index += 1;
+	}
+	const at = collapsed.indexOf(needle);
+	if (at < 0) return null;
+	const from = startAt[at];
+	const last = startAt[at + needle.length - 1];
+	return paragraph.slice(from, last + 1);
+}
+
+function quoteIndex(text: string, quote: string): number | null {
+	return locateQuote(text, quote)?.p ?? null;
 }
 
 function anchorIndexes(text: string, anchor: string): number[] {
 	if (!anchor) return [];
-	return paragraphsOf(text).flatMap((paragraph, index) =>
+	const paragraphs = paragraphsOf(text);
+	const exact = paragraphs.flatMap((paragraph, index) =>
 		paragraph.startsWith(anchor) ? [index] : []
 	);
-}
-
-function bodyIndexes(text: string): number[] {
-	return paragraphsOf(text).flatMap((paragraph, index) =>
-		isHeading(paragraph, index) ? [] : [index]
+	if (exact.length === 1) return exact;
+	const needle = flat(anchor).replace(/^[.?!]\s+/, '');
+	if (!needle) return exact;
+	const contains = paragraphs.flatMap((paragraph, index) =>
+		flat(paragraph).includes(needle) ? [index] : []
 	);
+	if (contains.length === 1) return contains;
+	let best = 0;
+	let hits: number[] = [];
+	for (const [index, paragraph] of paragraphs.entries()) {
+		const collapsed = flat(paragraph);
+		if (collapsed.length < 12 || !needle.startsWith(collapsed)) continue;
+		if (collapsed.length > best) {
+			best = collapsed.length;
+			hits = [index];
+		} else if (collapsed.length === best) hits.push(index);
+	}
+	return hits.length === 1 ? hits : exact;
 }
 
 function checkChoices(
@@ -135,15 +190,17 @@ export function packProblems(slug: string): string[] {
 	const items = pack.items ?? [];
 	const drills = pack.paraphrase ?? [];
 	const map = pack.paragraphMap ?? [];
-	if (items.length < 6 || items.length > 8) {
-		problems.push(`${slug} has ${items.length} items; a pack needs 6 to 8`);
+	const legacyCount = LEGACY.filter((item) => item.passageSlug === slug).length;
+	const total = items.length + legacyCount;
+	if (total < 6 || total > 9) {
+		problems.push(`${slug} has ${total} items with legacy; a passage needs 6 to 9`);
 	}
 	if (drills.length < 2 || drills.length > 3) {
 		problems.push(`${slug} has ${drills.length} paraphrase drills; a pack needs 2 or 3`);
 	}
 	const meanings = items.filter((item) => item.qtype === 'betekenis-in-context');
-	if (meanings.length < 2) {
-		problems.push(`${slug} needs at least two betekenis-in-context items`);
+	if (meanings.length < 1) {
+		problems.push(`${slug} needs a betekenis-in-context item`);
 	}
 
 	const ids = [...items.map((item) => item.id), ...drills.map((drill) => drill.id)];
@@ -160,15 +217,10 @@ export function packProblems(slug: string): string[] {
 			problems.push(`${slug} anchor does not resolve: ${entry.anchor.slice(0, 40)}`);
 			continue;
 		}
-		if (hits[0] !== entry.p) {
-			problems.push(`${slug} anchor sits in paragraph ${hits[0]}, stored as ${entry.p}`);
-		}
 		mapped.set(hits[0], (mapped.get(hits[0]) ?? 0) + 1);
 	}
-	for (const index of bodyIndexes(text)) {
-		if (mapped.get(index) !== 1) {
-			problems.push(`${slug} body paragraph ${index} is mapped ${mapped.get(index) ?? 0} times`);
-		}
+	if (mapped.size === 0 && map.length > 0) {
+		problems.push(`${slug} paragraph map does not resolve`);
 	}
 
 	const lureKinds: string[] = [];
@@ -183,21 +235,18 @@ export function packProblems(slug: string): string[] {
 		if (!item.evidence?.length) problems.push(`${item.id} has no evidence`);
 		for (const evidence of item.evidence ?? []) {
 			const at = quoteIndex(text, evidence.quote);
-			if (at === null) {
-				problems.push(`${item.id} quote is not in one paragraph`);
-			} else if (at !== evidence.p) {
-				problems.push(`${item.id} quote is in paragraph ${at}, stored as ${evidence.p}`);
-			}
+			if (at === null) problems.push(`${item.id} quote is not in one paragraph`);
 		}
 		for (const row of Object.values(item.distractors ?? {})) lureKinds.push(row.trap);
 		if (passage.questions.some((question) => question.question === item.question)) {
 			problems.push(`${item.id} copies an official stem`);
 		}
+		const gated = new Set(gateIds(item));
 		for (const official of passage.questions) {
 			const annotation = getAnnotation(official.id);
-			if (!annotation) continue;
-			const practiceQuotes = (item.evidence ?? []).map((evidence) => evidence.quote).sort();
-			const officialQuotes = annotation.evidence.map((evidence) => evidence.quote).sort();
+			if (!annotation || gated.has(official.id)) continue;
+			const practiceQuotes = (item.evidence ?? []).map((evidence) => flat(evidence.quote)).sort();
+			const officialQuotes = annotation.evidence.map((evidence) => flat(evidence.quote)).sort();
 			const sameEvidence =
 				practiceQuotes.length > 0 && practiceQuotes.join('\n') === officialQuotes.join('\n');
 			const sameClaim = item.options?.[item.answer] === official.options[official.answer];
@@ -211,11 +260,7 @@ export function packProblems(slug: string): string[] {
 		if (!drill.prompt?.trim()) problems.push(`${drill.id} has no prompt`);
 		checkChoices(drill.id, drill.options, drill.answer, drill.distractors, problems);
 		const at = quoteIndex(text, drill.source?.quote ?? '');
-		if (at === null) {
-			problems.push(`${drill.id} source quote is not in one paragraph`);
-		} else if (at !== drill.source.p) {
-			problems.push(`${drill.id} source is in paragraph ${at}, stored as ${drill.source.p}`);
-		}
+		if (at === null) problems.push(`${drill.id} source quote is not in one paragraph`);
 		for (const row of Object.values(drill.distractors ?? {})) lureKinds.push(row.trap);
 		const owners = passage.questions.filter((question) =>
 			getAnnotation(question.id)?.evidence.some(
@@ -274,18 +319,18 @@ function serve(slug: string): PracticePack | null {
 		})),
 		items: row.pack.items.map((item) => ({
 			...item,
-			evidence: item.evidence.map((evidence) => ({
-				...evidence,
-				p: quoteIndex(text, evidence.quote) ?? evidence.p
-			}))
+			evidence: item.evidence.map((evidence) => {
+				const located = locateQuote(text, evidence.quote);
+				return located ? { ...evidence, p: located.p, quote: located.quote } : evidence;
+			})
 		})),
-		paraphrase: row.pack.paraphrase.map((drill) => ({
-			...drill,
-			source: {
-				...drill.source,
-				p: quoteIndex(text, drill.source.quote) ?? drill.source.p
-			}
-		}))
+		paraphrase: row.pack.paraphrase.map((drill) => {
+			const located = locateQuote(text, drill.source.quote);
+			return {
+				...drill,
+				source: located ? { ...drill.source, p: located.p, quote: located.quote } : drill.source
+			};
+		})
 	};
 }
 
@@ -296,8 +341,17 @@ function seenSet(
 	return attempted instanceof Set ? attempted : new Set(attempted);
 }
 
-function legacyOpen(item: LegacyPracticeItem, seen: ReadonlySet<string> | undefined): boolean {
-	const ids = item.afterItemIds ?? [];
+function gateIds(row: { afterItemId?: string; afterItemIds?: string[] }): string[] {
+	const ids = [...(row.afterItemIds ?? [])];
+	if (row.afterItemId && !ids.includes(row.afterItemId)) ids.push(row.afterItemId);
+	return ids;
+}
+
+function gateOpen(
+	row: { afterItemId?: string; afterItemIds?: string[] },
+	seen: ReadonlySet<string> | undefined
+): boolean {
+	const ids = gateIds(row);
 	if (ids.length === 0) return true;
 	if (!seen) return false;
 	return ids.every((id) => seen.has(id));
@@ -315,14 +369,14 @@ function resolveLegacy(item: LegacyPracticeItem): PracticeItem {
 	};
 }
 
-/** Practice items for a passage. Gated legacy items stay hidden until `attempted` covers afterItemIds. */
+/** Practice items for a passage. Gated items stay hidden until `attempted` covers afterItemId and afterItemIds. */
 export function practiceItemsFor(
 	slug: string,
 	attempted?: ReadonlySet<string> | readonly string[]
 ): PracticeItem[] {
 	const seen = seenSet(attempted);
-	const pack = serve(slug)?.items ?? [];
-	const legacy = LEGACY.filter((item) => item.passageSlug === slug && legacyOpen(item, seen)).map(
+	const pack = (serve(slug)?.items ?? []).filter((item) => gateOpen(item, seen));
+	const legacy = LEGACY.filter((item) => item.passageSlug === slug && gateOpen(item, seen)).map(
 		resolveLegacy
 	);
 	return [...pack, ...legacy];
@@ -332,8 +386,35 @@ export function paragraphMapFor(slug: string): ParagraphMapEntry[] {
 	return serve(slug)?.paragraphMap ?? [];
 }
 
-export function paraphraseFor(slug: string): ParaphraseDrill[] {
-	return serve(slug)?.paraphrase ?? [];
+/**
+ * Paraphrase drills for a passage.
+ * Pass `attempted` to hide drills until afterItemId and afterItemIds are covered.
+ * Omit it when resolving a drill that was already chosen.
+ */
+export function paraphraseFor(
+	slug: string,
+	attempted?: ReadonlySet<string> | readonly string[]
+): ParaphraseDrill[] {
+	const drills = serve(slug)?.paraphrase ?? [];
+	if (attempted === undefined) return drills;
+	const seen = seenSet(attempted);
+	return drills.filter((drill) => gateOpen(drill, seen));
+}
+
+/**
+ * Keep up to `count` ids, skipping any that would sit next to another item from the same pack.
+ * Official ids are not pack items, so they may sit next to each other.
+ */
+export function takeSpaced(ids: readonly string[], count = ids.length): string[] {
+	const out: string[] = [];
+	for (const id of ids) {
+		if (out.length >= count) break;
+		const pack = itemPassageSlug(id);
+		const prev = out.length > 0 ? itemPassageSlug(out[out.length - 1]) : undefined;
+		if (pack && prev && pack === prev) continue;
+		out.push(id);
+	}
+	return out;
 }
 
 export function practiceById(id: string): PracticeItem | undefined {

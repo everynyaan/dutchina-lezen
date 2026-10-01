@@ -1,0 +1,223 @@
+{
+	"passageSlug": "examenreglement",
+	"note": "Sample practice pack. Not official exam items. Never used in mock scores.",
+	"paragraphMap": [
+		{
+			"p": 1,
+			"anchor": "Het is belangrijk dat iedereen die bij de examen",
+			"role": "introduces-topic",
+			"summary": "The exam guide is meant for teachers, exam supervisors and candidates, with general rules and information per course."
+		},
+		{
+			"p": 3,
+			"anchor": "1.1 Toelatingseisen Rosarius Opleidingen heeft g",
+			"role": "states-rule",
+			"summary": "Admission only for Rosarius students, ID requirements, and what candidates need during the exam."
+		},
+		{
+			"p": 5,
+			"anchor": "2.1 Examenleider Tijdens het examen is een exame",
+			"role": "states-rule",
+			"summary": "Duties of the exam supervisor, what counts as fraud and its result, and the rules for candidates during the exam."
+		},
+		{
+			"p": 7,
+			"anchor": "De uitwerkingen van de schriftelijke examens wor",
+			"role": "states-rule",
+			"summary": "How exams are marked and rounded, the pass conditions for each diploma, and when you can view your work."
+		},
+		{
+			"p": 9,
+			"anchor": "Indien een kandidaat niet voldoet aan de gesteld",
+			"role": "states-rule",
+			"summary": "Resits: one part free of charge whatever the mark, within 3 months; later resits cost money."
+		},
+		{
+			"p": 11,
+			"anchor": "Een kandidaat kan tegen de uitslag van een exame",
+			"role": "states-rule",
+			"summary": "Objections: in writing to management within two weeks, at a cost; the new result can go up or down and is final."
+		},
+		{
+			"p": 13,
+			"anchor": "In bijzondere gevallen kan het management beslui",
+			"role": "exception-condition",
+			"summary": "Special cases (medical, dyslexia, Dutch not first language, motor problems) and how to request an adjustment."
+		}
+	],
+	"items": [
+		{
+			"id": "p-examenreglement-1",
+			"qtype": "toepassing",
+			"question": "Sanne heeft haar diploma niet gehaald. Ze wil één onderdeel opnieuw doen. Haar examen voor dat onderdeel was op 10 maart. Het herexamen is op 25 juli. Wat geldt voor Sanne?",
+			"options": {
+				"A": "Ze mag het herexamen doen, maar ze moet ervoor betalen.",
+				"B": "Ze mag het herexamen gratis doen, want het is haar eerste herkansing.",
+				"C": "Ze mag geen herexamen meer doen, want het is te laat."
+			},
+			"answer": "A",
+			"evidence": [
+				{
+					"p": 9,
+					"quote": "Kosteloze herkansingen dienen binnen 3 maanden na de aanvankelijke examendatum van het onderdeel te zijn benut."
+				},
+				{
+					"p": 9,
+					"quote": "Voor herkansingen na deze periode worden kosten in rekening gebracht."
+				}
+			],
+			"move": "Go to section 5 Herkansingsregeling and count the months from the first exam date to the resit date.",
+			"why": "From 10 March to 25 July is more than 3 months, so the free period is over; the text says resits after that period are still possible but cost money.",
+			"distractors": {
+				"B": {
+					"trap": "verkeerde-voorwaarde",
+					"why": "One free resit only counts within 3 months of the first exam date, and Sanne is past that."
+				},
+				"C": {
+					"trap": "overdreven",
+					"why": "After 3 months the resit is not forbidden; the text only says you then have to pay."
+				}
+			}
+		},
+		{
+			"id": "p-examenreglement-2",
+			"qtype": "toepassing",
+			"question": "Ahmed doet het examen telefoniste/receptioniste. Hij haalt een 8 voor Telefoneren, een 7 voor Kantoorvaardigheden, een 4 voor Word en een 7 voor Algemene computervaardigheid. Hij typt 150 aanslagen per minuut. Krijgt Ahmed zijn diploma?",
+			"options": {
+				"A": "Ja, want hij heeft samen meer dan 24 punten.",
+				"B": "Ja, want bij dit diploma mag een 4 nog net.",
+				"C": "Nee, want een van zijn cijfers is lager dan 5."
+			},
+			"answer": "C",
+			"evidence": [
+				{
+					"p": 7,
+					"quote": "4.1 Inhoud diploma telefoniste/receptioniste"
+				},
+				{
+					"p": 7,
+					"quote": "Dat betekent een minimum puntentotaal van 24."
+				},
+				{
+					"p": 7,
+					"quote": "voldaan: - Geen van de resultaten mag lager zijn dan 5."
+				}
+			],
+			"move": "Find section 4.1 for this diploma and check every condition, not only the total: points, lowest mark and typing speed.",
+			"why": "Ahmed has 26 points and types fast enough, but for this diploma no result may be lower than 5, and he has a 4 for Word.",
+			"distractors": {
+				"A": {
+					"trap": "te-smal",
+					"why": "26 points meets only the total; the text adds conditions that must also be met."
+				},
+				"B": {
+					"trap": "verkeerde-voorwaarde",
+					"why": "A lowest mark of 4 is the rule for administratief medewerker (4.2), not for telefoniste/receptioniste."
+				}
+			}
+		},
+		{
+			"id": "p-examenreglement-3",
+			"qtype": "betekenis-in-context",
+			"question": "'…dan mag hij voor één van de onderdelen kosteloos een herexamen afleggen, ongeacht het cijfer dat voor dit onderdeel is behaald.' Wat betekent 'ongeacht het cijfer' hier?",
+			"options": {
+				"A": "alleen als het cijfer lager is dan 5",
+				"B": "welk cijfer hij ook heeft gehaald",
+				"C": "zonder dat hij er een cijfer voor krijgt"
+			},
+			"answer": "B",
+			"evidence": [
+				{
+					"p": 9,
+					"quote": "ongeacht het cijfer dat voor dit onderdeel is behaald"
+				}
+			],
+			"move": "Read the next sentence too: even when a resit cannot lead to the diploma, the student still has the right to one. The rule is wide, not narrow.",
+			"why": "'Ongeacht' means 'no matter': the candidate may choose any part for the free resit, whatever mark he got for it.",
+			"distractors": {
+				"A": {
+					"trap": "verkeerde-voorwaarde",
+					"why": "It adds a condition the text does not set; 'ongeacht' means there is no condition about the mark."
+				},
+				"C": {
+					"trap": "echo",
+					"why": "Uses 'cijfer', but the sentence is about the mark he already got, not about getting no mark."
+				}
+			}
+		}
+	],
+	"paraphrase": [
+		{
+			"id": "pp-examenreglement-1",
+			"source": {
+				"p": 9,
+				"quote": "Ook wanneer herkansing niet zal leiden tot het behalen van het diploma heeft de cursist recht op een herkansing."
+			},
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "Een cursist mag alleen herkansen als hij daarmee zijn diploma kan halen.",
+				"B": "Met een herkansing haalt een cursist altijd zijn diploma.",
+				"C": "Een cursist mag herkansen, ook als hij zijn diploma daarmee toch niet haalt."
+			},
+			"answer": "C",
+			"distractors": {
+				"A": {
+					"trap": "tegenovergesteld",
+					"why": "The text gives the right even when the resit cannot lead to the diploma."
+				},
+				"B": {
+					"trap": "overdreven",
+					"why": "The text says a resit may not lead to the diploma; it never promises a diploma."
+				}
+			}
+		},
+		{
+			"id": "pp-examenreglement-2",
+			"source": {
+				"p": 11,
+				"quote": "Het resultaat dat wordt vastgesteld na behandeling van het bezwaarschrift is bindend."
+			},
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "Het nieuwe resultaat na het bezwaar is definitief.",
+				"B": "Tegen het nieuwe resultaat kan opnieuw bezwaar worden gemaakt.",
+				"C": "Het bezwaarschrift is bindend voor het management."
+			},
+			"answer": "A",
+			"distractors": {
+				"B": {
+					"trap": "tegenovergesteld",
+					"why": "'Bindend' means final, so it cannot be challenged again."
+				},
+				"C": {
+					"trap": "echo",
+					"why": "Same words 'bezwaarschrift' and 'bindend', but it is the result that is binding, not the objection letter."
+				}
+			}
+		},
+		{
+			"id": "pp-examenreglement-3",
+			"source": {
+				"p": 5,
+				"quote": "Het werk van de betrokken kandidaat wordt niet beoordeeld en er wordt geen resultaat verstrekt."
+			},
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "De kandidaat mag nooit meer examen doen bij Rosarius.",
+				"B": "De kandidaat krijgt geen cijfer voor zijn examen.",
+				"C": "Het werk wordt beoordeeld, maar de uitslag blijft geheim."
+			},
+			"answer": "B",
+			"distractors": {
+				"A": {
+					"trap": "overdreven",
+					"why": "The candidate gets no result for this exam; the text says nothing about a lifelong ban."
+				},
+				"C": {
+					"trap": "tegenovergesteld",
+					"why": "The text says the work is not marked at all."
+				}
+			}
+		}
+	]
+}

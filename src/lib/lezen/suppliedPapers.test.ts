@@ -91,7 +91,8 @@ describe('supplied 2021 and 2022 papers', () => {
 	});
 
 	it('does not invent practice packs for the missing papers', () => {
-		expect(packSlugs()).toEqual(['buurt-whatsapp']);
+		expect(packSlugs()).toHaveLength(18);
+		expect(packSlugs().every((slug) => !slug.startsWith('set'))).toBe(true);
 	});
 
 	it('accepts a paper only when its own key matches every item', () => {

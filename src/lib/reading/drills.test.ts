@@ -92,7 +92,8 @@ describe('selectTrapItem', () => {
 		const first = selectTrapItem(state, 'echo', TODAY);
 		const second = selectTrapItem(state, 'echo', TODAY);
 		expect(first).toBe(second);
-		expect(first?.startsWith('p-buurt-whatsapp-')).toBe(true);
+		expect(first?.startsWith('p-')).toBe(true);
+		expect(itemPassageSlug(first!)).not.toBe(other!.slug);
 		expect(yearOf(first!)).not.toBe(2023);
 	});
 
@@ -204,7 +205,7 @@ describe('micro-drills', () => {
 			selectParaphraseDrills(unlocked, TODAY)
 				.map((row) => row.id)
 				.sort()
-		).toEqual(['pp-buurt-whatsapp-1', 'pp-buurt-whatsapp-2']);
+		).toEqual(['pp-buurt-whatsapp-1']);
 	});
 
 	it('serves three items of a qtype, practice first, off the sealed paper', () => {

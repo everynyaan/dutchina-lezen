@@ -21,3 +21,8 @@ export function lookupForm(form: string): LexRecord | null {
 export function recordsForLemma(lemma: string): LexRecord[] {
 	return records.filter((row) => row.lemma === lemma);
 }
+
+/** Compounds that share a head noun. Counts stay on each compound's own lemma. */
+export function recordsForHead(head: string): LexRecord[] {
+	return records.filter((row) => row.head === head);
+}

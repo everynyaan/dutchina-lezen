@@ -8,6 +8,7 @@ import {
 	selectQuestions,
 	shouldMap
 } from './daily';
+import { itemPassageSlug } from './practice';
 import { EMPTY_READING_FORK, type ReadingAttempt, type ReadingForkState } from './types';
 
 const DATE = '2026-09-30';
@@ -83,7 +84,7 @@ describe('daily text selection', () => {
 		const passage = findPassage('buurt-whatsapp');
 		expect(passage).toBeTruthy();
 		const ids = selectQuestions(fork(), passage!, DATE);
-		expect(ids).toEqual(['p-buurt-whatsapp-1', 'p-buurt-whatsapp-2', 'lezen-2025-28']);
+		expect(ids).toEqual(['p-buurt-whatsapp-1', 'lezen-2025-28']);
 		expect(ids.filter((id) => id.startsWith('lezen-'))).toHaveLength(1);
 		expect(ids.at(-1)).toBe('lezen-2025-28');
 	});
@@ -96,11 +97,7 @@ describe('daily text selection', () => {
 				attempt({ itemId: 'lezen-2023-20', at: '2026-09-01', correct: true })
 			]
 		});
-		expect(selectQuestions(state, passage, DATE)).toEqual([
-			'p-buurt-whatsapp-6',
-			'p-buurt-whatsapp-7',
-			'lezen-2025-28'
-		]);
+		expect(selectQuestions(state, passage, DATE)).toEqual(['p-buurt-whatsapp-6', 'lezen-2025-28']);
 	});
 
 	it('skips an official item attempted in the last 21 days', () => {
@@ -121,7 +118,14 @@ describe('daily text selection', () => {
 		const ids = selectQuestions(state, passage, DATE);
 		expect(ids).not.toContain('lezen-2025-28');
 		expect(ids.filter((id) => id.startsWith('lezen-')).length).toBeLessThanOrEqual(1);
-		expect(ids.every((id) => id.startsWith('p-'))).toBe(true);
+		expect(ids.some((id) => id.startsWith('p-'))).toBe(true);
+		for (let index = 1; index < ids.length; index++) {
+			const prev = ids[index - 1];
+			const current = ids[index];
+			if (prev.startsWith('p-') && current.startsWith('p-')) {
+				expect(itemPassageSlug(prev)).not.toBe(itemPassageSlug(current));
+			}
+		}
 	});
 
 	it('holds a paraphrase until its official item has been attempted', () => {
@@ -144,7 +148,7 @@ describe('daily text selection', () => {
 
 	it('skips the map when this passage was mapped in the last 21 days', () => {
 		expect(shouldMap(fork(), 'buurt-whatsapp', DATE)).toBe(true);
-		expect(shouldMap(fork(), 'bakkerij', DATE)).toBe(false);
+		expect(shouldMap(fork(), 'bakkerij', DATE)).toBe(true);
 		const mapped = fork({
 			attempts: [
 				attempt({
