@@ -30,13 +30,11 @@ describe('home page — gates then collection', () => {
 		expect(pageSrc).toContain("resolve('/eval')");
 		expect(pageSrc).toContain("resolve('/mock')");
 		expect(pageSrc).toContain('One passage. Map, three questions, one paraphrase.');
-		expect(pageSrc).toContain('The published papers needed 24 of 35. Aim for 25 or more.');
-		expect(pageSrc).toContain('Predictive mock. Once.');
-		expect(pageSrc).toContain('Training is 2024 and 2025.');
-		expect(pageSrc).toContain('Days to the exam');
-		expect(pageSrc).toContain('Practice this');
-		expect(pageSrc).toContain('Found the right paragraph');
-		expect(pageSrc).toContain('Open trap cards');
+		expect(pageSrc).toContain("Open today's text.");
+		expect(pageSrc).toContain('reservedPapers');
+		expect(pageSrc).toContain('Next: baseline mock by 12 Oct');
+		expect(pageSrc).not.toContain('Training is 2024 and 2025.');
+		expect(pageSrc).not.toContain('The published papers needed 24 of 35.');
 		expect(pageSrc).toContain("resolve('/lezen')");
 		expect(pageSrc).toContain('PLAN_LINE');
 		expect(pageSrc).not.toContain('PracticeBook');

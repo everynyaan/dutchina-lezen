@@ -169,9 +169,7 @@
 <div class="eval-page stagger">
 	<p class="eyebrow">One passage</p>
 	<h1>Daily text</h1>
-	<p class="kuromi-line">
-		About 15 minutes. The published papers needed 24 of 35. Aim for 25 or more.
-	</p>
+	<p class="kuromi-line">About 15 minutes. Map, then the questions.</p>
 
 	{#if !passage}
 		<p>No text is ready today.</p>
@@ -200,7 +198,7 @@
 					</li>
 				{/each}
 			</ul>
-			<a class="btn" href={resolve('/cards')}>Debrief</a>
+			<a class="btn" href={resolve('/cards')}>Drills</a>
 			<a class="btn ghost" href={resolve('/lezen')}>browse the training papers</a>
 			<a class="btn ghost" href={resolve('/')}>Home</a>
 		</Card>

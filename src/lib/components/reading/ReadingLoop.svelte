@@ -91,6 +91,7 @@
 <p class="narrow">Use a wider window.</p>
 <div
 	class="desk"
+	class:reading-desk={!hideNotebook}
 	class:tab={notes === 'tab'}
 	class:wide={notes === 'wide'}
 	class:exam={hideNotebook}
@@ -216,14 +217,14 @@
 		}
 		.desk {
 			display: grid;
-			grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) 30%;
+			grid-template-columns: minmax(0, 760px) minmax(220px, 420px) 280px;
 			grid-template-rows: minmax(0, 1fr);
 			width: 100%;
 			max-width: 100%;
 			min-width: 0;
-			height: calc(100dvh - 18rem);
+			height: calc(100dvh - 8rem);
 			min-height: 22rem;
-			gap: 1rem;
+			gap: 0.75rem;
 			overflow: hidden;
 		}
 		.desk.wide {
@@ -256,9 +257,31 @@
 			min-height: 0;
 			overflow-x: clip;
 			overflow-y: auto;
-			background: #fff;
 			padding: 0 0.85rem;
 			box-sizing: border-box;
+		}
+		.text {
+			max-width: 760px;
+			font-size: 18px;
+			line-height: 1.6;
+			background: transparent;
+		}
+		.ask {
+			max-width: 420px;
+			position: sticky;
+			top: 0;
+			align-self: start;
+			max-height: 100%;
+			background: #fff;
+			border: 3px solid var(--color-ink);
+			border-radius: 22px;
+			box-shadow: var(--shadow-offset-card);
+			padding: 0.85rem;
+		}
+		.notes {
+			background: color-mix(in srgb, var(--color-cream) 55%, white);
+			border-left: 1px solid color-mix(in srgb, var(--color-ink) 12%, transparent);
+			padding: 0.85rem 0.75rem;
 		}
 		.note-bar {
 			display: flex;

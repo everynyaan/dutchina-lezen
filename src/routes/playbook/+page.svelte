@@ -35,39 +35,43 @@
 	</section>
 
 	<section>
-		<h2>Question types</h2>
-		{#each types as card (card.qtype)}
-			<Card variant="soft-lavender">
-				<h3>{card.label}</h3>
-				<p>{card.move}</p>
-				<p class="meta">{card.count} of {card.total} official items.</p>
-				{#if card.example}
-					<p class="meta">{card.example.year}. {card.example.passage}</p>
-					<p>{card.example.question}</p>
-					<blockquote>{card.example.quote}</blockquote>
-				{/if}
-				<a href="{resolve('/cards')}?qtype={card.qtype}">Practice this</a>
-			</Card>
-		{/each}
+		<h2 class="jit-2">Question types</h2>
+		<div class="cols">
+			{#each types as card (card.qtype)}
+				<Card variant="soft-lavender">
+					<h3>{card.label}</h3>
+					<p>{card.move}</p>
+					<p class="meta">{card.count} of {card.total} official items.</p>
+					{#if card.example}
+						<p class="meta">{card.example.year}. {card.example.passage}</p>
+						<p>{card.example.question}</p>
+						<blockquote>{card.example.quote}</blockquote>
+					{/if}
+					<a href="{resolve('/cards')}?qtype={card.qtype}">Practice this</a>
+				</Card>
+			{/each}
+		</div>
 	</section>
 
 	<section>
-		<h2>Traps</h2>
-		{#each traps as card (card.trap)}
-			<Card variant="soft-peach">
-				<h3>{card.label}</h3>
-				<p>{card.explanation}</p>
-				{#each card.examples as example, index (example.lure)}
-					<p class="meta">Example {index + 1}. {example.year}. {example.passage}</p>
-					<blockquote>{example.lure}</blockquote>
-					<p>{example.why}</p>
-				{/each}
-			</Card>
-		{/each}
+		<h2 class="jit-3">Traps</h2>
+		<div class="cols">
+			{#each traps as card (card.trap)}
+				<Card variant="soft-peach">
+					<h3>{card.label}</h3>
+					<p>{card.explanation}</p>
+					{#each card.examples as example, index (example.lure)}
+						<p class="meta">Example {index + 1}. {example.year}. {example.passage}</p>
+						<blockquote>{example.lure}</blockquote>
+						<p>{example.why}</p>
+					{/each}
+				</Card>
+			{/each}
+		</div>
 	</section>
 
 	<section>
-		<h2>Purpose questions</h2>
+		<h2 class="jit-a">Purpose questions</h2>
 		<Card variant="soft-rose">
 			<p>{purposeLine(purpose)}</p>
 			<p>{purpose.decide}</p>
@@ -174,9 +178,39 @@
 	}
 	blockquote {
 		margin: 0;
-		padding-left: 0.75rem;
-		border-left: 3px solid var(--color-ink);
+		padding: 8px 10px;
+		border: 2px dashed var(--color-ink);
+		border-radius: 14px;
 		white-space: pre-wrap;
+		font-size: 17px;
+	}
+	.playbook {
+		counter-reset: chapter;
+	}
+	h2::before {
+		counter-increment: chapter;
+		content: counter(chapter);
+		display: inline-grid;
+		place-items: center;
+		width: 32px;
+		height: 32px;
+		margin-right: 8px;
+		border-radius: 999px;
+		background: var(--color-rose);
+		font-size: 16px;
+	}
+	h3 {
+		font-size: 20px;
+	}
+	.cols {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 12px;
+	}
+	@media (max-width: 800px) {
+		.cols {
+			grid-template-columns: 1fr;
+		}
 	}
 	a {
 		color: var(--color-ink);

@@ -51,6 +51,7 @@
 
 	let now = $state(Date.now());
 	let confirmHandIn = $state(false);
+	let bookletSet = $state(false);
 	let finishing = false;
 	let practiceSlug = $state<string | null>(null);
 	let phase = $state<LoopPhase>('locate');
@@ -137,10 +138,7 @@
 				answeredIds: phase === 'feedback' ? new Set([practiceId]) : new Set(),
 				activeId: practiceId,
 				activePhase: phase,
-				notebook: chatNotebook(
-					notebookOf(ctx.state.readingFork).entries,
-					practicePassage.slug
-				)
+				notebook: chatNotebook(notebookOf(ctx.state.readingFork).entries, practicePassage.slug)
 			})
 		);
 		return () => setTextChat(null);
@@ -338,7 +336,7 @@
 	{/each}
 {/snippet}
 
-<div class="sets-page">
+<div class="sets-page" class:exam-chrome={Boolean(setSitting)}>
 	{#if setSitting && exam && passage}
 		{@const activePassage = passage}
 		<p class="eyebrow">110 minutes</p>
@@ -489,7 +487,7 @@
 			<section class="card">
 				<h2>{setHistoryLabel(set.id)}</h2>
 				<p class="note">{set.title}</p>
-				<ul>
+				<ul class="text-grid">
 					{#each set.passages as row (row.slug)}
 						<li>
 							{row.name}
@@ -502,9 +500,10 @@
 					{/each}
 				</ul>
 				{#if taken}
-					<p>
-						Taken on {taken.finishedAt}. {taken.correct} of {taken.total}.
-					</p>
+					<div class="badge-row">
+						<span class="chip">{taken.finishedAt.slice(0, 10)}</span>
+						<span class="chip">{taken.correct} / {taken.total}</span>
+					</div>
 					<div class="actions">
 						{#each set.passages as row (row.slug)}
 							{#if row.slug === HORIZON_SLUG && !horizonOpen}
@@ -517,31 +516,25 @@
 						{/each}
 					</div>
 				{:else}
-					<p>Not started.</p>
 					{#if set.id === 'set1' && !horizonOpen}
 						<p class="lock">Text 6 stays out of this sitting until the 2025 mock is done.</p>
 					{/if}
-					<p>
-						Print the booklet and answer on the screen, as on the exam day. Use the booklet for
-						every full mock, with her Van Dale NT2 dictionary on the desk.
-					</p>
-					<a class="btn ghost" href="{resolve('/mock/booklet')}?set={set.id}">Print the booklet</a>
-					<button
-						type="button"
-						class="btn"
-						disabled={officialBusy || Boolean(setSitting)}
-						onclick={() => start(set.id, false)}
-					>
-						Start with the text on screen
-					</button>
-					<button
-						type="button"
-						class="btn"
-						disabled={officialBusy || Boolean(setSitting)}
-						onclick={() => start(set.id, true)}
-					>
-						Start with questions only
-					</button>
+					<label class="toggle">
+						<input type="checkbox" bind:checked={bookletSet} />
+						Booklet mode
+					</label>
+					<div class="actions">
+						<button
+							type="button"
+							class="btn"
+							disabled={officialBusy || Boolean(setSitting)}
+							onclick={() => start(set.id, bookletSet)}
+						>
+							Start
+						</button>
+						<a class="btn ghost" href="{resolve('/mock/booklet')}?set={set.id}">Print the booklet</a
+						>
+					</div>
 				{/if}
 			</section>
 		{/each}
@@ -697,5 +690,40 @@
 	ul {
 		margin: 0;
 		padding-left: 1.2rem;
+	}
+	.text-grid {
+		list-style: none;
+		padding: 0;
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 8px;
+	}
+	.badge-row,
+	.actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+	}
+	.chip {
+		display: inline-flex;
+		padding: 3px 8px;
+		border-radius: 999px;
+		background: white;
+		font-size: 14px;
+		font-weight: 700;
+	}
+	.toggle {
+		display: flex;
+		gap: 8px;
+		align-items: center;
+		font-size: 17px;
+	}
+	h2 {
+		font-size: 22px;
+	}
+	@media (max-width: 900px) {
+		.text-grid {
+			grid-template-columns: 1fr;
+		}
 	}
 </style>

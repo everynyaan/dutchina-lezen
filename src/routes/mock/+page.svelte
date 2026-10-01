@@ -4,13 +4,7 @@
 	import { evalResults } from '$lib/reading/eval';
 	import { dailyLoopItem } from '$lib/reading/daily';
 	import { resolveLoopItem } from '$lib/reading/loop';
-	import {
-		BOOKLET_PASS_LABEL,
-		NOT_A_PREDICTION,
-		passLineFor,
-		targetFor,
-		yearStudied
-	} from '$lib/reading/mock';
+	import { NOT_A_PREDICTION, passLineFor, yearStudied } from '$lib/reading/mock';
 	import {
 		SEEN_PAPER_WARNING,
 		chooseMockPaper,
@@ -24,7 +18,6 @@
 		textScores,
 		unansweredCount
 	} from '$lib/reading/mockSession';
-	import { setHistoryLabel } from '$lib/reading/sets';
 	import { QTYPE_LABEL } from '$lib/reading/annotations';
 	import type { QType } from '$lib/reading/types';
 	import AnswerFeedback from '$lib/components/reading/AnswerFeedback.svelte';
@@ -33,6 +26,11 @@
 	import ReadingLoop from '$lib/components/reading/ReadingLoop.svelte';
 	import { bookYearsFor } from '$lib/reading/practiceBook';
 	import Card from '$lib/components/ui/Card.svelte';
+	import Doodle from '$lib/components/art/Doodle.svelte';
+	import KuromiBubble from '$lib/components/reading/KuromiBubble.svelte';
+	import StatBadge from '$lib/components/reading/StatBadge.svelte';
+	import TypeGrid from '$lib/components/reading/TypeGrid.svelte';
+	import { registerMockOpener } from '$lib/shell/desk.svelte';
 	import { setKuromiVisible } from '$lib/kuromi/visibility.svelte';
 	import { setMockDebrief, setTextChat } from '$lib/kuromi/focus';
 	import { playSfx } from '$lib/sound/sfx';
@@ -44,6 +42,9 @@
 	let now = $state(Date.now());
 	let openId = $state<string | null>(null);
 	let confirmHandIn = $state(false);
+	let bookletMode = $state(false);
+	let showOverview = $state(false);
+	let openItems = $state<Record<string, boolean>>({});
 	let finishing = false;
 
 	let studied = $derived(
@@ -72,6 +73,8 @@
 		setKuromiVisible(session === null);
 		return () => setKuromiVisible(true);
 	});
+
+	$effect(() => registerMockOpener((id) => (openId = id)));
 
 	$effect(() => {
 		if (session) {
@@ -207,9 +210,11 @@
 					type="button"
 					class="flag"
 					class:on={session?.flagged[question.id]}
+					aria-label={session?.flagged[question.id] ? 'Flagged' : 'Flag'}
+					aria-pressed={session?.flagged[question.id] ? 'true' : 'false'}
 					onclick={() => toggleFlag(question.id)}
 				>
-					{session?.flagged[question.id] ? 'Flagged' : 'Flag'}
+					⚑
 				</button>
 			</div>
 			<div class="opts">
@@ -229,35 +234,63 @@
 	{/each}
 {/snippet}
 
-<div class="mock-page">
-	<p class="eyebrow">110 minutes</p>
-	<h1>Mock</h1>
+<div class="mock-page" class:exam-chrome={Boolean(session)} class:mock-setup={!session && !result}>
+	{#if !(session && exam && passage)}
+		<p class="eyebrow">110 minutes</p>
+		<h1>Mock</h1>
+		<span class="spark jit-5">
+			<Doodle name="spark-sparkle-26" size={22} color="var(--color-rose-deep)" />
+		</span>
+	{/if}
 
 	{#if session && exam && passage}
 		{@const activePassage = passage}
-		<p class="clock">{formatRemaining(remainingMs(session, now))}</p>
-		<nav class="switcher" aria-label="Texts">
-			{#each exam.passages as row, index (row.slug)}
-				<button type="button" class:on={session.activeText === index} onclick={() => go(index)}>
-					{index + 1}
-				</button>
-			{/each}
-		</nav>
-		<nav class="grid" aria-label="Questions">
-			{#each flat as question, index (question.id)}
-				<button
-					type="button"
-					class="cell"
-					class:answered={Boolean(session.answers[question.id])}
-					class:blank={!session.answers[question.id]}
-					class:flagged={session.flagged[question.id]}
-					onclick={() => jump(question.id)}
+		{@const answered = Object.keys(session.answers).length}
+		{@const flagged = Object.values(session.flagged).filter(Boolean).length}
+		<header class="exam-bar">
+			<p class="clock">{formatRemaining(remainingMs(session, now))}</p>
+			<nav class="switcher" aria-label="Texts">
+				{#each exam.passages as row, index (row.slug)}
+					<button type="button" class:on={session.activeText === index} onclick={() => go(index)}>
+						{index + 1}
+					</button>
+				{/each}
+			</nav>
+			<span class="chip">{answered} answered</span>
+			<span class="chip">{flagged} flagged</span>
+			<button type="button" class="btn ghost" onclick={() => (showOverview = !showOverview)}>
+				Overview
+			</button>
+			<PracticeBook years={bookYears} />
+			{#if confirmHandIn}
+				{@const blank = unansweredCount(exam, session.answers)}
+				<span class="warn">
+					{blank === 1 ? '1 still open.' : `${blank} still open.`}
+				</span>
+				<button type="button" class="btn" onclick={() => commit(false)}>Hand in</button>
+				<button type="button" class="btn ghost" onclick={() => (confirmHandIn = false)}
+					>Keep going</button
 				>
-					{index + 1}
-				</button>
-			{/each}
-		</nav>
-		<PracticeBook years={bookYears} />
+			{:else}
+				<button type="button" class="btn" onclick={askHandIn}>Hand in</button>
+			{/if}
+		</header>
+		{#if showOverview}
+			<nav class="grid" aria-label="Questions">
+				{#each flat as question, index (question.id)}
+					<button
+						type="button"
+						class="cell"
+						class:answered={Boolean(session.answers[question.id])}
+						class:blank={!session.answers[question.id]}
+						class:flagged={session.flagged[question.id]}
+						onclick={() => jump(question.id)}
+					>
+						{index + 1}
+					</button>
+				{/each}
+			</nav>
+		{/if}
 		{#if session.booklet}
 			<p class="note">Booklet mode. The texts are on paper. The screen is only questions.</p>
 			{@render questions(activePassage)}
@@ -268,121 +301,125 @@
 				{/snippet}
 			</ReadingLoop>
 		{/if}
-		{#if confirmHandIn}
-			{@const blank = unansweredCount(exam, session.answers)}
-			<p class="warn">
-				{blank === 1
-					? '1 question is still unanswered.'
-					: `${blank} questions are still unanswered.`}
-				Hand in anyway?
-			</p>
-			<button type="button" class="btn" onclick={() => commit(false)}>Hand in</button>
-			<button type="button" class="btn ghost" onclick={() => (confirmHandIn = false)}
-				>Keep going</button
-			>
-		{:else}
-			<button type="button" class="btn" onclick={askHandIn}>Hand in</button>
-		{/if}
 	{:else if result && resultExam}
+		{@const flags = flagSplit(resultExam, result)}
 		<Card variant="soft-lavender">
-			<h2>
-				{result.correct >= result.passLine ? 'This sitting passes.' : 'Under the pass line.'}
-			</h2>
-			{#if result.expired}<p>Time is up.</p>{/if}
-			<p>{result.correct} / {result.total}</p>
-			<p>Pass line {result.passLine} of {result.total}. Target {result.passLine + 1}.</p>
-			<p>{BOOKLET_PASS_LABEL}</p>
+			<p class="score">{result.correct}</p>
+			<div class="badge-row">
+				<StatBadge label="of" value={String(result.total)} tint="lavender" mark="/" />
+				<StatBadge label="Pass line" value={String(result.passLine)} tint="teal" mark="P" />
+				<StatBadge label="target" value={String(result.passLine + 1)} tint="rose" mark="T" />
+			</div>
+			<KuromiBubble mood={result.correct >= result.passLine ? 'wink' : 'hmph'}>
+				<p>
+					{result.correct >= result.passLine ? 'This sitting passes.' : 'Under the pass line.'}
+					{#if result.expired}
+						Time is up.{/if}
+				</p>
+			</KuromiBubble>
 			{#if studied.includes(result.paperYear)}
-				<p>{NOT_A_PREDICTION}</p>
+				<p class="note">{NOT_A_PREDICTION}</p>
 			{/if}
 		</Card>
-		<h2>By question type</h2>
-		<ul>
-			{#each Object.entries(result.byQtype) as [qtype, row] (qtype)}
-				<li>{QTYPE_LABEL[qtype as QType]}: {row.c} of {row.t}</li>
-			{/each}
-		</ul>
-		{@const flags = flagSplit(resultExam, result)}
-		<p>Flagged and right: {flags.right}. Flagged and wrong: {flags.wrong}.</p>
+		<div class="debrief-grid">
+			<div class="text-col">
+				{#each textScores(resultExam, result.answers) as row, index (row.slug)}
+					<article class="text-score">
+						<h2>Text {index + 1}. {row.name}</h2>
+						<div class="badge-row">
+							<StatBadge
+								label="score"
+								value={`${row.correct} / ${row.total}`}
+								tint="teal"
+								mark="S"
+							/>
+							<StatBadge
+								label="min"
+								value={String(minutes(result.textMs[index]))}
+								tint="peach"
+								mark="m"
+							/>
+						</div>
+					</article>
+				{/each}
+				<div class="badge-row">
+					<StatBadge label="Flagged and right" value={String(flags.right)} tint="teal" mark="+" />
+					<StatBadge label="flagged wrong" value={String(flags.wrong)} tint="rose" mark="-" />
+				</div>
+			</div>
+			<TypeGrid
+				rows={Object.entries(result.byQtype).map(([qtype, row]) => ({
+					qtype,
+					label: QTYPE_LABEL[qtype as QType],
+					rate: row.t === 0 ? null : row.c / row.t
+				}))}
+			/>
+		</div>
 		<DebriefNotes slugs={resultExam.passages.map((row) => row.slug)} />
-		{#each textScores(resultExam, result.answers) as row, index (row.slug)}
-			<section class="text-score">
-				<h2>Text {index + 1}. {row.name}</h2>
-				<p>{row.correct} of {row.total}. {minutes(result.textMs[index])} min.</p>
+		<div class="review">
+			{#each textScores(resultExam, result.answers) as row, index (row.slug)}
 				{#each resultExam.passages[index].questions as question (question.id)}
 					{@const item = dailyLoopItem(
 						{ ...resultExam.passages[index], year: result.paperYear },
 						question.id
 					)}
-					<article class="item">
-						<p>
-							{#if result.answers[question.id]}
-								You answered {result.answers[question.id]}. The key is {question.answer}.
-							{:else}
-								You left this blank. The key is {question.answer}.
-							{/if}
-						</p>
+					{@const missed = result.answers[question.id] !== question.answer}
+					<details
+						class="item"
+						open={openItems[question.id]}
+						ontoggle={(event) => {
+							openItems[question.id] = (event.currentTarget as HTMLDetailsElement).open;
+						}}
+					>
+						<summary>
+							{question.vraag}. {result.answers[question.id] ?? 'blank'} / {question.answer}
+						</summary>
 						{#if item}
 							<AnswerFeedback
 								{item}
 								resolved={resolveLoopItem(item)}
 								picked={result.answers[question.id] ?? ''}
 							/>
+							{#if missed}
+								<a class="btn ghost" href="{resolve('/cards')}?qtype={item.qtype ?? ''}"
+									>Add to drills</a
+								>
+							{/if}
 						{/if}
-					</article>
+					</details>
 				{/each}
-			</section>
-		{/each}
+			{/each}
+		</div>
 		<button type="button" class="btn ghost" onclick={() => (openId = null)}>Back</button>
 	{:else if sitting?.setId}
 		<p>A practice set is in progress.</p>
 		<a class="btn ghost" href={resolve('/sets')}>Back to practice sets</a>
 	{:else if exam}
 		<Card variant="soft-teal">
-			{#if choice.sealed}
-				<p>{choice.year}. 35 items. Sealed. Sat once.</p>
-				<p>This paper passes at {passLineFor(exam)}. Aim for {targetFor(exam)}.</p>
-			{:else}
-				<p>{choice.year}. 35 items.</p>
-				<p>This paper passes at {passLineFor(exam)}. Aim for {targetFor(exam)}.</p>
-			{/if}
-			<p>{BOOKLET_PASS_LABEL}</p>
-			<p>110 minutes for the whole paper.</p>
-			{#if choice.seen}<p>{SEEN_PAPER_WARNING}</p>{/if}
-			{#if choice.studied}<p>{NOT_A_PREDICTION}</p>{/if}
-			<p>
-				Print the booklet and answer on the screen, as on the exam day. Use the booklet for every
-				full mock, with her Van Dale NT2 dictionary on the desk.
-			</p>
-			<a class="btn ghost" href="{resolve('/mock/booklet')}?paper={choice.year}"
-				>Print the booklet</a
-			>
-			<button type="button" class="btn start" onclick={() => start(false)}>
-				Start with the text on screen
-			</button>
-			<button type="button" class="btn start" onclick={() => start(true)}>
-				Start with questions only
-			</button>
+			<h2>{choice.year}</h2>
+			<div class="badge-row">
+				<StatBadge label="questions" value="35" tint="teal" mark="Q" />
+				<StatBadge label="minutes" value="110" tint="peach" mark="m" />
+				<StatBadge label="Pass line" value={String(passLineFor(exam))} tint="rose" mark="P" />
+			</div>
+			<KuromiBubble mood="mischief">
+				<p>Sealed. Print the booklet, Van Dale NT2 dictionary on the desk, phone away.</p>
+			</KuromiBubble>
+			{#if choice.seen}<p class="note">{SEEN_PAPER_WARNING}</p>{/if}
+			{#if choice.studied}<p class="note">{NOT_A_PREDICTION}</p>{/if}
+			<label class="toggle">
+				<input type="checkbox" bind:checked={bookletMode} />
+				Booklet mode
+			</label>
+			<div class="actions">
+				<button id="mock-start" type="button" class="btn start" onclick={() => start(bookletMode)}>
+					Start
+				</button>
+				<a class="btn ghost" href="{resolve('/mock/booklet')}?paper={choice.year}"
+					>Print the booklet</a
+				>
+			</div>
 		</Card>
-		{#if ctx.state.readingFork.mocks.length > 0}
-			<h2>History</h2>
-			<ul class="history">
-				{#each ctx.state.readingFork.mocks as mock (mock.id)}
-					<li>
-						{#if mock.setId}
-							<a href="{resolve('/sets')}?result={mock.id}">
-								{setHistoryLabel(mock.setId)}: {mock.correct}/{mock.total}
-							</a>
-						{:else}
-							<button type="button" onclick={() => (openId = mock.id)}>
-								{mock.paperYear}: {mock.correct}/{mock.total}
-								{mock.correct >= mock.passLine ? 'pass' : 'not yet'}
-							</button>
-						{/if}
-					</li>
-				{/each}
-			</ul>
-		{/if}
 	{:else}
 		<p>No paper is ready.</p>
 	{/if}
@@ -422,8 +459,7 @@
 		font-size: 1.4rem;
 	}
 	.switcher,
-	.grid,
-	.history {
+	.grid {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.35rem;
@@ -435,20 +471,13 @@
 	.cell,
 	.flag,
 	.opt,
-	.btn,
-	.history button,
-	.history a {
+	.btn {
 		font: inherit;
 		font-weight: 700;
 		cursor: pointer;
 		border: 2px solid var(--color-ink);
 		background: #fff;
 		color: var(--color-ink);
-	}
-	.history a {
-		text-decoration: none;
-		padding: 0.35rem 0.7rem;
-		border-radius: 999px;
 	}
 	.switcher button,
 	.cell {
@@ -520,8 +549,82 @@
 		flex-direction: column;
 		gap: 0.4rem;
 	}
-	ul {
+	.mock-page {
+		position: relative;
+	}
+	.spark {
+		position: absolute;
+		top: 0;
+		right: 8px;
+	}
+	.exam-bar {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 8px;
+		position: sticky;
+		top: 0;
+		z-index: 2;
+		background: #fff;
+		padding-bottom: 8px;
+	}
+	.chip {
+		display: inline-flex;
+		padding: 3px 8px;
+		border-radius: 999px;
+		background: color-mix(in srgb, var(--color-lavender) 35%, white);
+		font-size: 14px;
+		font-weight: 700;
+	}
+	.score {
 		margin: 0;
-		padding-left: 1.2rem;
+		font-family: var(--font-display);
+		font-size: 64px;
+		font-weight: 700;
+		line-height: 0.95;
+	}
+	.badge-row,
+	.actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+		align-items: center;
+	}
+	.debrief-grid {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+		gap: 16px;
+		align-items: start;
+	}
+	.text-score {
+		padding: 12px;
+		border-radius: 16px;
+		background: color-mix(in srgb, var(--color-peach) 35%, white);
+		box-shadow: var(--shadow-offset-pill);
+	}
+	.q-block {
+		border: none;
+		border-bottom: 1px solid color-mix(in srgb, var(--color-ink) 18%, transparent);
+		padding: 10px 0;
+	}
+	.item {
+		border-bottom: 1px solid color-mix(in srgb, var(--color-ink) 18%, transparent);
+		padding: 8px 0;
+	}
+	.item summary {
+		cursor: pointer;
+		font-weight: 700;
+		font-size: 17px;
+	}
+	.toggle {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		font-size: 17px;
+	}
+	@media (max-width: 800px) {
+		.debrief-grid {
+			grid-template-columns: 1fr;
+		}
 	}
 </style>

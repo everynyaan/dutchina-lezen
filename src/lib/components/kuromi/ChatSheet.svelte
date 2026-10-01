@@ -716,7 +716,7 @@
 
 	<div class="transcript" bind:this={transcriptEl}>
 		{#if messages.length === 0 && !sending && !errorCode}
-			<p class="empty-hint">Say something. She's listening — sort of.</p>
+			<p class="empty-hint">Say something. She's listening, sort of.</p>
 		{/if}
 
 		<!-- Prefer Bubble primitive: role classes override fill/border via scoped :global under .transcript -->
@@ -934,7 +934,7 @@
 
 	@media (min-width: 768px) {
 		.kuromi-shell.sheet {
-			width: 440px;
+			width: 460px;
 			top: 0;
 			bottom: 0;
 			height: 100vh;

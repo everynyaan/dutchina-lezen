@@ -6,33 +6,23 @@
 	import Icon from '$lib/icons/Icon.svelte';
 	import InstallSticker from '$lib/components/home/InstallSticker.svelte';
 	import Card from '$lib/components/ui/Card.svelte';
+	import Doodle from '$lib/components/art/Doodle.svelte';
+	import KuromiBubble from '$lib/components/reading/KuromiBubble.svelte';
+	import TypeGrid from '$lib/components/reading/TypeGrid.svelte';
+	import { allTypesOpen, setAllTypesOpen } from '$lib/shell/desk.svelte';
 	import { resolve } from '$app/paths';
 	import { getTodayDate } from '$lib/match/engine';
-	import { evalResults, unseenMisses } from '$lib/reading/eval';
-	import { predictiveAvailable, yearStudied } from '$lib/reading/mock';
+	import { unseenMisses } from '$lib/reading/eval';
 	import { readCoachNote } from '$lib/kuromi/note';
 	import { reflexLine } from '$lib/kuromi/lines';
 	import { showWeeklyMessage } from '$lib/kuromi/live';
 	import { setMondayBrief } from '$lib/kuromi/focus';
 	import { requestKuromiChat } from '$lib/kuromi/visibility.svelte';
-	import {
-		PLAN_LINE,
-		examCountdown,
-		lastMockLine,
-		lastMockView,
-		locateLine,
-		locateWindow,
-		openTraps,
-		practiceSetLine,
-		qtypeLine,
-		qtypeReadiness,
-		SET_MIX_NOTE,
-		trapLine,
-		unseenSetLine
-	} from '$lib/reading/readiness';
+	import { PLAN_LINE } from '$lib/reading/readiness';
 
 	const ctx = getGameContext();
 	let settingsOpen = $state(false);
+	let planOpen = $state(false);
 	const today = getTodayDate();
 
 	function greetingForHour(hour: number): string {
@@ -53,24 +43,27 @@
 		ctx.state.readingFork.eval.date === today && ctx.state.readingFork.eval.completed
 	);
 	let unseen = $derived(unseenMisses(ctx.state.readingFork.misses).length);
-	let predictiveOpen = $derived(
-		predictiveAvailable(
-			ctx.state.readingFork.satMocks,
-			yearStudied(
-				2023,
-				ctx.state.lezen.questionResults,
-				evalResults(ctx.state.readingFork.eval),
-				ctx.state.readingFork.misses.map((miss) => miss.questionId)
-			)
-		)
+	let reservedYears = $derived(
+		[...(ctx.state.readingFork.settings.reservedPapers ?? [])].sort((a, b) => a - b)
 	);
-	let examLine = $derived(examCountdown(ctx.state.readingFork.settings.examDate, today));
-	let mockLine = $derived(lastMockLine(lastMockView(ctx.state.readingFork)));
-	let setLine = $derived(practiceSetLine(ctx.state.readingFork));
-	let unseenLine = $derived(unseenSetLine(ctx.state.readingFork));
-	let typeRows = $derived(qtypeReadiness(ctx.state.readingFork));
-	let locatedLine = $derived(locateLine(locateWindow(ctx.state.readingFork, 50)));
-	let trapsLine = $derived(trapLine(openTraps(ctx.state.readingFork)));
+	let nextPaper = $derived(reservedYears[0] ?? null);
+	let glow = $derived(!evalDone ? 'daily' : unseen > 0 ? 'drills' : 'mock');
+	let heroBubble = $derived.by(() => {
+		const sealed =
+			reservedYears.length === 0
+				? 'Nothing is sealed.'
+				: reservedYears.length === 1
+					? `${reservedYears[0]} is sealed.`
+					: `${reservedYears.join(' and ')} are sealed.`;
+		if (!evalDone) return `${sealed} Open today's text.`;
+		if (unseen > 0) return `${unseen} drills are due. Open drills.`;
+		return `${sealed} Open the next mock.`;
+	});
+	let planItems = $derived(
+		PLAN_LINE.split('. ')
+			.map((part) => part.replace(/\.$/, ''))
+			.filter(Boolean)
+	);
 	let coachNoteText = $state('');
 	let noteLabel = reflexLine('note-label');
 	let weekly = showWeeklyMessage(today);
@@ -173,73 +166,132 @@
 		</div>
 	</div>
 
-	<Card variant="soft-rose">
-		<p class="kicker">Kuromi says</p>
-		<p class="hero-copy">
-			The published papers needed 24 of 35. Aim for 25 or more. Skip, flag, don't hunt one word.
-			Training is 2024 and 2025. 2023 stays sealed for one predictive mock.
-		</p>
-	</Card>
+	<div class="hero-wrap">
+		<span class="doodle hero-spark jit-5">
+			<Doodle name="spark-sparkle-26" size={28} color="var(--color-rose-deep)" />
+		</span>
+		<Card variant="soft-rose">
+			<KuromiBubble mood={evalDone ? 'wink' : 'coffee'}>
+				<p>{heroBubble}</p>
+			</KuromiBubble>
+		</Card>
+		<span class="doodle hero-arrow jit-3">
+			<Doodle name="swirl-arrow-6" size={36} color="var(--color-ink)" />
+		</span>
+	</div>
 
-	<section class="readiness">
-		<h2>Days to the exam</h2>
-		<p>{examLine}</p>
-		<h2>Last mock</h2>
-		<p>{mockLine}</p>
-		<h2>Practice sets</h2>
-		<p>{setLine}</p>
-		<p>{unseenLine}</p>
-		<p class="plan">{SET_MIX_NOTE}</p>
-		<h2>Plan</h2>
-		<p class="plan">{PLAN_LINE}</p>
-		{#if coachNoteText && noteLabel}
-			<h2>{noteLabel}</h2>
-			<p class="plan">{coachNoteText}</p>
-		{/if}
-		{#if weekly}
-			<button type="button" class="weekly" onclick={openWeekly}>Weekly message</button>
-		{/if}
-		<h2>Question types</h2>
-		<ul class="types">
-			{#each typeRows as row (row.qtype)}
-				<li class="type-row">
-					<span>{qtypeLine(row)}</span>
-					<a href="{resolve('/cards')}?qtype={row.qtype}">Practice this</a>
-				</li>
-			{/each}
-		</ul>
-		<h2>Found the right paragraph</h2>
-		<p>{locatedLine}</p>
-		<h2>Open trap cards</h2>
-		<p>{trapsLine}</p>
+	<section class="today">
+		<h2 class="section-label jit-a">Today</h2>
+		<span class="doodle squiggle">
+			<Doodle name="shape-swirl-loops-4" size={42} color="var(--color-rose-deep)" />
+		</span>
+		<div class="today-pair">
+			<a
+				class="action peach"
+				class:glow={glow === 'daily'}
+				href={resolve('/eval')}
+				onclick={() => playSfx('button_tap')}
+			>
+				<span class="hub-title">{evalDone ? 'Daily text done' : 'Daily text'}</span>
+				<span class="chip">{evalDone ? 'Done' : 'About 15 min'}</span>
+				<span class="hub-sub">One passage. Map, three questions, one paraphrase.</span>
+			</a>
+			<a
+				class="action lavender"
+				class:glow={glow === 'drills'}
+				href={resolve('/cards')}
+				onclick={() => playSfx('button_tap')}
+			>
+				<span class="hub-title">Drills</span>
+				<span class="chip">{unseen ? `${unseen} due` : 'Clear'}</span>
+			</a>
+		</div>
+		<button type="button" class="quiet" onclick={() => (planOpen = true)}>
+			Next: baseline mock by 12 Oct
+		</button>
 	</section>
 
-	<a class="hub-card" href={resolve('/eval')} onclick={() => playSfx('button_tap')}>
-		<span class="hub-title">{evalDone ? 'Daily text done' : 'Daily text'}</span>
-		<span class="hub-sub">One passage. Map, three questions, one paraphrase.</span>
-	</a>
-	<a class="hub-card" href={resolve('/cards')} onclick={() => playSfx('button_tap')}>
-		<span class="hub-title">Drills</span>
-		<span class="hub-sub">{unseen ? `${unseen} unseen` : 'Clear.'}</span>
-	</a>
-	<a class="hub-card" href={resolve('/mock')} onclick={() => playSfx('button_tap')}>
-		<span class="hub-title">Mock</span>
-		<span class="hub-sub">{predictiveOpen ? 'Predictive mock. Once.' : 'Format rehearsal.'}</span>
-		<span class="hub-sub">The published papers needed 24 of 35. Aim for 25 or more.</span>
-	</a>
-	<a class="hub-card" href={resolve('/lezen')} onclick={() => playSfx('button_tap')}>
-		<span class="hub-title">Texts</span>
-		<span class="hub-sub">2024 and 2025. 2023 is saved for your mock.</span>
-	</a>
-	<a class="hub-card" href={resolve('/sets')} onclick={() => playSfx('button_tap')}>
-		<span class="hub-title">Practice sets</span>
-		<span class="hub-sub">Unofficial. Set 2, then set 3, then set 1 after the 2025 mock.</span>
-	</a>
+	<div class="secondary">
+		<a
+			class="action teal"
+			class:glow={glow === 'mock'}
+			href={resolve('/mock')}
+			onclick={() => playSfx('button_tap')}
+		>
+			<span class="hub-title">Mock</span>
+			<span class="chip">{nextPaper ? `next paper: ${nextPaper}, sealed` : 'no paper sealed'}</span>
+			<span class="chip">12 Oct</span>
+		</a>
+		<a class="action rose" href={resolve('/sets')} onclick={() => playSfx('button_tap')}>
+			<span class="hub-title">Practice sets</span>
+			<span class="chip">Next set: 2</span>
+		</a>
+		<a class="action peach" href={resolve('/lezen')} onclick={() => playSfx('button_tap')}>
+			<span class="hub-title">Texts</span>
+			<span class="chip">Training papers</span>
+		</a>
+		<a class="action lavender" href={resolve('/playbook')} onclick={() => playSfx('button_tap')}>
+			<span class="hub-title">Playbook</span>
+			<span class="chip">Moves and traps</span>
+		</a>
+	</div>
+
+	{#if allTypesOpen()}
+		<section class="all-types">
+			<div class="all-head">
+				<h2 class="section-label">All types</h2>
+				<button type="button" class="quiet" onclick={() => setAllTypesOpen(false)}>Close</button>
+			</div>
+			<TypeGrid />
+		</section>
+	{/if}
+
+	{#if coachNoteText && noteLabel}
+		<p class="quiet-note">{noteLabel}. {coachNoteText}</p>
+	{/if}
+	{#if weekly}
+		<button type="button" class="weekly" onclick={openWeekly}>Weekly message</button>
+	{/if}
 
 	{#if installVisible}
 		<InstallSticker onInstall={installApp} onDismiss={dismissInstall} />
 	{/if}
 </div>
+
+{#if planOpen}
+	<!-- svelte-ignore a11y_no_static_element_interactions -->
+	<div
+		class="plan-backdrop"
+		role="presentation"
+		onclick={() => (planOpen = false)}
+		onkeydown={(event) => {
+			if (event.key === 'Escape') planOpen = false;
+		}}
+	>
+		<div
+			class="plan-sheet"
+			role="dialog"
+			tabindex="-1"
+			aria-modal="true"
+			aria-labelledby="plan-title"
+			onclick={(event) => event.stopPropagation()}
+			onkeydown={(event) => {
+				if (event.key === 'Escape') planOpen = false;
+			}}
+		>
+			<h2 id="plan-title">Plan</h2>
+			<ul>
+				{#each planItems as item (item)}
+					<li>
+						<span class="tick" aria-hidden="true">○</span>
+						{item}
+					</li>
+				{/each}
+			</ul>
+			<button type="button" class="quiet" onclick={() => (planOpen = false)}>Close</button>
+		</div>
+	</div>
+{/if}
 
 <SettingsPanel open={settingsOpen} onclose={() => (settingsOpen = false)} />
 
@@ -302,94 +354,226 @@
 		display: flex;
 	}
 
-	.kicker {
-		font-size: var(--text-micro);
-		text-transform: uppercase;
-		color: var(--color-muted-ink);
-		margin: 0 0 6px;
+	.home {
+		max-width: 1100px;
 	}
-	.hero-copy {
-		font-size: var(--text-lead);
-		line-height: 1.45;
-		margin: 0;
+
+	.hero-wrap {
+		position: relative;
 	}
-	.hub-card {
+
+	.doodle {
+		position: absolute;
+		pointer-events: none;
+	}
+
+	.hero-spark {
+		top: -8px;
+		right: 12px;
+		z-index: 1;
+	}
+
+	.hero-arrow {
+		left: 72px;
+		bottom: -18px;
+		z-index: 1;
+	}
+
+	.today {
+		position: relative;
 		display: flex;
 		flex-direction: column;
-		gap: 4px;
-		padding: 16px 18px;
-		border: 3px solid var(--color-ink);
-		border-radius: 22px;
-		box-shadow: var(--card-shadow);
-		background: #fff;
-		text-decoration: none;
-		color: var(--color-ink);
+		gap: 10px;
 	}
-	.hub-title {
+
+	.section-label {
+		margin: 0;
 		font-family: var(--font-display);
-		font-size: var(--text-title);
+		font-size: 22px;
 		font-weight: 700;
 	}
+
+	.squiggle {
+		position: absolute;
+		left: 78px;
+		top: -6px;
+	}
+
+	.today-pair,
+	.secondary {
+		display: grid;
+		gap: 12px;
+	}
+
+	.today-pair {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.secondary {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.action {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 8px;
+		min-height: 92px;
+		padding: 16px;
+		border-radius: 22px;
+		text-decoration: none;
+		color: var(--color-ink);
+		box-shadow: var(--shadow-offset-card);
+	}
+
+	.action.peach {
+		background: linear-gradient(
+			180deg,
+			color-mix(in srgb, var(--color-peach) 70%, white),
+			#fff 70%
+		);
+	}
+	.action.lavender {
+		background: linear-gradient(
+			180deg,
+			color-mix(in srgb, var(--color-lavender) 45%, white),
+			#fff 72%
+		);
+	}
+	.action.teal {
+		background: linear-gradient(180deg, color-mix(in srgb, var(--color-teal) 50%, white), #fff 72%);
+	}
+	.action.rose {
+		background: linear-gradient(180deg, color-mix(in srgb, var(--color-rose) 55%, white), #fff 72%);
+	}
+
+	.hub-title {
+		font-family: var(--font-display);
+		font-size: 22px;
+		font-weight: 700;
+		line-height: 1.15;
+	}
+
 	.hub-sub {
-		font-size: var(--text-small);
+		font-size: 14px;
 		color: var(--color-muted-ink);
 		line-height: 1.4;
 	}
 
-	.readiness {
-		display: flex;
-		flex-direction: column;
-		gap: 0.45rem;
+	.chip {
+		display: inline-flex;
+		padding: 3px 8px;
+		border-radius: 999px;
+		background: white;
+		font-size: 14px;
+		font-weight: 700;
+		line-height: 1.2;
 	}
 
-	.readiness h2 {
-		font-family: var(--font-display);
-		font-size: var(--text-title);
-		margin: 0.6rem 0 0;
-	}
-
-	.readiness p,
-	.plan {
-		margin: 0;
-		line-height: 1.45;
-	}
-
+	.quiet,
 	.weekly {
 		align-self: flex-start;
 		font: inherit;
+		font-size: 14px;
 		font-weight: 700;
-		border: 2px solid var(--color-ink);
-		border-radius: 999px;
-		background: var(--color-rose);
-		padding: 0.35rem 0.8rem;
+		color: var(--color-muted-ink);
+		background: none;
+		border: none;
+		padding: 0;
 		cursor: pointer;
+		text-decoration: underline;
+		text-underline-offset: 3px;
 	}
 
-	.types {
-		list-style: none;
+	.weekly {
+		color: var(--color-ink);
+	}
+
+	.quiet-note {
 		margin: 0;
+		font-size: 14px;
+		color: var(--color-muted-ink);
+	}
+
+	.all-types {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.all-head {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.glow {
+		box-shadow:
+			0 0 0 3px var(--color-rose),
+			var(--shadow-offset-card);
+		animation: home-glow 1.2s ease-in-out infinite;
+	}
+
+	.plan-backdrop {
+		position: fixed;
+		inset: 0;
+		background: color-mix(in srgb, var(--color-ink) 35%, transparent);
+		z-index: 200;
+		display: grid;
+		place-items: end center;
+	}
+
+	.plan-sheet {
+		width: min(560px, 100%);
+		max-height: 80vh;
+		overflow: auto;
+		background: white;
+		border: 3px solid var(--color-ink);
+		border-radius: 22px 22px 0 0;
+		box-shadow: var(--shadow-offset-frame);
+		padding: 20px 20px 28px;
+	}
+
+	.plan-sheet h2 {
+		font-family: var(--font-display);
+		font-size: 28px;
+		margin: 0 0 12px;
+	}
+
+	.plan-sheet ul {
+		list-style: none;
+		margin: 0 0 16px;
 		padding: 0;
 		display: flex;
 		flex-direction: column;
-		gap: 0.55rem;
+		gap: 10px;
 	}
 
-	.type-row {
+	.plan-sheet li {
 		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-		gap: 0.25rem 0.75rem;
-		align-items: baseline;
+		gap: 8px;
+		font-size: 17px;
+		line-height: 1.4;
 	}
 
-	.type-row a {
-		color: var(--color-ink);
-		font-weight: 700;
+	@keyframes home-glow {
+		50% {
+			box-shadow:
+				0 0 0 6px color-mix(in srgb, var(--color-rose) 55%, transparent),
+				var(--shadow-offset-card);
+		}
 	}
 
-	.plan {
-		margin: 0;
-		line-height: 1.45;
-		color: var(--color-ink);
+	@media (prefers-reduced-motion: reduce) {
+		.glow {
+			animation: none;
+		}
+	}
+
+	@media (max-width: 720px) {
+		.today-pair,
+		.secondary {
+			grid-template-columns: 1fr;
+		}
 	}
 </style>

@@ -20,6 +20,7 @@
 	const ctx = getGameContext();
 
 	let kind = $state<'all' | NotebookEntry['kind']>('all');
+	let starredOnly = $state(false);
 	let tag = $state('');
 	let text = $state('');
 	let hiddenEnglish = $state(false);
@@ -31,9 +32,14 @@
 	let checks = $derived(senseChecks(book, opened));
 	let rows = $derived.by(() => {
 		const filtered = book.entries.filter((entry) => {
+			if (starredOnly && !entry.starred) return false;
 			if (kind !== 'all' && entry.kind !== kind) return false;
 			if (tag && !entry.tags.includes(tag)) return false;
-			if (text && entry.passageSlug !== text && !nameOf(entry.passageSlug).toLowerCase().includes(text.toLowerCase())) {
+			if (
+				text &&
+				entry.passageSlug !== text &&
+				!nameOf(entry.passageSlug).toLowerCase().includes(text.toLowerCase())
+			) {
 				return false;
 			}
 			if (hiddenEnglish && !(entry.kind === 'word' && !entry.englishRevealed)) return false;
@@ -41,13 +47,18 @@
 		});
 		return printing ? sortByFrequency(filtered) : sortByLastMet(filtered);
 	});
-	let slugs = $derived([...new Set(book.entries.map((entry) => entry.passageSlug).filter(Boolean))]);
+	let slugs = $derived([
+		...new Set(book.entries.map((entry) => entry.passageSlug).filter(Boolean))
+	]);
 
 	function nameOf(slug: string): string {
 		return findPassage(slug)?.name ?? slug;
 	}
 
-	function save(id: string, patch: Partial<Pick<NotebookEntry, 'note' | 'tags' | 'starred' | 'englishRevealed'>>) {
+	function save(
+		id: string,
+		patch: Partial<Pick<NotebookEntry, 'note' | 'tags' | 'starred' | 'englishRevealed'>>
+	) {
 		ctx.state.readingFork = withNotebook(
 			ctx.state.readingFork,
 			patchEntry(notebookOf(ctx.state.readingFork), id, patch)
@@ -64,6 +75,41 @@
 	<p class="eyebrow">Your words</p>
 	<h1>Notebook</h1>
 	<p>Guess from the sentence first. English stays hidden until you ask for it.</p>
+
+	<div class="chips">
+		<button
+			type="button"
+			class:on={kind === 'word' && !starredOnly}
+			onclick={() => {
+				kind = 'word';
+				starredOnly = false;
+			}}>word</button
+		>
+		<button
+			type="button"
+			class:on={kind === 'sentence'}
+			onclick={() => {
+				kind = 'sentence';
+				starredOnly = false;
+			}}>sentence</button
+		>
+		<button
+			type="button"
+			class:on={kind === 'trap'}
+			onclick={() => {
+				kind = 'trap';
+				starredOnly = false;
+			}}>trap</button
+		>
+		<button
+			type="button"
+			class:on={starredOnly}
+			onclick={() => {
+				starredOnly = !starredOnly;
+				kind = 'all';
+			}}>starred</button
+		>
+	</div>
 
 	{#if book.entries.length === 0}
 		<p>No notes yet. Select a word in a text and add it here.</p>
@@ -113,23 +159,25 @@
 		{:else}
 			<ul class="entries">
 				{#each rows as entry (entry.id)}
-					{@const record = entry.kind === 'word' ? lemmaRecord(entry.surface ?? entry.lemma ?? '') : null}
+					{@const record =
+						entry.kind === 'word' ? lemmaRecord(entry.surface ?? entry.lemma ?? '') : null}
 					<li>
 						<p class="head">
 							{entry.kind === 'word' ? entry.surface : entry.kind}
-							{#if entry.lemma}({entry.lemma}){/if}
-							{#if entry.starred}Starred{/if}
+						</p>
+						<p class="badges">
+							{#if entry.lemma}<span class="chip">{entry.lemma}</span>{/if}
+							{#if record?.pos}<span class="chip">{record.pos}</span>{/if}
+							{#if entry.starred}<span class="chip">starred</span>{/if}
+							{#if entry.kind === 'word'}
+								<span class="chip">{bankFrequency(entry)} in the bank</span>
+								{#if entry.metSince > 0}<span class="chip">met {entry.metSince}</span>{/if}
+							{/if}
 						</p>
 						<p>{nameOf(entry.passageSlug)}</p>
 						<p class="quote">{entry.quote}</p>
 						{#if record?.nl}<p>{record.nl}</p>{/if}
 						{#if entry.englishRevealed && record?.en}<p>{record.en}</p>{/if}
-						{#if entry.kind === 'word'}
-							<p>In the bank: {bankFrequency(entry)} times</p>
-							{#if entry.metSince > 0}
-								<p>met {entry.metSince} times since you noted it</p>
-							{/if}
-						{/if}
 						{#if entry.kind === 'sentence' && entry.sentenceType === 'rule'}
 							<p>Case facts: {caseFacts(entry.quote).join(', ') || 'none listed'}</p>
 						{/if}
@@ -145,32 +193,37 @@
 			</ul>
 		{/if}
 
-		<h2>5 words in new sentences</h2>
-		{#if checks.length === 0}
-			<p>Open another text that uses a word you noted. This check uses a new sentence, not a translation.</p>
-		{:else}
-			{#each checks as check (check.entryId)}
-				<article>
-					<p class="quote">{check.sentence}</p>
-					<p>{check.prompt}</p>
-					{#each check.choices as choice, index (`${check.entryId}-${index}`)}
-						<button
-							type="button"
-							onclick={() => (picked = { ...picked, [check.entryId]: choice.nl })}
-						>
-							{choice.nl}
-						</button>
-					{/each}
-					{#if picked[check.entryId]}
-						<p>
-							{check.choices.find((choice) => choice.nl === picked[check.entryId])?.right
-								? 'Right.'
-								: 'Not this one.'}
-						</p>
-					{/if}
-				</article>
-			{/each}
-		{/if}
+		<section class="sense">
+			<h2>5 words in new sentences</h2>
+			{#if checks.length === 0}
+				<p>
+					Open another text that uses a word you noted. This check uses a new sentence, not a
+					translation.
+				</p>
+			{:else}
+				{#each checks as check (check.entryId)}
+					<article>
+						<p class="quote">{check.sentence}</p>
+						<p>{check.prompt}</p>
+						{#each check.choices as choice, index (`${check.entryId}-${index}`)}
+							<button
+								type="button"
+								onclick={() => (picked = { ...picked, [check.entryId]: choice.nl })}
+							>
+								{choice.nl}
+							</button>
+						{/each}
+						{#if picked[check.entryId]}
+							<p>
+								{check.choices.find((choice) => choice.nl === picked[check.entryId])?.right
+									? 'Right.'
+									: 'Not this one.'}
+							</p>
+						{/if}
+					</article>
+				{/each}
+			{/if}
+		</section>
 	{/if}
 </div>
 
@@ -209,17 +262,59 @@
 		flex-direction: row;
 		align-items: center;
 	}
+	.chips {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+	}
+	.chips button,
+	.chip {
+		border: none;
+		border-radius: 999px;
+		background: white;
+		padding: 4px 10px;
+		font-size: 14px;
+		font-weight: 700;
+		box-shadow: var(--shadow-offset-pill);
+	}
+	.chips button.on {
+		background: var(--color-rose);
+	}
+	.badges {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 6px;
+	}
 	.entries {
 		list-style: none;
 		padding: 0;
 		margin: 0;
-		display: flex;
-		flex-direction: column;
-		gap: 0.9rem;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 12px;
+	}
+	.entries li {
+		padding: 14px;
+		border-radius: 18px;
+		background: color-mix(in srgb, var(--color-peach) 28%, white);
+		box-shadow: var(--shadow-offset-card);
 	}
 	.head {
+		font-family: var(--font-display);
 		font-weight: 700;
+		font-size: 22px;
 		margin: 0;
+	}
+	.sense {
+		padding: 14px;
+		border-radius: 18px;
+		background: color-mix(in srgb, var(--color-teal) 35%, white);
+		box-shadow: var(--shadow-offset-card);
+	}
+	@media (max-width: 800px) {
+		.entries {
+			grid-template-columns: 1fr;
+		}
 	}
 	.quote {
 		font-style: italic;

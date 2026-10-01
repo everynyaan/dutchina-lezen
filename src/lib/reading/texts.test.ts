@@ -69,11 +69,11 @@ describe('texts page', () => {
 		expect(page).toContain('flaggable');
 		expect(page).toContain("source: 'texts'");
 		expect(page).toContain('Exam style: feedback at the end');
-		expect(page).toContain('is saved for your mock.');
+		expect(page).toContain('sealed for your mock on 12 Oct');
 		expect(page).toContain('You answered these recently. Try the practice questions instead.');
 		expect(page).toContain('There are no practice questions for this text.');
 		expect(page).toContain('seenLabel');
-		expect(page).toContain('BOOKLET_PASS_LABEL');
+		expect(page).not.toContain('BOOKLET_PASS_LABEL');
 		expect(page).toContain('PracticeBook');
 		expect(page).not.toContain('applyLpEvent');
 		expect(page).not.toContain('updateMissions');

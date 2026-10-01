@@ -242,7 +242,7 @@ describe('debrief page', () => {
 			'utf8'
 		);
 		expect(desk).toContain('@container app-card (min-width: 42rem)');
-		expect(desk).toContain('minmax(0, 1.4fr) minmax(0, 1fr) 30%');
+		expect(desk).toContain('minmax(0, 760px) minmax(220px, 420px) 280px');
 		expect(desk).toContain('minmax(0, 1.6fr) minmax(0, 1fr) 2.75rem');
 		expect(desk).toContain('minmax(0, 1.6fr) minmax(0, 1fr);');
 		expect(desk).toContain('contain: inline-size');

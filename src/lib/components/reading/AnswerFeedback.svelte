@@ -79,8 +79,11 @@
 		display: flex;
 		flex-direction: column;
 		gap: 0.45rem;
-		font-size: 1rem;
+		font-size: 17px;
 		line-height: 1.45;
+		padding: 10px 12px;
+		border-radius: 16px;
+		background: color-mix(in srgb, var(--color-teal) 28%, white);
 	}
 	.verdict {
 		font-weight: 700;

@@ -58,6 +58,7 @@
 	configureKuromiLive(env.PUBLIC_KUROMI_LIVE);
 	import RailNav from '$lib/components/shell/RailNav.svelte';
 	import KuromiResident from '$lib/components/shell/KuromiResident.svelte';
+	import RightRail from '$lib/components/shell/RightRail.svelte';
 
 	interface Props {
 		children: import('svelte').Snippet;
@@ -620,7 +621,7 @@
 	const tabs = [
 		{ href: '/', label: 'Home', icon: 'house' },
 		{ href: '/eval', label: 'Daily text', icon: 'list-check' },
-		{ href: '/cards', label: 'Debrief', icon: 'rectangle-history' },
+		{ href: '/cards', label: 'Drills', icon: 'rectangle-history' },
 		{ href: '/mock', label: 'Mock', icon: 'bullseye' },
 		{ href: '/playbook', label: 'Playbook', icon: 'book-sparkles' }
 	] as const;
@@ -631,10 +632,9 @@
 		character?: boolean;
 	}[] = [
 		{ href: '/lezen', label: 'Texts' },
-		{ href: '/notebook', label: 'Notebook' },
 		{ href: '/sets', label: 'Practice sets' },
-		{ href: '/grammar', label: 'Patterns' },
-		{ href: '/kuromi/shelf', label: 'Kuromi', character: true }
+		{ href: '/notebook', label: 'Notebook' },
+		{ href: '/grammar', label: 'Patterns' }
 	];
 
 	function isActive(href: string, pathname: string): boolean {
@@ -663,8 +663,11 @@
 
 		<!-- MAIN CONTENT -->
 		<main class="content" aria-hidden={kuromiOpen ? 'true' : undefined}>
+			<p class="wide-hint">Dutchina works best in a wider window</p>
 			{@render children()}
 		</main>
+
+		<RightRail />
 	</div>
 
 	<!-- BOTTOM TAB BAR -->
@@ -922,6 +925,53 @@
 
 		/* Hide floating SummonButton at desktop rail tier (CSS-only; component unedited) */
 		:global(.summon-btn.summon-btn) {
+			display: none;
+		}
+	}
+
+	.wide-hint {
+		display: none;
+		margin: 0 0 12px;
+		text-align: center;
+		font-size: 17px;
+		line-height: 1.4;
+		color: var(--color-ink);
+	}
+
+	@media (max-width: 1199px) {
+		.wide-hint {
+			display: block;
+		}
+	}
+
+	/* Unit 16 desktop frame: 200 | centre | 280, from 1200px. */
+	@media (min-width: 1200px) {
+		.frame {
+			display: grid;
+			grid-template-columns: 200px minmax(0, 1fr) 280px;
+			max-width: 1440px;
+			border: 3px solid var(--color-ink);
+			box-shadow: 0 10px 0 rgba(61, 53, 80, 0.18);
+		}
+
+		.rail {
+			width: 200px;
+			padding: 24px 12px;
+		}
+
+		.content {
+			padding: 1.5rem 1.25rem 1.5rem;
+		}
+
+		.frame:has(:global(.reading-desk)) {
+			grid-template-columns: 200px minmax(0, 1fr);
+		}
+
+		.frame:has(:global(.exam-chrome)) {
+			grid-template-columns: minmax(0, 1fr);
+		}
+
+		.frame:has(:global(.exam-chrome)) > .rail {
 			display: none;
 		}
 	}

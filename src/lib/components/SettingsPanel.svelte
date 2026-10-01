@@ -128,6 +128,53 @@
 					</div>
 				</section>
 
+				<section class="settings-section section-reading">
+					<h3 class="section-label jit-2">Reading</h3>
+					<label class="field-label" for="exam-date">Exam date</label>
+					<input
+						id="exam-date"
+						class="field-input"
+						type="date"
+						value={ctx.state.readingFork.settings.examDate}
+						onchange={(event) => {
+							ctx.state.readingFork.settings.examDate = event.currentTarget.value;
+						}}
+					/>
+					<label class="field-label" for="lookups">Lookups per text</label>
+					<input
+						id="lookups"
+						class="field-input"
+						type="number"
+						min="0"
+						value={ctx.state.readingFork.settings.lookupsPerText}
+						onchange={(event) => {
+							const next = Number(event.currentTarget.value);
+							if (Number.isFinite(next)) ctx.state.readingFork.settings.lookupsPerText = next;
+						}}
+					/>
+					<p class="field-hint">Locate step stays on for paragraph questions.</p>
+					<ul class="locks">
+						{#each [2023, 2024, 2025] as year (year)}
+							<li>
+								<label>
+									<input
+										type="checkbox"
+										checked={ctx.state.readingFork.settings.reservedPapers.includes(year)}
+										onchange={(event) => {
+											const on = event.currentTarget.checked;
+											const current = ctx.state.readingFork.settings.reservedPapers;
+											ctx.state.readingFork.settings.reservedPapers = on
+												? [...new Set([...current, year])].sort((a, b) => a - b)
+												: current.filter((item) => item !== year);
+										}}
+									/>
+									{year} locked
+								</label>
+							</li>
+						{/each}
+					</ul>
+				</section>
+
 				<section class="settings-section section-sync">
 					<h3 class="section-label jit-b">Sync</h3>
 					<div class="sync-status r-pill offset-pill">
@@ -178,7 +225,8 @@
 						Reset All Progress
 					</button>
 					<p class="field-hint">
-						Wipes this device’s eval, trap cards, mock history, and local progress. Cannot be undone.
+						Wipes this device’s eval, trap cards, mock history, and local progress. Cannot be
+						undone.
 					</p>
 				</section>
 
@@ -447,6 +495,16 @@
 		text-transform: uppercase;
 		color: var(--color-peach-deep);
 		margin-bottom: 6px;
+	}
+
+	.locks {
+		list-style: none;
+		margin: 8px 0 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 6px;
+		font-size: 17px;
 	}
 
 	.field-input {

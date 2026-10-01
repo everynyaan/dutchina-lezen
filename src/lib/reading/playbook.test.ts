@@ -84,9 +84,9 @@ describe('playbook', () => {
 	});
 
 	it('keeps the dated plan on the home, above the empty question types', () => {
-		const readiness = home.split('class="readiness"')[1] ?? '';
-		expect(readiness.indexOf('PLAN_LINE')).toBeGreaterThan(-1);
-		expect(readiness.indexOf('PLAN_LINE')).toBeLessThan(readiness.indexOf('Question types'));
+		expect(home).toContain('PLAN_LINE');
+		expect(home).toContain('Next: baseline mock by 12 Oct');
+		expect(home.indexOf('PLAN_LINE')).toBeLessThan(home.indexOf('All types'));
 		expect(PLAN_LINE).toContain('Baseline official mock by 2026-10-12');
 		expect(PLAN_LINE).toContain('Light review only from 2026-11-09');
 		expect(home).not.toContain('PracticeBook');

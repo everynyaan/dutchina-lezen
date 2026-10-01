@@ -4,7 +4,10 @@
 	import { LEZEN_EXAMS } from '$lib/lezen/LEZEN_CONTENT';
 	import { findPassage } from '$lib/reading/bank';
 	import { appendAttempt, dailyLoopItem } from '$lib/reading/daily';
-	import { BOOKLET_PASS_LABEL } from '$lib/reading/mock';
+	import Doodle from '$lib/components/art/Doodle.svelte';
+	import KuromiBubble from '$lib/components/reading/KuromiBubble.svelte';
+	import TextCard from '$lib/components/reading/TextCard.svelte';
+	import TypeGrid from '$lib/components/reading/TypeGrid.svelte';
 	import { paragraphMapFor, practiceItemsFor } from '$lib/reading/practice';
 	import { page } from '$app/stores';
 	import { textChatFromLoop } from '$lib/kuromi/coach';
@@ -32,6 +35,7 @@
 	type Stored = { picked: string; correct: boolean; locateP: number | null };
 
 	let stage = $state<Stage>('list');
+	let listFilter = $state<'all' | 'unseen' | 'seen' | 'type'>('all');
 	let mode = $state<Mode>('official');
 	let slug = $state<string | null>(null);
 	let examStyle = $state(false);
@@ -226,27 +230,74 @@
 	{#if stage === 'list'}
 		<p class="eyebrow">Training papers</p>
 		<h1>Texts</h1>
-		<p class="pass">{BOOKLET_PASS_LABEL}</p>
-		{#each years as exam (exam.year)}
-			<section class="year">
-				<h2>{exam.year}</h2>
-				{#if reserved.includes(exam.year)}
-					<p class="saved">{exam.year} is saved for your mock.</p>
-				{:else}
-					<ul>
-						{#each exam.passages as row (row.slug)}
-							<li>
-								<button type="button" class="passage" onclick={() => openPassage(row.slug)}>
-									<span class="name">{row.name}</span>
-									<span class="intro">{row.intro}</span>
-									<span class="meta">{timesFor(row.slug)}. {row.questions.length} questions</span>
-								</button>
-							</li>
-						{/each}
-					</ul>
-				{/if}
-			</section>
-		{/each}
+		<div class="filters">
+			{#each ['all', 'unseen', 'seen', 'type'] as chip (chip)}
+				<button
+					type="button"
+					class="chip"
+					class:on={listFilter === chip}
+					onclick={() => (listFilter = chip as typeof listFilter)}
+				>
+					{chip === 'type' ? 'by type' : chip}
+				</button>
+			{/each}
+		</div>
+		{#if listFilter === 'type'}
+			<TypeGrid />
+		{:else}
+			{#each years as exam (exam.year)}
+				{@const rows = exam.passages.filter((row) => {
+					const times = seenTimes(ctx.state.readingFork, row.slug);
+					if (listFilter === 'unseen') return times === 0;
+					if (listFilter === 'seen') return times > 0;
+					return true;
+				})}
+				<section class="year">
+					<h2 class="jit-a">
+						{exam.year}
+						<Doodle name="shape-swirl-loops-4" size={28} color="var(--color-rose-deep)" />
+					</h2>
+					{#if reserved.includes(exam.year) && listFilter === 'all'}
+						<TextCard
+							title={`${exam.year}, sealed for your mock on 12 Oct`}
+							source="Reserved paper"
+							tint="lavender"
+							locked
+						>
+							{#snippet badges()}
+								<span class="chip ink">locked</span>
+							{/snippet}
+						</TextCard>
+					{:else if !reserved.includes(exam.year)}
+						<div class="text-grid">
+							{#each rows as row (row.slug)}
+								{@const times = seenTimes(ctx.state.readingFork, row.slug)}
+								<TextCard
+									title={row.name}
+									source={row.intro}
+									tint="peach"
+									onclick={() => openPassage(row.slug)}
+								>
+									{#snippet badges()}
+										<span class="chip">{exam.year}</span>
+										<span class="chip">{row.questions.length} questions</span>
+										{#if times === 0}
+											<span class="chip teal">unseen</span>
+										{:else}
+											<span class="chip">{timesFor(row.slug)}</span>
+										{/if}
+									{/snippet}
+								</TextCard>
+							{:else}
+								<KuromiBubble>
+									<p>Nothing in this filter. Try all.</p>
+								</KuromiBubble>
+							{/each}
+						</div>
+					{/if}
+				</section>
+			{/each}
+		{/if}
 	{:else if passage}
 		<button type="button" class="back" onclick={backToList}>Back</button>
 		{#if live && askLabel}
@@ -275,10 +326,15 @@
 				<input type="checkbox" bind:checked={examStyle} disabled={reviewing || index > 0} />
 				Exam style: feedback at the end
 			</label>
-			<p class="count">
+			<p class="sr-only">
 				Question {index + 1} of {ids.length}
-				{#if flags[item.id]}<span class="flagged">Flagged</span>{/if}
+				{#if flags[item.id]}Flagged{/if}
 			</p>
+			<div class="dots" aria-hidden="true">
+				{#each ids as id, dot (id)}
+					<span class:on={dot === index} class:done={Boolean(answers[id])}></span>
+				{/each}
+			</div>
 			<ReadingLoop
 				{passage}
 				highlight={phase === 'feedback' ? (item.evidence ?? []) : []}
@@ -340,61 +396,70 @@
 	h2 {
 		font-size: var(--text-title);
 	}
-	.pass,
-	.saved,
-	.intro,
-	.meta,
-	.count {
-		margin: 0;
-		line-height: 1.45;
-	}
-	.pass,
-	.saved,
-	.intro,
-	.meta {
-		color: var(--color-ink);
-	}
-	.year ul {
-		list-style: none;
-		margin: 0.6rem 0 0;
-		padding: 0;
+	.filters,
+	.text-grid,
+	.dots {
 		display: flex;
-		flex-direction: column;
-		gap: 0.55rem;
+		flex-wrap: wrap;
+		gap: 8px;
 	}
-	.passage {
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		gap: 0.25rem;
-		text-align: left;
+	.text-grid {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		margin-top: 8px;
+	}
+	.filters .chip,
+	.dots span {
 		font: inherit;
-		color: var(--color-ink);
-		background: #fff;
-		border: 2px solid var(--color-ink);
-		border-radius: 12px;
-		padding: 0.75rem 0.9rem;
-		cursor: pointer;
 	}
-	.name {
+	.filters .chip {
+		border: none;
+		background: white;
+		border-radius: 999px;
+		padding: 6px 12px;
 		font-weight: 700;
+		font-size: 14px;
+		cursor: pointer;
+		box-shadow: var(--shadow-offset-pill);
 	}
-	.meta {
-		color: var(--color-muted-ink);
-		font-size: 0.92rem;
+	.filters .chip.on {
+		background: var(--color-rose);
+	}
+	.dots span {
+		width: 10px;
+		height: 10px;
+		border-radius: 999px;
+		background: color-mix(in srgb, var(--color-ink) 18%, white);
+	}
+	.dots span.on {
+		background: var(--color-rose-deep);
+	}
+	.dots span.done {
+		background: var(--color-teal-deep);
+	}
+	.sr-only {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border: 0;
+	}
+	h2 :global(.doodle) {
+		vertical-align: middle;
+	}
+	@media (max-width: 900px) {
+		.text-grid {
+			grid-template-columns: 1fr;
+		}
 	}
 	.exam-style {
 		display: flex;
 		align-items: center;
 		gap: 0.5rem;
-		font-weight: 700;
-	}
-	.count {
-		font-weight: 700;
-	}
-	.flagged {
-		margin-left: 0.5rem;
 		font-weight: 700;
 	}
 	.back,

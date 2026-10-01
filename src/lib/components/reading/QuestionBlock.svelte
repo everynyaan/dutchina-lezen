@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { QTYPE_LABEL } from '$lib/reading/annotations';
 	import AnswerFeedback from './AnswerFeedback.svelte';
 	import {
 		displayOptions,
@@ -62,6 +63,7 @@
 </script>
 
 <section class="question">
+	<p class="sticker jit-2">{QTYPE_LABEL[resolved.qtype]}</p>
 	<p class="ask">{item.question}</p>
 	{#if phaseNow !== 'feedback'}
 		<p class="move">{resolved.move}</p>
@@ -111,10 +113,22 @@
 		flex-direction: column;
 		gap: 0.75rem;
 	}
+	.sticker {
+		align-self: flex-start;
+		margin: 0;
+		padding: 3px 8px;
+		border-radius: 999px;
+		background: var(--color-rose);
+		font-family: var(--font-display);
+		font-size: 14px;
+		font-weight: 700;
+		line-height: 1.2;
+	}
 	.ask {
 		margin: 0;
-		font-size: 1.05rem;
-		line-height: 1.45;
+		font-family: var(--font-display);
+		font-size: 20px;
+		line-height: 1.35;
 		font-weight: 700;
 	}
 	.move,

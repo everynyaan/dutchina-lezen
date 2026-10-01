@@ -217,7 +217,7 @@
 
 <div class="cards-page stagger">
 	<p class="eyebrow">The trap, on the text</p>
-	<h1>Debrief</h1>
+	<h1>Drills</h1>
 	<nav class="modes" aria-label="Drill modes">
 		<a href={resolve('/cards')} class:on={!mode && !qtypeParam}>Traps</a>
 		<a href="{resolve('/cards')}?mode=lure" class:on={mode === 'lure'}>Spot the lure</a>
