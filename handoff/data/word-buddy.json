@@ -1,0 +1,188 @@
+{
+	"passageSlug": "word-buddy",
+	"note": "Sample practice pack. Not official exam items. Never used in mock scores.",
+	"paragraphMap": [
+		{
+			"p": 1,
+			"anchor": "Onze cliënten hebben een ernstige beperking of z",
+			"role": "introduces-topic",
+			"summary": "Clients are seriously ill or disabled and look for a volunteer buddy; Margot explains why her buddy matters to her."
+		},
+		{
+			"p": 3,
+			"anchor": "Een buddy helpt zijn cliënt zoveel mogelijk uit ",
+			"role": "states-rule",
+			"summary": "What a buddy does: support the client as a friend towards a goal the client sets, first for one year."
+		},
+		{
+			"p": 5,
+			"anchor": "Buddyzorg is ontstaan in de jaren tachtig voor m",
+			"role": "background-origin",
+			"summary": "Buddy care started in the 1980s for people with HIV and AIDS and now helps people with other illnesses to go on living."
+		},
+		{
+			"p": 7,
+			"anchor": "De organisatie van buddyzorg is ondergebracht bi",
+			"role": "states-rule",
+			"summary": "Buddy care is run by Steunpunt Informele Zorg; anyone can apply and the coordinator supports buddies and meets new clients."
+		},
+		{
+			"p": 9,
+			"anchor": "Buddy's vormen een divers gezelschap. Mannen, vr",
+			"role": "exception-condition",
+			"summary": "Buddies are a mixed group, but they must be at least 21 because clients need someone with life experience."
+		},
+		{
+			"p": 11,
+			"anchor": "Buddy's hebben minimaal een dagdeel in de week t",
+			"role": "states-rule",
+			"summary": "Practical terms: at least half a day a week, compulsory training and meetings, costs paid plus 25 euros a month."
+		},
+		{
+			"p": 13,
+			"anchor": "Om te zorgen dat buddy's goed voorbereid aan het",
+			"role": "states-rule",
+			"summary": "The multi-day training focuses on self-knowledge and skills, and checks whether the candidate fits the profile."
+		},
+		{
+			"p": 15,
+			"anchor": "Buddyzorg is niet zomaar vrijwilligerswerk. De s",
+			"role": "states-rule",
+			"summary": "The work affects buddies, so they can always turn to the coordinator and to group meetings."
+		}
+	],
+	"items": [
+		{
+			"id": "p-word-buddy-1",
+			"qtype": "mening-persoon",
+			"question": "Wat vertelt Margot over haar buddy?",
+			"options": {
+				"A": "Haar buddy heeft het erg druk, maar komt toch vaak langs.",
+				"B": "Door haar buddy kan ze nog zo veel mogelijk blijven doen.",
+				"C": "Haar buddy helpt haar vooral om haar ziekte te accepteren."
+			},
+			"answer": "B",
+			"evidence": [
+				{
+					"p": 1,
+					"quote": "Om toch nog zoveel mogelijk te kunnen doen, zijn hulp en gezelschap van mijn buddy erg fijn."
+				}
+			],
+			"move": "Read only the words between the quotation marks, which are Margot's, and check who each detail belongs to.",
+			"why": "Margot says the help and company of her buddy are very nice 'om toch nog zoveel mogelijk te kunnen doen'.",
+			"distractors": {
+				"A": {
+					"trap": "verkeerde-persoon",
+					"why": "The busy job belongs to Margot's husband ('Mijn man heeft een drukke baan'), not to her buddy."
+				},
+				"C": {
+					"trap": "echo",
+					"why": "Accepting the illness is mentioned later as a possible goal for clients in general; Margot does not say it, she says 'Ik wil léven'."
+				}
+			}
+		},
+		{
+			"id": "p-word-buddy-2",
+			"qtype": "betekenis-in-context",
+			"question": "'Zij weet als geen ander dat een buddy een groot verschil maakt.' Wat betekent 'als geen ander' hier?",
+			"options": {
+				"A": "Zij is de enige die dat weet.",
+				"B": "Zij weet dat minder goed dan anderen.",
+				"C": "Zij weet dat beter dan bijna iedereen."
+			},
+			"answer": "C",
+			"evidence": [
+				{
+					"p": 1,
+					"quote": "Zij weet als geen ander dat een buddy een groot verschil maakt voor de kwaliteit van leven."
+				}
+			],
+			"move": "Connect the sentence to what comes before: Margot is seriously ill and has a buddy herself.",
+			"why": "'Als geen ander' means 'like nobody else': because she has a buddy herself, Margot knows this better than almost anyone.",
+			"distractors": {
+				"A": {
+					"trap": "overdreven",
+					"why": "The expression stresses how well she knows it; it does not say nobody else knows it."
+				},
+				"B": {
+					"trap": "tegenovergesteld",
+					"why": "A reading of 'geen' as a negation: the expression means she knows it especially well."
+				}
+			}
+		}
+	],
+	"paraphrase": [
+		{
+			"id": "pp-word-buddy-1",
+			"source": {
+				"p": 9,
+				"quote": "Buddyzorg stelt wel als voorwaarde dat buddy's minimaal 21 jaar zijn."
+			},
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "Je moet 21 jaar of ouder zijn om buddy te kunnen worden.",
+				"B": "Je mag niet ouder zijn dan 21 jaar om buddy te worden.",
+				"C": "Alleen mensen van precies 21 jaar kunnen buddy worden."
+			},
+			"answer": "A",
+			"distractors": {
+				"B": {
+					"trap": "tegenovergesteld",
+					"why": "'Minimaal' is a lower limit, not an upper limit."
+				},
+				"C": {
+					"trap": "overdreven",
+					"why": "21 is the minimum age, not the only allowed age."
+				}
+			}
+		},
+		{
+			"id": "pp-word-buddy-2",
+			"source": {
+				"p": 15,
+				"quote": "Dat dit indruk maakt en invloed heeft op de buddy, is onvermijdelijk."
+			},
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "Een buddy moet indruk maken op zijn cliënt.",
+				"B": "Een buddy kan voorkomen dat het werk hem raakt.",
+				"C": "Het werk raakt een buddy, daar ontkomt hij niet aan."
+			},
+			"answer": "C",
+			"distractors": {
+				"A": {
+					"trap": "echo",
+					"why": "Same words 'indruk maken', but now the buddy impresses the client; the text says the client's situation affects the buddy."
+				},
+				"B": {
+					"trap": "tegenovergesteld",
+					"why": "'Onvermijdelijk' means it cannot be avoided; this option says the buddy can avoid it."
+				}
+			}
+		},
+		{
+			"id": "pp-word-buddy-3",
+			"source": {
+				"p": 5,
+				"quote": "De professionele gezondheidszorg was in die tijd niet voorbereid op het aantal mensen met deze – toen nog nieuwe ziekte."
+			},
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "Er was toen helemaal geen zorg voor mensen met deze ziekte.",
+				"B": "De zorg kon toen zo veel zieken met die nieuwe ziekte niet aan.",
+				"C": "Er waren toen nog maar weinig mensen met deze nieuwe ziekte."
+			},
+			"answer": "B",
+			"distractors": {
+				"A": {
+					"trap": "overdreven",
+					"why": "The care was not prepared for the number of patients; the text does not say there was no care at all."
+				},
+				"C": {
+					"trap": "tegenovergesteld",
+					"why": "The problem was that there were many patients, more than the care system could handle."
+				}
+			}
+		}
+	]
+}

@@ -1,0 +1,195 @@
+{
+	"passageSlug": "ondernemingsraad",
+	"note": "Sample practice pack. Not official exam items. Never used in mock scores.",
+	"paragraphMap": [
+		{
+			"p": 2,
+			"anchor": "Een ondernemingsraad (OR) bestaat uit werknemers",
+			"role": "introduces-topic",
+			"summary": "What a works council (OR) is and its main task: making the employees' wishes clear to the employer, with examples."
+		},
+		{
+			"p": 4,
+			"anchor": "Minstens twee keer per jaar bespreken de OR en d",
+			"role": "states-rule",
+			"summary": "At least twice a year the OR and employer discuss how the company is doing; the employer announces important decisions he is preparing."
+		},
+		{
+			"p": 6,
+			"anchor": "De OR en de werkgever hebben ruimte om eigen afs",
+			"role": "states-rule",
+			"summary": "The OR and employer may make their own agreements, which must be put in writing."
+		},
+		{
+			"p": 8,
+			"anchor": "De OR kan bij belangrijke kwesties de werknemers",
+			"role": "states-rule",
+			"summary": "The OR may consult the employees on important issues, and the employer must make that possible."
+		},
+		{
+			"p": 10,
+			"anchor": "De OR heeft vier bevoegdheden, namelijk: • advie",
+			"role": "introduces-topic",
+			"summary": "Lists the four powers of the OR that the next sections explain."
+		},
+		{
+			"p": 12,
+			"anchor": "De werkgever moet een adviesaanvraag schriftelij",
+			"role": "states-rule",
+			"summary": "Right of advice: when the employer must ask advice in writing and in time, and how the OR can go to the Ondernemingskamer if it disagrees."
+		},
+		{
+			"p": 14,
+			"anchor": "In bepaalde gevallen moet een werkgever instemmi",
+			"role": "states-rule",
+			"summary": "Right of consent: which arrangements need the OR's consent, and the route via the bedrijfscommissie and kantonrechter if the OR refuses."
+		},
+		{
+			"p": 16,
+			"anchor": "De OR mag op eigen initiatief de werkgever voors",
+			"role": "states-rule",
+			"summary": "Right of initiative: the OR may make proposals; the employer must discuss them first and then reply in writing with reasons."
+		},
+		{
+			"p": 18,
+			"anchor": "De werkgever heeft de plicht ongevraagd informat",
+			"role": "states-rule",
+			"summary": "Right of information: what the employer must share unasked and on request, and mediation by the bedrijfscommissie if he refuses."
+		}
+	],
+	"items": [
+		{
+			"id": "p-ondernemingsraad-1",
+			"qtype": "oorzaak-reden",
+			"question": "Waarom moet de werkgever de OR op tijd om advies vragen?",
+			"options": {
+				"A": "zodat de OR eerst de werknemers kan raadplegen",
+				"B": "zodat de OR binnen een maand naar de Ondernemingskamer kan gaan",
+				"C": "zodat de mening van de OR nog kan meetellen bij het besluit"
+			},
+			"answer": "C",
+			"evidence": [
+				{
+					"p": 12,
+					"quote": "Hij moet dit tijdig doen zodat het advies van de OR echt van invloed kan zijn op het besluit."
+				}
+			],
+			"move": "Find 'tijdig' in the section Adviesrecht; the word 'zodat' right after it gives the reason.",
+			"why": "The text says the employer must ask in time 'zodat het advies van de OR echt van invloed kan zijn op het besluit': the advice must still be able to change the decision.",
+			"distractors": {
+				"A": {
+					"trap": "waar-niet-gevraagd",
+					"why": "The OR may consult the employees on important issues (section Achterban raadplegen), but that is not given as the reason for asking advice in time."
+				},
+				"B": {
+					"trap": "echo",
+					"why": "'Een maand' belongs to what the OR can do after it disagrees with a decision, not to why the request must come early."
+				}
+			}
+		},
+		{
+			"id": "p-ondernemingsraad-2",
+			"qtype": "betekenis-in-context",
+			"question": "'De Ondernemingskamer kan de werkgever verplichten het besluit in te trekken of de gevolgen ervan ongedaan te maken.' Wat betekent 'ongedaan maken' hier?",
+			"options": {
+				"A": "terugdraaien, alsof het niet is gebeurd",
+				"B": "nog een keer laten beoordelen",
+				"C": "afmaken, omdat het nog niet klaar is"
+			},
+			"answer": "A",
+			"evidence": [
+				{
+					"p": 12,
+					"quote": "de werkgever verplichten het besluit in te trekken of de gevolgen ervan ongedaan te maken"
+				}
+			],
+			"move": "Look at the pair 'het besluit in te trekken of de gevolgen ervan ongedaan te maken': both halves mean taking something back.",
+			"why": "The court can make the employer withdraw the decision or, if it has already had effects, reverse those effects so it is as if the decision never happened.",
+			"distractors": {
+				"B": {
+					"trap": "echo",
+					"why": "'Beoordelen' is what the Ondernemingskamer itself does in the sentence before; it is not the meaning of 'ongedaan maken'."
+				},
+				"C": {
+					"trap": "echo",
+					"why": "A literal reading of 'on-gedaan' as 'not done yet'; the fixed expression means undoing something that already happened."
+				}
+			}
+		}
+	],
+	"paraphrase": [
+		{
+			"id": "pp-ondernemingsraad-1",
+			"source": {
+				"p": 14,
+				"quote": "De werkgever kan de regeling niet invoeren zonder de instemming van de OR of de toestemming van de kantonrechter."
+			},
+			"afterItemId": "lezen-2023-8",
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "De werkgever kan de regeling alleen invoeren als de OR en de kantonrechter allebei akkoord zijn.",
+				"B": "De werkgever heeft een ja nodig van de OR of van de kantonrechter voordat hij de regeling invoert.",
+				"C": "De werkgever kan de regeling invoeren, ook als de OR en de kantonrechter het er niet mee eens zijn."
+			},
+			"answer": "B",
+			"distractors": {
+				"A": {
+					"trap": "overdreven",
+					"why": "'Of' becomes 'allebei': the text needs only one of the two, not both."
+				},
+				"C": {
+					"trap": "tegenovergesteld",
+					"why": "The text says he cannot introduce it without one of them; this option says he can."
+				}
+			}
+		},
+		{
+			"id": "pp-ondernemingsraad-2",
+			"source": {
+				"p": 6,
+				"quote": "De afspraken moeten schriftelijk worden vastgelegd"
+			},
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "Alle afspraken moeten in de ondernemingsovereenkomst staan.",
+				"B": "De OR moet de afspraken schriftelijk aan de werknemers melden.",
+				"C": "De OR en de werkgever moeten hun afspraken op papier zetten."
+			},
+			"answer": "C",
+			"distractors": {
+				"A": {
+					"trap": "overdreven",
+					"why": "The ondernemingsovereenkomst is only one example; approved minutes of the meeting are also allowed."
+				},
+				"B": {
+					"trap": "echo",
+					"why": "Uses 'schriftelijk' and 'afspraken', but the sentence is about recording the agreements, not telling the employees."
+				}
+			}
+		},
+		{
+			"id": "pp-ondernemingsraad-3",
+			"source": {
+				"p": 8,
+				"quote": "De werkgever dient de OR in staat te stellen de werknemers van het bedrijf te raadplegen"
+			},
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "De werkgever moet het mogelijk maken dat de OR de werknemers om hun mening vraagt.",
+				"B": "De werkgever moet zelf de werknemers om hun mening vragen in plaats van de OR.",
+				"C": "De werkgever moet eerst de OR om zijn mening vragen en daarna de werknemers."
+			},
+			"answer": "A",
+			"distractors": {
+				"B": {
+					"trap": "verkeerde-persoon",
+					"why": "The OR consults the employees; the employer only has to make that possible."
+				},
+				"C": {
+					"trap": "echo",
+					"why": "Mentions the OR and the employees, but the sentence does not describe the employer consulting anyone."
+				}
+			}
+		}
+	]
+}

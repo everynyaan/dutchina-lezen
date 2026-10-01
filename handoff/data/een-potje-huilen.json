@@ -1,0 +1,357 @@
+{
+	"passageSlug": "een-potje-huilen",
+	"note": "Sample practice pack. Not official exam items. Never used in mock scores.",
+	"paragraphMap": [
+		{
+			"p": 1,
+			"anchor": "Huilen wordt in onze Westerse maatschappij meest",
+			"role": "introduces-topic",
+			"summary": "Contrasts the Western view of crying as weakness with Japan, where crying is sometimes encouraged, and announces some facts about crying."
+		},
+		{
+			"p": 3,
+			"anchor": "Dieren hebben ook traanklieren, maar je zal ze n",
+			"role": "gives-example",
+			"summary": "Animals have tear glands only to clean their eyes; humans also cry from emotion, with examples of physical triggers and of emotions."
+		},
+		{
+			"p": 5,
+			"anchor": "Huilen heeft evolutionair gezien een heel duidel",
+			"role": "reports-research",
+			"summary": "Crying is a signal for help: for babies and, according to behavioural scientists, for adults too."
+		},
+		{
+			"p": 7,
+			"anchor": "Vrouwen huilen gemiddeld zo’n twintig tot vijfti",
+			"role": "reports-research",
+			"summary": "Women cry more often than men, explained by hormones and by the size of the tear ducts."
+		},
+		{
+			"p": 9,
+			"anchor": "Iedereen weet hoe huilen kan opluchten. Soms loo",
+			"role": "reports-research",
+			"summary": "Why crying brings relief: you find out what bothers you, emotional tears contain painkilling hormones, and crying releases calming hormones."
+		},
+		{
+			"p": 11,
+			"anchor": "Het is jammer dat huilen zo vaak als een teken v",
+			"role": "advice-instruction",
+			"summary": "The writer regrets that crying is seen as weakness, warns that suppressing tears cuts you off from your emotions, and advises a good cry when stressed."
+		}
+	],
+	"items": [
+		{
+			"id": "p-een-potje-huilen-1",
+			"qtype": "betekenis-in-context",
+			"question": "'Lees verder voor een paar leuke weetjes over huilen en een kleine ode aan een traantje op zijn tijd.' Wat betekent 'een traantje op zijn tijd' hier?",
+			"options": {
+				"A": "af en toe huilen als je daar behoefte aan hebt",
+				"B": "huilen op een vast moment van de dag",
+				"C": "je tranen zo lang mogelijk inhouden"
+			},
+			"answer": "A",
+			"evidence": [
+				{
+					"p": 1,
+					"quote": "een kleine ode aan een traantje op zijn tijd"
+				}
+			],
+			"move": "'Op zijn tijd' is a fixed expression; the word 'ode' (a song of praise) tells you the writer is positive about crying now and then.",
+			"why": "'Op zijn tijd' means now and then, when the moment is right. The writer praises an occasional tear, which fits the advice at the end to have a good cry when you need it.",
+			"distractors": {
+				"B": {
+					"trap": "echo",
+					"why": "A literal reading of 'tijd'; the expression has nothing to do with a fixed time of day."
+				},
+				"C": {
+					"trap": "tegenovergesteld",
+					"why": "Holding tears in is the Western habit the writer criticises; an 'ode' praises crying."
+				}
+			}
+		},
+		{
+			"id": "p-een-potje-huilen-2",
+			"qtype": "betekenis-in-context",
+			"question": "'... loop je een beetje op je tenen of heb je veel stress?' Wat betekent 'op je tenen lopen' hier?",
+			"options": {
+				"A": "heel zachtjes lopen zodat niemand je hoort",
+				"B": "veel van jezelf vragen en daardoor gespannen zijn",
+				"C": "je ontspannen en vrolijk voelen"
+			},
+			"answer": "B",
+			"evidence": [
+				{
+					"p": 11,
+					"quote": "loop je een beetje op je tenen of heb je veel stress?"
+				}
+			],
+			"move": "Look at what the phrase is paired with: 'of heb je veel stress?'. The word 'of' links two similar situations.",
+			"why": "'Op je tenen lopen' is figurative: you ask too much of yourself and feel the strain. It stands next to 'veel stress' as a moment when a good cry can help.",
+			"distractors": {
+				"A": {
+					"trap": "echo",
+					"why": "A literal reading of walking on tiptoe; the sentence is about stress, not about walking."
+				},
+				"C": {
+					"trap": "tegenovergesteld",
+					"why": "Feeling relaxed is the opposite of the stress the phrase is paired with."
+				}
+			}
+		},
+		{
+			"id": "p-een-potje-huilen-3",
+			"qtype": "betekenis-in-context",
+			"question": "'Soms loop je al een tijd rond met een knoop in je maag, of ben je boos of verdrietig.' Wat betekent 'een knoop in je maag' hier?",
+			"options": {
+				"A": "pijn in je buik omdat je iets verkeerds hebt gegeten",
+				"B": "een gevoel van opluchting na het huilen",
+				"C": "zorgen of spanning die je niet loslaten"
+			},
+			"answer": "C",
+			"evidence": [
+				{
+					"p": 9,
+					"quote": "Soms loop je al een tijd rond met een knoop in je maag, of ben je boos of verdrietig."
+				}
+			],
+			"move": "The phrase sits in a list with 'boos of verdrietig', under the heading about why crying brings relief, so it names a heavy feeling.",
+			"why": "A 'knoop in je maag' is worry or tension that stays with you ('al een tijd'). It is listed with being angry or sad as something crying can relieve.",
+			"distractors": {
+				"A": {
+					"trap": "echo",
+					"why": "It reads 'maag' literally; the text is about feelings, not food or illness."
+				},
+				"B": {
+					"trap": "tegenovergesteld",
+					"why": "Relief is what crying brings afterwards; the knot is the tension before it."
+				}
+			}
+		},
+		{
+			"id": "p-een-potje-huilen-4",
+			"qtype": "vergelijking",
+			"question": "Hoe kijken veel mensen in Japan anders tegen huilen aan dan mensen in de Westerse maatschappij?",
+			"options": {
+				"A": "Ze vinden dat je je tranen beter kunt inhouden.",
+				"B": "Ze zien huilen soms als een manier om spanning kwijt te raken.",
+				"C": "Ze vinden dat je altijd moet huilen als je stress hebt."
+			},
+			"answer": "B",
+			"evidence": [
+				{
+					"p": 1,
+					"quote": "Huilen wordt daar soms zelfs aangemoedigd om stress en spanning los te laten."
+				}
+			],
+			"move": "Find 'In Japan' in the first paragraph and read the sentence after it; 'daar' refers back to Japan.",
+			"why": "In Japan crying is 'soms zelfs aangemoedigd' to let go of stress and tension, while in the West it is seen as a sign of weakness.",
+			"distractors": {
+				"A": {
+					"trap": "verkeerde-persoon",
+					"why": "This is the Western view ('die tranen kun je maar beter inhouden'), not the view in Japan."
+				},
+				"C": {
+					"trap": "overdreven",
+					"why": "'Soms aangemoedigd' becomes 'altijd moet'."
+				}
+			}
+		},
+		{
+			"id": "p-een-potje-huilen-5",
+			"qtype": "functie-tekstdeel",
+			"question": "Waarom noemt de schrijver rook en de damp van gesneden uien?",
+			"options": {
+				"A": "om te laten zien dat dieren ook traanklieren hebben",
+				"B": "om te waarschuwen dat rook slecht is voor je ogen",
+				"C": "om te laten zien dat tranen ook zonder emotie kunnen komen"
+			},
+			"answer": "C",
+			"evidence": [
+				{
+					"p": 3,
+					"quote": "De traanklieren van mensen kunnen door verschillende dingen worden geactiveerd, bijvoorbeeld als rook of de damp van gesneden uien de traanklieren irriteert."
+				}
+			],
+			"move": "Ask what the example illustrates: the sentence says tear glands react to 'verschillende dingen', and 'bijvoorbeeld' introduces smoke and onions.",
+			"why": "Smoke and onions irritate the eyes. They show that human tears can have a physical cause, before the writer turns to crying from emotion with 'Maar'.",
+			"distractors": {
+				"A": {
+					"trap": "echo",
+					"why": "Animals' tear glands are in the same paragraph, but smoke and onions are examples about human tear glands."
+				},
+				"B": {
+					"trap": "niet-in-tekst",
+					"why": "The text gives no warning about smoke; it only names it as something that causes tears."
+				}
+			}
+		},
+		{
+			"id": "p-een-potje-huilen-6",
+			"qtype": "oorzaak-reden",
+			"question": "Waarom is het volgens de schrijver maar goed dat huilbuien niet allemaal tegelijk komen?",
+			"options": {
+				"A": "Anders raak je het contact met je gevoelens kwijt.",
+				"B": "Anders vinden andere mensen je zwak.",
+				"C": "Anders verliest je lichaam te veel vocht."
+			},
+			"answer": "C",
+			"evidence": [
+				{
+					"p": 7,
+					"quote": "Het is maar goed dat die huilbuien in tussenpozen komen, want je zou er compleet van uitdrogen."
+				}
+			],
+			"move": "Find 'Het is maar goed dat' in the paragraph about women and men, and read the reason after 'want'.",
+			"why": "After counting 16 months of crying in a lifetime, the writer jokes that you would 'compleet uitdrogen' if it all came at once: your body would lose too much fluid.",
+			"distractors": {
+				"A": {
+					"trap": "echo",
+					"why": "Losing contact with your feelings is what happens when you hold tears back (last paragraph), not when you cry a lot."
+				},
+				"B": {
+					"trap": "waar-niet-gevraagd",
+					"why": "The text does say crying is often seen as weakness, but that is not the reason given here."
+				}
+			}
+		},
+		{
+			"id": "p-een-potje-huilen-7",
+			"qtype": "oorzaak-reden",
+			"afterItemId": "lezen-2025-11",
+			"question": "Waarom vindt de schrijver het zonde als je je tranen lange tijd inhoudt?",
+			"options": {
+				"A": "Je raakt dan een deel van het contact met je gevoelens kwijt.",
+				"B": "Je lichaam verliest dan te veel vocht.",
+				"C": "Andere mensen zien je dan sneller als zwak."
+			},
+			"answer": "A",
+			"evidence": [
+				{
+					"p": 11,
+					"quote": "dan raak je het contact met je emoties een stuk kwijt"
+				}
+			],
+			"move": "Find 'zonde' in the last paragraph and read the reason after 'want'.",
+			"why": "The writer says that if you suppress your feelings for a long time and do not cry when you need to, you lose contact with your emotions 'een stuk', partly.",
+			"distractors": {
+				"B": {
+					"trap": "echo",
+					"why": "Drying out comes from the joke about crying a lot (paragraph about women), not from holding tears back."
+				},
+				"C": {
+					"trap": "tegenovergesteld",
+					"why": "In the text it is crying, not holding back tears, that people see as weakness."
+				}
+			}
+		},
+		{
+			"id": "p-een-potje-huilen-8",
+			"qtype": "niet-vraag",
+			"afterItemId": "lezen-2025-10",
+			"question": "De schrijver legt uit waarom huilen kan opluchten. Wat noemt de schrijver daarbij NIET?",
+			"options": {
+				"A": "Tijdens het huilen merk je vaak wat je dwarszit.",
+				"B": "Na het huilen kun je beter slapen.",
+				"C": "Tranen van emotie bevatten stoffen tegen pijn."
+			},
+			"answer": "B",
+			"evidence": [
+				{
+					"p": 9,
+					"quote": "dat je juist vaak tijdens het huilen erachter komt wat je nou precies dwarszit"
+				},
+				{
+					"p": 9,
+					"quote": "Die laatste bevatten namelijk hormonen met een pijnstillende werking"
+				}
+			],
+			"move": "Go to the section 'Waarom lucht huilen zo op?' and tick off each option against it; the one you cannot find is the answer.",
+			"why": "The section names finding out what bothers you, painkilling hormones in emotional tears and hormones that calm you. Sleep is never mentioned.",
+			"distractors": {
+				"A": {
+					"trap": "waar-niet-gevraagd",
+					"why": "This is stated: while crying you often find out what is bothering you."
+				},
+				"C": {
+					"trap": "waar-niet-gevraagd",
+					"why": "This is stated: emotional tears contain hormones 'met een pijnstillende werking'."
+				}
+			}
+		}
+	],
+	"paraphrase": [
+		{
+			"id": "pp-een-potje-huilen-1",
+			"source": {
+				"p": 3,
+				"quote": "Zien huilen doet soms ook huilen, de sterke emotie van een ander raakt dan je eigen emoties."
+			},
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "Als je iemand anders ziet huilen, ga je daar soms zelf ook van huilen.",
+				"B": "Als je iemand ziet huilen, moet je altijd zelf ook huilen.",
+				"C": "Als je iemand ziet huilen, voel je zelf juist niets."
+			},
+			"answer": "A",
+			"distractors": {
+				"B": {
+					"trap": "overdreven",
+					"why": "'Soms' becomes 'altijd moet'."
+				},
+				"C": {
+					"trap": "tegenovergesteld",
+					"why": "The sentence says the other person's emotion touches yours, not that you feel nothing."
+				}
+			}
+		},
+		{
+			"id": "pp-een-potje-huilen-2",
+			"source": {
+				"p": 1,
+				"quote": "Het wordt vaak gezien als een teken van zwakte, dus die tranen kun je maar beter inhouden."
+			},
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "Van huilen word je zwak, dus je moet je tranen maar goed inhouden.",
+				"B": "Iedereen vindt huilen zwak, dus niemand laat ooit zijn tranen aan anderen zien.",
+				"C": "Huilen geldt vaak als zwak, daarom laten mensen hun tranen liever niet zien."
+			},
+			"answer": "C",
+			"distractors": {
+				"A": {
+					"trap": "echo",
+					"why": "Same words, but now crying makes you weak; the sentence is about how crying is seen."
+				},
+				"B": {
+					"trap": "overdreven",
+					"why": "'Vaak' becomes 'iedereen' and 'niemand ooit'."
+				}
+			}
+		},
+		{
+			"id": "pp-een-potje-huilen-3",
+			"afterItemId": "lezen-2025-8",
+			"source": {
+				"p": 5,
+				"quote": "Als anderen je zien huilen, geeft dat een duidelijk signaal af dat je hulp nodig hebt."
+			},
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "Als je hulp nodig hebt, moet je altijd gaan huilen.",
+				"B": "Wie huilt waar anderen bij zijn, laat zien dat hij hulp nodig heeft.",
+				"C": "Als anderen huilen, moet jij hun een duidelijk signaal geven."
+			},
+			"answer": "B",
+			"distractors": {
+				"A": {
+					"trap": "overdreven",
+					"why": "It turns a description into a rule with 'altijd moet' and swaps cause and result."
+				},
+				"C": {
+					"trap": "echo",
+					"why": "Same words ('anderen', 'huilen', 'duidelijk signaal'), but the roles are swapped."
+				}
+			}
+		}
+	]
+}

@@ -1,0 +1,368 @@
+{
+	"passageSlug": "verkopen-is-een-vak",
+	"note": "Sample practice pack. Not official exam items. Never used in mock scores.",
+	"paragraphMap": [
+		{
+			"p": 2,
+			"anchor": "Hoe goed je product ook is, als je geen klanten ",
+			"role": "introduces-topic",
+			"summary": "Without customers a shop must close, so a seller must know what the customer wants and how to help best."
+		},
+		{
+			"p": 4,
+			"anchor": "Als je wilt weten wat je klant zoekt, is het nat",
+			"role": "problem-risk",
+			"summary": "The dilemma of when to approach: most customers want to browse first, but some know exactly what they want and want quick help."
+		},
+		{
+			"p": 6,
+			"anchor": "Als je goed kijkt, kun je vaak wel zien wat iema",
+			"role": "advice-instruction",
+			"summary": "Watch the customer: approach a hurried one directly, give a browser time, and step in when he shows real interest (the winter coat example)."
+		},
+		{
+			"p": 8,
+			"anchor": "Het is belangrijk om je klant op het juiste mome",
+			"role": "advice-instruction",
+			"summary": "What you say matters more than when: ask targeted questions first, then advise; showing a product can help the customer say what he wants."
+		},
+		{
+			"p": 10,
+			"anchor": "Om een goed advies te geven is het dus belangrij",
+			"role": "advice-instruction",
+			"summary": "Customers want different things (price, service, guarantee), so adapt your sales arguments instead of telling a standard story."
+		},
+		{
+			"p": 12,
+			"anchor": "Het is natuurlijk geweldig als je klant tevreden",
+			"role": "advice-instruction",
+			"summary": "A returning customer matters most; good service, and above all a friendly attitude, sets the shop apart from competitors."
+		},
+		{
+			"p": 14,
+			"anchor": "Hoe goed je ook je best doet, er zijn altijd kla",
+			"role": "problem-risk",
+			"summary": "Some customers will always be unhappy; a complaint is useful information that lets you learn, repair the relationship and improve."
+		},
+		{
+			"p": 16,
+			"anchor": "Natuurlijk is het niet leuk als er een klacht bi",
+			"role": "advice-instruction",
+			"summary": "How to handle a complaint: stay calm, do not judge too quickly, and treat the customer neatly and seriously to win back trust."
+		}
+	],
+	"items": [
+		{
+			"id": "p-verkopen-is-een-vak-1",
+			"qtype": "betekenis-in-context",
+			"question": "'... de meeste klanten willen eerst even rondkijken en voelen zich juist opgejaagd als je dat direct zou vragen.' Wat betekent 'zich opgejaagd voelen' hier?",
+			"options": {
+				"A": "moe worden van het lange rondkijken",
+				"B": "het gevoel hebben dat ze snel moeten kiezen",
+				"C": "vinden dat ze te lang op hulp moeten wachten"
+			},
+			"answer": "B",
+			"evidence": [
+				{
+					"p": 4,
+					"quote": "voelen zich juist opgejaagd als je dat direct zou vragen"
+				}
+			],
+			"move": "Read the contrast: these customers want to 'eerst even rondkijken', so a direct question at the door disturbs them.",
+			"why": "'Opgejaagd' means rushed or pushed: a direct question makes customers who want to browse feel they have to decide quickly.",
+			"distractors": {
+				"A": {
+					"trap": "echo",
+					"why": "'Rondkijken' is in the sentence, but the problem is the seller's question, not tiredness."
+				},
+				"C": {
+					"trap": "tegenovergesteld",
+					"why": "Waiting too long for help is the opposite situation; here the help comes too soon."
+				}
+			}
+		},
+		{
+			"id": "p-verkopen-is-een-vak-2",
+			"qtype": "betekenis-in-context",
+			"question": "'Je steekt dus nooit een standaardverhaal af.' Wat betekent dit hier?",
+			"options": {
+				"A": "Je vertelt niet aan elke klant precies hetzelfde.",
+				"B": "Je onderbreekt een klant nooit als hij praat.",
+				"C": "Je praat nooit lang met een klant."
+			},
+			"answer": "A",
+			"evidence": [
+				{
+					"p": 10,
+					"quote": "Je steekt dus nooit een standaardverhaal af maar past je verkoopargumenten aan de klant aan."
+				}
+			],
+			"move": "The word 'maar' gives the contrast: instead of a 'standaardverhaal' you adapt your arguments to the customer.",
+			"why": "'Een verhaal afsteken' means giving a talk, and a 'standaardverhaal' is the same talk for everyone. The sentence goes on: 'maar past je verkoopargumenten aan de klant aan'.",
+			"distractors": {
+				"B": {
+					"trap": "echo",
+					"why": "'Afsteken' can look like cutting someone off, but here it means telling a story, not interrupting."
+				},
+				"C": {
+					"trap": "niet-in-tekst",
+					"why": "The text says nothing about how long you talk; it is about adapting what you say."
+				}
+			}
+		},
+		{
+			"id": "p-verkopen-is-een-vak-3",
+			"qtype": "oorzaak-reden",
+			"question": "Waarom kan het handig zijn om een klant een product alvast te laten zien?",
+			"options": {
+				"A": "Dan hoeft de verkoper geen vragen meer te stellen.",
+				"B": "Dan weet de klant waar alles in de winkel ligt.",
+				"C": "Dan kan de klant vaak beter zeggen wat hij zoekt."
+			},
+			"answer": "C",
+			"evidence": [
+				{
+					"p": 8,
+					"quote": "Hierdoor kan een klant zijn vraag vaak nauwkeuriger formuleren."
+				}
+			],
+			"move": "Find 'handig' in the section about advice; 'Hierdoor' in the next sentence gives the result.",
+			"why": "Showing or demonstrating a product helps the customer 'zijn vraag nauwkeuriger formuleren': say more precisely what he is looking for.",
+			"distractors": {
+				"A": {
+					"trap": "tegenovergesteld",
+					"why": "The text says you first ask targeted questions; showing a product does not replace them."
+				},
+				"B": {
+					"trap": "echo",
+					"why": "'Weten waar alles ligt' is in the same paragraph, but that is what the customer expects the seller to know."
+				}
+			}
+		},
+		{
+			"id": "p-verkopen-is-een-vak-4",
+			"qtype": "detail",
+			"question": "Wat is volgens de tekst nog belangrijker dan een klant die tevreden de deur uit gaat?",
+			"options": {
+				"A": "dat hij later weer in jouw winkel komt kopen",
+				"B": "dat hij terugkomt als hij een klacht heeft",
+				"C": "dat hij een goede prijs voor de kwaliteit betaalt"
+			},
+			"answer": "A",
+			"evidence": [
+				{
+					"p": 12,
+					"quote": "Maar het is nog belangrijker dat hij ook weer terugkomt."
+				}
+			],
+			"move": "Find 'nog belangrijker' under 'Service maakt het verschil'; the question about 'vaste klant' right after it explains what is meant.",
+			"why": "The writer says it is great if a customer leaves satisfied, but 'nog belangrijker' that he comes back and becomes a regular customer instead of going to the competitor.",
+			"distractors": {
+				"B": {
+					"trap": "echo",
+					"why": "Coming back with a complaint is in the section on complaints; here 'terugkomen' means coming back to buy."
+				},
+				"C": {
+					"trap": "waar-niet-gevraagd",
+					"why": "A good price-quality ratio plays a role, but the text says you are not unique in that; it is not what is 'nog belangrijker'."
+				}
+			}
+		},
+		{
+			"id": "p-verkopen-is-een-vak-5",
+			"qtype": "oorzaak-reden",
+			"question": "Waarom is het goed als een ontevreden klant terugkomt met zijn klacht?",
+			"options": {
+				"A": "Dan wordt hij zeker een vaste klant van de winkel.",
+				"B": "Dan weet je dat er een probleem is en kun je dat aanpakken.",
+				"C": "Dan hoef je je service niet meer te verbeteren."
+			},
+			"answer": "B",
+			"evidence": [
+				{
+					"p": 14,
+					"quote": "Anders zul je nooit weten dat er een probleem is en kun je er niets aan doen."
+				}
+			],
+			"move": "Under 'Elke klacht geeft informatie', read the sentence that starts with 'Anders': it tells you what goes wrong if the customer does not come back.",
+			"why": "Without the complaint you never know there is a problem and cannot do anything about it; a complaint lets you learn and repair the relationship.",
+			"distractors": {
+				"A": {
+					"trap": "echo",
+					"why": "Becoming a regular customer comes from the service section, and 'zeker' promises more than the chance to repair the relationship."
+				},
+				"C": {
+					"trap": "tegenovergesteld",
+					"why": "The text says a justified complaint can lead you to improve the service, not that you no longer need to."
+				}
+			}
+		},
+		{
+			"id": "p-verkopen-is-een-vak-6",
+			"qtype": "niet-vraag",
+			"question": "Een klant heeft een terechte klacht. Welke oplossing voor het bedrijf noemt de tekst NIET?",
+			"options": {
+				"A": "klanten op een andere manier informeren",
+				"B": "de manier van inkopen veranderen",
+				"C": "de prijzen van de producten verlagen"
+			},
+			"answer": "C",
+			"evidence": [
+				{
+					"p": 14,
+					"quote": "de service verbeteren, de voorlichting aan klanten aanpassen of het inkoopbeleid veranderen"
+				}
+			],
+			"move": "Find 'Als de klacht terecht is' and list the three examples after 'bijvoorbeeld'; check each option against that list.",
+			"why": "The text names improving the service, adapting the information for customers and changing the purchasing policy. Lowering prices is not mentioned.",
+			"distractors": {
+				"A": {
+					"trap": "waar-niet-gevraagd",
+					"why": "This is 'de voorlichting aan klanten aanpassen' in other words, so the text does name it."
+				},
+				"B": {
+					"trap": "waar-niet-gevraagd",
+					"why": "This is 'het inkoopbeleid veranderen' in other words, so the text does name it."
+				}
+			}
+		},
+		{
+			"id": "p-verkopen-is-een-vak-7",
+			"qtype": "hoofdgedachte",
+			"question": "Wat is de belangrijkste boodschap van het stuk onder 'Argumenten op maat'?",
+			"options": {
+				"A": "Noem bij elke klant vooral het argument van de laagste prijs.",
+				"B": "Kies je argumenten op basis van wat de klant belangrijk vindt.",
+				"C": "Zorg dat je weet waar alles in de winkel ligt."
+			},
+			"answer": "B",
+			"evidence": [
+				{
+					"p": 10,
+					"quote": "De ene klant is bijvoorbeeld op zoek naar de laagste prijs, terwijl de andere klant juist de service of de zekerheid van garantie belangrijk vindt."
+				},
+				{
+					"p": 10,
+					"quote": "Iedereen heeft zijn eigen wensen."
+				}
+			],
+			"move": "Read the whole section and pick the option that covers all of it; the example of price versus service shows that customers differ.",
+			"why": "The section says every customer has his own wishes (price, service, guarantee), so the seller adapts his arguments to the customer.",
+			"distractors": {
+				"A": {
+					"trap": "overdreven",
+					"why": "The lowest price is one customer's wish in the example; others care more about service or a guarantee."
+				},
+				"C": {
+					"trap": "echo",
+					"why": "Knowing where things are comes from the advice section, and knowledge of the range is only a means here ('door jouw kennis van het assortiment'), not the main message."
+				}
+			}
+		},
+		{
+			"id": "p-verkopen-is-een-vak-8",
+			"qtype": "toepassing",
+			"afterItemId": "lezen-2025-13",
+			"question": "Meneer Jansen komt snel de winkel binnen en loopt meteen naar de overhemden. Hij kijkt steeds op zijn horloge. Wat doet de verkoper het beste, volgens de tekst?",
+			"options": {
+				"A": "Hij laat meneer Jansen eerst rustig rondkijken.",
+				"B": "Hij wacht tot meneer Jansen naar een prijskaartje kijkt.",
+				"C": "Hij stapt meteen op meneer Jansen af."
+			},
+			"answer": "C",
+			"evidence": [
+				{
+					"p": 6,
+					"quote": "Als iemand gehaast je winkel binnenkomt, is het waarschijnlijk een klant die weet wat hij wil en kun je direct op hem af stappen."
+				}
+			],
+			"move": "Match the signals in the scenario (fast, straight to one rack, checking his watch) to the type of customer described under 'Goed kijken'.",
+			"why": "Mr Jansen is in a hurry, and a hurried customer probably knows what he wants, so 'kun je direct op hem af stappen'.",
+			"distractors": {
+				"A": {
+					"trap": "verkeerde-voorwaarde",
+					"why": "Giving time is for a customer who browses at his ease, not for one in a hurry."
+				},
+				"B": {
+					"trap": "verkeerde-voorwaarde",
+					"why": "Waiting for signs like the price tag belongs to the browsing customer in the winter coat example."
+				}
+			}
+		}
+	],
+	"paraphrase": [
+		{
+			"id": "pp-verkopen-is-een-vak-1",
+			"source": {
+				"p": 16,
+				"quote": "De klant is dan ontevreden en het vertrouwen in jouw bedrijf heeft een deuk opgelopen."
+			},
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "De klant is niet blij en vertrouwt jouw bedrijf minder dan eerst.",
+				"B": "De klant is niet blij en vertrouwt jouw bedrijf helemaal niet meer.",
+				"C": "De klant is niet blij omdat zijn product een deuk heeft."
+			},
+			"answer": "A",
+			"distractors": {
+				"B": {
+					"trap": "overdreven",
+					"why": "A 'deuk' is damage, not total loss; the next sentence says you can win the trust back."
+				},
+				"C": {
+					"trap": "echo",
+					"why": "Same word 'deuk', but the dent is in the trust, not in a product."
+				}
+			}
+		},
+		{
+			"id": "pp-verkopen-is-een-vak-2",
+			"afterItemId": "lezen-2025-16",
+			"source": {
+				"p": 12,
+				"quote": "Maar vergeet niet dat jouw vriendelijke houding het meest bijdraagt aan een goed imago."
+			},
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "Een goed imago zorgt ervoor dat jij vriendelijker wordt.",
+				"B": "Vooral je vriendelijkheid zorgt voor een goed beeld van de winkel.",
+				"C": "Alleen een vriendelijke houding is belangrijk voor een goed imago."
+			},
+			"answer": "B",
+			"distractors": {
+				"A": {
+					"trap": "tegenovergesteld",
+					"why": "It reverses the direction: friendliness builds the image, not the other way round."
+				},
+				"C": {
+					"trap": "overdreven",
+					"why": "'Het meest' becomes 'alleen'; the text also names service, price and quality."
+				}
+			}
+		},
+		{
+			"id": "pp-verkopen-is-een-vak-3",
+			"source": {
+				"p": 2,
+				"quote": "Hoe goed je product ook is, als je geen klanten in je winkel krijgt, moet je bedrijf uiteindelijk de deuren sluiten."
+			},
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "Met een goed product blijft je bedrijf altijd open.",
+				"B": "Als je product niet goed is, komen er geen klanten.",
+				"C": "Zonder klanten moet ook een bedrijf met goede producten stoppen."
+			},
+			"answer": "C",
+			"distractors": {
+				"A": {
+					"trap": "tegenovergesteld",
+					"why": "The sentence says a good product is not enough without customers."
+				},
+				"B": {
+					"trap": "echo",
+					"why": "Same words ('product', 'klanten'), but it adds a cause the sentence does not give."
+				}
+			}
+		}
+	]
+}

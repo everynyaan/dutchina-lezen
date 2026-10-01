@@ -1,0 +1,252 @@
+{
+	"passageSlug": "abonnement-wonderrijk",
+	"note": "Sample practice pack. Not official exam items. Never used in mock scores.",
+	"paragraphMap": [
+		{
+			"p": 1,
+			"anchor": "Met een abonnement kun je zo vaak als je wilt on",
+			"role": "introduces-topic",
+			"summary": "What a season pass offers: unlimited visits, cheaper from 6 visits a year, free up to age 3, valid at least 12 months, photo taken at the desk."
+		},
+		{
+			"p": 4,
+			"anchor": "1.1 Breng het abonnement bij elk parkbezoek mee.",
+			"role": "states-rule",
+			"summary": "General rules: show the pass at every visit, photo check, personal and not transferable, one per person, blocked for misuse, ID needed."
+		},
+		{
+			"p": 6,
+			"anchor": "2.1 Kinderen tot 4 jaar Indien een ouder/voogd a",
+			"role": "exception-condition",
+			"summary": "Cheaper passes: free for children up to 3, a special pass for children turning 4, parent present for under-18s, lower price for 60+."
+		},
+		{
+			"p": 8,
+			"anchor": "3.1 Als je onbeperkt wilt parkeren gedurende de ",
+			"role": "states-rule",
+			"summary": "Parking pass: one car a day, only with a park visit, owner present, no guaranteed space, no entry from one hour before closing."
+		},
+		{
+			"p": 10,
+			"anchor": "4.1 Je sluit het abonnement af voor één jaar. He",
+			"role": "states-rule",
+			"summary": "Validity: one year, ends or continues depending on payment, not valid on up to fourteen event days, loss and copy costs."
+		},
+		{
+			"p": 12,
+			"anchor": "5.1 Na het verstrijken van de minimale looptijd ",
+			"role": "states-rule",
+			"summary": "Cancelling: a monthly pass continues without end date after the minimum term, one month notice, by form, post or at the desk."
+		},
+		{
+			"p": 14,
+			"anchor": "Wonderrijk kan de prijs van je abonnement aanpas",
+			"role": "exception-condition",
+			"summary": "Price changes only after the first twelve months, with at least one month's notice for monthly passes."
+		},
+		{
+			"p": 16,
+			"anchor": "De door jou verstrekte gegevens zullen door Wond",
+			"role": "states-rule",
+			"summary": "Personal data are handled according to the data protection law."
+		},
+		{
+			"p": 18,
+			"anchor": "Voor meer informatie over abonnementen op Wonder",
+			"role": "advice-instruction",
+			"summary": "Where to get more information: phone, e-mail or Guest Service at the main entrance."
+		}
+	],
+	"items": [
+		{
+			"id": "p-abonnement-wonderrijk-1",
+			"qtype": "toepassing",
+			"question": "Esra heeft een abonnement tot 1 september. In januari vraagt ze een gratis abonnement aan voor haar dochter Lina. Lina is dan 3 jaar en wordt op 15 april 4. Tot wanneer is het abonnement van Lina geldig?",
+			"options": {
+				"A": "tot 15 april",
+				"B": "tot 1 september",
+				"C": "tot januari volgend jaar"
+			},
+			"answer": "A",
+			"evidence": [
+				{
+					"p": 6,
+					"quote": "eindigt op dezelfde datum als het abonnement van de ouder/voogd of – indien eerder - wanneer het kind 4 jaar wordt"
+				}
+			],
+			"move": "Go to rule 2.1 for children up to 3. It gives two end dates; the words 'indien eerder' tell you to take the earlier one.",
+			"why": "The free pass ends when the parent's pass ends or, if that is earlier, when the child turns 4. Lina's birthday on 15 April comes before 1 September.",
+			"distractors": {
+				"B": {
+					"trap": "verkeerde-voorwaarde",
+					"why": "The parent's end date only counts if it comes first; here Lina turns 4 earlier."
+				},
+				"C": {
+					"trap": "verkeerde-voorwaarde",
+					"why": "The usual 12 months does not apply; rule 4.1 says children under 4 have a different term (see 2.1)."
+				}
+			}
+		},
+		{
+			"id": "p-abonnement-wonderrijk-2",
+			"qtype": "toepassing",
+			"question": "Noor heeft een abonnement voor een jaar en betaalt dat per maand. Haar zoon Daan wordt in juni 4 jaar. Kan Noor voor Daan een 4-jarigenabonnement kopen?",
+			"options": {
+				"A": "Ja, want Noor heeft zelf een abonnement voor een jaar.",
+				"B": "Nee, want Noor heeft haar abonnement niet in één keer betaald.",
+				"C": "Nee, want kinderen van 4 jaar krijgen een gratis abonnement."
+			},
+			"answer": "B",
+			"evidence": [
+				{
+					"p": 6,
+					"quote": "Dit kan alleen worden gekocht indien ouder/voogd een jaarabonnement heeft en dit direct bij aanschaf volledig betaald heeft."
+				}
+			],
+			"move": "Rule 2.2 has two conditions joined by 'en'. Check both against the case: Noor has a year pass, but how does she pay?",
+			"why": "The 4-year-old pass is only possible if the parent has a year pass and paid it in full at purchase. Noor pays per month, so the second condition fails.",
+			"distractors": {
+				"A": {
+					"trap": "verkeerde-voorwaarde",
+					"why": "Having a year pass is only one of the two conditions; paying in full at once is missing."
+				},
+				"C": {
+					"trap": "verkeerde-voorwaarde",
+					"why": "The free pass is for children up to and including 3, not for children of 4."
+				}
+			}
+		},
+		{
+			"id": "p-abonnement-wonderrijk-3",
+			"qtype": "toepassing",
+			"question": "Kees heeft een abonnement en een parkeerabonnement. Vandaag gaat het park om 18.00 uur dicht. Kees komt om 17.15 uur met de auto aan bij het parkeerterrein. Mag hij het parkeerterrein nog op?",
+			"options": {
+				"A": "Ja, want het park is op dat moment nog open.",
+				"B": "Ja, als er op het parkeerterrein nog plaats is.",
+				"C": "Nee, want hij komt minder dan een uur voor sluitingstijd."
+			},
+			"answer": "C",
+			"evidence": [
+				{
+					"p": 8,
+					"quote": "Het oprijden van het parkeerterrein is niet meer toegestaan vanaf één uur voor sluitingstijd van het attractiepark."
+				}
+			],
+			"move": "The case gives two times. Find the parking rule with a time limit (3.9) and work out the last time you may drive in.",
+			"why": "From one hour before closing, so from 17.00, you may no longer drive onto the car park. Kees arrives at 17.15.",
+			"distractors": {
+				"A": {
+					"trap": "verkeerde-voorwaarde",
+					"why": "Opening hours (3.7) are not the only condition; entry stops one hour before closing."
+				},
+				"B": {
+					"trap": "verkeerde-voorwaarde",
+					"why": "A free space does not help: the time rule already stops him from driving in."
+				}
+			}
+		},
+		{
+			"id": "p-abonnement-wonderrijk-4",
+			"qtype": "betekenis-in-context",
+			"question": "‘Een abonnement is strikt persoonlijk en niet overdraagbaar.’ Wat betekent ‘niet overdraagbaar’ hier?",
+			"options": {
+				"A": "Je mag het abonnement niet aan iemand anders geven.",
+				"B": "Je mag het abonnement niet veranderen in een ander type.",
+				"C": "Je moet het abonnement zelf aan de controleur geven."
+			},
+			"answer": "A",
+			"evidence": [
+				{
+					"p": 4,
+					"quote": "Een abonnement is strikt persoonlijk en niet overdraagbaar."
+				}
+			],
+			"move": "'Strikt persoonlijk' comes just before it and points the same way: the pass belongs to one person only.",
+			"why": "'Overdragen' means passing something on to someone else. A pass that is 'niet overdraagbaar' can only be used by its own holder.",
+			"distractors": {
+				"B": {
+					"trap": "waar-niet-gevraagd",
+					"why": "True, the next sentence forbids switching to another type, but that is about 'omzetten', changing the type, not 'overdragen'."
+				},
+				"C": {
+					"trap": "echo",
+					"why": "Handing the pass to the checker 'persoonlijk' is rule 1.1, about the entrance, not the meaning of 'overdraagbaar'."
+				}
+			}
+		}
+	],
+	"paraphrase": [
+		{
+			"id": "pp-abonnement-wonderrijk-1",
+			"source": {
+				"p": 8,
+				"quote": "Het parkeerabonnement is alleen geldig in combinatie met een parkbezoek."
+			},
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "Met een parkeerabonnement mag je ook gratis het park in.",
+				"B": "Je mag het park alleen bezoeken als je een parkeerabonnement hebt.",
+				"C": "Je mag alleen parkeren als je ook naar het park gaat."
+			},
+			"answer": "C",
+			"distractors": {
+				"A": {
+					"trap": "echo",
+					"why": "Combines 'parkeerabonnement' and 'park' in a new claim; the parking pass gives no entry to the park."
+				},
+				"B": {
+					"trap": "tegenovergesteld",
+					"why": "It turns the condition around: the visit is needed for parking, not parking for the visit."
+				}
+			}
+		},
+		{
+			"id": "pp-abonnement-wonderrijk-2",
+			"source": {
+				"p": 4,
+				"quote": "Bij inbeslagname of blokkering van het abonnement wordt het abonnementsgeld niet teruggegeven."
+			},
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "Als Wonderrijk je abonnement afpakt of blokkeert, krijg je je geld niet terug.",
+				"B": "Als je je geld terugvraagt, blokkeert Wonderrijk je abonnement.",
+				"C": "Als je abonnement geblokkeerd is, krijg je een deel van je geld terug."
+			},
+			"answer": "A",
+			"distractors": {
+				"B": {
+					"trap": "echo",
+					"why": "Same words, 'geld' and 'blokkeren', but cause and effect are made up."
+				},
+				"C": {
+					"trap": "tegenovergesteld",
+					"why": "The sentence says the money is not returned, not even part of it."
+				}
+			}
+		},
+		{
+			"id": "pp-abonnement-wonderrijk-3",
+			"source": {
+				"p": 1,
+				"quote": "Vanaf 6 bezoeken per jaar is een abonnement voordeliger dan losse entreekaartjes"
+			},
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "Met een abonnement mag je maximaal zes keer per jaar naar het park.",
+				"B": "Ga je zes keer of vaker per jaar, dan ben je met een abonnement goedkoper uit.",
+				"C": "Een abonnement is altijd goedkoper dan losse kaartjes."
+			},
+			"answer": "B",
+			"distractors": {
+				"A": {
+					"trap": "echo",
+					"why": "Reuses 'zes' and 'per jaar' as a limit; the pass allows unlimited visits."
+				},
+				"C": {
+					"trap": "overdreven",
+					"why": "'Altijd' drops the condition 'vanaf 6 bezoeken'."
+				}
+			}
+		}
+	]
+}

@@ -1,0 +1,213 @@
+{
+	"passageSlug": "bakkerij",
+	"note": "Sample practice pack. Not official exam items. Never used in mock scores.",
+	"paragraphMap": [
+		{
+			"p": 1,
+			"anchor": "Ruim 250 medewerkers van onze centrale bakkerij ",
+			"role": "introduces-topic",
+			"summary": "Marké's own bakeries (one central, six decentral) make fresh pastry for the shops and keep improving quality."
+		},
+		{
+			"p": 3,
+			"anchor": "In Utrecht hebben we onze grootste vestiging. Hi",
+			"role": "gives-example",
+			"summary": "The Utrecht office and its departments: test bakery, purchasing, planning office, quality, admin, HR."
+		},
+		{
+			"p": 5,
+			"anchor": "De centrale bakkerij in Utrecht is het centrum v",
+			"role": "gives-example",
+			"summary": "The central bakery: base products made industrially with machines, internal training, hours 5.00 to 23.00."
+		},
+		{
+			"p": 7,
+			"anchor": "In onze decentrale bakkerijen start je om 7.00 u",
+			"role": "gives-example",
+			"summary": "The decentral bakeries: 7.00 to about 17.00, busy Fridays, learning tasks step by step, chill room, drivers."
+		},
+		{
+			"p": 9,
+			"anchor": "Bij de bakkerij-organisatie zijn we regelmatig o",
+			"role": "advice-instruction",
+			"summary": "Marké looks for ambitious people with bakery or food experience, offers growth; send your CV."
+		},
+		{
+			"p": 11,
+			"anchor": "Volg je een opleiding beroepsbegeleidend leren (",
+			"role": "exception-condition",
+			"summary": "Students in a BBL bakery course can combine work and school at the bakeries."
+		}
+	],
+	"items": [
+		{
+			"id": "p-bakkerij-1",
+			"qtype": "betekenis-in-context",
+			"question": "Over het werk in de uitzetkoeling staat: 'Bij dit werk moet je je hoofd erbij houden.' Wat betekent dit?",
+			"options": {
+				"A": "Je moet een muts dragen tegen de kou.",
+				"B": "Je moet goed opletten en je concentreren.",
+				"C": "Je moet zelfstandig kunnen werken."
+			},
+			"answer": "B",
+			"evidence": [
+				{
+					"p": 7,
+					"quote": "Als het gebak is gemaakt, moet het verdeeld worden over de winkels."
+				},
+				{
+					"p": 7,
+					"quote": "Bij dit werk moet je je hoofd erbij houden."
+				}
+			],
+			"move": "Read the sentences before it: the cakes must be divided over all the shops. Ask what that kind of task needs.",
+			"why": "'Je hoofd erbij houden' means paying attention; dividing the cakes over the right shops needs concentration.",
+			"distractors": {
+				"A": {
+					"trap": "echo",
+					"why": "A literal reading of 'hoofd' together with 'koeling'; the expression is about attention, not clothing."
+				},
+				"C": {
+					"trap": "echo",
+					"why": "'Zelfstandig' is asked of the drivers in the next sentences, not of the work in the chill room."
+				}
+			}
+		},
+		{
+			"id": "p-bakkerij-2",
+			"qtype": "oorzaak-reden",
+			"question": "Waarom is het op vrijdag druk in de decentrale bakkerijen?",
+			"options": {
+				"A": "omdat de meeste feestjes in het weekend zijn",
+				"B": "omdat de winkels op zaterdag eerder opengaan",
+				"C": "omdat de chauffeurs dan al om 2.00 uur beginnen"
+			},
+			"answer": "A",
+			"evidence": [
+				{
+					"p": 7,
+					"quote": "Vooral op vrijdag is dat een klus; de meeste feestjes worden toch in het weekend gevierd."
+				}
+			],
+			"move": "Find 'vrijdag' and read on after the semicolon: the second half of the sentence gives the reason.",
+			"why": "Friday is a big job ('een klus') because most parties are celebrated at the weekend, so there are more orders.",
+			"distractors": {
+				"B": {
+					"trap": "niet-in-tekst",
+					"why": "Shop opening times on Saturday are not mentioned."
+				},
+				"C": {
+					"trap": "echo",
+					"why": "The drivers start between 2.00 and 4.00 every day; this time is not linked to Friday."
+				}
+			}
+		},
+		{
+			"id": "p-bakkerij-3",
+			"qtype": "functie-tekstdeel",
+			"question": "Waarom staat in de tekst dat de centrale bakkerij per uur 1500 appeltaarten kan maken?",
+			"options": {
+				"A": "om te laten zien dat appeltaart het populairste gebak is",
+				"B": "om te laten zien dat de bakkers alles met de hand maken",
+				"C": "om te laten zien hoeveel er met machines gemaakt kan worden"
+			},
+			"answer": "C",
+			"evidence": [
+				{
+					"p": 5,
+					"quote": "In deze bakkerij wordt op een industriële manier gewerkt."
+				},
+				{
+					"p": 5,
+					"quote": "Door techniek in te zetten kunnen we per uur wel 1500 appeltaarten maken"
+				}
+			],
+			"move": "Look at the words just before the number: 'Door techniek in te zetten'. The number shows what that technique makes possible.",
+			"why": "The bakery works in an industrial way, and the 1500 apple pies per hour show how much the machines can produce.",
+			"distractors": {
+				"A": {
+					"trap": "echo",
+					"why": "Apple pie is named as a success in the first paragraph, but the number is about production speed, not popularity."
+				},
+				"B": {
+					"trap": "tegenovergesteld",
+					"why": "The central bakery works 'op een industriële manier' with machines, not by hand."
+				}
+			}
+		}
+	],
+	"paraphrase": [
+		{
+			"id": "pp-bakkerij-1",
+			"source": {
+				"p": 3,
+				"quote": "De afdeling inkoop zorgt dat alle ingrediënten en verpakkingsmaterialen aanwezig zijn, zodat de bakkerijen zich hier niet druk om hoeven te maken."
+			},
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "De bakkerijen maken zich druk, omdat ingrediënten vaak niet aanwezig zijn.",
+				"B": "De afdeling inkoop doet eigenlijk al het werk voor de bakkerijen.",
+				"C": "De bakkerijen hoeven niet op de spullen te letten, want inkoop regelt dat."
+			},
+			"answer": "C",
+			"distractors": {
+				"A": {
+					"trap": "echo",
+					"why": "Uses 'druk' and 'aanwezig' but says the opposite situation: the bakeries do not have to worry."
+				},
+				"B": {
+					"trap": "overdreven",
+					"why": "Purchasing arranges ingredients and packaging, not all the work."
+				}
+			}
+		},
+		{
+			"id": "pp-bakkerij-2",
+			"source": {
+				"p": 9,
+				"quote": "Wij bieden een uitdagende werkomgeving met mogelijkheden om door te groeien."
+			},
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "Het werk is uitdagend en je kunt later een hogere functie krijgen.",
+				"B": "Iedere medewerker krijgt na een jaar een hogere functie.",
+				"C": "Het werk is eenvoudig en je blijft in dezelfde functie."
+			},
+			"answer": "A",
+			"distractors": {
+				"B": {
+					"trap": "overdreven",
+					"why": "'Mogelijkheden' become a promise for every employee after a year."
+				},
+				"C": {
+					"trap": "tegenovergesteld",
+					"why": "It reverses both halves: not challenging and no growth."
+				}
+			}
+		},
+		{
+			"id": "pp-bakkerij-3",
+			"source": {
+				"p": 11,
+				"quote": "Er zijn bij onze bakkerijen mogelijkheden om werk en school te combineren."
+			},
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "De bakkerijen hebben een eigen school voor hun medewerkers.",
+				"B": "Je kunt bij de bakkerijen werken en tegelijk een opleiding volgen.",
+				"C": "Je moet eerst je opleiding afmaken voordat je bij de bakkerijen werkt."
+			},
+			"answer": "B",
+			"distractors": {
+				"A": {
+					"trap": "echo",
+					"why": "Uses 'school' and 'bakkerijen' but invents a school run by Marké."
+				},
+				"C": {
+					"trap": "tegenovergesteld",
+					"why": "The sentence is about working and studying at the same time, not one after the other."
+				}
+			}
+		}
+	]
+}

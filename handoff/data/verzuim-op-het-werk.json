@@ -1,0 +1,158 @@
+{
+	"passageSlug": "verzuim-op-het-werk",
+	"note": "Sample practice pack. Not official exam items. Never used in mock scores.",
+	"paragraphMap": [
+		{
+			"p": 1,
+			"anchor": "Verzuim door je werknemers kan jou als onderneme",
+			"role": "introduces-topic",
+			"summary": "Absence can cost a business owner a lot; the text explains its forms, prevention and financial risks, starting with sickness absence."
+		},
+		{
+			"p": 3,
+			"anchor": "Werknemers zijn soms ziek, daar kan geen werkgev",
+			"role": "problem-risk",
+			"summary": "Short sickness absence is unavoidable but limited in cost; some collective agreements allow two unpaid waiting days."
+		},
+		{
+			"p": 5,
+			"anchor": "Kortdurend verzuim kan echter ook andere oorzake",
+			"role": "advice-instruction",
+			"summary": "Frequent short absence often has other causes and can lead to long absence, so spot it early and act."
+		},
+		{
+			"p": 7,
+			"anchor": "Als een werknemer kortdurend verzuimt, hoef je a",
+			"role": "problem-risk",
+			"summary": "From six weeks: the Wet verbetering poortwachter, a reintegration plan, high costs, and insurance as protection."
+		},
+		{
+			"p": 9,
+			"anchor": "Het kan voorkomen dat een werknemer zonder toest",
+			"role": "states-rule",
+			"summary": "Unauthorised absence: no work, no pay; first make contact, and dismissal only works if the employee was warned before."
+		},
+		{
+			"p": 11,
+			"anchor": "Er wordt ook wel gesproken over wit, zwart en gr",
+			"role": "gives-example",
+			"summary": "Explains white, black and grey absence with an example of each."
+		},
+		{
+			"p": 13,
+			"anchor": "Sporten is gezond en vermindert over het algemee",
+			"role": "states-rule",
+			"summary": "A sports injury is a normal sick report; the employer may ask the employee to stop the sport but cannot dismiss him for it."
+		}
+	],
+	"items": [
+		{
+			"id": "p-verzuim-op-het-werk-1",
+			"qtype": "vergelijking",
+			"question": "Wat is volgens de tekst een verschil tussen ziekteverzuim en ongeoorloofd verzuim?",
+			"options": {
+				"A": "Bij ongeoorloofd verzuim mag de werkgever de werknemer direct ontslaan.",
+				"B": "Bij ongeoorloofd verzuim betaalt de werkgever minimaal 70 procent van het loon.",
+				"C": "Bij ongeoorloofd verzuim hoeft de werkgever geen loon te betalen."
+			},
+			"answer": "C",
+			"evidence": [
+				{
+					"p": 9,
+					"quote": "Anders dan bij ziekte geldt in zo’n geval de regel ‘geen arbeid, geen loon’."
+				}
+			],
+			"move": "'Anders dan bij ziekte' is the signal for a difference; read the rule that follows it.",
+			"why": "For unauthorised absence the rule 'geen arbeid, geen loon' applies, unlike sickness: the employer does not have to pay salary.",
+			"distractors": {
+				"A": {
+					"trap": "overdreven",
+					"why": "The text says you can consider dismissal, but the judge will probably not agree unless the employee was warned before."
+				},
+				"B": {
+					"trap": "verkeerde-voorwaarde",
+					"why": "At least 70 percent pay is the rule for long sickness absence, not for unauthorised absence."
+				}
+			}
+		},
+		{
+			"id": "p-verzuim-op-het-werk-2",
+			"qtype": "betekenis-in-context",
+			"question": "'Werknemers zijn soms ziek, daar kan geen werkgever omheen.' Wat betekent 'daar kan geen werkgever omheen' hier?",
+			"options": {
+				"A": "Elke werkgever krijgt daarmee te maken.",
+				"B": "Geen werkgever vindt dat een probleem.",
+				"C": "Geen werkgever hoeft dan loon te betalen."
+			},
+			"answer": "A",
+			"evidence": [
+				{
+					"p": 3,
+					"quote": "Werknemers zijn soms ziek, daar kan geen werkgever omheen."
+				}
+			],
+			"move": "Read on to 'Vervelend, maar doorgaans een ondernemersrisico waar je vooraf rekening mee houdt': it is something every employer has to count on.",
+			"why": "'Ergens niet omheen kunnen' means you cannot avoid something: every employer will have sick employees sometimes.",
+			"distractors": {
+				"B": {
+					"trap": "tegenovergesteld",
+					"why": "The text calls it 'vervelend' and says it costs pay and replacement, so it is a problem, only a limited one."
+				},
+				"C": {
+					"trap": "tegenovergesteld",
+					"why": "The text says short sickness costs 'een paar dagen loondoorbetaling', so the employer does pay."
+				}
+			}
+		}
+	],
+	"paraphrase": [
+		{
+			"id": "pp-verzuim-op-het-werk-1",
+			"source": {
+				"p": 5,
+				"quote": "Onderzoek heeft aangetoond dat deze vorm van verzuim vaak leidt tot langdurig verzuim."
+			},
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "Uit onderzoek blijkt dat werknemers die vaak kort ziek zijn, later vaak lang ziek worden.",
+				"B": "Uit onderzoek blijkt dat werknemers die vaak kort ziek zijn, later altijd lang ziek worden.",
+				"C": "Uit onderzoek blijkt dat werknemers die lang ziek zijn, daarna vaak kort ziek worden."
+			},
+			"answer": "A",
+			"distractors": {
+				"B": {
+					"trap": "overdreven",
+					"why": "'Vaak' becomes 'altijd'."
+				},
+				"C": {
+					"trap": "tegenovergesteld",
+					"why": "The direction is reversed: frequent short absence leads to long absence, not the other way round."
+				}
+			}
+		},
+		{
+			"id": "pp-verzuim-op-het-werk-2",
+			"source": {
+				"p": 9,
+				"quote": "De kans dat de rechter hiermee akkoord gaat is echter klein."
+			},
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "De rechter keurt zo’n ontslag meestal goed.",
+				"B": "De rechter keurt zo’n ontslag meestal niet goed.",
+				"C": "De rechter keurt zo’n ontslag nooit goed."
+			},
+			"answer": "B",
+			"distractors": {
+				"A": {
+					"trap": "tegenovergesteld",
+					"why": "A small chance means the judge usually does not agree."
+				},
+				"C": {
+					"trap": "overdreven",
+					"why": "A small chance is not no chance: the text names a case where dismissal is possible, after an earlier warning."
+				}
+			}
+		}
+	]
+}

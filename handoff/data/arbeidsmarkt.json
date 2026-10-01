@@ -1,0 +1,165 @@
+{
+	"passageSlug": "arbeidsmarkt",
+	"note": "Sample practice pack. Not official exam items. Never used in mock scores.",
+	"paragraphMap": [
+		{
+			"p": 1,
+			"anchor": "Jonge sollicitanten vinden arbeidsvoorwaarden be",
+			"role": "reports-research",
+			"summary": "Main research result: young job seekers want security and good conditions, older ones want challenging work; who did the study and how."
+		},
+		{
+			"p": 3,
+			"anchor": "Onder de werkzoekenden zeggen jongeren eerder da",
+			"role": "reports-research",
+			"summary": "Figures on creativity and security by age, Van Veen's surprising findings, and Tames's explanation that older people have a financial basis."
+		},
+		{
+			"p": 5,
+			"anchor": "Marcia Bregman van vakbond FNV: “Jongeren zijn b",
+			"role": "reports-opinion",
+			"summary": "Union spokesperson Bregman explains why young people fear the future: permanent contracts are hard to get."
+		},
+		{
+			"p": 7,
+			"anchor": "Van Veen adviseert werkgevers die zoeken naar jo",
+			"role": "advice-instruction",
+			"summary": "Van Veen advises employers to use the results, followed by the top 5 wishes of young and older job seekers."
+		}
+	],
+	"items": [
+		{
+			"id": "p-arbeidsmarkt-1",
+			"qtype": "betekenis-in-context",
+			"question": "'Waar ouderen al een carrière achter zich hebben, staan jongeren aan de start.' Wat betekent 'staan jongeren aan de start' hier?",
+			"options": {
+				"A": "Jongeren willen sneller dan ouderen een baan vinden.",
+				"B": "Jongeren beginnen nog maar net aan hun loopbaan.",
+				"C": "Jongeren hebben al een lange loopbaan achter zich."
+			},
+			"answer": "B",
+			"evidence": [
+				{
+					"p": 3,
+					"quote": "Waar ouderen al een carrière achter zich hebben, staan jongeren aan de start."
+				}
+			],
+			"move": "Use the contrast word 'Waar': the second half is the opposite of 'al een carrière achter zich hebben'.",
+			"why": "Older people already have a career behind them; young people are at the start of theirs, so they are only just beginning their working life.",
+			"distractors": {
+				"A": {
+					"trap": "echo",
+					"why": "Reads 'start' as in a race, being quick; the sentence is about where people are in their working life, not speed."
+				},
+				"C": {
+					"trap": "tegenovergesteld",
+					"why": "A career behind you is what the sentence says about older people, not young people."
+				}
+			}
+		},
+		{
+			"id": "p-arbeidsmarkt-2",
+			"qtype": "mening-persoon",
+			"question": "Wanneer wordt zekerheid in werk belangrijker, volgens Marcia Bregman?",
+			"options": {
+				"A": "als je ouder bent dan 45 jaar",
+				"B": "als je nog geen financiële basis hebt",
+				"C": "als je een eigen huis of kinderen wilt"
+			},
+			"answer": "C",
+			"evidence": [
+				{
+					"p": 5,
+					"quote": "Als je een huis of kinderen wilt, wordt zekerheid belangrijker."
+				}
+			],
+			"move": "Find Bregman's quote and look for the 'Als ... wordt zekerheid belangrijker' sentence: the condition is in the 'als' part.",
+			"why": "Bregman ends her quote with the condition: if you want a house or children, security becomes more important.",
+			"distractors": {
+				"A": {
+					"trap": "tegenovergesteld",
+					"why": "Security and stability are not even in the top 5 of the 45-plussers."
+				},
+				"B": {
+					"trap": "verkeerde-persoon",
+					"why": "The 'financiële basis' comes from Vera Tames, who uses it to explain older people's wishes; Bregman does not mention it."
+				}
+			},
+			"afterItemId": "lezen-2024-29"
+		}
+	],
+	"paraphrase": [
+		{
+			"id": "pp-arbeidsmarkt-1",
+			"source": {
+				"p": 1,
+				"quote": "Jonge sollicitanten vinden arbeidsvoorwaarden belangrijker dan de inhoud van hun toekomstige werk."
+			},
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "Voor jonge sollicitanten tellen de voorwaarden van een baan meer dan het werk zelf.",
+				"B": "Voor jonge sollicitanten telt vooral wat ze in hun nieuwe baan gaan doen.",
+				"C": "Jonge sollicitanten kijken nooit naar wat ze in een baan gaan doen."
+			},
+			"answer": "A",
+			"distractors": {
+				"B": {
+					"trap": "tegenovergesteld",
+					"why": "The sentence puts conditions above the content of the work, not the other way round."
+				},
+				"C": {
+					"trap": "overdreven",
+					"why": "'Belangrijker dan' means the content counts less, not that they 'nooit' look at it."
+				}
+			}
+		},
+		{
+			"id": "pp-arbeidsmarkt-2",
+			"source": {
+				"p": 3,
+				"quote": "Ouderen voelen zich op hun vijftigste te fit om niets te doen."
+			},
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "Ouderen moeten op hun vijftigste fit blijven om te kunnen werken.",
+				"B": "Ouderen zijn op hun vijftigste te moe om nog iets nieuws te doen.",
+				"C": "Ouderen van vijftig zijn nog te gezond en actief om stil te zitten."
+			},
+			"answer": "C",
+			"distractors": {
+				"A": {
+					"trap": "echo",
+					"why": "Reuses 'fit' and 'vijftigste', but the sentence does not say they need to stay fit for work."
+				},
+				"B": {
+					"trap": "tegenovergesteld",
+					"why": "'Te fit om niets te doen' means they have energy left, the opposite of being too tired."
+				}
+			}
+		},
+		{
+			"id": "pp-arbeidsmarkt-3",
+			"source": {
+				"p": 3,
+				"quote": "We denken al gauw dat vooral jongeren willen bijdragen aan vernieuwing en creativiteit."
+			},
+			"prompt": "Welke zin zegt hetzelfde als de zin uit de tekst?",
+			"options": {
+				"A": "Uit het onderzoek blijkt dat vooral jongeren vernieuwend en creatief willen zijn.",
+				"B": "Mensen nemen vaak aan dat vooral jongeren vernieuwend en creatief willen zijn.",
+				"C": "Bijna niemand verwacht dat jongeren vernieuwend en creatief willen zijn."
+			},
+			"answer": "B",
+			"distractors": {
+				"A": {
+					"trap": "echo",
+					"why": "Same words, but 'we denken al gauw' is a common assumption, not a research result; the research shows the opposite."
+				},
+				"C": {
+					"trap": "tegenovergesteld",
+					"why": "'Al gauw denken' means many people expect it, not that almost nobody does."
+				}
+			}
+		}
+	]
+}
