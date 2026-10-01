@@ -1,0 +1,1412 @@
+{
+	"papers": [
+		{
+			"year": 2023,
+			"totalQuestions": 35,
+			"passingScore": 23,
+			"passages": [
+				{
+					"slug": "vijf-fabels",
+					"name": "Vijf fabels over mbo-opleidingen van Ameda",
+					"intro": "Deze tekst staat op de website van onderwijsinstelling Ameda. Je kan bij Ameda een thuisstudie doen, maar ook lessen volgen op school. Deze tekst gaat over de mbo-opleidingen van Ameda.",
+					"paragraphLabels": [
+						"I",
+						"II",
+						"III",
+						"IV",
+						"V"
+					],
+					"paragraphMap": {
+						"I": 2,
+						"II": 4,
+						"III": 6,
+						"IV": 8,
+						"V": 10
+					},
+					"questions": [
+						{
+							"id": "lezen-2023-1",
+							"vraag": 1,
+							"question": "In alinea I staat een voorbeeld over de opleiding Dierenartsassistent. Wat wil de schrijver met dit voorbeeld duidelijk maken?",
+							"options": {
+								"A": "dat Ameda veel verschillende soorten mbo-opleidingen aanbiedt",
+								"B": "dat de mbo-opleidingen van Ameda veel verschillende kanten hebben",
+								"C": "dat je bij de opleiding tot dierenartsassistent van Ameda meer leert"
+							},
+							"answer": "B"
+						},
+						{
+							"id": "lezen-2023-2",
+							"vraag": 2,
+							"question": "Wat staat er in alinea III over de docenten van Ameda?",
+							"options": {
+								"A": "Je hebt een vaste docent die jou begeleiding geeft.",
+								"B": "Je krijgt in de meeste gevallen een snelle reactie van docenten.",
+								"C": "Je kunt aan je docenten vragen stellen via de digitale leeromgeving."
+							},
+							"answer": "B"
+						},
+						{
+							"id": "lezen-2023-3",
+							"vraag": 3,
+							"question": "Pedro loopt stage bij een bouwbedrijf. Waarom is dat een belangrijk onderdeel van zijn opleiding, volgens de tekst?",
+							"options": {
+								"A": "omdat hij daar meer dan alleen theorie leert",
+								"B": "omdat hij daar met toekomstige medewerkers werkt",
+								"C": "omdat hij daar veel feedback en advies krijgt"
+							},
+							"answer": "A"
+						},
+						{
+							"id": "lezen-2023-4",
+							"vraag": 4,
+							"question": "John wil een mbo-opleiding bij Ameda gaan volgen. Hij wil weten hoe hij begeleid zal worden. Waar kan hij het antwoord vinden?",
+							"options": {
+								"A": "in alinea II en III",
+								"B": "in alinea II en IV",
+								"C": "in alinea III en IV",
+								"D": "in alinea III en V"
+							},
+							"answer": "D"
+						},
+						{
+							"id": "lezen-2023-5",
+							"vraag": 5,
+							"question": "Gina wil een mbo-opleiding tot kinderleidster gaan volgen bij Ameda. Haar ouders willen dat ze naar het ROC gaat. Wat is een argument om haar ouders te overtuigen?",
+							"options": {
+								"A": "Alleen bij Ameda leer je om theoretische kennis toe te passen in de praktijk.",
+								"B": "De opleidingen die Ameda verzorgt zijn ook officiële mbo-opleidingen.",
+								"C": "Je krijgt bij Ameda veel persoonlijke aandacht doordat het een kleine opleider is."
+							},
+							"answer": "B"
+						},
+						{
+							"id": "lezen-2023-6",
+							"vraag": 6,
+							"question": "Wat is het belangrijkste doel van deze tekst?",
+							"options": {
+								"A": "lezers ervan overtuigen dat Ameda een goede onderwijsinstelling is voor mbo",
+								"B": "lezers informatie geven over de waarde van een mbo-diploma van Ameda",
+								"C": "lezers vermaken met veelvoorkomende misverstanden over het mbo"
+							},
+							"answer": "A"
+						}
+					]
+				},
+				{
+					"slug": "ondernemingsraad",
+					"name": "De rol van de ondernemingsraad",
+					"intro": "Deze tekst komt uit een studieboek. De tekst gaat over een ondernemingsraad in een bedrijf.",
+					"paragraphLabels": null,
+					"paragraphMap": null,
+					"questions": [
+						{
+							"id": "lezen-2023-7",
+							"vraag": 7,
+							"question": "Wat is de belangrijkste taak van de OR, volgens de tekst?",
+							"options": {
+								"A": "besluiten nemen over financiën en organisatie in het bedrijf",
+								"B": "besluiten voorbereiden over financiën en organisatie in het bedrijf",
+								"C": "de werkgever overtuigen van wat de werknemers graag willen",
+								"D": "de werknemers informeren over wat de werkgever graag wil"
+							},
+							"answer": "C"
+						},
+						{
+							"id": "lezen-2023-8",
+							"vraag": 8,
+							"question": "Een werkgever wil de ontslagregels voor zijn personeel aanpassen. De OR is het daar niet mee eens. Wie bepaalt of de werkgever de ontslagregels mag aanpassen?",
+							"options": {
+								"A": "de bedrijfscommissie",
+								"B": "de kantonrechter",
+								"C": "de Ondernemingskamer",
+								"D": "de werkgever zelf"
+							},
+							"answer": "B"
+						},
+						{
+							"id": "lezen-2023-9",
+							"vraag": 9,
+							"question": "Wat moet een werkgever doen met een voorstel van de OR?",
+							"options": {
+								"A": "eerst beslissen, dan de OR hierover informeren",
+								"B": "eerst met de OR overleggen, dan beslissen en de OR hierover informeren",
+								"C": "zelf beslissen of, hoe en wanneer op het voorstel van de OR te reageren"
+							},
+							"answer": "B"
+						},
+						{
+							"id": "lezen-2023-10",
+							"vraag": 10,
+							"question": "Wat wordt in de tekst bedoeld met informatierecht?",
+							"options": {
+								"A": "De OR heeft het recht om van de bedrijfscommissie bepaalde informatie over de werkgever te krijgen.",
+								"B": "De OR heeft het recht om van de werkgever bepaalde bedrijfsinformatie te krijgen.",
+								"C": "De werkgever heeft het recht om de OR bepaalde bedrijfsinformatie te weigeren.",
+								"D": "De werkgever heeft het recht om van de OR bepaalde informatie te krijgen."
+							},
+							"answer": "B"
+						},
+						{
+							"id": "lezen-2023-11",
+							"vraag": 11,
+							"question": "Wanneer kan de OR de bedrijfscommissie om hulp vragen?",
+							"options": {
+								"A": "als de werkgever een besluit doorvoert tegen de wil van de OR",
+								"B": "als de werkgever een voorstel van de OR niet aanneemt",
+								"C": "als de werkgever geen informatie wil verstrekken aan de OR"
+							},
+							"answer": "C"
+						}
+					]
+				},
+				{
+					"slug": "maakt-geld-ons-gelukkig",
+					"name": "Maakt geld ons gelukkig?",
+					"intro": "Dit artikel uit een tijdschrift gaat over de vraag of we ons gelukkiger gaan voelen als we rijker worden.",
+					"paragraphLabels": null,
+					"paragraphMap": null,
+					"questions": [
+						{
+							"id": "lezen-2023-12",
+							"vraag": 12,
+							"question": "Wat gebeurde er volgens professor Richard Layard in de afgelopen vijftig jaar met Nederlanders?",
+							"options": {
+								"A": "Ze werden gemiddeld veel rijker en dus gelukkiger.",
+								"B": "Ze werden gemiddeld veel rijker, maar niet gelukkiger.",
+								"C": "Ze werden gemiddeld veel rijker, maar ook veel ongelukkiger."
+							},
+							"answer": "B"
+						},
+						{
+							"id": "lezen-2023-13",
+							"vraag": 13,
+							"question": "Wat is de beste samenvatting van de tekst onder het kopje ‘Gewenning’?",
+							"options": {
+								"A": "Vroeger was luxe bijzonder, nu is het een noodzaak.",
+								"B": "We vinden het al snel normaal dat we rijker zijn dan anderen.",
+								"C": "We zijn onze rijkdom normaal gaan vinden."
+							},
+							"answer": "C"
+						},
+						{
+							"id": "lezen-2023-14",
+							"vraag": 14,
+							"question": "Tom heeft € 80.000 gewonnen. Zijn buurman heeft ook een prijs gewonnen. Wanneer is Tom waarschijnlijk het meest tevreden, volgens professor Richard Layard?",
+							"options": {
+								"A": "Als Tom niet weet dat zijn buurman ook een prijs heeft gewonnen.",
+								"B": "Als Tom niet weet hoeveel zijn buurman heeft gewonnen.",
+								"C": "Als Tom weet dat zijn buurman veel minder heeft gewonnen."
+							},
+							"answer": "C"
+						},
+						{
+							"id": "lezen-2023-15",
+							"vraag": 15,
+							"question": "Wanneer zijn we volgens professor Richard Layard ontevreden met een loonsverhoging?",
+							"options": {
+								"A": "Als we minder loonsverhoging krijgen dan de vorige keer.",
+								"B": "Als we minder loonsverhoging krijgen dan een collega.",
+								"C": "Als we minder loonsverhoging krijgen dan we hadden verwacht."
+							},
+							"answer": "B"
+						},
+						{
+							"id": "lezen-2023-16",
+							"vraag": 16,
+							"question": "Professor Richard Layard onderzocht de relatie tussen vrije tijd en geluksgevoel. Voor hoeveel vrije weken kozen de meeste studenten in het onderzoek?",
+							"options": {
+								"A": "Ze kozen voor evenveel vrij als anderen.",
+								"B": "Ze kozen voor zoveel mogelijk vrij.",
+								"C": "Ze vonden alles goed zolang ze meer vrij hadden dan anderen."
+							},
+							"answer": "B"
+						},
+						{
+							"id": "lezen-2023-17",
+							"vraag": 17,
+							"question": "Wat is de belangrijkste conclusie van deze tekst?",
+							"options": {
+								"A": "Geld maakt niet gelukkig.",
+								"B": "Geld maakt pas gelukkig als we meer hebben dan anderen.",
+								"C": "Vrije tijd maakt niet gelukkig, geld wel."
+							},
+							"answer": "B"
+						}
+					]
+				},
+				{
+					"slug": "emma-dolfijnentrainer",
+					"name": "Emma is dolfijnentrainer",
+					"intro": "Deze tekst gaat over het werk van een dolfijnentrainer in het Dolfinarium. Het Dolfinarium is een dierenpark met zeedieren.",
+					"paragraphLabels": null,
+					"paragraphMap": null,
+					"questions": [
+						{
+							"id": "lezen-2023-18",
+							"vraag": 18,
+							"question": "Wat voor opleiding(en) deed Emma voordat ze ging werken bij het Dolfinarium?",
+							"options": {
+								"A": "de opleiding Dierenverzorging",
+								"B": "de opleiding tot dolfijnentrainer",
+								"C": "diverse opleidingen buiten de dierenverzorging"
+							},
+							"answer": "C"
+						},
+						{
+							"id": "lezen-2023-19",
+							"vraag": 19,
+							"question": "Waarom reageren mensen volgens Emma verbaasd als ze vertelt over haar beroep?",
+							"options": {
+								"A": "omdat het werk van een dolfijnentrainer fysiek zwaar is",
+								"B": "omdat maar weinig mensen het beroep uitoefenen",
+								"C": "omdat ze haar geen typische dolfijnentrainer vinden"
+							},
+							"answer": "B"
+						},
+						{
+							"id": "lezen-2023-20",
+							"vraag": 20,
+							"question": "Wat zegt Emma over de gezondheidscontroles van de dieren?",
+							"options": {
+								"A": "De gezondheidscontroles behoren niet tot de taken van een dolfijnentrainer.",
+								"B": "De gezondheidscontroles kosten meer tijd dan de trainingen en voorbereidingen.",
+								"C": "De gezondheidscontroles worden gedaan op dagen dat er geen shows zijn.",
+								"D": "De gezondheidscontroles zijn een minder bekend onderdeel van haar beroep."
+							},
+							"answer": "D"
+						},
+						{
+							"id": "lezen-2023-21",
+							"vraag": 21,
+							"question": "Wat zegt Emma over het verschil tussen dolfijnen in de natuur en dolfijnen in het Dolfinarium?",
+							"options": {
+								"A": "Dolfijnen in de natuur krijgen eerder baby’s dan dolfijnen in het Dolfinarium.",
+								"B": "Dolfijnen in de natuur worden minder oud dan dolfijnen in het Dolfinarium.",
+								"C": "Dolfijnen in de natuur zijn gelukkiger dan dolfijnen in het Dolfinarium."
+							},
+							"answer": "B"
+						},
+						{
+							"id": "lezen-2023-22",
+							"vraag": 22,
+							"question": "Wat zijn de toekomstplannen van Emma?",
+							"options": {
+								"A": "Ze gaat stoppen met haar werk als ze 35 jaar is.",
+								"B": "Ze wil over een tijdje minder shows gaan doen.",
+								"C": "Ze wil voorlopig hetzelfde werk blijven doen.",
+								"D": "Ze zoekt binnenkort ander werk in de dierenwereld."
+							},
+							"answer": "C"
+						},
+						{
+							"id": "lezen-2023-23",
+							"vraag": 23,
+							"question": "Wat is het doel van deze tekst?",
+							"options": {
+								"A": "de lezer informeren over het beroep van een dolfijnentrainer",
+								"B": "de lezer laten zien dat het werk van een dolfijnentrainer belangrijk is",
+								"C": "de lezer overhalen om te gaan solliciteren naar de functie van dolfijnentrainer",
+								"D": "de lezer uitleggen hoe je een dolfijnentrainer kunt worden"
+							},
+							"answer": "A"
+						}
+					]
+				},
+				{
+					"slug": "word-buddy",
+					"name": "Maak het verschil, word buddy!",
+					"intro": "Deze tekst komt uit een folder over vrijwilligerswerk en gaat over buddy’s. Wat doet een buddy, hoe word je buddy, wat mag je als buddy verwachten en wat wordt van jou als buddy verwacht?",
+					"paragraphLabels": null,
+					"paragraphMap": null,
+					"questions": [
+						{
+							"id": "lezen-2023-24",
+							"vraag": 24,
+							"question": "Wie bepaalt wat de buddy bij zijn cliënt moet bereiken?",
+							"options": {
+								"A": "De buddy bepaalt wat hij bij zijn cliënt wil bereiken.",
+								"B": "De cliënt bepaalt wat hij met zijn buddy wil bereiken.",
+								"C": "De coördinator bepaalt wat de buddy bij zijn cliënt moet bereiken."
+							},
+							"answer": "B"
+						},
+						{
+							"id": "lezen-2023-25",
+							"vraag": 25,
+							"question": "Wat is de belangrijkste taak van een buddy?",
+							"options": {
+								"A": "eenzame ouderen in hun laatste levensjaren bezoeken",
+								"B": "ernstig zieken helpen die verder willen met hun leven",
+								"C": "hiv- en aidspatiënten verzorgen die weten dat ze sterven",
+								"D": "praten met mensen die persoonlijke problemen hebben"
+							},
+							"answer": "B"
+						},
+						{
+							"id": "lezen-2023-26",
+							"vraag": 26,
+							"question": "Hoeveel tijd moet een buddy aan zijn werk besteden?",
+							"options": {
+								"A": "Dat spreken de buddy, zijn cliënt en de coördinator samen af.",
+								"B": "Dat maakt niet uit, maar het liefst zo veel mogelijk.",
+								"C": "Minstens een dagdeel per week plus nog tijd voor bijeenkomsten."
+							},
+							"answer": "C"
+						},
+						{
+							"id": "lezen-2023-27",
+							"vraag": 27,
+							"question": "Hoeveel geld krijgt een buddy voor zijn werk?",
+							"options": {
+								"A": "Hij krijgt niets, een buddy doet zijn werk niet voor geld.",
+								"B": "Hij krijgt alleen zijn kosten terugbetaald, verder niets.",
+								"C": "Hij krijgt € 25,- per maand om al zijn kosten te betalen.",
+								"D": "Hij krijgt € 25,- per maand én hij krijgt zijn kosten terug."
+							},
+							"answer": "D"
+						},
+						{
+							"id": "lezen-2023-28",
+							"vraag": 28,
+							"question": "Wat moet je doen om als buddy te kunnen beginnen?",
+							"options": {
+								"A": "een kennismakingsgesprek voeren met de coördinator",
+								"B": "een meerdaagse basistraining volgen",
+								"C": "niets: vanaf je 21ste kun je direct beginnen"
+							},
+							"answer": "B"
+						},
+						{
+							"id": "lezen-2023-29",
+							"vraag": 29,
+							"question": "Bij wie kan de buddy terecht als hij het moeilijk heeft in zijn werk?",
+							"options": {
+								"A": "zowel bij andere buddy’s als bij de trainer",
+								"B": "zowel bij de coördinator als bij andere buddy’s",
+								"C": "zowel bij zijn trainer als bij de coördinator"
+							},
+							"answer": "B"
+						},
+						{
+							"id": "lezen-2023-30",
+							"vraag": 30,
+							"question": "Wat is het belangrijkste doel van de tekst?",
+							"options": {
+								"A": "buddy’s informatie geven over cliënten",
+								"B": "cliënten informatie geven over buddy’s",
+								"C": "nieuwe buddy’s vinden voor cliënten",
+								"D": "nieuwe cliënten vinden voor buddy’s"
+							},
+							"answer": "C"
+						}
+					]
+				},
+				{
+					"slug": "examenreglement",
+					"name": "Examenreglement",
+					"intro": "In deze tekst staan de examenregels die gelden bij Rosarius Opleidingen. Lees eerst de vraag. Zoek het antwoord in de tekst.",
+					"paragraphLabels": null,
+					"paragraphMap": null,
+					"questions": [
+						{
+							"id": "lezen-2023-31",
+							"vraag": 31,
+							"question": "Lara volgt een opleiding secretaresse bij Rosarius Opleidingen. Ze wil het examen maken. Wanneer kan dat?",
+							"options": {
+								"A": "als ze de vakken Nederlands, Engels en notuleren heeft gevolgd",
+								"B": "als ze geslaagd is voor het onderdeel administratief medewerker",
+								"C": "als ze in de cursus gemiddeld het cijfer 6 of hoger heeft behaald"
+							},
+							"answer": "B"
+						},
+						{
+							"id": "lezen-2023-32",
+							"vraag": 32,
+							"question": "Mo is drie jaar geleden in Nederland komen wonen. Nederlands is niet zijn eerste taal. Welke regel geldt voor Mo als hij een examen maakt?",
+							"options": {
+								"A": "Hij mag 30 minuten langer over het examen doen.",
+								"B": "Hij mag de computer gebruiken om woorden te vertalen.",
+								"C": "Hij mag het examen mondeling doen."
+							},
+							"answer": "A"
+						},
+						{
+							"id": "lezen-2023-33",
+							"vraag": 33,
+							"question": "Jos is gezakt voor zijn examen. Hij is het niet eens met de uitslag. Bij wie kan hij bezwaar maken?",
+							"options": {
+								"A": "bij de examenleider",
+								"B": "bij het hoofdkantoor",
+								"C": "bij het management"
+							},
+							"answer": "C"
+						},
+						{
+							"id": "lezen-2023-34",
+							"vraag": 34,
+							"question": "Jan komt te laat op het examen. Wat gebeurt er nu?",
+							"options": {
+								"A": "Jan mag het examen niet meer maken, hij moet een herexamen maken.",
+								"B": "Jan mag het examen nog maken, als hij minder dan 50 minuten te laat is.",
+								"C": "Jan moet aan de examenleider vragen of hij het examen mag maken of niet."
+							},
+							"answer": "C"
+						},
+						{
+							"id": "lezen-2023-35",
+							"vraag": 35,
+							"question": "Wat is het doel van de schrijver van deze tekst?",
+							"options": {
+								"A": "de lezer ervan overtuigen zich aan de examenregels te houden",
+								"B": "de lezer op de hoogte brengen van de examenregels",
+								"C": "de lezer overhalen om examen te doen bij Rosarius Opleidingen"
+							},
+							"answer": "B"
+						}
+					]
+				}
+			],
+			"textNotes": [
+				"vijf-fabels intro: app intro drops the clause 'maar ook lessen volgen op school.' (booklet: '... een thuisstudie doen, maar ook lessen volgen op school. Deze tekst gaat ...').",
+				"examenreglement intro: app intro lacks the booklet's second and third sentences 'Lees eerst de vraag. Zoek het antwoord in de tekst.'",
+				"vijf-fabels paragraphs 2, 4, 6, 8, 10: app prefixes the margin labels 'I ', 'II ', 'III ', 'IV ', 'V ' to the paragraph text; in the booklet these are margin labels, not part of the running text."
+			]
+		},
+		{
+			"year": 2024,
+			"totalQuestions": 35,
+			"passingScore": 24,
+			"passages": [
+				{
+					"slug": "bakkerij",
+					"name": "Bakkerij",
+					"intro": "Deze tekst gaat over werken bij de bakkerij van Marké. Marké is een winkel waar onder andere eten, speelgoed en kleding wordt verkocht.",
+					"paragraphLabels": null,
+					"paragraphMap": null,
+					"textNotes": [],
+					"questions": [
+						{
+							"id": "lezen-2024-1",
+							"vraag": 1,
+							"question": "Sanne wil voor Marké gaan werken. Ze wil graag op het kantoor werken en de planningen maken. Welke kantoorafdeling van Marké past bij haar?",
+							"options": {
+								"A": "administratie",
+								"B": "bedrijfsbureau",
+								"C": "personeelszaken"
+							},
+							"answer": "B"
+						},
+						{
+							"id": "lezen-2024-2",
+							"vraag": 2,
+							"question": "Ezra wil voor Marké gaan werken. Hij vindt het leuk om gebak mooi te maken. Welke werkplek past bij hem?",
+							"options": {
+								"A": "de centrale bakkerij",
+								"B": "de decentrale bakkerij",
+								"C": "de proefbakkerij"
+							},
+							"answer": "B"
+						},
+						{
+							"id": "lezen-2024-3",
+							"vraag": 3,
+							"question": "Joshua wil in de decentrale bakkerij gaan werken. Hoe laat moet hij dan beginnen?",
+							"options": {
+								"A": "tussen 2.00 en 4.00 uur",
+								"B": "om 7.00 uur",
+								"C": "om 17.00 uur"
+							},
+							"answer": "B"
+						},
+						{
+							"id": "lezen-2024-4",
+							"vraag": 4,
+							"question": "Karl wil in een Marké-bakkerij gaan werken. Hij houdt ook van techniek. Welke werkplek past bij hem?",
+							"options": {
+								"A": "de centrale bakkerij",
+								"B": "de decentrale bakkerij",
+								"C": "de proefbakkerij"
+							},
+							"answer": "A"
+						},
+						{
+							"id": "lezen-2024-5",
+							"vraag": 5,
+							"question": "Piet is op zoek naar een baan in de bakkerij-organisatie. Wat heeft Piet nodig om kans te maken op een baan?",
+							"options": {
+								"A": "een afgeronde BBL-opleiding tot bakker",
+								"B": "een zelfstandig en stressbestendig karakter",
+								"C": "ervaring in een bakkerij of met voedingsmiddelen"
+							},
+							"answer": "C"
+						},
+						{
+							"id": "lezen-2024-6",
+							"vraag": 6,
+							"question": "Wat is het doel van deze tekst?",
+							"options": {
+								"A": "de lezer informeren over de werkprocessen bij de Marké-bakkerijen",
+								"B": "de lezer overhalen om te solliciteren naar een functie bij Marké",
+								"C": "de lezer uitleggen hoe professioneel de verschillende Marké-afdelingen zijn"
+							},
+							"answer": "B"
+						}
+					]
+				},
+				{
+					"slug": "beursstand",
+					"name": "De beursstand",
+					"intro": "Deze tekst komt uit een studieboek. Hij gaat over de ‘beursstand’: een plek op een beurs. Een beurs is een evenement waar bedrijven zich kunnen presenteren.",
+					"paragraphLabels": null,
+					"paragraphMap": null,
+					"textNotes": [
+						"App omits the image caption ‘Afbeelding: Beursstands’ that sits between the first and second paragraph in the booklet.",
+						"App intro uses straight quotes around 'beursstand'; booklet prints curly quotes ‘beursstand’."
+					],
+					"questions": [
+						{
+							"id": "lezen-2024-7",
+							"vraag": 7,
+							"question": "Bij wat voor beursstand kun je het meeste afwisselen in inrichting?",
+							"options": {
+								"A": "een eilandstand",
+								"B": "een hoekstand",
+								"C": "een kopstand",
+								"D": "een tussenstand"
+							},
+							"answer": "A"
+						},
+						{
+							"id": "lezen-2024-8",
+							"vraag": 8,
+							"question": "Alette wil op een beurs oorbellen verkopen in een stand. Welke tip over verlichting geldt voor Alette?",
+							"options": {
+								"A": "Gebruik licht dat de kleuren goed laat zien.",
+								"B": "Gebruik veel licht bij de entree van de stand.",
+								"C": "Gebruik vooral warm licht op de producten."
+							},
+							"answer": "C"
+						},
+						{
+							"id": "lezen-2024-9",
+							"vraag": 9,
+							"question": "Waar staat informatie over de plaats van producten in de stand?",
+							"options": {
+								"A": "bij ‘Entree’",
+								"B": "bij ‘Zitruimte’",
+								"C": "bij ‘Verlichting’",
+								"D": "bij ‘Routing’"
+							},
+							"answer": "D"
+						},
+						{
+							"id": "lezen-2024-10",
+							"vraag": 10,
+							"question": "Welke tip staat in de tekst om zo veel mogelijk bezoekers te krijgen in je beursstand?",
+							"options": {
+								"A": "Informeer je relaties over de beursstand.",
+								"B": "Investeer veel geld in de beursstand.",
+								"C": "Zorg voor een logische looprichting."
+							},
+							"answer": "A"
+						},
+						{
+							"id": "lezen-2024-11",
+							"vraag": 11,
+							"question": "Wat is het doel van deze tekst?",
+							"options": {
+								"A": "de lezer adviseren over het voorbereiden van een beursdeelname",
+								"B": "de lezer informeren over de huurvoorwaarden van een beursstand",
+								"C": "de lezer overhalen een standbouwer in te huren voor de beursstand",
+								"D": "de lezer overtuigen van het nut van deelname aan een beurs"
+							},
+							"answer": "A"
+						}
+					]
+				},
+				{
+					"slug": "verzuim-op-het-werk",
+					"name": "Verzuim op het werk",
+					"intro": "Deze tekst komt van een website voor mensen met een eigen bedrijf. De tekst gaat over verzuim. Verzuim is het niet aanwezig zijn op het werk.",
+					"paragraphLabels": null,
+					"paragraphMap": null,
+					"textNotes": [],
+					"questions": [
+						{
+							"id": "lezen-2024-12",
+							"vraag": 12,
+							"question": "Max meldt zich regelmatig ziek, omdat hij werkstress heeft. Wat kan de werkgever van Max het beste doen, volgens de tekst?",
+							"options": {
+								"A": "de bedrijfsarts erbij betrekken",
+								"B": "de oorzaak zoeken en zo mogelijk ingrijpen",
+								"C": "het loon van twee ziektedagen inhouden"
+							},
+							"answer": "B"
+						},
+						{
+							"id": "lezen-2024-13",
+							"vraag": 13,
+							"question": "Wat gebeurt er na zes weken verzuim?",
+							"options": {
+								"A": "dan wordt de arbo- of bedrijfsarts erbij betrokken",
+								"B": "dan wordt een re-integratietraject gestart",
+								"C": "dan wordt een verzuimverzekering afgesloten"
+							},
+							"answer": "B"
+						},
+						{
+							"id": "lezen-2024-14",
+							"vraag": 14,
+							"question": "Een verzuimverzekering vergoedt loondoorbetaling. Wat biedt zo’n verzekering nog meer?",
+							"options": {
+								"A": "advies over begeleiding van werknemers in de WIA",
+								"B": "advies over het voorkomen en beperken van verzuim",
+								"C": "advies over vervanging van zieke werknemers"
+							},
+							"answer": "B"
+						},
+						{
+							"id": "lezen-2024-15",
+							"vraag": 15,
+							"question": "Carmen heeft bij het sporten haar arm gebroken. Met een gebroken arm kan ze haar werk niet doen. Ze meldt zich daarom ziek op haar werk. Wat voor soort verzuim is dat?",
+							"options": {
+								"A": "wit verzuim",
+								"B": "zwart verzuim",
+								"C": "grijs verzuim"
+							},
+							"answer": "A"
+						},
+						{
+							"id": "lezen-2024-16",
+							"vraag": 16,
+							"question": "Wat zegt de tekst over sporten?",
+							"options": {
+								"A": "Dat zorgt meestal voor meer verzuim.",
+								"B": "Dat zorgt meestal voor minder verzuim.",
+								"C": "Dat heeft geen invloed op verzuim."
+							},
+							"answer": "B"
+						},
+						{
+							"id": "lezen-2024-17",
+							"vraag": 17,
+							"question": "Wat is het belangrijkste doel van deze tekst?",
+							"options": {
+								"A": "werkgevers adviseren hoe om te gaan met verzuim en de financiële risico’s ervan",
+								"B": "werkgevers overhalen een zo betrouwbaar mogelijke verzuimverzekering af te sluiten",
+								"C": "werkgevers waarschuwen voor de belangrijkste gevolgen van langdurig verzuim"
+							},
+							"answer": "A"
+						}
+					]
+				},
+				{
+					"slug": "autosportklas",
+					"name": "Met deze opleiding heb je echt een voorsprong",
+					"intro": "Deze tekst komt uit een tijdschrift over mbo-opleidingen.",
+					"paragraphLabels": null,
+					"paragraphMap": null,
+					"textNotes": [
+						"Paragraph 5 (Enthousiasme): app has ‘auto-sportklas’; the hyphen is a line-wrap break in the booklet (‘auto-’ / ‘sportklas’), the word is ‘autosportklas’."
+					],
+					"questions": [
+						{
+							"id": "lezen-2024-18",
+							"vraag": 18,
+							"question": "Wat doet het ministerie van Defensie voor de autosportklas van Newton College?",
+							"options": {
+								"A": "Zij bieden technische opleidingen aan studenten van de autosportklas.",
+								"B": "Zij leveren de auto’s voor de autosportklas aan het Newton College.",
+								"C": "Zij zorgen ervoor dat de studenten van de autosportklas werk krijgen."
+							},
+							"answer": "B"
+						},
+						{
+							"id": "lezen-2024-19",
+							"vraag": 19,
+							"question": "Welke studenten worden vooral geselecteerd voor de autosportklas?",
+							"options": {
+								"A": "studenten die al een technische opleiding of carrière bij Defensie hebben",
+								"B": "studenten die hoge cijfers halen, gemotiveerd zijn en kunnen samenwerken",
+								"C": "studenten die zichzelf weten te bewijzen in een gesprek met hun mentor"
+							},
+							"answer": "B"
+						},
+						{
+							"id": "lezen-2024-20",
+							"vraag": 20,
+							"question": "Wat vindt Kate Bitar het lastigst aan het traject van de autosportklas?",
+							"options": {
+								"A": "het financieel mogelijk maken van het traject",
+								"B": "het opzetten en ontwikkelen van het traject",
+								"C": "het vinden van goede studenten voor het traject"
+							},
+							"answer": "A"
+						},
+						{
+							"id": "lezen-2024-21",
+							"vraag": 21,
+							"question": "Wat geldt voor de studenten Hussam en Abel?",
+							"options": {
+								"A": "Ze geven allebei aan later verder te willen in de racebranche.",
+								"B": "Ze hebben allebei een overstap gemaakt naar een hoger niveau.",
+								"C": "Ze zijn allebei gemotiveerd om aan het traject deel te nemen."
+							},
+							"answer": "C"
+						},
+						{
+							"id": "lezen-2024-22",
+							"vraag": 22,
+							"question": "Wat wil de opleidingsmanager, Lauren Ramos, veranderen aan het traject van de autosportklas?",
+							"options": {
+								"A": "Ze wil het leerzamer maken met de hulp van leerbedrijven.",
+								"B": "Ze wil het meer seizoenen laten doorlopen dan het nu doet.",
+								"C": "Ze wil zorgen dat het beter aansluit op de bestaande opleidingen."
+							},
+							"answer": "B"
+						},
+						{
+							"id": "lezen-2024-23",
+							"vraag": 23,
+							"question": "Wat is het meest leerzaam in het traject, volgens Bernardo Marelis?",
+							"options": {
+								"A": "de excursies",
+								"B": "de gastlessen",
+								"C": "de praktijkervaring"
+							},
+							"answer": "C"
+						},
+						{
+							"id": "lezen-2024-24",
+							"vraag": 24,
+							"question": "Wat is de belangrijkste boodschap van de tekst?",
+							"options": {
+								"A": "De autosportklas is een uitdagend traject voor de beste studenten.",
+								"B": "Het traject van de autosportklas moet worden uitgebreid.",
+								"C": "Je maakt met de autosportklas kans op een internationale carrière."
+							},
+							"answer": "A"
+						}
+					]
+				},
+				{
+					"slug": "arbeidsmarkt",
+					"name": "Arbeidsmarkt: jongere op zoek naar zekerheid, oudere naar uitdaging",
+					"intro": "Dit krantenartikel gaat over de verschillen in wensen tussen jongeren en ouderen bij het zoeken naar werk.",
+					"paragraphLabels": null,
+					"paragraphMap": null,
+					"textNotes": [
+						"The booklet heading ‘Financiële basis’ (top of the right column) is not a separate heading entry in the app; it is embedded mid-way in paragraph 3 after the Van Veen quote.",
+						"The ‘Top 5 wensen bij het zoeken naar werk’ table is embedded in paragraph 7 as running text; content and column order match the booklet."
+					],
+					"questions": [
+						{
+							"id": "lezen-2024-25",
+							"vraag": 25,
+							"question": "Welk verrassend onderzoeksresultaat wordt in de tekst genoemd?",
+							"options": {
+								"A": "Veel jongeren hebben geen interesse in hun werk.",
+								"B": "Veel jongeren vinden de inhoud van hun werk onbelangrijk.",
+								"C": "Veel jongeren willen geen risico’s nemen in hun werk."
+							},
+							"answer": "C"
+						},
+						{
+							"id": "lezen-2024-26",
+							"vraag": 26,
+							"question": "Welk punt uit de Top 5 van ouderen vindt een deel van de jongeren ook belangrijk, volgens de tekst?",
+							"options": {
+								"A": "concrete resultaten",
+								"B": "creativiteit",
+								"C": "kwaliteit"
+							},
+							"answer": "B"
+						},
+						{
+							"id": "lezen-2024-27",
+							"vraag": 27,
+							"question": "In de Top 5 van ouderen komt de wens naar zekerheid en stabiliteit in het werk niet voor. Waarom niet, volgens Vera Tames?",
+							"options": {
+								"A": "omdat veel ouderen al genoeg zekerheid en stabiliteit hebben opgebouwd",
+								"B": "omdat veel ouderen hun gezondheid belangrijker vinden dan hun ambities",
+								"C": "omdat veel ouderen liever thuis klusjes doen en creatief bezig zijn"
+							},
+							"answer": "A"
+						},
+						{
+							"id": "lezen-2024-28",
+							"vraag": 28,
+							"question": "Wie willen zich volgens onderzoeker Van Veen vooral ontwikkelen?",
+							"options": {
+								"A": "jongeren",
+								"B": "ouderen",
+								"C": "werklozen",
+								"D": "werkloze ouderen"
+							},
+							"answer": "D"
+						},
+						{
+							"id": "lezen-2024-29",
+							"vraag": 29,
+							"question": "Waar zijn jongeren volgens Marcia Bregman bang voor?",
+							"options": {
+								"A": "om ontslagen te worden",
+								"B": "om van werk te veranderen",
+								"C": "voor een toekomst met eigen huis en kinderen",
+								"D": "voor veranderingen"
+							},
+							"answer": "A"
+						},
+						{
+							"id": "lezen-2024-30",
+							"vraag": 30,
+							"question": "Wie kunnen vooral voordeel halen uit de onderzoeksresultaten?",
+							"options": {
+								"A": "werkgevers",
+								"B": "werknemers",
+								"C": "werkzoekenden"
+							},
+							"answer": "A"
+						}
+					]
+				},
+				{
+					"slug": "abonnement-wonderrijk",
+					"name": "Abonnement Wonderrijk",
+					"intro": "Deze tekst staat op de website van Wonderrijk, een groot attractiepark.",
+					"paragraphLabels": null,
+					"paragraphMap": null,
+					"textNotes": [
+						"Booklet prints an extra instruction line under the source line: ‘Lees eerst de vraag. Zoek het antwoord in de tekst.’ (not part of the app intro)."
+					],
+					"questions": [
+						{
+							"id": "lezen-2024-31",
+							"vraag": 31,
+							"question": "Jorik betaalt maandelijks voor zijn abonnement. Wat gebeurt er als het abonnement van Jorik één jaar oud is?",
+							"options": {
+								"A": "Dan krijgt hij een abonnement voor onbepaalde tijd.",
+								"B": "Dan krijgt hij opnieuw een abonnement voor een jaar.",
+								"C": "Dan loopt het abonnement dat hij heeft automatisch af."
+							},
+							"answer": "A"
+						},
+						{
+							"id": "lezen-2024-32",
+							"vraag": 32,
+							"question": "Sifra wil het park bezoeken, maar ze heeft haar abonnement thuis laten liggen. Mag Sifra het park in?",
+							"options": {
+								"A": "Ja, want haar gegevens staan bij Wonderrijk geregistreerd.",
+								"B": "Nee, want ze moet haar abonnement kunnen laten zien.",
+								"C": "Misschien, de controleur bij de hoofdingang beslist daarover."
+							},
+							"answer": "B"
+						},
+						{
+							"id": "lezen-2024-33",
+							"vraag": 33,
+							"question": "Mitch heeft een parkeerabonnement. Het is erg druk op de parkeerplaats en er zijn geen plaatsen vrij. Wat kan Mitch doen?",
+							"options": {
+								"A": "Hij kan een speciale parkeerplaats gebruiken waarop abonnementhouders voorrang hebben.",
+								"B": "Hij kan het geld van het abonnement terugvragen, want hij heeft recht op een parkeerplaats.",
+								"C": "Hij kan niets doen, want zijn abonnement geeft hem geen garantie op een parkeerplaats."
+							},
+							"answer": "C"
+						},
+						{
+							"id": "lezen-2024-34",
+							"vraag": 34,
+							"question": "Het abonnement van Ramon is beschadigd en daardoor niet meer geldig. Hij vraagt een kopie van zijn abonnement aan. Moet hij hiervoor administratiekosten betalen?",
+							"options": {
+								"A": "Ja, dat moet iedereen die een kopie van een abonnement aanvraagt.",
+								"B": "Nee, dat hoeft alleen wanneer iemand zijn abonnement verloren is.",
+								"C": "Misschien, dat hangt ervan af hoe oud het abonnement van Ramon is."
+							},
+							"answer": "A"
+						},
+						{
+							"id": "lezen-2024-35",
+							"vraag": 35,
+							"question": "Meryem heeft al twee jaar een abonnement voor onbepaalde tijd. Kan Wonderrijk de prijs van Meryems abonnement aanpassen?",
+							"options": {
+								"A": "Ja, Wonderrijk kan abonnementsprijzen op ieder moment aanpassen.",
+								"B": "Nee, alleen de prijzen van nieuwe abonnementen kunnen worden aangepast.",
+								"C": "Alleen als Wonderrijk Meryem een maand van tevoren informeert."
+							},
+							"answer": "C"
+						}
+					]
+				}
+			]
+		},
+		{
+			"year": 2025,
+			"totalQuestions": 35,
+			"passingScore": 24,
+			"passages": [
+				{
+					"slug": "ruud-rij-instructeur",
+					"name": "Ruud wordt rij-instructeur",
+					"intro": "Deze tekst komt van een website over werken en gezondheid. De tekst gaat over de omscholing van Ruud. Omscholen is iets nieuws leren om ander werk te kunnen doen.",
+					"paragraphLabels": null,
+					"paragraphMap": null,
+					"textNotes": [
+						"App intro stops after 'de omscholing van Ruud.'; booklet intro continues: 'Omscholen is iets nieuws leren om ander werk te kunnen doen.'"
+					],
+					"questions": [
+						{
+							"id": "lezen-2025-1",
+							"vraag": 1,
+							"question": "Wat voor organisatie is Jeurissen?",
+							"options": {
+								"A": "de instelling waar Ruud zijn opleiding tot rij-instructeur volgt",
+								"B": "de rijschool waar Ruud binnenkort zal gaan werken",
+								"C": "het bedrijf waar Ruud momenteel als timmerman werkt"
+							},
+							"answer": "C"
+						},
+						{
+							"id": "lezen-2025-2",
+							"vraag": 2,
+							"question": "Wat vindt Ruud van medische onderzoeken in de bouwsector?",
+							"options": {
+								"A": "Hij vindt de onderzoeken bijzonder nuttig voor mensen die zwaar werk doen.",
+								"B": "Hij vindt het lastig dat jonge werknemers niet vaak genoeg onderzocht worden.",
+								"C": "Hij vindt medische onderzoeken minder belangrijk dan adviesgesprekken."
+							},
+							"answer": "A"
+						},
+						{
+							"id": "lezen-2025-3",
+							"vraag": 3,
+							"question": "Wat wil Ruud duidelijk maken met het voorbeeld van zijn collega van 35 jaar?",
+							"options": {
+								"A": "dat er mensen zijn die geen ander werk kunnen vinden",
+								"B": "dat mensen beter geen beroep in de bouw kunnen kiezen",
+								"C": "dat mensen zware beroepen soms niet lang kunnen uitoefenen"
+							},
+							"answer": "C"
+						},
+						{
+							"id": "lezen-2025-4",
+							"vraag": 4,
+							"question": "Wat vindt Ruud ervan dat hij nieuwe dingen moet leren tijdens zijn omscholing?",
+							"options": {
+								"A": "Het is even volhouden, maar met hard werken lukt het hem.",
+								"B": "Het is lang geleden dat hij moest leren, maar hij vindt het makkelijk.",
+								"C": "Hij vindt het leuk, maar hij vindt zichzelf er eigenlijk te oud voor."
+							},
+							"answer": "A"
+						},
+						{
+							"id": "lezen-2025-5",
+							"vraag": 5,
+							"question": "Waarin verschilt Ruud van andere mensen met een zwaar beroep, volgens Joke Hermans?",
+							"options": {
+								"A": "Ruud heeft vrij lang gewacht voor hij zich liet omscholen.",
+								"B": "Ruud is later dan gemiddeld begonnen met zijn beroep.",
+								"C": "Ruud is zelf in actie gekomen om ander werk te vinden."
+							},
+							"answer": "C"
+						},
+						{
+							"id": "lezen-2025-6",
+							"vraag": 6,
+							"question": "Wat is het doel van deze tekst?",
+							"options": {
+								"A": "de lezer enthousiast maken over omscholing door een voorbeeld te geven",
+								"B": "de lezer laten beseffen dat een omscholing meestal veel tijd en moeite kost",
+								"C": "de lezer uitleggen dat niet iedereen zich zomaar kan laten omscholen"
+							},
+							"answer": "A"
+						}
+					]
+				},
+				{
+					"slug": "een-potje-huilen",
+					"name": "Een potje huilen",
+					"intro": "Deze tekst komt van een website over gezondheid.",
+					"paragraphLabels": null,
+					"paragraphMap": null,
+					"textNotes": [
+						"Booklet has a photo after the first paragraph with the caption 'Afbeelding: huilende man met tranen in zijn ogen'; the app omits the caption."
+					],
+					"questions": [
+						{
+							"id": "lezen-2025-7",
+							"vraag": 7,
+							"question": "Wat is het verschil tussen dieren en mensen als het om huilen gaat?",
+							"options": {
+								"A": "Bij pijnlijke ogen maken mensen veel sneller traanvocht aan dan dieren.",
+								"B": "Dieren huilen alleen bij lichamelijke pijn, mensen ook bij vervelende ervaringen.",
+								"C": "Mensen huilen door positieve of negatieve gevoelens, dieren doen dat niet."
+							},
+							"answer": "C"
+						},
+						{
+							"id": "lezen-2025-8",
+							"vraag": 8,
+							"question": "Wat zegt de schrijver over pasgeboren baby’s die huilen?",
+							"options": {
+								"A": "Bij hen heeft huilen dezelfde functie als bij huilende volwassenen.",
+								"B": "Voor hen heeft huilen meer nut dan wanneer volwassenen huilen.",
+								"C": "Zij worden als ze in het openbaar huilen sneller getroost door hun ouders."
+							},
+							"answer": "A"
+						},
+						{
+							"id": "lezen-2025-9",
+							"vraag": 9,
+							"question": "Waarom huilen vrouwen meer dan mannen?",
+							"options": {
+								"A": "alleen door verschillen in hormonen tussen mannen en vrouwen",
+								"B": "alleen door verschillen in de traanbuizen van mannen en vrouwen",
+								"C": "zowel door verschillen in hormonen als door verschillen in traanbuizen"
+							},
+							"answer": "C"
+						},
+						{
+							"id": "lezen-2025-10",
+							"vraag": 10,
+							"question": "Wat voor functie hebben gelukshormonen, volgens de tekst?",
+							"options": {
+								"A": "Ze helpen lichamelijke pijn te verminderen.",
+								"B": "Ze verwijderen endorfine uit het lichaam.",
+								"C": "Ze zorgen ervoor dat je rustiger wordt."
+							},
+							"answer": "C"
+						},
+						{
+							"id": "lezen-2025-11",
+							"vraag": 11,
+							"question": "Welke zin vat de mening van de schrijver het beste samen?",
+							"options": {
+								"A": "Huilen is gezond, dus het is niet erg om het soms te doen.",
+								"B": "Huilen is nuttig, maar alleen als je je slecht voelt of pijn hebt.",
+								"C": "Pas op met huilen, want mensen kunnen het als zwakte zien."
+							},
+							"answer": "A"
+						},
+						{
+							"id": "lezen-2025-12",
+							"vraag": 12,
+							"question": "Wat is het doel van deze tekst?",
+							"options": {
+								"A": "de lezer informeren over verschillende feiten over huilen",
+								"B": "de lezer vertellen wanneer het gepast is om te huilen",
+								"C": "de lezer waarschuwen voor de effecten van huilen"
+							},
+							"answer": "A"
+						}
+					]
+				},
+				{
+					"slug": "verkopen-is-een-vak",
+					"name": "Verkopen is een vak",
+					"intro": "Deze tekst komt uit een studieboek voor opleidingen tot verkoper in een kledingwinkel.",
+					"paragraphLabels": null,
+					"paragraphMap": null,
+					"textNotes": [],
+					"questions": [
+						{
+							"id": "lezen-2025-13",
+							"vraag": 13,
+							"question": "Een klant komt een kledingwinkel binnen. De verkoper groet de klant. Wanneer kan de verkoper het beste naar de klant toe gaan om hem te helpen?",
+							"options": {
+								"A": "nadat de klant heeft laten merken dat hij hulp wil",
+								"B": "nadat de klant zelf om hulp heeft gevraagd",
+								"C": "zo snel mogelijk nadat de klant is binnengekomen"
+							},
+							"answer": "A"
+						},
+						{
+							"id": "lezen-2025-14",
+							"vraag": 14,
+							"question": "Een klant in een kledingwinkel zoekt een nieuwe broek. De klant wil hulp van de verkoper. Waar moet de verkoper mee beginnen?",
+							"options": {
+								"A": "met het geven van advies over enkele broeken die de klant mooi vindt",
+								"B": "met het geven van informatie over enkele broeken die de klant mooi vindt",
+								"C": "met het stellen van vragen om te beoordelen wat voor broek de klant wil"
+							},
+							"answer": "C"
+						},
+						{
+							"id": "lezen-2025-15",
+							"vraag": 15,
+							"question": "Onder het kopje ‘Service maakt het verschil’ staan veel vragen. Wat wil de schrijver hiermee duidelijk maken?",
+							"options": {
+								"A": "dat het belangrijk is om klanten een goede service te bieden",
+								"B": "dat het belangrijk is om vragen van klanten te beantwoorden",
+								"C": "dat het belangrijk is om vriendelijk te blijven tegen klanten"
+							},
+							"answer": "A"
+						},
+						{
+							"id": "lezen-2025-16",
+							"vraag": 16,
+							"question": "Voor een verkoper is het belangrijk om tevreden klanten te hebben met een positief beeld van de winkel. Wat is het belangrijkste om dat te kunnen bereiken?",
+							"options": {
+								"A": "een eerlijk advies",
+								"B": "een goed product tegen een lage prijs",
+								"C": "een vriendelijke houding"
+							},
+							"answer": "C"
+						},
+						{
+							"id": "lezen-2025-17",
+							"vraag": 17,
+							"question": "Hoe moet een verkoper omgaan met ontevreden klanten die terugkomen om te klagen?",
+							"options": {
+								"A": "Hij moet hun klachten serieus nemen zodat ze weer tevreden vertrekken.",
+								"B": "Hij moet klagende klanten gelijk geven zodat ze met een tevreden gevoel vertrekken.",
+								"C": "Hij moet ontevreden klanten proberen te overtuigen dat hun klachten onterecht zijn."
+							},
+							"answer": "A"
+						},
+						{
+							"id": "lezen-2025-18",
+							"vraag": 18,
+							"question": "Wat is het doel van deze tekst?",
+							"options": {
+								"A": "de lezer duidelijk maken dat verkopen een mooi maar moeilijk vak is",
+								"B": "de lezer uitleggen hoe een verkoper het beste met klanten kan omgaan",
+								"C": "de lezer vermaken met leuke ervaringen van klanten en verkopers"
+							},
+							"answer": "B"
+						}
+					]
+				},
+				{
+					"slug": "overuren",
+					"name": "Overuren",
+					"intro": "Deze tekst is een deel uit de arbeidsvoorwaarden in de metaalindustrie. De tekst gaat over overuren: uren die extra worden gewerkt.",
+					"paragraphLabels": null,
+					"paragraphMap": null,
+					"textNotes": [
+						"App intro ends 'De tekst gaat over overuren.'; booklet reads 'De tekst gaat over overuren: uren die extra worden gewerkt.'"
+					],
+					"questions": [
+						{
+							"id": "lezen-2025-19",
+							"vraag": 19,
+							"question": "In het dienstrooster van Joseph staan werktijden van 7.00 tot 15.00 uur. Vandaag moet hij van 8.00 tot 16.00 uur werken. Valt dit onder overwerk?",
+							"options": {
+								"A": "Ja, want het laatste uur valt buiten zijn dienstrooster.",
+								"B": "Nee, want deze werkuren tellen als verschoven uren.",
+								"C": "Misschien, als zo’n verandering vaker voor gaat komen."
+							},
+							"answer": "B"
+						},
+						{
+							"id": "lezen-2025-20",
+							"vraag": 20,
+							"question": "Marly moet na een volle werkdag tot 24.00 uur overwerken. Volgens het dienstrooster moet ze de volgende ochtend om 7.00 uur weer beginnen. Wat gebeurt er nu?",
+							"options": {
+								"A": "Ze hoeft de dag na het overwerk niet te werken.",
+								"B": "Ze mag pas na 11 uren van rust weer gaan werken.",
+								"C": "Ze moet gewoon om 7.00 uur beginnen met werken."
+							},
+							"answer": "B"
+						},
+						{
+							"id": "lezen-2025-21",
+							"vraag": 21,
+							"question": "Claire is 56 jaar en heeft een goede gezondheid. Ze wil liever niet overwerken. Wat kan haar werkgever doen?",
+							"options": {
+								"A": "De werkgever kan Claire niet verplichten om over te werken.",
+								"B": "De werkgever kan Claire verplichten om 5 uur per vier weken over te werken.",
+								"C": "De werkgever kan Claire verplichten om 10 uur per vier weken over te werken.",
+								"D": "De werkgever kan Claire altijd verplichten om over te werken."
+							},
+							"answer": "B"
+						},
+						{
+							"id": "lezen-2025-22",
+							"vraag": 22,
+							"question": "Pawel heeft 8 overuren gemaakt. Wat gebeurt er met die overuren?",
+							"options": {
+								"A": "De overuren worden vergoed in geld.",
+								"B": "De overuren worden vergoed in vrije tijd.",
+								"C": "Hij mag zelf kiezen of de overuren worden vergoed in vrije tijd of in geld."
+							},
+							"answer": "C"
+						},
+						{
+							"id": "lezen-2025-23",
+							"vraag": 23,
+							"question": "Wat is het doel van deze tekst?",
+							"options": {
+								"A": "de lezer overtuigen van het belang van overwerken",
+								"B": "de lezer uitleggen wat de regels voor overwerk zijn",
+								"C": "de lezer waarschuwen voor de risico’s van overwerken"
+							},
+							"answer": "B"
+						}
+					]
+				},
+				{
+					"slug": "buurt-whatsapp",
+					"name": "De buurt-whatsapp",
+					"intro": "Deze tekst komt van een nieuwssite en gaat over speciale WhatsApp-groepen voor buren. WhatsApp is een app waarmee veel mensen (in groepen of één-op-één) op hun telefoon berichten naar elkaar sturen.",
+					"paragraphLabels": null,
+					"paragraphMap": null,
+					"textNotes": [
+						"App intro stops after 'WhatsApp-groepen voor buren.'; booklet intro continues: 'WhatsApp is een app waarmee veel mensen (in groepen of één-op-één) op hun telefoon berichten naar elkaar sturen.'"
+					],
+					"questions": [
+						{
+							"id": "lezen-2025-24",
+							"vraag": 24,
+							"question": "Wat is de bedoeling van buurt-whatsapp, volgens de tekst?",
+							"options": {
+								"A": "dat buren elkaar kunnen helpen als er een ruzie is",
+								"B": "dat buren elkaar leuke berichten kunnen sturen",
+								"C": "dat buren elkaar waarschuwen als ze iets niet vertrouwen"
+							},
+							"answer": "C"
+						},
+						{
+							"id": "lezen-2025-25",
+							"vraag": 25,
+							"question": "Tea Rukavina begon een buurt-whatsapp nadat er bij haar thuis bijna was ingebroken. Waarom deed ze dat?",
+							"options": {
+								"A": "Ze wilde de buurt uitleggen wat de politie nu ging doen.",
+								"B": "Ze wilde de buurt vragen of zij iets bijzonders hadden gezien.",
+								"C": "Ze wilde de buurt waarschuwen voor inbrekers in de wijk."
+							},
+							"answer": "C"
+						},
+						{
+							"id": "lezen-2025-26",
+							"vraag": 26,
+							"question": "Soms gaan mensen uit een buurt-whatsappgroep zelf achter een vermoedelijke inbreker aan. Vindt Habib Wajid dat goed?",
+							"options": {
+								"A": "Ja, want dat vergroot de veiligheid in de buurt.",
+								"B": "Nee, het is niet verstandig als mensen dit zelf doen.",
+								"C": "Alleen als ze zeker weten dat het inbrekers zijn."
+							},
+							"answer": "B"
+						},
+						{
+							"id": "lezen-2025-27",
+							"vraag": 27,
+							"question": "Wanneer grijpt beheerder Mitra van de Kuilen in?",
+							"options": {
+								"A": "als buren onverwacht de groep hebben verlaten",
+								"B": "als buren overbodige berichten naar de groep sturen",
+								"C": "als buren vervelend op een oproep van iemand reageren"
+							},
+							"answer": "B"
+						},
+						{
+							"id": "lezen-2025-28",
+							"vraag": 28,
+							"question": "Wat is het doel van deze tekst?",
+							"options": {
+								"A": "de lezer adviseren om voorzichtig te zijn in een buurt-whatsapp",
+								"B": "de lezer informeren over voor- en nadelen van een buurt-whatsapp",
+								"C": "de lezer overhalen om een eigen buurt-whatsapp te starten"
+							},
+							"answer": "B"
+						}
+					]
+				},
+				{
+					"slug": "vision-college",
+					"name": "Algemene informatie Vision College",
+					"intro": "Deze tekst komt van de website van het Vision College.",
+					"paragraphLabels": null,
+					"paragraphMap": null,
+					"textNotes": [
+						"App paragraphs 2 to 4 split the sentence 'Om je aanwezigheid te melden, gebruik je de Visionpas. Je scant je pas ...' into 'gebruik je de' / a heading 'Visionpas' / '. Je scant je pas'; in the booklet this is one running sentence under 'Aanwezigheid' with no heading.",
+						"App paragraphs 19 and 20 turn the sentence 'Vragen? Ga naar Team debiteuren (in Alkmaar).' (end of 'Cursusgeld terugkrijgen') into a heading 'Vragen' plus '? Ga naar Team debiteuren (in Alkmaar).'; in the booklet it is a normal sentence.",
+						"The booklet's real heading 'Visionpas' (page 18, before 'Je hebt een Visionpas nodig als je een opleiding volgt.') is not a separate heading in the app; it is run into paragraph 26 after the 'Uitjes' text.",
+						"The booklet's real heading 'Vragen' (page 19, before 'Met (andere) vragen over de Visionpas ...') is not a separate heading in the app; it is run into paragraph 40.",
+						"Under 'Je bent je Visionpas vergeten' the booklet prints '€ 5,-administratiekosten' (no space); the app has '€ 5,- administratiekosten'."
+					],
+					"questions": [
+						{
+							"id": "lezen-2025-29",
+							"vraag": 29,
+							"question": "Marisa volgt een opleiding aan het Vision College. Ze heeft een uitje met haar klas. Wordt dit uitje betaald door het Vision College?",
+							"options": {
+								"A": "Ja, want de kosten voor uitjes vallen onder het lesgeld.",
+								"B": "Nee, want studenten moeten zelf voor uitjes betalen.",
+								"C": "Alleen als het uitje onderdeel is van het lesprogramma."
+							},
+							"answer": "C"
+						},
+						{
+							"id": "lezen-2025-30",
+							"vraag": 30,
+							"question": "Reza volgt een BBL-opleiding. Hij wil een derdenmachtiging laten invullen voor zijn cursusgeld. Wie moet deze derdenmachtiging ondertekenen voordat Reza hem inlevert?",
+							"options": {
+								"A": "de werkgever en Reza zelf",
+								"B": "de werkgever en Team debiteuren",
+								"C": "Team debiteuren en Reza zelf"
+							},
+							"answer": "A"
+						},
+						{
+							"id": "lezen-2025-31",
+							"vraag": 31,
+							"question": "Stef is zijn Visionpas verloren. Hij vraagt een nieuwe pas aan. Wat moet Stef in totaal betalen?",
+							"options": {
+								"A": "Hij hoeft niets te betalen.",
+								"B": "Hij moet € 5,- voor de nieuwe pas betalen.",
+								"C": "Hij moet € 5,- voor de nieuwe pas en € 5,- administratiekosten betalen."
+							},
+							"answer": "C"
+						},
+						{
+							"id": "lezen-2025-32",
+							"vraag": 32,
+							"question": "William gaat een vavo-opleiding van minder dan 29 lesuren volgen aan het Vision College. Waar hangt de hoogte van Williams cursusgeld van af?",
+							"options": {
+								"A": "van het niveau van de opleiding die William gaat volgen",
+								"B": "van het totale aantal lesuren van Williams opleiding",
+								"C": "van Williams leeftijd bij de start van de opleiding"
+							},
+							"answer": "B"
+						},
+						{
+							"id": "lezen-2025-33",
+							"vraag": 33,
+							"question": "Stacy hoort dat het alarmsignaal afgaat. Wat kan ze het beste doen?",
+							"options": {
+								"A": "bellen naar toestel 100 of naar 8888",
+								"B": "een conciërge of de receptie waarschuwen",
+								"C": "meteen naar de verzamelplaats buiten gaan",
+								"D": "zich melden bij een bedrijfshulpverlener"
+							},
+							"answer": "C"
+						},
+						{
+							"id": "lezen-2025-34",
+							"vraag": 34,
+							"question": "Dounia gaat stoppen met haar opleiding in de sector Gezondheidszorg. Ze wil zich laten uitschrijven. Kan ze hiervoor bij de decaan terecht?",
+							"options": {
+								"A": "Ja, de decaan kan haar uitschrijven.",
+								"B": "Nee, ze moet daarvoor naar haar mentor.",
+								"C": "Dat kan, maar het mag ook bij het Studie Informatie Punt (STIP)."
+							},
+							"answer": "A"
+						},
+						{
+							"id": "lezen-2025-35",
+							"vraag": 35,
+							"question": "Wat meld je door middel van het scannen van je Visionpas?",
+							"options": {
+								"A": "Alleen dat je in het gebouw aanwezig bent.",
+								"B": "Alleen dat je in het gebouw aanwezig bent en in welke onderwijsruimte je bent.",
+								"C": "Dat je in het gebouw aanwezig bent, in welke onderwijsruimte je bent en dat je een bepaalde les hebt gevolgd."
+							},
+							"answer": "B"
+						}
+					]
+				}
+			]
+		}
+	]
+}
