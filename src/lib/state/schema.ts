@@ -1266,6 +1266,11 @@ export interface StateV25 extends Omit<StateV22, 'schemaVersion'> {
 	readingFork: ReadingForkState;
 }
 
+/** Same shape as v25. One-time clear of mock results recorded on the old 2023 and 2024 items. */
+export interface StateV26 extends Omit<StateV25, 'schemaVersion'> {
+	schemaVersion: 26;
+}
+
 // State is a union of all versions. Add new versions here as they ship.
 export type State =
 	| StateV1
@@ -1292,9 +1297,10 @@ export type State =
 	| StateV22
 	| StateV23
 	| StateV24
-	| StateV25;
+	| StateV25
+	| StateV26;
 
 // The latest version is the one the app runs on.
-export type CurrentState = StateV25;
+export type CurrentState = StateV26;
 
-export const CURRENT_SCHEMA_VERSION = 25;
+export const CURRENT_SCHEMA_VERSION = 26;

@@ -28,12 +28,24 @@ describe('practice packs', () => {
 		expect(drills[1]?.source.p).toBe(5);
 	});
 
-	it('returns nothing for a passage that has no pack yet', () => {
-		expect(practiceItemsFor('bakkerij')).toEqual([]);
+	it('serves legacy items beside the authored packs and still reports missing packs', () => {
+		const bakkerij = practiceItemsFor('bakkerij');
+		expect(bakkerij.length).toBeGreaterThan(0);
+		expect(bakkerij.every((item) => item.id.startsWith('p-legacy-'))).toBe(true);
 		expect(paragraphMapFor('bakkerij')).toEqual([]);
 		expect(paraphraseFor('bakkerij')).toEqual([]);
 		expect(passagesMissingPacks()).toHaveLength(17);
 		expect(passagesMissingPacks()).not.toContain('buurt-whatsapp');
+		expect(practiceItemsFor('buurt-whatsapp').some((item) => item.id.startsWith('p-legacy-'))).toBe(
+			false
+		);
+		const gated = practiceItemsFor('vijf-fabels').some((item) => item.id === 'p-legacy-2023-1');
+		expect(gated).toBe(false);
+		expect(
+			practiceItemsFor('vijf-fabels', ['lezen-2023-6']).some(
+				(item) => item.id === 'p-legacy-2023-1'
+			)
+		).toBe(true);
 	});
 
 	it('has no em dashes in the sample pack or the practice brief', () => {

@@ -41,7 +41,10 @@ export function itemSlug(id: string): string | null {
 function trapRows(fork: ReadingForkState, trap: TrapKind): TrapRow[] {
 	const rows: TrapRow[] = [];
 	for (const passage of openPassages(fork)) {
-		for (const item of practiceItemsFor(passage.slug)) {
+		for (const item of practiceItemsFor(
+			passage.slug,
+			fork.attempts.map((attempt) => attempt.itemId)
+		)) {
 			const hit = Object.values(item.distractors).some((row) => row.trap === trap);
 			if (hit) rows.push({ id: item.id, slug: passage.slug, origin: 'practice' });
 		}
@@ -123,7 +126,10 @@ export function selectLures(fork: ReadingForkState, date: string, count = 5): Lu
 	const preferred: Omit<LurePrompt, 'choices'>[] = [];
 	const rest: Omit<LurePrompt, 'choices'>[] = [];
 	for (const passage of openPassages(fork)) {
-		const practice = practiceItemsFor(passage.slug).map((item) => ({
+		const practice = practiceItemsFor(
+			passage.slug,
+			fork.attempts.map((attempt) => attempt.itemId)
+		).map((item) => ({
 			id: item.id,
 			options: item.options,
 			distractors: item.distractors
@@ -198,7 +204,10 @@ export function selectQtypeItems(
 	const freshIds: string[] = [];
 	const official: string[] = [];
 	for (const passage of openPassages(fork)) {
-		for (const item of practiceItemsFor(passage.slug)) {
+		for (const item of practiceItemsFor(
+			passage.slug,
+			fork.attempts.map((attempt) => attempt.itemId)
+		)) {
 			if (item.qtype === qtype) practice.push(item.id);
 		}
 		for (const question of passage.questions) {

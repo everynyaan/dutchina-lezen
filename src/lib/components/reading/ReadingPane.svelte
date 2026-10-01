@@ -15,6 +15,8 @@
 		intro: string;
 		text: string;
 		slug?: string;
+		paragraphLabels?: string[];
+		paragraphMap?: Record<string, number>;
 	}
 
 	interface TextSelection {
@@ -76,6 +78,16 @@
 		onSelect({ text, p, sentence: wholeSentence(text, paragraphs[p] ?? '') });
 	}
 
+	function marginLabel(index: number): string | null {
+		const map = passage.paragraphMap;
+		if (!map) return null;
+		const labels = passage.paragraphLabels ?? Object.keys(map);
+		for (const label of labels) {
+			if (map[label] === index) return label;
+		}
+		return null;
+	}
+
 	function onKey(event: KeyboardEvent, index: number) {
 		if (event.key !== 'Enter' && event.key !== ' ') return;
 		event.preventDefault();
@@ -126,10 +138,12 @@
 	{#each paragraphs as paragraph, index (index)}
 		{@const heading = isHeading(paragraph, index)}
 		{@const list = isListParagraph(paragraph)}
+		{@const label = marginLabel(index)}
 		{#if locateMode}
 			<div
 				class="block"
 				class:heading
+				class:labelled={label !== null}
 				class:selected={locatedP === index}
 				role="button"
 				tabindex="0"
@@ -137,6 +151,7 @@
 				onclick={() => onLocate?.(index)}
 				onkeydown={(event) => onKey(event, index)}
 			>
+				{#if label}<span class="alinea">{label}</span>{/if}
 				{#if heading}
 					<h2>{@render marked(paragraph)}</h2>
 				{:else if list}
@@ -150,7 +165,14 @@
 				{/if}
 			</div>
 		{:else}
-			<div class="block" class:heading class:selected={locatedP === index} data-p={index}>
+			<div
+				class="block"
+				class:heading
+				class:labelled={label !== null}
+				class:selected={locatedP === index}
+				data-p={index}
+			>
+				{#if label}<span class="alinea">{label}</span>{/if}
 				{#if heading}
 					<h2>{@render marked(paragraph)}</h2>
 				{:else if list}
@@ -189,6 +211,17 @@
 	}
 	.block {
 		margin: 0 0 0.9rem;
+	}
+	.block.labelled {
+		display: grid;
+		grid-template-columns: 2rem minmax(0, 1fr);
+		column-gap: 0.35rem;
+		align-items: start;
+	}
+	.alinea {
+		color: var(--color-muted-ink);
+		font-weight: 650;
+		line-height: 1.6;
 	}
 	.block p,
 	.block h2,

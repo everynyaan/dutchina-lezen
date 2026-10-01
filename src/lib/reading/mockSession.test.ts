@@ -117,7 +117,7 @@ describe('mock clock and hand-in', () => {
 		for (const passage of exam.passages) {
 			for (const question of passage.questions) answers[question.id] = question.answer;
 		}
-		answers['lezen-2023-1'] = 'B';
+		answers['lezen-2023-1'] = 'A';
 		session.answers = answers;
 		session.flagged = { 'lezen-2023-1': true, 'lezen-2023-2': true };
 		const next = handInMock(fork(), session, 5_000 + 60_000, '2026-09-30', false);

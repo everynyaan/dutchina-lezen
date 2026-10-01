@@ -11,7 +11,7 @@ import {
 	selectTrapItem
 } from './drills';
 import { itemAttemptedWithin } from './history';
-import { practiceItemsFor } from './practice';
+import { itemPassageSlug, practiceItemsFor } from './practice';
 import {
 	EMPTY_READING_FORK,
 	type ReadingAttempt,
@@ -45,10 +45,10 @@ function fork(patch: Partial<ReadingForkState>): ReadingForkState {
 	};
 }
 
-function echoIds(): { id: string; slug: string; year: number }[] {
+function echoIds(attempted: readonly string[] = []): { id: string; slug: string; year: number }[] {
 	const rows: { id: string; slug: string; year: number }[] = [];
 	for (const passage of allPassages()) {
-		for (const item of practiceItemsFor(passage.slug)) {
+		for (const item of practiceItemsFor(passage.slug, attempted)) {
 			if (Object.values(item.distractors).some((row) => row.trap === 'echo')) {
 				rows.push({ id: item.id, slug: passage.slug, year: passage.year });
 			}
@@ -112,14 +112,18 @@ describe('selectTrapItem', () => {
 			]
 		});
 		const id = selectTrapItem(state, 'echo', TODAY);
-		expect(id?.startsWith('lezen-')).toBe(true);
-		const found = findQuestion(id!);
-		expect(found?.passage.slug).not.toBe('buurt-whatsapp');
-		expect(found?.passage.year).not.toBe(2023);
+		expect(id?.startsWith('p-')).toBe(true);
+		const row = echoIds().find((item) => item.id === id);
+		expect(row?.slug).not.toBe('buurt-whatsapp');
+		expect(row?.year).not.toBe(2023);
 	});
 
 	it('relaxes 14 days to 3 days, then to any item', () => {
-		const echoes = echoIds().filter((row) => row.year !== 2023 && row.slug !== 'buurt-whatsapp');
+		const open = echoIds().filter((row) => row.year !== 2023 && row.slug !== 'buurt-whatsapp');
+		const unlocked = echoIds(open.map((row) => row.id)).filter(
+			(row) => row.year !== 2023 && row.slug !== 'buurt-whatsapp'
+		);
+		const echoes = [...open, ...unlocked.filter((row) => !open.some((item) => item.id === row.id))];
 		expect(echoes.length).toBeGreaterThan(0);
 		const recent = fork({
 			traps: [
@@ -137,10 +141,10 @@ describe('selectTrapItem', () => {
 			attempts: echoes.map((row) => attempt(row.id, row.slug, addDays(TODAY, -10)))
 		});
 		const relaxed = selectTrapItem(recent, 'echo', TODAY);
-		expect(relaxed?.startsWith('lezen-')).toBe(true);
+		expect(relaxed?.startsWith('p-')).toBe(true);
 		expect(itemAttemptedWithin(recent, relaxed!, 14, TODAY)).toBe(true);
 		expect(itemAttemptedWithin(recent, relaxed!, 3, TODAY)).toBe(false);
-		expect(findQuestion(relaxed!)?.passage.slug).not.toBe('buurt-whatsapp');
+		expect(echoIds().find((item) => item.id === relaxed)?.slug).not.toBe('buurt-whatsapp');
 
 		const blocked = fork({
 			...recent,
@@ -206,11 +210,9 @@ describe('micro-drills', () => {
 	it('serves three items of a qtype, practice first, off the sealed paper', () => {
 		const ids = selectQtypeItems(fork({}), 'oorzaak-reden', TODAY);
 		expect(ids).toHaveLength(3);
-		expect(ids[0].startsWith('p-')).toBe(true);
-		expect(ids[1].startsWith('p-')).toBe(true);
-		expect(ids[2].startsWith('lezen-')).toBe(true);
+		expect(ids.every((id) => id.startsWith('p-'))).toBe(true);
 		for (const id of ids) {
-			const year = findQuestion(id)?.passage.year ?? findPassage('buurt-whatsapp')?.year;
+			const year = findQuestion(id)?.passage.year ?? findPassage(itemPassageSlug(id) ?? '')?.year;
 			expect(year).not.toBe(2023);
 		}
 		expect(selectQtypeItems(fork({}), 'oorzaak-reden', TODAY)).toEqual(ids);

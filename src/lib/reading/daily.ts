@@ -3,6 +3,7 @@ import { addDays, allPassages, dayIndex, daysBetween, type BankPassage } from '.
 import { accuracyByQtype, lastSeenPassage } from './history';
 import { isWholeText, type LoopItem } from './loop';
 import {
+	itemPassageSlug,
 	paragraphMapFor,
 	paraphraseById,
 	paraphraseFor,
@@ -100,7 +101,10 @@ export function selectQuestions(
 		if (doel) chosen.push(doel.id);
 		return chosen;
 	}
-	const practice = practiceItemsFor(passage.slug);
+	const practice = practiceItemsFor(
+		passage.slug,
+		fork.attempts.map((attempt) => attempt.itemId)
+	);
 	const stats = accuracyByQtype(fork);
 	const officialDoel = passage.questions.find(
 		(question) =>
@@ -194,8 +198,10 @@ export function buildDailyText(fork: ReadingForkState, date: string): DailyTextS
 
 export function dailyLoopItem(passage: BankPassage, id: string): LoopItem | null {
 	const practice = practiceById(id);
-	if (practice && practiceItemsFor(passage.slug).some((item) => item.id === id)) {
-		const resolved = practiceItemsFor(passage.slug).find((item) => item.id === id)!;
+	const served = practiceItemsFor(passage.slug).find((item) => item.id === id);
+	const resolved =
+		served ?? (practice && itemPassageSlug(id) === passage.slug ? practice : undefined);
+	if (resolved && (served || itemPassageSlug(id) === passage.slug)) {
 		return {
 			id: resolved.id,
 			question: resolved.question,

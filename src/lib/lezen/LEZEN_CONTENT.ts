@@ -1,9 +1,9 @@
 // ============================================================
 // LEZEN CONTENT - NT2 Programma I (2023-2025)
 // 105 questions, 18 passages. Text inline for sentence-level TTS.
-// Official source: CvTE Openbaar examen Lezen I beoordelingsmodellen
-// 2023–2025 (passage list + antwoordsleutel). Option stems belong in
-// the tekst-/opgavenboekje — most items here still only have A–C.
+// Questions, intros and pass lines are the CvTE openbaar examen
+// Lezen I items (2023, 2024, 2025). Options are A-D where the paper
+// has a fourth choice.
 // ============================================================
 
 import { examsWithSupplied } from './suppliedPapers';
@@ -28,7 +28,7 @@ export const LEZEN_2025: LezenExam = {
 			name: 'Ruud wordt rij-instructeur',
 			slug: 'ruud-rij-instructeur',
 			intro:
-				'Deze tekst komt van een website over werken en gezondheid. De tekst gaat over de omscholing van Ruud.',
+				'Deze tekst komt van een website over werken en gezondheid. De tekst gaat over de omscholing van Ruud. Omscholen is iets nieuws leren om ander werk te kunnen doen.',
 			text: 'Ruud wordt rij-instructeur\n\nRuud Kaag is timmerman en al sinds zijn 17e werkzaam in de bouwsector. Zijn beroep als timmerman heeft hij 45 jaar uitgevoerd. Binnenkort stopt hij echter bij zijn huidige werkgever. Ondertussen volgt hij een opleiding tot rij-instructeur. Een hele omslag op die leeftijd, maar voor Ruud was er geen andere optie. “Mijn lichaam wil niet meer. Op dit moment zit ik in de ziektewet, ik heb last van mijn botten.” Ruud kreeg bij zijn omscholing hulp van zowel werkgever Jeurissen als van adviescentrum Valedo.\n\nGrip op eigen loopbaan\n\nRuud nam het initiatief tot omscholing zelf. “Voor de kerst zei ik tegen mijn vrouw: het gaat niet meer. Ik las op internet een advertentie voor een opleiding tot rij-instructeur. De cursus startte begin dit jaar. Toen ben ik ook in gesprek gegaan met Joke Hermans, personeelsadviseur bij Jeurissen, met de mededeling dat ik binnenkort wil stoppen. Ik ga dan met vervroegd pensioen. Maar ik ben geen stilzitter, dus mijn baan als rij-instructeur doe ik er gewoon naast.” Joke noemt Ruud een prachtig voorbeeld van iemand die regie pakt op zijn loopbaan. “Ondanks dat Ruud ons wat later in het proces heeft betrokken, hebben we alsnog een traject in gang kunnen zetten.” Joke zocht contact met Valedo en legde hen de situatie voor. Zij zochten contact met Ruud, er werden gesprekken gevoerd en vragenlijsten ingevuld. “Valedo heeft mij goed geadviseerd. Ik krijg een deel van de opleiding betaald en dat is mooi meegenomen”, aldus Ruud. Ook krijgt hij van zijn huidige werkgever onder andere de examendagen cadeau. Joke: “Ruud heeft altijd goed voor Jeurissen gezorgd, natuurlijk zorgen wij nu het nodig is ook goed voor Ruud. Wij gunnen Ruud nog een plezierig werkzaam leven.”\n\nDenk op tijd na over je toekomst\n\nRuud vindt het een goede zaak dat mensen in de sector regelmatig medisch onderzocht worden. “Dat geldt zeker voor de zware beroepen.” Het adviesgesprek is volgens Ruud een goede aanvulling op het medisch onderzoek. “Denk zo vroeg mogelijk na of je je werk over 20 jaar nog kunt uitvoeren. Zo niet, ga iets anders doen, nu het nog kan. Hoe eerder je je ervan bewust bent, hoe beter. Ik heb een collega van 35 jaar, die al geopereerd is aan zijn rug. Hij moet nog zeker 30 jaar, maar houdt dat in dit beroep waarschijnlijk niet vol. Voor de zware beroepen is dat niet te doen. Ik heb 45 jaar gewerkt als timmerman en dat merk ik nu.”\n\nBewustwording\n\nWaar volgens Ruud nog winst is te behalen, is mensen bewust maken van de mogelijkheden. “Het is een zaak van opletten en nadenken over je eigen gezondheid. Daar is nog wel winst in te behalen. Ik heb collega’s die er lacherig over doen, die denken dat het niet voor hen geldt. Ook is niet iedereen in staat om te leren. Ik merk zelf ook dat het op deze leeftijd lastig is. Maar als je heel goed je best doet, lukt het echt wel.” Joke complimenteert Ruud voor het feit dat hij deze stap heeft genomen. “Heel veel medewerkers in de leeftijdscategorie van Ruud zijn afwachtend. Het zijn mensen die met 15, 16 jaar zijn begonnen met werken in de bouw. Een tijd waarin er geen Arbowetgeving was. Ze hebben altijd fysiek werk gedaan, in de veronderstelling dat ze na 40 dienstjaren kunnen stoppen. Die leeftijd schuift steeds verder op. Ook Ruud wilde én moest door, maar kon dat niet meer in zijn huidige werk. Zijn omscholing heeft tot een prachtige samenwerking geleid.”',
 			questions: [
 				q(
@@ -205,7 +205,7 @@ export const LEZEN_2025: LezenExam = {
 				q(
 					2025,
 					15,
-					"Onder het kopje 'Service maakt het verschil' staan veel vragen. Wat wil de schrijver hiermee duidelijk maken?",
+					'Onder het kopje ‘Service maakt het verschil’ staan veel vragen. Wat wil de schrijver hiermee duidelijk maken?',
 					{
 						A: 'dat het belangrijk is om klanten een goede service te bieden',
 						B: 'dat het belangrijk is om vragen van klanten te beantwoorden',
@@ -252,7 +252,7 @@ export const LEZEN_2025: LezenExam = {
 			name: 'Overuren',
 			slug: 'overuren',
 			intro:
-				'Deze tekst is een deel uit de arbeidsvoorwaarden in de metaalindustrie. De tekst gaat over overuren.',
+				'Deze tekst is een deel uit de arbeidsvoorwaarden in de metaalindustrie. De tekst gaat over overuren: uren die extra worden gewerkt.',
 			text: 'Overuren\n\nOverwerk is werktijd die buiten het dienstrooster (de voor u geldende dagelijkse werktijd) valt. Overwerk wordt extra beloond. Er is echter wel een aantal regels en uitzonderingen. Deze zijn:\n• De individuele werktijd in de metaalindustrie is 8 uren per dag. De werktijden worden vastgelegd in uw dienstrooster. Uren die u werkt buiten het dienstrooster, maar binnen de 8 werkuren per dag, worden ‘verschoven uren’ genoemd. Daarvoor gelden andere toeslagen.\n• Er is geen beloning als u slechts een enkele keer maximaal een half uur overwerkt, direct aansluitend op het normale werk. Bijvoorbeeld het afmaken van een klus, als dit af en toe voorkomt. Als u overwerkt tot 24.00 uur na een volle werkdag hoeft u de eerste 11 uren na het overwerk niet te werken. Als er binnen die 11 uren gewone werktijd gepland staat in het dienstrooster, moet de werkgever deze gewone werktijd echter wel betalen!\n\nOverwerk verplicht in de metaalindustrie?\n\nDe werkgever mag u verplichten om over te werken tot 10 uur per vier weken, maar moet altijd rekening houden met uw persoonlijke omstandigheden. Overwerk boven de 10 uur per vier weken kan alleen worden verplicht in het geval van calamiteiten. Met calamiteiten wordt bijvoorbeeld bedoeld:\n• boetes;\n• schade voor opdrachtgevers/derden of het eigen bedrijf. Als er geen sprake is van een calamiteit, mag u overwerk boven de 10 uur per vier weken dus weigeren. Voor bepaalde werknemers geldt de verplichting tot overwerk in elk geval niet, namelijk:\n• als u jonger bent dan 18 jaar;\n• als u om gezondheidsredenen geen overwerk kan/mag verrichten. Als u 55 jaar of ouder bent, kan u verplicht worden tot maximaal 5 uren overwerk in een periode van vier weken.\n\nBetaling van overuren in de metaalindustrie\n\nAls u overwerkt kan u kiezen hoe u de overuren wil laten vergoeden. Dat kan op verschillende manieren: 1) uren kunnen in geld worden vergoed; 2) uren kunnen met een maximum van 10 dagen per jaar in vrije tijd worden vergoed. De opname van de vrije tijd gebeurt in overleg met uw werkgever; 3) in overleg met uw werkgever kunnen meer dan 10 dagen per jaar ingezet worden als vrije tijd.',
 			questions: [
 				q(
@@ -262,7 +262,7 @@ export const LEZEN_2025: LezenExam = {
 					{
 						A: 'Ja, want het laatste uur valt buiten zijn dienstrooster.',
 						B: 'Nee, want deze werkuren tellen als verschoven uren.',
-						C: "Misschien, als zo'n verandering vaker voor gaat komen."
+						C: 'Misschien, als zo’n verandering vaker voor gaat komen.'
 					},
 					'B'
 				),
@@ -307,7 +307,7 @@ export const LEZEN_2025: LezenExam = {
 					{
 						A: 'de lezer overtuigen van het belang van overwerken',
 						B: 'de lezer uitleggen wat de regels voor overwerk zijn',
-						C: "de lezer waarschuwen voor de risico's van overwerken"
+						C: 'de lezer waarschuwen voor de risico’s van overwerken'
 					},
 					'B'
 				)
@@ -317,7 +317,7 @@ export const LEZEN_2025: LezenExam = {
 			name: 'De buurt-whatsapp',
 			slug: 'buurt-whatsapp',
 			intro:
-				'Deze tekst komt van een nieuwssite en gaat over speciale WhatsApp-groepen voor buren.',
+				'Deze tekst komt van een nieuwssite en gaat over speciale WhatsApp-groepen voor buren. WhatsApp is een app waarmee veel mensen (in groepen of één-op-één) op hun telefoon berichten naar elkaar sturen.',
 			text: "De buurt-whatsapp\n\nWhatsApp is één van de populairste diensten die mensen op hun telefoon gebruiken om berichten uit te wisselen met vrienden en familie. Steeds vaker wordt WhatsApp ook gebruikt door groepen met een serieuzer doel. De buurt-whatsapp dient zo’n serieus doel. Buurt-whatsapp groeit snel in Nederland: er zijn inmiddels zo'n 7300 groepen. Deze speciale whatsappgroepen zijn vaak bedoeld om verdachte situaties te melden aan buurtgenoten. Mitra van de Kuilen is beheerder van een buurt-whatsapp in Middenbeemster. Zo'n 70 van de 115 huishoudens in haar wijk zijn lid. “Sommige buurtbewoners willen er niet in. Soms omdat ze ruzie hebben met hun buren of andere wijkbewoners en niet met hen in een groep willen zitten. Anderen zijn sowieso meer op zichzelf.”\n\nGevoel van veiligheid\n\nTea Rukavina nam tien jaar geleden het initiatief voor de buurt-whatsappgroepen. Aanleiding was een poging tot inbraak bij haar thuis. “De politie kwam gelukkig snel. Die zijn natuurlijk een zoektocht gestart. Maar wat kon ik doen om de buurt snel te informeren over mogelijke gevaren? Zo is de buurt-whatsapp begonnen.” De appgroep lijkt te voorzien in een behoefte. “Het kan het gevoel van veiligheid stimuleren”, zegt Habib Wajid, onderzoeker en adviseur op het gebied van sociale media en maatschappelijke veiligheid. “Maar er zijn ook allerlei groepen waarbij de appgroep het gevoel van onveiligheid juist vergroot.”\n\nGevaren van de buurt-whatsapp\n\nWajid vertelt over situaties waarbij alle nieuwelingen in een dorp continu werden gevolgd via een buurt-whatsapp. En eentje waarbij leden van de whatsappgroep massaal achter een vermoedelijke inbreker aangingen. “Het is niet verantwoord als mensen zelf politie gaan spelen”, zegt Wajid. Het kan ook andere onrust veroorzaken. Bijvoorbeeld als een doodgewone glazenwasser wordt aangezien voor een inbreker, en de hele buurt in rep en roer is. Of wanneer oplettende buurtbewoners het geheime liefdesleven van een buurman onthullen, omdat ze zo vaak een vreemde auto voor zijn huis zien.\n\nDe zin en onzin van buurt-whatsapp\n\nEn dan zijn er nog de ruzies en irritaties die ontstaan omdat lang niet ieder lid zich aan de spelregels van de buurt-whatsapp houdt. “Dan doen ze bijvoorbeeld een oproep voor hun vermiste kat”, vertelt beheerder Van de Kuilen. “Ook verzoeken om de vuilniszakken buiten te zetten, worden niet altijd gewaardeerd. Een buurt-whatsapp is niet bedoeld voor oproepjes, dus af en toe grijp ik in. Dan speel ik even de politieagent”, zegt Van de Kuilen. “Sommige mensen storen zich er niet aan, maar je ziet ook meteen dat mensen onmiddellijk de groep verlaten. Die hebben geen zin in overbodige berichten.”",
 			questions: [
 				q(
@@ -386,69 +386,78 @@ export const LEZEN_2025: LezenExam = {
 				q(
 					2025,
 					29,
-					'Je kunt niet op school komen. Wat moet je doen?',
+					'Marisa volgt een opleiding aan het Vision College. Ze heeft een uitje met haar klas. Wordt dit uitje betaald door het Vision College?',
 					{
-						A: 'Dit ’s ochtends melden bij het Onderwijsservicebureau.',
-						B: 'Dit ’s ochtends melden bij je docent.',
-						C: 'Dit de dag ervoor al melden bij het Onderwijsservicebureau.'
-					},
-					'A'
-				),
-				q(
-					2025,
-					30,
-					'Hoe weet de school dat je op school bent?',
-					{
-						A: 'doordat je je Visionpas bij de ingang scant',
-						B: 'doordat de docent controleert of je er bent',
-						C: 'op allebei deze manieren'
+						A: 'Ja, want de kosten voor uitjes vallen onder het lesgeld.',
+						B: 'Nee, want studenten moeten zelf voor uitjes betalen.',
+						C: 'Alleen als het uitje onderdeel is van het lesprogramma.'
 					},
 					'C'
 				),
 				q(
 					2025,
-					31,
-					'Er is brand op school. De bedrijfshulpverlener is er nog niet. Wat doe je?',
+					30,
+					'Reza volgt een BBL-opleiding. Hij wil een derdenmachtiging laten invullen voor zijn cursusgeld. Wie moet deze derdenmachtiging ondertekenen voordat Reza hem inlevert?',
 					{
-						A: 'Je belt de brandweer.',
-						B: 'Je gaat naar de verzamelplaats.',
-						C: 'Je waarschuwt de conciërge of receptie.'
+						A: 'de werkgever en Reza zelf',
+						B: 'de werkgever en Team debiteuren',
+						C: 'Team debiteuren en Reza zelf'
+					},
+					'A'
+				),
+				q(
+					2025,
+					31,
+					'Stef is zijn Visionpas verloren. Hij vraagt een nieuwe pas aan. Wat moet Stef in totaal betalen?',
+					{
+						A: 'Hij hoeft niets te betalen.',
+						B: 'Hij moet € 5,- voor de nieuwe pas betalen.',
+						C: 'Hij moet € 5,- voor de nieuwe pas en € 5,- administratiekosten betalen.'
 					},
 					'C'
 				),
 				q(
 					2025,
 					32,
-					'Wie moet er cursusgeld betalen?',
+					'William gaat een vavo-opleiding van minder dan 29 lesuren volgen aan het Vision College. Waar hangt de hoogte van Williams cursusgeld van af?',
 					{
-						A: 'iedereen die bij het Vision College studeert',
-						B: 'studenten die een bepaald type opleiding volgen',
-						C: 'studenten van 18 jaar en ouder'
+						A: 'van het niveau van de opleiding die William gaat volgen',
+						B: 'van het totale aantal lesuren van Williams opleiding',
+						C: 'van Williams leeftijd bij de start van de opleiding'
 					},
 					'B'
 				),
 				q(
 					2025,
 					33,
-					'Hoeveel cursusgeld betaalt een vavo-student die 25 lesuren per week volgt en door de rijksoverheid wordt bekostigd?',
-					{ A: '€ 236,00', B: '€ 573,00', C: '€ 750,00' },
+					'Stacy hoort dat het alarmsignaal afgaat. Wat kan ze het beste doen?',
+					{
+						A: 'bellen naar toestel 100 of naar 8888',
+						B: 'een conciërge of de receptie waarschuwen',
+						C: 'meteen naar de verzamelplaats buiten gaan',
+						D: 'zich melden bij een bedrijfshulpverlener'
+					},
 					'C'
 				),
 				q(
 					2025,
 					34,
-					'Je vergeet je Visionpas thuis. Je gaat naar school en krijgt een tijdelijke pas. Aan het einde van de dag lever je de tijdelijke pas weer in. Hoeveel kost je dat?',
-					{ A: '€ 5,-', B: '€ 10,-', C: 'niets' },
+					'Dounia gaat stoppen met haar opleiding in de sector Gezondheidszorg. Ze wil zich laten uitschrijven. Kan ze hiervoor bij de decaan terecht?',
+					{
+						A: 'Ja, de decaan kan haar uitschrijven.',
+						B: 'Nee, ze moet daarvoor naar haar mentor.',
+						C: 'Dat kan, maar het mag ook bij het Studie Informatie Punt (STIP).'
+					},
 					'A'
 				),
 				q(
 					2025,
 					35,
-					'Je hebt op school een ongeluk gehad en kunt niet meer lopen. Je collega-student gaat hulp halen. Wat doe jij?',
+					'Wat meld je door middel van het scannen van je Visionpas?',
 					{
-						A: 'Je belt de receptie.',
-						B: 'Je wacht op dezelfde plek.',
-						C: 'Je zoekt een EHBO-doos.'
+						A: 'Alleen dat je in het gebouw aanwezig bent.',
+						B: 'Alleen dat je in het gebouw aanwezig bent en in welke onderwijsruimte je bent.',
+						C: 'Dat je in het gebouw aanwezig bent, in welke onderwijsruimte je bent en dat je een bepaalde les hebt gevolgd.'
 					},
 					'B'
 				)
@@ -472,68 +481,68 @@ export const LEZEN_2024: LezenExam = {
 				q(
 					2024,
 					1,
-					'Waar worden de basisproducten voor het gebak gemaakt?',
+					'Sanne wil voor Marké gaan werken. Ze wil graag op het kantoor werken en de planningen maken. Welke kantoorafdeling van Marké past bij haar?',
 					{
-						A: 'in de centrale bakkerij in Utrecht',
-						B: 'in de decentrale bakkerijen',
-						C: 'in de proefbakkerij'
+						A: 'administratie',
+						B: 'bedrijfsbureau',
+						C: 'personeelszaken'
 					},
-					'A'
+					'B'
 				),
 				q(
 					2024,
 					2,
-					'Wanneer worden er in de centrale bakkerij producten gemaakt?',
+					'Ezra wil voor Marké gaan werken. Hij vindt het leuk om gebak mooi te maken. Welke werkplek past bij hem?',
 					{
-						A: 'alleen overdag',
-						B: 'overdag en soms ook ’s nachts',
-						C: 'dag en nacht, de bakkerij is altijd open'
+						A: 'de centrale bakkerij',
+						B: 'de decentrale bakkerij',
+						C: 'de proefbakkerij'
 					},
 					'B'
 				),
 				q(
 					2024,
 					3,
-					'Wat is een kenmerk van het werk in de centrale bakkerij?',
+					'Joshua wil in de decentrale bakkerij gaan werken. Hoe laat moet hij dan beginnen?',
 					{
-						A: 'Er wordt door de bakkers op traditionele wijze gebak gemaakt.',
-						B: 'Er wordt met machines gewerkt.',
-						C: 'Nieuwe producten worden er ontwikkeld.'
+						A: 'tussen 2.00 en 4.00 uur',
+						B: 'om 7.00 uur',
+						C: 'om 17.00 uur'
 					},
 					'B'
 				),
 				q(
 					2024,
 					4,
-					'In de decentrale bakkerij worden nieuwe medewerkers intern opgeleid. Hoe gaat dat?',
+					'Karl wil in een Marké-bakkerij gaan werken. Hij houdt ook van techniek. Welke werkplek past bij hem?',
 					{
-						A: 'Ze beginnen met eenvoudig werk en krijgen steeds meer taken.',
-						B: 'Ze leren het vak bij een ervaren bakker die hen begeleidt.',
-						C: 'Ze worden door de leidinggevende beoordeeld en bijgestuurd.'
+						A: 'de centrale bakkerij',
+						B: 'de decentrale bakkerij',
+						C: 'de proefbakkerij'
 					},
 					'A'
 				),
 				q(
 					2024,
 					5,
-					'Wat doet de afdeling inkoop?',
+					'Piet is op zoek naar een baan in de bakkerij-organisatie. Wat heeft Piet nodig om kans te maken op een baan?',
 					{
-						A: 'Het maakt de werkplanningen.',
-						B: 'Het koopt grondstoffen en verpakkingen in.',
-						C: 'Het ontwikkelt nieuwe producten.'
+						A: 'een afgeronde BBL-opleiding tot bakker',
+						B: 'een zelfstandig en stressbestendig karakter',
+						C: 'ervaring in een bakkerij of met voedingsmiddelen'
 					},
-					'B'
+					'C'
 				),
 				q(
 					2024,
 					6,
 					'Wat is het doel van deze tekst?',
 					{
-						A: 'de lezer enthousiast maken om bij de bakkerij te komen werken',
-						B: 'de lezer informeren over hoe het gebak bij Marké wordt gemaakt',
-						C: 'de lezer vertellen over de verschillende soorten gebak bij Marké'
+						A: 'de lezer informeren over de werkprocessen bij de Marké-bakkerijen',
+						B: 'de lezer overhalen om te solliciteren naar een functie bij Marké',
+						C: 'de lezer uitleggen hoe professioneel de verschillende Marké-afdelingen zijn'
 					},
-					'A'
+					'B'
 				)
 			]
 		},
@@ -541,53 +550,64 @@ export const LEZEN_2024: LezenExam = {
 			name: 'De beursstand',
 			slug: 'beursstand',
 			intro:
-				"Deze tekst komt uit een studieboek. Hij gaat over de 'beursstand': een plek op een beurs. Een beurs is een evenement waar bedrijven zich kunnen presenteren.",
+				'Deze tekst komt uit een studieboek. Hij gaat over de ‘beursstand’: een plek op een beurs. Een beurs is een evenement waar bedrijven zich kunnen presenteren.',
 			text: 'De beursstand\n\nOp een beurs moeten de aanbieders ruimte huren van de organisator. In die ruimte komt een stand. Een stand kan allerlei vormen aannemen, van een kraampje op een handelsmarkt tot een zaal binnen een publieksbeurs. Een stand moet worden ontworpen en ingericht, net als een winkel. De stand is je visitekaartje. Hij moet er uitnodigend uitzien en in het oog springen. Hoe je een stand inricht, hangt ook af van het soort stand. Een tussenstand in een rij geeft minder mogelijkheden dan een hoekstand (aan het eind van de rij) of een kopstand (dwars op de rij). De meeste mogelijkheden biedt een eilandstand: een afgescheiden ruimte met looppaden er omheen. Die heeft meer ruimte en is dus duurder. Het simpelste ‘eiland’ maak je door een rondje van kraampjes, maar het kan ook met houten vloerdelen, diverse kraampjes en looppaden. Hoe groot de stand moet zijn hangt niet alleen af van het budget, maar ook van het verwachte aantal bezoekers. Het productaanbod kan ook eisen aan de afmetingen stellen. Wil je aan catering doen, dan is ook wat meer ruimte nodig.\n\nMet de organisator overleg je waar de stand precies komt: op welk deel van de beurs? Je zorgt voor een logische keus op thema. Is de ligging gunstig ten opzichte van faciliteiten zoals toiletten, horeca en de ingang en uitgang? Het inrichten van een stand kun je uitbesteden aan een standbouwer, een gespecialiseerde onderneming. Inrichten is een vak apart. Het is ook belangrijk: een slecht gepresenteerde stand trekt weinig publiek, deelname aan de beurs is dan weggegooid geld.\n\nEntree\n\nDe entree van je stand moet open zijn. Ook al zet je een paar wanden om een stand, mensen moeten naar binnen kunnen kijken en makkelijk naar binnen kunnen lopen.\n\nZitruimte\n\nEr moet ruimte zijn voor mensen om een poosje te kunnen blijven. Bij een kraampje zet je stoelen of barkrukken. Op een ‘pleintje’ binnen een eilandstand kun je zithoeken maken met lees- en demonstratiemateriaal. Komen er gezinnen, zorg dan voor een speelhoek voor kinderen. Dan geef je de ouders de tijd en ruimte om te doen waar ze voor kwamen. Zorg ook voor ruimte om rustig met klanten te overleggen. Ook al ziet je stand er ‘open’ uit, hij moet wel duidelijk afgescheiden zijn van andere stands. Wil je binnenkomen? Graag, maar ga niet te snel weer weg.\n\nVerlichting\n\nVerlichting is belangrijk. Net als bij winkels is de algemene regel: niet te veel licht bij de entree, daar houden mensen niet van. Mensen kijken onbewust naar verlichte gedeeltes, dus je wilt meer licht achterin of in het centrum. Het soort product bepaalt het soort licht: sieraden vragen om warm licht, kleding vraagt om licht dat de kleuren goed laat zien. Je kunt hulpmaterialen gebruiken, zoals posters. Ook foto’s, filmpjes en een digitale presentatie kunnen nuttig zijn.\n\nRouting\n\nOok bij een kleine stand is routing belangrijk: in welke richting lopen de mensen? Wat zien ze het eerst? In een grotere eilandstand zorg je ervoor dat de mensen in een logische looprichting langs alle onderdelen komen. Deelname aan een beurs is vaak een flinke investering. Dat is het natuurlijk alleen waard als je veel bezoekers trekt. Dus zorg voor een goede voorbereiding: laat je zakelijke kennissen weten dat je er zult zijn! Dat verhoogt straks je opbrengst. Bedrijven kunnen de klanten er vast op wijzen door een nieuwsbrief rond te sturen. Met het weggeven van toegangskaarten voor de beurs maak je een goede indruk. Als jouw bedrijf een tijdschrift voor klanten heeft, schrijf je er vast een artikel over.',
 			questions: [
 				q(
 					2024,
 					7,
-					'Welk type stand biedt de meeste mogelijkheden voor de inrichting?',
-					{ A: 'de eilandstand', B: 'de hoekstand', C: 'de kopstand' },
+					'Bij wat voor beursstand kun je het meeste afwisselen in inrichting?',
+					{
+						A: 'een eilandstand',
+						B: 'een hoekstand',
+						C: 'een kopstand',
+						D: 'een tussenstand'
+					},
 					'A'
 				),
 				q(
 					2024,
 					8,
-					'De tekst noemt vier dingen die bepalen hoe groot een stand moet zijn. Welk van onderstaande hoort daar NIET bij?',
-					{ A: 'het budget', B: 'de locatie op de beurs', C: 'het verwachte aantal bezoekers' },
-					'B'
-				),
-				q(
-					2024,
-					9,
-					'Hoe moet de verlichting van een beursstand zijn?',
+					'Alette wil op een beurs oorbellen verkopen in een stand. Welke tip over verlichting geldt voor Alette?',
 					{
-						A: 'Bij de entree moet het meeste licht zijn om mensen naar binnen te trekken.',
-						B: 'Het licht moet overal gelijk zijn zodat mensen alles goed kunnen zien.',
-						C: 'Achterin de stand of in het centrum van de stand moet meer licht zijn dan bij de entree.'
+						A: 'Gebruik licht dat de kleuren goed laat zien.',
+						B: 'Gebruik veel licht bij de entree van de stand.',
+						C: 'Gebruik vooral warm licht op de producten.'
 					},
 					'C'
 				),
 				q(
 					2024,
-					10,
-					'Wat is een goede voorbereiding op deelname aan een beurs?',
+					9,
+					'Waar staat informatie over de plaats van producten in de stand?',
 					{
-						A: 'Je maakt zakelijke afspraken met andere deelnemers aan de beurs.',
-						B: 'Je nodigt je zakelijke relaties van tevoren uit om de beurs te bezoeken.',
-						C: 'Je vraagt aan je zakelijke relaties of ze gratis toegangskaarten willen.'
+						A: 'bij ‘Entree’',
+						B: 'bij ‘Zitruimte’',
+						C: 'bij ‘Verlichting’',
+						D: 'bij ‘Routing’'
 					},
-					'B'
+					'D'
+				),
+				q(
+					2024,
+					10,
+					'Welke tip staat in de tekst om zo veel mogelijk bezoekers te krijgen in je beursstand?',
+					{
+						A: 'Informeer je relaties over de beursstand.',
+						B: 'Investeer veel geld in de beursstand.',
+						C: 'Zorg voor een logische looprichting.'
+					},
+					'A'
 				),
 				q(
 					2024,
 					11,
 					'Wat is het doel van deze tekst?',
 					{
-						A: 'de lezer informeren over het inrichten van een beursstand',
-						B: 'de lezer overtuigen van het nut van deelname aan een beurs',
-						C: 'de lezer waarschuwen voor de kosten van een beurs'
+						A: 'de lezer adviseren over het voorbereiden van een beursdeelname',
+						B: 'de lezer informeren over de huurvoorwaarden van een beursstand',
+						C: 'de lezer overhalen een standbouwer in te huren voor de beursstand',
+						D: 'de lezer overtuigen van het nut van deelname aan een beurs'
 					},
 					'A'
 				)
@@ -603,62 +623,66 @@ export const LEZEN_2024: LezenExam = {
 				q(
 					2024,
 					12,
-					'Wanneer spreken we van langdurend ziekteverzuim?',
+					'Max meldt zich regelmatig ziek, omdat hij werkstress heeft. Wat kan de werkgever van Max het beste doen, volgens de tekst?',
 					{
-						A: 'als een werknemer drie weken of langer ziek is',
-						B: 'als een werknemer zes weken of langer ziek is',
-						C: 'als een werknemer een half jaar of langer ziek is'
+						A: 'de bedrijfsarts erbij betrekken',
+						B: 'de oorzaak zoeken en zo mogelijk ingrijpen',
+						C: 'het loon van twee ziektedagen inhouden'
 					},
 					'B'
 				),
 				q(
 					2024,
 					13,
-					'Wat moet de werkgever betalen als een werknemer langdurig ziek is?',
+					'Wat gebeurt er na zes weken verzuim?',
 					{
-						A: 'alleen de kosten van het re-integratietraject',
-						B: 'het volledige loon en een vervangende werknemer',
-						C: 'het loon (deels), kosten voor re-integratie en vervanging'
+						A: 'dan wordt de arbo- of bedrijfsarts erbij betrokken',
+						B: 'dan wordt een re-integratietraject gestart',
+						C: 'dan wordt een verzuimverzekering afgesloten'
 					},
-					'C'
+					'B'
 				),
 				q(
 					2024,
 					14,
-					'Een werknemer meldt zich vaak ziek. Aan welke mogelijke oorzaak wordt in de tekst NIET gerefereerd?',
-					{ A: 'een chronische aandoening', B: 'een conflict op het werk', C: 'werkstress' },
-					'A'
+					'Een verzuimverzekering vergoedt loondoorbetaling. Wat biedt zo’n verzekering nog meer?',
+					{
+						A: 'advies over begeleiding van werknemers in de WIA',
+						B: 'advies over het voorkomen en beperken van verzuim',
+						C: 'advies over vervanging van zieke werknemers'
+					},
+					'B'
 				),
 				q(
 					2024,
 					15,
-					"Op welke manier kan een werkgever ontdekken dat er sprake is van 'grijs verzuim'?",
+					'Carmen heeft bij het sporten haar arm gebroken. Met een gebroken arm kan ze haar werk niet doen. Ze meldt zich daarom ziek op haar werk. Wat voor soort verzuim is dat?',
 					{
-						A: 'De werkgever laat een bedrijfsarts de werknemer controleren.',
-						B: 'De werkgever schakelt een incassobureau in.',
-						C: 'Dit staat niet in de tekst.'
+						A: 'wit verzuim',
+						B: 'zwart verzuim',
+						C: 'grijs verzuim'
 					},
-					'C'
+					'A'
 				),
 				q(
 					2024,
 					16,
-					'Een werknemer is voor de tweede keer geblesseerd geraakt bij het voetballen en kan daarom niet werken. Wat kan de werkgever doen?',
+					'Wat zegt de tekst over sporten?',
 					{
-						A: 'De werkgever kan de werknemer ontslaan.',
-						B: 'De werkgever kan de werknemer formeel vragen om te stoppen met voetballen.',
-						C: 'De werkgever kan weigeren het loon door te betalen.'
+						A: 'Dat zorgt meestal voor meer verzuim.',
+						B: 'Dat zorgt meestal voor minder verzuim.',
+						C: 'Dat heeft geen invloed op verzuim.'
 					},
 					'B'
 				),
 				q(
 					2024,
 					17,
-					'Wat is het doel van deze tekst?',
+					'Wat is het belangrijkste doel van deze tekst?',
 					{
-						A: 'de lezer adviseren over het omgaan met verzuim als werkgever',
-						B: 'de lezer informeren over de rechten van werknemers bij verzuim',
-						C: 'de lezer waarschuwen dat werknemers zich niet onterecht ziek moeten melden'
+						A: 'werkgevers adviseren hoe om te gaan met verzuim en de financiële risico’s ervan',
+						B: 'werkgevers overhalen een zo betrouwbaar mogelijke verzuimverzekering af te sluiten',
+						C: 'werkgevers waarschuwen voor de belangrijkste gevolgen van langdurig verzuim'
 					},
 					'A'
 				)
@@ -673,77 +697,77 @@ export const LEZEN_2024: LezenExam = {
 				q(
 					2024,
 					18,
-					'Wat is het doel van het ministerie van Defensie met de autosportklas?',
+					'Wat doet het ministerie van Defensie voor de autosportklas van Newton College?',
 					{
-						A: 'jongeren enthousiast maken voor een technische opleiding',
-						B: 'jongeren opleiden voor een baan bij Defensie',
-						C: 'jongeren laten zien hoe leuk racen is'
+						A: 'Zij bieden technische opleidingen aan studenten van de autosportklas.',
+						B: 'Zij leveren de auto’s voor de autosportklas aan het Newton College.',
+						C: 'Zij zorgen ervoor dat de studenten van de autosportklas werk krijgen.'
 					},
-					'A'
+					'B'
 				),
 				q(
 					2024,
 					19,
-					'Wat is het belangrijkste selectiecriterium voor de autosportklas?',
+					'Welke studenten worden vooral geselecteerd voor de autosportklas?',
 					{
-						A: 'goede cijfers',
-						B: 'motivatie en doorzettingsvermogen',
-						C: 'technische vaardigheden'
+						A: 'studenten die al een technische opleiding of carrière bij Defensie hebben',
+						B: 'studenten die hoge cijfers halen, gemotiveerd zijn en kunnen samenwerken',
+						C: 'studenten die zichzelf weten te bewijzen in een gesprek met hun mentor'
 					},
 					'B'
 				),
 				q(
 					2024,
 					20,
-					'Waarom is het een uitdaging om de autosportklas in stand te houden?',
+					'Wat vindt Kate Bitar het lastigst aan het traject van de autosportklas?',
 					{
-						A: 'Er zijn niet genoeg studenten die zich aanmelden.',
-						B: 'Het is elk jaar onzeker of er voldoende geld is.',
-						C: 'Het is moeilijk om geschikte docenten te vinden.'
-					},
-					'B'
-				),
-				q(
-					2024,
-					21,
-					'Waarom besloot Hussam om van niveau 3 naar niveau 4 te gaan?',
-					{
-						A: 'Alleen niveau 4 studenten mogen meedoen aan de autosportklas.',
-						B: 'Zijn docent adviseerde hem om naar niveau 4 te gaan.',
-						C: 'Met niveau 4 heeft hij meer kans op een baan.'
+						A: 'het financieel mogelijk maken van het traject',
+						B: 'het opzetten en ontwikkelen van het traject',
+						C: 'het vinden van goede studenten voor het traject'
 					},
 					'A'
 				),
 				q(
 					2024,
-					22,
-					'Waarom loopt het extra jaar autosportklas over twee schooljaren?',
+					21,
+					'Wat geldt voor de studenten Hussam en Abel?',
 					{
-						A: 'omdat de autosportklas te veel lesstof heeft voor een jaar',
-						B: 'omdat het raceseizoen een kalenderjaar duurt',
-						C: 'omdat studenten anders te weinig tijd voor stages hebben'
+						A: 'Ze geven allebei aan later verder te willen in de racebranche.',
+						B: 'Ze hebben allebei een overstap gemaakt naar een hoger niveau.',
+						C: 'Ze zijn allebei gemotiveerd om aan het traject deel te nemen.'
+					},
+					'C'
+				),
+				q(
+					2024,
+					22,
+					'Wat wil de opleidingsmanager, Lauren Ramos, veranderen aan het traject van de autosportklas?',
+					{
+						A: 'Ze wil het leerzamer maken met de hulp van leerbedrijven.',
+						B: 'Ze wil het meer seizoenen laten doorlopen dan het nu doet.',
+						C: 'Ze wil zorgen dat het beter aansluit op de bestaande opleidingen.'
 					},
 					'B'
 				),
 				q(
 					2024,
 					23,
-					'Waarom zou de autosportklas tweetalig moeten zijn?',
+					'Wat is het meest leerzaam in het traject, volgens Bernardo Marelis?',
 					{
-						A: 'Veel studenten in de autosportklas zijn buitenlands.',
-						B: 'In de racewereld wordt voornamelijk Engels gesproken.',
-						C: 'De excursies zijn naar het buitenland.'
+						A: 'de excursies',
+						B: 'de gastlessen',
+						C: 'de praktijkervaring'
 					},
-					'B'
+					'C'
 				),
 				q(
 					2024,
 					24,
-					'Wat is het doel van deze tekst?',
+					'Wat is de belangrijkste boodschap van de tekst?',
 					{
-						A: 'de lezer enthousiast maken over de autosportklas van Newton College',
-						B: 'de lezer informeren over de voor- en nadelen van de autosportklas',
-						C: 'de lezer overtuigen om een technische opleiding te gaan doen'
+						A: 'De autosportklas is een uitdagend traject voor de beste studenten.',
+						B: 'Het traject van de autosportklas moet worden uitgebreid.',
+						C: 'Je maakt met de autosportklas kans op een internationale carrière.'
 					},
 					'A'
 				)
@@ -759,62 +783,68 @@ export const LEZEN_2024: LezenExam = {
 				q(
 					2024,
 					25,
-					'Wat vinden jongeren het belangrijkst bij het zoeken naar werk?',
-					{ A: 'een goed salaris', B: 'lichamelijk actief werk', C: 'zekerheid en stabiliteit' },
+					'Welk verrassend onderzoeksresultaat wordt in de tekst genoemd?',
+					{
+						A: 'Veel jongeren hebben geen interesse in hun werk.',
+						B: 'Veel jongeren vinden de inhoud van hun werk onbelangrijk.',
+						C: 'Veel jongeren willen geen risico’s nemen in hun werk.'
+					},
 					'C'
 				),
 				q(
 					2024,
 					26,
-					'Wat is een verrassende uitkomst van het onderzoek?',
+					'Welk punt uit de Top 5 van ouderen vindt een deel van de jongeren ook belangrijk, volgens de tekst?',
 					{
-						A: 'Jongeren zijn meer op zoek naar zekerheid dan ouderen.',
-						B: 'Ouderen willen meer verdienen dan jongeren.',
-						C: 'Jongeren vinden salaris belangrijker dan de inhoud van het werk.'
+						A: 'concrete resultaten',
+						B: 'creativiteit',
+						C: 'kwaliteit'
+					},
+					'B'
+				),
+				q(
+					2024,
+					27,
+					'In de Top 5 van ouderen komt de wens naar zekerheid en stabiliteit in het werk niet voor. Waarom niet, volgens Vera Tames?',
+					{
+						A: 'omdat veel ouderen al genoeg zekerheid en stabiliteit hebben opgebouwd',
+						B: 'omdat veel ouderen hun gezondheid belangrijker vinden dan hun ambities',
+						C: 'omdat veel ouderen liever thuis klusjes doen en creatief bezig zijn'
 					},
 					'A'
 				),
 				q(
 					2024,
-					27,
-					'Waarom vinden ouderen creativiteit belangrijker dan jongeren, volgens Vera Tames?',
-					{
-						A: 'Ouderen hebben meer werkervaring en dus meer ideeën.',
-						B: 'Ouderen hebben al een financieel fundament en kiezen dus eerder voor inhoud.',
-						C: 'Ouderen zijn ambitieuzer dan jongeren.'
-					},
-					'B'
-				),
-				q(
-					2024,
 					28,
-					'Waarom zijn jongeren bang voor de toekomst, volgens Marcia Bregman?',
+					'Wie willen zich volgens onderzoeker Van Veen vooral ontwikkelen?',
 					{
-						A: 'De wereld verandert te snel voor hen.',
-						B: 'Het is voor jongeren steeds moeilijker om een vast contract te krijgen.',
-						C: 'Jongeren vinden geen baan die bij hen past.'
+						A: 'jongeren',
+						B: 'ouderen',
+						C: 'werklozen',
+						D: 'werkloze ouderen'
 					},
-					'B'
+					'D'
 				),
 				q(
 					2024,
 					29,
-					'Wat adviseert Van Veen aan werkgevers die jong personeel zoeken?',
+					'Waar zijn jongeren volgens Marcia Bregman bang voor?',
 					{
-						A: 'benadruk het avontuurlijke karakter van de baan',
-						B: 'bied een goed salaris en veel vakantiedagen',
-						C: 'bied zekerheid en stabiliteit'
+						A: 'om ontslagen te worden',
+						B: 'om van werk te veranderen',
+						C: 'voor een toekomst met eigen huis en kinderen',
+						D: 'voor veranderingen'
 					},
-					'C'
+					'A'
 				),
 				q(
 					2024,
 					30,
-					'Wat is het doel van deze tekst?',
+					'Wie kunnen vooral voordeel halen uit de onderzoeksresultaten?',
 					{
-						A: 'de lezer informeren over de verschillende wensen van jongere en oudere werkzoekenden',
-						B: 'de lezer overtuigen dat jongeren betere werknemers zijn dan ouderen',
-						C: 'de lezer adviseren hoe je het beste werk kunt zoeken'
+						A: 'werkgevers',
+						B: 'werknemers',
+						C: 'werkzoekenden'
 					},
 					'A'
 				)
@@ -829,53 +859,57 @@ export const LEZEN_2024: LezenExam = {
 				q(
 					2024,
 					31,
-					'Op welke manier kun je een abonnement NIET opzeggen?',
-					{ A: 'bij de Gastenservice', B: 'per e-mail', C: 'telefonisch' },
-					'C'
+					'Jorik betaalt maandelijks voor zijn abonnement. Wat gebeurt er als het abonnement van Jorik één jaar oud is?',
+					{
+						A: 'Dan krijgt hij een abonnement voor onbepaalde tijd.',
+						B: 'Dan krijgt hij opnieuw een abonnement voor een jaar.',
+						C: 'Dan loopt het abonnement dat hij heeft automatisch af.'
+					},
+					'A'
 				),
 				q(
 					2024,
 					32,
-					'Jan heeft een abonnement in een keer betaald. Na een jaar wil hij zijn abonnement verlengen. Wat moet hij doen?',
+					'Sifra wil het park bezoeken, maar ze heeft haar abonnement thuis laten liggen. Mag Sifra het park in?',
 					{
-						A: 'Hij hoeft niets te doen, het abonnement loopt automatisch door.',
-						B: 'Hij moet een nieuw abonnement kopen.',
-						C: 'Hij moet het abonnement verlengen bij de Gastenservice.'
+						A: 'Ja, want haar gegevens staan bij Wonderrijk geregistreerd.',
+						B: 'Nee, want ze moet haar abonnement kunnen laten zien.',
+						C: 'Misschien, de controleur bij de hoofdingang beslist daarover.'
 					},
 					'B'
 				),
 				q(
 					2024,
 					33,
-					'Fatima is 62 jaar. Zij wil een abonnement kopen bij de Gastenservice. Wat moet zij meenemen?',
+					'Mitch heeft een parkeerabonnement. Het is erg druk op de parkeerplaats en er zijn geen plaatsen vrij. Wat kan Mitch doen?',
 					{
-						A: 'een legitimatiebewijs',
-						B: 'een legitimatiebewijs en een pasfoto',
-						C: 'een pasfoto'
+						A: 'Hij kan een speciale parkeerplaats gebruiken waarop abonnementhouders voorrang hebben.',
+						B: 'Hij kan het geld van het abonnement terugvragen, want hij heeft recht op een parkeerplaats.',
+						C: 'Hij kan niets doen, want zijn abonnement geeft hem geen garantie op een parkeerplaats.'
+					},
+					'C'
+				),
+				q(
+					2024,
+					34,
+					'Het abonnement van Ramon is beschadigd en daardoor niet meer geldig. Hij vraagt een kopie van zijn abonnement aan. Moet hij hiervoor administratiekosten betalen?',
+					{
+						A: 'Ja, dat moet iedereen die een kopie van een abonnement aanvraagt.',
+						B: 'Nee, dat hoeft alleen wanneer iemand zijn abonnement verloren is.',
+						C: 'Misschien, dat hangt ervan af hoe oud het abonnement van Ramon is.'
 					},
 					'A'
 				),
 				q(
 					2024,
-					34,
-					'Wanneer mag je NIET parkeren met een parkeerabonnement?',
-					{
-						A: 'als het parkeerterrein bijna vol is',
-						B: 'kort voor sluitingstijd van het park',
-						C: 'op dagen dat het park gesloten is voor bedrijfsevenementen'
-					},
-					'B'
-				),
-				q(
-					2024,
 					35,
-					'Wat gebeurt er als je een abonnement met maandelijkse betaling hebt en de eerste 12 maanden zijn voorbij?',
+					'Meryem heeft al twee jaar een abonnement voor onbepaalde tijd. Kan Wonderrijk de prijs van Meryems abonnement aanpassen?',
 					{
-						A: 'Het abonnement stopt automatisch.',
-						B: 'Het abonnement loopt door en je kunt het per maand opzeggen.',
-						C: 'Je krijgt een herinnering om het abonnement te verlengen.'
+						A: 'Ja, Wonderrijk kan abonnementsprijzen op ieder moment aanpassen.',
+						B: 'Nee, alleen de prijzen van nieuwe abonnementen kunnen worden aangepast.',
+						C: 'Alleen als Wonderrijk Meryem een maand van tevoren informeert.'
 					},
-					'B'
+					'C'
 				)
 			]
 		}
@@ -891,63 +925,77 @@ export const LEZEN_2023: LezenExam = {
 			name: 'Vijf fabels over mbo-opleidingen van Ameda',
 			slug: 'vijf-fabels',
 			intro:
-				'Deze tekst staat op de website van onderwijsinstelling Ameda. Je kan bij Ameda een thuisstudie doen. Deze tekst gaat over de mbo-opleidingen van Ameda.',
-			text: 'Vijf fabels over mbo-opleidingen van Ameda\n\nVoor het mbo heb je alleen je handen nodig, geen hersens.\n\nI Niet waar. Bij Ameda vind je 29 erkende mbo-opleidingen die je perfect voorbereiden op het bedrijfsleven, variërend van boekhouder en kinderleidster tot dierenartsassistent en beveiliger. Je leert allerlei taken uit te voeren. Kies je bijvoorbeeld voor de opleiding Dierenartsassistent? Dan leer je niet alleen alles over operatie-instrumenten en de hygiëne bij operaties; je doet ook communicatieve vaardigheden op en je leert onder meer bepaalde receptiewerkzaamheden uitvoeren. De mbo-opleidingen van Ameda bereiden je dus voor op alle aspecten van een beroep!\n\nBij Ameda zit tussen onderwijs en praktijk een wereld van verschil.\n\nII Onjuist! Ameda bepaalt samen met het bedrijfsleven aan welke eisen bepaalde opleidingen moeten voldoen en over welke inzichten, kennis en vaardigheden je aan het einde van de opleiding moet beschikken. Doordat het onderwijs en de praktijk juist wél goed op elkaar aansluiten, heb je als mbo-student nadat je je diploma hebt behaald een heel grote kans om supersnel een baan te vinden. Dat is ook logisch, want tijdens je opleiding word je uitstekend voorbereid op de praktijk!\n\nAmeda-studenten zijn een nummer, ze krijgen geen individuele begeleiding.\n\nIII Zeker niet! Een Ameda-opleiding is ingericht als individueel leertraject. Kies je voor een mbo-opleiding van Ameda, dan krijg je tijdens je opleiding professionele begeleiding van deskundige docenten uit het vakgebied. Zij geven je feedback en kijken je huiswerkopdrachten na, doorgaans binnen 48 uur. En heb je vragen? Dan kun je natuurlijk ook altijd bij je docent terecht. En vind je het fijn om met je medestudenten van gedachten te wisselen? Dat kan via Ameda Campus, de digitale leeromgeving van Ameda!\n\nEen mbo-diploma van Ameda is niet erkend.\n\nIV Echt niet! Alle mbo-opleidingen van Ameda:\n- staan onder toezicht van de Inspectie van het Onderwijs;\n- zijn geregistreerd bij het Centraal Register Beroepsopleidingen (CREBO);\n- zijn erkend door het ministerie van Onderwijs, Cultuur en Wetenschap (OC&W). Mbo-opleidingen van Ameda vallen onder de Wet Educatie en Beroepsonderwijs (WEB). Dit houdt in dat het door de minister erkende opleidingen zijn, die geheel voldoen aan de kwaliteitseisen die de overheid aan officiële mbo-opleidingen stelt. Een mbo-diploma van Ameda heeft dus exact dezelfde waarde als dat van bijvoorbeeld een ROC. Jaarlijks volgen ruim 5000 studenten een mbo-opleiding bij Ameda. Dit maakt Ameda tot één van de grootste mbo-opleiders van Nederland!\n\nBij Ameda loop je geen stage.\n\nV Niet waar! De beroepspraktijkvorming (BPV) vormt een belangrijk onderdeel van je opleiding. Tijdens de stage pas je de opgedane theorie toe in de praktijk van je toekomstige beroep. Hierdoor doe je bepaalde vaardigheden op die je alleen in de praktijk kunt leren en krijg je een uitstekend beeld van de dagelijkse gang van zaken van je (toekomstige) beroep! Tijdens de BPV word je intensief begeleid door een praktijkbegeleider, een ervaren medewerker van het bedrijf waar je werkt. Bovendien krijg je door Ameda ook een BPV-begeleider toegewezen. De BPV-begeleider geeft jou en je praktijkbegeleider tussentijds feedback en advies!',
+				'Deze tekst staat op de website van onderwijsinstelling Ameda. Je kan bij Ameda een thuisstudie doen, maar ook lessen volgen op school. Deze tekst gaat over de mbo-opleidingen van Ameda.',
+			paragraphLabels: ['I', 'II', 'III', 'IV', 'V'],
+			paragraphMap: { I: 2, II: 4, III: 6, IV: 8, V: 10 },
+			text: 'Vijf fabels over mbo-opleidingen van Ameda\n\nVoor het mbo heb je alleen je handen nodig, geen hersens.\n\nNiet waar. Bij Ameda vind je 29 erkende mbo-opleidingen die je perfect voorbereiden op het bedrijfsleven, variërend van boekhouder en kinderleidster tot dierenartsassistent en beveiliger. Je leert allerlei taken uit te voeren. Kies je bijvoorbeeld voor de opleiding Dierenartsassistent? Dan leer je niet alleen alles over operatie-instrumenten en de hygiëne bij operaties; je doet ook communicatieve vaardigheden op en je leert onder meer bepaalde receptiewerkzaamheden uitvoeren. De mbo-opleidingen van Ameda bereiden je dus voor op alle aspecten van een beroep!\n\nBij Ameda zit tussen onderwijs en praktijk een wereld van verschil.\n\nOnjuist! Ameda bepaalt samen met het bedrijfsleven aan welke eisen bepaalde opleidingen moeten voldoen en over welke inzichten, kennis en vaardigheden je aan het einde van de opleiding moet beschikken. Doordat het onderwijs en de praktijk juist wél goed op elkaar aansluiten, heb je als mbo-student nadat je je diploma hebt behaald een heel grote kans om supersnel een baan te vinden. Dat is ook logisch, want tijdens je opleiding word je uitstekend voorbereid op de praktijk!\n\nAmeda-studenten zijn een nummer, ze krijgen geen individuele begeleiding.\n\nZeker niet! Een Ameda-opleiding is ingericht als individueel leertraject. Kies je voor een mbo-opleiding van Ameda, dan krijg je tijdens je opleiding professionele begeleiding van deskundige docenten uit het vakgebied. Zij geven je feedback en kijken je huiswerkopdrachten na, doorgaans binnen 48 uur. En heb je vragen? Dan kun je natuurlijk ook altijd bij je docent terecht. En vind je het fijn om met je medestudenten van gedachten te wisselen? Dat kan via Ameda Campus, de digitale leeromgeving van Ameda!\n\nEen mbo-diploma van Ameda is niet erkend.\n\nEcht niet! Alle mbo-opleidingen van Ameda:\n- staan onder toezicht van de Inspectie van het Onderwijs;\n- zijn geregistreerd bij het Centraal Register Beroepsopleidingen (CREBO);\n- zijn erkend door het ministerie van Onderwijs, Cultuur en Wetenschap (OC&W). Mbo-opleidingen van Ameda vallen onder de Wet Educatie en Beroepsonderwijs (WEB). Dit houdt in dat het door de minister erkende opleidingen zijn, die geheel voldoen aan de kwaliteitseisen die de overheid aan officiële mbo-opleidingen stelt. Een mbo-diploma van Ameda heeft dus exact dezelfde waarde als dat van bijvoorbeeld een ROC. Jaarlijks volgen ruim 5000 studenten een mbo-opleiding bij Ameda. Dit maakt Ameda tot één van de grootste mbo-opleiders van Nederland!\n\nBij Ameda loop je geen stage.\n\nNiet waar! De beroepspraktijkvorming (BPV) vormt een belangrijk onderdeel van je opleiding. Tijdens de stage pas je de opgedane theorie toe in de praktijk van je toekomstige beroep. Hierdoor doe je bepaalde vaardigheden op die je alleen in de praktijk kunt leren en krijg je een uitstekend beeld van de dagelijkse gang van zaken van je (toekomstige) beroep! Tijdens de BPV word je intensief begeleid door een praktijkbegeleider, een ervaren medewerker van het bedrijf waar je werkt. Bovendien krijg je door Ameda ook een BPV-begeleider toegewezen. De BPV-begeleider geeft jou en je praktijkbegeleider tussentijds feedback en advies!',
 			questions: [
 				q(
 					2023,
 					1,
-					'Wat is het doel van deze tekst?',
+					'In alinea I staat een voorbeeld over de opleiding Dierenartsassistent. Wat wil de schrijver met dit voorbeeld duidelijk maken?',
 					{
-						A: 'de lezer overtuigen dat Ameda goed onderwijs biedt',
-						B: 'de lezer informeren over de opleidingen bij Ameda',
-						C: 'de lezer uitleggen hoe de mbo-opleidingen in Nederland zijn geregeld'
+						A: 'dat Ameda veel verschillende soorten mbo-opleidingen aanbiedt',
+						B: 'dat de mbo-opleidingen van Ameda veel verschillende kanten hebben',
+						C: 'dat je bij de opleiding tot dierenartsassistent van Ameda meer leert'
 					},
-					'A'
+					'B'
 				),
 				q(
 					2023,
 					2,
-					'Wat is het belangrijkste verschil tussen Ameda en een ROC?',
+					'Wat staat er in alinea III over de docenten van Ameda?',
 					{
-						A: 'Ameda biedt meer begeleiding.',
-						B: 'Ameda biedt ook thuisonderwijs aan.',
-						C: 'Er is geen verschil in de waarde van het diploma.'
+						A: 'Je hebt een vaste docent die jou begeleiding geeft.',
+						B: 'Je krijgt in de meeste gevallen een snelle reactie van docenten.',
+						C: 'Je kunt aan je docenten vragen stellen via de digitale leeromgeving.'
 					},
-					'C'
+					'B'
 				),
 				q(
 					2023,
 					3,
-					'Wat is een BPV-begeleider?',
+					'Pedro loopt stage bij een bouwbedrijf. Waarom is dat een belangrijk onderdeel van zijn opleiding, volgens de tekst?',
 					{
-						A: 'een begeleider van Ameda die de student en het stagebedrijf ondersteunt',
-						B: 'een begeleider van het stagebedrijf die de student begeleidt',
-						C: 'een docent van Ameda die de student lesgeeft'
+						A: 'omdat hij daar meer dan alleen theorie leert',
+						B: 'omdat hij daar met toekomstige medewerkers werkt',
+						C: 'omdat hij daar veel feedback en advies krijgt'
 					},
 					'A'
 				),
 				q(
 					2023,
 					4,
-					'Wat is Ameda Campus?',
+					'John wil een mbo-opleiding bij Ameda gaan volgen. Hij wil weten hoe hij begeleid zal worden. Waar kan hij het antwoord vinden?',
 					{
-						A: 'een gebouw waar studenten les krijgen',
-						B: 'een online omgeving om met medestudenten te communiceren',
-						C: 'een organisatie die stageplaatsen regelt'
+						A: 'in alinea II en III',
+						B: 'in alinea II en IV',
+						C: 'in alinea III en IV',
+						D: 'in alinea III en V'
+					},
+					'D'
+				),
+				q(
+					2023,
+					5,
+					'Gina wil een mbo-opleiding tot kinderleidster gaan volgen bij Ameda. Haar ouders willen dat ze naar het ROC gaat. Wat is een argument om haar ouders te overtuigen?',
+					{
+						A: 'Alleen bij Ameda leer je om theoretische kennis toe te passen in de praktijk.',
+						B: 'De opleidingen die Ameda verzorgt zijn ook officiële mbo-opleidingen.',
+						C: 'Je krijgt bij Ameda veel persoonlijke aandacht doordat het een kleine opleider is.'
 					},
 					'B'
 				),
 				q(
 					2023,
-					5,
-					'Wat wordt in de tekst beweerd over de opleiding Dierenartsassistent?',
+					6,
+					'Wat is het belangrijkste doel van deze tekst?',
 					{
-						A: 'De opleiding leert je alleen medische vaardigheden.',
-						B: 'De opleiding bereidt je voor op verschillende taken.',
-						C: 'De opleiding duurt langer dan andere mbo-opleidingen.'
+						A: 'lezers ervan overtuigen dat Ameda een goede onderwijsinstelling is voor mbo',
+						B: 'lezers informatie geven over de waarde van een mbo-diploma van Ameda',
+						C: 'lezers vermaken met veelvoorkomende misverstanden over het mbo'
 					},
-					'B'
+					'A'
 				)
 			]
 		},
@@ -960,65 +1008,61 @@ export const LEZEN_2023: LezenExam = {
 			questions: [
 				q(
 					2023,
-					6,
-					'Hoe vaak moet de werkgever met de OR vergaderen over de gang van zaken?',
-					{ A: 'elke maand', B: 'minimaal twee keer per jaar', C: 'vier keer per jaar' },
-					'B'
-				),
-				q(
-					2023,
 					7,
-					'De werkgever wil een nieuw personeelsvolgsysteem invoeren. Wat moet hij doen?',
+					'Wat is de belangrijkste taak van de OR, volgens de tekst?',
 					{
-						A: 'advies vragen aan de OR',
-						B: 'de OR informeren over zijn plannen',
-						C: 'instemming vragen aan de OR'
+						A: 'besluiten nemen over financiën en organisatie in het bedrijf',
+						B: 'besluiten voorbereiden over financiën en organisatie in het bedrijf',
+						C: 'de werkgever overtuigen van wat de werknemers graag willen',
+						D: 'de werknemers informeren over wat de werkgever graag wil'
 					},
 					'C'
 				),
 				q(
 					2023,
 					8,
-					'De OR is het niet eens met een belangrijk besluit van de werkgever. Wat kan de OR doen?',
+					'Een werkgever wil de ontslagregels voor zijn personeel aanpassen. De OR is het daar niet mee eens. Wie bepaalt of de werkgever de ontslagregels mag aanpassen?',
 					{
-						A: 'de bedrijfscommissie om hulp vragen',
-						B: 'de zaak voorleggen aan de Ondernemingskamer',
-						C: 'het besluit tegenhouden door niet in te stemmen'
+						A: 'de bedrijfscommissie',
+						B: 'de kantonrechter',
+						C: 'de Ondernemingskamer',
+						D: 'de werkgever zelf'
 					},
 					'B'
 				),
 				q(
 					2023,
 					9,
-					'De werkgever wil een belangrijke regeling invoeren. De OR stemt niet in. De werkgever vraagt de kantonrechter om toestemming. Wanneer geeft de kantonrechter toestemming?',
+					'Wat moet een werkgever doen met een voorstel van de OR?',
 					{
-						A: 'als de OR geen goede reden heeft om niet in te stemmen',
-						B: 'als de werkgever bewijst dat de regeling nodig is',
-						C: 'allebei'
+						A: 'eerst beslissen, dan de OR hierover informeren',
+						B: 'eerst met de OR overleggen, dan beslissen en de OR hierover informeren',
+						C: 'zelf beslissen of, hoe en wanneer op het voorstel van de OR te reageren'
 					},
-					'C'
+					'B'
 				),
 				q(
 					2023,
 					10,
-					'Wat is het initiatiefrecht van de OR?',
+					'Wat wordt in de tekst bedoeld met informatierecht?',
 					{
-						A: 'De OR mag de werkgever voorstellen doen over alles wat met de onderneming te maken heeft.',
-						B: 'De OR mag zelf beslissingen nemen over het personeelsbeleid.',
-						C: 'De OR mag zelf vergaderingen organiseren met het personeel.'
+						A: 'De OR heeft het recht om van de bedrijfscommissie bepaalde informatie over de werkgever te krijgen.',
+						B: 'De OR heeft het recht om van de werkgever bepaalde bedrijfsinformatie te krijgen.',
+						C: 'De werkgever heeft het recht om de OR bepaalde bedrijfsinformatie te weigeren.',
+						D: 'De werkgever heeft het recht om van de OR bepaalde informatie te krijgen.'
 					},
-					'A'
+					'B'
 				),
 				q(
 					2023,
 					11,
-					'Wat is het doel van deze tekst?',
+					'Wanneer kan de OR de bedrijfscommissie om hulp vragen?',
 					{
-						A: 'de lezer informeren over de rechten en taken van een ondernemingsraad',
-						B: 'de lezer overtuigen van het belang van een ondernemingsraad',
-						C: 'de lezer uitleggen hoe je een ondernemingsraad opricht'
+						A: 'als de werkgever een besluit doorvoert tegen de wil van de OR',
+						B: 'als de werkgever een voorstel van de OR niet aanneemt',
+						C: 'als de werkgever geen informatie wil verstrekken aan de OR'
 					},
-					'A'
+					'C'
 				)
 			]
 		},
@@ -1032,55 +1076,66 @@ export const LEZEN_2023: LezenExam = {
 				q(
 					2023,
 					12,
-					'Wat is de belangrijkste conclusie van het onderzoek van professor Layard?',
+					'Wat gebeurde er volgens professor Richard Layard in de afgelopen vijftig jaar met Nederlanders?',
 					{
-						A: 'Als een hele samenleving rijker wordt, worden de mensen niet gelukkiger.',
-						B: 'Rijke mensen zijn altijd gelukkiger dan arme mensen.',
-						C: 'Vrije tijd maakt mensen gelukkiger dan geld.'
+						A: 'Ze werden gemiddeld veel rijker en dus gelukkiger.',
+						B: 'Ze werden gemiddeld veel rijker, maar niet gelukkiger.',
+						C: 'Ze werden gemiddeld veel rijker, maar ook veel ongelukkiger.'
 					},
-					'A'
+					'B'
 				),
 				q(
 					2023,
 					13,
-					"Wat wordt bedoeld met 'gewenning' in deze tekst?",
+					'Wat is de beste samenvatting van de tekst onder het kopje ‘Gewenning’?',
 					{
-						A: 'dat mensen hun geld steeds sneller uitgeven',
-						B: 'dat mensen een hogere levensstandaard snel normaal gaan vinden',
-						C: 'dat mensen wennen aan het vergelijken met anderen'
+						A: 'Vroeger was luxe bijzonder, nu is het een noodzaak.',
+						B: 'We vinden het al snel normaal dat we rijker zijn dan anderen.',
+						C: 'We zijn onze rijkdom normaal gaan vinden.'
 					},
-					'B'
+					'C'
 				),
 				q(
 					2023,
 					14,
-					'De studenten kozen liever € 50.000 als anderen de helft kregen, dan € 100.000 als anderen twee keer zoveel ontvingen. Wat laat dit zien?',
+					'Tom heeft € 80.000 gewonnen. Zijn buurman heeft ook een prijs gewonnen. Wanneer is Tom waarschijnlijk het meest tevreden, volgens professor Richard Layard?',
 					{
-						A: 'dat mensen niet om geld geven',
-						B: 'dat mensen liever minder hebben als ze daarmee meer hebben dan anderen',
-						C: 'dat studenten niet goed kunnen rekenen'
+						A: 'Als Tom niet weet dat zijn buurman ook een prijs heeft gewonnen.',
+						B: 'Als Tom niet weet hoeveel zijn buurman heeft gewonnen.',
+						C: 'Als Tom weet dat zijn buurman veel minder heeft gewonnen.'
+					},
+					'C'
+				),
+				q(
+					2023,
+					15,
+					'Wanneer zijn we volgens professor Richard Layard ontevreden met een loonsverhoging?',
+					{
+						A: 'Als we minder loonsverhoging krijgen dan de vorige keer.',
+						B: 'Als we minder loonsverhoging krijgen dan een collega.',
+						C: 'Als we minder loonsverhoging krijgen dan we hadden verwacht.'
 					},
 					'B'
 				),
 				q(
 					2023,
-					15,
-					'Hoe verschillen de antwoorden van de studenten over geld en vrije tijd?',
+					16,
+					'Professor Richard Layard onderzocht de relatie tussen vrije tijd en geluksgevoel. Voor hoeveel vrije weken kozen de meeste studenten in het onderzoek?',
 					{
-						A: 'Bij geld kiezen ze voor relatief meer dan anderen, bij vrije tijd voor absoluut meer.',
-						B: 'Bij geld zijn ze onverschillig, bij vrije tijd kiezen ze altijd voor meer.',
-						C: 'Bij geld en vrije tijd kiezen ze allebei voor relatief meer dan anderen.'
+						A: 'Ze kozen voor evenveel vrij als anderen.',
+						B: 'Ze kozen voor zoveel mogelijk vrij.',
+						C: 'Ze vonden alles goed zolang ze meer vrij hadden dan anderen.'
 					},
-					'A'
+					'B'
 				),
 				q(
 					2023,
-					16,
-					'Wat is het doel van deze tekst?',
+					17,
+					'Wat is de belangrijkste conclusie van deze tekst?',
 					{
-						A: 'de lezer adviseren hoe hij gelukkiger kan worden',
-						B: 'de lezer informeren over de relatie tussen geld en geluk',
-						C: 'de lezer waarschuwen voor de nadelen van rijkdom'
+						A: 'Geld maakt niet gelukkig.',
+						B: 'Geld maakt pas gelukkig als we meer hebben dan anderen.',
+						C: 'Vrije tijd maakt niet gelukkig, geld wel.'
 					},
 					'B'
 				)
@@ -1095,61 +1150,72 @@ export const LEZEN_2023: LezenExam = {
 			questions: [
 				q(
 					2023,
-					17,
-					'Hoe is Emma dolfijnentrainer geworden?',
-					{
-						A: 'Ze heeft een opleiding Dierenverzorging gedaan.',
-						B: 'Ze heeft een wedstrijd bij het Dolfinarium gewonnen.',
-						C: 'Ze heeft gesolliciteerd op een vacature.'
-					},
-					'B'
-				),
-				q(
-					2023,
 					18,
-					'Wat vindt Emma het bijzonderst aan haar baan?',
+					'Wat voor opleiding(en) deed Emma voordat ze ging werken bij het Dolfinarium?',
 					{
-						A: 'de shows die ze geeft',
-						B: 'de vertrouwensband met de dolfijnen',
-						C: 'het werken in een team'
+						A: 'de opleiding Dierenverzorging',
+						B: 'de opleiding tot dolfijnentrainer',
+						C: 'diverse opleidingen buiten de dierenverzorging'
 					},
-					'B'
-				),
-				q(
-					2023,
-					19,
-					'Wat is volgens Emma een nadeel van haar baan?',
-					{ A: 'de geur van vis', B: 'het fysiek zware werk', C: 'allebei' },
 					'C'
 				),
 				q(
 					2023,
-					20,
-					'Waarom vindt Emma het niet zielig voor de dolfijnen?',
+					19,
+					'Waarom reageren mensen volgens Emma verbaasd als ze vertelt over haar beroep?',
 					{
-						A: 'De dolfijnen krijgen veel liefde en aandacht.',
-						B: 'De dolfijnen doen niks wat ze niet willen en zijn gelukkig.',
-						C: 'De dolfijnen zijn in het Dolfinarium veiliger dan in het wild.'
+						A: 'omdat het werk van een dolfijnentrainer fysiek zwaar is',
+						B: 'omdat maar weinig mensen het beroep uitoefenen',
+						C: 'omdat ze haar geen typische dolfijnentrainer vinden'
 					},
 					'B'
 				),
 				q(
 					2023,
+					20,
+					'Wat zegt Emma over de gezondheidscontroles van de dieren?',
+					{
+						A: 'De gezondheidscontroles behoren niet tot de taken van een dolfijnentrainer.',
+						B: 'De gezondheidscontroles kosten meer tijd dan de trainingen en voorbereidingen.',
+						C: 'De gezondheidscontroles worden gedaan op dagen dat er geen shows zijn.',
+						D: 'De gezondheidscontroles zijn een minder bekend onderdeel van haar beroep.'
+					},
+					'D'
+				),
+				q(
+					2023,
 					21,
-					'Hoelang denkt Emma nog als dolfijnentrainer te werken?',
-					{ A: 'tot haar 35e', B: 'zolang ze het leuk vindt', C: 'ze weet het niet' },
+					'Wat zegt Emma over het verschil tussen dolfijnen in de natuur en dolfijnen in het Dolfinarium?',
+					{
+						A: 'Dolfijnen in de natuur krijgen eerder baby’s dan dolfijnen in het Dolfinarium.',
+						B: 'Dolfijnen in de natuur worden minder oud dan dolfijnen in het Dolfinarium.',
+						C: 'Dolfijnen in de natuur zijn gelukkiger dan dolfijnen in het Dolfinarium.'
+					},
 					'B'
 				),
 				q(
 					2023,
 					22,
+					'Wat zijn de toekomstplannen van Emma?',
+					{
+						A: 'Ze gaat stoppen met haar werk als ze 35 jaar is.',
+						B: 'Ze wil over een tijdje minder shows gaan doen.',
+						C: 'Ze wil voorlopig hetzelfde werk blijven doen.',
+						D: 'Ze zoekt binnenkort ander werk in de dierenwereld.'
+					},
+					'C'
+				),
+				q(
+					2023,
+					23,
 					'Wat is het doel van deze tekst?',
 					{
-						A: 'de lezer enthousiast maken voor het beroep van dolfijnentrainer',
-						B: 'de lezer informeren over het werk en leven van een dolfijnentrainer',
-						C: 'de lezer overtuigen dat dolfijnen in het Dolfinarium goed worden behandeld'
+						A: 'de lezer informeren over het beroep van een dolfijnentrainer',
+						B: 'de lezer laten zien dat het werk van een dolfijnentrainer belangrijk is',
+						C: 'de lezer overhalen om te gaan solliciteren naar de functie van dolfijnentrainer',
+						D: 'de lezer uitleggen hoe je een dolfijnentrainer kunt worden'
 					},
-					'B'
+					'A'
 				)
 			]
 		},
@@ -1157,151 +1223,152 @@ export const LEZEN_2023: LezenExam = {
 			name: 'Maak het verschil, word buddy!',
 			slug: 'word-buddy',
 			intro:
-				"Deze tekst komt uit een folder over vrijwilligerswerk en gaat over buddy's. Wat doet een buddy, hoe word je buddy, wat mag je als buddy verwachten en wat wordt van jou als buddy verwacht?",
+				'Deze tekst komt uit een folder over vrijwilligerswerk en gaat over buddy’s. Wat doet een buddy, hoe word je buddy, wat mag je als buddy verwachten en wat wordt van jou als buddy verwacht?',
 			text: "Maak het verschil, word buddy!\n\nOnze cliënten hebben een ernstige beperking of zijn langdurig ziek. Zij zoeken een buddy die hen steunt op vrijwillige basis. Deze tekst schetst wat een cliënt van een buddy verwacht en andersom: wat een buddy van een cliënt kan verwachten. “Door mijn ziekte is het spontane van mijn leven af. Toch wil ik er het beste van maken. Ik wil léven. Mijn man heeft een drukke baan. Om toch nog zoveel mogelijk te kunnen doen, zijn hulp en gezelschap van mijn buddy erg fijn.” Aan het woord is Margot. Zij heeft een ernstige chronische ziekte. Zij weet als geen ander dat een buddy een groot verschil maakt voor de kwaliteit van leven.\n\nWat doet een buddy?\n\nEen buddy helpt zijn cliënt zoveel mogelijk uit zijn leven te halen. De cliënt stelt een doel waar hij met hulp van de buddy naartoe werkt. Dit kan gaan om het vergroten van het sociale netwerk of het accepteren van de ziekte. Soms wil de cliënt zijn verhaal kwijt, een andere keer wil hij op pad. De buddy is er om hem te steunen, als maatje. Deze sociaal-emotionele ondersteuning aan iemand met een chronische of levensbedreigende ziekte of beperking, verleent de buddy op vrijwillige basis. De steun wordt verleend gedurende een afgesproken periode. In eerste instantie wordt een buddy voor een jaar gekoppeld aan een cliënt.\n\nOntstaan\n\nBuddyzorg is ontstaan in de jaren tachtig voor mensen met hiv en aids. De professionele gezondheidszorg was in die tijd niet voorbereid op het aantal mensen met deze – toen nog nieuwe ziekte. Buddy’s boden daarom hun sociaal-emotionele zorg aan. Tegenwoordig doen ook mensen met hele andere levensbedreigende ziektes of ernstige aandoeningen een beroep op buddyzorg. Mensen met kanker, spierziekten of niet-aangeboren hersenletsel bijvoorbeeld. Ook de aard van de steun veranderde. Buddyzorg ontstond als begeleiding bij het sterven, maar tegenwoordig is de zorg veel meer gericht op hulp bij het verder leven.\n\nOrganisatie\n\nDe organisatie van buddyzorg is ondergebracht bij Steunpunt Informele Zorg, onderdeel van de Vrijwilligerscentrale. Iedereen kan een aanvraag doen voor buddyzorg. De coördinator van Steunpunt Informele Zorg ondersteunt de buddy in zijn werkzaamheden en houdt kennismakingsgesprekken met nieuwe cliënten.\n\nProfiel\n\nBuddy's vormen een divers gezelschap. Mannen, vrouwen, jongeren, ouderen, homo’s en hetero’s met ieder hun eigen achtergrond. Wat hen bindt, is dat ze zich inzetten voor een ander. Buddyzorg stelt wel als voorwaarde dat buddy's minimaal 21 jaar zijn. Veel cliënten hebben immers al behoorlijk wat meegemaakt. Dat vraagt om een buddy met levenservaring.\n\nPraktisch\n\nBuddy's hebben minimaal een dagdeel in de week tijd voor hun cliënt. Ze nemen deel aan de verplichte basistraining en periodieke bijeenkomsten. Ze verlenen buddyzorg op vrijwillige basis. Eventuele kosten worden betaald. Daarnaast krijgt elke buddy € 25,- per maand vanaf het moment dat hij is gekoppeld aan een cliënt.\n\nTraining\n\nOm te zorgen dat buddy's goed voorbereid aan het werk gaan, krijgen ze een meerdaagse training. In die training ligt het accent op persoonlijk functioneren en zelfkennis. Daarnaast is er aandacht voor verliesverwerking, voor het aangeven van grenzen en voor diverse vaardigheden, waaronder communiceren. Tijdens de training wordt bovendien getoetst of de buddy binnen het profiel past. De conclusie wordt open en eerlijk met de kandidaat besproken, ook wanneer hij niet geschikt blijkt.\n\nBegeleiding\n\nBuddyzorg is niet zomaar vrijwilligerswerk. De situatie van de cliënt is door zijn ziekte en omstandigheden niet alledaags. Dat dit indruk maakt en invloed heeft op de buddy, is onvermijdelijk. Buddy's kunnen daarom altijd een beroep doen op de coördinator. Ook zijn er bijeenkomsten in groepsverband. Op deze momenten kunnen buddy's hun verhaal kwijt en elkaar inspireren en ondersteunen. Dat maakt niet alleen dat buddy's hun werk met plezier kunnen blijven doen, maar zorgt ook voor persoonlijke ontwikkeling en groei.",
 			questions: [
 				q(
 					2023,
-					23,
-					'Hoe lang wordt een buddy in eerste instantie aan een cliënt gekoppeld?',
-					{ A: 'een half jaar', B: 'een jaar', C: 'twee jaar' },
+					24,
+					'Wie bepaalt wat de buddy bij zijn cliënt moet bereiken?',
+					{
+						A: 'De buddy bepaalt wat hij bij zijn cliënt wil bereiken.',
+						B: 'De cliënt bepaalt wat hij met zijn buddy wil bereiken.',
+						C: 'De coördinator bepaalt wat de buddy bij zijn cliënt moet bereiken.'
+					},
 					'B'
 				),
 				q(
 					2023,
-					24,
-					'Waarvoor is buddyzorg oorspronkelijk ontstaan?',
-					{
-						A: 'voor mensen met hiv en aids',
-						B: 'voor mensen met kanker',
-						C: 'voor ouderen die eenzaam zijn'
-					},
-					'A'
-				),
-				q(
-					2023,
 					25,
-					'Wat is veranderd aan buddyzorg sinds het begin?',
+					'Wat is de belangrijkste taak van een buddy?',
 					{
-						A: "Buddy's krijgen nu een betere opleiding.",
-						B: 'Buddyzorg is nu meer gericht op hulp bij het leven dan bij het sterven.',
-						C: 'Buddyzorg is nu alleen voor mensen met een chronische ziekte.'
+						A: 'eenzame ouderen in hun laatste levensjaren bezoeken',
+						B: 'ernstig zieken helpen die verder willen met hun leven',
+						C: 'hiv- en aidspatiënten verzorgen die weten dat ze sterven',
+						D: 'praten met mensen die persoonlijke problemen hebben'
 					},
 					'B'
 				),
 				q(
 					2023,
 					26,
-					"Waarom moeten buddy's minimaal 21 jaar oud zijn?",
+					'Hoeveel tijd moet een buddy aan zijn werk besteden?',
 					{
-						A: 'Dat is een wettelijke eis.',
-						B: 'Jongere mensen hebben er geen tijd voor.',
-						C: 'Er is levenservaring nodig.'
+						A: 'Dat spreken de buddy, zijn cliënt en de coördinator samen af.',
+						B: 'Dat maakt niet uit, maar het liefst zo veel mogelijk.',
+						C: 'Minstens een dagdeel per week plus nog tijd voor bijeenkomsten.'
 					},
 					'C'
 				),
 				q(
 					2023,
 					27,
-					'Wat gebeurt er als tijdens de training blijkt dat een kandidaat niet geschikt is als buddy?',
+					'Hoeveel geld krijgt een buddy voor zijn werk?',
 					{
-						A: 'De kandidaat wordt afgewezen en krijgt een andere functie.',
-						B: 'Dit wordt open met de kandidaat besproken.',
-						C: 'De kandidaat moet de training nog een keer doen.'
+						A: 'Hij krijgt niets, een buddy doet zijn werk niet voor geld.',
+						B: 'Hij krijgt alleen zijn kosten terugbetaald, verder niets.',
+						C: 'Hij krijgt € 25,- per maand om al zijn kosten te betalen.',
+						D: 'Hij krijgt € 25,- per maand én hij krijgt zijn kosten terug.'
+					},
+					'D'
+				),
+				q(
+					2023,
+					28,
+					'Wat moet je doen om als buddy te kunnen beginnen?',
+					{
+						A: 'een kennismakingsgesprek voeren met de coördinator',
+						B: 'een meerdaagse basistraining volgen',
+						C: 'niets: vanaf je 21ste kun je direct beginnen'
 					},
 					'B'
 				),
 				q(
 					2023,
-					28,
-					'Wat is het doel van deze tekst?',
+					29,
+					'Bij wie kan de buddy terecht als hij het moeilijk heeft in zijn werk?',
 					{
-						A: 'de lezer informeren over buddyzorg en enthousiasmeren om buddy te worden',
-						B: 'de lezer overtuigen dat buddyzorg beter is dan professionele zorg',
-						C: 'de lezer uitleggen wat een buddy verdient en hoe je buddy wordt'
+						A: 'zowel bij andere buddy’s als bij de trainer',
+						B: 'zowel bij de coördinator als bij andere buddy’s',
+						C: 'zowel bij zijn trainer als bij de coördinator'
 					},
-					'A'
+					'B'
+				),
+				q(
+					2023,
+					30,
+					'Wat is het belangrijkste doel van de tekst?',
+					{
+						A: 'buddy’s informatie geven over cliënten',
+						B: 'cliënten informatie geven over buddy’s',
+						C: 'nieuwe buddy’s vinden voor cliënten',
+						D: 'nieuwe cliënten vinden voor buddy’s'
+					},
+					'C'
 				)
 			]
 		},
 		{
 			name: 'Examenreglement',
 			slug: 'examenreglement',
-			intro: 'In deze tekst staan de examenregels die gelden bij Rosarius Opleidingen.',
+			intro:
+				'In deze tekst staan de examenregels die gelden bij Rosarius Opleidingen. Lees eerst de vraag. Zoek het antwoord in de tekst.',
 			text: 'Examenreglement\n\nHet is belangrijk dat iedereen die bij de examens van Rosarius Opleidingen is betrokken goed wordt geïnformeerd. Deze examenwijzer is bedoeld voor docenten, examenleiders en examenkandidaten van Rosarius Opleidingen. De examenwijzer bestaat uit een algemeen gedeelte waarin afspraken en regels over de examens zijn opgenomen. Daarnaast wordt aandacht besteed aan specifieke informatie per opleiding.\n\n1 Algemeen\n\n1.1 Toelatingseisen\n\nRosarius Opleidingen heeft géén open toelating tot de examens. Deelname is alleen voor de cursisten van Rosarius Opleidingen. Voor het volgen van de opleidingen gelden geen eisen ten aanzien van de vooropleiding van de kandidaat.\n\n1.2 Identificatie\n\nBij deelname aan een van onze opleidingen moet bij de start van de opleiding een kopie van het identiteitsbewijs van de kandidaat worden ingeleverd. Bij het examen moeten de kandidaten een origineel identiteitsbewijs kunnen tonen.\n\n1.3 Benodigdheden voor de kandidaten tijdens het examen\n\nVoor de schriftelijke examens hebben de kandidaten nodig:\n- schrijfgerei, zoals een pen of een potlood;\n- extra papier voor het maken van notities;\n- een rekenmachine bij rekenen. Indien het noodzakelijk is dat hiervan wordt afgeweken, dan zal dit vooraf aan de docent en de kandidaten worden verteld. Voor de examinering van de praktijkvaardigheden op de computer worden er computers van het opleidingsinstituut gebruikt. Documenten die nodig zijn voor het examen worden aangeleverd op losse gegevensdragers (bijvoorbeeld usb-sticks).\n\n2 Procedures examens\n\n2.1 Examenleider\n\nTijdens het examen is een examenleider aanwezig. De examenleider is iemand van Rosarius Opleidingen. Deze persoon is verantwoordelijk voor de goede gang van zaken op de locatie zelf (tafels uit elkaar, rust, aanwezigheid van de benodigde materialen, etc.). Hij moet objectief beoordelen of het examen naar behoren verloopt. Hij controleert of alle examenopgaven teruggaan naar de onderwijsinstelling (ook de niet-gebruikte). Wanneer gebruik gemaakt is van papier voor het maken van notities, dan moet dat door de examenleider worden ingenomen en samen met de examens worden teruggestuurd naar Rosarius Opleidingen.\n\nFrauduleus handelen\n\nDe examenleider mag kandidaten die voor, tijdens en/of na het examen aantoonbaar frauduleus hebben gehandeld, uitsluiten van verdere deelneming aan het examen. Onder frauduleus handelen wordt verstaan: het handelen van een kandidaat dat erop gericht is een juiste beoordeling van zijn inzicht en vaardigheden onmogelijk te maken. De examenleider brengt de kandidaat op de hoogte van zijn bevindingen. Het werk van de betrokken kandidaat wordt niet beoordeeld en er wordt geen resultaat verstrekt.\n\n2.2 De kandidaat\n\nDe kandidaat dient ruim voor de start van het examen aanwezig te zijn, zodat het examen op het aangegeven tijdstip kan starten. Bij te laat komen beslist de examenleider of de kandidaat alsnog mag starten met het examen. Het is de kandidaat niet toegestaan het examenlokaal binnen 50 minuten na de start te verlaten. Na aanvang van het examen tot en met het verlaten van de examenruimte in verband met beëindiging van het examen is het de kandidaat niet toegestaan:\n- andere hulpmiddelen te gebruiken dan de uitdrukkelijk toegestane hulpmiddelen;\n- contact te hebben met de medekandidaten;\n- mobiele telefoons te gebruiken of ingeschakeld te hebben;\n- te roken. Na afloop van het examen dient de kandidaat de uitwerking van het examen, alle daartoe verstrekte informatie en gemaakte notities in te leveren bij de examenleider.\n\n3 Beoordeling en normering\n\nDe uitwerkingen van de schriftelijke examens worden door één persoon beoordeeld met inachtneming van de beoordelingsnormen zoals die aangegeven zijn in de uitwerking van de examens. Een tweede beoordelaar wordt willekeurig gekozen. De normering van de praktijkvaardigheidsexamens op de computer wordt bepaald door de instantie die de examens aanlevert. De beoordeling van de examens wordt uitgedrukt in een geheel cijfer zonder decimalen. Bij de afronding dient het decimaal 5 of hoger naar boven en het decimaal 4 of lager naar beneden te worden afgerond. Indien een examen door twee mensen is beoordeeld, is het gemiddelde van de twee cijfers na afronding het eindresultaat.\n\n4 Inhoud diploma’s en eindbeoordeling\n\n4.1 Inhoud diploma telefoniste/receptioniste\n\nHet schriftelijke examen telefoniste/receptioniste bestaat uit de onderdelen:\n- Telefoneren (waaronder Nederlands)\n- Kantoorvaardigheden (waaronder Nederlands) Het examen praktijkvaardigheden omvat:\n- Word\n- Algemene computervaardigheid Voor het behalen van het diploma dient de kandidaat gemiddeld minimaal het cijfer 6 te hebben. Dat betekent een minimum puntentotaal van 24. Daarbij moet ook aan de volgende voorwaarden worden voldaan:\n- Geen van de resultaten mag lager zijn dan 5.\n- Er mag maximaal 1 verliespunt zijn behaald.\n- Bij typevaardigheid moeten minstens 130 aanslagen per minuut worden behaald.\n\n4.2 Inhoud diploma administratief medewerker\n\nOm te kunnen deelnemen aan de examens voor administratief medewerker, moeten de 4 onderdelen van telefoniste/receptioniste eerst zijn gemaakt.\n- Het aanvullende schriftelijke examen voor administratief medewerker bestaat uit rekenvaardigheid.\n- Het examen praktijkvaardigheden betreft Excel. Voor het behalen van het diploma dient de kandidaat gemiddeld minimaal het cijfer 6 te hebben. Dat betekent een minimum puntentotaal van 36. Daarbij moet ook aan de volgende voorwaarden worden voldaan:\n- Geen van de resultaten mag lager zijn dan 4.\n- Er mogen maximaal 2 verliespunten zijn behaald.\n\n4.3 Inhoud diploma financieel administratief medewerker\n\nOm te kunnen deelnemen aan de examens voor financieel administratief medewerker, moet eerst het onderdeel administratief medewerker met goed gevolg zijn afgelegd.\n- Het aanvullende schriftelijke examen voor financieel administratief medewerker bestaat uit Boekhouden.\n- Het examen praktijkvaardigheden betreft Computerboekhouden. Voor het behalen van het diploma dient de kandidaat gemiddeld minimaal het cijfer 6 te hebben. Dat betekent een minimum puntentotaal van 12. Geen van de resultaten mag lager zijn dan 5.\n\n4.4 Inhoud diploma secretaresse\n\nOm te kunnen deelnemen aan de examens voor secretaresse, moet eerst het onderdeel administratief medewerker met goed gevolg zijn afgelegd. Het aanvullende schriftelijke examen voor secretaresse bestaat uit:\n- Zakelijk Nederlands\n- Zakelijk Engels\n- Notuleren Voor het behalen van het diploma dient de kandidaat gemiddeld minimaal het cijfer 6 te hebben. Dat betekent een minimum puntentotaal van 18. Geen van de resultaten mag lager zijn dan 5.\n\n4.5 Diploma\n\nIndien de kandidaat is geslaagd, dan ontvangt hij/zij een diploma. Wanneer de kandidaat een onvoldoende heeft behaald, ontvangt de kandidaat een herexamenreglement om de kandidaat te informeren over de herkansingsmogelijkheden. Indien een kandidaat zijn examenwerk wenst in te zien, dan dient de kandidaat hiervoor een afspraak te maken met het hoofdkantoor van Rosarius Opleidingen. Het werk kan tot vier weken na de examenuitslag op het hoofdkantoor van Rosarius Opleidingen worden ingezien.\n\n5 Herkansingsregeling\n\nIndien een kandidaat niet voldoet aan de gestelde voorwaarden voor het behalen van een diploma, dan mag hij voor één van de onderdelen kosteloos een herexamen afleggen, ongeacht het cijfer dat voor dit onderdeel is behaald. Ook wanneer herkansing niet zal leiden tot het behalen van het diploma heeft de cursist recht op een herkansing. Dit kan leiden tot een beter resultaat op de beoordelingslijst. Kosteloze herkansingen dienen binnen 3 maanden na de aanvankelijke examendatum van het onderdeel te zijn benut. Voor herkansingen na deze periode worden kosten in rekening gebracht.\n\n6 Bezwaar en beroep\n\nEen kandidaat kan tegen de uitslag van een examen bezwaar maken. De kandidaat dient daarvoor binnen twee weken na bekendmaking van de uitslag zijn inhoudelijke argumenten betreffende het examen schriftelijk duidelijk te maken bij het management van Rosarius Opleidingen. Aan het indienen van een bezwaarschrift zijn kosten verbonden. De uitwerkingen en/of prestaties van de kandidaat worden voor zover mogelijk opnieuw beoordeeld. Het management neemt de geuite bezwaren en de herbeoordeling met motivering van de oorspronkelijke corrector(en) in overweging. Het resultaat dat voortvloeit uit de herbeoordeling wordt in plaats gesteld van het oorspronkelijke resultaat. Dit houdt in dat het resultaat niet alleen omhoog maar ook omlaag kan gaan of gelijk blijft. De kandidaat wordt schriftelijk op de hoogte gesteld van het besluit op zijn bezwaar. Het resultaat dat wordt vastgesteld na behandeling van het bezwaarschrift is bindend.\n\n7 Bijzondere gevallen\n\nIn bijzondere gevallen kan het management besluiten dat een kandidaat op een andere wijze één of meer examens aflegt. Onder bijzondere gevallen wordt verstaan:\n- Medische indicatie waaruit blijkt dat de kandidaat het examen onmogelijk schriftelijk kan afleggen. Hierbij is een mondeling examen mogelijk. Een schriftelijke verklaring van een deskundige is hiervoor noodzakelijk.\n- Dyslexie: Kandidaten met een dyslexieverklaring hebben recht op 30 minuten extra examentijd. Op verzoek kan een A3-versie van het examen met vergrote tekst worden aangeleverd.\n- Nederlands is niet de eerste taal. Wanneer de kandidaat korter dan vijf jaar in Nederland verblijft, heeft hij recht op 30 minuten extra examentijd. Hij mag ook een Nederlands handwoordenboek gebruiken.\n- Problemen met motoriek: de kandidaat mag gebruik maken van een computer van Rosarius Opleidingen om het examen uit te werken. Een schriftelijke verklaring van een deskundige is hiervoor noodzakelijk. Om in aanmerking te komen voor een of meer van bovenstaande aanpassingen, moet een schriftelijk verzoek worden ingediend bij het hoofdkantoor van Rosarius Opleidingen. In dit verzoek moet duidelijk worden aangegeven welke aanpassing gewenst is en wat daarvoor de reden is. Dit moet bij voorkeur gepaard gaan met een schriftelijke verklaring van een deskundige.',
 			questions: [
 				q(
 					2023,
-					29,
-					'Wie mag deelnemen aan de examens van Rosarius Opleidingen?',
-					{
-						A: 'alleen cursisten van Rosarius Opleidingen',
-						B: 'iedereen die zich aanmeldt',
-						C: 'iedereen met de juiste vooropleiding'
-					},
-					'A'
-				),
-				q(
-					2023,
-					30,
-					'De kandidaat komt te laat bij het examen. Wat gebeurt er?',
-					{
-						A: 'De kandidaat mag niet meer deelnemen.',
-						B: 'De examenleider beslist of de kandidaat mag starten.',
-						C: 'De kandidaat mag starten maar krijgt geen extra tijd.'
-					},
-					'B'
-				),
-				q(
-					2023,
 					31,
-					'Wanneer mag een kandidaat het examenlokaal verlaten?',
-					{ A: 'na 30 minuten', B: 'na 50 minuten', C: 'pas als het examen is afgelopen' },
+					'Lara volgt een opleiding secretaresse bij Rosarius Opleidingen. Ze wil het examen maken. Wanneer kan dat?',
+					{
+						A: 'als ze de vakken Nederlands, Engels en notuleren heeft gevolgd',
+						B: 'als ze geslaagd is voor het onderdeel administratief medewerker',
+						C: 'als ze in de cursus gemiddeld het cijfer 6 of hoger heeft behaald'
+					},
 					'B'
 				),
 				q(
 					2023,
 					32,
-					'Een kandidaat wil het diploma administratief medewerker halen. Zijn resultaten zijn: 7, 8, 6, 5, 4, 6. Haalt hij het diploma?',
+					'Mo is drie jaar geleden in Nederland komen wonen. Nederlands is niet zijn eerste taal. Welke regel geldt voor Mo als hij een examen maakt?',
 					{
-						A: 'Ja, want het gemiddelde is hoog genoeg.',
-						B: 'Nee, want een van de resultaten is lager dan 4.',
-						C: 'Nee, want er zijn meer dan 2 verliespunten.'
+						A: 'Hij mag 30 minuten langer over het examen doen.',
+						B: 'Hij mag de computer gebruiken om woorden te vertalen.',
+						C: 'Hij mag het examen mondeling doen.'
+					},
+					'A'
+				),
+				q(
+					2023,
+					33,
+					'Jos is gezakt voor zijn examen. Hij is het niet eens met de uitslag. Bij wie kan hij bezwaar maken?',
+					{
+						A: 'bij de examenleider',
+						B: 'bij het hoofdkantoor',
+						C: 'bij het management'
 					},
 					'C'
 				),
 				q(
 					2023,
-					33,
-					'Een kandidaat is het niet eens met de uitslag van het examen. Wat kan er gebeuren na herbeoordeling?',
-					{
-						A: 'Het cijfer kan alleen omhoog gaan.',
-						B: 'Het cijfer kan omhoog of omlaag gaan.',
-						C: 'Het cijfer blijft hetzelfde.'
-					},
-					'B'
-				),
-				q(
-					2023,
 					34,
-					'Een kandidaat woont vier jaar in Nederland en Nederlands is niet zijn eerste taal. Welk recht heeft hij bij het examen?',
+					'Jan komt te laat op het examen. Wat gebeurt er nu?',
 					{
-						A: 'Hij krijgt 30 minuten extra tijd.',
-						B: 'Hij mag een woordenboek gebruiken.',
-						C: 'Allebei.'
+						A: 'Jan mag het examen niet meer maken, hij moet een herexamen maken.',
+						B: 'Jan mag het examen nog maken, als hij minder dan 50 minuten te laat is.',
+						C: 'Jan moet aan de examenleider vragen of hij het examen mag maken of niet.'
 					},
 					'C'
 				),
 				q(
 					2023,
 					35,
-					'Wat is het doel van deze tekst?',
+					'Wat is het doel van de schrijver van deze tekst?',
 					{
-						A: 'de lezer informeren over de examenregels van Rosarius Opleidingen',
-						B: 'de lezer overtuigen om een opleiding bij Rosarius te volgen',
-						C: 'de lezer uitleggen hoe examens in Nederland worden afgenomen'
+						A: 'de lezer ervan overtuigen zich aan de examenregels te houden',
+						B: 'de lezer op de hoogte brengen van de examenregels',
+						C: 'de lezer overhalen om examen te doen bij Rosarius Opleidingen'
 					},
-					'A'
+					'B'
 				)
 			]
 		}

@@ -41,13 +41,13 @@ describe('practice sets', () => {
 				)
 			)
 		);
-		expect(answers.get('lezen-2023-2')).toBe('C');
-		expect(answers.get('lezen-2023-20')).toBe('B');
-		expect(answers.get('lezen-2023-32')).toBe('C');
+		expect(answers.get('lezen-2023-2')).toBe('B');
+		expect(answers.get('lezen-2023-20')).toBe('D');
+		expect(answers.get('lezen-2023-32')).toBe('A');
 		expect(answers.get('lezen-2024-3')).toBe('B');
-		expect(answers.get('lezen-2024-10')).toBe('B');
+		expect(answers.get('lezen-2024-10')).toBe('A');
 		expect(answers.get('lezen-2024-22')).toBe('B');
-		expect(answers.get('lezen-2024-34')).toBe('B');
+		expect(answers.get('lezen-2024-34')).toBe('A');
 		expect(answers.get('lezen-2025-31')).toBe('C');
 	});
 
@@ -117,7 +117,7 @@ describe('practice sets', () => {
 			false
 		);
 		expect(
-			selectQtypeItems(finished, 'toepassing', TODAY).some((id) => id.startsWith('set2-'))
+			selectQtypeItems(finished, 'conclusie', TODAY).some((id) => id.startsWith('set2-'))
 		).toBe(true);
 		expect(String(selectTrapItem(fork(), 'echo', TODAY) ?? '').startsWith('set')).toBe(false);
 	});

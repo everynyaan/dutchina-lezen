@@ -9,7 +9,7 @@ import { DEFAULT_GLOW_ORDER, EMPTY_SWAPS, type CurrentState } from './schema';
 
 export function createDefaultState(): CurrentState {
 	return {
-		schemaVersion: 25,
+		schemaVersion: 26,
 		rank: 0,
 		tier: 1,
 		lp: 0,

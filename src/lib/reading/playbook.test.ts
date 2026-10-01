@@ -36,9 +36,10 @@ describe('playbook', () => {
 		for (const card of cards) {
 			expect(moveSentenceCount(PLAYBOOK_MOVE[card.qtype])).toBeGreaterThanOrEqual(2);
 			expect(moveSentenceCount(PLAYBOOK_MOVE[card.qtype])).toBeLessThanOrEqual(3);
-			expect(card.example?.quote.length).toBeGreaterThan(10);
+			if (card.count > 0) expect(card.example?.quote.length).toBeGreaterThan(10);
 			expect(card.move).not.toContain('\u2014');
 		}
+		expect(cards.find((card) => card.qtype === 'niet-vraag')?.count).toBe(0);
 		expect(page).toContain('Practice this');
 		expect(page).not.toContain('PracticeBook');
 	});

@@ -47,11 +47,12 @@
 	let years = $derived([...LEZEN_EXAMS].sort((a, b) => b.year - a.year));
 	let bookYears = $derived(bookYearsFor(ctx.state.readingFork, ctx.state.lezen.questionResults));
 	let passage = $derived(slug ? findPassage(slug) : undefined);
-	let practiceCount = $derived(passage ? practiceItemsFor(passage.slug).length : 0);
+	let attempted = $derived(ctx.state.readingFork.attempts.map((row) => row.itemId));
+	let practiceCount = $derived(passage ? practiceItemsFor(passage.slug, attempted).length : 0);
 	let ids = $derived(
 		passage
 			? mode === 'practice'
-				? practiceItemsFor(passage.slug).map((item) => item.id)
+				? practiceItemsFor(passage.slug, attempted).map((item) => item.id)
 				: passage.questions.map((question) => question.id)
 			: []
 	);
@@ -115,7 +116,7 @@
 	}
 
 	function startPractice() {
-		if (!passage || practiceItemsFor(passage.slug).length === 0) return;
+		if (!passage || practiceItemsFor(passage.slug, attempted).length === 0) return;
 		mode = 'practice';
 		resetRun();
 		stage = 'loop';

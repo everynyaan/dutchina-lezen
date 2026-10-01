@@ -75,10 +75,13 @@ describe('reading history', () => {
 			);
 		}
 		const scored = accuracyByQtype(fork(many), { last: 30 });
-		expect(scored.detail).toEqual({ c: 2, t: 30 });
-		expect(accuracyByQtype(fork(attempts), { origin: 'practice' }).detail).toEqual({ c: 1, t: 1 });
+		expect(scored.toepassing).toEqual({ c: 2, t: 30 });
+		expect(accuracyByQtype(fork(attempts), { origin: 'practice' }).toepassing).toEqual({
+			c: 1,
+			t: 1
+		});
 		expect(accuracyByQtype(fork(attempts), { origin: 'fresh' })).toEqual({});
-		expect(accuracyByQtype(fork(attempts)).detail?.t).toBe(2);
+		expect(accuracyByQtype(fork(attempts)).toepassing?.t).toBe(2);
 	});
 
 	it('rates located attempts and ignores ones that never located', () => {

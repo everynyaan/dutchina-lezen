@@ -13,14 +13,14 @@ import {
 	mockPaperBudget
 } from './suppliedPapers';
 
-const SUSPECT: Record<string, 'A' | 'B' | 'C' | 'D'> = {
-	'lezen-2023-2': 'C',
-	'lezen-2023-20': 'B',
-	'lezen-2023-32': 'C',
+const OPENBAAR_KEYS: Record<string, 'A' | 'B' | 'C' | 'D'> = {
+	'lezen-2023-2': 'B',
+	'lezen-2023-20': 'D',
+	'lezen-2023-32': 'A',
 	'lezen-2024-3': 'B',
-	'lezen-2024-10': 'B',
+	'lezen-2024-10': 'A',
 	'lezen-2024-22': 'B',
-	'lezen-2024-34': 'B',
+	'lezen-2024-34': 'A',
 	'lezen-2025-31': 'C'
 };
 
@@ -70,7 +70,7 @@ describe('supplied 2021 and 2022 papers', () => {
 				)
 			)
 		);
-		for (const [id, letter] of Object.entries(SUSPECT)) {
+		for (const [id, letter] of Object.entries(OPENBAAR_KEYS)) {
 			expect(answers.get(id)).toBe(letter);
 		}
 	});

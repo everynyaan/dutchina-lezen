@@ -26,6 +26,7 @@ import {
 	type StateV23,
 	type StateV24,
 	type StateV25,
+	type StateV26,
 	DEFAULT_GLOW_ORDER,
 	EMPTY_SWAPS
 } from './schema';
@@ -516,6 +517,61 @@ export const migrations: Migration[] = [
 					lookupsPerText: 5,
 					reservedPapers: reservedPapersFor(satMocks, scoreYear)
 				}
+			}
+		};
+	},
+
+	// v25 -> v26: the 2023 and 2024 questions changed. A mock sat on the old
+	// items is not a result. Drop those papers and reserve them again.
+	// 2025 sittings stay. A set sitting (setId, paper year 0) stays.
+	(state: StateV25): StateV26 => {
+		const fork = state.readingFork;
+		const retired = (year: number) => year === 2023 || year === 2024;
+		const removed = new Set<number>();
+		const mocks = fork.mocks.filter((mock) => {
+			if (mock.setId || !retired(mock.paperYear)) return true;
+			removed.add(mock.paperYear);
+			return false;
+		});
+		let mockInProgress = fork.mockInProgress;
+		if (mockInProgress && !mockInProgress.setId && retired(mockInProgress.paperYear)) {
+			removed.add(mockInProgress.paperYear);
+			mockInProgress = null;
+		}
+		const satMocks = fork.satMocks.filter((year) => {
+			if (!retired(year)) return true;
+			removed.add(year);
+			return false;
+		});
+		let lastMockScore = fork.lastMockScore;
+		let lastMockAt = fork.lastMockAt;
+		if (lastMockScore && retired(lastMockScore.year)) {
+			removed.add(lastMockScore.year);
+			lastMockScore = null;
+			if (mocks.length === 0) lastMockAt = null;
+		}
+		const attempts = fork.attempts.filter((attempt) => {
+			if (attempt.source !== 'mock') return true;
+			return !(
+				attempt.itemId.startsWith('lezen-2023-') || attempt.itemId.startsWith('lezen-2024-')
+			);
+		});
+		const reserved = [...fork.settings.reservedPapers];
+		for (const year of [2023, 2024]) {
+			if (removed.has(year) && !reserved.includes(year)) reserved.push(year);
+		}
+		return {
+			...state,
+			schemaVersion: 26,
+			readingFork: {
+				...fork,
+				mocks,
+				mockInProgress,
+				satMocks,
+				lastMockAt,
+				lastMockScore,
+				attempts,
+				settings: { ...fork.settings, reservedPapers: reserved }
 			}
 		};
 	}

@@ -132,15 +132,15 @@ describe('readiness home', () => {
 			})
 		);
 		const rows = qtypeReadiness(fork({ attempts }));
-		expect(rows[0].qtype).toBe('detail');
+		expect(rows[0].qtype).toBe('toepassing');
 		expect(rows[0].split).toBe(true);
-		expect(qtypeLine(rows[0])).toBe('Find the fact. Official 1 of 6. Practice 6 of 6.');
-		const purpose = rows.find((row) => row.qtype === 'doel-tekst');
-		expect(purpose?.split).toBe(false);
-		expect(qtypeLine(purpose!)).toBe('Purpose of the text: 1 of 1.');
+		expect(qtypeLine(rows[0])).toBe('Apply the rule. Official 1 of 6. Practice 6 of 6.');
+		const part = rows.find((row) => row.qtype === 'functie-tekstdeel');
+		expect(part?.split).toBe(false);
+		expect(qtypeLine(part!)).toBe('Why this example: 1 of 1.');
 		expect(rows.at(-1)?.attempts).toBe(0);
-		expect(rows.findIndex((row) => row.qtype === 'detail')).toBeLessThan(
-			rows.findIndex((row) => row.qtype === 'doel-tekst')
+		expect(rows.findIndex((row) => row.qtype === 'toepassing')).toBeLessThan(
+			rows.findIndex((row) => row.qtype === 'functie-tekstdeel')
 		);
 	});
 

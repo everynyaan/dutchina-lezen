@@ -92,7 +92,7 @@ describe('daily text selection', () => {
 		const passage = findPassage('buurt-whatsapp')!;
 		const state = fork({
 			attempts: [
-				attempt({ itemId: 'lezen-2023-13', at: '2026-09-01', correct: false }),
+				attempt({ itemId: 'lezen-2023-10', at: '2026-09-01', correct: false }),
 				attempt({ itemId: 'lezen-2023-20', at: '2026-09-01', correct: true })
 			]
 		});

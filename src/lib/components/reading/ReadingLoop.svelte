@@ -22,7 +22,14 @@
 	import WordPopover from './WordPopover.svelte';
 
 	interface Props {
-		passage: { name: string; intro: string; text: string; slug?: string };
+		passage: {
+			name: string;
+			intro: string;
+			text: string;
+			slug?: string;
+			paragraphLabels?: string[];
+			paragraphMap?: Record<string, number>;
+		};
 		highlight?: Evidence[];
 		locateMode?: boolean;
 		onLocate?: (p: number) => void;

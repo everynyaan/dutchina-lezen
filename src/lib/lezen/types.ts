@@ -25,6 +25,10 @@ export interface LezenPassage {
 	/** Full passage text with \n\n paragraph separators */
 	text: string;
 	questions: LezenQuestion[];
+	/** Margin labels for a passage that numbers its paragraphs, such as I to V. */
+	paragraphLabels?: string[];
+	/** Label to paragraph index, after any printed prefix has been removed. */
+	paragraphMap?: Record<string, number>;
 }
 
 export interface LezenExam {

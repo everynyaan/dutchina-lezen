@@ -2,6 +2,7 @@ import { getAnnotation, paragraphsOf, resolveEvidence } from './annotations';
 import { allPassages, findPassage } from './bank';
 import { isHeading, PARAGRAPH_ROLES, type ParagraphMapEntry, type ParagraphRole } from './loop';
 import { QTYPES, TRAP_KINDS, type Evidence, type QType, type TrapKind } from './types';
+import legacyFile from './practice/legacy.json';
 
 export type { ParagraphMapEntry, ParagraphRole };
 
@@ -16,6 +17,12 @@ export interface PracticeItem {
 	why: string;
 	distractors: Record<string, { trap: TrapKind; why: string }>;
 	afterItemId?: string;
+	/** Official items that must be attempted before this item can be served. */
+	afterItemIds?: string[];
+}
+
+interface LegacyPracticeItem extends PracticeItem {
+	passageSlug: string;
 }
 
 export interface ParaphraseDrill {
@@ -36,7 +43,8 @@ export interface PracticePack {
 	note?: string;
 }
 
-const modules = import.meta.glob('./practice/*.json', { eager: true });
+const modules = import.meta.glob(['./practice/*.json', '!./practice/legacy.json'], { eager: true });
+const LEGACY = legacyFile as unknown as LegacyPracticeItem[];
 
 function unwrap(mod: unknown): unknown {
 	if (mod && typeof mod === 'object' && 'default' in mod) {
@@ -281,8 +289,43 @@ function serve(slug: string): PracticePack | null {
 	};
 }
 
-export function practiceItemsFor(slug: string): PracticeItem[] {
-	return serve(slug)?.items ?? [];
+function seenSet(
+	attempted: ReadonlySet<string> | readonly string[] | undefined
+): ReadonlySet<string> | undefined {
+	if (!attempted) return undefined;
+	return attempted instanceof Set ? attempted : new Set(attempted);
+}
+
+function legacyOpen(item: LegacyPracticeItem, seen: ReadonlySet<string> | undefined): boolean {
+	const ids = item.afterItemIds ?? [];
+	if (ids.length === 0) return true;
+	if (!seen) return false;
+	return ids.every((id) => seen.has(id));
+}
+
+function resolveLegacy(item: LegacyPracticeItem): PracticeItem {
+	const passage = findPassage(item.passageSlug);
+	return {
+		...item,
+		evidence: item.evidence.map((evidence) => {
+			if (!passage) return evidence;
+			const at = quoteIndex(passage.text, evidence.quote);
+			return at === null ? evidence : { ...evidence, p: at };
+		})
+	};
+}
+
+/** Practice items for a passage. Gated legacy items stay hidden until `attempted` covers afterItemIds. */
+export function practiceItemsFor(
+	slug: string,
+	attempted?: ReadonlySet<string> | readonly string[]
+): PracticeItem[] {
+	const seen = seenSet(attempted);
+	const pack = serve(slug)?.items ?? [];
+	const legacy = LEGACY.filter((item) => item.passageSlug === slug && legacyOpen(item, seen)).map(
+		resolveLegacy
+	);
+	return [...pack, ...legacy];
 }
 
 export function paragraphMapFor(slug: string): ParagraphMapEntry[] {
@@ -298,7 +341,8 @@ export function practiceById(id: string): PracticeItem | undefined {
 		const item = row.pack.items?.find((candidate) => candidate.id === id);
 		if (item) return item;
 	}
-	return undefined;
+	const legacy = LEGACY.find((item) => item.id === id);
+	return legacy ? resolveLegacy(legacy) : undefined;
 }
 
 export function paraphraseById(id: string): ParaphraseDrill | undefined {
@@ -316,5 +360,5 @@ export function itemPassageSlug(id: string): string | undefined {
 		if (row.pack.items?.some((item) => item.id === id)) return slug;
 		if (row.pack.paraphrase?.some((drill) => drill.id === id)) return slug;
 	}
-	return undefined;
+	return LEGACY.find((item) => item.id === id)?.passageSlug;
 }
