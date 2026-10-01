@@ -60,7 +60,7 @@
 		color: var(--color-ink);
 		width: 100%;
 		padding: 14px 14px 12px;
-		border: 2px solid var(--color-ink);
+		border: none;
 		border-radius: 18px;
 		box-shadow: var(--shadow-offset-card);
 		cursor: pointer;

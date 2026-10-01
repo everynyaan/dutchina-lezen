@@ -77,75 +77,69 @@
 				<Doodle name="shape-swirl-loops-4" size={96} color="var(--color-rose-deep)" tilt={-2} />
 			</span>
 		</div>
-		<p class="grammar-subtitle">
-			Word-order and traps that show up in B1 texts. Not a vocab grind, not a gate ladder.
-			{chapters.length} chapters &middot; {totalCards} cards
+		<div class="badge-row">
+			<span class="chip">{chapters.length} chapters</span>
+			<span class="chip">{totalCards} cards</span>
 			{#if showDrills}
-				&middot; warm-up drills
+				<span class="chip">warm-up</span>
 			{/if}
-		</p>
+		</div>
 		<span class="header-sparkle">
 			<Doodle name="spark-sparkle-26" size={26} color="var(--color-rose-deep)" tilt={8} />
 		</span>
 	</header>
 
+	<nav class="picks" aria-label="Chapters">
+		{#each chapters as chapter (chapter.id)}
+			<button
+				type="button"
+				class="pick"
+				class:on={isOpen(chapter.id)}
+				aria-pressed={isOpen(chapter.id)}
+				aria-label={chapter.title}
+				onclick={() => toggleChapter(chapter.id)}
+			>
+				{chapter.n}
+			</button>
+		{/each}
+	</nav>
+
+	{#each chapters as chapter (chapter.id)}
+		{#if isOpen(chapter.id)}
+			<article class="chapter-unit" style={famStyle(chapter.tone)}>
+				<h2 class="chapter-heading">{chapter.title}</h2>
+				<div id="chapter-body-{chapter.id}" class="chapter-body">
+					{#each chapter.cards as card, cardi (card.id)}
+						<GrammarCardView
+							title={card.title}
+							formula={card.formula}
+							formulaTone={card.formulaTone ?? 'rose'}
+							example={card.example}
+							trap={card.trap}
+							class="grammar-card"
+						>
+							{#snippet aboveTrap()}
+								{#if cardi === 0}
+									<span class="callout-arrow">
+										<Doodle
+											name="arrow-down-33"
+											size={20}
+											color="var(--color-rose-deep)"
+											tilt={-12}
+										/>
+									</span>
+								{/if}
+							{/snippet}
+						</GrammarCardView>
+					{/each}
+				</div>
+			</article>
+		{/if}
+	{/each}
+
 	{#if showDrills}
 		<GrammarDrills />
 	{/if}
-
-	<div class="chapter-list">
-		{#each chapters as chapter (chapter.id)}
-			{@const open = isOpen(chapter.id)}
-			<div class="chapter-unit" class:open style={famStyle(chapter.tone)}>
-				<button
-					type="button"
-					class="chapter-row r-card"
-					class:edge-hair={!open}
-					class:open
-					aria-expanded={open}
-					aria-controls="chapter-body-{chapter.id}"
-					onclick={() => toggleChapter(chapter.id)}
-				>
-					<span class="chapter-num r-pill">{chapter.n}</span>
-					<span class="chapter-text">
-						<span class="chapter-title">{chapter.title}</span>
-						<span class="chapter-blurb">{chapter.blurb}</span>
-					</span>
-					<span class="chapter-chevron">
-						<Icon name={open ? 'chevron-up' : 'chevron-down'} size={18} color="var(--fam-ink)" />
-					</span>
-				</button>
-
-				{#if open}
-					<div id="chapter-body-{chapter.id}" class="chapter-body">
-						{#each chapter.cards as card, cardi (card.id)}
-							<GrammarCardView
-								title={card.title}
-								formula={card.formula}
-								formulaTone={card.formulaTone ?? 'rose'}
-								example={card.example}
-								trap={card.trap}
-								class="grammar-card"
-							>
-								{#snippet aboveTrap()}
-									{#if cardi === 0}
-										<span class="callout-arrow">
-											<Doodle
-												name="arrow-down-33"
-												size={20}
-												color="var(--color-rose-deep)"
-												tilt={-12}
-											/>
-										</span>
-									{/if}
-								{/snippet}
-							</GrammarCardView>
-						{/each}
-					</div>
-				{/if}
-			</div>
-		{/each}
-	</div>
 </div>
 
 <style>
@@ -211,10 +205,40 @@
 		-webkit-mask-size: 100% 100% !important;
 	}
 
-	.grammar-subtitle {
-		font-size: var(--text-small);
-		color: var(--color-muted-ink);
-		margin-top: 4px;
+	.badge-row,
+	.picks {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+		margin-top: 8px;
+	}
+
+	.chip {
+		display: inline-flex;
+		padding: 3px 8px;
+		border-radius: 999px;
+		background: color-mix(in srgb, var(--color-peach) 50%, white);
+		font-size: 14px;
+		font-weight: 700;
+		line-height: 1.2;
+	}
+
+	.pick {
+		width: 40px;
+		height: 40px;
+		border: none;
+		border-radius: 999px;
+		background: color-mix(in srgb, var(--color-rose) 50%, white);
+		font-family: var(--font-display);
+		font-size: 16px;
+		font-weight: 700;
+		color: var(--color-ink);
+		cursor: pointer;
+	}
+
+	.pick.on {
+		background: var(--color-rose);
+		box-shadow: var(--shadow-offset-pill);
 	}
 
 	.header-sparkle {
@@ -225,112 +249,40 @@
 		line-height: 0;
 	}
 
-	.chapter-list {
-		display: flex;
-		flex-direction: column;
-		gap: 8px;
-	}
-
 	.chapter-unit {
 		position: relative;
-	}
-
-	.chapter-unit.open {
-		box-shadow: var(--shadow-offset-card);
-		border-radius: 22px;
-	}
-
-	.chapter-row {
-		position: relative;
-		display: flex;
-		align-items: center;
-		gap: 12px;
-		width: 100%;
-		padding: 12px 14px;
-		cursor: pointer;
-		text-align: left;
-		font-family: var(--font-sans);
-		border: none;
-		background: linear-gradient(
-			160deg,
-			color-mix(in srgb, var(--fam-tint) 55%, white) 0%,
-			color-mix(in srgb, var(--fam-tint) 26%, white) 100%
-		);
-		-webkit-tap-highlight-color: transparent;
-		transition: border-color 0.15s;
-	}
-
-	.chapter-row.open {
-		/* The open chapter is the screen's single hero (V3_DESIGN §1.1):
-		   3px --color-ink border + offset shadow (on .chapter-unit.open) +
-		   white surface. Closed rows keep their family-derived 2px tinted
-		   border below — that is where the per-chapter colour-coding
-		   lives, plus the chapter-num badge accent inside this row. */
 		border: 3px solid var(--color-ink);
-		border-bottom: none;
-		border-radius: 22px 22px 0 0;
+		border-radius: 22px;
+		box-shadow: var(--shadow-offset-card);
 		background: #fff;
+		padding: 14px;
 	}
 
-	.chapter-num {
-		width: 40px;
-		height: 40px;
-		flex-shrink: 0;
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
+	.chapter-heading {
+		margin: 0 0 10px;
 		font-family: var(--font-display);
-		font-weight: 700;
-		font-size: var(--text-lead);
-		border: 2px solid var(--fam-deep);
-		background: linear-gradient(
-			160deg,
-			color-mix(in srgb, var(--fam-tint) 55%, white) 0%,
-			color-mix(in srgb, var(--fam-tint) 26%, white) 100%
-		);
-		color: var(--fam-ink);
-	}
-
-	.chapter-text {
-		display: flex;
-		flex-direction: column;
-		gap: 2px;
-		min-width: 0;
-		flex: 1;
-	}
-
-	.chapter-title {
-		font-family: var(--font-display);
-		font-size: var(--text-lead);
+		font-size: 20px;
 		font-weight: 700;
 		color: var(--fam-ink);
 		line-height: 1.3;
 	}
 
-	.chapter-blurb {
-		font-size: var(--text-small);
-		font-weight: 500;
-		color: var(--fam-ink);
-		line-height: 1.45;
-	}
-
-	.chapter-chevron {
-		flex-shrink: 0;
-		display: flex;
-		align-items: center;
-	}
-
 	.chapter-body {
-		/* Continues the hero panel opened by .chapter-row.open above —
-		   same 3px ink border, zero gap (border-top: none here). */
-		border: 3px solid var(--color-ink);
-		border-top: none;
-		border-radius: 0 0 22px 22px;
-		background: #fff;
-		padding: 14px;
 		display: flex;
 		flex-direction: column;
 		gap: 16px;
+	}
+
+	.chapter-unit :global(.formula-bar),
+	.chapter-unit :global(.bead),
+	.chapter-unit :global(.bubble-k),
+	.chapter-unit :global(.callout) {
+		border: none !important;
+		box-shadow: none !important;
+	}
+
+	.chapter-body :global(.grammar-card:first-child .callout) {
+		border: 2px dashed var(--color-rose-deep) !important;
 	}
 
 	.callout-arrow {

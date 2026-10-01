@@ -167,22 +167,22 @@
 	</div>
 
 	<div class="hero-wrap">
-		<span class="doodle hero-spark jit-5">
+		<span class="hero-spark jit-5">
 			<Doodle name="spark-sparkle-26" size={28} color="var(--color-rose-deep)" />
 		</span>
 		<Card variant="soft-rose">
-			<KuromiBubble mood={evalDone ? 'wink' : 'coffee'}>
+			<KuromiBubble mood={evalDone ? 'wink' : 'coffee'} bare>
 				<p>{heroBubble}</p>
 			</KuromiBubble>
 		</Card>
-		<span class="doodle hero-arrow jit-3">
+		<span class="hero-arrow jit-3">
 			<Doodle name="swirl-arrow-6" size={36} color="var(--color-ink)" />
 		</span>
 	</div>
 
 	<section class="today">
 		<h2 class="section-label jit-a">Today</h2>
-		<span class="doodle squiggle">
+		<span class="squiggle">
 			<Doodle name="shape-swirl-loops-4" size={42} color="var(--color-rose-deep)" />
 		</span>
 		<div class="today-pair">
@@ -362,9 +362,12 @@
 		position: relative;
 	}
 
-	.doodle {
+	.hero-spark,
+	.hero-arrow,
+	.squiggle {
 		position: absolute;
 		pointer-events: none;
+		line-height: 0;
 	}
 
 	.hero-spark {

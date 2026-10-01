@@ -154,7 +154,7 @@
 		align-items: center;
 		gap: 4px;
 		padding: 6px 12px;
-		border: 2px solid var(--color-ink);
+		border: none;
 		background: color-mix(in srgb, white 75%, var(--color-lavender));
 		color: var(--color-ink);
 		font-family: var(--font-display);
@@ -175,7 +175,7 @@
 		display: inline-flex;
 		align-items: center;
 		padding: 6px 14px;
-		border: 2px solid var(--color-ink);
+		border: none;
 		background: color-mix(in srgb, white 80%, var(--color-cream));
 		color: var(--color-muted-ink);
 		font-family: var(--font-display);

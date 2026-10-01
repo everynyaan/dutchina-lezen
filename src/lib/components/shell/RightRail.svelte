@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import Character from '$lib/components/art/Character.svelte';
-	import KuromiBubble from '$lib/components/reading/KuromiBubble.svelte';
 	import ReadinessCapsule from '$lib/components/reading/ReadinessCapsule.svelte';
 	import TypeGrid from '$lib/components/reading/TypeGrid.svelte';
 	import { openMockResult, setAllTypesOpen } from '$lib/shell/desk.svelte';
@@ -31,10 +30,7 @@
 		<div class="history">
 			<h2 class="rail-title jit-2">History</h2>
 			{#if history.length === 0}
-				<KuromiBubble mood="hmph" size={44}>
-					<p>No mock yet. Start the sealed paper.</p>
-				</KuromiBubble>
-				<a class="action" href="#mock-start">Start</a>
+				<p class="empty-label">No sittings</p>
 			{:else}
 				{#each history as mock (mock.id)}
 					{#if mock.setId}
@@ -110,20 +106,25 @@
 		font-weight: 700;
 	}
 
-	.action,
+	.empty-label {
+		margin: 0;
+		font-size: 14px;
+		font-weight: 700;
+		color: var(--color-muted-ink);
+	}
+
 	.all {
 		align-self: flex-start;
 		font: inherit;
 		font-weight: 700;
 		font-size: 14px;
-		text-decoration: none;
+		text-decoration: underline;
+		text-underline-offset: 3px;
 		color: var(--color-ink);
-		background: var(--color-rose);
-		border: 2px solid var(--color-ink);
-		border-radius: 999px;
-		padding: 6px 12px;
+		background: none;
+		border: none;
+		padding: 0;
 		cursor: pointer;
-		box-shadow: var(--shadow-offset-pill);
 	}
 
 	.cameo {
@@ -133,7 +134,8 @@
 	}
 
 	@media (min-width: 1200px) {
-		:global(.frame:not(:has(.reading-desk)):not(:has(.exam-chrome))) .right-rail {
+		:global(.frame:not(:has(.reading-desk)):not(:has(.exam-chrome)):not(:has(.kuromi-page)))
+			.right-rail {
 			display: flex;
 			flex-direction: column;
 			gap: 14px;

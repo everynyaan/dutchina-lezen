@@ -963,7 +963,8 @@
 			padding: 1.5rem 1.25rem 1.5rem;
 		}
 
-		.frame:has(:global(.reading-desk)) {
+		.frame:has(:global(.reading-desk)),
+		.frame:has(:global(.kuromi-page)) {
 			grid-template-columns: 200px minmax(0, 1fr);
 		}
 

@@ -174,12 +174,14 @@
 		><Doodle name="spark-sparkle-26" size={22} color="var(--color-rose-deep)" /></span
 	>
 	<span class="jit-4"><Doodle name="swirl-arrow-6" size={28} color="var(--color-ink)" /></span>
-	<p class="kuromi-line">About 15 minutes. Map, then the questions.</p>
+	<div class="chips">
+		<span class="chip">15 min</span>
+		<span class="chip">Map, then questions</span>
+	</div>
 
 	{#if !passage}
 		<p>No text is ready today.</p>
 	{:else if !evalState.mapDone}
-		<p class="kuromi-line">About 2 minutes. Map the paragraphs before the questions.</p>
 		<PracticeBook years={bookYears} />
 		<ParagraphMap
 			{passage}
@@ -265,11 +267,19 @@
 		font-size: var(--text-title);
 		margin: 0.35rem 0 0.75rem;
 	}
-	.kuromi-line {
-		color: var(--color-ink);
-		font-size: var(--text-base);
-		line-height: 1.5;
-		margin: 0;
+	.chips {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+	}
+	.chip {
+		display: inline-flex;
+		padding: 3px 8px;
+		border-radius: 999px;
+		background: color-mix(in srgb, var(--color-peach) 55%, white);
+		font-size: 14px;
+		font-weight: 700;
+		line-height: 1.2;
 	}
 	.done {
 		margin: 0 0 1rem;

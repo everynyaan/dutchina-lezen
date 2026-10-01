@@ -18,6 +18,18 @@
 	const purpose = purposeGuide();
 	const signals = signalGroups();
 	const roles = roleCards();
+
+	const chapters = [
+		{ id: 'types', n: '1', label: 'Question types' },
+		{ id: 'traps', n: '2', label: 'Traps' },
+		{ id: 'purpose', n: '3', label: 'Purpose' },
+		{ id: 'rules', n: '4', label: 'Rules texts' },
+		{ id: 'signals', n: '5', label: 'Signal words' },
+		{ id: 'roles', n: '6', label: 'Paragraph roles' }
+	] as const;
+
+	type ChapterId = (typeof chapters)[number]['id'];
+	let chapter = $state<ChapterId>('types');
 </script>
 
 <div class="playbook">
@@ -29,10 +41,26 @@
 	<span class="jit-4"
 		><Doodle name="shape-swirl-loops-4" size={28} color="var(--color-rose-deep)" /></span
 	>
-	<p class="lead">
-		Moves, traps, and signal words from the papers. Examples are pulled from the texts, not
-		invented.
-	</p>
+	<div class="chips">
+		<span class="chip">Moves</span>
+		<span class="chip">Traps</span>
+		<span class="chip">Signals</span>
+	</div>
+
+	<nav class="picks" aria-label="Playbook chapters">
+		{#each chapters as row (row.id)}
+			<button
+				type="button"
+				class="pick"
+				class:on={chapter === row.id}
+				aria-pressed={chapter === row.id}
+				aria-label={row.label}
+				onclick={() => (chapter = row.id)}
+			>
+				{row.n}
+			</button>
+		{/each}
+	</nav>
 
 	<section>
 		<h2>Time plan</h2>
@@ -41,94 +69,78 @@
 		</Card>
 	</section>
 
-	<section>
-		<h2 class="jit-2">Question types</h2>
-		<div class="cols">
-			{#each types as card (card.qtype)}
-				<Card variant="soft-lavender">
-					<h3>{card.label}</h3>
-					<p>{card.move}</p>
-					<p class="meta">{card.count} of {card.total} official items.</p>
-					{#if card.example}
-						<p class="meta">{card.example.year}. {card.example.passage}</p>
-						<p>{card.example.question}</p>
-						<blockquote>{card.example.quote}</blockquote>
-					{/if}
-					<a href="{resolve('/cards')}?qtype={card.qtype}">Practice this</a>
-				</Card>
-			{/each}
-		</div>
-	</section>
-
-	<section>
-		<h2 class="jit-3">Traps</h2>
-		<div class="cols">
-			{#each traps as card (card.trap)}
-				<Card variant="soft-peach">
-					<h3>{card.label}</h3>
-					<p>{card.explanation}</p>
-					{#each card.examples as example, index (example.lure)}
-						<p class="meta">Example {index + 1}. {example.year}. {example.passage}</p>
-						<blockquote>{example.lure}</blockquote>
-						<p>{example.why}</p>
-					{/each}
-				</Card>
-			{/each}
-		</div>
-	</section>
-
-	<section>
-		<h2 class="jit-a">Purpose questions</h2>
-		<Card variant="soft-rose">
-			<p>{purposeLine(purpose)}</p>
-			<p>{purpose.decide}</p>
-			<ul>
-				{#each purpose.keyed as row (`${row.year}-${row.passage}`)}
-					<li>{row.year}. {row.passage}. {row.purpose}</li>
-				{/each}
-			</ul>
-		</Card>
-	</section>
-
-	<section>
-		<h2>Rules texts</h2>
-		<p>{RULES_TEXT}</p>
-	</section>
-
-	<section>
-		<h2>Signal words</h2>
-		{#each signals as group (group.name)}
-			<h3>{group.name}</h3>
-			<ul>
-				{#each group.words as hit (hit.word)}
-					<li>
-						<strong>{hit.word}</strong>
-						{#if hit.example}
-							{hit.source}. {hit.example}
-						{:else}
-							Not in these papers.
+	{#if chapter === 'types'}
+		<section>
+			<h2 class="jit-2">Question types</h2>
+			<div class="cols">
+				{#each types as card, index (card.qtype)}
+					<article class="tile">
+						<h3>{card.label}</h3>
+						<span class="chip">{card.count} / {card.total}</span>
+						{#if index === 0 && card.example}
+							<blockquote>{card.example.quote}</blockquote>
 						{/if}
-					</li>
+						<a href="{resolve('/cards')}?qtype={card.qtype}">Practice this</a>
+					</article>
 				{/each}
-			</ul>
-		{/each}
-	</section>
-
-	<section>
-		<h2>Paragraph roles</h2>
-		{#each roles as role (role.role)}
-			<Card variant="soft-lavender">
-				<h3>{role.label}</h3>
-				<p>{role.looksLike}</p>
-				{#if role.example}
-					<p class="meta">{role.source}</p>
-					<blockquote>{role.example}</blockquote>
-				{:else}
-					<p class="meta">No example in the packs yet.</p>
-				{/if}
-			</Card>
-		{/each}
-	</section>
+			</div>
+		</section>
+	{:else if chapter === 'traps'}
+		<section>
+			<h2 class="jit-3">Traps</h2>
+			<div class="cols">
+				{#each traps as card, index (card.trap)}
+					<article class="tile">
+						<h3>{card.label}</h3>
+						<span class="chip">{card.examples.length} lures</span>
+						{#if index === 0}
+							<blockquote>{card.examples[0].lure}</blockquote>
+						{/if}
+					</article>
+				{/each}
+			</div>
+		</section>
+	{:else if chapter === 'purpose'}
+		<section>
+			<h2 class="jit-a">Purpose questions</h2>
+			<div class="chips">
+				<span class="chip">{purpose.keyed.length} keyed</span>
+				<span class="chip">{purpose.passageCount} passages</span>
+			</div>
+			<blockquote>{purposeLine(purpose)}</blockquote>
+		</section>
+	{:else if chapter === 'rules'}
+		<section>
+			<h2>Rules texts</h2>
+			<blockquote>{RULES_TEXT}</blockquote>
+		</section>
+	{:else if chapter === 'signals'}
+		<section>
+			<h2>Signal words</h2>
+			{#each signals as group (group.name)}
+				<h3>{group.name}</h3>
+				<div class="chips">
+					{#each group.words as hit (hit.word)}
+						<span class="chip">{hit.word}</span>
+					{/each}
+				</div>
+			{/each}
+		</section>
+	{:else}
+		<section>
+			<h2>Paragraph roles</h2>
+			<div class="cols">
+				{#each roles as role, index (role.role)}
+					<article class="tile">
+						<h3>{role.label}</h3>
+						{#if index === 0 && role.example}
+							<blockquote>{role.example}</blockquote>
+						{/if}
+					</article>
+				{/each}
+			</div>
+		</section>
+	{/if}
 
 	<p class="secondary">
 		<a href={resolve('/grammar')}>Patterns</a>
@@ -167,9 +179,7 @@
 	h3 {
 		font-size: var(--text-lead);
 	}
-	.lead,
-	p,
-	li {
+	p {
 		line-height: 1.45;
 		margin: 0;
 	}
@@ -179,9 +189,52 @@
 		gap: 0.75rem;
 		min-width: 0;
 	}
-	.meta {
-		font-size: var(--text-small);
-		color: var(--color-muted-ink);
+	.chips {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+	}
+	.chip {
+		display: inline-flex;
+		width: fit-content;
+		padding: 3px 8px;
+		border-radius: 999px;
+		background: color-mix(in srgb, var(--color-lavender) 40%, white);
+		font-size: 14px;
+		font-weight: 700;
+		line-height: 1.2;
+	}
+	.picks {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+	}
+	.pick {
+		width: 40px;
+		height: 40px;
+		border: none;
+		border-radius: 999px;
+		background: color-mix(in srgb, var(--color-rose) 55%, white);
+		font-family: var(--font-display);
+		font-size: 16px;
+		font-weight: 700;
+		color: var(--color-ink);
+		cursor: pointer;
+	}
+	.pick.on {
+		background: var(--color-rose);
+		box-shadow: var(--shadow-offset-pill);
+	}
+	.tile {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 8px;
+		padding: 12px;
+		border: none;
+		border-radius: 18px;
+		background: color-mix(in srgb, var(--color-lavender) 22%, white);
+		box-shadow: var(--shadow-offset-card);
 	}
 	blockquote {
 		margin: 0;
@@ -222,13 +275,6 @@
 	a {
 		color: var(--color-ink);
 		font-weight: 700;
-	}
-	ul {
-		margin: 0;
-		padding-left: 1.1rem;
-		display: flex;
-		flex-direction: column;
-		gap: 0.45rem;
 	}
 	.secondary {
 		margin-top: 0.5rem;

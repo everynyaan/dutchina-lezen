@@ -402,7 +402,7 @@
 				<StatBadge label="minutes" value="110" tint="peach" mark="m" />
 				<StatBadge label="Pass line" value={String(passLineFor(exam))} tint="rose" mark="P" />
 			</div>
-			<KuromiBubble mood="mischief">
+			<KuromiBubble mood="mischief" bare>
 				<p>Sealed. Print the booklet, Van Dale NT2 dictionary on the desk, phone away.</p>
 			</KuromiBubble>
 			{#if choice.seen}<p class="note">{SEEN_PAPER_WARNING}</p>{/if}
@@ -415,7 +415,7 @@
 				<button id="mock-start" type="button" class="btn start" onclick={() => start(bookletMode)}>
 					Start
 				</button>
-				<a class="btn ghost" href="{resolve('/mock/booklet')}?paper={choice.year}"
+				<a class="btn print" href="{resolve('/mock/booklet')}?paper={choice.year}"
 					>Print the booklet</a
 				>
 			</div>
@@ -542,6 +542,14 @@
 	}
 	.btn.ghost {
 		background: #fff;
+	}
+	.btn.print {
+		border: none;
+		background: transparent;
+		box-shadow: none;
+		padding-left: 0;
+		text-decoration: underline;
+		text-underline-offset: 3px;
 	}
 	.item,
 	.text-score {

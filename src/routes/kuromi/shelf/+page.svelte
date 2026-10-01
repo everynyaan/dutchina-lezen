@@ -21,7 +21,7 @@
 				<h1 class="page-title">Shelf</h1>
 				<Doodle name="spark-sparkle-26" size={26} color="var(--color-rose-deep)" tilt={-6} />
 			</div>
-			<p class="page-sub">Everything she's made you, kept her way.</p>
+			<span class="chip">Her pages</span>
 		</div>
 	</div>
 
@@ -40,7 +40,7 @@
 		padding: 14px 16px;
 		margin: 12px 0 4px;
 		background: #fff;
-		border: 3px solid var(--color-kuromi);
+		border: none;
 		border-radius: 20px;
 		box-shadow: var(--shadow-offset-pill);
 		box-sizing: border-box;
@@ -67,10 +67,15 @@
 		margin: 0;
 	}
 
-	.page-sub {
-		font-family: var(--font-sans);
-		font-size: var(--text-small);
-		color: var(--color-muted-ink);
+	.chip {
+		display: inline-flex;
 		margin-top: 4px;
+		padding: 3px 8px;
+		border-radius: 999px;
+		background: color-mix(in srgb, var(--color-lavender) 40%, white);
+		font-size: 14px;
+		font-weight: 700;
+		line-height: 1.2;
+		color: var(--color-ink);
 	}
 </style>

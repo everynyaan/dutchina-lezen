@@ -41,7 +41,11 @@
 	<section class="drills" id="drills" aria-label="Pattern warm-up drills">
 		<header class="head">
 			<h2 class="title">Warm-up drills</h2>
-			<p class="sub">de/het, verb second, ik/jij/hij — the moves that show up in texts.</p>
+			<div class="chips">
+				<span class="chip">de/het</span>
+				<span class="chip">verb second</span>
+				<span class="chip">ik / jij / hij</span>
+			</div>
 		</header>
 
 		<div class="filters" role="tablist" aria-label="Drill pattern">
@@ -109,7 +113,6 @@
 		color: var(--color-ink);
 	}
 
-	.sub,
 	.progress,
 	.prompt,
 	.explain {
@@ -125,6 +128,12 @@
 		gap: 6px;
 	}
 
+	.chips {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 6px;
+	}
+
 	.chip,
 	.next {
 		font-family: var(--font-display);
@@ -133,8 +142,8 @@
 		letter-spacing: 0.04em;
 		padding: 6px 12px;
 		border-radius: 999px;
-		border: 1.5px solid var(--color-ink);
-		background: color-mix(in srgb, white 70%, transparent);
+		border: none;
+		background: color-mix(in srgb, var(--color-lavender) 45%, white);
 		color: var(--color-ink);
 		cursor: pointer;
 		-webkit-tap-highlight-color: transparent;

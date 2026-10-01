@@ -151,9 +151,10 @@
 		cursor: pointer;
 	}
 	.opt {
-		border: 2px solid var(--color-ink);
+		border: none;
 		border-radius: 10px;
 		background: white;
+		box-shadow: var(--shadow-offset-pill);
 		padding: 0.55rem 0.7rem;
 	}
 	.opt.picked {
@@ -161,7 +162,7 @@
 	}
 	.check,
 	.flag {
-		border: 2px solid var(--color-ink);
+		border: none;
 		border-radius: 999px;
 		padding: 0.4rem 0.9rem;
 		background: var(--color-rose);

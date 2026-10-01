@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { getGameContext } from '$lib/state/context';
 	import { labelsInUse, filterPages } from '$lib/kuromi/pageStore';
-	import Character from '$lib/components/art/Character.svelte';
+	import { resolve } from '$app/paths';
+	import KuromiBubble from '$lib/components/reading/KuromiBubble.svelte';
 	import Doodle from '$lib/components/art/Doodle.svelte';
 	import ShelfFilters from './ShelfFilters.svelte';
 	import PageCard from './PageCard.svelte';
@@ -47,13 +48,16 @@
 		</div>
 	{:else if ctx.state.pages.length === 0}
 		<div class="empty-state">
-			<Character who="kuromi" mood="question" size={64} />
-			<p class="empty-copy">Nothing here yet. Ask her to make you one.</p>
+			<KuromiBubble mood="question">
+				<p>Nothing here yet.</p>
+			</KuromiBubble>
+			<a class="ask" href={resolve('/kuromi')}>Ask her</a>
 		</div>
 	{:else}
 		<div class="empty-state">
-			<Character who="kuromi" mood="question" size={64} />
-			<p class="empty-copy">No pages match those filters.</p>
+			<KuromiBubble mood="question" bare>
+				<p>Nothing matches.</p>
+			</KuromiBubble>
 		</div>
 	{/if}
 </div>
@@ -85,18 +89,18 @@
 
 	.empty-state {
 		display: flex;
-		align-items: center;
+		flex-direction: column;
+		align-items: flex-start;
 		gap: 12px;
 		padding: 18px 12px;
 		min-width: 0;
 	}
 
-	.empty-copy {
-		margin: 0;
-		font-family: var(--font-sans);
-		font-size: var(--text-base);
-		line-height: 1.4;
-		color: var(--color-muted-ink);
-		min-width: 0;
+	.ask {
+		font-size: 14px;
+		font-weight: 700;
+		color: var(--color-ink);
+		text-decoration: underline;
+		text-underline-offset: 3px;
 	}
 </style>

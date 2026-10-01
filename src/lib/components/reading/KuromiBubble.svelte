@@ -5,15 +5,17 @@
 	interface Props {
 		mood?: string;
 		size?: number;
+		/** Drop the ink box when the bubble sits inside a hero card. */
+		bare?: boolean;
 		children?: Snippet;
 	}
 
-	let { mood = 'talk', size = 44, children }: Props = $props();
+	let { mood = 'talk', size = 44, bare = false, children }: Props = $props();
 </script>
 
 <div class="kuromi-line">
 	<Character who="kuromi" {mood} {size} alt="" />
-	<div class="bubble">
+	<div class="bubble" class:bare>
 		{@render children?.()}
 	</div>
 </div>
@@ -35,6 +37,12 @@
 		line-height: 1.45;
 		color: var(--color-ink);
 		min-width: 0;
+	}
+
+	.bubble.bare {
+		border: none;
+		background: transparent;
+		padding: 4px 0 8px;
 	}
 
 	.bubble :global(p) {

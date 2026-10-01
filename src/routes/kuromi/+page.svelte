@@ -108,4 +108,78 @@
 	.chat-section {
 		min-height: 50vh;
 	}
+
+	@media (min-width: 1200px) {
+		.kuromi-page {
+			display: grid;
+			grid-template-columns: minmax(0, 1fr) 460px;
+			align-items: stretch;
+			min-height: calc(100vh - 8rem);
+			margin: -1.5rem -1.25rem -1.5rem 0;
+			padding: 0;
+		}
+
+		.page-header {
+			padding: 1.5rem 1rem 0 0;
+		}
+
+		.page-sub {
+			display: none;
+		}
+
+		.hub-stack {
+			grid-column: 2;
+			grid-row: 1 / span 2;
+			width: 460px;
+			min-height: 100%;
+			margin: 0;
+			gap: 0;
+			border-left: 3px solid var(--color-ink);
+			background: #fff;
+		}
+
+		.conversations-section {
+			max-height: 160px;
+			border: none;
+			background: transparent;
+			border-radius: 0;
+		}
+
+		.conversations-section :global(.empty-state) {
+			display: none;
+		}
+
+		.conversations-section :global(.new-btn),
+		.conversations-section :global(.item) {
+			border: none !important;
+			box-shadow: none !important;
+		}
+
+		.adjustments-section {
+			display: none;
+		}
+
+		.chat-section {
+			flex: 1;
+			min-height: 0;
+		}
+
+		.chat-section :global(.kuromi-shell.inline) {
+			width: 460px;
+			min-height: 640px;
+			border: none !important;
+			border-radius: 0 !important;
+			box-shadow: none !important;
+		}
+
+		.chat-section :global(.sheet-header),
+		.chat-section :global(.composer),
+		.chat-section :global(.composer-input),
+		.chat-section :global(.send-btn),
+		.chat-section :global(.history-btn),
+		.chat-section :global(.open-hub-btn),
+		.chat-section :global(.close-btn) {
+			border: none !important;
+		}
+	}
 </style>

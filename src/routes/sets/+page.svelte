@@ -22,7 +22,6 @@
 	import { bookYearsFor } from '$lib/reading/practiceBook';
 	import {
 		HORIZON_SLUG,
-		SET_MIX_NOTE,
 		SET_SIZE,
 		SET_TARGET,
 		examForSet,
@@ -482,8 +481,10 @@
 			><Doodle name="spark-sparkle-26" size={22} color="var(--color-rose-deep)" /></span
 		>
 		<span class="jit-5"><Doodle name="swirl-arrow-6" size={28} color="var(--color-ink)" /></span>
-		<p class="note">Suggested order: set 2, then set 3, then set 1 after the 2025 mock.</p>
-		<p class="note">{SET_MIX_NOTE}</p>
+		<div class="chips">
+			<span class="chip">Next: set 2</span>
+			<span class="chip">Unofficial</span>
+		</div>
 		{#if officialBusy}
 			<p class="warn">Finish the official mock first.</p>
 		{/if}
@@ -491,15 +492,13 @@
 			{@const taken = latestSetResult(ctx.state.readingFork.mocks, set.id)}
 			<section class="card">
 				<h2>{setHistoryLabel(set.id)}</h2>
-				<p class="note">{set.title}</p>
+				<span class="chip">{set.title}</span>
 				<ul class="text-grid">
 					{#each set.passages as row (row.slug)}
 						<li>
 							{row.name}
 							{#if row.slug === HORIZON_SLUG && !horizonOpen}
-								<span class="lock">
-									Horizon College stays locked until the 2025 paper has been taken as a mock.
-								</span>
+								<span class="chip lock">locked</span>
 							{/if}
 						</li>
 					{/each}
@@ -512,7 +511,7 @@
 					<div class="actions">
 						{#each set.passages as row (row.slug)}
 							{#if row.slug === HORIZON_SLUG && !horizonOpen}
-								<p class="lock">Text 6 stays locked.</p>
+								<span class="chip lock">Text 6 locked</span>
 							{:else}
 								<button type="button" class="btn ghost" onclick={() => openPractice(row.slug)}>
 									Practice {row.name}
@@ -522,7 +521,7 @@
 					</div>
 				{:else}
 					{#if set.id === 'set1' && !horizonOpen}
-						<p class="lock">Text 6 stays out of this sitting until the 2025 mock is done.</p>
+						<span class="chip lock">Text 6 locked</span>
 					{/if}
 					<label class="toggle">
 						<input type="checkbox" bind:checked={bookletSet} />
@@ -596,9 +595,40 @@
 		flex-direction: column;
 		gap: 0.55rem;
 		padding: 0.9rem;
-		border: 2px solid var(--color-ink);
+		border: none;
 		border-radius: 16px;
-		background: #fff;
+		background: color-mix(in srgb, var(--color-rose) 28%, white);
+		box-shadow: var(--shadow-offset-card);
+	}
+	.card .btn {
+		border: none;
+		box-shadow: var(--shadow-offset-pill);
+	}
+	.card .btn.ghost {
+		background: transparent;
+		box-shadow: none;
+		padding-left: 0;
+		text-decoration: underline;
+		text-underline-offset: 3px;
+	}
+	.chips {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+	}
+	.chip {
+		display: inline-flex;
+		width: fit-content;
+		padding: 3px 8px;
+		border-radius: 999px;
+		background: white;
+		font-size: 14px;
+		font-weight: 700;
+		line-height: 1.2;
+	}
+	.chip.lock {
+		background: var(--color-ink);
+		color: white;
 	}
 	.card ul {
 		margin: 0;
